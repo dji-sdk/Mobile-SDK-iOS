@@ -5,7 +5,7 @@
 
 ## Concepts
 
-- [DJI Mobile SDK Framework Handbook](https://github.com/dji-sdk/Mobile-SDK-Handbook): 
+- [**DJI Mobile SDK Framework Handbook**](https://github.com/dji-sdk/Mobile-SDK-Handbook): 
 This handbook provides a high level overview of the different components that make up the SDK, so that developers can get a feel for the SDK's structure and its different components. This handbook does not aim to provide specific information that can be found in the SDK. After reading through this handbook, developers should be able to begin working closely with the SDK.
 
 ## Sample Projects - Basic
@@ -23,16 +23,16 @@ Learn how to build a cool panorama app. With the help of the powerful DJI SDK an
 
 ## Gitbook
 
-For better reading experience of DJI Mobile SDK Tutorials, please check our [Gitbook](https://dji-dev.gitbooks.io/mobile-sdk-tutorials/).
+For better reading experience of DJI Mobile SDK Tutorials, please check our [**Gitbook**](https://dji-dev.gitbooks.io/mobile-sdk-tutorials/).
 
 ## SDK Reference
 
-[iOS SDK API Documentation](http://developer.dji.com/mobile-sdk/documentation/)
+[**iOS SDK API Documentation**](http://developer.dji.com/mobile-sdk/documentation/)
 
 ## Support
 
 You can get support from DJI with the following methods:
 
-- [DJI Forum](http://forum.dev.dji.com/en)
-- [Stackoverflow](http://stackoverflow.com) 
+- [**DJI Forum**](http://forum.dev.dji.com/en)
+- [**Stackoverflow**](http://stackoverflow.com) 
 - dev@dji.com
