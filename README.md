@@ -1,15 +1,17 @@
 # DJI Mobile SDK for iOS
 
 
-　[Getting Started](#get-started)
+　[Getting Started](#Getting Started)
 
-　[Concepts](#concepts)
+　[Concepts](#Concepts)
 
-　[Sample Projects - Basic](#sampleProjectsBasic)
+　[Sample Projects - Basic](#Sample Projects - Basic)
 
-　[Sample Projects - Advanced](#sampleProjectsAdvanced)
+　[Sample Projects - Advanced](#Sample Projects - Advanced)
 
-　[SDK Reference](#sdkReference)
+　[SDK Reference](#SDK Reference)
+
+　[Support](#Support)
 
 ## Getting Started
 
@@ -45,6 +47,5 @@ Learn how to build a cool panorama app. With the help of the powerful DJI SDK an
 You can get support from DJI with the following methods:
 
 - [DJI Forum](http://forum.dev.dji.com/en)
-- [Stackoverflow]() 
+- [Stackoverflow](http://stackoverflow.com) 
 - dev@dji.com
-
