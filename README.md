@@ -1,19 +1,20 @@
 # DJI Mobile SDK for iOS
 
 
-　[Getting Started](#Getting Started)
+　[Getting Started](#getting-started)
 
-　[Concepts](#Concepts)
+　[Concepts](#concepts)
 
-　[Sample Projects - Basic](#Sample Projects - Basic)
+　[Sample Projects - Basic](#sample-projects-basic)
 
-　[Sample Projects - Advanced](#Sample Projects - Advanced)
+　[Sample Projects - Advanced](#sample-projects-advanced)
 
-　[SDK Reference](#SDK Reference)
+　[SDK Reference](#sdk-reference)
 
-　[Support](#Support)
+　[Support](#support)
 
 ## Getting Started
+
 
 
 ## Concepts
