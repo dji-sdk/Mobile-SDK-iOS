@@ -1,7 +1,59 @@
 # DJI Mobile SDK for iOS
 
-## Getting Started
+## What Is This?
 
+The DJI Mobile SDK enables you to control how your Phantom’s camera, gimbal, and more behaves and interacts with mobile apps you create.Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
+
+## Running the SDK Sample Code
+
+This guide shows you how to setup APP Key and run our DJI Mobile SDK sample project, which you can download it from this **Github Page**.
+
+### Prerequisites
+
+- Xcode 6.4+ or higher
+- Deployment target of 6.0 or higher
+
+### Registering a App Key
+
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/mobile-sdk/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
+
+>Note: Please type in "com.dji.sdk" in the `Identification Code` field, because the default bundle identifier in the sample Xcode project is "com.dji.sdk".
+
+Once you complete it, you may see the following App Key status:
+
+![sdkDemoApp_Key](./Images/sdkDemoApp_Key.png)
+
+Please record the App Key you just created and we will use it in the following steps.
+
+### Running the Sample Xcode project
+
+Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **AppDelegate.m** file by assigning the App Key string we just created to the **appKey** object like this:
+
+~~~objc
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    //Enter the App Key here
+    NSString* appKey = @"**********************";
+    [DJIAppManager registerApp:appKey withDelegate:self];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UINavigationController* rootViewController = [[UINavigationController alloc] initWithRootViewController:[[DJIRootViewController alloc] initWithNibName:@"DJIRootViewController" bundle:nil]];
+    [rootViewController.navigationBar setBackgroundColor:[UIColor blackColor]];
+    [rootViewController setToolbarHidden:YES];
+    self.window.rootViewController = rootViewController;
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+
+~~~
+
+>Note: If you are running the sample project with Xcode 7.0 above, please set "Enable Bitcode" value to No in the Build Settings as shown below:
+>![bitcode](./Images/disable_bitcode.png)
+
+Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
 
 ## Concepts
 
