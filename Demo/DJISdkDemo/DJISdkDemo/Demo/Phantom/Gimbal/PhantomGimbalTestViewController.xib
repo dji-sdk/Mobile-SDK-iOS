@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhantomGimbalTestViewController">
+            <connections>
+                <outlet property="attitudeLabel" destination="Ccx-Bx-QNe" id="7UN-H4-PYi"/>
+                <outlet property="view" destination="1" id="Hgh-DJ-p0V"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y9-JS-vc6">
+                    <rect key="frame" x="483" y="82" width="46" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="M0K-21-Y3e"/>
+                        <constraint firstAttribute="width" constant="46" id="hVG-6i-Yu3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="+" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalScrollUpTouchDown:" destination="-1" eventType="touchDown" id="sUP-aM-bVI"/>
+                        <action selector="onGimbalScrollUpTouchUp:" destination="-1" eventType="touchUpOutside" id="gL0-zl-jRf"/>
+                        <action selector="onGimbalScrollUpTouchUp:" destination="-1" eventType="touchUpInside" id="yXm-fb-kmF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C05-we-wQw">
+                    <rect key="frame" x="483" y="170" width="46" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="R1p-vd-Rp5"/>
+                        <constraint firstAttribute="height" constant="47" id="WgG-SB-a49"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="-" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalScroollDownTouchDown:" destination="-1" eventType="touchDown" id="5Fp-DM-mlY"/>
+                        <action selector="onGimbalScroollDownTouchUp:" destination="-1" eventType="touchUpOutside" id="iaY-t3-t8I"/>
+                        <action selector="onGimbalScroollDownTouchUp:" destination="-1" eventType="touchUpInside" id="kqY-NK-3JP"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCe-IC-5PC">
+                    <rect key="frame" x="183" y="45" width="202" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="D1t-q3-TsQ"/>
+                        <constraint firstAttribute="width" constant="202" id="XFs-IW-SqJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Start Attitude Update" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalAttitudeUpdateTest:" destination="-1" eventType="touchUpInside" id="MWe-Dd-sQK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtY-Pr-YXa">
+                    <rect key="frame" x="184" y="246" width="75" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="GyZ-Gq-7Eh"/>
+                        <constraint firstAttribute="width" constant="75" id="rLn-il-xjm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="&lt;--" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalYawRotationBackwardTouchDown:" destination="-1" eventType="touchDown" id="xrd-h1-m8U"/>
+                        <action selector="onGimbalYawRotationBackwardTouchUp:" destination="-1" eventType="touchUpInside" id="Dkr-cm-S7B"/>
+                        <action selector="onGimbalYawRotationBackwardTouchUp:" destination="-1" eventType="touchUpOutside" id="JEG-ft-l6b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ic2-1q-j4X">
+                    <rect key="frame" x="310" y="246" width="75" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="IxP-Vk-J1S"/>
+                        <constraint firstAttribute="height" constant="47" id="nse-BT-dlC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="--&gt;" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalYawRotationForwardTouchDown:" destination="-1" eventType="touchDown" id="fh5-FH-Ggi"/>
+                        <action selector="onGimbalYawRotationForwardTouchUp:" destination="-1" eventType="touchUpInside" id="Pxj-ct-Yf5"/>
+                        <action selector="onGimbalYawRotationForwardTouchUp:" destination="-1" eventType="touchUpOutside" id="nFw-Lq-81Y"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-Bx-QNe">
+                    <rect key="frame" x="155" y="111" width="246" height="106"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="106" id="0lv-Yj-68f"/>
+                        <constraint firstAttribute="width" constant="246" id="8wQ-Ri-RaL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="Ccx-Bx-QNe" secondAttribute="centerX" constant="6" id="QvA-f9-IzW"/>
+                <constraint firstAttribute="centerX" secondItem="MtY-Pr-YXa" secondAttribute="centerX" constant="62.5" id="RHS-WV-uoi"/>
+                <constraint firstAttribute="centerX" secondItem="wCe-IC-5PC" secondAttribute="centerX" id="RR9-i6-Pzd"/>
+                <constraint firstAttribute="centerX" secondItem="C05-we-wQw" secondAttribute="centerX" constant="-222" id="Sce-UE-Odq"/>
+                <constraint firstAttribute="centerY" secondItem="ic2-1q-j4X" secondAttribute="centerY" constant="-109.5" id="Tf6-zf-l8c"/>
+                <constraint firstAttribute="centerY" secondItem="7y9-JS-vc6" secondAttribute="centerY" constant="54.5" id="cMQ-Vz-RTp"/>
+                <constraint firstAttribute="centerY" secondItem="wCe-IC-5PC" secondAttribute="centerY" constant="91.5" id="eku-lS-zsY"/>
+                <constraint firstAttribute="centerY" secondItem="Ccx-Bx-QNe" secondAttribute="centerY" constant="-4" id="gJy-CZ-VUD"/>
+                <constraint firstAttribute="centerY" secondItem="C05-we-wQw" secondAttribute="centerY" constant="-33.5" id="i1s-rC-Ydy"/>
+                <constraint firstAttribute="centerX" secondItem="7y9-JS-vc6" secondAttribute="centerX" constant="-222" id="ur6-vf-xf7"/>
+                <constraint firstAttribute="centerX" secondItem="ic2-1q-j4X" secondAttribute="centerX" constant="-63.5" id="xea-38-3UJ"/>
+                <constraint firstAttribute="centerY" secondItem="MtY-Pr-YXa" secondAttribute="centerY" constant="-109.5" id="zZR-EE-v4K"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <point key="canvasLocation" x="345" y="298"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

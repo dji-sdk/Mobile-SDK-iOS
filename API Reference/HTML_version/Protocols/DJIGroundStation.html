@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DJIGroundStation Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">DJI Mobile SDK For iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">DJI</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/groundStationDelegate">groundStationDelegate</option>
+		
+		<option value="//api/name/groundStationTask">groundStationTask</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/closeGroundStation">- closeGroundStation</option>
+		
+		<option value="//api/name/continueGroundStationTask">- continueGroundStationTask</option>
+		
+		<option value="//api/name/downloadGroundStationTask">- downloadGroundStationTask</option>
+		
+		<option value="//api/name/gohome">- gohome</option>
+		
+		<option value="//api/name/openGroundStation">- openGroundStation</option>
+		
+		<option value="//api/name/pauseGroundStationTask">- pauseGroundStationTask</option>
+		
+		<option value="//api/name/setAircraftJoystickWithPitch:Roll:Yaw:Throttle:">- setAircraftJoystickWithPitch:Roll:Yaw:Throttle:</option>
+		
+		<option value="//api/name/setAircraftPitchSpeed:">- setAircraftPitchSpeed:</option>
+		
+		<option value="//api/name/setAircraftRollSpeed:">- setAircraftRollSpeed:</option>
+		
+		<option value="//api/name/setAircraftThrottle:">- setAircraftThrottle:</option>
+		
+		<option value="//api/name/setAircraftYawSpeed:">- setAircraftYawSpeed:</option>
+		
+		<option value="//api/name/startGroundStationTask">- startGroundStationTask</option>
+		
+		<option value="//api/name/stopGroundStationTask">- stopGroundStationTask</option>
+		
+		<option value="//api/name/uploadGroundStationTask:">- uploadGroundStationTask:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DJIGroundStation Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>DJIGroundStation.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Ground station funcationality supported only in Phantom 2 Vision / Phantom 2 Vision+</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/groundStationDelegate" title="groundStationDelegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/groundStationDelegate">&nbsp;&nbsp;groundStationDelegate</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;GroundStationDelegate&gt; groundStationDelegate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/groundStationTask" title="groundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/groundStationTask">&nbsp;&nbsp;groundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Ground station task</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIGroundStationTask *groundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openGroundStation" title="openGroundStation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openGroundStation">&ndash;&nbsp;openGroundStation</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Open ground station. Api was deprecated, use enterNavigationModeWithResult: instead</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)openGroundStation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/closeGroundStation" title="closeGroundStation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/closeGroundStation">&ndash;&nbsp;closeGroundStation</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Close ground station. Api was deprecated, use exitNavigationModeWithResult: instead</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)closeGroundStation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/uploadGroundStationTask:" title="uploadGroundStationTask:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/uploadGroundStationTask:">&ndash;&nbsp;uploadGroundStationTask:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload a new task to the airplane.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)uploadGroundStationTask:(DJIGroundStationTask *)<em>task</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>@param task</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadGroundStationTask" title="downloadGroundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadGroundStationTask">&ndash;&nbsp;downloadGroundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Download ground station task, if no task on the airplane, property &ldquo;groundStationTask&rdquo; will be set to nil.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadGroundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startGroundStationTask" title="startGroundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startGroundStationTask">&ndash;&nbsp;startGroundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start executing task on the drone, if the airplane not takeoff, it will takeoff automatically and execute the task.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startGroundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopGroundStationTask" title="stopGroundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopGroundStationTask">&ndash;&nbsp;stopGroundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop executing task on the drone</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopGroundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/pauseGroundStationTask" title="pauseGroundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/pauseGroundStationTask">&ndash;&nbsp;pauseGroundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Pause task, drone will hover at the current place.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)pauseGroundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/continueGroundStationTask" title="continueGroundStationTask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/continueGroundStationTask">&ndash;&nbsp;continueGroundStationTask</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Continue task</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)continueGroundStationTask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gohome" title="gohome"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gohome">&ndash;&nbsp;gohome</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Airplane go home
+@attention the home point of the drone should have setuped at the begining</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)gohome</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftPitchSpeed:" title="setAircraftPitchSpeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftPitchSpeed:">&ndash;&nbsp;setAircraftPitchSpeed:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aircraft pitch rotation speed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAircraftPitchSpeed:(int)<em>pitchSpeed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pitchSpeed</code></th>
+						<td><p>Pitch speed between [-1000, 1000]
+@attention This api is valid only after the drone is pausing.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftRollSpeed:" title="setAircraftRollSpeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftRollSpeed:">&ndash;&nbsp;setAircraftRollSpeed:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aircraft roll rotation speed。</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAircraftRollSpeed:(int)<em>rollSpeed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>rollSpeed</code></th>
+						<td><p>Roll speed between [-1000, 1000]
+@attention This api is valid only after the drone is pausing.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftYawSpeed:" title="setAircraftYawSpeed:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftYawSpeed:">&ndash;&nbsp;setAircraftYawSpeed:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aircraft yaw rotation speed.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAircraftYawSpeed:(int)<em>yawSpeed</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>yawSpeed</code></th>
+						<td><p>Yaw speed between [-1000, 1000]
+@attention This api is valid only after the drone is pausing.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftThrottle:" title="setAircraftThrottle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftThrottle:">&ndash;&nbsp;setAircraftThrottle:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aircraft throttle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAircraftThrottle:(int)<em>throttle</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>throttle</code></th>
+						<td><p>Throttle value [0 stop, 1 up, 2 down]</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftJoystickWithPitch:Roll:Yaw:Throttle:" title="setAircraftJoystickWithPitch:Roll:Yaw:Throttle:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftJoystickWithPitch:Roll:Yaw:Throttle:">&ndash;&nbsp;setAircraftJoystickWithPitch:Roll:Yaw:Throttle:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aricraft joystick.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setAircraftJoystickWithPitch:(int)<em>pitch</em> Roll:(int)<em>roll</em> Yaw:(int)<em>yaw</em> Throttle:(int)<em>throttle</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pitch</code></th>
+						<td><p>Pitch speed between [-1000, 1000]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roll</code></th>
+						<td><p>Roll speed between [-1000, 1000]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>yaw</code></th>
+						<td><p>Yaw speed between [-1000, 1000]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>throttle</code></th>
+						<td><p>Throttle  [0 stop, 1 up, 2 down]
+@attention This api is valid only after the drone is pausing.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGroundStation.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

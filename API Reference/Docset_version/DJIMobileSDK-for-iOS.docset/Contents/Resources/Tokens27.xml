@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DJIInspireRemoteController.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIInspireRemoteController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+            
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setRCWorkMode:withResult:</TokenIdentifier>
+			<Abstract type="html">Set Remote Controller&apos;s work mode.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCWorkMode:(DJIRCWorkMode)work withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>work</Name>
+					<Abstract type="html">Work mode</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCWorkMode:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getRCWorkModeWithResult:</TokenIdentifier>
+			<Abstract type="html">Get Remote Controller&apos;s work mode</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCWorkModeWithResult:(void ( ^ ) ( DJIRCWorkMode workMode , BOOL isConnected , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRCWorkModeWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/joinMasterWithID:masterName:masterPassword:withResult:</TokenIdentifier>
+			<Abstract type="html">Used by a slave machine to request to join a master.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)joinMasterWithID:(DJIRCID)hostId masterName:(DJIRCName)name masterPassword:(DJIRCPassword)password withResult:(void ( ^ ) ( DJIRCJoinMasterResult result , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hostId</Name>
+					<Abstract type="html">Master&apos;s identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Master&apos;s name</Abstract>
+				</Parameter><Parameter>
+					<Name>password</Name>
+					<Abstract type="html">Master&apos;s password</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/joinMasterWithID:masterName:masterPassword:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getJoinedMasterNameAndPassword:</TokenIdentifier>
+			<Abstract type="html">Get master&apos;s info</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getJoinedMasterNameAndPassword:(void ( ^ ) ( DJIRCID masterId , DJIRCName masterName , DJIRCPassword masterPassword , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getJoinedMasterNameAndPassword:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getAvailableMastersWithResult:</TokenIdentifier>
+			<Abstract type="html">Get searched available masters. User should call startSearchMasterWithResult to open search.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAvailableMastersWithResult:(void ( ^ ) ( NSArray *masters , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result. Array masters contain type of DJIRCInfo object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getAvailableMastersWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/startSearchMasterWithResult:</TokenIdentifier>
+			<Abstract type="html">Used by a slave to start search masters from nearby. call getAvailableMastersWithResult to get search result.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)startSearchMasterWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startSearchMasterWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/stopSearchMasterWithResult:</TokenIdentifier>
+			<Abstract type="html">Used by a slave to stop search masters from nearby.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopSearchMasterWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/stopSearchMasterWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getSearchMasterStateWithResult:</TokenIdentifier>
+			<Abstract type="html">Get if search master started.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSearchMasterStateWithResult:(void ( ^ ) ( BOOL isStarted , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSearchMasterStateWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getSlaveListWithResult:</TokenIdentifier>
+			<Abstract type="html">Used by a master to get the connected slaves.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveListWithResult:(void ( ^ ) ( NSArray *slaveList , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result. Objects is slaveList is kind of class DJIRCInfo</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSlaveListWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/removeSlave:withResult:</TokenIdentifier>
+			<Abstract type="html">Remove a slave form master.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)removeSlave:(DJIRCID)slaveId withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>slaveId</Name>
+					<Abstract type="html">Target slave to be remove.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeSlave:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/removeMaster:withResult:</TokenIdentifier>
+			<Abstract type="html">Disconnect to a master</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)removeMaster:(DJIRCID)masterId withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>masterId</Name>
+					<Abstract type="html">The connected master&apos;s identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeMaster:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setSlave:controlPermission:withResult:</TokenIdentifier>
+			<Abstract type="html">Set slave&apos;s control permission.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSlave:(DJIRCID)slaveId controlPermission:(DJIRCControlPermission)permission withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>slaveId</Name>
+					<Abstract type="html">Target slave to be set</Abstract>
+				</Parameter><Parameter>
+					<Name>permission</Name>
+					<Abstract type="html">Control permission</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSlave:controlPermission:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getSlaveControlPermission:</TokenIdentifier>
+			<Abstract type="html">Get slave&apos;s control permission.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveControlPermission:(void ( ^ ) ( NSArray *slaveList , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result. Objects is slaveList is kind of class DJIRCInfo</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSlaveControlPermission:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setSlaveControlMode:withResult:</TokenIdentifier>
+			<Abstract type="html">Set slave&apos;s control mode.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSlaveControlMode:(DJIRCControlMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Control mode to be set. the mode&apos;s style should be RCSlaveControlStyleXXX</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSlaveControlMode:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getSlaveControlModeWithResult:</TokenIdentifier>
+			<Abstract type="html">Get slave&apos;s control mode.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveControlModeWithResult:(void ( ^ ) ( DJIRCControlMode mode , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSlaveControlModeWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setSlaveJoystickControlGimbalSpeed:withResult:</TokenIdentifier>
+			<Abstract type="html">Set slave&apos;s joystick control the gimbal&apos;s pitch/roll/yaw speed.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSlaveJoystickControlGimbalSpeed:(DJIRCGimbalControlSpeed)speed withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Speed to be set for gimal&apos;s pitch/roll/yaw. speed value should be in range [0, 100].</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSlaveJoystickControlGimbalSpeed:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getSlaveJoystickControlGimbalSpeedWithResult:</TokenIdentifier>
+			<Abstract type="html">Get gimbal control speed.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveJoystickControlGimbalSpeedWithResult:(void ( ^ ) ( DJIRCGimbalControlSpeed speed , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSlaveJoystickControlGimbalSpeedWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setRCWheelControlGimbalSpeed:withResult:</TokenIdentifier>
+			<Abstract type="html">Set RC&apos;s wheel control the gimbal&apos;s pitch speed</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCWheelControlGimbalSpeed:(uint8_t)speed withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Speed of control gimbal. value should be in range [0, 100]</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCWheelControlGimbalSpeed:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getRCWheelControlGimbalSpeedWithResult:</TokenIdentifier>
+			<Abstract type="html">Get RC&apos;s wheel control gimbal&apos;s speed</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCWheelControlGimbalSpeedWithResult:(void ( ^ ) ( uint8_t speed , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRCWheelControlGimbalSpeedWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/requestGimbalControlRightWithResult:</TokenIdentifier>
+			<Abstract type="html">Used by a slave to rquest the gimbal&apos;s control right.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)requestGimbalControlRightWithResult:(void ( ^ ) ( DJIRCRequestGimbalControlResult result , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/requestGimbalControlRightWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/responseRequester:forGimbalControlRight:</TokenIdentifier>
+			<Abstract type="html">Used by a master to response the slave&apos;s gimbal control request</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)responseRequester:(DJIRCID)requesterId forGimbalControlRight:(BOOL)isAgree</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>requesterId</Name>
+					<Abstract type="html">The requester&apos;s identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>isAgree</Name>
+					<Abstract type="html">Agree or not for the gimbal control right request.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/responseRequester:forGimbalControlRight:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setRCControlGimbalDirection:withResult:</TokenIdentifier>
+			<Abstract type="html">Set RC&apos;s wheel that on the top left will control which direction(pitch or roll or yaw) of gimbal.</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCControlGimbalDirection:(DJIRCGimbalControlDirection)direction withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>direction</Name>
+					<Abstract type="html">Gimbal&apos;s direction control by the wheel</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCControlGimbalDirection:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getRCControlGimbalDirectionWithResult:</TokenIdentifier>
+			<Abstract type="html">Get RC control gimbal&apos;s direction</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCControlGimbalDirectionWithResult:(void ( ^ ) ( DJIRCGimbalControlDirection direction , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRCControlGimbalDirectionWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/setRCCustomButton1Index:customButtonIndex2:withResult:</TokenIdentifier>
+			<Abstract type="html">Set custom button index. The index is used by user to record user settings</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCCustomButton1Index:(uint8_t)index1 customButtonIndex2:(uint8_t)index2 withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index1</Name>
+					<Abstract type="html">Custom button1&apos;s index</Abstract>
+				</Parameter><Parameter>
+					<Name>index2</Name>
+					<Abstract type="html">Custom button2&apos;s index</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCCustomButton1Index:customButtonIndex2:withResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireRemoteController/getRCCustomButtonIndexWithResult:</TokenIdentifier>
+			<Abstract type="html">Get custom button&apos;s index settings</Abstract>
+			<DeclaredIn>DJIInspireRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCCustomButtonIndexWithResult:(void ( ^ ) ( uint8_t index1 , uint8_t index2 , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getRCCustomButtonIndexWithResult:</Anchor>
+            <NodeRef refid="27"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DJIWaypoint Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">DJI Mobile SDK For iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">DJI</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/actionRepeatTimes">actionRepeatTimes</option>
+		
+		<option value="//api/name/actionTimeout">actionTimeout</option>
+		
+		<option value="//api/name/altitude">altitude</option>
+		
+		<option value="//api/name/coordinate">coordinate</option>
+		
+		<option value="//api/name/cornerRadius">cornerRadius</option>
+		
+		<option value="//api/name/heading">heading</option>
+		
+		<option value="//api/name/turnMode">turnMode</option>
+		
+		<option value="//api/name/waypointActions">waypointActions</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addAction:">- addAction:</option>
+		
+		<option value="//api/name/initWithCoordinate:">- initWithCoordinate:</option>
+		
+		<option value="//api/name/removeAction:">- removeAction:</option>
+		
+		<option value="//api/name/removeActionAtIndex:">- removeActionAtIndex:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DJIWaypoint Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DJIWaypoint.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/coordinate" title="coordinate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/coordinate">&nbsp;&nbsp;coordinate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Coordinate of the waypoint in degrees.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CLLocationCoordinate2D coordinate</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/altitude" title="altitude"></a>
+	<h3 class="method-title"><code><a href="#//api/name/altitude">&nbsp;&nbsp;altitude</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Altitude of the aircraft in meters when it reaches the waypoint. The altitude of the
+aircarft is relative to the ground. Setting this value will take the aircraft to the
+altitude relative to the ground (the altitude at which it initially took off).
+The value of this property must be in the range of [-200, 500] meters and should not be
+larger then the aircraft&rsquo;s max limited height.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float altitude</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/heading" title="heading"></a>
+	<h3 class="method-title"><code><a href="#//api/name/heading">&nbsp;&nbsp;heading</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Heading of aircraft when it reaches the waypoint. The value of this property must be
+in the range of [-180, 180] degrees, where 0 represent true north. This property will be
+used when the waypoint mission&rsquo;s headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float heading</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionRepeatTimes" title="actionRepeatTimes"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionRepeatTimes">&nbsp;&nbsp;actionRepeatTimes</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dictates how many times a waypoint action is repeated. The default value is one time.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSUInteger actionRepeatTimes</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/actionTimeout" title="actionTimeout"></a>
+	<h3 class="method-title"><code><a href="#//api/name/actionTimeout">&nbsp;&nbsp;actionTimeout</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The maximum time set to excute all the waypoint actions for a waypoint. If the time,
+while executing the waypoint actions, goes above the time set, the aircraft will
+stop executing the waypoint actions for the current waypoint and will move on to
+the next waypoint. The value of this property must be in the range of [0, 999] seconds.
+The default value is 60 seconds.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) int actionTimeout</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cornerRadius" title="cornerRadius"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cornerRadius">&nbsp;&nbsp;cornerRadius</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
+the flight path as the aircraft reaches a waypoint will be a rounded corner. The value of
+this property must be in the range of [0.2, 1000] meters, and should smaller than the minimum distance(three dimensions) to the previous and the next waypoint.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float cornerRadius</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/turnMode" title="turnMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/turnMode">&nbsp;&nbsp;turnMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Determines how the aircraft will turn when rotating. Please take a look at the
+enum named <a href="../Constants/DJIWaypointTurnMode.html">DJIWaypointTurnMode</a> at the top of this file to see the two possible
+turn modes.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic) DJIWaypointTurnMode turnMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/waypointActions" title="waypointActions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/waypointActions">&nbsp;&nbsp;waypointActions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Array of all waypoint actions for the respective waypoint. The waypoint actions will
+be executed one at a time consecutively from the start of the array once the aircraft
+reaches the waypoint.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSArray *waypointActions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithCoordinate:" title="initWithCoordinate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithCoordinate:">&ndash;&nbsp;initWithCoordinate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initWithCoordinate:(CLLocationCoordinate2D)<em>coordinate</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addAction:" title="addAction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addAction:">&ndash;&nbsp;addAction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Adds a waypoint action to a waypoint. In order for this method to work, the
+number of current waypoint actions added to the waypoint should not be larger
+than DJIMaxActionCount. The action will only be executed when the mission&rsquo;s
+flightPathMode property is set to DJIWaypointMissionFlightPathNormal. Actions
+cannot be added when the mission&rsquo;s flightPathMode property is set to
+DJIWaypointMissionFlightPathCurved.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)addAction:(DJIWaypointAction *)<em>action</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>action</code></th>
+						<td><p>Waypoint action to be added to the waypoint.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether or not the waypoint action has been added to the waypoint. If the
+number of current waypoint actions added to the waypoint is larger
+than DJIMaxActionCount, the waypoint does not exist in the action list,
+or the waypoint action&rsquo;s actionParam is invalid, this method returns NO.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeAction:" title="removeAction:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeAction:">&ndash;&nbsp;removeAction:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Removes a waypoint action from the waypoint.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeAction:(DJIWaypointAction *)<em>action</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>action</code></th>
+						<td><p>Waypoint action to be removed from the waypoint.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether or not the waypoint action has been removed from the waypoint.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/removeActionAtIndex:" title="removeActionAtIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/removeActionAtIndex:">&ndash;&nbsp;removeActionAtIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Remove a waypoint action by index.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)removeActionAtIndex:(int)<em>index</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>index</code></th>
+						<td><p>Waypoint action to be removed at index.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Whether or not the waypoint action has been removed from the waypoint.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIWaypoint.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

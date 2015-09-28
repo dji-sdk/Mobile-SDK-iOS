@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DJIPhantomViewController">
+            <connections>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-v9-45X">
+                    <rect key="frame" x="56" y="80" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187" id="k5X-Pu-CQF"/>
+                        <constraint firstAttribute="height" constant="47" id="pEv-Ie-bNP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Camera" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onCameraButtonClicked:" destination="-1" eventType="touchUpInside" id="imb-30-53b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-jN-O8H">
+                    <rect key="frame" x="56" y="135" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="2ay-f3-67B"/>
+                        <constraint firstAttribute="width" constant="187" id="nkT-LR-VbB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="MainController" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onManinControllerButtonClicked:" destination="-1" eventType="touchUpInside" id="idq-2S-D5s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-dX-ZUe">
+                    <rect key="frame" x="326" y="135" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="5jU-hM-Mt0"/>
+                        <constraint firstAttribute="width" constant="187" id="LMR-a8-Cgq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="GroundStation" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGroundStationButtonClicked:" destination="-1" eventType="touchUpInside" id="vIR-pZ-KaX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmg-lm-Wmd">
+                    <rect key="frame" x="326" y="80" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="7lz-eQ-vUF"/>
+                        <constraint firstAttribute="width" constant="187" id="MKT-Wr-Np8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Gimbal" backgroundImage="btn.png"/>
+                    <connections>
+                        <action selector="onGimbalButtonClicked:" destination="-1" eventType="touchUpInside" id="a88-KC-7ed"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y06-lT-L6x">
+                    <rect key="frame" x="326" y="190" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="Dic-dx-gaw"/>
+                        <constraint firstAttribute="width" constant="187" id="ptg-Yl-Gd7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="RangExtender" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onRangeExtenderButtonClicked:" destination="-1" eventType="touchUpInside" id="gSU-0Q-JHw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPZ-5Z-NkR">
+                    <rect key="frame" x="56" y="190" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="5Wz-if-T6m"/>
+                        <constraint firstAttribute="width" constant="187" id="amb-hQ-foA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Battery" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBatteryButtonClicked:" destination="-1" eventType="touchUpInside" id="7do-3b-gCJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-1a-Lii">
+                    <rect key="frame" x="56" y="245" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187" id="bdj-W1-D26"/>
+                        <constraint firstAttribute="height" constant="47" id="vI6-mS-clW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Media" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onMediaButtonClicked:" destination="-1" eventType="touchUpInside" id="Git-9A-fO8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="cmg-lm-Wmd" secondAttribute="centerX" constant="-135.5" id="21R-Be-Al1"/>
+                <constraint firstAttribute="centerY" secondItem="cmg-lm-Wmd" secondAttribute="centerY" constant="56.5" id="5p6-x6-BBD"/>
+                <constraint firstAttribute="centerY" secondItem="FEh-1a-Lii" secondAttribute="centerY" constant="-108.5" id="D9x-nE-YLW"/>
+                <constraint firstAttribute="centerX" secondItem="ruA-v9-45X" secondAttribute="centerX" constant="134.5" id="XvA-Lp-1mU"/>
+                <constraint firstAttribute="centerY" secondItem="ruA-v9-45X" secondAttribute="centerY" constant="56.5" id="YEc-LE-a0p"/>
+                <constraint firstAttribute="centerX" secondItem="FEh-1a-Lii" secondAttribute="centerX" constant="134.5" id="bNp-qQ-d7I"/>
+                <constraint firstAttribute="centerY" secondItem="y06-lT-L6x" secondAttribute="centerY" constant="-53.5" id="cna-T6-YBR"/>
+                <constraint firstAttribute="centerX" secondItem="9Ku-jN-O8H" secondAttribute="centerX" constant="134.5" id="eWd-il-qTQ"/>
+                <constraint firstAttribute="centerX" secondItem="y06-lT-L6x" secondAttribute="centerX" constant="-135.5" id="ghq-0c-pbI"/>
+                <constraint firstAttribute="centerY" secondItem="9Ku-jN-O8H" secondAttribute="centerY" constant="1.5" id="hWs-fh-2ht"/>
+                <constraint firstAttribute="centerX" secondItem="UPZ-5Z-NkR" secondAttribute="centerX" constant="134.5" id="jbO-3M-1tA"/>
+                <constraint firstAttribute="centerX" secondItem="xvV-dX-ZUe" secondAttribute="centerX" constant="-135.5" id="k9X-2O-wzc"/>
+                <constraint firstAttribute="centerY" secondItem="xvV-dX-ZUe" secondAttribute="centerY" constant="1.5" id="kYI-o6-L2g"/>
+                <constraint firstAttribute="centerY" secondItem="UPZ-5Z-NkR" secondAttribute="centerY" constant="-53.5" id="l8C-8S-uQa"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+</document>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DJIInspireViewController">
+            <connections>
+                <outlet property="versionLabel" destination="rLk-1i-Y6f" id="4V0-U7-w8y"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeO-ZW-EXE">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLk-1i-Y6f">
+                            <rect key="frame" x="0.0" y="291" width="568" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="29" id="BiK-X6-r7q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rLk-1i-Y6f" firstAttribute="leading" secondItem="oeO-ZW-EXE" secondAttribute="leading" id="CEP-IY-YtP"/>
+                        <constraint firstAttribute="trailing" secondItem="rLk-1i-Y6f" secondAttribute="trailing" id="PfZ-1U-bj2"/>
+                        <constraint firstAttribute="bottom" secondItem="rLk-1i-Y6f" secondAttribute="bottom" id="PsV-Mw-TeT"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-v9-45X">
+                    <rect key="frame" x="60" y="65" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="Zru-OY-e8q"/>
+                        <constraint firstAttribute="width" constant="187" id="nqo-B4-OgA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Camera" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onCameraButtonClicked:" destination="-1" eventType="touchUpInside" id="imb-30-53b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ku-jN-O8H">
+                    <rect key="frame" x="60" y="120" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="SVy-5V-1XP"/>
+                        <constraint firstAttribute="width" constant="187" id="vM5-Df-kVp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="MainController" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onManinControllerButtonClicked:" destination="-1" eventType="touchUpInside" id="idq-2S-D5s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmg-lm-Wmd">
+                    <rect key="frame" x="321" y="120" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="6EI-d6-7xB"/>
+                        <constraint firstAttribute="width" constant="187" id="Hhr-rf-DDj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Gimbal" backgroundImage="btn.png"/>
+                    <connections>
+                        <action selector="onGimbalButtonClicked:" destination="-1" eventType="touchUpInside" id="a88-KC-7ed"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPZ-5Z-NkR">
+                    <rect key="frame" x="60" y="172" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="1KQ-VK-MQY"/>
+                        <constraint firstAttribute="width" constant="187" id="L6C-Kf-H9W"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Battery" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBatteryButtonClicked:" destination="-1" eventType="touchUpInside" id="7do-3b-gCJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxc-k4-xBF">
+                    <rect key="frame" x="60" y="224" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="OVA-aw-cuF"/>
+                        <constraint firstAttribute="width" constant="187" id="PNg-Tk-nq0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="ImageTransmitter" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onImageTransmitterButtonClicked:" destination="-1" eventType="touchUpInside" id="C39-gf-nqk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1V-VA-oVo">
+                    <rect key="frame" x="321" y="65" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="45Y-9y-W4q"/>
+                        <constraint firstAttribute="width" constant="187" id="Kxd-j0-tDT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="RemoteController" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onRemoteControllerButtonClicked:" destination="-1" eventType="touchUpInside" id="ajc-n6-zSH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvV-dX-ZUe">
+                    <rect key="frame" x="321" y="172" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187" id="Qqp-6F-3pE"/>
+                        <constraint firstAttribute="height" constant="47" id="hx1-KE-eI3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Navigation" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onNavigationButtonClicked:" destination="-1" eventType="touchUpInside" id="F3L-WX-04R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pi-p2-uEh">
+                    <rect key="frame" x="321" y="224" width="187" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="187" id="0NI-eG-KbQ"/>
+                        <constraint firstAttribute="height" constant="47" id="Dm6-2x-zms"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Media" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onMediaButtonClicked:" destination="-1" eventType="touchUpInside" id="NxU-Ia-srl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oeO-ZW-EXE" secondAttribute="trailing" id="04v-EP-g2e"/>
+                <constraint firstAttribute="centerX" secondItem="ruA-v9-45X" secondAttribute="centerX" constant="130" id="3Pz-RK-Cmy"/>
+                <constraint firstAttribute="centerY" secondItem="9Ku-jN-O8H" secondAttribute="centerY" constant="16" id="5HW-5W-xsi"/>
+                <constraint firstItem="9pi-p2-uEh" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" constant="130.5" id="8IE-j1-OEl"/>
+                <constraint firstAttribute="centerY" secondItem="cmg-lm-Wmd" secondAttribute="centerY" constant="16" id="CGV-Zv-lM0"/>
+                <constraint firstAttribute="centerX" secondItem="yxc-k4-xBF" secondAttribute="centerX" constant="130" id="ER2-kV-Wr0"/>
+                <constraint firstAttribute="centerY" secondItem="ruA-v9-45X" secondAttribute="centerY" constant="72" id="Gb9-ob-udJ"/>
+                <constraint firstAttribute="centerX" secondItem="9Ku-jN-O8H" secondAttribute="centerX" constant="130" id="IqV-u5-0tU"/>
+                <constraint firstAttribute="centerY" secondItem="xvV-dX-ZUe" secondAttribute="centerY" constant="-36" id="MWL-JP-r2p"/>
+                <constraint firstAttribute="centerX" secondItem="cmg-lm-Wmd" secondAttribute="centerX" constant="-130" id="Omv-d3-7sZ"/>
+                <constraint firstAttribute="centerY" secondItem="yxc-k4-xBF" secondAttribute="centerY" constant="-88" id="RA7-td-fvM"/>
+                <constraint firstAttribute="centerX" secondItem="p1V-VA-oVo" secondAttribute="centerX" constant="-130" id="Rti-pK-0y8"/>
+                <constraint firstAttribute="centerX" secondItem="UPZ-5Z-NkR" secondAttribute="centerX" constant="130" id="Rty-oP-iKi"/>
+                <constraint firstAttribute="centerY" secondItem="UPZ-5Z-NkR" secondAttribute="centerY" constant="-36" id="Vul-1t-d95"/>
+                <constraint firstAttribute="bottom" secondItem="oeO-ZW-EXE" secondAttribute="bottom" id="Wtg-p9-PbE"/>
+                <constraint firstAttribute="centerX" secondItem="xvV-dX-ZUe" secondAttribute="centerX" constant="-130" id="ZGp-Pw-QsZ"/>
+                <constraint firstItem="oeO-ZW-EXE" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="b6o-i4-vvw"/>
+                <constraint firstAttribute="centerY" secondItem="p1V-VA-oVo" secondAttribute="centerY" constant="72" id="kyc-ue-YSt"/>
+                <constraint firstItem="oeO-ZW-EXE" firstAttribute="top" secondItem="1" secondAttribute="top" id="nln-rf-fRb"/>
+                <constraint firstItem="9pi-p2-uEh" firstAttribute="centerY" secondItem="1" secondAttribute="centerY" constant="87.5" id="rgc-Oi-48w"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+</document>

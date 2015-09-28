@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dq-eB-zxT">
+                    <rect key="frame" x="268" y="68" width="200" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="uuE-IX-7UW"/>
+                        <constraint firstAttribute="width" constant="200" id="wen-8G-aNS"/>
+                    </constraints>
+                    <state key="normal" title="Joystick" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onJoystickButtonClicked:" destination="-1" eventType="touchUpInside" id="BJp-Ge-ZQ0"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXn-Ih-xTn">
+                    <rect key="frame" x="268" y="125" width="200" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="1PW-NK-lAH"/>
+                        <constraint firstAttribute="width" constant="200" id="Wc6-wO-44w"/>
+                    </constraints>
+                    <state key="normal" title="Waypoint" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onWaypointButtonClicked:" destination="-1" eventType="touchUpInside" id="DPc-rZ-6eg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaM-kD-rOB">
+                    <rect key="frame" x="268" y="182" width="200" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="bcM-I4-IVf"/>
+                        <constraint firstAttribute="width" constant="200" id="oNO-4z-bp3"/>
+                    </constraints>
+                    <state key="normal" title="HotPoint" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onHotPointButtonClicked:" destination="-1" eventType="touchUpInside" id="3Be-2R-luA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFL-QT-Okm">
+                    <rect key="frame" x="268" y="239" width="200" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="GK1-0s-3Kb"/>
+                        <constraint firstAttribute="width" constant="200" id="YDd-VS-MPH"/>
+                    </constraints>
+                    <state key="normal" title="FollowMe" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFollowMeButtonClicked:" destination="-1" eventType="touchUpInside" id="R0c-H2-aWB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2c-N1-aud">
+                    <rect key="frame" x="268" y="296" width="200" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="Tu6-Fv-yU3"/>
+                        <constraint firstAttribute="width" constant="200" id="day-Sz-vSH"/>
+                    </constraints>
+                    <state key="normal" title="IOC" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onIOCButtonClicked:" destination="-1" eventType="touchUpInside" id="p1N-EO-5m5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="pFL-QT-Okm" secondAttribute="centerX" id="5eF-WF-BuJ"/>
+                <constraint firstItem="gaM-kD-rOB" firstAttribute="top" secondItem="HXn-Ih-xTn" secondAttribute="bottom" constant="8" id="AoV-RD-5U9"/>
+                <constraint firstAttribute="centerY" secondItem="gaM-kD-rOB" secondAttribute="centerY" id="K2G-B4-WDn"/>
+                <constraint firstAttribute="centerX" secondItem="4dq-eB-zxT" secondAttribute="centerX" id="bOW-VM-fKN"/>
+                <constraint firstItem="HXn-Ih-xTn" firstAttribute="top" secondItem="4dq-eB-zxT" secondAttribute="bottom" constant="8" id="dPD-ZO-0WN"/>
+                <constraint firstAttribute="centerX" secondItem="y2c-N1-aud" secondAttribute="centerX" id="e8Y-eS-hwi"/>
+                <constraint firstItem="pFL-QT-Okm" firstAttribute="top" secondItem="gaM-kD-rOB" secondAttribute="bottom" constant="8" id="epy-0x-EJe"/>
+                <constraint firstAttribute="centerX" secondItem="HXn-Ih-xTn" secondAttribute="centerX" id="f8r-Nx-B07"/>
+                <constraint firstItem="y2c-N1-aud" firstAttribute="top" secondItem="pFL-QT-Okm" secondAttribute="bottom" constant="8" id="lgI-e3-BNd"/>
+                <constraint firstAttribute="centerX" secondItem="gaM-kD-rOB" secondAttribute="centerX" id="mTc-ha-SO5"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+</document>

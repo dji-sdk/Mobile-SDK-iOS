@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InspireGimbalTestViewController">
+            <connections>
+                <outlet property="pitchInputBox" destination="ORp-Sn-ZUZ" id="Kf3-DW-O6A"/>
+                <outlet property="pitchReachMax" destination="Mhz-7H-zOb" id="hi6-pp-h6W"/>
+                <outlet property="rollFineTune" destination="O1v-GY-DOq" id="956-2m-qZ5"/>
+                <outlet property="view" destination="1" id="Hgh-DJ-p0V"/>
+                <outlet property="workModeSegmented" destination="DNR-zv-IBy" id="Ylr-HG-G2R"/>
+                <outlet property="yawInputBox" destination="DEp-fj-KTz" id="LTd-Si-fmY"/>
+                <outlet property="yawReachMax" destination="l9S-M8-3zR" id="zrE-HD-KUu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y9-JS-vc6">
+                    <rect key="frame" x="398" y="105" width="46" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="PzG-jq-a8r"/>
+                        <constraint firstAttribute="width" constant="46" id="iVj-Xr-Ugh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="+" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalScrollUpTouchDown:" destination="-1" eventType="touchDown" id="sUP-aM-bVI"/>
+                        <action selector="onGimbalScrollUpTouchUp:" destination="-1" eventType="touchUpOutside" id="gL0-zl-jRf"/>
+                        <action selector="onGimbalScrollUpTouchUp:" destination="-1" eventType="touchUpInside" id="yXm-fb-kmF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C05-we-wQw">
+                    <rect key="frame" x="398" y="193" width="46" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="Fsx-zT-zhB"/>
+                        <constraint firstAttribute="width" constant="46" id="qL6-XS-aO7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="-" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalScroollDownTouchDown:" destination="-1" eventType="touchDown" id="5Fp-DM-mlY"/>
+                        <action selector="onGimbalScroollDownTouchUp:" destination="-1" eventType="touchUpOutside" id="iaY-t3-t8I"/>
+                        <action selector="onGimbalScroollDownTouchUp:" destination="-1" eventType="touchUpInside" id="kqY-NK-3JP"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DNR-zv-IBy">
+                    <rect key="frame" x="191" y="59" width="234" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="6eB-x4-X0b"/>
+                        <constraint firstAttribute="width" constant="234" id="Q2y-Wt-Rry"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Free"/>
+                        <segment title="FPV"/>
+                        <segment title="YawFollow"/>
+                    </segments>
+                    <connections>
+                        <action selector="onWorkModeSelectionChanged:" destination="-1" eventType="valueChanged" id="F46-26-TtS"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtY-Pr-YXa">
+                    <rect key="frame" x="321" y="254" width="75" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="M7L-Xm-e2B"/>
+                        <constraint firstAttribute="height" constant="47" id="wXN-Db-jik"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="&lt;--" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalYawRotationBackwardTouchDown:" destination="-1" eventType="touchDown" id="xrd-h1-m8U"/>
+                        <action selector="onGimbalYawRotationBackwardTouchUp:" destination="-1" eventType="touchUpInside" id="Dkr-cm-S7B"/>
+                        <action selector="onGimbalYawRotationBackwardTouchUp:" destination="-1" eventType="touchUpOutside" id="JEG-ft-l6b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ic2-1q-j4X">
+                    <rect key="frame" x="447" y="254" width="75" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="AIB-Jq-ycf"/>
+                        <constraint firstAttribute="width" constant="75" id="Wyw-Gj-b2u"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="--&gt;" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalYawRotationForwardTouchDown:" destination="-1" eventType="touchDown" id="fh5-FH-Ggi"/>
+                        <action selector="onGimbalYawRotationForwardTouchUp:" destination="-1" eventType="touchUpInside" id="Pxj-ct-Yf5"/>
+                        <action selector="onGimbalYawRotationForwardTouchUp:" destination="-1" eventType="touchUpOutside" id="nFw-Lq-81Y"/>
+                    </connections>
+                </button>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-30" maximumValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="A97-GO-DI5">
+                    <rect key="frame" x="191" y="129" width="94" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="94" id="Nf8-iD-Ixc"/>
+                        <constraint firstAttribute="height" constant="29" id="r26-yG-k3m"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onRollFineTuneChanged:" destination="-1" eventType="valueChanged" id="JRy-eZ-nle"/>
+                    </connections>
+                </stepper>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WorkMode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PxY-6z-bOl">
+                    <rect key="frame" x="191" y="32" width="113" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="RlS-90-dp0"/>
+                        <constraint firstAttribute="height" constant="21" id="m45-fO-uxJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll Fine-tune:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ScL-Dm-GFK">
+                    <rect key="frame" x="191" y="104" width="113" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="FPD-cC-QTS"/>
+                        <constraint firstAttribute="height" constant="21" id="Jdy-W0-Iwa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9S-M8-3zR">
+                    <rect key="frame" x="405" y="262" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="13h-J2-4Mz"/>
+                        <constraint firstAttribute="width" constant="32" id="ObE-kR-JxB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-7H-zOb">
+                    <rect key="frame" x="405" y="157" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="J8L-lg-ykd"/>
+                        <constraint firstAttribute="height" constant="32" id="eP1-pd-txv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1v-GY-DOq">
+                    <rect key="frame" x="292" y="104" width="61" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="61" id="G9W-1D-2Kv"/>
+                        <constraint firstAttribute="height" constant="21" id="KZ5-A4-ehx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clr-lN-YoW">
+                    <rect key="frame" x="8" y="50" width="124" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="124" id="485-kO-Qvu"/>
+                        <constraint firstAttribute="height" constant="47" id="WMQ-Bo-LOX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Reset" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalResetButtonClicked:" destination="-1" eventType="touchUpInside" id="cVI-Hd-2Sv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ3-Za-AIF">
+                    <rect key="frame" x="8" y="105" width="124" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="124" id="30S-CM-DC7"/>
+                        <constraint firstAttribute="height" constant="47" id="PrY-ny-SOB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Calibration" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onGimbalCalibrationButtonClicked:" destination="-1" eventType="touchUpInside" id="BCk-b8-yeJ"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pitch Angle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-Sn-ZUZ">
+                    <rect key="frame" x="18" y="210" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="5sq-S7-BQC"/>
+                        <constraint firstAttribute="height" constant="30" id="jUL-SX-Udi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="QnQ-33-H2Q"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yaw Angle" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DEp-fj-KTz">
+                    <rect key="frame" x="18" y="263" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="cgv-xb-1Ts"/>
+                        <constraint firstAttribute="height" constant="30" id="fzY-hK-4Qs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="RR5-gS-oeM"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ig-NR-aCN">
+                    <rect key="frame" x="130" y="215" width="64" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="jRV-Oz-p0k"/>
+                        <constraint firstAttribute="width" constant="64" id="kYJ-fK-fYs"/>
+                    </constraints>
+                    <state key="normal" title="GO" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onSetGimbalAngleButtonClicked:" destination="-1" eventType="touchUpInside" id="WyW-LN-BtX"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="7y9-JS-vc6" secondAttribute="centerY" constant="32" id="0NL-dP-bN5"/>
+                <constraint firstAttribute="centerX" secondItem="Mhz-7H-zOb" secondAttribute="centerX" constant="-137" id="1aw-kA-v0e"/>
+                <constraint firstAttribute="centerY" secondItem="2ig-NR-aCN" secondAttribute="centerY" constant="-86" id="2ax-SR-ubM"/>
+                <constraint firstAttribute="centerX" secondItem="O1v-GY-DOq" secondAttribute="centerX" constant="-38" id="6kw-Fa-s1p"/>
+                <constraint firstAttribute="centerY" secondItem="DNR-zv-IBy" secondAttribute="centerY" constant="87" id="AJn-fZ-JDu"/>
+                <constraint firstAttribute="centerY" secondItem="C05-we-wQw" secondAttribute="centerY" constant="-56" id="AUu-mT-I1p"/>
+                <constraint firstAttribute="centerY" secondItem="A97-GO-DI5" secondAttribute="centerY" constant="16" id="AwG-CC-AXp"/>
+                <constraint firstAttribute="centerY" secondItem="clr-lN-YoW" secondAttribute="centerY" constant="86" id="Diw-eo-Iqb"/>
+                <constraint firstAttribute="centerY" secondItem="pZ3-Za-AIF" secondAttribute="centerY" constant="32" id="Hyr-E8-fj5"/>
+                <constraint firstAttribute="centerX" secondItem="ScL-Dm-GFK" secondAttribute="centerX" constant="36" id="Jt6-6w-O0A"/>
+                <constraint firstAttribute="centerX" secondItem="2ig-NR-aCN" secondAttribute="centerX" constant="122" id="Lsw-Il-u03"/>
+                <constraint firstAttribute="centerX" secondItem="MtY-Pr-YXa" secondAttribute="centerX" constant="-74" id="MdF-l2-3Ak"/>
+                <constraint firstAttribute="centerX" secondItem="C05-we-wQw" secondAttribute="centerX" constant="-137" id="ULS-nP-R9e"/>
+                <constraint firstAttribute="centerY" secondItem="ORp-Sn-ZUZ" secondAttribute="centerY" constant="-65" id="Uzm-xe-S7U"/>
+                <constraint firstAttribute="centerX" secondItem="clr-lN-YoW" secondAttribute="centerX" constant="214" id="V4J-Kq-YnC"/>
+                <constraint firstAttribute="centerX" secondItem="DNR-zv-IBy" secondAttribute="centerX" constant="-24" id="V9H-d6-RJF"/>
+                <constraint firstAttribute="centerX" secondItem="PxY-6z-bOl" secondAttribute="centerX" constant="36" id="Zja-eY-Fa3"/>
+                <constraint firstAttribute="centerX" secondItem="ic2-1q-j4X" secondAttribute="centerX" constant="-200" id="dm9-lt-Sha"/>
+                <constraint firstAttribute="centerY" secondItem="DEp-fj-KTz" secondAttribute="centerY" constant="-118" id="eUg-Ag-XY2"/>
+                <constraint firstAttribute="centerY" secondItem="ScL-Dm-GFK" secondAttribute="centerY" constant="46" id="hHD-8w-wsl"/>
+                <constraint firstAttribute="centerY" secondItem="MtY-Pr-YXa" secondAttribute="centerY" constant="-118" id="neP-gw-taH"/>
+                <constraint firstAttribute="centerX" secondItem="7y9-JS-vc6" secondAttribute="centerX" constant="-137" id="nwl-QU-JEB"/>
+                <constraint firstAttribute="centerX" secondItem="ORp-Sn-ZUZ" secondAttribute="centerX" constant="218" id="pQD-Xh-HDL"/>
+                <constraint firstAttribute="centerY" secondItem="O1v-GY-DOq" secondAttribute="centerY" constant="46" id="pSH-aK-fTg"/>
+                <constraint firstAttribute="centerX" secondItem="pZ3-Za-AIF" secondAttribute="centerX" constant="214" id="qg6-kx-ccZ"/>
+                <constraint firstAttribute="centerX" secondItem="A97-GO-DI5" secondAttribute="centerX" constant="46" id="rt0-fw-ga1"/>
+                <constraint firstAttribute="centerY" secondItem="PxY-6z-bOl" secondAttribute="centerY" constant="118" id="t9b-Q8-v0j"/>
+                <constraint firstAttribute="centerY" secondItem="l9S-M8-3zR" secondAttribute="centerY" constant="-118" id="tk0-SF-53v"/>
+                <constraint firstAttribute="centerY" secondItem="ic2-1q-j4X" secondAttribute="centerY" constant="-118" id="usU-Ir-SIH"/>
+                <constraint firstAttribute="centerX" secondItem="l9S-M8-3zR" secondAttribute="centerX" constant="-137" id="xGl-Ny-u59"/>
+                <constraint firstAttribute="centerY" secondItem="Mhz-7H-zOb" secondAttribute="centerY" constant="-13" id="z8F-2U-41B"/>
+                <constraint firstAttribute="centerX" secondItem="DEp-fj-KTz" secondAttribute="centerX" constant="218" id="zpi-8Y-Gxy"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DJIWaypointMissionFinishedAction Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">DJI Mobile SDK For iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">DJI</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DJIWaypointMissionFinishedAction Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>DJIWaypointMission.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">DJIWaypointMissionFinishedAction</h3>
+                    
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(uint8_t, DJIWaypointMissionFinishedAction ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">DJIWaypointMissionFinishedNoAction</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">DJIWaypointMissionFinishedGoHome</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">DJIWaypointMissionFinishedAutoLand</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">DJIWaypointMissionFinishedGoFirstWaypoint</a>,<br>
+                            
+                            &nbsp;&nbsp; <a href="">DJIWaypointMissionFinishedContinueUntilEnd</a>,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="DJIWaypointMissionFinishedNoAction"></a><code>DJIWaypointMissionFinishedNoAction</code></dt>
+<dd>
+
+
+<p>No action will be taken. The aircraft will exit the task and hover in the
+air where the task was completed. After that, the aircraft will be able
+to be controlled by the remote controller.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">DJIWaypointMission.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="DJIWaypointMissionFinishedGoHome"></a><code>DJIWaypointMissionFinishedGoHome</code></dt>
+<dd>
+
+
+<p>The aicraft will go home.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">DJIWaypointMission.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="DJIWaypointMissionFinishedAutoLand"></a><code>DJIWaypointMissionFinishedAutoLand</code></dt>
+<dd>
+
+
+<p>The aircraft will land automatically.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">DJIWaypointMission.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="DJIWaypointMissionFinishedGoFirstWaypoint"></a><code>DJIWaypointMissionFinishedGoFirstWaypoint</code></dt>
+<dd>
+
+
+<p>The aircraft will go back to its first waypoint.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">DJIWaypointMission.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="DJIWaypointMissionFinishedContinueUntilEnd"></a><code>DJIWaypointMissionFinishedContinueUntilEnd</code></dt>
+<dd>
+
+
+<p>If the user attempts to pull the aircraft back along the flight path as the
+mission is being executed, the aircarft will move towards the previous waypoint
+and will continue to do so until there are no more waypoint to move back to or
+the user has stopped attempting to move the aircraft back. In the process of moving the
+aircraft back, if the user ever stops attempting to do so the aircraft will,
+automatically continue the mission until the end.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">DJIWaypointMission.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

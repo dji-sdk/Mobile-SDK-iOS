@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DJIGimbal Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">DJI Mobile SDK For iOS </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">DJI</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/attitudeUpdateInterval">attitudeUpdateInterval</option>
+		
+		<option value="//api/name/delegate">delegate</option>
+		
+		<option value="//api/name/gimbalAttitude">gimbalAttitude</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/getGimbalCapacity">- getGimbalCapacity</option>
+		
+		<option value="//api/name/getVersionWithResult:">- getVersionWithResult:</option>
+		
+		<option value="//api/name/setGimbalFpvMode:withResult:">- setGimbalFpvMode:withResult:</option>
+		
+		<option value="//api/name/setGimbalPitch:Roll:Yaw:withResult:">- setGimbalPitch:Roll:Yaw:withResult:</option>
+		
+		<option value="//api/name/startGimbalAttitudeUpdateToQueue:withResultBlock:">- startGimbalAttitudeUpdateToQueue:withResultBlock:</option>
+		
+		<option value="//api/name/startGimbalAttitudeUpdates">- startGimbalAttitudeUpdates</option>
+		
+		<option value="//api/name/stopGimbalAttitudeUpdates">- stopGimbalAttitudeUpdates</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DJIGimbal Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/DJIObject.html">DJIObject</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DJIGimbal.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;DJIGimbalDelegate&gt; delegate</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attitudeUpdateInterval" title="attitudeUpdateInterval"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attitudeUpdateInterval">&nbsp;&nbsp;attitudeUpdateInterval</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>the attitude update time interval, the value should not smaller than 25ms. Default value is 50ms</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int attitudeUpdateInterval</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGimbal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gimbalAttitude" title="gimbalAttitude"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gimbalAttitude">&nbsp;&nbsp;gimbalAttitude</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIGimbalAttitude gimbalAttitude</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getGimbalCapacity" title="getGimbalCapacity"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getGimbalCapacity">&ndash;&nbsp;getGimbalCapacity</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the gimbal&rsquo;s capacity.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DJIGimbalCapacity *)getGimbalCapacity</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>gimbal capacity, return nil if connection failured.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGimbal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getVersionWithResult:" title="getVersionWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getVersionWithResult:">&ndash;&nbsp;getVersionWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get gimbal&rsquo;s firmware version</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getVersionWithResult:(void ( ^ ) ( NSString *version , DJIError *error ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGimbal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startGimbalAttitudeUpdates" title="startGimbalAttitudeUpdates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startGimbalAttitudeUpdates">&ndash;&nbsp;startGimbalAttitudeUpdates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)startGimbalAttitudeUpdates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopGimbalAttitudeUpdates" title="stopGimbalAttitudeUpdates"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopGimbalAttitudeUpdates">&ndash;&nbsp;stopGimbalAttitudeUpdates</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)stopGimbalAttitudeUpdates</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startGimbalAttitudeUpdateToQueue:withResultBlock:" title="startGimbalAttitudeUpdateToQueue:withResultBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startGimbalAttitudeUpdateToQueue:withResultBlock:">&ndash;&nbsp;startGimbalAttitudeUpdateToQueue:withResultBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)startGimbalAttitudeUpdateToQueue:(NSOperationQueue *)<em>queue</em> withResultBlock:(GimbalAttitudeResultBlock)<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setGimbalFpvMode:withResult:" title="setGimbalFpvMode:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setGimbalFpvMode:withResult:">&ndash;&nbsp;setGimbalFpvMode:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set FPV mode. Typedef of block to be invoked when fpv mode is set success.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setGimbalFpvMode:(BOOL)<em>isFpv</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGimbal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setGimbalPitch:Roll:Yaw:withResult:" title="setGimbalPitch:Roll:Yaw:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setGimbalPitch:Roll:Yaw:withResult:">&ndash;&nbsp;setGimbalPitch:Roll:Yaw:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set gimbal&rsquo;s pitch roll yaw rotation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setGimbalPitch:(DJIGimbalRotation)<em>pitch</em> Roll:(DJIGimbalRotation)<em>roll</em> Yaw:(DJIGimbalRotation)<em>yaw</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pitch</code></th>
+						<td><p>Gimbal&rsquo;s pitch rotation parameter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>roll</code></th>
+						<td><p>Gimbal&rsquo;s roll rotation parameter</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>yaw</code></th>
+						<td><p>Gimbal&rsquo;s yaw rotation parameter</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIGimbal.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

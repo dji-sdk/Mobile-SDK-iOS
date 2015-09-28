@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationFollowMeViewController">
+            <connections>
+                <outlet property="accuracyLabel" destination="Jxb-hQ-d8V" id="X44-tx-mkX"/>
+                <outlet property="headingControl" destination="D1i-oF-rbl" id="eNq-aM-MMW"/>
+                <outlet property="locationLabel" destination="i46-9L-Aav" id="0Xr-Kp-8kA"/>
+                <outlet property="previewView" destination="oOf-11-1hb" id="YEB-BR-WZB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oOf-11-1hb">
+                    <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D1i-oF-rbl">
+                            <rect key="frame" x="225" y="194" width="179" height="29"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="179" id="MyY-Xa-D99"/>
+                                <constraint firstAttribute="height" constant="28" id="pG0-4m-OLD"/>
+                            </constraints>
+                            <segments>
+                                <segment title="CtrlByUser"/>
+                                <segment title="FaceToUser"/>
+                            </segments>
+                        </segmentedControl>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="D1i-oF-rbl" secondAttribute="centerX" constant="-30.5" id="UM0-6w-KGz"/>
+                        <constraint firstAttribute="centerY" secondItem="D1i-oF-rbl" secondAttribute="centerY" constant="-48" id="ZkI-5D-6vF"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgq-zJ-ypB">
+                    <rect key="frame" x="215" y="86" width="134" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="Cj9-gM-UYS"/>
+                        <constraint firstAttribute="width" constant="134" id="egJ-04-V8P"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Start" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFollowMeStart:" destination="-1" eventType="touchUpInside" id="YuB-j0-bEW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCx-T8-n9I">
+                    <rect key="frame" x="215" y="134" width="134" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="0gT-r2-BwO"/>
+                        <constraint firstAttribute="width" constant="134" id="74F-bG-Jw8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Stop" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFollowMeStop:" destination="-1" eventType="touchUpInside" id="3v0-X0-LgJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33O-oI-Z8U">
+                    <rect key="frame" x="362" y="86" width="141" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="141" id="I1c-Sa-Nzq"/>
+                        <constraint firstAttribute="height" constant="43" id="I4d-4F-9or"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Pause" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFollowMePause:" destination="-1" eventType="touchUpInside" id="OHA-cn-obY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0i-Qt-IDU">
+                    <rect key="frame" x="361" y="134" width="141" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="0ml-IQ-jU0"/>
+                        <constraint firstAttribute="width" constant="141" id="LM2-1r-iHB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Resume" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onFollowMeResume:" destination="-1" eventType="touchUpInside" id="fnr-iD-8I3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12O-HD-zp4">
+                    <rect key="frame" x="65" y="86" width="134" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="rGc-eD-Sqe"/>
+                        <constraint firstAttribute="width" constant="134" id="s46-Ut-fHr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Enter Nav Mode" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onEnterNavigationButtonClicked:" destination="-1" eventType="touchUpInside" id="XJE-XG-9lD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6W-ic-CL8">
+                    <rect key="frame" x="65" y="136" width="134" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="3Nb-hL-fin"/>
+                        <constraint firstAttribute="width" constant="134" id="vCR-CF-L4s"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Exit Nav Mode" backgroundImage="btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onExitNavigationButtonClicked:" destination="-1" eventType="touchUpInside" id="90t-gO-J0g"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i46-9L-Aav">
+                    <rect key="frame" x="0.0" y="34" width="568" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="585-oZ-vzC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxb-hQ-d8V">
+                    <rect key="frame" x="110" y="291" width="96" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="X7T-3C-qBb"/>
+                        <constraint firstAttribute="width" constant="96" id="ifN-xK-RJw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="精度：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1u-i3-oIc">
+                    <rect key="frame" x="73" y="292" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="hJi-K6-DOX"/>
+                        <constraint firstAttribute="height" constant="21" id="hyo-Kl-KHl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="JCx-T8-n9I" secondAttribute="centerY" constant="4.5" id="1Gt-oZ-6pC"/>
+                <constraint firstAttribute="centerY" secondItem="H0i-Qt-IDU" secondAttribute="centerY" constant="4.5" id="1Qd-08-HGk"/>
+                <constraint firstItem="oOf-11-1hb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="34K-P6-sH1"/>
+                <constraint firstAttribute="trailing" secondItem="i46-9L-Aav" secondAttribute="trailing" id="3JX-4X-AoH"/>
+                <constraint firstAttribute="centerY" secondItem="33O-oI-Z8U" secondAttribute="centerY" constant="52.5" id="4xT-y0-n9w"/>
+                <constraint firstAttribute="centerY" secondItem="Qgq-zJ-ypB" secondAttribute="centerY" constant="52.5" id="8Fp-a8-R7T"/>
+                <constraint firstAttribute="trailing" secondItem="oOf-11-1hb" secondAttribute="trailing" id="8cw-9V-kx1"/>
+                <constraint firstAttribute="centerX" secondItem="Qgq-zJ-ypB" secondAttribute="centerX" constant="2" id="EgP-oI-i3f"/>
+                <constraint firstAttribute="centerY" secondItem="12O-HD-zp4" secondAttribute="centerY" constant="52.5" id="I7q-la-5hi"/>
+                <constraint firstAttribute="centerX" secondItem="H0i-Qt-IDU" secondAttribute="centerX" constant="-147.5" id="JYD-Gt-4sE"/>
+                <constraint firstItem="oOf-11-1hb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Lfg-2G-PWf"/>
+                <constraint firstAttribute="centerX" secondItem="oOf-11-1hb" secondAttribute="centerX" id="MtB-Le-JEe"/>
+                <constraint firstAttribute="centerX" secondItem="i46-9L-Aav" secondAttribute="centerX" id="P1o-6D-pbV"/>
+                <constraint firstAttribute="centerY" secondItem="C6W-ic-CL8" secondAttribute="centerY" constant="2.5" id="PWA-hk-Vta"/>
+                <constraint firstAttribute="centerX" secondItem="n1u-i3-oIc" secondAttribute="centerX" constant="190" id="Pk9-Ln-Qd4"/>
+                <constraint firstAttribute="bottom" secondItem="oOf-11-1hb" secondAttribute="bottom" id="RyB-7C-uxH"/>
+                <constraint firstAttribute="centerY" secondItem="n1u-i3-oIc" secondAttribute="centerY" constant="-142.5" id="TpS-yP-GHd"/>
+                <constraint firstAttribute="centerX" secondItem="JCx-T8-n9I" secondAttribute="centerX" constant="2" id="ZWM-bl-0V5"/>
+                <constraint firstAttribute="centerX" secondItem="33O-oI-Z8U" secondAttribute="centerX" constant="-148.5" id="fTy-T9-2fs"/>
+                <constraint firstAttribute="centerX" secondItem="12O-HD-zp4" secondAttribute="centerX" constant="152" id="feU-1l-da0"/>
+                <constraint firstAttribute="centerY" secondItem="Jxb-hQ-d8V" secondAttribute="centerY" constant="-143" id="g9s-lv-052"/>
+                <constraint firstAttribute="centerX" secondItem="C6W-ic-CL8" secondAttribute="centerX" constant="152" id="okN-hb-fYo"/>
+                <constraint firstAttribute="centerY" secondItem="i46-9L-Aav" secondAttribute="centerY" constant="109.5" id="rE8-28-bKK"/>
+                <constraint firstItem="i46-9L-Aav" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="s8t-aR-aYi"/>
+                <constraint firstAttribute="centerX" secondItem="Jxb-hQ-d8V" secondAttribute="centerX" constant="126" id="vHw-nV-dWi"/>
+                <constraint firstAttribute="centerY" secondItem="oOf-11-1hb" secondAttribute="centerY" id="vr0-zf-3xV"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn.png" width="125" height="47"/>
+    </resources>
+</document>
