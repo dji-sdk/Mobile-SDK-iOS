@@ -19,8 +19,6 @@
 #ifndef AVCODEC_OLD_CODEC_IDS_H
 #define AVCODEC_OLD_CODEC_IDS_H
 
-#include "libavutil/common.h"
-
 /*
  * This header exists to prevent new codec IDs from being accidentally added to
  * the deprecated list.
@@ -34,7 +32,9 @@
     /* video codecs */
     CODEC_ID_MPEG1VIDEO,
     CODEC_ID_MPEG2VIDEO, ///< preferred ID for MPEG-1/2 video decoding
+#if FF_API_XVMC
     CODEC_ID_MPEG2VIDEO_XVMC,
+#endif
     CODEC_ID_H261,
     CODEC_ID_H263,
     CODEC_ID_RV10,
@@ -88,7 +88,6 @@
     CODEC_ID_MSZH,
     CODEC_ID_ZLIB,
     CODEC_ID_QTRLE,
-    CODEC_ID_SNOW,
     CODEC_ID_TSCC,
     CODEC_ID_ULTI,
     CODEC_ID_QDRAW,
@@ -213,6 +212,7 @@
     CODEC_ID_YUV4       = MKBETAG('Y','U','V','4'),
     CODEC_ID_SANM       = MKBETAG('S','A','N','M'),
     CODEC_ID_PAF_VIDEO  = MKBETAG('P','A','F','V'),
+    CODEC_ID_SNOW       = AV_CODEC_ID_SNOW,
 
     /* various PCM "codecs" */
     CODEC_ID_FIRST_AUDIO = 0x10000,     ///< A dummy id pointing at the start of audio codecs
@@ -355,7 +355,6 @@
     CODEC_ID_IAC,
     CODEC_ID_ILBC,
     CODEC_ID_FFWAVESYNTH = MKBETAG('F','F','W','S'),
-    CODEC_ID_8SVX_RAW    = MKBETAG('8','S','V','X'),
     CODEC_ID_SONIC       = MKBETAG('S','O','N','C'),
     CODEC_ID_SONIC_LS    = MKBETAG('S','O','N','L'),
     CODEC_ID_PAF_AUDIO   = MKBETAG('P','A','F','A'),

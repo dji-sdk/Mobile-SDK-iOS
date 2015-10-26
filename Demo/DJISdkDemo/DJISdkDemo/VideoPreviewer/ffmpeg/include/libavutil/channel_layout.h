@@ -79,7 +79,7 @@
 
 /**
  * @}
- * @defgroup channel_mask_c Audio channel convenience macros
+ * @defgroup channel_mask_c Audio channel layouts
  * @{
  * */
 #define AV_CH_LAYOUT_MONO              (AV_CH_FRONT_CENTER)
@@ -114,12 +114,12 @@ enum AVMatrixEncoding {
     AV_MATRIX_ENCODING_NONE,
     AV_MATRIX_ENCODING_DOLBY,
     AV_MATRIX_ENCODING_DPLII,
+    AV_MATRIX_ENCODING_DPLIIX,
+    AV_MATRIX_ENCODING_DPLIIZ,
+    AV_MATRIX_ENCODING_DOLBYEX,
+    AV_MATRIX_ENCODING_DOLBYHEADPHONE,
     AV_MATRIX_ENCODING_NB
 };
-
-/**
- * @}
- */
 
 /**
  * Return a channel layout id that matches name, or 0 if no match is found.
@@ -136,7 +136,12 @@ enum AVMatrixEncoding {
  * - a channel layout mask, in hexadecimal starting with "0x" (see the
  *   AV_CH_* macros).
  *
- * Example: "stereo+FC" = "2+FC" = "2c+1c" = "0x7"
+ * @warning Starting from the next major bump the trailing character
+ * 'c' to specify a number of channels will be required, while a
+ * channel layout mask could also be specified as a decimal number
+ * (if and only if not followed by "c").
+ *
+ * Example: "stereo+FC" = "2c+FC" = "2c+1c" = "0x7"
  */
 uint64_t av_get_channel_layout(const char *name);
 
@@ -210,6 +215,7 @@ int av_get_standard_channel_layout(unsigned index, uint64_t *layout,
                                    const char **name);
 
 /**
+ * @}
  * @}
  */
 

@@ -1,6 +1,4 @@
 /*
- * copyright (c) 2005 Michael Niedermayer <michaelni@gmx.at>
- *
  * This file is part of FFmpeg.
  *
  * FFmpeg is free software; you can redistribute it and/or
@@ -18,23 +16,33 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
-#ifndef AVUTIL_INTFLOAT_READWRITE_H
-#define AVUTIL_INTFLOAT_READWRITE_H
+/**
+ * @file
+ * @ingroup lavu
+ * Utility Preprocessor macros
+ */
 
-#include <stdint.h>
-#include "attributes.h"
+#ifndef AVUTIL_MACROS_H
+#define AVUTIL_MACROS_H
 
-/* IEEE 80 bits extended float */
-typedef struct AVExtFloat  {
-    uint8_t exponent[2];
-    uint8_t mantissa[8];
-} AVExtFloat;
+/**
+ * @addtogroup preproc_misc Preprocessor String Macros
+ *
+ * String manipulation macros
+ *
+ * @{
+ */
 
-attribute_deprecated double av_int2dbl(int64_t v) av_const;
-attribute_deprecated float av_int2flt(int32_t v) av_const;
-attribute_deprecated double av_ext2dbl(const AVExtFloat ext) av_const;
-attribute_deprecated int64_t av_dbl2int(double d) av_const;
-attribute_deprecated int32_t av_flt2int(float d) av_const;
-attribute_deprecated AVExtFloat av_dbl2ext(double d) av_const;
+#define AV_STRINGIFY(s)         AV_TOSTRING(s)
+#define AV_TOSTRING(s) #s
 
-#endif /* AVUTIL_INTFLOAT_READWRITE_H */
+#define AV_GLUE(a, b) a ## b
+#define AV_JOIN(a, b) AV_GLUE(a, b)
+
+/**
+ * @}
+ */
+
+#define AV_PRAGMA(s) _Pragma(#s)
+
+#endif /* AVUTIL_MACROS_H */

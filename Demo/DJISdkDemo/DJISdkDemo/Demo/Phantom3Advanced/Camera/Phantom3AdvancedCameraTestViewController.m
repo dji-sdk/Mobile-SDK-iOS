@@ -39,7 +39,15 @@
     [self.view addSubview:videoPreviewView];
     [self.view sendSubviewToBack:videoPreviewView];
     videoPreviewView.backgroundColor = [UIColor grayColor];
-    [[VideoPreviewer instance] start];
+    if ([VideoPreviewer instance].status.isRunning) {
+        [[VideoPreviewer instance] reset];
+    }
+    else
+    {
+        [[VideoPreviewer instance] start];
+    }
+    
+    [[VideoPreviewer instance] addObserver:self forKeyPath:@"isHardwareDecoding" options:NSKeyValueObservingOptionNew context:NULL];
     
     _settingsView = [[Phantom3AdvancedCameraSettingsView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 320, 0, 320, 320)];
     [_settingsView setCamera:_drone.camera];
@@ -51,11 +59,25 @@
     self.contentView1.hidden = YES;
 }
 
+-(void) dealloc
+{
+    [[VideoPreviewer instance] removeObserver:self forKeyPath:@"isHardwareDecoding"];
+}
+
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"isHardwareDecoding"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString* message = [NSString stringWithFormat:@"Switched to %@", [VideoPreviewer instance].isHardwareDecoding ? @"Hardware Decoding" : @"Software Decoding"];
+            ShowResult(message);
+        });
+    }
+}
+
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [[VideoPreviewer instance] setView:videoPreviewView];
-    [[VideoPreviewer instance] setDecoderDataSource:[self dataSourceFromDroneType:_drone.droneType]];
     
     _drone.delegate = self;
     _drone.camera.delegate = self;
@@ -77,12 +99,14 @@
 {
     [super viewWillDisappear:animated];
     
-    [[VideoPreviewer instance] unSetView];
-    
+
+    _drone.camera.delegate = nil;
     [_drone.camera stopCameraSystemStateUpdates];
     [_drone.mainController stopUpdateMCSystemState];
     
     [_drone disconnectToDrone];
+    
+    [[VideoPreviewer instance] unSetView];
 
     [UIApplication sharedApplication].idleTimerDisabled = NO;
 }
@@ -173,13 +197,21 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(IBAction) onDecoderSwitchValueChanged:(UISwitch*)sender
+{
+    if (sender.isOn) {
+        [[VideoPreviewer instance] setDecoderDataSource:[self dataSourceFromDroneType:_drone.droneType]];
+    }
+    else
+    {
+        [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
+    }
+}
+
 #pragma mark - DJIDroneDelegate
 
 -(void) droneOnConnectionStatusChanged:(DJIConnectionStatus)status
 {
-    if (status == ConnectionSucceeded) {
-        [mPhantom3AdvancedCamera setCameraWorkMode:CameraWorkModeCapture withResult:nil];
-    }
 }
 
 -(void) setRecordingButtonTitle:(BOOL)isRecord

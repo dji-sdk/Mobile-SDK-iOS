@@ -38,4 +38,6 @@
 
 -(IBAction) onBack:(id)sender;
 
+-(IBAction) onDecoderSwitchValueChanged:(id)sender;
+
 @end

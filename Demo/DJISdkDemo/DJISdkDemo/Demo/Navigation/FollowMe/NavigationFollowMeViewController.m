@@ -256,8 +256,8 @@
 -(void) onNavigationMissionStatusChanged:(DJINavigationMissionStatus*)missionStatus
 {
     if (missionStatus.missionType == DJINavigationMissionFollowMe) {
-        DJIFollowMeMissionStatus* fmStatus = (DJIFollowMeMissionStatus*)missionStatus;
 #if SIMULATOR_DEBUG
+        DJIFollowMeMissionStatus* fmStatus = (DJIFollowMeMissionStatus*)missionStatus;
         self.locationLabel.text = [NSString stringWithFormat:@"ExecState:%d Distance:%0.01f m Err:%d", (int)fmStatus.execState, fmStatus.distance, (int)fmStatus.error.errorCode];
 #endif
     }

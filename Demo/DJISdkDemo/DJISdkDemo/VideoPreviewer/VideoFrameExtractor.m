@@ -64,27 +64,6 @@ ss += ll; \
     }
 }
 
--(uint8_t*) getIFrameFromBuffer:(uint8_t*)buffer length:(int)bufferSize;
-{
-    if (buffer == NULL || bufferSize < 5) {
-        return NULL;
-    }
-    
-    uint8_t* pIter = buffer;
-    uint8_t* pIterEnd = buffer + (bufferSize - 5);
-    while (pIter <= pIterEnd) {
-        if ((*pIter == 0x00 && *(pIter + 1) == 0x00 && *(pIter + 2) == 0x00 && *(pIter + 3) == 0x01)) {
-            uint8_t flag = *(pIter + 4);
-            if (flag == 0x65 || flag == 0x67 || flag == 0x68) {
-                return pIter;
-            }
-        }
-        pIter++;
-    }
-    
-    return NULL;
-}
-
 -(int)decode:(uint8_t*)buf length:(int)length callback:(void(^)(BOOL b))callback
 {
     @synchronized (self)
@@ -95,22 +74,24 @@ ss += ll; \
         int decode_data_length;
         int got_picture = 0;
         uint8_t *paserBuffer_In = buf;
-        while (paserLength_In > 0) {
+        while (paserLength_In > 0)
+        {
             AVPacket packet;
             av_init_packet(&packet);
             paserLen = av_parser_parse2(_pCodecPaser, _pCodecCtx, &packet.data, &packet.size, paserBuffer_In, paserLength_In, AV_NOPTS_VALUE, AV_NOPTS_VALUE, AV_NOPTS_VALUE);
             paserLength_In -= paserLen;
             paserBuffer_In += paserLen;
             
-            if (packet.size > 0) {
+            if (packet.size > 0)
+            {
                 if(_delegate!=nil && [_delegate respondsToSelector:@selector(processVideoData:length:)]){
                     [_delegate processVideoData:packet.data length:packet.size];
                 }                
                 
                 decode_data_length = avcodec_decode_video2(_pCodecCtx, _pFrame, &got_picture, &packet);
-                if(_pFrame->key_frame){
-                }
-            } else {
+            }
+            else
+            {
                 break;
             }
             
@@ -118,24 +99,27 @@ ss += ll; \
             _outputWidth = _pCodecCtx->width;
             
             
-            if(_pFrame->decode_error_flags){
-            }
-            if(!got_picture){
-            }
-            else{
+            if(got_picture)
+            {
                 callback(YES);
+            }
+            else
+            {
+                callback(NO);
             }
         }
         
         if(!got_picture)
             return NO;
         
-        if (!_pFrame->data[0]) return NO;
+        if (!_pFrame->data[0])
+            return NO;
     }
     return  YES;
 }
 
--(int)parse:(uint8_t*)buf length:(int)length callback:(void(^)(uint8_t* frame, int length))callback{
+-(int)parse:(uint8_t*)buf length:(int)length callback:(void(^)(uint8_t* frame, int length, int frame_width, int frame_height))callback
+{
     @synchronized (self)
     {
         if(_pCodecCtx == NULL) return false;
@@ -153,14 +137,15 @@ ss += ll; \
             
             if (packet.size > 0) {
                 if (callback) {
-                    callback(packet.data, packet.size);
+                    callback(packet.data, packet.size, _pCodecPaser->width_in_pixel, _pCodecPaser->height_in_pixel);
                 }
             } else {
                 break;
             }
             
             av_free_packet(&packet);
-            _outputWidth = _pCodecCtx->width;
+            _outputWidth = _pCodecPaser->width_in_pixel;
+            _outputHeight = _pCodecPaser->height_in_pixel;
         }
     }
     return  YES;
@@ -169,7 +154,8 @@ ss += ll; \
 
 -(id)initExtractor
 {
-    @synchronized (self) {
+    @synchronized (self)
+    {
         AVCodec *pCodec;
         if(_pFrame == NULL)
         {
@@ -177,30 +163,22 @@ ss += ll; \
             
             pCodec = avcodec_find_decoder(AV_CODEC_ID_H264);
             _pCodecCtx = avcodec_alloc_context3(pCodec);
-            _pFrame = avcodec_alloc_frame();
+            _pFrame = av_frame_alloc();
             _pCodecPaser = av_parser_init(AV_CODEC_ID_H264);
             if (_pCodecPaser == NULL) {
-                // NSLog(@"Can't find H264 frame paser!");
+                 NSLog(@"Can't find H264 frame paser!");
             }
             _pCodecCtx->flags2|=CODEC_FLAG2_FAST;
             _pCodecCtx->thread_count = 2;
-//            _pCodecCtx->thread_type = FF_THREAD_SLICE;
             _pCodecCtx->thread_type = FF_THREAD_FRAME;
             
             if(pCodec->capabilities&CODEC_FLAG_LOW_DELAY){
-//                NSLog(@"capabilities: %X,flags: %X",pCodec->capabilities,pCodecCtx->flags);
                 _pCodecCtx->flags|=CODEC_FLAG_LOW_DELAY;
             }
             
-            if (avcodec_open2(_pCodecCtx, pCodec, NULL)) {
-                // NSLog(@"Could not open codec");
-                //Could not open codec
+            if (avcodec_open2(_pCodecCtx, pCodec, NULL) != 0) {
+                 NSLog(@"Could not open codec");
             }
-            
-//            pCodecCtx->ticks_per_frame = 2;
-//            pCodecCtx->delay = 0;
-//            NSLog(@"Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
-            //NSLog(@"init success~");
         }
     }
     return self;
@@ -211,7 +189,8 @@ ss += ll; \
 -(void)freeExtractor
 {
     @synchronized (self) {
-        if (_pFrame) av_free(_pFrame);
+        if (_pFrame)
+            av_free(_pFrame);
         _pFrame = NULL;
         
         if (_pCodecCtx) {
@@ -227,44 +206,39 @@ ss += ll; \
     }
 }
 
-- (void)clearBuffer{
+- (void)clearBuffer
+{
     [self freeExtractor];
-    @synchronized (self) {
+    @synchronized (self)
+    {
         AVCodec *pCodec;
         if(_pFrame == NULL)
         {
             av_register_all();
             pCodec = avcodec_find_decoder(AV_CODEC_ID_H264);
             _pCodecCtx = avcodec_alloc_context3(pCodec);
-            _pFrame = avcodec_alloc_frame();
+            _pFrame = av_frame_alloc();
             _pCodecPaser = av_parser_init(AV_CODEC_ID_H264);
             if (_pCodecPaser == NULL) {
-                // NSLog(@"Can't find H264 frame paser!");
+                 NSLog(@"Can't find H264 frame paser!");
             }
             _pCodecCtx->flags2|=CODEC_FLAG2_FAST;
             _pCodecCtx->thread_count = 2;
-            //            _pCodecCtx->thread_type = FF_THREAD_SLICE;
             _pCodecCtx->thread_type = FF_THREAD_FRAME;
             
             if(pCodec->capabilities&CODEC_FLAG_LOW_DELAY){
-                //                NSLog(@"capabilities: %X,flags: %X",pCodec->capabilities,pCodecCtx->flags);
                 _pCodecCtx->flags|=CODEC_FLAG_LOW_DELAY;
             }
             
-            if (avcodec_open2(_pCodecCtx, pCodec, NULL)) {
-                // NSLog(@"Could not open codec");
-                //Could not open codec
+            if (avcodec_open2(_pCodecCtx, pCodec, NULL) != 0) {
+                NSLog(@"Could not oped avcodec");
             }
-            
-            //            pCodecCtx->ticks_per_frame = 2;
-            //            pCodecCtx->delay = 0;
-            NSLog(@"Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
-            //NSLog(@"init success~");
         }
     }
 }
 
--(void)dealloc {
+-(void)dealloc
+{
 	[self freeExtractor];
 }
 

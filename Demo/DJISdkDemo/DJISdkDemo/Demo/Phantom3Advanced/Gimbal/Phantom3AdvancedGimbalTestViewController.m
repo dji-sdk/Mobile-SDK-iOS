@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rollFineTune;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *workModeSegmented;
 
+@property (strong, nonatomic) DJIGimbalState* lastGimbalState;
 @end
 
 @implementation Phantom3AdvancedGimbalTestViewController
@@ -248,7 +249,16 @@
 
 -(void) gimbalController:(DJIGimbal *)controller didUpdateGimbalState:(DJIGimbalState*)gimbalState
 {
-
+    if (self.lastGimbalState.isCalibrating != gimbalState.isCalibrating) {
+        NSMutableString* message = [[NSMutableString alloc] init];
+        [message appendFormat:@"Is Calibrating:%d", gimbalState.isCalibrating];
+        if (self.lastGimbalState.isCalibrating == YES && gimbalState.isCalibrating == NO) {
+            [message appendFormat:@" Calibration %@", gimbalState.isCalibrationSueeeeded ? @"Succeeded" : @"Failed"];
+        }
+        
+        ShowResult(message);
+    }
+    
     NSString* atti = [NSString stringWithFormat:@"Pitch:%0.1f\tRoll:%0.1f\tYaw:%0.1f", gimbalState.attitude.pitch, gimbalState.attitude.roll, gimbalState.attitude.yaw];
     self.attitudeLabel.text = atti;
     
@@ -261,6 +271,8 @@
     }
     self.rollFineTune.text = [NSString stringWithFormat:@"%ld", (long)gimbalState.rollFineTune];
     [self.workModeSegmented setSelectedSegmentIndex:gimbalState.workMode];
+    
+    self.lastGimbalState = gimbalState;
 }
 
 @end

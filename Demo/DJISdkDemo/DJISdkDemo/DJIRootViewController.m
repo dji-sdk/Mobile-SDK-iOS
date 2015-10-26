@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     //Register App with key
-    NSString* appKey = @"";
+    NSString* appKey = @"Please Type your App Key here";
     [DJIAppManager registerApp:appKey withDelegate:self];
 }
 
