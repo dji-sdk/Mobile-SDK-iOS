@@ -313,7 +313,7 @@
         NSMutableString* message = [[NSMutableString alloc] init];
         [message appendFormat:@"Is Calibrating:%d", gimbalState.isCalibrating];
         if (self.lastGimbalState.isCalibrating == YES && gimbalState.isCalibrating == NO) {
-            [message appendFormat:@" Calibration %@", gimbalState.isCalibrationSueeeeded ? @"Succeeded" : @"Failed"];
+            [message appendFormat:@" Calibration %@", gimbalState.isCalibrationSucceeded ? @"Succeeded" : @"Failed"];
         }
         
         ShowResult(message);

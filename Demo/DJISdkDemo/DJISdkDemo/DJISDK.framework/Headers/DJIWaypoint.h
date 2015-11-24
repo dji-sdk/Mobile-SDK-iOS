@@ -40,8 +40,8 @@ typedef NS_ENUM(NSUInteger, DJIWaypointTurnMode){
 typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
     /**
      *  Keeps the aircraft at the waypoint's location. The actionParam parameter
-     *  will determine how much time in seconds the airactaft will stay at the
-     *  location. This actionParam parameter can be set in the range of [0, 999] seconds.
+     *  will determine how much time in millisecond the airactaft will stay at the
+     *  location. This actionParam parameter can be set in the range of [0, 32767] milliseconds.
      */
     DJIWaypointActionStay,
     /**
@@ -74,9 +74,7 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
      */
     DJIWaypointActionRotateAircraft,
     /**
-     *  Rotates the gimbal's pitch. The actionParam value for the Inspire 1 must be in the range
-     *  of [-90, 30] degrees and for the Phantom 3 Professional & Advanced, the value must be in 
-     *  the range of [-90, 0] degrees.
+     *  Rotates the gimbal's pitch. The actionParam value should in range [-90, 0] degrees.
      */
     DJIWaypointActionRotateGimbalPitch,
 };

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIMCSystemMode.html">
+	<File path="Constants/DJIMainControllerFlightMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIMCSystemMode</TokenIdentifier>
-			<Abstract type="html">Phantom main controller&apos;s system mode</Abstract>
-			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIMainControllerFlightMode</TokenIdentifier>
+			<Abstract type="html">Flight mode of main controller</Abstract>
+			<DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
 			
 			<NodeRef refid="125"/>
@@ -14,34 +14,309 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MCSystemMode_Phantom</TokenIdentifier>
-            <Abstract type="html">Phantom mode
+            <TokenIdentifier>//apple_ref/c/econst/ManualMode</TokenIdentifier>
+            <Abstract type="html">Manual mode. Used in phantom 2 Vision
      </Abstract>
-            <Declaration>MCSystemMode_Phantom</Declaration>
+            <Declaration>ManualMode</Declaration>
             
-            <DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="125"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MCSystemMode_Naza</TokenIdentifier>
-            <Abstract type="html">NAZA mode
+            <TokenIdentifier>//apple_ref/c/econst/GPSMode</TokenIdentifier>
+            <Abstract type="html">Gps mode. Used in phantom 2 Vision
      </Abstract>
-            <Declaration>MCSystemMode_Naza</Declaration>
+            <Declaration>GPSMode</Declaration>
             
-            <DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="125"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/MCSystemMode_Unknown</TokenIdentifier>
+            <TokenIdentifier>//apple_ref/c/econst/OutOfControlMode</TokenIdentifier>
+            <Abstract type="html">Out of control mode. Used in phantom 2 Vision
+     </Abstract>
+            <Declaration>OutOfControlMode</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/AttitudeMode</TokenIdentifier>
+            <Abstract type="html">Attitude mode. Used in phantom 2 Vision
+     </Abstract>
+            <Declaration>AttitudeMode</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GoHomeMode</TokenIdentifier>
+            <Abstract type="html">Go home mode. Used in phantom 2 Vision
+     </Abstract>
+            <Declaration>GoHomeMode</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/LandingMode</TokenIdentifier>
+            <Abstract type="html">Landing mode. Used in phantom 2 Vision
+     </Abstract>
+            <Declaration>LandingMode</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeManual</TokenIdentifier>
+            <Abstract type="html">Manual mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeManual</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAtti</TokenIdentifier>
+            <Abstract type="html">Attitude mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAtti</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAttiCourseLock</TokenIdentifier>
+            <Abstract type="html">Attitude course lock mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAttiCourseLock</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAttiHover</TokenIdentifier>
+            <Abstract type="html">Attitude hover mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAttiHover</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeHover</TokenIdentifier>
+            <Abstract type="html">Hover mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeHover</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSBlake</TokenIdentifier>
+            <Abstract type="html">Gps blake mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSBlake</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSAtti</TokenIdentifier>
+            <Abstract type="html">Gps Attitude mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSAtti</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSCourseLock</TokenIdentifier>
+            <Abstract type="html">Gps course lock mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSCourseLock</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSHomeLock</TokenIdentifier>
+            <Abstract type="html">Gps Home mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSHomeLock</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSHotPoint</TokenIdentifier>
+            <Abstract type="html">Gps hot point mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSHotPoint</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAssistedTakeOff</TokenIdentifier>
+            <Abstract type="html">Assisted takeoff mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAssistedTakeOff</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAutoTakeOff</TokenIdentifier>
+            <Abstract type="html">Auto takeoff mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAutoTakeOff</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAutoLanding</TokenIdentifier>
+            <Abstract type="html">Auto landing mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAutoLanding</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAttiLanding</TokenIdentifier>
+            <Abstract type="html">Attitude landing mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAttiLanding</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSWaypoint</TokenIdentifier>
+            <Abstract type="html">GPS Waypoint mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSWaypoint</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGoHome</TokenIdentifier>
+            <Abstract type="html">Go home mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGoHome</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeClickGo</TokenIdentifier>
+            <Abstract type="html">Click go mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeClickGo</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeJoystick</TokenIdentifier>
+            <Abstract type="html">Joystick mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeJoystick</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeAttiLimited</TokenIdentifier>
+            <Abstract type="html">Attitude limited mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeAttiLimited</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSAttiLimited</TokenIdentifier>
+            <Abstract type="html">Gps attitude limited mode. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSAttiLimited</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeGPSFollowMe</TokenIdentifier>
+            <Abstract type="html">Gps Follow me. Used in Inspire / Phantom3 Professional / Matrice100
+     </Abstract>
+            <Declaration>MainControllerFlightModeGPSFollowMe</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="125"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/MainControllerFlightModeUnknown</TokenIdentifier>
             <Abstract type="html">Unknown
      </Abstract>
-            <Declaration>MCSystemMode_Unknown</Declaration>
+            <Declaration>MainControllerFlightModeUnknown</Declaration>
             
-            <DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="125"/>
         </Token>

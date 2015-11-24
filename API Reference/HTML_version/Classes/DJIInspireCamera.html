@@ -1855,6 +1855,475 @@
 						</div>
 						
 
+						<a title="VideoSettings Methods" name="task_VideoSettings Methods"></a>
+						<h2 class="task-title">VideoSettings Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/setCameraVideoQuality:withResult:" title="setCameraVideoQuality:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoQuality:withResult:">&ndash;&nbsp;setCameraVideoQuality:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set camera&rsquo;s video quality</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoQuality:(VideoQuality)<em>quality</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>quality</code></th>
+						<td><p>Video quality set to camera</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCameraVideoQualityWithResult:" title="getCameraVideoQualityWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoQualityWithResult:">&ndash;&nbsp;getCameraVideoQualityWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get camera&rsquo;s video quality</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCameraVideoResolution:andFrameRate:withResult:" title="setCameraVideoResolution:andFrameRate:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoResolution:andFrameRate:withResult:">&ndash;&nbsp;setCameraVideoResolution:andFrameRate:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Set camera&rsquo;s video resolution and frame rate. The supported resolution and frame rate is below:</li>
+<li>PAL:4096x2160P_24fps
+     4096x2160P_25fps
+     3840x2160P_24fps
+     3840x2160P_25fps
+     1920x1080P_24fps
+     1920x1080P_25fps
+     1920x1080P_48fps
+     1920x1080P_50fps
+     1280x720P_24fps
+     1280x720P_25fps
+     1280x720P_48fps
+     1280x720P_50fps</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoResolution:(CameraVideoResolution)<em>resolution</em> andFrameRate:(CameraVideoFrameRate)<em>rate</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>   NTSC:4096x2160P_24fps
+        3840x2160P_24fps
+        3840x2160P_30fps
+        1920x1080P_24fps
+        1920x1080P_30fps
+        1920x1080P_48fps
+        1920x1080P_60fps
+        1280x720P_24fps
+        1280x720P_30fps
+        1280x720P_48fps
+        1280x720P_60fps
+*
+*  @param resolution Resolute of video
+*  @param rate       Frame rate of video
+*  @param block      Remote execute result callback.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCameraVideoResolutionAndFrameRate:" title="getCameraVideoResolutionAndFrameRate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoResolutionAndFrameRate:">&ndash;&nbsp;getCameraVideoResolutionAndFrameRate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get camera&rsquo;s video resolution and frame rate</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCameraVideoStorageFormat:withResult:" title="setCameraVideoStorageFormat:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoStorageFormat:withResult:">&ndash;&nbsp;setCameraVideoStorageFormat:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set camera&rsquo;s video storage format</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)<em>format</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>format</code></th>
+						<td><p>Storage format for video</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCameraVideoStorageFormatWithResult:" title="getCameraVideoStorageFormatWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoStorageFormatWithResult:">&ndash;&nbsp;getCameraVideoStorageFormatWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get camera&rsquo;s video storage format settings</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setCameraVideoStandard:withResult:" title="setCameraVideoStandard:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoStandard:withResult:">&ndash;&nbsp;setCameraVideoStandard:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set camera&rsquo;s video standard.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoStandard:(CameraVideoStandard)<em>videoStandard</em> withResult:(DJIExecuteResultBlock)<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>videoStandard</code></th>
+						<td><p>Video standard set to camera</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getCameraVideoStandardWithResult:" title="getCameraVideoStandardWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoStandardWithResult:">&ndash;&nbsp;getCameraVideoStandardWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get camera&rsquo;s video staandard.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result callback.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
 						<a title="Media Methods" name="task_Media Methods"></a>
 						<h2 class="task-title">Media Methods</h2>
 
@@ -3445,475 +3914,6 @@ the shutterSpeed should not faster then the video frame rate when the camera is 
 </div>
 						</div>
 						
-
-						<a title="VideoSettings Methods" name="task_VideoSettings Methods"></a>
-						<h2 class="task-title">VideoSettings Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/setCameraVideoQuality:withResult:" title="setCameraVideoQuality:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoQuality:withResult:">&ndash;&nbsp;setCameraVideoQuality:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set camera&rsquo;s video quality</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoQuality:(VideoQuality)<em>quality</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>quality</code></th>
-						<td><p>Video quality set to camera</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getCameraVideoQualityWithResult:" title="getCameraVideoQualityWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoQualityWithResult:">&ndash;&nbsp;getCameraVideoQualityWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get camera&rsquo;s video quality</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setCameraVideoResolution:andFrameRate:withResult:" title="setCameraVideoResolution:andFrameRate:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoResolution:andFrameRate:withResult:">&ndash;&nbsp;setCameraVideoResolution:andFrameRate:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<ul>
-<li>Set camera&rsquo;s video resolution and frame rate. The supported resolution and frame rate is below:</li>
-<li>PAL:4096x2160P_24fps
-     4096x2160P_25fps
-     3840x2160P_24fps
-     3840x2160P_25fps
-     1920x1080P_24fps
-     1920x1080P_25fps
-     1920x1080P_48fps
-     1920x1080P_50fps
-     1280x720P_24fps
-     1280x720P_25fps
-     1280x720P_48fps
-     1280x720P_50fps</li>
-</ul>
-
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoResolution:(CameraVideoResolution)<em>resolution</em> andFrameRate:(CameraVideoFrameRate)<em>rate</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>   NTSC:4096x2160P_24fps
-        3840x2160P_24fps
-        3840x2160P_30fps
-        1920x1080P_24fps
-        1920x1080P_30fps
-        1920x1080P_48fps
-        1920x1080P_60fps
-        1280x720P_24fps
-        1280x720P_30fps
-        1280x720P_48fps
-        1280x720P_60fps
-*
-*  @param resolution Resolute of video
-*  @param rate       Frame rate of video
-*  @param block      Remote execute result callback.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getCameraVideoResolutionAndFrameRate:" title="getCameraVideoResolutionAndFrameRate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoResolutionAndFrameRate:">&ndash;&nbsp;getCameraVideoResolutionAndFrameRate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get camera&rsquo;s video resolution and frame rate</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setCameraVideoStorageFormat:withResult:" title="setCameraVideoStorageFormat:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoStorageFormat:withResult:">&ndash;&nbsp;setCameraVideoStorageFormat:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set camera&rsquo;s video storage format</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)<em>format</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>format</code></th>
-						<td><p>Storage format for video</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getCameraVideoStorageFormatWithResult:" title="getCameraVideoStorageFormatWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoStorageFormatWithResult:">&ndash;&nbsp;getCameraVideoStorageFormatWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get camera&rsquo;s video storage format settings</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setCameraVideoStandard:withResult:" title="setCameraVideoStandard:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setCameraVideoStandard:withResult:">&ndash;&nbsp;setCameraVideoStandard:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set camera&rsquo;s video standard.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setCameraVideoStandard:(CameraVideoStandard)<em>videoStandard</em> withResult:(DJIExecuteResultBlock)<em>result</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>videoStandard</code></th>
-						<td><p>Video standard set to camera</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getCameraVideoStandardWithResult:" title="getCameraVideoStandardWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getCameraVideoStandardWithResult:">&ndash;&nbsp;getCameraVideoStandardWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get camera&rsquo;s video staandard.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))<em>result</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIInspireCamera.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
 					</div>
 					
 					
@@ -3926,7 +3926,7 @@ the shutterSpeed should not faster then the video frame rate when the camera is 
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -70,7 +70,7 @@ typedef struct
 /**
  *  Control style for RC
  */
-typedef NS_OPTIONS(uint8_t, DJIRCControlStyle){
+typedef NS_ENUM(uint8_t, DJIRCControlStyle){
     /**
      *  Japanese control style
      */
@@ -163,7 +163,7 @@ typedef struct
 /**
  *  Result of slave who request for gimbal control permission
  */
-typedef NS_OPTIONS(uint8_t, DJIRCRequestGimbalControlResult){
+typedef NS_ENUM(uint8_t, DJIRCRequestGimbalControlResult){
     /**
      *  Request was agreed
      */

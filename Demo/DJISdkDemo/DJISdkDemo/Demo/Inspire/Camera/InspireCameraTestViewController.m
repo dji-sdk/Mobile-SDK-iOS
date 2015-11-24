@@ -147,7 +147,7 @@
 -(IBAction) onStartTakePhotoClicked:(UIButton*)sender
 {
     if (mCameraSystemState) {
-        if (mCameraSystemState.isTakingContinusCapture ||
+        if (mCameraSystemState.isTakingContinousCapture ||
             mCameraSystemState.isTakingMultiCapture) {
             [_drone.camera stopTakePhotoWithResult:^(DJIError *error) {
                 ShowResult(@"Stop Take photo:%@", error.errorDescription);
@@ -286,8 +286,8 @@
             [self setRecordingButtonTitle:systemState.isRecording];
         }
         if (( mCameraSystemState.isTakingMultiCapture != systemState.isTakingMultiCapture) ||
-            (mCameraSystemState.isTakingContinusCapture != systemState.isTakingContinusCapture)) {
-            BOOL isStop = systemState.isTakingContinusCapture || systemState.isTakingMultiCapture;
+            (mCameraSystemState.isTakingContinousCapture != systemState.isTakingContinousCapture)) {
+            BOOL isStop = systemState.isTakingContinousCapture || systemState.isTakingMultiCapture;
             [self setCaptureButtonTitle:isStop];
         }
         
@@ -303,7 +303,7 @@
     else
     {
         [self setRecordingButtonTitle:systemState.isRecording];
-        BOOL isStop = systemState.isTakingContinusCapture || systemState.isTakingMultiCapture;
+        BOOL isStop = systemState.isTakingContinousCapture || systemState.isTakingMultiCapture;
         [self setCaptureButtonTitle:isStop];
     }
 

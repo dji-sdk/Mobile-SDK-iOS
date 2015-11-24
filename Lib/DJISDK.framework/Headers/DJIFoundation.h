@@ -14,4 +14,5 @@
 #define DJI_API_EXTERN       extern __attribute__((visibility ("default")))
 #endif
 
-#define DJI_API_DEPRECATED __attribute__ ((__deprecated__))
+#define DJI_API_DEPRECATED   __attribute__ ((__deprecated__))
+#define DJI_CLASS_DEPRECATED __attribute__ ((__deprecated__))

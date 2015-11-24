@@ -24,11 +24,11 @@ typedef NS_ENUM(uint8_t, DJIFlightCoordinateSystem){
 };
 
 /**
- *  Vertical control velocity MIN value
+ *  Vertical control velocity MIN value -4 m/s
  */
 DJI_API_EXTERN const float DJIVerticalControlMinVelocity;
 /**
- *  Vertical control velocity MAX value
+ *  Vertical control velocity MAX value 4 m/s
  */
 DJI_API_EXTERN const float DJIVerticalControlMaxVelocity;
 
@@ -47,19 +47,19 @@ typedef NS_ENUM(uint8_t, DJIVerticalControlMode){
 };
 
 /**
- *  Horizontal control velocity MAX value
+ *  Horizontal control velocity MAX value 15m/s
  */
 DJI_API_EXTERN const float DJIHorizontalControlMaxVelocity;
 /**
- *  Horizontal control velocity MIN value
+ *  Horizontal control velocity MIN value -15m/s
  */
 DJI_API_EXTERN const float DJIHorizontalControlMinVelocity;
 /**
- *  Horizontal control angle MAX value
+ *  Horizontal control angle MAX value 30 degree
  */
 DJI_API_EXTERN const float DJIHorizontalControlMaxAngle;
 /**
- *  Horizontal control angle MIN value
+ *  Horizontal control angle MIN value -30 degree
  */
 DJI_API_EXTERN const float DJIHorizontalControlMinAngle;
 
@@ -72,25 +72,25 @@ typedef NS_ENUM(uint8_t, DJIHorizontalControlMode){
      */
     DJIHorizontalControlAngle,
     /**
-     *  The value of mPitch and mRoll is a velocity value. mPitch and mRoll will in range [-10, +10] m/s
+     *  The value of mPitch and mRoll is a velocity value. mPitch and mRoll will in range [-15, 15] m/s
      */
     DJIHorizontalControlVelocity,
 };
 
 /**
- *  Yaw control angle MAX value
+ *  Yaw control angle MAX value 180 degree
  */
 DJI_API_EXTERN const float DJIYawControlMaxAngle;
 /**
- *  Yaw control angle MIN value
+ *  Yaw control angle MIN value -180 degree
  */
 DJI_API_EXTERN const float DJIYawControlMinAngle;
 /**
- *  Yaw control palstance MAX value
+ *  Yaw control palstance MAX value 100 degree/s
  */
 DJI_API_EXTERN const float DJIYawControlMaxPalstance;
 /**
- *  Yaw control palstance MIN value
+ *  Yaw control palstance MIN value -100 degree/s
  */
 DJI_API_EXTERN const float DJIYawControlMinPalstance;
 

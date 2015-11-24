@@ -157,6 +157,155 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>quality</Name>
+					<Abstract type="html">Video quality set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
+			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
+*  PAL:
+        1920x1080P_24fps
+        1920x1080P_25fps
+        1920x1080P_48fps
+        1920x1080P_50fps
+        1280x720P_24fps
+        1280x720P_25fps
+        1280x720P_48fps
+        1280x720P_50fps</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
+			
+			
+			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>format</Name>
+					<Abstract type="html">Storage format for video</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoStandard</Name>
+					<Abstract type="html">Video standard set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/saveCameraSettingsTo:withResult:</TokenIdentifier>
 			<Abstract type="html">Save camera&apos;s current setting to the specific user.</Abstract>
 			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
@@ -677,155 +826,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/deleteMedias:withResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>quality</Name>
-					<Abstract type="html">Video quality set to camera</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
-			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
-*  PAL:
-        1920x1080P_24fps
-        1920x1080P_25fps
-        1920x1080P_48fps
-        1920x1080P_50fps
-        1280x720P_24fps
-        1280x720P_25fps
-        1280x720P_48fps
-        1280x720P_50fps</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>format</Name>
-					<Abstract type="html">Storage format for video</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoStandard</Name>
-					<Abstract type="html">Video standard set to camera</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
-            <NodeRef refid="37"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		

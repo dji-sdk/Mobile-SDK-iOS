@@ -14,7 +14,6 @@
 @interface PhantomMediaTestViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, DJIDroneDelegate, DJICameraDelegate>
 {
     DJIDrone* _drone;
-    DJIMediaManager* _mediaManager;
     MediaLoadingManager* _loadingManager;
     
     NSArray* _mediasList;

@@ -88,6 +88,18 @@
 +(DJIDrone*) connectedDrone;
 
 /**
+ *  Decide whether or not the SDK should close the connection when the application entered background. Default is YES
+ *  @note If the SDK was set as connection run in background, then the application should enable 'Background Modes' to ensure the connection thread work well. Of course the 'Background Modes' is not necessary, user also could use interface -forceReconnect to force reconnect when connection is broken and could not resume by accident.
+ */
++(void) closeConnectionWhenEnterBackground:(BOOL)close;
+
+/**
+ *  Force the SDK reconnect to the drone.
+ *
+ */
++(void) forceReconnect;
+
+/**
  *  Regist app. User should call once while the app first used and should connect to the internet at the first time registration.
  *
  *  @param appKey   App key that applied from dji's developer website.

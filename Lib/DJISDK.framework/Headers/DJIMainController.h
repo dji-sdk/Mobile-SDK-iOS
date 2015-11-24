@@ -60,7 +60,7 @@
 @property(nonatomic, weak) id<DJIMainControllerDelegate> mcDelegate;
 
 /**
- *  Compass of aircraft.
+ *  Compass of the aircraft.
  */
 @property(nonatomic, readonly) NSObject<DJICompass>* compass;
 
@@ -200,6 +200,13 @@
 -(void) setHomePoint:(CLLocationCoordinate2D)homePoint withResult:(DJIExecuteResultBlock)block;
 
 /**
+ *  Set home point use the aircraft's current location.
+ *
+ *  @param result Remote execute result.
+ */
+-(void) setHomePointUsingAircraftCurrentLocationWithResult:(DJIExecuteResultBlock)result;
+
+/**
  *  Get home point of drone.
  *
  *  @param block Remote execute result callback.
@@ -236,10 +243,63 @@
 -(void) getGoHomeTemporaryAltitude:(void(^)(float altitude, DJIError* error))block;
 
 /**
- *  Send data to external device. Support on Matrice 100
+ *  Set multiple flight mode open. if set open, then the remote controller's mode switch will be available.
  *
- *  @param data  Data to be sent to the external device, the size of data should not larger than 100 byte.
- *  @param block Remote execute result callback.
+ *  @param isOpen   Whether or not open the multiple flight mode.
+ *  @param block    Remote execute result.
+ */
+-(void) setMultipleFlightModeOpen:(BOOL)isOpen withResult:(DJIExecuteResultBlock)block;
+
+/*
+ *  Set low battery waning data.
+ *
+ *  @param percent Percentage of low battery in range [25, 50].
+ *  @param block   Remote execute result.
+ */
+-(void) setLowBatteryWarning:(uint8_t)percent withResult:(DJIExecuteResultBlock)block;
+
+/**
+ *  Get low battery warning data.
+ *
+ *  @param result Remote execute result.
+ */
+-(void) getLowBatteryWarningWithResult:(void(^)(uint8_t percent, DJIError* error))result;
+
+/**
+ *  Set serious low battery waning data, percentage of voltage in range [10, 25].
+ *
+ *  @param percent Percentage of serious low battery
+ *  @param block   Remote execute result.
+ */
+-(void) setSeriousLowBattery:(uint8_t)percent withResult:(DJIExecuteResultBlock)block;
+
+/**
+ *  Get serious low battery warning data.
+ *
+ *  @param result Remote execute result.
+ */
+-(void) getSeriousLowBatteryWarningwithResult:(void(^)(uint8_t percent, DJIError* error))result;
+
+/**
+ *  Set aircraft name. the length of aircraft name should be less than 32 characters
+ *
+ *  @param name   Name to be set to the aricraft.
+ *  @param result Remote execute result.
+ */
+-(void) setAircraftName:(NSString*)name withResult:(DJIExecuteResultBlock)result;
+
+/**
+ *  Get aircraft name.
+ *
+ *  @param result Remote execute result.
+ */
+-(void) getAircraftNameWithResult:(void(^)(NSString* name, DJIError* error))result;
+
+/**
+ *  Send data to external device. Only support in product Matrice100.
+ *
+ *  @param data  Data to be sent to external device, the size of data should not large then 100 byte.
+ *  @param block Remote execute result.
  */
 -(void) sendDataToExternalDevice:(NSData*)data withResult:(DJIExecuteResultBlock)block;
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointTurnMode.html">
+	<File path="Constants/DJIYawControlMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointTurnMode</TokenIdentifier>
-			<Abstract type="html">Aircraft heading turn modes,</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIYawControlMode</TokenIdentifier>
+			<Abstract type="html">Yaw control mode, will affect the mYaw of DJIFlightControlData</Abstract>
+			<DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
 			
 			<NodeRef refid="144"/>
@@ -14,23 +14,23 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointTurnClockwise</TokenIdentifier>
-            <Abstract type="html">Changes the heading of the aircraft by rotating the aircraft clockwise.
+            <TokenIdentifier>//apple_ref/c/econst/DJIYawControlAngle</TokenIdentifier>
+            <Abstract type="html">The value of mYaw is a angle value, mYaw will in range [-180, 180] degree
      </Abstract>
-            <Declaration>DJIWaypointTurnClockwise</Declaration>
+            <Declaration>DJIYawControlAngle</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
             <NodeRef refid="144"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointTurnCounterClockwise</TokenIdentifier>
-            <Abstract type="html">Changes the heading of the aircraft by rotating the aircraft anti-clockwise.
+            <TokenIdentifier>//apple_ref/c/econst/DJIYawControlPalstance</TokenIdentifier>
+            <Abstract type="html">The value of mYaw is a palstance value. mYaw will in range [-100, 100] degree/s
      </Abstract>
-            <Declaration>DJIWaypointTurnCounterClockwise</Declaration>
+            <Declaration>DJIYawControlPalstance</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
             <NodeRef refid="144"/>
         </Token>

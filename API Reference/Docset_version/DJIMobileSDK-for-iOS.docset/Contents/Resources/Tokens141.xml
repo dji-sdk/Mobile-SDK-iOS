@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointMissionFinishedAction.html">
+	<File path="Constants/DJIWaypointMissionFlightPathMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFinishedAction</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFlightPathMode</TokenIdentifier>
 			<Abstract type="html"></Abstract>
 			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -14,12 +14,11 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedNoAction</TokenIdentifier>
-            <Abstract type="html">No action will be taken. The aircraft will exit the task and hover in the
-air where the task was completed. After that, the aircraft will be able
-to be controlled by the remote controller.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFlightPathNormal</TokenIdentifier>
+            <Abstract type="html">The flight path will be normal and the aircraft will
+move from one waypoint to the next in straight lines.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedNoAction</Declaration>
+            <Declaration>DJIWaypointMissionFlightPathNormal</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -27,47 +26,12 @@ to be controlled by the remote controller.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoHome</TokenIdentifier>
-            <Abstract type="html">The aicraft will go home.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFlightPathCurved</TokenIdentifier>
+            <Abstract type="html">The flight path will be curved and the aircraft will
+move from one waypoint to the next in a curved motion,
+adhering to the cornerRadius, which is set in DJIWaypoint.h.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedGoHome</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="141"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedAutoLand</TokenIdentifier>
-            <Abstract type="html">The aircraft will land automatically.
-     </Abstract>
-            <Declaration>DJIWaypointMissionFinishedAutoLand</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="141"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoFirstWaypoint</TokenIdentifier>
-            <Abstract type="html">The aircraft will go back to its first waypoint.
-     </Abstract>
-            <Declaration>DJIWaypointMissionFinishedGoFirstWaypoint</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="141"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedContinueUntilEnd</TokenIdentifier>
-            <Abstract type="html">If the user attempts to pull the aircraft back along the flight path as the
-mission is being executed, the aircarft will move towards the previous waypoint
-and will continue to do so until there are no more waypoint to move back to or
-the user has stopped attempting to move the aircraft back. In the process of moving the
-aircraft back, if the user ever stops attempting to do so the aircraft will,
-automatically continue the mission until the end.</Abstract>
-            <Declaration>DJIWaypointMissionFinishedContinueUntilEnd</Declaration>
+            <Declaration>DJIWaypointMissionFlightPathCurved</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             

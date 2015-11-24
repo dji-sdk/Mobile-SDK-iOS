@@ -18,7 +18,7 @@
 /**
  *  The camera is taking continuous capture.
  */
-@property(nonatomic, readonly) BOOL isTakingContinusCapture;
+@property(nonatomic, readonly) BOOL isTakingContinousCapture;
 
 /**
  *  The camera is taking multi capture.

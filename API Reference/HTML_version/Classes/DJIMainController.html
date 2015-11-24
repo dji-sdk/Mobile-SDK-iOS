@@ -70,6 +70,8 @@
 	
 	<optgroup label="Instance Methods">
 		
+		<option value="//api/name/getAircraftNameWithResult:">- getAircraftNameWithResult:</option>
+		
 		<option value="//api/name/getGoHomeDefaultAltitude:">- getGoHomeDefaultAltitude:</option>
 		
 		<option value="//api/name/getGoHomeTemporaryAltitude:">- getGoHomeTemporaryAltitude:</option>
@@ -78,13 +80,19 @@
 		
 		<option value="//api/name/getLimitFlyWithResultBlock:">- getLimitFlyWithResultBlock:</option>
 		
+		<option value="//api/name/getLowBatteryWarningWithResult:">- getLowBatteryWarningWithResult:</option>
+		
 		<option value="//api/name/getMainControllerVersion">- getMainControllerVersion</option>
 		
 		<option value="//api/name/getSerialNumberWithResult:">- getSerialNumberWithResult:</option>
 		
+		<option value="//api/name/getSeriousLowBatteryWarningwithResult:">- getSeriousLowBatteryWarningwithResult:</option>
+		
 		<option value="//api/name/getVersionWithResult:">- getVersionWithResult:</option>
 		
 		<option value="//api/name/sendDataToExternalDevice:withResult:">- sendDataToExternalDevice:withResult:</option>
+		
+		<option value="//api/name/setAircraftName:withResult:">- setAircraftName:withResult:</option>
 		
 		<option value="//api/name/setGoHomeDefaultAltitude:withResult:">- setGoHomeDefaultAltitude:withResult:</option>
 		
@@ -92,7 +100,15 @@
 		
 		<option value="//api/name/setHomePoint:withResult:">- setHomePoint:withResult:</option>
 		
+		<option value="//api/name/setHomePointUsingAircraftCurrentLocationWithResult:">- setHomePointUsingAircraftCurrentLocationWithResult:</option>
+		
 		<option value="//api/name/setLimitFlyWithHeight:Distance:withResult:">- setLimitFlyWithHeight:Distance:withResult:</option>
+		
+		<option value="//api/name/setLowBatteryWarning:withResult:">- setLowBatteryWarning:withResult:</option>
+		
+		<option value="//api/name/setMultipleFlightModeOpen:withResult:">- setMultipleFlightModeOpen:withResult:</option>
+		
+		<option value="//api/name/setSeriousLowBattery:withResult:">- setSeriousLowBattery:withResult:</option>
 		
 		<option value="//api/name/startCompassCalibrationWithResult:">- startCompassCalibrationWithResult:</option>
 		
@@ -212,7 +228,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Compass of aircraft.</p>
+				<p>Compass of the aircraft.</p>
 			</div>
 			
 		    
@@ -1254,6 +1270,59 @@ User should be carefully to change the home point.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/setHomePointUsingAircraftCurrentLocationWithResult:" title="setHomePointUsingAircraftCurrentLocationWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setHomePointUsingAircraftCurrentLocationWithResult:">&ndash;&nbsp;setHomePointUsingAircraftCurrentLocationWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set home point use the aircraft&rsquo;s current location.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setHomePointUsingAircraftCurrentLocationWithResult:(DJIExecuteResultBlock)<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/getHomePoint:" title="getHomePoint:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/getHomePoint:">&ndash;&nbsp;getHomePoint:</a></code>
 </h3>
@@ -1524,6 +1593,355 @@ User should be carefully to change the home point.</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/setMultipleFlightModeOpen:withResult:" title="setMultipleFlightModeOpen:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setMultipleFlightModeOpen:withResult:">&ndash;&nbsp;setMultipleFlightModeOpen:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set multiple flight mode open. if set open, then the remote controller&rsquo;s mode switch will be available.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setMultipleFlightModeOpen:(BOOL)<em>isOpen</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>isOpen</code></th>
+						<td><p>Whether or not open the multiple flight mode.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setLowBatteryWarning:withResult:" title="setLowBatteryWarning:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setLowBatteryWarning:withResult:">&ndash;&nbsp;setLowBatteryWarning:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)setLowBatteryWarning:(uint8_t)<em>percent</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getLowBatteryWarningWithResult:" title="getLowBatteryWarningWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getLowBatteryWarningWithResult:">&ndash;&nbsp;getLowBatteryWarningWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get low battery warning data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getLowBatteryWarningWithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setSeriousLowBattery:withResult:" title="setSeriousLowBattery:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setSeriousLowBattery:withResult:">&ndash;&nbsp;setSeriousLowBattery:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set serious low battery waning data, percentage of voltage in range [10, 25].</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setSeriousLowBattery:(uint8_t)<em>percent</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>percent</code></th>
+						<td><p>Percentage of serious low battery</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>block</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getSeriousLowBatteryWarningwithResult:" title="getSeriousLowBatteryWarningwithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getSeriousLowBatteryWarningwithResult:">&ndash;&nbsp;getSeriousLowBatteryWarningwithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get serious low battery warning data.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getSeriousLowBatteryWarningwithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setAircraftName:withResult:" title="setAircraftName:withResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setAircraftName:withResult:">&ndash;&nbsp;setAircraftName:withResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set aircraft name. the length of aircraft name should be less than 32 characters</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setAircraftName:(NSString *)<em>name</em> withResult:(DJIExecuteResultBlock)<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>name</code></th>
+						<td><p>Name to be set to the aricraft.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAircraftNameWithResult:" title="getAircraftNameWithResult:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAircraftNameWithResult:">&ndash;&nbsp;getAircraftNameWithResult:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get aircraft name.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getAircraftNameWithResult:(void ( ^ ) ( NSString *name , DJIError *error ))<em>result</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Remote execute result.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DJIMainController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/sendDataToExternalDevice:withResult:" title="sendDataToExternalDevice:withResult:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/sendDataToExternalDevice:withResult:">&ndash;&nbsp;sendDataToExternalDevice:withResult:</a></code>
 </h3>
@@ -1535,7 +1953,7 @@ User should be carefully to change the home point.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Send data to external device. Support on Matrice 100</p>
+				<p>Send data to external device. Only support in product Matrice100.</p>
 			</div>
 			
 		    
@@ -1550,12 +1968,12 @@ User should be carefully to change the home point.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>data</code></th>
-						<td><p>Data to be sent to the external device, the size of data should not larger than 100 byte.</p></td>
+						<td><p>Data to be sent to external device, the size of data should not large then 100 byte.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
+						<td><p>Remote execute result.</p></td>
 					</tr>
 				
 				</table>
@@ -1596,7 +2014,7 @@ User should be carefully to change the home point.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-09-28</p>
+						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointMissionExecuteState.html">
+	<File path="Constants/DJIWaypointMissionFinishedAction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionExecuteState</TokenIdentifier>
-			<Abstract type="html">Current waypoint mission state.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFinishedAction</TokenIdentifier>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
 			
@@ -14,11 +14,12 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateInitializing</TokenIdentifier>
-            <Abstract type="html">Waypoint mission is initializing, which means the mission has
-started and the aircraft is going to the first waypoint.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedNoAction</TokenIdentifier>
+            <Abstract type="html">No action will be taken. The aircraft will exit the task and hover in the
+air where the task was completed. After that, the aircraft will be able
+to be controlled by the remote controller.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateInitializing</Declaration>
+            <Declaration>DJIWaypointMissionFinishedNoAction</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -26,10 +27,10 @@ started and the aircraft is going to the first waypoint.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateMoving</TokenIdentifier>
-            <Abstract type="html">Aircraft is currently moving towards the mission&apos;s next waypoint.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoHome</TokenIdentifier>
+            <Abstract type="html">The aicraft will go home.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateMoving</Declaration>
+            <Declaration>DJIWaypointMissionFinishedGoHome</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -37,10 +38,10 @@ started and the aircraft is going to the first waypoint.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateRotating</TokenIdentifier>
-            <Abstract type="html">Aircraft is currently rotating.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedAutoLand</TokenIdentifier>
+            <Abstract type="html">The aircraft will land automatically.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateRotating</Declaration>
+            <Declaration>DJIWaypointMissionFinishedAutoLand</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -48,12 +49,10 @@ started and the aircraft is going to the first waypoint.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateBeginAction</TokenIdentifier>
-            <Abstract type="html">Aircraft has reached a waypoint and is processing the current waypoint&apos;s
-actions. This state is before any waypoint action is executed. This state
-occurs once for each waypoint action.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoFirstWaypoint</TokenIdentifier>
+            <Abstract type="html">The aircraft will go back to its first waypoint.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateBeginAction</Declaration>
+            <Declaration>DJIWaypointMissionFinishedGoFirstWaypoint</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
@@ -61,22 +60,14 @@ occurs once for each waypoint action.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateDoingAction</TokenIdentifier>
-            <Abstract type="html">Aircraft is at a waypoint and is executing the current action.
-     </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateDoingAction</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="140"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateFinishedAction</TokenIdentifier>
-            <Abstract type="html">Aircraft is at a waypoint and has finished executing the current waypoint
-action. This state occurs once for each waypoint action.
-     </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateFinishedAction</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedContinueUntilEnd</TokenIdentifier>
+            <Abstract type="html">If the user attempts to pull the aircraft back along the flight path as the
+mission is being executed, the aircarft will move towards the previous waypoint
+and will continue to do so until there are no more waypoint to move back to or
+the user has stopped attempting to move the aircraft back. In the process of moving the
+aircraft back, if the user ever stops attempting to do so the aircraft will,
+automatically continue the mission until the end.</Abstract>
+            <Declaration>DJIWaypointMissionFinishedContinueUntilEnd</Declaration>
             
             <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             

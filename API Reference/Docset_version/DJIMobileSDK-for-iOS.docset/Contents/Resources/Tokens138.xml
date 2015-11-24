@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIVerticalControlMode.html">
+	<File path="Constants/DJIWaypointActionType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIVerticalControlMode</TokenIdentifier>
-			<Abstract type="html">Vertical control mode, will affect the mThrottle of DJIFlightControlData</Abstract>
-			<DeclaredIn>DJIFlightControl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointActionType</TokenIdentifier>
+			<Abstract type="html">Waypoint action types.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="138"/>
@@ -14,23 +14,82 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIVerticalControlVelocity</TokenIdentifier>
-            <Abstract type="html">The value of mThrottle is a velocity value. mThrottle value will in range [-4, 4] m/s
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStay</TokenIdentifier>
+            <Abstract type="html">Keeps the aircraft at the waypoint&apos;s location. The actionParam parameter
+will determine how much time in millisecond the airactaft will stay at the
+location. This actionParam parameter can be set in the range of [0, 32767] milliseconds.
      </Abstract>
-            <Declaration>DJIVerticalControlVelocity</Declaration>
+            <Declaration>DJIWaypointActionStay</Declaration>
             
-            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIVerticalControlPosition</TokenIdentifier>
-            <Abstract type="html">The value of mThrottle is a position value. mThrottle value will in range [0, +∞) m. value is offset  position to the ground.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStartTakePhoto</TokenIdentifier>
+            <Abstract type="html">Starts to take photo. The actionParam for the waypoint action will be ignored.
+The maximum time set to excute this waypoint action is 6 seconds. If the time,
+while executing the waypoint action, goes above 6 seconds, the aircraft will
+stop executing the waypoint action and will move on to the next waypoint action,
+if there is one.
      </Abstract>
-            <Declaration>DJIVerticalControlPosition</Declaration>
+            <Declaration>DJIWaypointActionStartTakePhoto</Declaration>
             
-            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            
+            <NodeRef refid="138"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStartRecord</TokenIdentifier>
+            <Abstract type="html">Starts recording. The actionParam for the waypoint action will be ignored.
+The maximum time set to excute this waypoint action is 6 seconds. If the time,
+while executing the waypoint action, goes above 6 seconds, the aircraft will
+stop executing the waypoint action and will move on to the next waypoint action,
+if there is one.
+     </Abstract>
+            <Declaration>DJIWaypointActionStartRecord</Declaration>
+            
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            
+            <NodeRef refid="138"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStopRecord</TokenIdentifier>
+            <Abstract type="html">Stops recording. The actionParam for the waypoint action will be ignored.
+The maximum time set to excute this waypoint action is 6 seconds. If the time,
+while executing the waypoint action, goes above 6 seconds, the aircraft will
+stop executing the waypoint action and will move on to the next waypoint action,
+if there is one.
+     </Abstract>
+            <Declaration>DJIWaypointActionStopRecord</Declaration>
+            
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            
+            <NodeRef refid="138"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionRotateAircraft</TokenIdentifier>
+            <Abstract type="html">Rotates the aircraft&apos;s yaw. The rotationg direction will deternminded by the waypoint&apos;s
+turnMode property. The actionParam value must be in the range of [-180, 180] degrees.
+     </Abstract>
+            <Declaration>DJIWaypointActionRotateAircraft</Declaration>
+            
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            
+            <NodeRef refid="138"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionRotateGimbalPitch</TokenIdentifier>
+            <Abstract type="html">Rotates the gimbal&apos;s pitch. The actionParam value should in range [-90, 0] degrees.
+     </Abstract>
+            <Declaration>DJIWaypointActionRotateGimbalPitch</Declaration>
+            
+            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>

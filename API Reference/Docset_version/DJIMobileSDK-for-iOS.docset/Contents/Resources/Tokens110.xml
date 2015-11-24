@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIFollowMeHeadingMode.html">
+	<File path="Constants/DJIFollowMeMissionExecuteState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeHeadingMode</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s heading during a follow me mission.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeMissionExecuteState</TokenIdentifier>
+			<Abstract type="html">All possible follow me mission execution states.</Abstract>
 			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeHeadingControlledByRemoteController</TokenIdentifier>
-            <Abstract type="html">Aircraft&apos;s heading will be controlled by the remote controller.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateInitializing</TokenIdentifier>
+            <Abstract type="html">The mission is currently being initialized.
      </Abstract>
-            <Declaration>DJIFollowMeHeadingControlledByRemoteController</Declaration>
+            <Declaration>DJIFollowMeMissionExecuteStateInitializing</Declaration>
             
             <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
@@ -25,14 +25,23 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeHeadingTowardsFollowPosition</TokenIdentifier>
-            <Abstract type="html">Aircraft&apos;s heading will be towards the coordinate it needs
-to follow. When the mission is first initialized, the heading
-will be towards the initial coordinate (userCoordinate) and
-from there onwards, it&apos;s heading will be dicated to what the
-userCoordinate&apos;s value is updated to.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateMoving</TokenIdentifier>
+            <Abstract type="html">The aircraft is currently moving.
      </Abstract>
-            <Declaration>DJIFollowMeHeadingTowardsFollowPosition</Declaration>
+            <Declaration>DJIFollowMeMissionExecuteStateMoving</Declaration>
+            
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateWaiting</TokenIdentifier>
+            <Abstract type="html">The mission is currently waiting to continue. For example,
+if the GPS quality is poor or the connection is broken, the
+aircraft will continue to wait.
+     </Abstract>
+            <Declaration>DJIFollowMeMissionExecuteStateWaiting</Declaration>
             
             <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             

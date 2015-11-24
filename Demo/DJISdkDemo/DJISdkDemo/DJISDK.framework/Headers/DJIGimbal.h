@@ -151,7 +151,7 @@ typedef NS_ENUM(uint8_t, DJIGimbalWorkMode){
 /**
  *  Whether or nor the calibration is succeeded. Value is valid while 'isCalibrating' changed from YES to NO.
  */
-@property(nonatomic, readonly) BOOL isCalibrationSueeeeded;
+@property(nonatomic, readonly) BOOL isCalibrationSucceeded;
 
 /**
  *  Pitch reaches max

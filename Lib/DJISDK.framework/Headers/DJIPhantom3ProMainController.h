@@ -6,6 +6,7 @@
 //
 
 #import <DJISDK/DJIMainController.h>
+#import <DJISDK/DJIFoundation.h>
 
 @interface DJIPhantom3ProMainController : DJIMainController
 

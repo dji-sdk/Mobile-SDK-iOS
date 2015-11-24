@@ -20,7 +20,27 @@
 #define ERR_CommandExecuteFailed              0x14
 #define ERR_VersionNotCompatible              0x15
 
+#define ERR_WPMissionInvalid                    0x90
+#define ERR_WPDataInvalid                       0x91
+#define ERR_WPTotalDistanceTooLong              0x92
+#define ERR_WPTotalFlightDistanceTooLong        0x93
+#define ERR_WPCountInvalid                      0x94
+#define ERR_WPTooClose                          0x95
+#define ERR_WPTooFar                            0x96
+#define ERR_WPCornerRadiusInvalid               0x97
+#define ERR_WPActionInvalid                     0x98
+#define ERR_WPNeedUploadNext                    0x99
+#define ERR_WPMissionInfoNotUpload              0x9A
+#define ERR_WPDataUploadNotFinished             0x9B
+#define ERR_WPAlreadyInCommandState             0x9C
+#define ERR_WPPauseFailed                       0x9D
+#define ERR_WPAutoFlightSpeedInvalid            0x9E
+
 #define ERR_TooCloseToHomePoint               0xA0
+#define ERR_IOCTypeInvalid                    0xA1
+#define ERR_HPInfoInvalid                     0xA2
+#define ERR_HPPaused                          0xA9
+#define ERR_HPNotPaused                       0xAA
 #define ERR_FollowTargetTooFar                0xB0
 #define ERR_FollowGPSLost                     0xB1
 #define ERR_FollowGimbalPitch                 0xB2
@@ -52,6 +72,7 @@
 #define ERR_MissionRadiusOverLimited          0xC7
 #define ERR_NavigationNotSupport              0xC8
 #define ERR_MissionTooFar                     0xC9
+#define ERR_InNoviceMode                      0xCA
 
 #define ERR_NotSupportedCommand               0xE0
 #define ERR_Timeout                           0xE1
@@ -66,29 +87,18 @@
 #define ERR_SDCardError                       0xEA
 #define ERR_SensorError                       0xEB
 #define ERR_SystemError                       0xEC
+
+#define ERR_AircraftTakingOff                 0xF0
+#define ERR_AircraftLanding                   0xF1
+#define ERR_AircraftGoingHome                 0xF2
+#define ERR_AircraftStartingEngine            0xF3
+
 #define ERR_NotDefined                        0xFF
 
 #define ERR_InvalidData                       0x100
 #define ERR_NetworkAbortByApp                 0x101
 #define ERR_NetworkAbortByServer              0x102
 
-
-@class DJIError;
-
-extern DJIError *DJIErrorFor(NSUInteger errorCode);
-
-typedef NS_ENUM(NSUInteger, DJIErrorCode){
-    DJIErrorCode_None = 0x00,
-    
-    DJIErrorCode_Timeout = 0xf0,
-    DJIErrorCode_Failed = 0xf1,
-    DJIErrorCode_NotSupport = 0xf2,
-    DJIErrorCode_InvalidParameter = 0xf3,
-};
-
-/**
- *  Error Class.Subclasses need to define the error code corresponding to the description.
- */
 @interface DJIError : NSObject
 {
     NSUInteger _code;

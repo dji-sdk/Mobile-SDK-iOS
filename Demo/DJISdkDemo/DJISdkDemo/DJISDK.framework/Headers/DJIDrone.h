@@ -15,7 +15,6 @@
 @class DJIBattery;
 @class DJIImageTransmitter;
 @class DJIRemoteController;
-@class DJIMediaManager;
 @class DJIError;
 @protocol DJIDroneDelegate;
 

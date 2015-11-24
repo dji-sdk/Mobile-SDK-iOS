@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRCParingState.html">
+	<File path="Constants/DJIRCRequestGimbalControlResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRCParingState</TokenIdentifier>
-			<Abstract type="html">RC paring state</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCRequestGimbalControlResult</TokenIdentifier>
+			<Abstract type="html">Result of slave who request for gimbal control permission</Abstract>
 			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCParingStateNormal</TokenIdentifier>
-            <Abstract type="html">RC not in paring state
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAgree</TokenIdentifier>
+            <Abstract type="html">Request was agreed
      </Abstract>
-            <Declaration>RCParingStateNormal</Declaration>
+            <Declaration>RCRequestGimbalControlResultAgree</Declaration>
             
             <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
@@ -25,10 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCParingStateParing</TokenIdentifier>
-            <Abstract type="html">RC is in paring
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultDeny</TokenIdentifier>
+            <Abstract type="html">Request was denied
      </Abstract>
-            <Declaration>RCParingStateParing</Declaration>
+            <Declaration>RCRequestGimbalControlResultDeny</Declaration>
             
             <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
@@ -36,10 +36,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCParingStateCompleted</TokenIdentifier>
-            <Abstract type="html">RC paring completed
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultTimeout</TokenIdentifier>
+            <Abstract type="html">Request was timeout
      </Abstract>
-            <Declaration>RCParingStateCompleted</Declaration>
+            <Declaration>RCRequestGimbalControlResultTimeout</Declaration>
             
             <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
@@ -47,10 +47,21 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCParingStateUnknown</TokenIdentifier>
-            <Abstract type="html">RC Paring state unknown
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAuthorized</TokenIdentifier>
+            <Abstract type="html">Request was Authorized
      </Abstract>
-            <Declaration>RCParingStateUnknown</Declaration>
+            <Declaration>RCRequestGimbalControlResultAuthorized</Declaration>
+            
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            
+            <NodeRef refid="135"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultUnknown</TokenIdentifier>
+            <Abstract type="html">Request was unknown
+     </Abstract>
+            <Declaration>RCRequestGimbalControlResultUnknown</Declaration>
             
             <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             

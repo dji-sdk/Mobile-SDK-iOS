@@ -511,6 +511,158 @@
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>quality</Name>
+					<Abstract type="html">Video quality set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
+			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
+*  PAL:4096x2160P_24fps
+        4096x2160P_25fps
+        3840x2160P_24fps
+        3840x2160P_25fps
+        1920x1080P_24fps
+        1920x1080P_25fps
+        1920x1080P_48fps
+        1920x1080P_50fps
+        1280x720P_24fps
+        1280x720P_25fps
+        1280x720P_48fps
+        1280x720P_50fps</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
+			
+			
+			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>format</Name>
+					<Abstract type="html">Storage format for video</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoStandard</Name>
+					<Abstract type="html">Video standard set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
+			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/fetchMediaListWithResultBlock:</TokenIdentifier>
 			<Abstract type="html">Fetch media list from remote album. The camera&apos;s work mode should be set as CameraWorkModePlayback or CameraWorkModeDownload before call this api.</Abstract>
 			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
@@ -1031,158 +1183,6 @@
 			</Parameters>
 			
 			<Anchor>//api/name/getCameraAELockWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>quality</Name>
-					<Abstract type="html">Video quality set to camera</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
-			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
-*  PAL:4096x2160P_24fps
-        4096x2160P_25fps
-        3840x2160P_24fps
-        3840x2160P_25fps
-        1920x1080P_24fps
-        1920x1080P_25fps
-        1920x1080P_48fps
-        1920x1080P_50fps
-        1280x720P_24fps
-        1280x720P_25fps
-        1280x720P_48fps
-        1280x720P_50fps</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>format</Name>
-					<Abstract type="html">Storage format for video</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoStandard</Name>
-					<Abstract type="html">Video standard set to camera</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		

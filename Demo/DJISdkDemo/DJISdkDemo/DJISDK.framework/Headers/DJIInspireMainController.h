@@ -11,7 +11,7 @@
 #import <DJISDK/DJIFollowMeMission.h>
 #import <DJISDK/DJIIOCMission.h>
 
-@interface DJIInspireMainController : DJIMainController
+@interface DJIInspireMainController  : DJIMainController
 
 /**
  *  Main controller's firmware version.

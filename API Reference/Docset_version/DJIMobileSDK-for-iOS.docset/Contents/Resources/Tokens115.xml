@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIGimbalWorkMode.html">
+	<File path="Constants/DJIGpsSignalLevel.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalWorkMode</TokenIdentifier>
-			<Abstract type="html">Gimbal work mode</Abstract>
-			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIGpsSignalLevel</TokenIdentifier>
+			<Abstract type="html">Gps Signal. used for measuring the signal quality.</Abstract>
+			<DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
 			
 			<NodeRef refid="115"/>
@@ -14,45 +14,78 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalFreeMode</TokenIdentifier>
-            <Abstract type="html">Free mode (not follow)
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel0</TokenIdentifier>
+            <Abstract type="html">Almost no gps signal, very bad
      </Abstract>
-            <Declaration>GimbalFreeMode</Declaration>
+            <Declaration>GpsSignalLevel0</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="115"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalFpvMode</TokenIdentifier>
-            <Abstract type="html">FPV mode
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel1</TokenIdentifier>
+            <Abstract type="html">Gps signal very weak
      </Abstract>
-            <Declaration>GimbalFpvMode</Declaration>
+            <Declaration>GpsSignalLevel1</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="115"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalYawFollowMode</TokenIdentifier>
-            <Abstract type="html">Follow Yaw mode
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel2</TokenIdentifier>
+            <Abstract type="html">Gps signal weak, at this level, the aircraft&apos;s go home functionality still work.
      </Abstract>
-            <Declaration>GimbalYawFollowMode</Declaration>
+            <Declaration>GpsSignalLevel2</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="115"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalWorkModeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel3</TokenIdentifier>
+            <Abstract type="html">Gps signal good, the aricraft could hover in the air.
      </Abstract>
-            <Declaration>GimbalWorkModeUnknown</Declaration>
+            <Declaration>GpsSignalLevel3</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="115"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel4</TokenIdentifier>
+            <Abstract type="html">Gps signal very good, the aircraft could record the home point.
+     </Abstract>
+            <Declaration>GpsSignalLevel4</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="115"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevel5</TokenIdentifier>
+            <Abstract type="html">Gps signal very strong
+     </Abstract>
+            <Declaration>GpsSignalLevel5</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="115"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GpsSignalLevelNone</TokenIdentifier>
+            <Abstract type="html">None
+     </Abstract>
+            <Declaration>GpsSignalLevelNone</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="115"/>
         </Token>
