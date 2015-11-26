@@ -52,8 +52,13 @@ Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **AppDelegate.m** f
 
 ~~~
 
->Note: If you are running the sample project with Xcode 7.0 above, please set "Enable Bitcode" value to No in the Build Settings as shown below:
+> Notes:
+> 
+> -  If you are running the sample project with Xcode 7.0 above, please set "Enable Bitcode" value to No in the Build Settings as shown below:
 >![bitcode](./Images/disable_bitcode.png)
+>
+> - In order to enable your app to connect to the MFI remote controller, you must add "Supported external accessory protocols" items in the info.plist file as shown below:
+> ![infoPlist](./Images/infoPlist.png)
 
 Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
 
@@ -148,9 +153,13 @@ You can get support from DJI with the following methods:
 
 ~~~
 
->注意: 如果你使用7.0版本以上的Xcode运行示例代码，请把Build Settings中的"Enable Bitcode"值设为No, 如下所示:
->
+>注意:
+> 
+> - 如果你使用7.0版本以上的Xcode运行示例代码，请把Build Settings中的"Enable Bitcode"值设为No, 如下图所示:
 >![bitcode](./Images/disable_bitcode.png)
+>
+> - 如果你要让app支持MFI遥控器连接，你必须在info.plist文件中添加"Supported external accessory protocols"选项，如下图所示：
+> ![infoPlist](./Images/infoPlist.png)
 
 最后编译运行该工程，你就可以开始流畅地体验实例代码中的不同功能了。
 
