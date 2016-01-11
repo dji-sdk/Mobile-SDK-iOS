@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CameraRecordingFovType.html">
+	<File path="Constants/DJICameraPhotoTimeLapseFileFormat.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CameraRecordingFovType</TokenIdentifier>
-			<Abstract type="html">Camera FOV</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/DJICameraPhotoTimeLapseFileFormat</TokenIdentifier>
+			<Abstract type="html">File format for camera when it is in time-lapse mode. The
+default file format is video. If video+JPEG is selected the minimum interval will be 2 seconds.</Abstract>
 			<DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
 			
@@ -14,10 +15,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV0</TokenIdentifier>
-            <Abstract type="html">Wide FOV
+            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatVideo</TokenIdentifier>
+            <Abstract type="html">The camera in time-lapse mode will generate video
      </Abstract>
-            <Declaration>CameraRecordingFOV0</Declaration>
+            <Declaration>DJICameraPhotoTimeLapseFileFormatVideo</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -25,10 +26,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV1</TokenIdentifier>
-            <Abstract type="html">Middle FOV, Only support in Phantom 2 Vision
+            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatVideoAndJPEG</TokenIdentifier>
+            <Abstract type="html">The camera in time-lapse mode will generate video and JPEG
      </Abstract>
-            <Declaration>CameraRecordingFOV1</Declaration>
+            <Declaration>DJICameraPhotoTimeLapseFileFormatVideoAndJPEG</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -36,27 +37,15 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV2</TokenIdentifier>
-            <Abstract type="html">Narrow FOV, Only support in Phantom 2 Vision
+            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatUnknown</TokenIdentifier>
+            <Abstract type="html">The file format is unknown
      </Abstract>
-            <Declaration>CameraRecordingFOV2</Declaration>
+            <Declaration>DJICameraPhotoTimeLapseFileFormatUnknown</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOVUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
-     </Abstract>
-            <Declaration>CameraRecordingFOVUnknown</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
-            <NodeRef refid="95"/>
-        </Token>
-        
         
 	</File>
 </Tokens>

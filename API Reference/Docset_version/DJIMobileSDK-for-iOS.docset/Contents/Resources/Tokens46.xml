@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantomCamera.html">
+	<File path="Classes/DJIPlaybackManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantomCamera</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPlaybackManager</TokenIdentifier>
+			<Abstract type="html">The playback manager is used to interact with the playback system of the camera.
+By using the manager, user can control the playback system.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="46"/>
@@ -13,778 +14,313 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraVersion</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s firmware version</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)getCameraVersion</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIPlaybackDelegate&gt; delegate</Declaration>
 			
-			<ReturnValue><Abstract type="html">Return the firmware version of the camera. return nil if disconnected.</Abstract></ReturnValue>
-			<Anchor>//api/name/getCameraVersion</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/startTakePhoto:withResult:</TokenIdentifier>
-			<Abstract type="html">Take photo with mode, if the capture mode is CameraMultiCapture or CameraContinousCapture, you should call stopTakePhotoWithResult to stop photoing</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)startTakePhoto:(CameraCaptureMode)captureMode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIPlaybackDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIPlaybackManager/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJIPlaybackDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/enterMultipleEditMode</TokenIdentifier>
+			<Abstract type="html">This enables the user to select, download and/or delete multiple media files when the camera is in Playback mode.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)enterMultipleEditMode</Declaration>
+			
+			
+			<Anchor>//api/name/enterMultipleEditMode</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/exitMultipleEditMode</TokenIdentifier>
+			<Abstract type="html">Exits multiple edit mode.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)exitMultipleEditMode</Declaration>
+			
+			
+			<Anchor>//api/name/exitMultipleEditMode</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/toggleFileSelectionAtIndex:</TokenIdentifier>
+			<Abstract type="html">Selects or unselects a file at the specified index of the current page. This index is unrelated to filename, and used in multiple edit mode.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)toggleFileSelectionAtIndex:(int)index</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>captureMode</Name>
-					<Abstract type="html">Tell the camera what capture action will be do, if capture mode is multi capture or continuous capture, user should call the &apos;stopTakePhotWithResult&apos; to stop catpture if need.</Abstract>
+					<Name>index</Name>
+					<Abstract type="html">Index at which to select a file.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/toggleFileSelectionAtIndex:</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/selectAllFiles</TokenIdentifier>
+			<Abstract type="html">Selects all the files on the SD card.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)selectAllFiles</Declaration>
+			
+			
+			<Anchor>//api/name/selectAllFiles</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/unselectAllFiles</TokenIdentifier>
+			<Abstract type="html">Unselects all the files on the SD card.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)unselectAllFiles</Declaration>
+			
+			
+			<Anchor>//api/name/unselectAllFiles</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/selectAllFilesInPage</TokenIdentifier>
+			<Abstract type="html">Selects all the file(s) on the current page.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)selectAllFilesInPage</Declaration>
+			
+			
+			<Anchor>//api/name/selectAllFilesInPage</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/unselectAllFilesInPage</TokenIdentifier>
+			<Abstract type="html">Unselects all the file(s) on the current page.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)unselectAllFilesInPage</Declaration>
+			
+			
+			<Anchor>//api/name/unselectAllFilesInPage</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/deleteAllSelectedFiles</TokenIdentifier>
+			<Abstract type="html">Deletes all selected files from the SD card.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteAllSelectedFiles</Declaration>
+			
+			
+			<Anchor>//api/name/deleteAllSelectedFiles</Anchor>
+            <NodeRef refid="46"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</TokenIdentifier>
+			<Abstract type="html">Downloads the selected files. When this method is called. The dataBlock gets called continuously until all the data is downloaded.
+The prepare and completion blocks are called once for each file being downloaded. In the prepareBlock, you can get the forthcoming file&apos;s info, like file name, file size, etc.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
+			
+			<Declaration>- (void)downloadSelectedFilesWithPreparation:(DJIFileDownloadPreparingBlock)prepareBlock process:(DJIFileDownloadingBlock)dataBlock fileCompletion:(DJIFileDownloadCompletionBlock)fileCompletionBlock overallCompletion:(DJICompletionBlock)overallCompletionBlock</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>prepareBlock</Name>
+					<Abstract type="html">Callback to prepare each file for download.</Abstract>
 				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startTakePhoto:withResult:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/stopTakePhotoWithResult:</TokenIdentifier>
-			<Abstract type="html">Stop the mutil capture or continous capture. should match the startTakePhoto action.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopTakePhotoWithResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopTakePhotoWithResult:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/startRecord:</TokenIdentifier>
-			<Abstract type="html">Start recording</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startRecord:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startRecord:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/stopRecord:</TokenIdentifier>
-			<Abstract type="html">Stop recording</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopRecord:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopRecord:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/startCameraSystemStateUpdates</TokenIdentifier>
-			<Abstract type="html">Start the camera system state updates.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startCameraSystemStateUpdates</Declaration>
-			
-			
-			<Anchor>//api/name/startCameraSystemStateUpdates</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/stopCameraSystemStateUpdates</TokenIdentifier>
-			<Abstract type="html">Stop the camera system state updates</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopCameraSystemStateUpdates</Declaration>
-			
-			
-			<Anchor>//api/name/stopCameraSystemStateUpdates</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setVideoQuality:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the video quality, e.g. 640x480</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoQuality:(VideoQuality)videoQuality withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoQuality</Name>
-					<Abstract type="html">Video quality to be set</Abstract>
+					<Name>dataBlock</Name>
+					<Abstract type="html">Callback while a file is downloading. The dataBlock can be called multiple times for a file.</Abstract>
 				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.
-@attention If the parameters was configured Succeeded, the remote video module will restart</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoQuality:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraPhotoSize:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the photo&apos;s pixel size. The camera will used this size to storage photo after taking photo.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraPhotoSize:(CameraPhotoSizeType)photoSize withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>photoSize</Name>
-					<Abstract type="html">Photo&apos;s pixel size</Abstract>
+					<Name>fileCompletionBlock</Name>
+					<Abstract type="html">Callback after each file have been downloaded.</Abstract>
 				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
+					<Name>finishBlock</Name>
+					<Abstract type="html">Callback after the downloading is finished.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraPhotoSize:withResultBlock:</Anchor>
+			<Anchor>//api/name/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraPhotoSize:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s photo pixel size parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/enterMultiplePreviewMode</TokenIdentifier>
+			<Abstract type="html">Enables the user to preview multiple files when the camera is in Playback mode.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraPhotoSize:(void ( ^ ) ( CameraPhotoSizeType photoSize , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)enterMultiplePreviewMode</Declaration>
 			
-			<Anchor>//api/name/getCameraPhotoSize:</Anchor>
+			
+			<Anchor>//api/name/enterMultiplePreviewMode</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraISO:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s ISO parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/goToNextMultiplePreviewPage</TokenIdentifier>
+			<Abstract type="html">Goes to the next page when there are multiple pages.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraISO:(CameraISOType)isoType withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>isoType</Name>
-					<Abstract type="html">Iso type</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)goToNextMultiplePreviewPage</Declaration>
 			
-			<Anchor>//api/name/setCameraISO:withResultBlock:</Anchor>
+			
+			<Anchor>//api/name/goToNextMultiplePreviewPage</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraISO:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s ISO parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/goToPreviousMultiplePreviewPage</TokenIdentifier>
+			<Abstract type="html">Goes back to the previous page when there are multiple pages.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraISO:(void ( ^ ) ( CameraISOType iso , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result block</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)goToPreviousMultiplePreviewPage</Declaration>
 			
-			<Anchor>//api/name/getCameraISO:</Anchor>
+			
+			<Anchor>//api/name/goToPreviousMultiplePreviewPage</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraWhiteBalance:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s white balance parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/enterSinglePreviewModeWithIndex:</TokenIdentifier>
+			<Abstract type="html">Enters single file preview mode for a file at the specified index. In order for this method to be called,
+the camera work mode should be DJICameraModePlayback.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraWhiteBalance:(CameraWhiteBalanceType)whiteBalance withResultBlock:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (void)enterSinglePreviewModeWithIndex:(uint8_t)index</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>whiteBalance</Name>
-					<Abstract type="html">White balance parameter.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
+					<Name>index</Name>
+					<Abstract type="html">File to be previewed at the specified index.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraWhiteBalance:withResultBlock:</Anchor>
+			<Anchor>//api/name/enterSinglePreviewModeWithIndex:</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraWhiteBalance:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s white balance parameter</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/goToNextSinglePreviewPage</TokenIdentifier>
+			<Abstract type="html">Goes to the next page.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraWhiteBalance:(void ( ^ ) ( CameraWhiteBalanceType whiteBalance , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)goToNextSinglePreviewPage</Declaration>
 			
-			<Anchor>//api/name/getCameraWhiteBalance:</Anchor>
+			
+			<Anchor>//api/name/goToNextSinglePreviewPage</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraExposureMetering:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s exposure metering parameter</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/goToPreviousSinglePreviewPage</TokenIdentifier>
+			<Abstract type="html">Goes back to the previous page.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraExposureMetering:(CameraExposureMeteringType)meteringType withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>meteringType</Name>
-					<Abstract type="html">Exposure metering</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result  callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)goToPreviousSinglePreviewPage</Declaration>
 			
-			<Anchor>//api/name/setCameraExposureMetering:withResultBlock:</Anchor>
+			
+			<Anchor>//api/name/goToPreviousSinglePreviewPage</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraExposureMetering:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s exposure metering parameter</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/deleteCurrentPreviewFile</TokenIdentifier>
+			<Abstract type="html">Deletes the current file being previewed.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraExposureMetering:(void ( ^ ) ( CameraExposureMeteringType exposureMetering , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result block callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)deleteCurrentPreviewFile</Declaration>
 			
-			<Anchor>//api/name/getCameraExposureMetering:</Anchor>
+			
+			<Anchor>//api/name/deleteCurrentPreviewFile</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraRecordingResolution:andFOV:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s recording resolution and fov parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/startVideoPlayback</TokenIdentifier>
+			<Abstract type="html">Starts video playback. The selected file must be a video file.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraRecordingResolution:(CameraRecordingResolutionType)resolution andFOV:(CameraRecordingFovType)fov withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>resolution</Name>
-					<Abstract type="html">Recording resolution is used by camera while in recording.</Abstract>
-				</Parameter><Parameter>
-					<Name>fov</Name>
-					<Abstract type="html">Recording FOV is used by camera while in recording.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)startVideoPlayback</Declaration>
 			
-			<Anchor>//api/name/setCameraRecordingResolution:andFOV:withResultBlock:</Anchor>
+			
+			<Anchor>//api/name/startVideoPlayback</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraRecordingResolution:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s recording resolution and fov parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/pauseVideoPlayback</TokenIdentifier>
+			<Abstract type="html">Pause a video during playback.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraRecordingResolution:(void ( ^ ) ( CameraRecordingResolutionType resolution , CameraRecordingFovType fov , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)pauseVideoPlayback</Declaration>
 			
-			<Anchor>//api/name/getCameraRecordingResolution:</Anchor>
+			
+			<Anchor>//api/name/pauseVideoPlayback</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraPhotoFormat:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s photo storage format.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/stopVideoPlayback</TokenIdentifier>
+			<Abstract type="html">Stops a video during playback</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraPhotoFormat:(CameraPhotoFormatType)photoFormat withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>photoFormat</Name>
-					<Abstract type="html">Photo storage format is used by camera after take photo.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)stopVideoPlayback</Declaration>
 			
-			<Anchor>//api/name/setCameraPhotoFormat:withResultBlock:</Anchor>
+			
+			<Anchor>//api/name/stopVideoPlayback</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraPhotoFormat:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s photo storage format.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPlaybackManager/setVideoPlaybackFromLocation:</TokenIdentifier>
+			<Abstract type="html">Plays a video from the specified location.</Abstract>
+			<DeclaredIn>DJIPlaybackManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraPhotoFormat:(void ( ^ ) ( CameraPhotoFormatType photoFormat , DJIError *error ))block</Declaration>
+			<Declaration>- (void)setVideoPlaybackFromLocation:(uint8_t)location</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
+					<Name>location</Name>
+					<Abstract type="html">Location from which to play the video must be in the range of [0, 100]. This
+value represents at what percent of the entire video it should start playing.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getCameraPhotoFormat:</Anchor>
+			<Anchor>//api/name/setVideoPlaybackFromLocation:</Anchor>
             <NodeRef refid="46"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraExposureCompensation:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s exposure compensation parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraExposureCompensation:(CameraExposureCompensationType)compensationType withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>compensationType</Name>
-					<Abstract type="html">Camera&apos;s exposure compensation parameter.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraExposureCompensation:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraExposureCompensation:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s exposure compensation parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraExposureCompensation:(void ( ^ ) ( CameraExposureCompensationType exposureCompensation , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraExposureCompensation:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraAntiFlicker:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s anti flicker parameter</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraAntiFlicker:(CameraAntiFlickerType)antiFlickerType withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>antiFlickerType</Name>
-					<Abstract type="html">Camera&apos;s anti flicker parameter.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraAntiFlicker:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraAntiFlicker:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s anti flicker parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraAntiFlicker:(void ( ^ ) ( CameraAntiFlickerType antiFlicker , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraAntiFlicker:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraSharpness:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s sharpness parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraSharpness:(CameraSharpnessType)sharpness withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>sharpness</Name>
-					<Abstract type="html">Camera&apos;s sharpness parameter.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraSharpness:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraSharpness:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s sharpness parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraSharpness:(void ( ^ ) ( CameraSharpnessType sharpness , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraSharpness:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraContrast:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s contrast parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraContrast:(CameraContrastType)contrast withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>contrast</Name>
-					<Abstract type="html">Camera&apos;s contrast parameter</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraContrast:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraContrast:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s contrast parameter.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraContrast:(void ( ^ ) ( CameraContrastType contrast , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraContrast:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/syncTime:</TokenIdentifier>
-			<Abstract type="html">Sync local time to camera. the camera should had synced time from device while doing take photo or record action, or the camera will return &quot;Time Not Sync&quot; error</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)syncTime:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/syncTime:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraGps:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s GPS parameter. The gps parameter will write into meta data of photo or video file.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraGps:(CLLocationCoordinate2D)gps withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>gps</Name>
-					<Abstract type="html">GPS</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraGps:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraGps:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s GPS</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraGps:(void ( ^ ) ( CLLocationCoordinate2D coordinate , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraGps:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setMultiCaptureCount:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set multi capture count.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setMultiCaptureCount:(CameraMultiCaptureCount)count withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>count</Name>
-					<Abstract type="html">Multi capture count</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setMultiCaptureCount:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getMultiCaptureCount:</TokenIdentifier>
-			<Abstract type="html">Get multi capture count.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getMultiCaptureCount:(void ( ^ ) ( CameraMultiCaptureCount multiCaptureCount , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getMultiCaptureCount:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setContinuousCapture:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s continuous capture parameters</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setContinuousCapture:(CameraContinuousCapturePara)capturePara withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setContinuousCapture:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getContinuousCaptureParam:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s continuous capture parameters</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getContinuousCaptureParam:(void ( ^ ) ( CameraContinuousCapturePara capturePara , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getContinuousCaptureParam:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraActionWhenConnectionBroken:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera how to do while the connection was broken.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraActionWhenConnectionBroken:(CameraActionWhenBreak)action withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>action</Name>
-					<Abstract type="html">How the Camera will action while the connection broken.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraActionWhenConnectionBroken:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraActionWhenConnectionBroken:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s action settings while the connection was broken.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraActionWhenConnectionBroken:(void ( ^ ) ( CameraActionWhenBreak cameraAction , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraActionWhenConnectionBroken:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/saveCameraSettings:</TokenIdentifier>
-			<Abstract type="html">Save the camera&apos;s settings permanently. or the settings will be lost after camera restart.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)saveCameraSettings:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/saveCameraSettings:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/restoreCameraDefaultSettings:</TokenIdentifier>
-			<Abstract type="html">Restore the default built-in settings.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)restoreCameraDefaultSettings:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/restoreCameraDefaultSettings:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCamerMode:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s mode. The camera mode decide how the camera work. In CameraUSBMode, could not take photo, recording or change camera parameters, in this mode, we could use - fetchMediaListWithResultBlock: API to access medias file on SD card and download medias file from SD carad.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCamerMode:(CameraMode)mode withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Camera mode</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCamerMode:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/getCameraPhotoNamePrefix:</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s photo name prefix</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraPhotoNamePrefix:(void ( ^ ) ( NSString *prefix , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result block</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraPhotoNamePrefix:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/setCameraPhotoNamePrefix:withResultBlock:</TokenIdentifier>
-			<Abstract type="html">Set the camera&apos;s photo name prefix. The new name prefix must have only four fixed characters, and the  prefix should be comprised of character &apos;A&apos; - &apos;Z&apos; and &apos;&apos;. for example &quot;DJI&quot;.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraPhotoNamePrefix:(NSString *)prefix withResultBlock:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>prefix</Name>
-					<Abstract type="html">New photo name prefix.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result block</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraPhotoNamePrefix:withResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomCamera/fetchMediaListWithResultBlock:</TokenIdentifier>
-			<Abstract type="html">Fetch media list from remote album.</Abstract>
-			<DeclaredIn>DJIPhantomCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)fetchMediaListWithResultBlock:(void ( ^ ) ( NSArray *mediaList , NSError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result block
-@attention The camera mode should be set as &apos;CameraUSBMode&apos;.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/fetchMediaListWithResultBlock:</Anchor>
-            <NodeRef refid="46"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

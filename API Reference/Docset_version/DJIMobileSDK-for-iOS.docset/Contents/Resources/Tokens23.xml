@@ -1,106 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIInspireBattery.html">
+	<File path="Classes/DJIFollowMeStep.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIInspireBattery</TokenIdentifier>
-			<Abstract type="html">Description DJIInspireBattery is one type of dji battery. the designed volume is 4500mAh, 22.2V</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIFollowMeStep</TokenIdentifier>
+			<Abstract type="html">This class represents a follow-me step for a custom mission. By creating an object of this class and adding it into
+a custom mission, a follow-me action will be performed during the custom mission.</Abstract>
+			<DeclaredIn>DJIFollowMeStep.h</DeclaredIn>
             
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/DJIFollowMeMission</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<NodeRef refid="23"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireBattery/getBatteryHistoryState:</TokenIdentifier>
-			<Abstract type="html">Get battery&apos;s history state, The dji&apos;s battery could keep the state in latest 30 days. Object in &apos;history&apos; parameters is kind of class DJIBatteryState.</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeStep/initWithFollowMeMission:duration:</TokenIdentifier>
+			<Abstract type="html">Inialized instance with a follow me mission and duration.</Abstract>
+			<DeclaredIn>DJIFollowMeStep.h</DeclaredIn>
 			
-			<Declaration>- (void)getBatteryHistoryState:(void ( ^ ) ( NSArray *history , DJIError *error ))result</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithFollowMeMission:(DJIFollowMeMission *_Nonnull)mission duration:(float)seconds</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getBatteryHistoryState:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireBattery/getBatteryCurrentState:</TokenIdentifier>
-			<Abstract type="html">Get battery&apos;s current state.</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
-			
-			<Declaration>- (void)getBatteryCurrentState:(void ( ^ ) ( DJIBatteryState *state , DJIError *))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getBatteryCurrentState:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireBattery/setBatterySelfDischargeDay:withResult:</TokenIdentifier>
-			<Abstract type="html">Set battery&apos;s self-discharge day.</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
-			
-			<Declaration>- (void)setBatterySelfDischargeDay:(uint8_t)day withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>day</Name>
-					<Abstract type="html">Day for self-discharge</Abstract>
+					<Name>mission</Name>
+					<Abstract type="html">Mission for follow me step.</Abstract>
 				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result</Abstract>
+					<Name>seconds</Name>
+					<Abstract type="html">Duration in seconds to this step.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setBatterySelfDischargeDay:withResult:</Anchor>
+			<ReturnValue><Abstract type="html">Return instance of DJIFollowMeStep.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithFollowMeMission:duration:</Anchor>
             <NodeRef refid="23"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireBattery/getBatterySelfDischargeDayWithResult:</TokenIdentifier>
-			<Abstract type="html">Get battery self-discharge day</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
-			
-			<Declaration>- (void)getBatterySelfDischargeDayWithResult:(void ( ^ ) ( uint8_t day , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getBatterySelfDischargeDayWithResult:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireBattery/getCellVoltagesWithResult:</TokenIdentifier>
-			<Abstract type="html">Get battery&apos;s cell voltage. The object in &apos;cellArray&apos; is kind of class DJIBatteryCell</Abstract>
-			<DeclaredIn>DJIInspireBattery.h</DeclaredIn>
-			
-			<Declaration>- (void)getCellVoltagesWithResult:(void ( ^ ) ( NSArray *cellArray , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCellVoltagesWithResult:</Anchor>
-            <NodeRef refid="23"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

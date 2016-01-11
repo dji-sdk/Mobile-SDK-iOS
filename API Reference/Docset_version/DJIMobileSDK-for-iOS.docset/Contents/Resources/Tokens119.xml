@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIHotpointMissionExecuteState.html">
+	<File path="Constants/DJIGimbalUserConfigType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIHotpointMissionExecuteState</TokenIdentifier>
-			<Abstract type="html">All possible hot point mission execution states.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalUserConfigType</TokenIdentifier>
+			<Abstract type="html">Gimbal User Config. This is only supported by OSMO gimbal.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
             
 			
 			<NodeRef refid="119"/>
@@ -14,38 +14,70 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHotpointMissionExecuteStateInitializing</TokenIdentifier>
-            <Abstract type="html">The mission is currently being initialized. the initializing state will happen after the hot mission is started and flying to the entry point.
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeFastSmoothTrack</TokenIdentifier>
+            <Abstract type="html">The gimbal&apos;s SmoothTrack will catch up with significant yaw and pitch changes with a fast speed.
      </Abstract>
-            <Declaration>DJIHotpointMissionExecuteStateInitializing</Declaration>
+            <Declaration>DJIGimbalUserConfigTypeFastSmoothTrack</Declaration>
             
-            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="119"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHotpointMissionExecuteStateMoving</TokenIdentifier>
-            <Abstract type="html">The aircraft is currently moving.
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeMediumSmoothTrack</TokenIdentifier>
+            <Abstract type="html">The gimbal&apos;s SmoothTrack will catch up with significant yaw and pitch changes with a medium speed.
      </Abstract>
-            <Declaration>DJIHotpointMissionExecuteStateMoving</Declaration>
+            <Declaration>DJIGimbalUserConfigTypeMediumSmoothTrack</Declaration>
             
-            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="119"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHotpointMissionExecuteStatePausing</TokenIdentifier>
-            <Abstract type="html">The mission is currently pausing.
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeSlowSmoothTrack</TokenIdentifier>
+            <Abstract type="html">The gimbal&apos;s SmoothTrack will catch up with significant yaw and pitch changes with a slow speed.
      </Abstract>
-            <Declaration>DJIHotpointMissionExecuteStatePausing</Declaration>
+            <Declaration>DJIGimbalUserConfigTypeSlowSmoothTrack</Declaration>
             
-            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="119"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeCustom1</TokenIdentifier>
+            <Abstract type="html">The gimbal uses a custom configuration in memory slot 1 where the yaw and pitch speed, deadband and acceleration can be defined.
+     </Abstract>
+            <Declaration>DJIGimbalUserConfigTypeCustom1</Declaration>
+            
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            
+            <NodeRef refid="119"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeCustom2</TokenIdentifier>
+            <Abstract type="html">The gimbal uses a custom configuration in memory slot 2 where the yaw and pitch speed, deadband and acceleration can be defined.
+     </Abstract>
+            <Declaration>DJIGimbalUserConfigTypeCustom2</Declaration>
+            
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            
+            <NodeRef refid="119"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalUserConfigTypeUnknown</TokenIdentifier>
+            <Abstract type="html">The gimbal&apos;s user config type is unknown.
+     </Abstract>
+            <Declaration>DJIGimbalUserConfigTypeUnknown</Declaration>
+            
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            
+            <NodeRef refid="119"/>
+        </Token>
         
 	</File>
 </Tokens>

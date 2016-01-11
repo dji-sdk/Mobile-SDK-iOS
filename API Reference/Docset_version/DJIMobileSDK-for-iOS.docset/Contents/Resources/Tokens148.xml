@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/GroundStationControlMode.html">
+	<File path="Constants/DJIRCRequestGimbalControlResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/GroundStationControlMode</TokenIdentifier>
-			<Abstract type="html">Ground station control mode</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCRequestGimbalControlResult</TokenIdentifier>
+			<Abstract type="html">Result when a slave Remote Controller requests permission to control the gimbal.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="148"/>
@@ -14,115 +14,61 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeManual</TokenIdentifier>
-            <Abstract type="html">Manual
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAgree</TokenIdentifier>
+            <Abstract type="html">The master Remote Controller agrees to the slave&apos;s request.
      </Abstract>
-            <Declaration>GSModeManual</Declaration>
+            <Declaration>RCRequestGimbalControlResultAgree</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeGpsCruise</TokenIdentifier>
-            <Abstract type="html">Gps curise
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultDeny</TokenIdentifier>
+            <Abstract type="html">The master Remote Controller denies the slave&apos;s request. If the slave Remote Controller wants to control the
+gimbal, it must send a request to master Remote Controller first. Then the master Remote Controller can decide to
+approve or deny the request.
      </Abstract>
-            <Declaration>GSModeGpsCruise</Declaration>
+            <Declaration>RCRequestGimbalControlResultDeny</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeGpsAtti</TokenIdentifier>
-            <Abstract type="html">Gps Atti
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultTimeout</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s request timed out.
      </Abstract>
-            <Declaration>GSModeGpsAtti</Declaration>
+            <Declaration>RCRequestGimbalControlResultTimeout</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeAtti</TokenIdentifier>
-            <Abstract type="html">Attitude
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAuthorized</TokenIdentifier>
+            <Abstract type="html">The master Remote Controller authorizes the slave request to control the gimbal.
      </Abstract>
-            <Declaration>GSModeAtti</Declaration>
+            <Declaration>RCRequestGimbalControlResultAuthorized</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeWaypoint</TokenIdentifier>
-            <Abstract type="html">Waypoint
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultUnknown</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s request is unknown.
      </Abstract>
-            <Declaration>GSModeWaypoint</Declaration>
+            <Declaration>RCRequestGimbalControlResultUnknown</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeGohome</TokenIdentifier>
-            <Abstract type="html">Go Home
-     </Abstract>
-            <Declaration>GSModeGohome</Declaration>
-            
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModePause</TokenIdentifier>
-            <Abstract type="html">Pause
-     </Abstract>
-            <Declaration>GSModePause</Declaration>
-            
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeLanding</TokenIdentifier>
-            <Abstract type="html">Landing
-     </Abstract>
-            <Declaration>GSModeLanding</Declaration>
-            
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeTakeOff</TokenIdentifier>
-            <Abstract type="html">TakeOff
-     </Abstract>
-            <Declaration>GSModeTakeOff</Declaration>
-            
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSModeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
-     </Abstract>
-            <Declaration>GSModeUnknown</Declaration>
-            
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
         
 	</File>
 </Tokens>

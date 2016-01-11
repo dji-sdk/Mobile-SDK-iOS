@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRCRequestGimbalControlResult.html">
+	<File path="Constants/DJILandingGearStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRCRequestGimbalControlResult</TokenIdentifier>
-			<Abstract type="html">Result of slave who request for gimbal control permission</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJILandingGearStatus</TokenIdentifier>
+			<Abstract type="html">Current state of the Landing Gear</Abstract>
+			<DeclaredIn>DJILandingGear.h</DeclaredIn>
             
 			
 			<NodeRef refid="135"/>
@@ -14,60 +14,70 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAgree</TokenIdentifier>
-            <Abstract type="html">Request was agreed
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusUnknown</TokenIdentifier>
+            <Abstract type="html">Landing Gear is in unknown state
      </Abstract>
-            <Declaration>RCRequestGimbalControlResultAgree</Declaration>
+            <Declaration>DJILandingGearStatusUnknown</Declaration>
             
-            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
             
             <NodeRef refid="135"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultDeny</TokenIdentifier>
-            <Abstract type="html">Request was denied
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusDeployed</TokenIdentifier>
+            <Abstract type="html">Landing Gear is fully deployed (ready for landing)
      </Abstract>
-            <Declaration>RCRequestGimbalControlResultDeny</Declaration>
+            <Declaration>DJILandingGearStatusDeployed</Declaration>
             
-            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
             
             <NodeRef refid="135"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultTimeout</TokenIdentifier>
-            <Abstract type="html">Request was timeout
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusRetracted</TokenIdentifier>
+            <Abstract type="html">Landing Gear is fully retracted (ready for flying)
      </Abstract>
-            <Declaration>RCRequestGimbalControlResultTimeout</Declaration>
+            <Declaration>DJILandingGearStatusRetracted</Declaration>
             
-            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
             
             <NodeRef refid="135"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAuthorized</TokenIdentifier>
-            <Abstract type="html">Request was Authorized
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusDeploying</TokenIdentifier>
+            <Abstract type="html">Landing Gear is deploying (getting ready for landing)
      </Abstract>
-            <Declaration>RCRequestGimbalControlResultAuthorized</Declaration>
+            <Declaration>DJILandingGearStatusDeploying</Declaration>
             
-            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
             
             <NodeRef refid="135"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultUnknown</TokenIdentifier>
-            <Abstract type="html">Request was unknown
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusRetracting</TokenIdentifier>
+            <Abstract type="html">Landing Gear is retracting (getting ready for flying)
      </Abstract>
-            <Declaration>RCRequestGimbalControlResultUnknown</Declaration>
+            <Declaration>DJILandingGearStatusRetracting</Declaration>
             
-            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
             
             <NodeRef refid="135"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearStatusStopped</TokenIdentifier>
+            <Abstract type="html">Landing Gear is stopped
+     </Abstract>
+            <Declaration>DJILandingGearStatusStopped</Declaration>
+            
+            <DeclaredIn>DJILandingGear.h</DeclaredIn>
+            
+            <NodeRef refid="135"/>
+        </Token>
         
 	</File>
 </Tokens>

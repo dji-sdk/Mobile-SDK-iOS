@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantom3AdvancedBattery.html">
+	<File path="Classes/DJILBAirLink.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3AdvancedBattery</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJILBAirLink</TokenIdentifier>
+			<Abstract type="html">This class contains methods to change settings of the Lightbridge Air Link.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
             
 			
 			<NodeRef refid="36"/>
@@ -13,23 +13,673 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedBattery/getCellVoltagesWithResult:</TokenIdentifier>
-			<Abstract type="html">Get battery&apos;s cell voltage. The object in cellArray is kind of class DJIBatteryCell</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>- (void)getCellVoltagesWithResult:(void ( ^ ) ( NSArray *cellArray , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, weak) id&lt;DJILBAirLinkDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/getCellVoltagesWithResult:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="36"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJILBAirLinkDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJILBAirLink/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJILBAirLinkDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setChannelSelectionMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets downlink channel selection mode (automatic or manual).</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setChannelSelectionMode:(DJILBAirLinkChannelSelectionMode)mode withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Channel selection mode for LBAirLink.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setChannelSelectionMode:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getChannelSelectionModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets downlink channel selection mode.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getChannelSelectionModeWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkChannelSelectionMode mode , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getChannelSelectionModeWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setChannel:withCompletion:</TokenIdentifier>
+			<Abstract type="html">*  Sets fixed downlink channel. Channel selection mode should be set to DJILBAirLinkChannelSelectionModeManual.
+*  Channel can be between 1 and DJILBAirLinkSupportedChannelMax.
+*
+*  @param channel    Specific channel for the air link.
+*  @param completion Completion block.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setChannel:(int)channel withCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/setChannel:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getChannelWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets current downlink channel of air link.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getChannelWithCompletion:(void ( ^ _Nullable ) ( int channel , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getChannelWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setDataRate:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the downlink data rate (throughput). Higher data rates increase the quality of video transmission, but can only be used at shorter ranges.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setDataRate:(DJILBAirLinkDataRate)rate withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rate</Name>
+					<Abstract type="html">Fixed rate (throughput).</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDataRate:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getDataRateWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the current downlink data rate (throughput).</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getDataRateWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkDataRate rate , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getDataRateWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setFPVQualityLatency:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets FPV video quality vs latency preference. This mode only effects the FPV camera and not the camera on the HD Gimbal.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setFPVQualityLatency:(DJILBAirLinkFPVVideoQualityLatency)qualityLatency withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>qualityLatency</Name>
+					<Abstract type="html">Quality vs Latency tradeoff for the FPV video</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFPVQualityLatency:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getFPVQualityLatencyWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets FPV video quality vs latency preference. This mode only effects the FPV camera and not the camera on the HD Gimbal.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getFPVQualityLatencyWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkFPVVideoQualityLatency qualityLatency , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getFPVQualityLatencyWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setFPVVideoBandwidthPercent:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the percentage downlink video bandwidth dedicated to the FPV camera. The remaining percentage is dedicated to the camera on the HD Gimbal. Setting 100% dedicates all the video bandwidth to FPV.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setFPVVideoBandwidthPercent:(float)percent withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Percentage downlink bandwidth for FPV camera.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFPVVideoBandwidthPercent:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getFPVVideoBandwidthPercentWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the percentage downlink video bandwidth dedicated to the FPV camera. The remaining percentage is dedicated to the camera on the HD Gimbal. Setting 100% dedicates all the video bandwidth to FPV.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getFPVVideoBandwidthPercentWithCompletion:(void ( ^ _Nullable ) ( float percent , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getFPVVideoBandwidthPercentWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/isSecondaryVideoOutputSupported</TokenIdentifier>
+			<Abstract type="html">Return whether secondary video output supported.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isSecondaryVideoOutputSupported</Declaration>
+			
+			<ReturnValue><Abstract type="html">Secondary video output support result</Abstract></ReturnValue>
+			<Anchor>//api/name/isSecondaryVideoOutputSupported</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setSecondaryVideoOutputEnabled:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Enable secondary video output on Remote Controller. The remote controller outputs video to the Mobile Device by default. This will enable a secondary video stream to one of the Remote Controller&apos;s physical HDMI and SDI ports (set by setSecondaryVideoPort).</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setSecondaryVideoOutputEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">Enables secondary video output.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSecondaryVideoOutputEnabled:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getSecondaryVideoOutputEnabledWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets whether secondary video output on Remote Controller is enabled. The Remote Controller outputs video to the Mobile Device by default, but a secondary video can be routed to its HDMI or SDI port. Use setSecondaryVideoOuputEnable to enable/disable and setSecondaryVideoOutputPort to choose the port.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getSecondaryVideoOutputEnabledWithCompletion:(void ( ^ _Nullable ) ( BOOL enabled , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSecondaryVideoOutputEnabledWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setSecondaryVideoOutputPort:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets secondary video output port on Remote Controller. HDMI or SDI are possible. Only one port can be active at once.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setSecondaryVideoOutputPort:(DJILBAirLinkSecondaryVideoOutputPort)port withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>port</Name>
+					<Abstract type="html">Secondary video output port.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSecondaryVideoOutputPort:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getSecondaryVideoOutputPortWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets secondary video output port on Remote Controller. HDMI or SDI are possible. Only one port can be active at once.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getSecondaryVideoOutputPortWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkSecondaryVideoOutputPort port , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSecondaryVideoOutputPortWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setPIPDisplay:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The output video can then be a combination of the two video sources. Either a single video source can be displayed, or one can be displayed within the other (as a Picture in Picture, or PIP). If the mode is set incorrectly, then no output video will be displayed. For example, if only a FPV camera is connected, or the bandwidth for the &apos;LB&apos; data (FPV) is set to 100 percent, then the only mode that will display data is the DJILBAirLinkPIPModeLB.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setPIPDisplay:(DJILBAirLinkPIPDisplayMode)pipDisplay withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>pipDisplay</Name>
+					<Abstract type="html">Picture in Picture display mode.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPIPDisplay:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getPIPDisplayWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The output video can then be a combination of the two video sources. Either a single video source can be displayed, or one can be displayed within the other (as a Picture in Picture, or PIP).</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getPIPDisplayWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkPIPDisplayMode pipDisplay , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getPIPDisplayWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setDisplayOSDEnabled:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Enables and disables OSD overlay on the secondary video. OSD is flight data like altitude, attitude etc. and can be overlayed on the PIP video.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setDisplayOSDEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enabled</Name>
+					<Abstract type="html">Whether dispaly OSD on screen.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDisplayOSDEnabled:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getDisplayOSDEnabledWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets whether OSD is overlayed on the video feed.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getDisplayOSDEnabledWithCompletion:(void ( ^ _Nullable ) ( BOOL enabled , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getDisplayOSDEnabledWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setOSDTopMargin:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets OSD top margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setOSDTopMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>margin</Name>
+					<Abstract type="html">Top margin of OSD, should be in range [0, 50]</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOSDTopMargin:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getOSDTopMarginWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets OSD top margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getOSDTopMarginWithCompletion:(void ( ^ _Nullable ) ( NSUInteger margin , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOSDTopMarginWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setOSDLeftMargin:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets OSD left margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setOSDLeftMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>margin</Name>
+					<Abstract type="html">Left margin of OSD, should be in range [0, 50]</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOSDLeftMargin:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getOSDLeftMarginWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets OSD left margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getOSDLeftMarginWithCompletion:(void ( ^ _Nullable ) ( NSUInteger margin , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOSDLeftMarginWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setOSDBottomMargin:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets OSD bottom margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setOSDBottomMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>margin</Name>
+					<Abstract type="html">Bottom margin of OSD, should be in range [0, 50]</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOSDBottomMargin:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getOSDBottomMarginWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets OSD bottom margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getOSDBottomMarginWithCompletion:(void ( ^ _Nullable ) ( NSUInteger margin , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOSDBottomMarginWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setOSDRightMargin:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets OSD right margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setOSDRightMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>margin</Name>
+					<Abstract type="html">Right margin of OSD, should be in range [0, 50]</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOSDRightMargin:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getOSDRightMarginWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets OSD right margin in video pixels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getOSDRightMarginWithCompletion:(void ( ^ _Nullable ) ( NSUInteger margin , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOSDRightMarginWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setOSDUnits:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets OSD units to be metric or imperial.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setOSDUnits:(DJILBAirLinkOSDUnits)units withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>units</Name>
+					<Abstract type="html">OSD unit.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setOSDUnits:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getOSDUnitsWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets OSD units as either metric or imperial.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getOSDUnitsWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkOSDUnits units , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getOSDUnitsWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setHDMIOutputFormat:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets Remote Controller HDMI video port output video format.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setHDMIOutputFormat:(DJILBAirLinkSecondaryVideoFormat)format withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter><Parameter>
+					<Name>outputFormat</Name>
+					<Abstract type="html">Video output format for HDMI port.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setHDMIOutputFormat:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getHDMIOutputFormatWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets Remote Controller HDMI video port output video format.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getHDMIOutputFormatWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkSecondaryVideoFormat format , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getHDMIOutputFormatWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setSDIOutputFormat:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets Remote Controller SDI video port output video format.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setSDIOutputFormat:(DJILBAirLinkSecondaryVideoFormat)format withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter><Parameter>
+					<Name>outputFormat</Name>
+					<Abstract type="html">Video output format for SDI port.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSDIOutputFormat:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getSDIOutputFormatWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets Remote Controller SDI video port output video format.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getSDIOutputFormatWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkSecondaryVideoFormat format , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSDIOutputFormatWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/setPIPPosition:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets PIP (Picture In Picture) position relative to top left corner of the main subject video feed.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)setPIPPosition:(DJILBAirLinkPIPPosition)position withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>position</Name>
+					<Abstract type="html">Position of PIP on the screen.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setPIPPosition:withCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJILBAirLink/getPIPPositionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets PIP (Picture In Picture) position relative to top left corner of the main subject video feed.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			
+			<Declaration>- (void)getPIPPositionWithCompletion:(void ( ^ _Nullable ) ( DJILBAirLinkPIPPosition position , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getPIPPositionWithCompletion:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

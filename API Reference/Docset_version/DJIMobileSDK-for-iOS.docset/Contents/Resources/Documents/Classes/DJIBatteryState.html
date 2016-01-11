@@ -1,441 +1,634 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-
-	<title>DJIBatteryState Class Reference</title>
-
-	<link rel="stylesheet" href="../css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIBatteryState Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
 			
-			<h1 id="library-title">
-				<a href="../index.html">DJI Mobile SDK For iOS </a>
-			</h1>
-
-			<p id="developer-home">
-				<a href="../index.html">DJI</a>
-			</p>
-			
-		</div>
-	</header>
-
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="../index.html">Index</a></li>
-<li><a href="../hierarchy.html">Hierarchy</a></li>
-
-					<li id="on-this-page" role="navigation">
-						<label>
-							On This Page
-
-							<div class="chevron">
-								<div class="chevy chevron-left"></div>
-								<div class="chevy chevron-right"></div>
-							</div>
-
-							<select id="jump-to">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIBatteryState Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
 	<option value="overview">Overview</option>
 	
-
+	
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
-
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/damagedCellIndex">damagedCellIndex</option>
-		
-		<option value="//api/name/dischargeLowTemperature">dischargeLowTemperature</option>
-		
-		<option value="//api/name/dischargeOverCurrent">dischargeOverCurrent</option>
-		
-		<option value="//api/name/dischargeOverHeat">dischargeOverHeat</option>
-		
-		<option value="//api/name/dischargeShortCut">dischargeShortCut</option>
-		
-		<option value="//api/name/selfDischarge">selfDischarge</option>
-		
-		<option value="//api/name/underVoltageCellIndex">underVoltageCellIndex</option>
-		
-	</optgroup>
 	
-
+	<option value="properties">Properties</option>
 	
-
+	<option value="//api/name/batteryEnergyRemainingPercent">&nbsp;&nbsp;&nbsp;&nbsp;batteryEnergyRemainingPercent</option>
+	
+	<option value="//api/name/batteryTemperature">&nbsp;&nbsp;&nbsp;&nbsp;batteryTemperature</option>
+	
+	<option value="//api/name/currentCurrent">&nbsp;&nbsp;&nbsp;&nbsp;currentCurrent</option>
+	
+	<option value="//api/name/currentEnergy">&nbsp;&nbsp;&nbsp;&nbsp;currentEnergy</option>
+	
+	<option value="//api/name/currentVoltage">&nbsp;&nbsp;&nbsp;&nbsp;currentVoltage</option>
+	
+	<option value="//api/name/fullChargeEnergy">&nbsp;&nbsp;&nbsp;&nbsp;fullChargeEnergy</option>
+	
+	<option value="//api/name/lifetimeRemainingPercent">&nbsp;&nbsp;&nbsp;&nbsp;lifetimeRemainingPercent</option>
+	
+	<option value="//api/name/numberOfDischarge">&nbsp;&nbsp;&nbsp;&nbsp;numberOfDischarge</option>
+	
+	
+	
+	
+	
 	
 	
 </select>
-						</label>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
-	<article>
-		<div id="overview_contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">DJIBatteryState Class Reference</h1>
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryEnergyRemainingPercent">batteryEnergyRemainingPercent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/batteryTemperature">batteryTemperature</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentCurrent">currentCurrent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentEnergy">currentEnergy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentVoltage">currentVoltage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fullChargeEnergy">fullChargeEnergy</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lifetimeRemainingPercent">lifetimeRemainingPercent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfDischarge">numberOfDischarge</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIBatteryState Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIBatteryState Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<th>Declared in</th>
-	<td>DJIBattery.h</td>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIBattery.h</td>
 </tr>
 						</tbody></table></div>
 					
-
+                    
                     
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>DJIBatteryState is used for record the history status of battery. The dji&rsquo;s battery could keep the state in latest 30 days.</p>
+						<p>The DJIBatteryState is used to keep track the real-time state of the battery.</p>
 					</div>
 					
 					
-
+					
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
 						
 
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fullChargeEnergy">&nbsp;&nbsp;fullChargeEnergy</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentEnergy">&nbsp;&nbsp;currentEnergy</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentVoltage">&nbsp;&nbsp;currentVoltage</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentCurrent">&nbsp;&nbsp;currentCurrent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lifetimeRemainingPercent">&nbsp;&nbsp;lifetimeRemainingPercent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/batteryEnergyRemainingPercent">&nbsp;&nbsp;batteryEnergyRemainingPercent</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/batteryTemperature">&nbsp;&nbsp;batteryTemperature</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfDischarge">&nbsp;&nbsp;numberOfDischarge</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
 						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/dischargeOverCurrent" title="dischargeOverCurrent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dischargeOverCurrent">&nbsp;&nbsp;dischargeOverCurrent</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Over current in discharge.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL dischargeOverCurrent</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dischargeOverHeat" title="dischargeOverHeat"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dischargeOverHeat">&nbsp;&nbsp;dischargeOverHeat</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Over heat in discharge.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL dischargeOverHeat</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dischargeLowTemperature" title="dischargeLowTemperature"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dischargeLowTemperature">&nbsp;&nbsp;dischargeLowTemperature</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Low temperature in discharge.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL dischargeLowTemperature</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/dischargeShortCut" title="dischargeShortCut"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dischargeShortCut">&nbsp;&nbsp;dischargeShortCut</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Short cut in discharge.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL dischargeShortCut</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/selfDischarge" title="selfDischarge"></a>
-	<h3 class="method-title"><code><a href="#//api/name/selfDischarge">&nbsp;&nbsp;selfDischarge</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Self-discharge in storage.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL selfDischarge</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/underVoltageCellIndex" title="underVoltageCellIndex"></a>
-	<h3 class="method-title"><code><a href="#//api/name/underVoltageCellIndex">&nbsp;&nbsp;underVoltageCellIndex</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Cell Under voltage.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) uint8_t underVoltageCellIndex</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/damagedCellIndex" title="damagedCellIndex"></a>
-	<h3 class="method-title"><code><a href="#//api/name/damagedCellIndex">&nbsp;&nbsp;damagedCellIndex</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Damaged cell index.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) uint8_t damagedCellIndex</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
+						<div class="section-method">
+	<a name="//api/name/batteryEnergyRemainingPercent" title="batteryEnergyRemainingPercent"></a>
+	<h3 class="subsubtitle method-title">batteryEnergyRemainingPercent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the percentage of battery energy left. The range of this value is [0 - 100].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger batteryEnergyRemainingPercent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
 </div>
-						</div>
+						
+						<div class="section-method">
+	<a name="//api/name/batteryTemperature" title="batteryTemperature"></a>
+	<h3 class="subsubtitle method-title">batteryTemperature</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the temperature of battery in Centigrade, with the range [-128 to 127].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger batteryTemperature</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentCurrent" title="currentCurrent"></a>
+	<h3 class="subsubtitle method-title">currentCurrent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the real time current draw of the battery (mA). A negative value means the battery is being discharged,
+while positive means it&rsquo;s being charged.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger currentCurrent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentEnergy" title="currentEnergy"></a>
+	<h3 class="subsubtitle method-title">currentEnergy</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the remaining energy stored in the battery (mAh - milliamp hours).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger currentEnergy</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/currentVoltage" title="currentVoltage"></a>
+	<h3 class="subsubtitle method-title">currentVoltage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current battery voltage (mV).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger currentVoltage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fullChargeEnergy" title="fullChargeEnergy"></a>
+	<h3 class="subsubtitle method-title">fullChargeEnergy</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the volume (mAh - milliamp hours) of the total amount of energy stored in the battery
+when the battery is fully charged. The volume of the battery at full charge changes over time
+as the battery continues to get used. Over time, as the battery continues to get charged, the
+value of fullChargeEnergy will decrease.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger fullChargeEnergy</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lifetimeRemainingPercent" title="lifetimeRemainingPercent"></a>
+	<h3 class="subsubtitle method-title">lifetimeRemainingPercent</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the percentage of remaining lifetime value of the battery. The range of this
+value is [0 - 100].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger lifetimeRemainingPercent</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfDischarge" title="numberOfDischarge"></a>
+	<h3 class="subsubtitle method-title">numberOfDischarge</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the total number of discharges the battery has gone through over its lifetime.
+The total number of discharges includes discharges that happen through normal use and
+discharges that are manually set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger numberOfDischarge</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 					</div>
 					
 					
-
+					
+					
+					
+					
                     
                     
-          
-				</main>
-
-				<footer>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
 					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
-						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
-				</footer>
+				</div>
 			</div>
-		</div>
-	</article>
-
-	<script src="../js/script.js"></script>
-</body>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
 </html>

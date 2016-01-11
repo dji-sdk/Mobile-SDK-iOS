@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIImageTransmitterBandwidth.html">
+	<File path="Constants/DJIHandheldPowerMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIImageTransmitterBandwidth</TokenIdentifier>
-			<Abstract type="html">ImageTransmitter&apos;s Bandwidth</Abstract>
-			<DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIHandheldPowerMode</TokenIdentifier>
+			<Abstract type="html">Handheld Power Mode</Abstract>
+			<DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
 			
 			<NodeRef refid="121"/>
@@ -14,60 +14,54 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/TransmitterBandwidth4Mbps</TokenIdentifier>
-            <Abstract type="html">Bandwidth 4 Mbps
+            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeAwake</TokenIdentifier>
+            <Abstract type="html">The Handheld Power Mode is awake.
+For OSMO, when it is in this mode, all the components in DJIHandheld are accessible.
      </Abstract>
-            <Declaration>TransmitterBandwidth4Mbps</Declaration>
+            <Declaration>DJIHandheldPowerModeAwake</Declaration>
             
-            <DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
+            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/TransmitterBandwidth6Mbps</TokenIdentifier>
-            <Abstract type="html">Bandwidth 6 Mbps
+            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeSleeping</TokenIdentifier>
+            <Abstract type="html">The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
+to the Mobile device alive but most other components are off. The power consumption is low
+in this mode.
+For OSMO, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
+are accessible.
      </Abstract>
-            <Declaration>TransmitterBandwidth6Mbps</Declaration>
+            <Declaration>DJIHandheldPowerModeSleeping</Declaration>
             
-            <DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
+            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/TransmitterBandwidth8Mbps</TokenIdentifier>
-            <Abstract type="html">Bandwidth 8 Mbps
+            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModePowerOff</TokenIdentifier>
+            <Abstract type="html">The Handheld Power Mode is power-off. Once this mode is set the delegate will receive this mode until the handheld device is
+shut down completely.
      </Abstract>
-            <Declaration>TransmitterBandwidth8Mbps</Declaration>
+            <Declaration>DJIHandheldPowerModePowerOff</Declaration>
             
-            <DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
+            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/TransmitterBandwidth10Mbps</TokenIdentifier>
-            <Abstract type="html">Bandwidth 10 Mbps
+            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeUnknown</TokenIdentifier>
+            <Abstract type="html">The Handheld Power Mode in unkown.
      </Abstract>
-            <Declaration>TransmitterBandwidth10Mbps</Declaration>
+            <Declaration>DJIHandheldPowerModeUnknown</Declaration>
             
-            <DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
+            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/TransmitterBandwidthUnknown</TokenIdentifier>
-            <Abstract type="html">Bandwidth Unknown
-     </Abstract>
-            <Declaration>TransmitterBandwidthUnknown</Declaration>
-            
-            <DeclaredIn>DJIImageTransmitter.h</DeclaredIn>
-            
-            <NodeRef refid="121"/>
-        </Token>
-        
         
 	</File>
 </Tokens>

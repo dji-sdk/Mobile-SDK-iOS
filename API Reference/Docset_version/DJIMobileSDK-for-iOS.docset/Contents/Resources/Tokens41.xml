@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantom3ProBattery.html">
+	<File path="Classes/DJIMissionManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3ProBattery</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3ProBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIMissionManager</TokenIdentifier>
+			<Abstract type="html">This class manages the execution cycle for a mission. To execute a mission, normally user needs to first invoke prepareMission:withProgress:withCompletion to get the mission prepared. Then a user can call startMissionExecutionWithCompletion: to start the prepared mission. User can also pause, resume or stop an executing mission if the mission supports the operation.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="41"/>
@@ -13,23 +13,223 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProBattery/getCellVoltagesWithResult:</TokenIdentifier>
-			<Abstract type="html">Get battery&apos;s cell voltage. The object in cellArray is kind of class DJIBatteryCell</Abstract>
-			<DeclaredIn>DJIPhantom3ProBattery.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)getCellVoltagesWithResult:(void ( ^ ) ( NSArray *cellArray , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIMissionManagerDelegate&gt; delegate</Declaration>
 			
-			<Anchor>//api/name/getCellVoltagesWithResult:</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="41"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJIMissionManagerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMissionManager/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJIMissionManagerDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/setIsMissionReadyToExecute:</TokenIdentifier>
+			<Abstract type="html">YES if mission is ready to be executed.  It is ready when the uploadMission method completes successfully.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMissionReadyToExecute</Declaration>
+			
+			
+			<Anchor>//api/name/isMissionReadyToExecute</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/isMissionReadyToExecute</TokenIdentifier>
+			<Abstract type="html">YES if mission is ready to be executed.  It is ready when the uploadMission method completes successfully.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMissionReadyToExecute</Declaration>
+			
+			
+			<Anchor>//api/name/isMissionReadyToExecute</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMissionManager/isMissionReadyToExecute</TokenIdentifier>
+			<Abstract type="html">YES if mission is ready to be executed.  It is ready when the uploadMission method completes successfully.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isMissionReadyToExecute</Declaration>
+			
+			
+			<Anchor>//api/name/isMissionReadyToExecute</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIMissionManager/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>+ (DJIMissionManager *_Nullable)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/prepareMission:withProgress:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Prepares the mission for execution. For the waypoint mission, data needs to be uploaded to the aircraft (product) and the
+DJIMissionProgressHandler can be used to monitor upload progress. The follow-me, panorama, hotpoint and custom missions
+require much shorter time for the preparation phase. PrepareMission should fail if a mission is currently executing.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)prepareMission:(DJIMission *_Nonnull)mission withProgress:(DJIMissionProgressHandler)preparationProgress withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mission</Name>
+					<Abstract type="html">Mission object</Abstract>
+				</Parameter><Parameter>
+					<Name>preparationProgress</Name>
+					<Abstract type="html">Progress handler callback method to monitor preparation progress</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/prepareMission:withProgress:withCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/downloadMissionWithProgress:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Downloads the current mission configuration data from aircraft. This method should only be called after a mission has been prepared. Only waypoint missions and hot point missions can be downloaded from the aircraft.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)downloadMissionWithProgress:(DJIMissionProgressHandler)downladProgress withCompletion:(DJIMissionDownloadCompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter><Parameter>
+					<Name>downloadProgress</Name>
+					<Abstract type="html">Progress handler callback method to monitor download progress</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadMissionWithProgress:withCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/startMissionExecutionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Starts mission execution. Should only be called after prepareMission is successfully called.
+For waypoint mission if the aircraft isn&apos;t flying, it will automatically take off and execute the mission. For hot point  and follow me mission, the aircraft needs to be flying before the mission is started. For custom mission, the behaviour depends on the first mission step.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)startMissionExecutionWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startMissionExecutionWithCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/pauseMissionExecutionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Pauses the current mission being executed and the aircraft will hover in its current location. Current state
+will be saved until resumeMissionExecutionWithCompletion is called.
+Returns a system busy error if the MissionManager is uploading or downloading the mission.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)pauseMissionExecutionWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pauseMissionExecutionWithCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/resumeMissionExecutionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Resumes the currently paused mission.  Returns a system busy error if the MissionManager is uploading or downloading the mission.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)resumeMissionExecutionWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resumeMissionExecutionWithCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/stopMissionExecutionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Stops the current mission. The aircraft will hover in place.
+Returns a system busy error if the MissionManager is uploading or downloading the mission.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)stopMissionExecutionWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/stopMissionExecutionWithCompletion:</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMissionManager/currentExecutingMission</TokenIdentifier>
+			<Abstract type="html">Returns current executing mission.  This method is should only be called after the mission has started execution.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (DJIMission *_Nullable)currentExecutingMission</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>Mission</Name>
+					<Abstract type="html">object of current mission.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/currentExecutingMission</Anchor>
+            <NodeRef refid="41"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

@@ -1,85 +1,84 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-
-	<title>DJIGimbalWorkMode Constants Reference</title>
-
-	<link rel="stylesheet" href="../css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIGimbalWorkMode Constants Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
 			
-			<h1 id="library-title">
-				<a href="../index.html">DJI Mobile SDK For iOS </a>
-			</h1>
-
-			<p id="developer-home">
-				<a href="../index.html">DJI</a>
-			</p>
-			
-		</div>
-	</header>
-
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="../index.html">Index</a></li>
-<li><a href="../hierarchy.html">Hierarchy</a></li>
-
-					<li id="on-this-page" role="navigation">
-						<label>
-							On This Page
-
-							<div class="chevron">
-								<div class="chevy chevron-left"></div>
-								<div class="chevy chevron-right"></div>
-							</div>
-
-							<select id="jump-to">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIGimbalWorkMode Constants Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
-
 	
-
+	
+	
 	
 </select>
-						</label>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
 
-	<article>
-		<div id="overview_contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">DJIGimbalWorkMode Constants Reference</h1>
 
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIGimbalWorkMode Constants Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIGimbalWorkMode Constants Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Declared in</th>
-	<td>DJIGimbal.h</td>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIGimbal.h</td>
 </tr>
 						</tbody></table></div>
 					
-
                     
-
+                    
 					
-
+					
+					
+					
+                    
                     
                     <h3 class="subsubtitle method-title">DJIGimbalWorkMode</h3>
                     
 					
 					<div class="section section-overview">
-                        <p>Gimbal work mode</p>
+                        <p>Gimbal work modes.</p>
 					</div>
 					
 					
@@ -87,15 +86,15 @@
                         <!-- display enum values -->
                         
                         <h4 class="method-subtitle">Definition</h4>
-                        <code>typedef NS_ENUM(uint8_t, DJIGimbalWorkMode ) {<br>
+                        <code>typedef NS_ENUM(uint8_t, DJIGimbalWorkMode ) {<br/>
                             
-                            &nbsp;&nbsp; <a href="">GimbalFreeMode</a>,<br>
+                            &nbsp;&nbsp; <a href="">DJIGimbalWorkModeFreeMode</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">GimbalFpvMode</a>,<br>
+                            &nbsp;&nbsp; <a href="">DJIGimbalWorkModeFpvMode</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">GimbalYawFollowMode</a>,<br>
+                            &nbsp;&nbsp; <a href="">DJIGimbalWorkModeYawFollowMode</a>,<br/>
                             
-                            &nbsp;&nbsp; <a href="">GimbalWorkModeUnknown</a> = 0 xFF,<br>
+                            &nbsp;&nbsp; <a href="">DJIGimbalWorkModeUnknown</a> = 0 xFF,<br/>
                             
                             };</code>
                     
@@ -105,15 +104,15 @@
                         <h4 class="method-subtitle">Constants</h4>
                         <dl class="termdef">
                             
-                            <dt><a name="" title="GimbalFreeMode"></a><code>GimbalFreeMode</code></dt>
+                            <dt><a name="" title="DJIGimbalWorkModeFreeMode"></a><code>DJIGimbalWorkModeFreeMode</code></dt>
 <dd>
 
 
-<p>Free mode (not follow)</p>
+<p>The gimbal can move free of aircraft&rsquo;s yaw. This is only supported by the X3, X5 and X5R camera gimbals. In this mode, if the aircraft yaw changes, the camera will stay pointing in the same world direction.</p>
 
+    
 
-
-
+    
 
     
 	<p>
@@ -122,15 +121,16 @@
 	
 </dd>
                             
-                            <dt><a name="" title="GimbalFpvMode"></a><code>GimbalFpvMode</code></dt>
+                            <dt><a name="" title="DJIGimbalWorkModeFpvMode"></a><code>DJIGimbalWorkModeFpvMode</code></dt>
 <dd>
 
 
-<p>FPV mode</p>
+<p>The gimbal&rsquo;s work mode is FPV mode. In this mode, the gimbal yaw will follow the aircraft&rsquo;s heading, the gimbal roll will follow the RC&rsquo;s roll channel value. While the pitch will be available to move.
+Not supported by OSMO.</p>
 
+    
 
-
-
+    
 
     
 	<p>
@@ -139,15 +139,15 @@
 	
 </dd>
                             
-                            <dt><a name="" title="GimbalYawFollowMode"></a><code>GimbalYawFollowMode</code></dt>
+                            <dt><a name="" title="DJIGimbalWorkModeYawFollowMode"></a><code>DJIGimbalWorkModeYawFollowMode</code></dt>
 <dd>
 
 
-<p>Follow Yaw mode</p>
+<p>The gimbal&rsquo;s work mode is such that it will follow the yaw. In this mode, the gimbal yaw will be fixed, while pitch and roll will be available to move.</p>
 
+    
 
-
-
+    
 
     
 	<p>
@@ -156,15 +156,15 @@
 	
 </dd>
                             
-                            <dt><a name="" title="GimbalWorkModeUnknown"></a><code>GimbalWorkModeUnknown</code></dt>
+                            <dt><a name="" title="DJIGimbalWorkModeUnknown"></a><code>DJIGimbalWorkModeUnknown</code></dt>
 <dd>
 
 
-<p>Unknown</p>
+<p>The gimbal&rsquo;s work mode is unknown.</p>
 
+    
 
-
-
+    
 
     
 	<p>
@@ -176,38 +176,128 @@
                         </dl>
                     </div>
                     
+                    
+                    
+                    
 
                     
                     
-
-                    
-
                     
                     <div class="method-subsection declared-in-section">
                         <h4 class="method-subtitle">Declared In</h4>
-                        <p><code class="declared-in-ref">DJIGimbal.h</code></p>
-                    </div>
+                        <code class="declared-in-ref">DJIGimbal.h</code><br />
+                    </div>				
                     
                     
                     
-                    
-          
-				</main>
-
-				<footer>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
 					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
-						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
-				</footer>
+				</div>
 			</div>
-		</div>
-	</article>
-
-	<script src="../js/script.js"></script>
-</body>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
 </html>

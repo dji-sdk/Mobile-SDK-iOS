@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIMCLandingGearState.html">
+	<File path="Classes/DJIGimbalState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIMCLandingGearState</TokenIdentifier>
-			<Abstract type="html">The aircraft&apos;s landing gear state</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIGimbalState</TokenIdentifier>
+			<Abstract type="html">This class provides the current state of the gimbal.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
             
 			
 			<NodeRef refid="28"/>
@@ -13,78 +13,338 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMCLandingGearState/setIsLandingGearProtectOpened:</TokenIdentifier>
-			<Abstract type="html">Is landing gear protect function opened. The landing gear protect function is that the landing gear will automatically put down while the dron is landing.</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setAttitudeInDegrees:</TokenIdentifier>
+			<Abstract type="html">The current gimbal attitude in degrees. Roll, pitch and yaw are 0 if the gimbal is level with the aircraft and points in the forward direction of the aircraft.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isLandingGearProtectOpened</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/isLandingGearProtectOpened</Anchor>
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMCLandingGearState/isLandingGearProtectOpened</TokenIdentifier>
-			<Abstract type="html">Is landing gear protect function opened. The landing gear protect function is that the landing gear will automatically put down while the dron is landing.</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/attitudeInDegrees</TokenIdentifier>
+			<Abstract type="html">The current gimbal attitude in degrees. Roll, pitch and yaw are 0 if the gimbal is level with the aircraft and points in the forward direction of the aircraft.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isLandingGearProtectOpened</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/isLandingGearProtectOpened</Anchor>
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIMCLandingGearState/isLandingGearProtectOpened</TokenIdentifier>
-			<Abstract type="html">Is landing gear protect function opened. The landing gear protect function is that the landing gear will automatically put down while the dron is landing.</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/attitudeInDegrees</TokenIdentifier>
+			<Abstract type="html">The current gimbal attitude in degrees. Roll, pitch and yaw are 0 if the gimbal is level with the aircraft and points in the forward direction of the aircraft.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isLandingGearProtectOpened</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/isLandingGearProtectOpened</Anchor>
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMCLandingGearState/setLandingGearStatus:</TokenIdentifier>
-			<Abstract type="html">Landing gear status</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setRollFineTuneInDegrees:</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s roll fine-tune value. The range for the fine-tune value is
+[-10, 10] degrees. If the fine-tune value is negative, the gimbal will be fine tuned
+the specified number of degrees in the counterclockwise direction.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMCLandingGearStatus landingGearStatus</Declaration>
+			<Declaration>@property (nonatomic, readonly) float rollFineTuneInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/landingGearStatus</Anchor>
+			<Anchor>//api/name/rollFineTuneInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMCLandingGearState/landingGearStatus</TokenIdentifier>
-			<Abstract type="html">Landing gear status</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/rollFineTuneInDegrees</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s roll fine-tune value. The range for the fine-tune value is
+[-10, 10] degrees. If the fine-tune value is negative, the gimbal will be fine tuned
+the specified number of degrees in the counterclockwise direction.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMCLandingGearStatus landingGearStatus</Declaration>
+			<Declaration>@property (nonatomic, readonly) float rollFineTuneInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/landingGearStatus</Anchor>
+			<Anchor>//api/name/rollFineTuneInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIMCLandingGearState/landingGearStatus</TokenIdentifier>
-			<Abstract type="html">Landing gear status</Abstract>
-			<DeclaredIn>DJIMCLandingGearState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/rollFineTuneInDegrees</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s roll fine-tune value. The range for the fine-tune value is
+[-10, 10] degrees. If the fine-tune value is negative, the gimbal will be fine tuned
+the specified number of degrees in the counterclockwise direction.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMCLandingGearStatus landingGearStatus</Declaration>
+			<Declaration>@property (nonatomic, readonly) float rollFineTuneInDegrees</Declaration>
 			
 			
-			<Anchor>//api/name/landingGearStatus</Anchor>
+			<Anchor>//api/name/rollFineTuneInDegrees</Anchor>
             <NodeRef refid="28"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setWorkMode:</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s current work mode.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalWorkMode workMode</Declaration>
+			
+			
+			<Anchor>//api/name/workMode</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/workMode</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s current work mode.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalWorkMode workMode</Declaration>
+			
+			
+			<Anchor>//api/name/workMode</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/workMode</TokenIdentifier>
+			<Abstract type="html">Returns the gimbal&apos;s current work mode.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalWorkMode workMode</Declaration>
+			
+			
+			<Anchor>//api/name/workMode</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsAttitudeReset:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the attitude has been reset. If the gimbal is not in the
+original position, this value will return NO.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAttitudeReset</Declaration>
+			
+			
+			<Anchor>//api/name/isAttitudeReset</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isAttitudeReset</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the attitude has been reset. If the gimbal is not in the
+original position, this value will return NO.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAttitudeReset</Declaration>
+			
+			
+			<Anchor>//api/name/isAttitudeReset</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isAttitudeReset</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the attitude has been reset. If the gimbal is not in the
+original position, this value will return NO.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isAttitudeReset</Declaration>
+			
+			
+			<Anchor>//api/name/isAttitudeReset</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsCalibrationSuccessful:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal calibration success</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrationSuccessful</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrationSuccessful</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isCalibrationSuccessful</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal calibration success</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrationSuccessful</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrationSuccessful</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isCalibrationSuccessful</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal calibration success</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrationSuccessful</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrationSuccessful</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsCalibrating:</TokenIdentifier>
+			<Abstract type="html">YES if the Gimbal is calibrating</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrating</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isCalibrating</TokenIdentifier>
+			<Abstract type="html">YES if the Gimbal is calibrating</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrating</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isCalibrating</TokenIdentifier>
+			<Abstract type="html">YES if the Gimbal is calibrating</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			
+			
+			<Anchor>//api/name/isCalibrating</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsPitchAtStop:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s pitch value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPitchAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isPitchAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isPitchAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s pitch value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPitchAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isPitchAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isPitchAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s pitch value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isPitchAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isPitchAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsRollAtStop:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s roll value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRollAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isRollAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isRollAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s roll value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRollAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isRollAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isRollAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s roll value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isRollAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isRollAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/setIsYawAtStop:</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s yaw value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isYawAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isYawAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalState/isYawAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s yaw value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isYawAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isYawAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalState/isYawAtStop</TokenIdentifier>
+			<Abstract type="html">Returns whether or not the gimbal&apos;s yaw value is at its maximum.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isYawAtStop</Declaration>
+			
+			
+			<Anchor>//api/name/isYawAtStop</Anchor>
+            <NodeRef refid="28"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

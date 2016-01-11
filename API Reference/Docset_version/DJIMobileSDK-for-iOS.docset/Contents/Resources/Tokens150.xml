@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/GroundStationGpsStatus.html">
+	<File path="Constants/DJIRemoteControllerMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/GroundStationGpsStatus</TokenIdentifier>
-			<Abstract type="html">Gps status</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRemoteControllerMode</TokenIdentifier>
+			<Abstract type="html">Remote Controller mode of operation can be normal (single RC connected to aircraft), master,
+slave,  or unknown</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="150"/>
@@ -14,49 +15,48 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSGpsGood</TokenIdentifier>
-            <Abstract type="html">Gps good
+            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeMaster</TokenIdentifier>
+            <Abstract type="html">Remote Controller is a master (will route a connected slave Remote Controller&apos;s commands to the aircraft).
      </Abstract>
-            <Declaration>GSGpsGood</Declaration>
+            <Declaration>DJIRemoteControllerModeMaster</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSGpsWeak</TokenIdentifier>
-            <Abstract type="html">Gps weak
+            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeSlave</TokenIdentifier>
+            <Abstract type="html">Remote Controller is currently a slave Remote Controller (sends commands to aircraft through a master Remote Controller).
      </Abstract>
-            <Declaration>GSGpsWeak</Declaration>
+            <Declaration>DJIRemoteControllerModeSlave</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSGpsBad</TokenIdentifier>
-            <Abstract type="html">Gps bad
+            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeNormal</TokenIdentifier>
+            <Abstract type="html">Remote Controller is unconnected to another Remote Controller.
      </Abstract>
-            <Declaration>GSGpsBad</Declaration>
+            <Declaration>DJIRemoteControllerModeNormal</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSGpsUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
+            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeUnknown</TokenIdentifier>
+            <Abstract type="html">The Remote Controller&apos;s mode is unknown.
      </Abstract>
-            <Declaration>GSGpsUnknown</Declaration>
+            <Declaration>DJIRemoteControllerModeUnknown</Declaration>
             
-            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
-        
         
 	</File>
 </Tokens>

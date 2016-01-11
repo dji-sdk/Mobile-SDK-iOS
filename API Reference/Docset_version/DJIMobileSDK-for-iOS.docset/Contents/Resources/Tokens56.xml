@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJICameraDelegate.html">
+	<File path="Classes/DJIWaypointAction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJICameraDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIWaypointAction</TokenIdentifier>
+			<Abstract type="html">This class represents a waypoint action for DJIWaypoint. It determines what action is performed when the aircraft reaches the corresponding waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="56"/>
@@ -13,78 +13,95 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICameraDelegate/camera:didReceivedVideoData:length:</TokenIdentifier>
-			<Abstract type="html">The Video data update callback</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/setActionType:</TokenIdentifier>
+			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
+reaches the waypoint. Please find all the possible actions in the enum named
+DJIWaypointActionType above.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>- (void)camera:(DJICamera *)camera didReceivedVideoData:(uint8_t *)videoBuffer length:(int)length</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoBuffer</Name>
-					<Abstract type="html">H.264 video data buffer, don&apos;t free the buffer after used.</Abstract>
-				</Parameter><Parameter>
-					<Name>length</Name>
-					<Abstract type="html">H.264 video data length</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
 			
-			<Anchor>//api/name/camera:didReceivedVideoData:length:</Anchor>
+			
+			<Anchor>//api/name/actionType</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICameraDelegate/camera:didUpdateSystemState:</TokenIdentifier>
-			<Abstract type="html">Update the camera&apos;s system state. User should call the startCameraSystemStateUpdates
-interface to begin the update.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/actionType</TokenIdentifier>
+			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
+reaches the waypoint. Please find all the possible actions in the enum named
+DJIWaypointActionType above.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>- (void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>systemState</Name>
-					<Abstract type="html">The camera&apos;s system state.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
 			
-			<Anchor>//api/name/camera:didUpdateSystemState:</Anchor>
+			
+			<Anchor>//api/name/actionType</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICameraDelegate/camera:didGeneratedNewMedia:</TokenIdentifier>
-			<Abstract type="html">Push media info while completed taking photo or taking record. Phantom 2 supported.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointAction/actionType</TokenIdentifier>
+			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
+reaches the waypoint. Please find all the possible actions in the enum named
+DJIWaypointActionType above.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>- (void)camera:(DJICamera *)camera didGeneratedNewMedia:(DJIMedia *)newMedia</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>newMedia</Name>
-					<Abstract type="html">The new media object.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
 			
-			<Anchor>//api/name/camera:didGeneratedNewMedia:</Anchor>
+			
+			<Anchor>//api/name/actionType</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICameraDelegate/camera:didUpdatePlaybackState:</TokenIdentifier>
-			<Abstract type="html">Update playback state. only supported in inspire/phantom3 pro camera. The update will be called while the camera is in CameraWorkModePlayback mode.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/setActionParam:</TokenIdentifier>
+			<Abstract type="html">Action parameter of a waypoint action. See enum DJIWaypointAction for details on which actions will use actionParam.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>- (void)camera:(DJICamera *)camera didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>playbackState</Name>
-					<Abstract type="html">The camera&apos;s playback state.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
 			
-			<Anchor>//api/name/camera:didUpdatePlaybackState:</Anchor>
+			
+			<Anchor>//api/name/actionParam</Anchor>
             <NodeRef refid="56"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/actionParam</TokenIdentifier>
+			<Abstract type="html">Action parameter of a waypoint action. See enum DJIWaypointAction for details on which actions will use actionParam.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
+			
+			
+			<Anchor>//api/name/actionParam</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointAction/actionParam</TokenIdentifier>
+			<Abstract type="html">Action parameter of a waypoint action. See enum DJIWaypointAction for details on which actions will use actionParam.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
+			
+			
+			<Anchor>//api/name/actionParam</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/initWithActionType:param:</TokenIdentifier>
+			<Abstract type="html">Initialize the class with a specific action type and corresponding parameter.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithActionType:(DJIWaypointActionType)type param:(int16_t)param</Declaration>
+			
+			
+			<Anchor>//api/name/initWithActionType:param:</Anchor>
+            <NodeRef refid="56"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

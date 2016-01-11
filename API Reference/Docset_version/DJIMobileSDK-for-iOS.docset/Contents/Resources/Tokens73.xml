@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJISDCardOperation.html">
+	<File path="Protocols/DJIRemoteControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJISDCardOperation</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJISDCardOperation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIRemoteControllerDelegate</TokenIdentifier>
+			<Abstract type="html">This protocol provides delegate methods to receive the updated information related to the remote controller.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="73"/>
@@ -13,40 +13,106 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJISDCardOperation/formatSDCard:</TokenIdentifier>
-			<Abstract type="html">Format SD card.</Abstract>
-			<DeclaredIn>DJISDCardOperation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIRemoteControllerDelegate/remoteController:didUpdateHardwareState:</TokenIdentifier>
+			<Abstract type="html">Callback function that updates the Remote Controller&apos;s current hardware state (e.g. the state of the physical buttons and joysticks).</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (void)formatSDCard:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (void)remoteController:(DJIRemoteController *)rc didUpdateHardwareState:(DJIRCHardwareState)state</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>rc</Name>
+					<Abstract type="html">Instance of the Remote Controller for which the hardware state will be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">Current state of the Remote Controller&apos;s hardware state.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/formatSDCard:</Anchor>
+			<Anchor>//api/name/remoteController:didUpdateHardwareState:</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJISDCardOperation/getSDCardInfo:</TokenIdentifier>
-			<Abstract type="html">Get SD card information and status.</Abstract>
-			<DeclaredIn>DJISDCardOperation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIRemoteControllerDelegate/remoteController:didUpdateGpsData:</TokenIdentifier>
+			<Abstract type="html">Callback function that updates the Remote Controller&apos;s current GPS data.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (void)getSDCardInfo:(void ( ^ ) ( DJICameraSDCardInfo *sdInfo , DJIError *error ))block</Declaration>
+			<Declaration>- (void)remoteController:(DJIRemoteController *)rc didUpdateGpsData:(DJIRCGPSData)gpsData</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>rc</Name>
+					<Abstract type="html">Instance of the Remote Controller for which the GPS data will be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">Current state of the Remote Controller&apos;s GPS data.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getSDCardInfo:</Anchor>
+			<Anchor>//api/name/remoteController:didUpdateGpsData:</Anchor>
             <NodeRef refid="73"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIRemoteControllerDelegate/remoteController:didUpdateBatteryState:</TokenIdentifier>
+			<Abstract type="html">Callback function that updates the Remote Controller&apos;s current battery state.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)remoteController:(DJIRemoteController *)rc didUpdateBatteryState:(DJIRCBatteryInfo)batteryInfo</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rc</Name>
+					<Abstract type="html">Instance of the Remote Controller for which the battery state will be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">Current state of the Remote Controller&apos;s battery state.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/remoteController:didUpdateBatteryState:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIRemoteControllerDelegate/remoteController:didReceiveGimbalControlRequestFromSlave:</TokenIdentifier>
+			<Abstract type="html">Callback function that gets called when a slave Remote Controller makes a request to a master
+Remote Controller to control the gimbal using the method requestGimbalControlRightWithCallbackBlock.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)remoteController:(DJIRemoteController *)rc didReceiveGimbalControlRequestFromSlave:(DJIRCInfo *)slave</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rc</Name>
+					<Abstract type="html">Instance of the Remote Controller.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">Information of the slave making the request to the master Remote Controller.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/remoteController:didReceiveGimbalControlRequestFromSlave:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIRemoteControllerDelegate/remoteController:didUpdateRemoteFocusState:</TokenIdentifier>
+			<Abstract type="html">Callback function that updates the Remote Focus State, only support Focus product. If the isRCRemoteFocusCheckingSupported is YES, this delegate method will be called.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)remoteController:(DJIRemoteController *)rc didUpdateRemoteFocusState:(DJIRCRemoteFocusState)remoteFocusState</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>rc</Name>
+					<Abstract type="html">Instance of the Remote Controller for which the battery state will be updated.</Abstract>
+				</Parameter><Parameter>
+					<Name>state</Name>
+					<Abstract type="html">Current state of the Remote Focus state.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/remoteController:didUpdateRemoteFocusState:</Anchor>
+            <NodeRef refid="73"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

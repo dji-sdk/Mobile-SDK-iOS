@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIMCLowBatteryAction.html">
+	<File path="Constants/DJIHotPointHeading.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIMCLowBatteryAction</TokenIdentifier>
-			<Abstract type="html">Main controller action for low battery incident</Abstract>
-			<DeclaredIn>DJIMainControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIHotPointHeading</TokenIdentifier>
+			<Abstract type="html">Heading of the aircraft while orbiting the hot point.</Abstract>
+			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="123"/>
@@ -14,49 +14,70 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LowBatteryDoNothing</TokenIdentifier>
-            <Abstract type="html">Do nothing
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingAlongCircleLookingForward</TokenIdentifier>
+            <Abstract type="html">Heading is in the forward direction of travel along the circular path.
      </Abstract>
-            <Declaration>LowBatteryDoNothing</Declaration>
+            <Declaration>DJIHotPointHeadingAlongCircleLookingForward</Declaration>
             
-            <DeclaredIn>DJIMainControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
             
             <NodeRef refid="123"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LowBatteryGoHome</TokenIdentifier>
-            <Abstract type="html">Go home
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingAlongCircleLookingBackward</TokenIdentifier>
+            <Abstract type="html">Heading is in the backward direction of travel along the circular path.
      </Abstract>
-            <Declaration>LowBatteryGoHome</Declaration>
+            <Declaration>DJIHotPointHeadingAlongCircleLookingBackward</Declaration>
             
-            <DeclaredIn>DJIMainControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
             
             <NodeRef refid="123"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LowBatteryLanding</TokenIdentifier>
-            <Abstract type="html">Landing
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingTowardHotPoint</TokenIdentifier>
+            <Abstract type="html">Heading is toward the hotpoint.
      </Abstract>
-            <Declaration>LowBatteryLanding</Declaration>
+            <Declaration>DJIHotPointHeadingTowardHotPoint</Declaration>
             
-            <DeclaredIn>DJIMainControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
             
             <NodeRef refid="123"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/LowBatteryActionUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingAwayFromHotPoint</TokenIdentifier>
+            <Abstract type="html">Heading is in the direction of the vector defined by the hotpoint and the aircraft in the direction away from the hotpoint.
      </Abstract>
-            <Declaration>LowBatteryActionUnknown</Declaration>
+            <Declaration>DJIHotPointHeadingAwayFromHotPoint</Declaration>
             
-            <DeclaredIn>DJIMainControllerDef.h</DeclaredIn>
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
             
             <NodeRef refid="123"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingControlledByRemoteController</TokenIdentifier>
+            <Abstract type="html">Heading is controlled by the remote controller.
+     </Abstract>
+            <Declaration>DJIHotPointHeadingControlledByRemoteController</Declaration>
+            
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+            
+            <NodeRef refid="123"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIHotPointHeadingUsingInitialHeading</TokenIdentifier>
+            <Abstract type="html">The heading remains as the heading of the aircraft when the mission started.
+     </Abstract>
+            <Declaration>DJIHotPointHeadingUsingInitialHeading</Declaration>
+            
+            <DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+            
+            <NodeRef refid="123"/>
+        </Token>
         
 	</File>
 </Tokens>

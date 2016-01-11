@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIGimbalError.html">
+	<File path="Constants/DJIFlightOrientationMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalError</TokenIdentifier>
-			<Abstract type="html">Gimbal error</Abstract>
-			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFlightOrientationMode</TokenIdentifier>
+			<Abstract type="html">Tells the aircraft how to interpret flight commands for forward, backward, left and right.
+Additional information should be seen in the getting started guide.</Abstract>
+			<DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
 			
 			<NodeRef refid="111"/>
@@ -14,38 +15,37 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalErrorNone</TokenIdentifier>
-            <Abstract type="html">No error
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeCourseLock</TokenIdentifier>
+            <Abstract type="html">The aicraft should move relative to a locked course heading.
      </Abstract>
-            <Declaration>GimbalErrorNone</Declaration>
+            <Declaration>DJIFlightOrientationModeCourseLock</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalMotorAbnormal</TokenIdentifier>
-            <Abstract type="html">Gimbal&apos;s motor abnormal
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeHomeLock</TokenIdentifier>
+            <Abstract type="html">The aicraft should move relative radially to the Home Point.
      </Abstract>
-            <Declaration>GimbalMotorAbnormal</Declaration>
+            <Declaration>DJIFlightOrientationModeHomeLock</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalClamped</TokenIdentifier>
-            <Abstract type="html">Gimbal clamped
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeDefaultAircraftHeading</TokenIdentifier>
+            <Abstract type="html">The aicraft should move relative to the front of the aircraft.
      </Abstract>
-            <Declaration>GimbalClamped</Declaration>
+            <Declaration>DJIFlightOrientationModeDefaultAircraftHeading</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
-        
         
 	</File>
 </Tokens>

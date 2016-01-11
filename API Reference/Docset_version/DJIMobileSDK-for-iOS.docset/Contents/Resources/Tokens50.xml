@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIRemoteController.html">
+	<File path="Classes/DJIRemoteLogger.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIRemoteController</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIRemoteLogger</TokenIdentifier>
+			<Abstract type="html">This class provides class methods for you to get information of current log level. It also contains methods to configure the logger.</Abstract>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
             
 			
 			<NodeRef refid="50"/>
@@ -13,289 +13,77 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setDelegate:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/currentLogLevel</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
+			<Declaration>+ (DJILogLevel)currentLogLevel</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/currentLogLevel</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/setCurrentLogLevel:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
+			<Declaration>+ (void)setCurrentLogLevel:(DJILogLevel)level</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/setCurrentLogLevel:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRemoteController/delegate</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/configureLoggerWithDeviceId:URLString:showLogInConsole:</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
+			<Declaration>+ (void)configureLoggerWithDeviceId:(NSString *)deviceID URLString:(NSString *)urlString showLogInConsole:(BOOL)showLogInConsole</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/configureLoggerWithDeviceId:URLString:showLogInConsole:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getVersionWithResult:</TokenIdentifier>
-			<Abstract type="html">Get remote controller&apos;s firmware version.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/resetLogger</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)getVersionWithResult:(void ( ^ ) ( NSString *version , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (void)resetLogger</Declaration>
 			
-			<Anchor>//api/name/getVersionWithResult:</Anchor>
+			
+			<Anchor>//api/name/resetLogger</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCName:withResult:</TokenIdentifier>
-			<Abstract type="html">Set RC Name</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/logWithLevel:file:function:line:format:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)setRCName:(DJIRCName)name withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">RC name to be set</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (void)logWithLevel:(DJILogLevel)level file:(const char *)file function:(const char *)function line:(NSUInteger)line format:(NSString *)format, ...</Declaration>
 			
-			<Anchor>//api/name/setRCName:withResult:</Anchor>
+			
+			<Anchor>//api/name/logWithLevel:file:function:line:format:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCNameWithResult:</TokenIdentifier>
-			<Abstract type="html">Get RC Name</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIRemoteLogger/logWithLevel:file:function:line:string:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteLogger.h</DeclaredIn>
 			
-			<Declaration>- (void)getRCNameWithResult:(void ( ^ ) ( DJIRCName name , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>+ (void)logWithLevel:(DJILogLevel)level file:(const char *)file function:(const char *)function line:(NSUInteger)line string:(NSString *)string</Declaration>
 			
-			<Anchor>//api/name/getRCNameWithResult:</Anchor>
+			
+			<Anchor>//api/name/logWithLevel:file:function:line:string:</Anchor>
             <NodeRef refid="50"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCPassword:withResult:</TokenIdentifier>
-			<Abstract type="html">Set RC Password</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)setRCPassword:(DJIRCPassword)password withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>password</Name>
-					<Abstract type="html">RC Password to be set</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setRCPassword:withResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCPasswordWithResult:</TokenIdentifier>
-			<Abstract type="html">Get RC Password</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)getRCPasswordWithResult:(void ( ^ ) ( DJIRCPassword password , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getRCPasswordWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCControlMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set RC&apos;s control mode.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)setRCControlMode:(DJIRCControlMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Control mode to be set. the mode&apos;s style should be RCMasterControlStyleXXX.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setRCControlMode:withResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCControlModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Get master&apos;s control mode</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)getRCControlModeWithResult:(void ( ^ ) ( DJIRCControlMode mode , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getRCControlModeWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/enterRCPairingModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Enter frequency pairing mode.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)enterRCPairingModeWithResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/enterRCPairingModeWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/exitRCParingModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Exit frequency pairing mode.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)exitRCParingModeWithResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/exitRCParingModeWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCCalibrationStateWithResult:</TokenIdentifier>
-			<Abstract type="html">Get RC Calibration state</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)getRCCalibrationStateWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getRCCalibrationStateWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/recordRCCalibrationMiddleValueWithResult:</TokenIdentifier>
-			<Abstract type="html">Record RC Calibration middle value</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)recordRCCalibrationMiddleValueWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/recordRCCalibrationMiddleValueWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/recordRCCalibrationExtremeValueWithResult:</TokenIdentifier>
-			<Abstract type="html">Record RC Calibration extreme value</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)recordRCCalibrationExtremeValueWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/recordRCCalibrationExtremeValueWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/exitRCCalibrationWithResult:</TokenIdentifier>
-			<Abstract type="html">Exit RC Calibration</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)exitRCCalibrationWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/exitRCCalibrationWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCParingStateWithResult:</TokenIdentifier>
-			<Abstract type="html">Get frequency pairing status.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (void)getRCParingStateWithResult:(void ( ^ ) ( DJIRCParingState state , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getRCParingStateWithResult:</Anchor>
-            <NodeRef refid="50"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

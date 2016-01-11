@@ -1,618 +1,786 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-
-	<title>DJIMedia Class Reference</title>
-
-	<link rel="stylesheet" href="../css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIMedia Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
 			
-			<h1 id="library-title">
-				<a href="../index.html">DJI Mobile SDK For iOS </a>
-			</h1>
-
-			<p id="developer-home">
-				<a href="../index.html">DJI</a>
-			</p>
-			
-		</div>
-	</header>
-
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="../index.html">Index</a></li>
-<li><a href="../hierarchy.html">Hierarchy</a></li>
-
-					<li id="on-this-page" role="navigation">
-						<label>
-							On This Page
-
-							<div class="chevron">
-								<div class="chevy chevron-left"></div>
-								<div class="chevy chevron-right"></div>
-							</div>
-
-							<select id="jump-to">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIMedia Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
+	
+	
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
-
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/createTime">createTime</option>
-		
-		<option value="//api/name/durationSeconds">durationSeconds</option>
-		
-		<option value="//api/name/fileName">fileName</option>
-		
-		<option value="//api/name/fileSize">fileSize</option>
-		
-		<option value="//api/name/mediaType">mediaType</option>
-		
-		<option value="//api/name/mediaURL">mediaURL</option>
-		
-		<option value="//api/name/thumbnail">thumbnail</option>
-		
-	</optgroup>
 	
-
+	<option value="properties">Properties</option>
 	
-
+	<option value="//api/name/durationInSeconds">&nbsp;&nbsp;&nbsp;&nbsp;durationInSeconds</option>
 	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/fetchMediaData:">- fetchMediaData:</option>
-		
-		<option value="//api/name/fetchPreviewImageWithResult:">- fetchPreviewImageWithResult:</option>
-		
-		<option value="//api/name/fetchThumbnail:">- fetchThumbnail:</option>
-		
-		<option value="//api/name/initWithMediaURL:">- initWithMediaURL:</option>
-		
-	</optgroup>
+	<option value="//api/name/fileName">&nbsp;&nbsp;&nbsp;&nbsp;fileName</option>
+	
+	<option value="//api/name/fileSizeInBytes">&nbsp;&nbsp;&nbsp;&nbsp;fileSizeInBytes</option>
+	
+	<option value="//api/name/mediaType">&nbsp;&nbsp;&nbsp;&nbsp;mediaType</option>
+	
+	<option value="//api/name/thumbnail">&nbsp;&nbsp;&nbsp;&nbsp;thumbnail</option>
+	
+	<option value="//api/name/timeCreated">&nbsp;&nbsp;&nbsp;&nbsp;timeCreated</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/fetchMediaDataWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchMediaDataWithCompletion:</option>
+	
+	<option value="//api/name/fetchPreviewImageWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchPreviewImageWithCompletion:</option>
+	
+	<option value="//api/name/fetchSubMediaFileListWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchSubMediaFileListWithCompletion:</option>
+	
+	<option value="//api/name/fetchThumbnailWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- fetchThumbnailWithCompletion:</option>
+	
 	
 	
 </select>
-						</label>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
-	<article>
-		<div id="overview_contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">DJIMedia Class Reference</h1>
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/durationInSeconds">durationInSeconds</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileName">fileName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fileSizeInBytes">fileSizeInBytes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mediaType">mediaType</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/thumbnail">thumbnail</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/timeCreated">timeCreated</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchMediaDataWithCompletion:">fetchMediaDataWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchPreviewImageWithCompletion:">fetchPreviewImageWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchSubMediaFileListWithCompletion:">fetchSubMediaFileListWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchThumbnailWithCompletion:">fetchThumbnailWithCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIMedia Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIMedia Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<th>Declared in</th>
-	<td>DJIMedia.h</td>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIMedia.h</td>
 </tr>
 						</tbody></table></div>
 					
-
                     
-
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class contains the information about a multi-media file on the SD card. It also provides methods to fetch the data of the file.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
 						
 
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileName">&nbsp;&nbsp;fileName</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fileSizeInBytes">&nbsp;&nbsp;fileSizeInBytes</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/timeCreated">&nbsp;&nbsp;timeCreated</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/durationInSeconds">&nbsp;&nbsp;durationInSeconds</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mediaType">&nbsp;&nbsp;mediaType</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/thumbnail">&nbsp;&nbsp;thumbnail</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchThumbnailWithCompletion:">&ndash;&nbsp;fetchThumbnailWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchMediaDataWithCompletion:">&ndash;&nbsp;fetchMediaDataWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchPreviewImageWithCompletion:">&ndash;&nbsp;fetchPreviewImageWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchSubMediaFileListWithCompletion:">&ndash;&nbsp;fetchSubMediaFileListWithCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
 						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/fileName" title="fileName"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fileName">&nbsp;&nbsp;fileName</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The media file name</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fileName</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fileSize" title="fileSize"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fileSize">&nbsp;&nbsp;fileSize</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The media file size</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long fileSize</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/createTime" title="createTime"></a>
-	<h3 class="method-title"><code><a href="#//api/name/createTime">&nbsp;&nbsp;createTime</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The media&rsquo;s create time</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *createTime</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/durationSeconds" title="durationSeconds"></a>
-	<h3 class="method-title"><code><a href="#//api/name/durationSeconds">&nbsp;&nbsp;durationSeconds</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>If media is video. this property is show the duration of the video</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float durationSeconds</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/mediaType" title="mediaType"></a>
-	<h3 class="method-title"><code><a href="#//api/name/mediaType">&nbsp;&nbsp;mediaType</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The media type</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) MediaType mediaType</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/mediaURL" title="mediaURL"></a>
-	<h3 class="method-title"><code><a href="#//api/name/mediaURL">&nbsp;&nbsp;mediaURL</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The media url</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *mediaURL</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/thumbnail" title="thumbnail"></a>
-	<h3 class="method-title"><code><a href="#//api/name/thumbnail">&nbsp;&nbsp;thumbnail</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Thumbnail of this media. if nil user should call once - <a href="#//api/name/fetchThumbnail:">fetchThumbnail:</a> to fetch the thumbnail data</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *thumbnail</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/initWithMediaURL:" title="initWithMediaURL:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/initWithMediaURL:">&ndash;&nbsp;initWithMediaURL:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>- (id)initWithMediaURL:(NSString *)<em>url</em></code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchThumbnail:" title="fetchThumbnail:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchThumbnail:">&ndash;&nbsp;fetchThumbnail:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch this media&rsquo;s <a href="#//api/name/thumbnail">thumbnail</a> from remote album.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchThumbnail:(AsyncOperationHandler)<em>completion</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>completion</code></th>
-						<td><p>if there is no error, property &ldquo;thumbnail&rdquo; will be set</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchMediaData:" title="fetchMediaData:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchMediaData:">&ndash;&nbsp;fetchMediaData:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch media data from remote album.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchMediaData:(AsyncFetchHandler)<em>handler</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>handler</code></th>
-						<td><p>Data callback will call when received data frome remote or some error occured</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fetchPreviewImageWithResult:" title="fetchPreviewImageWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fetchPreviewImageWithResult:">&ndash;&nbsp;fetchPreviewImageWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Fetch media&rsquo;s preview image(960 x 540). the <a href="#//api/name/mediaType">mediaType</a> of this media object should be &lsquo;MediaTypeJPG&rsquo;</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)fetchPreviewImageWithResult:(void ( ^ ) ( UIImage *image , NSError *error ))<em>result</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIMedia.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
+						<div class="section-method">
+	<a name="//api/name/durationInSeconds" title="durationInSeconds"></a>
+	<h3 class="subsubtitle method-title">durationInSeconds</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If the media file is a video, this property returns the duration
+of the video in seconds. Will be 0s if media file is a photo.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float durationInSeconds</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
 </div>
-						</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileName" title="fileName"></a>
+	<h3 class="subsubtitle method-title">fileName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the media file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *fileName</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fileSizeInBytes" title="fileSizeInBytes"></a>
+	<h3 class="subsubtitle method-title">fileSizeInBytes</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the size, in bytes, of the media file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) long long fileSizeInBytes</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mediaType" title="mediaType"></a>
+	<h3 class="subsubtitle method-title">mediaType</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the type of media file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIMediaType mediaType</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/thumbnail" title="thumbnail"></a>
+	<h3 class="subsubtitle method-title">thumbnail</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the thumbnail for this media. If this property returns nil,
+the user should call fetchThumbnailWithCompletion</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) UIImage *thumbnail</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/timeCreated" title="timeCreated"></a>
+	<h3 class="subsubtitle method-title">timeCreated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the time when the media file was created as a string in
+the format &ldquo;YYYY-MM-DD hh:mm:ss&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *timeCreated</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 					</div>
 					
 					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchMediaDataWithCompletion:" title="fetchMediaDataWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchMediaDataWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches this media&rsquo;s data from the SD card. The difference with fetching
+the media data and fetching the thumbnil is that fetching the <a href="#//api/name/thumbnail">thumbnail</a> will
+return a low-resolution image of the actual picture while fetching the media
+data will return all data of a video or an image.</p>
+	</div>		
+	
+    
 
+	<div class="method-subsection method-declaration"><code>- (void)fetchMediaDataWithCompletion:(void ( ^ ) ( NSData *_Nullable data , BOOL *_Nullable stop , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Data callback will be called when media data has been received
+from the SD card or an error has occurred.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchPreviewImageWithCompletion:" title="fetchPreviewImageWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchPreviewImageWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch media&rsquo;s preview image. The preview image is a lower resolution (960 x 540) version of a still picture or
+the first frame of a video. The <a href="#//api/name/mediaType">mediaType</a> of this media object should be &lsquo;DJIMediaTypeJPG&rsquo;.
+It is not available if the media type is DJIMediaTypePanorama.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fetchPreviewImageWithCompletion:(void ( ^ ) ( UIImage *image , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execute result callback.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchSubMediaFileListWithCompletion:" title="fetchSubMediaFileListWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchSubMediaFileListWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetch sub media files.
+It is available only when the media type is DJIMediaTypePanorama. User should use this method to fetch the set
+of photos shot in a panorama mission.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fetchSubMediaFileListWithCompletion:(void ( ^ ) ( NSArray&lt;DJIMedia*&gt; *_Nullable mediaList , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execute result callback.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchThumbnailWithCompletion:" title="fetchThumbnailWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">fetchThumbnailWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fetches this media&rsquo;s <a href="#//api/name/thumbnail">thumbnail</a> from the SD card. This method can be used
+to fetch either a photo or a video, where the first frame of the video is
+the <a href="#//api/name/thumbnail">thumbnail</a> that is fetched.
+It is not available if the media type is DJIMediaTypePanorama.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)fetchThumbnailWithCompletion:(DJICompletionBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIMedia.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
                     
                     
-          
-				</main>
-
-				<footer>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
 					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
-						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
-				</footer>
+				</div>
 			</div>
-		</div>
-	</article>
-
-	<script src="../js/script.js"></script>
-</body>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
 </html>

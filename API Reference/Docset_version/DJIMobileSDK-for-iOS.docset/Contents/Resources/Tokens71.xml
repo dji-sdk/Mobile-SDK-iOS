@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJIRangeExtenderDelegate.html">
+	<File path="Protocols/DJIMissionManagerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJIRangeExtenderDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIMissionManagerDelegate</TokenIdentifier>
+			<Abstract type="html">This protocol provides methods to check mission execution status and result.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="71"/>
@@ -13,26 +13,47 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIRangeExtenderDelegate/rangeExtender:didUpdatePowerLevel:</TokenIdentifier>
-			<Abstract type="html">Update power level of range extender. The update frequency is 1Hz.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIMissionManagerDelegate/missionManager:didFinishMissionExecution:</TokenIdentifier>
+			<Abstract type="html">Mission execution finished callback.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
 			
-			<Declaration>- (void)rangeExtender:(DJIRangeExtender *)extender didUpdatePowerLevel:(int)powerLevel</Declaration>
+			<Declaration>- (void)missionManager:(DJIMissionManager *_Nonnull)manager didFinishMissionExecution:(NSError *_Nullable)error</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>extender</Name>
-					<Abstract type="html">Instance of DJIRangeExtender</Abstract>
+					<Name>manager</Name>
+					<Abstract type="html">Mission object</Abstract>
 				</Parameter><Parameter>
-					<Name>powerLevel</Name>
-					<Abstract type="html">Power level of range extender. If the connection to the range extender is borken, INVALIDPOWERLEVEL will be</Abstract>
+					<Name>error</Name>
+					<Abstract type="html">Show whether the mission was finished with error.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/rangeExtender:didUpdatePowerLevel:</Anchor>
+			<Anchor>//api/name/missionManager:didFinishMissionExecution:</Anchor>
             <NodeRef refid="71"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIMissionManagerDelegate/missionManager:missionProgressStatus:</TokenIdentifier>
+			<Abstract type="html">Mission execution state update callback.
+Returns current mission and status.  For the waypoint mission, it will include mission state,
+target waypoint index, waypoint execution state, as well as error if have.</Abstract>
+			<DeclaredIn>DJIMissionManager.h</DeclaredIn>
+			
+			<Declaration>- (void)missionManager:(DJIMissionManager *_Nonnull)manager missionProgressStatus:(DJIMissionProgressStatus *_Nonnull)missionProgress</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>manager</Name>
+					<Abstract type="html">Mission object</Abstract>
+				</Parameter><Parameter>
+					<Name>missionProgress</Name>
+					<Abstract type="html">Mission progress object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/missionManager:missionProgressStatus:</Anchor>
+            <NodeRef refid="71"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

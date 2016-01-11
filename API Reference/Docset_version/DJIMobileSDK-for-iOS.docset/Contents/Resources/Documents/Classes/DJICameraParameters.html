@@ -1,0 +1,831 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJICameraParameters Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJICameraParameters Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/sharedInstance">&nbsp;&nbsp;&nbsp;&nbsp;+ sharedInstance</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/addListener:">&nbsp;&nbsp;&nbsp;&nbsp;- addListener:</option>
+	
+	<option value="//api/name/removeAllListeners">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllListeners</option>
+	
+	<option value="//api/name/removeListener:">&nbsp;&nbsp;&nbsp;&nbsp;- removeListener:</option>
+	
+	<option value="//api/name/supportedCameraApertureRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraApertureRange</option>
+	
+	<option value="//api/name/supportedCameraExposureCompensationRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraExposureCompensationRange</option>
+	
+	<option value="//api/name/supportedCameraExposureModeRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraExposureModeRange</option>
+	
+	<option value="//api/name/supportedCameraISORange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraISORange</option>
+	
+	<option value="//api/name/supportedCameraModeRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraModeRange</option>
+	
+	<option value="//api/name/supportedCameraShutterSpeedRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraShutterSpeedRange</option>
+	
+	<option value="//api/name/supportedCameraVideoResolutionAndFrameRateRange">&nbsp;&nbsp;&nbsp;&nbsp;- supportedCameraVideoResolutionAndFrameRateRange</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Listener Methods">Listener Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sharedInstance">sharedInstance</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addListener:">addListener:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllListeners">removeAllListeners</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeListener:">removeListener:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraApertureRange">supportedCameraApertureRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraExposureCompensationRange">supportedCameraExposureCompensationRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraExposureModeRange">supportedCameraExposureModeRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraISORange">supportedCameraISORange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraModeRange">supportedCameraModeRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraShutterSpeedRange">supportedCameraShutterSpeedRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/supportedCameraVideoResolutionAndFrameRateRange">supportedCameraVideoResolutionAndFrameRateRange</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJICameraParameters Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJICameraParameters Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJICameraParameters.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Some of the camera&rsquo;s parameters have dynamic ranges. DJICameraParameters provides the interface to query what the
+valid range is for a parameter. Type-casting is requried to get the corresponding enumerator value for each
+range element.</p>
+
+<p>A category of DJICameraParameters. It provides methods to add or remove listeners for valid range change.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sharedInstance">+&nbsp;sharedInstance</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraVideoResolutionAndFrameRateRange">&ndash;&nbsp;supportedCameraVideoResolutionAndFrameRateRange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraModeRange">&ndash;&nbsp;supportedCameraModeRange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraExposureModeRange">&ndash;&nbsp;supportedCameraExposureModeRange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraISORange">&ndash;&nbsp;supportedCameraISORange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraShutterSpeedRange">&ndash;&nbsp;supportedCameraShutterSpeedRange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraExposureCompensationRange">&ndash;&nbsp;supportedCameraExposureCompensationRange</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/supportedCameraApertureRange">&ndash;&nbsp;supportedCameraApertureRange</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Listener Methods" name="task_Listener Methods"></a>
+						<h3 class="subsubtitle task-title">Listener Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addListener:">&ndash;&nbsp;addListener:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeListener:">&ndash;&nbsp;removeListener:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeAllListeners">&ndash;&nbsp;removeAllListeners</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+	<h3 class="subsubtitle method-title">sharedInstance</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>+ (nonnull instancetype)sharedInstance</code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/addListener:" title="addListener:"></a>
+	<h3 class="subsubtitle method-title">addListener:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Add listener to listen for the camera range change.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addListener:(nonnull id&lt;DJICameraParametersListener&gt;)<em>listener</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listener</em></dt>
+			<dd><p>listener</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeAllListeners" title="removeAllListeners"></a>
+	<h3 class="subsubtitle method-title">removeAllListeners</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove all listeners.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeAllListeners</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeListener:" title="removeListener:"></a>
+	<h3 class="subsubtitle method-title">removeListener:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Remove listener which is listening to the camera range change.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeListener:(nonnull id&lt;DJICameraParametersListener&gt;)<em>listener</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>listener</em></dt>
+			<dd><p>listener</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraApertureRange" title="supportedCameraApertureRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraApertureRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera&rsquo;s aperture (<a href="../Constants/DJICameraAperture.html">DJICameraAperture</a>). Returns nil if current camera does
+not support any aperture value or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraApertureRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represent one current supported aperture value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraExposureCompensationRange" title="supportedCameraExposureCompensationRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraExposureCompensationRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera&rsquo;s exposure compensation (<a href="../Constants/DJICameraExposureCompensation.html">DJICameraExposureCompensation</a>). Returns
+nil if current camera does not support any exposure compensation value or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraExposureCompensationRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represent one current supported exposure compensation value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraExposureModeRange" title="supportedCameraExposureModeRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraExposureModeRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera&rsquo;s exposure mode (<a href="../Constants/DJICameraExposureMode.html">DJICameraExposureMode</a>). Returns nil if current
+camera does not support any exposure mode or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraExposureModeRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represent one current supported exposure mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraISORange" title="supportedCameraISORange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraISORange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera&rsquo;s ISO (<a href="../Constants/DJICameraISO.html">DJICameraISO</a>). Returns nil if current camera does not support
+any ISO value or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraISORange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represent one current supported ISO value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraModeRange" title="supportedCameraModeRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraModeRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera mode (<a href="../Constants/DJICameraMode.html">DJICameraMode</a>). Returns nil if current camera has no supported
+camera mode or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraModeRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represents one current supported camera mode.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraShutterSpeedRange" title="supportedCameraShutterSpeedRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraShutterSpeedRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for camera&rsquo;s shutter speed (<a href="../Constants/DJICameraShutterSpeed.html">DJICameraShutterSpeed</a>). Returns nil if current
+camera does not support any shutter speed value or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraShutterSpeedRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of NSNumber. Each element represent one current supported shutter speed value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/supportedCameraVideoResolutionAndFrameRateRange" title="supportedCameraVideoResolutionAndFrameRateRange"></a>
+	<h3 class="subsubtitle method-title">supportedCameraVideoResolutionAndFrameRateRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the current valid range for video resolution (<a href="../Constants/DJICameraVideoResolution.html">DJICameraVideoResolution</a>) and frame rate
+(<a href="../Constants/DJICameraVideoFrameRate.html">DJICameraVideoFrameRate</a>). Returns nil if current camera does not support any video resolution or frame rate
+setting or the camera is disconnected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (nonnull NSArray&lt;NSArray&lt;NSNumber*&gt; *&gt; *)supportedCameraVideoResolutionAndFrameRateRange</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Array of pairs. Each pair represents a valid <a href="../Constants/DJICameraVideoResolution.html">DJICameraVideoResolution</a> value and <a href="../Constants/DJICameraVideoFrameRate.html">DJICameraVideoFrameRate</a>
+value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICameraParameters.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

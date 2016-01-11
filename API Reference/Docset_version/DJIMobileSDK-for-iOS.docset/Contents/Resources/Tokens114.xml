@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIGimbalWorkMode.html">
+	<File path="Constants/DJIGPSSignalStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalWorkMode</TokenIdentifier>
-			<Abstract type="html">Gimbal work mode</Abstract>
-			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIGPSSignalStatus</TokenIdentifier>
+			<Abstract type="html">GPS signal levels, which are used to measure the signal quality.</Abstract>
+			<DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
 			
 			<NodeRef refid="114"/>
@@ -14,49 +14,84 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalFreeMode</TokenIdentifier>
-            <Abstract type="html">Free mode (not follow)
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel0</TokenIdentifier>
+            <Abstract type="html">The GPS has almost no signal, which is very bad.
      </Abstract>
-            <Declaration>GimbalFreeMode</Declaration>
+            <Declaration>DJIGPSSignalStatusLevel0</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="114"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalFpvMode</TokenIdentifier>
-            <Abstract type="html">FPV mode
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel1</TokenIdentifier>
+            <Abstract type="html">The GPS signal is very weak.
      </Abstract>
-            <Declaration>GimbalFpvMode</Declaration>
+            <Declaration>DJIGPSSignalStatusLevel1</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="114"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalYawFollowMode</TokenIdentifier>
-            <Abstract type="html">Follow Yaw mode
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel2</TokenIdentifier>
+            <Abstract type="html">The GPS signal is weak. At this level, the aircraft&apos;s go home
+functionality will still work.
      </Abstract>
-            <Declaration>GimbalYawFollowMode</Declaration>
+            <Declaration>DJIGPSSignalStatusLevel2</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="114"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GimbalWorkModeUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel3</TokenIdentifier>
+            <Abstract type="html">The GPS signal is good. At this level, the aircraft can hover in
+the air.
      </Abstract>
-            <Declaration>GimbalWorkModeUnknown</Declaration>
+            <Declaration>DJIGPSSignalStatusLevel3</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="114"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel4</TokenIdentifier>
+            <Abstract type="html">The GPS signal is very good. At this level, the aircraft
+can record the home point.
+     </Abstract>
+            <Declaration>DJIGPSSignalStatusLevel4</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="114"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusLevel5</TokenIdentifier>
+            <Abstract type="html">The GPS signal is very strong.
+     </Abstract>
+            <Declaration>DJIGPSSignalStatusLevel5</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="114"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIGPSSignalStatusNone</TokenIdentifier>
+            <Abstract type="html">There is no GPS signal.
+     </Abstract>
+            <Declaration>DJIGPSSignalStatusNone</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="114"/>
+        </Token>
         
 	</File>
 </Tokens>

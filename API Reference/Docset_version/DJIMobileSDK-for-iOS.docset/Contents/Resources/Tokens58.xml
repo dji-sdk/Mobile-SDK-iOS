@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJIDroneDelegate.html">
+	<File path="Classes/DJIWaypointMissionStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJIDroneDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIDrone.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIWaypointMissionStatus</TokenIdentifier>
+			<Abstract type="html">This class provides the real-time status of an executing waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="58"/>
@@ -13,23 +13,113 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIDroneDelegate/droneOnConnectionStatusChanged:</TokenIdentifier>
-			<Abstract type="html">Notify on connection status changed.</Abstract>
-			<DeclaredIn>DJIDrone.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/setTargetWaypointIndex:</TokenIdentifier>
+			<Abstract type="html">Index of the waypoint in the waypoint array for the mission that the aircraft will move to next.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>- (void)droneOnConnectionStatusChanged:(DJIConnectionStatus)status</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>status</Name>
-					<Abstract type="html">Connection status</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSInteger targetWaypointIndex</Declaration>
 			
-			<Anchor>//api/name/droneOnConnectionStatusChanged:</Anchor>
+			
+			<Anchor>//api/name/targetWaypointIndex</Anchor>
             <NodeRef refid="58"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/targetWaypointIndex</TokenIdentifier>
+			<Abstract type="html">Index of the waypoint in the waypoint array for the mission that the aircraft will move to next.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger targetWaypointIndex</Declaration>
+			
+			
+			<Anchor>//api/name/targetWaypointIndex</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMissionStatus/targetWaypointIndex</TokenIdentifier>
+			<Abstract type="html">Index of the waypoint in the waypoint array for the mission that the aircraft will move to next.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger targetWaypointIndex</Declaration>
+			
+			
+			<Anchor>//api/name/targetWaypointIndex</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/setIsWaypointReached:</TokenIdentifier>
+			<Abstract type="html">YES when aircraft reaches a waypoint. After waypoint actions and heading change is complete, the targetWaypointIndex will increment and this property will become NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWaypointReached</Declaration>
+			
+			
+			<Anchor>//api/name/isWaypointReached</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/isWaypointReached</TokenIdentifier>
+			<Abstract type="html">YES when aircraft reaches a waypoint. After waypoint actions and heading change is complete, the targetWaypointIndex will increment and this property will become NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWaypointReached</Declaration>
+			
+			
+			<Anchor>//api/name/isWaypointReached</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMissionStatus/isWaypointReached</TokenIdentifier>
+			<Abstract type="html">YES when aircraft reaches a waypoint. After waypoint actions and heading change is complete, the targetWaypointIndex will increment and this property will become NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isWaypointReached</Declaration>
+			
+			
+			<Anchor>//api/name/isWaypointReached</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/setExecState:</TokenIdentifier>
+			<Abstract type="html">Current execution state of the aircraft.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIWaypointMissionExecuteState execState</Declaration>
+			
+			
+			<Anchor>//api/name/execState</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMissionStatus/execState</TokenIdentifier>
+			<Abstract type="html">Current execution state of the aircraft.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIWaypointMissionExecuteState execState</Declaration>
+			
+			
+			<Anchor>//api/name/execState</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMissionStatus/execState</TokenIdentifier>
+			<Abstract type="html">Current execution state of the aircraft.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIWaypointMissionExecuteState execState</Declaration>
+			
+			
+			<Anchor>//api/name/execState</Anchor>
+            <NodeRef refid="58"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

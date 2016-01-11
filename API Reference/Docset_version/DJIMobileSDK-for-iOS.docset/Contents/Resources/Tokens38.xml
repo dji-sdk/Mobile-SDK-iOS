@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantom3AdvancedGimbal.html">
+	<File path="Classes/DJIMedia.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3AdvancedGimbal</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIMedia</TokenIdentifier>
+			<Abstract type="html">This class contains the information about a multi-media file on the SD card. It also provides methods to fetch the data of the file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
             
 			
 			<NodeRef refid="38"/>
@@ -13,142 +13,309 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/setCompletionTimeForControlAngleAction:</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setFileName:</TokenIdentifier>
+			<Abstract type="html">Returns the name of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/completionTimeForControlAngleAction</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fileName</TokenIdentifier>
+			<Abstract type="html">Returns the name of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIPhantom3AdvancedGimbal/completionTimeForControlAngleAction</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/fileName</TokenIdentifier>
+			<Abstract type="html">Returns the name of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSString *fileName</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/fileName</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/startGimbalAutoCalibrationWithResult:</TokenIdentifier>
-			<Abstract type="html">Start gimbal calibration</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setFileSizeInBytes:</TokenIdentifier>
+			<Abstract type="html">Returns the size, in bytes, of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
 			
-			<Declaration>- (void)startGimbalAutoCalibrationWithResult:(DJIExecuteResultBlock)result</Declaration>
+			<Declaration>@property (nonatomic, readonly) long long fileSizeInBytes</Declaration>
+			
+			
+			<Anchor>//api/name/fileSizeInBytes</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fileSizeInBytes</TokenIdentifier>
+			<Abstract type="html">Returns the size, in bytes, of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long fileSizeInBytes</Declaration>
+			
+			
+			<Anchor>//api/name/fileSizeInBytes</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/fileSizeInBytes</TokenIdentifier>
+			<Abstract type="html">Returns the size, in bytes, of the media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) long long fileSizeInBytes</Declaration>
+			
+			
+			<Anchor>//api/name/fileSizeInBytes</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setTimeCreated:</TokenIdentifier>
+			<Abstract type="html">Returns the time when the media file was created as a string in
+the format &quot;YYYY-MM-DD hh:mm:ss&quot;.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timeCreated</Declaration>
+			
+			
+			<Anchor>//api/name/timeCreated</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/timeCreated</TokenIdentifier>
+			<Abstract type="html">Returns the time when the media file was created as a string in
+the format &quot;YYYY-MM-DD hh:mm:ss&quot;.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timeCreated</Declaration>
+			
+			
+			<Anchor>//api/name/timeCreated</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/timeCreated</TokenIdentifier>
+			<Abstract type="html">Returns the time when the media file was created as a string in
+the format &quot;YYYY-MM-DD hh:mm:ss&quot;.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *timeCreated</Declaration>
+			
+			
+			<Anchor>//api/name/timeCreated</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setDurationInSeconds:</TokenIdentifier>
+			<Abstract type="html">If the media file is a video, this property returns the duration
+of the video in seconds. Will be 0s if media file is a photo.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float durationInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/durationInSeconds</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/durationInSeconds</TokenIdentifier>
+			<Abstract type="html">If the media file is a video, this property returns the duration
+of the video in seconds. Will be 0s if media file is a photo.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float durationInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/durationInSeconds</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/durationInSeconds</TokenIdentifier>
+			<Abstract type="html">If the media file is a video, this property returns the duration
+of the video in seconds. Will be 0s if media file is a photo.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) float durationInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/durationInSeconds</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setMediaType:</TokenIdentifier>
+			<Abstract type="html">Returns the type of media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIMediaType mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Returns the type of media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIMediaType mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/mediaType</TokenIdentifier>
+			<Abstract type="html">Returns the type of media file.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIMediaType mediaType</Declaration>
+			
+			
+			<Anchor>//api/name/mediaType</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/setThumbnail:</TokenIdentifier>
+			<Abstract type="html">Returns the thumbnail for this media. If this property returns nil,
+the user should call fetchThumbnailWithCompletion</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/thumbnail</TokenIdentifier>
+			<Abstract type="html">Returns the thumbnail for this media. If this property returns nil,
+the user should call fetchThumbnailWithCompletion</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIMedia/thumbnail</TokenIdentifier>
+			<Abstract type="html">Returns the thumbnail for this media. If this property returns nil,
+the user should call fetchThumbnailWithCompletion</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) UIImage *thumbnail</Declaration>
+			
+			
+			<Anchor>//api/name/thumbnail</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fetchThumbnailWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Fetches this media&apos;s thumbnail from the SD card. This method can be used
+to fetch either a photo or a video, where the first frame of the video is
+the thumbnail that is fetched.
+It is not available if the media type is DJIMediaTypePanorama.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>- (void)fetchThumbnailWithCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startGimbalAutoCalibrationWithResult:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/setGimbalWorkMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set gimbal&apos;s work mode</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalWorkMode:(DJIGimbalWorkMode)workMode withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>workMode</Name>
-					<Abstract type="html">Work mode</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setGimbalWorkMode:withResult:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/resetGimbalWithResult:</TokenIdentifier>
-			<Abstract type="html">Reset gimbal. the gimbal&apos;s pitch roll yaw will back to origin.</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)resetGimbalWithResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/resetGimbalWithResult:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/setGimbalRollFineTune:withResult:</TokenIdentifier>
-			<Abstract type="html">Gimbal&apos;s roll fine-tune. if fineTune is negative number, then the roll will adjust specificed angle anticlockwise. 1fineTune = 0.1degree</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalRollFineTune:(int8_t)fineTune withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Fine-tune angle</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setGimbalRollFineTune:withResult:</Anchor>
-            <NodeRef refid="38"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedGimbal/setGimbalPitch:Roll:Yaw:withResult:</TokenIdentifier>
-			<Abstract type="html">Control gimbal rotate</Abstract>
-			<DeclaredIn>DJIPhantom3AdvancedGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalPitch:(DJIGimbalRotation)pitch Roll:(DJIGimbalRotation)roll Yaw:(DJIGimbalRotation)yaw withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pitch</Name>
-					<Abstract type="html">Pitch rotation parameters. angel is in range [-90, 0], the input angle precision is 0.1 degree</Abstract>
-				</Parameter><Parameter>
-					<Name>roll</Name>
-					<Abstract type="html">Roll control is not available</Abstract>
-				</Parameter><Parameter>
-					<Name>yaw</Name>
-					<Abstract type="html">Yaw control is not available</Abstract>
-				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
+					<Abstract type="html">Completion block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setGimbalPitch:Roll:Yaw:withResult:</Anchor>
+			<Anchor>//api/name/fetchThumbnailWithCompletion:</Anchor>
             <NodeRef refid="38"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fetchMediaDataWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Fetches this media&apos;s data from the SD card. The difference with fetching
+the media data and fetching the thumbnil is that fetching the thumbnail will
+return a low-resolution image of the actual picture while fetching the media
+data will return all data of a video or an image.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>- (void)fetchMediaDataWithCompletion:(void ( ^ ) ( NSData *_Nullable data , BOOL *_Nullable stop , NSError *_Nullable error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Data callback will be called when media data has been received
+from the SD card or an error has occurred.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/fetchMediaDataWithCompletion:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fetchPreviewImageWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Fetch media&apos;s preview image. The preview image is a lower resolution (960 x 540) version of a still picture or
+the first frame of a video. The mediaType of this media object should be &apos;DJIMediaTypeJPG&apos;.
+It is not available if the media type is DJIMediaTypePanorama.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>- (void)fetchPreviewImageWithCompletion:(void ( ^ ) ( UIImage *image , NSError *_Nullable error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/fetchPreviewImageWithCompletion:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIMedia/fetchSubMediaFileListWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Fetch sub media files.
+It is available only when the media type is DJIMediaTypePanorama. User should use this method to fetch the set
+of photos shot in a panorama mission.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
+			
+			<Declaration>- (void)fetchSubMediaFileListWithCompletion:(void ( ^ ) ( NSArray&lt;DJIMedia*&gt; *_Nullable mediaList , NSError *_Nullable error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/fetchSubMediaFileListWithCompletion:</Anchor>
+            <NodeRef refid="38"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

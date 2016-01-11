@@ -1,0 +1,1244 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIPlaybackManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIPlaybackManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/deleteAllSelectedFiles">&nbsp;&nbsp;&nbsp;&nbsp;- deleteAllSelectedFiles</option>
+	
+	<option value="//api/name/deleteCurrentPreviewFile">&nbsp;&nbsp;&nbsp;&nbsp;- deleteCurrentPreviewFile</option>
+	
+	<option value="//api/name/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</option>
+	
+	<option value="//api/name/enterMultipleEditMode">&nbsp;&nbsp;&nbsp;&nbsp;- enterMultipleEditMode</option>
+	
+	<option value="//api/name/enterMultiplePreviewMode">&nbsp;&nbsp;&nbsp;&nbsp;- enterMultiplePreviewMode</option>
+	
+	<option value="//api/name/enterSinglePreviewModeWithIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- enterSinglePreviewModeWithIndex:</option>
+	
+	<option value="//api/name/exitMultipleEditMode">&nbsp;&nbsp;&nbsp;&nbsp;- exitMultipleEditMode</option>
+	
+	<option value="//api/name/goToNextMultiplePreviewPage">&nbsp;&nbsp;&nbsp;&nbsp;- goToNextMultiplePreviewPage</option>
+	
+	<option value="//api/name/goToNextSinglePreviewPage">&nbsp;&nbsp;&nbsp;&nbsp;- goToNextSinglePreviewPage</option>
+	
+	<option value="//api/name/goToPreviousMultiplePreviewPage">&nbsp;&nbsp;&nbsp;&nbsp;- goToPreviousMultiplePreviewPage</option>
+	
+	<option value="//api/name/goToPreviousSinglePreviewPage">&nbsp;&nbsp;&nbsp;&nbsp;- goToPreviousSinglePreviewPage</option>
+	
+	<option value="//api/name/pauseVideoPlayback">&nbsp;&nbsp;&nbsp;&nbsp;- pauseVideoPlayback</option>
+	
+	<option value="//api/name/selectAllFiles">&nbsp;&nbsp;&nbsp;&nbsp;- selectAllFiles</option>
+	
+	<option value="//api/name/selectAllFilesInPage">&nbsp;&nbsp;&nbsp;&nbsp;- selectAllFilesInPage</option>
+	
+	<option value="//api/name/setVideoPlaybackFromLocation:">&nbsp;&nbsp;&nbsp;&nbsp;- setVideoPlaybackFromLocation:</option>
+	
+	<option value="//api/name/startVideoPlayback">&nbsp;&nbsp;&nbsp;&nbsp;- startVideoPlayback</option>
+	
+	<option value="//api/name/stopVideoPlayback">&nbsp;&nbsp;&nbsp;&nbsp;- stopVideoPlayback</option>
+	
+	<option value="//api/name/toggleFileSelectionAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- toggleFileSelectionAtIndex:</option>
+	
+	<option value="//api/name/unselectAllFiles">&nbsp;&nbsp;&nbsp;&nbsp;- unselectAllFiles</option>
+	
+	<option value="//api/name/unselectAllFilesInPage">&nbsp;&nbsp;&nbsp;&nbsp;- unselectAllFilesInPage</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteAllSelectedFiles">deleteAllSelectedFiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deleteCurrentPreviewFile">deleteCurrentPreviewFile</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:">downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enterMultipleEditMode">enterMultipleEditMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enterMultiplePreviewMode">enterMultiplePreviewMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enterSinglePreviewModeWithIndex:">enterSinglePreviewModeWithIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exitMultipleEditMode">exitMultipleEditMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/goToNextMultiplePreviewPage">goToNextMultiplePreviewPage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/goToNextSinglePreviewPage">goToNextSinglePreviewPage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/goToPreviousMultiplePreviewPage">goToPreviousMultiplePreviewPage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/goToPreviousSinglePreviewPage">goToPreviousSinglePreviewPage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pauseVideoPlayback">pauseVideoPlayback</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectAllFiles">selectAllFiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/selectAllFilesInPage">selectAllFilesInPage</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setVideoPlaybackFromLocation:">setVideoPlaybackFromLocation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startVideoPlayback">startVideoPlayback</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopVideoPlayback">stopVideoPlayback</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/toggleFileSelectionAtIndex:">toggleFileSelectionAtIndex:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unselectAllFiles">unselectAllFiles</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/unselectAllFilesInPage">unselectAllFilesInPage</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIPlaybackManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIPlaybackManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIPlaybackManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The playback manager is used to interact with the playback system of the camera.
+By using the manager, user can control the playback system.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enterMultipleEditMode">&ndash;&nbsp;enterMultipleEditMode</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exitMultipleEditMode">&ndash;&nbsp;exitMultipleEditMode</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/toggleFileSelectionAtIndex:">&ndash;&nbsp;toggleFileSelectionAtIndex:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectAllFiles">&ndash;&nbsp;selectAllFiles</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unselectAllFiles">&ndash;&nbsp;unselectAllFiles</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/selectAllFilesInPage">&ndash;&nbsp;selectAllFilesInPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/unselectAllFilesInPage">&ndash;&nbsp;unselectAllFilesInPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteAllSelectedFiles">&ndash;&nbsp;deleteAllSelectedFiles</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:">&ndash;&nbsp;downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enterMultiplePreviewMode">&ndash;&nbsp;enterMultiplePreviewMode</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/goToNextMultiplePreviewPage">&ndash;&nbsp;goToNextMultiplePreviewPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/goToPreviousMultiplePreviewPage">&ndash;&nbsp;goToPreviousMultiplePreviewPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enterSinglePreviewModeWithIndex:">&ndash;&nbsp;enterSinglePreviewModeWithIndex:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/goToNextSinglePreviewPage">&ndash;&nbsp;goToNextSinglePreviewPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/goToPreviousSinglePreviewPage">&ndash;&nbsp;goToPreviousSinglePreviewPage</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/deleteCurrentPreviewFile">&ndash;&nbsp;deleteCurrentPreviewFile</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startVideoPlayback">&ndash;&nbsp;startVideoPlayback</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/pauseVideoPlayback">&ndash;&nbsp;pauseVideoPlayback</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopVideoPlayback">&ndash;&nbsp;stopVideoPlayback</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setVideoPlaybackFromLocation:">&ndash;&nbsp;setVideoPlaybackFromLocation:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteAllSelectedFiles" title="deleteAllSelectedFiles"></a>
+	<h3 class="subsubtitle method-title">deleteAllSelectedFiles</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deletes all selected files from the SD card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteAllSelectedFiles</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/deleteCurrentPreviewFile" title="deleteCurrentPreviewFile"></a>
+	<h3 class="subsubtitle method-title">deleteCurrentPreviewFile</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Deletes the current file being previewed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deleteCurrentPreviewFile</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:" title="downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:"></a>
+	<h3 class="subsubtitle method-title">downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Downloads the selected files. When this method is called. The dataBlock gets called continuously until all the data is downloaded.
+The prepare and completion blocks are called once for each file being downloaded. In the prepareBlock, you can get the forthcoming file&rsquo;s info, like file name, file size, etc.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)downloadSelectedFilesWithPreparation:(DJIFileDownloadPreparingBlock)<em>prepareBlock</em> process:(DJIFileDownloadingBlock)<em>dataBlock</em> fileCompletion:(DJIFileDownloadCompletionBlock)<em>fileCompletionBlock</em> overallCompletion:(DJICompletionBlock)<em>overallCompletionBlock</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>prepareBlock</em></dt>
+			<dd><p>Callback to prepare each file for download.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dataBlock</em></dt>
+			<dd><p>Callback while a file is downloading. The dataBlock can be called multiple times for a file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>fileCompletionBlock</em></dt>
+			<dd><p>Callback after each file have been downloaded.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>finishBlock</em></dt>
+			<dd><p>Callback after the downloading is finished.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>If an error occurs before the downloading of any files, only the overallCompletionBlock will be called with an error returned.
+If an error occurs during the downloading of a file, both dataBlock and overallCompletionBlock will be called with an error returned.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enterMultipleEditMode" title="enterMultipleEditMode"></a>
+	<h3 class="subsubtitle method-title">enterMultipleEditMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>This enables the user to select, download and/or delete multiple media files when the camera is in Playback mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enterMultipleEditMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enterMultiplePreviewMode" title="enterMultiplePreviewMode"></a>
+	<h3 class="subsubtitle method-title">enterMultiplePreviewMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enables the user to preview multiple files when the camera is in Playback mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enterMultiplePreviewMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enterSinglePreviewModeWithIndex:" title="enterSinglePreviewModeWithIndex:"></a>
+	<h3 class="subsubtitle method-title">enterSinglePreviewModeWithIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enters single file preview mode for a file at the specified index. In order for this method to be called,
+the camera work mode should be DJICameraModePlayback.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enterSinglePreviewModeWithIndex:(uint8_t)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>File to be previewed at the specified index.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exitMultipleEditMode" title="exitMultipleEditMode"></a>
+	<h3 class="subsubtitle method-title">exitMultipleEditMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exits multiple edit mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)exitMultipleEditMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/goToNextMultiplePreviewPage" title="goToNextMultiplePreviewPage"></a>
+	<h3 class="subsubtitle method-title">goToNextMultiplePreviewPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Goes to the next page when there are multiple pages.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)goToNextMultiplePreviewPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/goToNextSinglePreviewPage" title="goToNextSinglePreviewPage"></a>
+	<h3 class="subsubtitle method-title">goToNextSinglePreviewPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Goes to the next page.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)goToNextSinglePreviewPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/goToPreviousMultiplePreviewPage" title="goToPreviousMultiplePreviewPage"></a>
+	<h3 class="subsubtitle method-title">goToPreviousMultiplePreviewPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Goes back to the previous page when there are multiple pages.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)goToPreviousMultiplePreviewPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/goToPreviousSinglePreviewPage" title="goToPreviousSinglePreviewPage"></a>
+	<h3 class="subsubtitle method-title">goToPreviousSinglePreviewPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Goes back to the previous page.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)goToPreviousSinglePreviewPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/pauseVideoPlayback" title="pauseVideoPlayback"></a>
+	<h3 class="subsubtitle method-title">pauseVideoPlayback</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Pause a video during playback.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)pauseVideoPlayback</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectAllFiles" title="selectAllFiles"></a>
+	<h3 class="subsubtitle method-title">selectAllFiles</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Selects all the files on the SD card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)selectAllFiles</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/selectAllFilesInPage" title="selectAllFilesInPage"></a>
+	<h3 class="subsubtitle method-title">selectAllFilesInPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Selects all the file(s) on the current page.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)selectAllFilesInPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setVideoPlaybackFromLocation:" title="setVideoPlaybackFromLocation:"></a>
+	<h3 class="subsubtitle method-title">setVideoPlaybackFromLocation:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Plays a video from the specified location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setVideoPlaybackFromLocation:(uint8_t)<em>location</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>location</em></dt>
+			<dd><p>Location from which to play the video must be in the range of [0, 100]. This
+value represents at what percent of the entire video it should start playing.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startVideoPlayback" title="startVideoPlayback"></a>
+	<h3 class="subsubtitle method-title">startVideoPlayback</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts video playback. The selected file must be a video file.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startVideoPlayback</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopVideoPlayback" title="stopVideoPlayback"></a>
+	<h3 class="subsubtitle method-title">stopVideoPlayback</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops a video during playback</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopVideoPlayback</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/toggleFileSelectionAtIndex:" title="toggleFileSelectionAtIndex:"></a>
+	<h3 class="subsubtitle method-title">toggleFileSelectionAtIndex:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Selects or unselects a file at the specified index of the current page. This index is unrelated to filename, and used in multiple edit mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)toggleFileSelectionAtIndex:(int)<em>index</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>index</em></dt>
+			<dd><p>Index at which to select a file.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unselectAllFiles" title="unselectAllFiles"></a>
+	<h3 class="subsubtitle method-title">unselectAllFiles</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unselects all the files on the SD card.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unselectAllFiles</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/unselectAllFilesInPage" title="unselectAllFilesInPage"></a>
+	<h3 class="subsubtitle method-title">unselectAllFilesInPage</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Unselects all the file(s) on the current page.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)unselectAllFilesInPage</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIPlaybackManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIRCInfo.html">
+	<File path="Classes/DJIRecordVideoStep.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIRCInfo</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIRecordVideoStep</TokenIdentifier>
+			<Abstract type="html">This class represents a step related to video-recording for a custom mission. By creating an object of this class and adding it into a custom mission, user can record video during the custom mission execution.</Abstract>
+			<DeclaredIn>DJIRecordVideoStep.h</DeclaredIn>
             
 			
 			<NodeRef refid="48"/>
@@ -13,222 +13,46 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Identifier</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRecordVideoStep/initWithDuration:</TokenIdentifier>
+			<Abstract type="html">Initialized instance with duration.</Abstract>
+			<DeclaredIn>DJIRecordVideoStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
-			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithDuration:(double)duration</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>duration</Name>
+					<Abstract type="html">Duration in seconds for recording video.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of DJIRecordVideoStep</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithDuration:</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/identifier</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Identifier</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRecordVideoStep/initWithStartRecordVideo</TokenIdentifier>
+			<Abstract type="html">Initialized instance for start video recording only.</Abstract>
+			<DeclaredIn>DJIRecordVideoStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithStartRecordVideo</Declaration>
 			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<ReturnValue><Abstract type="html">Instance of DJIRecordVideoStep</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithStartRecordVideo</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/identifier</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Identifier</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRecordVideoStep/initWithStopRecordVideo</TokenIdentifier>
+			<Abstract type="html">Initialized instance for stop video recording only.</Abstract>
+			<DeclaredIn>DJIRecordVideoStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithStopRecordVideo</Declaration>
 			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<ReturnValue><Abstract type="html">Instance of DJIRecordVideoStep</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithStopRecordVideo</Anchor>
             <NodeRef refid="48"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setName:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Name</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCName name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/name</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Name</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCName name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/name</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Name</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCName name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setPassword:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Password</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCPassword password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/password</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Password</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCPassword password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/password</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Password</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCPassword password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setSignalQuality:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Signal Quality</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQuality signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/signalQuality</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Signal Quality</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQuality signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/signalQuality</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Signal Quality</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQuality signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setControlPermission:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Control Permission</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/controlPermission</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Control Permission</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/controlPermission</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s Control Permission</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/RCName</TokenIdentifier>
-			<Abstract type="html">RC name convert from &apos;name&apos; property</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)RCName</Declaration>
-			
-			<ReturnValue><Abstract type="html">RC Name string</Abstract></ReturnValue>
-			<Anchor>//api/name/RCName</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/RCPassword</TokenIdentifier>
-			<Abstract type="html">RC password convert from &apos;password&apos; property</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)RCPassword</Declaration>
-			
-			<ReturnValue><Abstract type="html">RC Password string</Abstract></ReturnValue>
-			<Anchor>//api/name/RCPassword</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/RCIdentifier</TokenIdentifier>
-			<Abstract type="html">RC Identifier convert from &apos;identifier&apos; property</Abstract>
-			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)RCIdentifier</Declaration>
-			
-			<ReturnValue><Abstract type="html">RC Identifier string</Abstract></ReturnValue>
-			<Anchor>//api/name/RCIdentifier</Anchor>
-            <NodeRef refid="48"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

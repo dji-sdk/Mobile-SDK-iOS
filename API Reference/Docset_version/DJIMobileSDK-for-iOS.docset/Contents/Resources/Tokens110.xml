@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIFollowMeMissionExecuteState.html">
+	<File path="Constants/DJIFlightControllerNoFlyStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeMissionExecuteState</TokenIdentifier>
-			<Abstract type="html">All possible follow me mission execution states.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFlightControllerNoFlyStatus</TokenIdentifier>
+			<Abstract type="html">No fly status. Please refer to http://wiki.dji.com/en/index.php/Phantom3Professional-FlightLimitsandNo-Fly_Zones for more information on no fly zones.</Abstract>
+			<DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
 			
 			<NodeRef refid="110"/>
@@ -14,40 +14,94 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateInitializing</TokenIdentifier>
-            <Abstract type="html">The mission is currently being initialized.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusFlyingNormally</TokenIdentifier>
+            <Abstract type="html">The aircraft is normally flying.
      </Abstract>
-            <Declaration>DJIFollowMeMissionExecuteStateInitializing</Declaration>
+            <Declaration>DJIFlightControllerNoFlyStatusFlyingNormally</Declaration>
             
-            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="110"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateMoving</TokenIdentifier>
-            <Abstract type="html">The aircraft is currently moving.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusTakeOffProhibited</TokenIdentifier>
+            <Abstract type="html">The aircraft is in a no fly zone, so take off is prohibited.
      </Abstract>
-            <Declaration>DJIFollowMeMissionExecuteStateMoving</Declaration>
+            <Declaration>DJIFlightControllerNoFlyStatusTakeOffProhibited</Declaration>
             
-            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="110"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateWaiting</TokenIdentifier>
-            <Abstract type="html">The mission is currently waiting to continue. For example,
-if the GPS quality is poor or the connection is broken, the
-aircraft will continue to wait.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusForceAutoLanding</TokenIdentifier>
+            <Abstract type="html">The aircraft is in a no fly zone, so it is executing a force landing.
      </Abstract>
-            <Declaration>DJIFollowMeMissionExecuteStateWaiting</Declaration>
+            <Declaration>DJIFlightControllerNoFlyStatusForceAutoLanding</Declaration>
             
-            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
             
             <NodeRef refid="110"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusApproachingNoFlyZone</TokenIdentifier>
+            <Abstract type="html">The aircraft is within 100m of a no fly zone boundary.
+     </Abstract>
+            <Declaration>DJIFlightControllerNoFlyStatusApproachingNoFlyZone</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusReachMaxFlyingHeight</TokenIdentifier>
+            <Abstract type="html">The aircraft has reached its max flying height.
+     </Abstract>
+            <Declaration>DJIFlightControllerNoFlyStatusReachMaxFlyingHeight</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusReachMaxFlyingDistance</TokenIdentifier>
+            <Abstract type="html">The aircraft has reached its max flying distance.
+     </Abstract>
+            <Declaration>DJIFlightControllerNoFlyStatusReachMaxFlyingDistance</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusHeightLimited</TokenIdentifier>
+            <Abstract type="html">Some no fly zones have several areas. A central area where no aircraft can fly or take off in, and then
+an intermediate area where flight height is restricted. This intermediate area can have a gradually
+relaxing height restriction as the aircraft moves further from the no fly zone center. If the aircarft
+is flying in this intermediate area, then the DJIFlightControllerNoFlyStatusHeightLimited enum will be used.</Abstract>
+            <Declaration>DJIFlightControllerNoFlyStatusHeightLimited</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusUnknownStatus</TokenIdentifier>
+            <Abstract type="html">The aircraft&apos;s no fly status is unknown.
+     </Abstract>
+            <Declaration>DJIFlightControllerNoFlyStatusUnknownStatus</Declaration>
+            
+            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            
+            <NodeRef refid="110"/>
+        </Token>
         
 	</File>
 </Tokens>

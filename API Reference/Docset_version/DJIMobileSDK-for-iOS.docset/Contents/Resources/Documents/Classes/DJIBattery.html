@@ -1,631 +1,706 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-
-	<title>DJIBattery Class Reference</title>
-
-	<link rel="stylesheet" href="../css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIBattery Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
 			
-			<h1 id="library-title">
-				<a href="../index.html">DJI Mobile SDK For iOS </a>
-			</h1>
-
-			<p id="developer-home">
-				<a href="../index.html">DJI</a>
-			</p>
-			
-		</div>
-	</header>
-
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="../index.html">Index</a></li>
-<li><a href="../hierarchy.html">Hierarchy</a></li>
-
-					<li id="on-this-page" role="navigation">
-						<label>
-							On This Page
-
-							<div class="chevron">
-								<div class="chevy chevron-left"></div>
-								<div class="chevy chevron-right"></div>
-							</div>
-
-							<select id="jump-to">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIBattery Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
+	
+	
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
-
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/batteryTemperature">batteryTemperature</option>
-		
-		<option value="//api/name/currentCurrent">currentCurrent</option>
-		
-		<option value="//api/name/currentElectricity">currentElectricity</option>
-		
-		<option value="//api/name/currentVoltage">currentVoltage</option>
-		
-		<option value="//api/name/designedVolume">designedVolume</option>
-		
-		<option value="//api/name/fullChargeVolume">fullChargeVolume</option>
-		
-		<option value="//api/name/numberOfDischarge">numberOfDischarge</option>
-		
-		<option value="//api/name/remainLifePercent">remainLifePercent</option>
-		
-		<option value="//api/name/remainPowerPercent">remainPowerPercent</option>
-		
-	</optgroup>
 	
-
+	<option value="properties">Properties</option>
 	
-
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
 	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/getVersionWithResult:">- getVersionWithResult:</option>
-		
-		<option value="//api/name/updateBatteryInfo:">- updateBatteryInfo:</option>
-		
-	</optgroup>
+	<option value="//api/name/numberOfCell">&nbsp;&nbsp;&nbsp;&nbsp;numberOfCell</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/getCellVoltagesWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getCellVoltagesWithCompletion:</option>
+	
+	<option value="//api/name/getCurrentWarningInformationWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getCurrentWarningInformationWithCompletion:</option>
+	
+	<option value="//api/name/getSelfDischargeDayWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getSelfDischargeDayWithCompletion:</option>
+	
+	<option value="//api/name/getWarningInformationRecordsWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getWarningInformationRecordsWithCompletion:</option>
+	
+	<option value="//api/name/isSmartBattery">&nbsp;&nbsp;&nbsp;&nbsp;- isSmartBattery</option>
+	
+	<option value="//api/name/setSelfDischargeDay:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setSelfDischargeDay:withCompletion:</option>
+	
 	
 	
 </select>
-						</label>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
-	<article>
-		<div id="overview_contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">DJIBattery Class Reference</h1>
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/numberOfCell">numberOfCell</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCellVoltagesWithCompletion:">getCellVoltagesWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getCurrentWarningInformationWithCompletion:">getCurrentWarningInformationWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSelfDischargeDayWithCompletion:">getSelfDischargeDayWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getWarningInformationRecordsWithCompletion:">getWarningInformationRecordsWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSmartBattery">isSmartBattery</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSelfDischargeDay:withCompletion:">setSelfDischargeDay:withCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIBattery Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIBattery Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td><a href="../Classes/DJIObject.html">DJIObject</a> : NSObject</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/DJIBaseComponent.html">DJIBaseComponent</a> : NSObject</td>
 </tr><tr>
-	<th>Declared in</th>
-	<td>DJIBattery.h</td>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIBattery.h</td>
 </tr>
 						</tbody></table></div>
 					
-
                     
-
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class manages the battery&rsquo;s information and real-time status of the connected product.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
 						
 
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/numberOfCell">&nbsp;&nbsp;numberOfCell</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isSmartBattery">&ndash;&nbsp;isSmartBattery</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getWarningInformationRecordsWithCompletion:">&ndash;&nbsp;getWarningInformationRecordsWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCurrentWarningInformationWithCompletion:">&ndash;&nbsp;getCurrentWarningInformationWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getCellVoltagesWithCompletion:">&ndash;&nbsp;getCellVoltagesWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSelfDischargeDay:withCompletion:">&ndash;&nbsp;setSelfDischargeDay:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSelfDischargeDayWithCompletion:">&ndash;&nbsp;getSelfDischargeDayWithCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
 						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/designedVolume" title="designedVolume"></a>
-	<h3 class="method-title"><code><a href="#//api/name/designedVolume">&nbsp;&nbsp;designedVolume</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The battery&rsquo;s design volume (mAh)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger designedVolume</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/fullChargeVolume" title="fullChargeVolume"></a>
-	<h3 class="method-title"><code><a href="#//api/name/fullChargeVolume">&nbsp;&nbsp;fullChargeVolume</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The battery&rsquo;s full charge volume (mAh)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger fullChargeVolume</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/currentElectricity" title="currentElectricity"></a>
-	<h3 class="method-title"><code><a href="#//api/name/currentElectricity">&nbsp;&nbsp;currentElectricity</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The current electricity volume of battery (mAh)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger currentElectricity</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/currentVoltage" title="currentVoltage"></a>
-	<h3 class="method-title"><code><a href="#//api/name/currentVoltage">&nbsp;&nbsp;currentVoltage</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The current voltage of battery (mV)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger currentVoltage</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/currentCurrent" title="currentCurrent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/currentCurrent">&nbsp;&nbsp;currentCurrent</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The current current of battery (mA), The negative value is indicate that the battery is in discharge</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger currentCurrent</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/remainLifePercent" title="remainLifePercent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/remainLifePercent">&nbsp;&nbsp;remainLifePercent</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Remain life percentage of battery.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger remainLifePercent</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/remainPowerPercent" title="remainPowerPercent"></a>
-	<h3 class="method-title"><code><a href="#//api/name/remainPowerPercent">&nbsp;&nbsp;remainPowerPercent</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Remain power percentage of battery.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger remainPowerPercent</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/batteryTemperature" title="batteryTemperature"></a>
-	<h3 class="method-title"><code><a href="#//api/name/batteryTemperature">&nbsp;&nbsp;batteryTemperature</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The temperature of battery between -128 to 127 (Centigrade).</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger batteryTemperature</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/numberOfDischarge" title="numberOfDischarge"></a>
-	<h3 class="method-title"><code><a href="#//api/name/numberOfDischarge">&nbsp;&nbsp;numberOfDischarge</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>The total number of discharge of battery.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic) NSInteger numberOfDischarge</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getVersionWithResult:" title="getVersionWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getVersionWithResult:">&ndash;&nbsp;getVersionWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get battery&rsquo;s firmware version</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getVersionWithResult:(void ( ^ ) ( NSString *version , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/updateBatteryInfo:" title="updateBatteryInfo:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/updateBatteryInfo:">&ndash;&nbsp;updateBatteryInfo:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Update battery&rsquo;s information once, if Succeeded, the property value of battery will be update.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)updateBatteryInfo:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote exeucte result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIBattery.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Delegate that recevies the updated state pushed by the battery.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;DJIBatteryDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
 </div>
-						</div>
+						
+						<div class="section-method">
+	<a name="//api/name/numberOfCell" title="numberOfCell"></a>
+	<h3 class="subsubtitle method-title">numberOfCell</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the number of battery cells.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSUInteger numberOfCell</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 					</div>
 					
 					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/getCellVoltagesWithCompletion:" title="getCellVoltagesWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getCellVoltagesWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the battery&rsquo;s cell voltages. The NSArray named cellArray holds objects of type
+<a href="../Classes/DJIBatteryCell.html">DJIBatteryCell</a>. For the Inspire 1, since the battery has 6 cells, the array cellArray
+will have 6 objects, one for each battery cell.</p>
+	</div>		
+	
+    
 
+	<div class="method-subsection method-declaration"><code>- (void)getCellVoltagesWithCompletion:(void ( ^ ) ( NSArray&lt;DJIBatteryCell*&gt; *cellArray , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result callback block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getCurrentWarningInformationWithCompletion:" title="getCurrentWarningInformationWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getCurrentWarningInformationWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the battery&rsquo;s current state, which is one of seven battery states, which
+can be found at the top of DJIBattery.h. Need to check <a href="#//api/name/isSmartBattery">isSmartBattery</a> method before using this method.
+Not supported by OSMO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getCurrentWarningInformationWithCompletion:(void ( ^ ) ( DJIBatteryWarningInformation *state , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result callback block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSelfDischargeDayWithCompletion:" title="getSelfDischargeDayWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getSelfDischargeDayWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the battery&rsquo;s custom self-discharge configuration. Need to check <a href="#//api/name/isSmartBattery">isSmartBattery</a> method before using this method.
+Not supported by OSMO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getSelfDischargeDayWithCompletion:(void ( ^ ) ( uint8_t day , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>result</em></dt>
+			<dd><p>Remote execution result error block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getWarningInformationRecordsWithCompletion:" title="getWarningInformationRecordsWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getWarningInformationRecordsWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the battery&rsquo;s history. The DJI battery keeps the history for
+the past 30 days. The NSArray named history in the block holds objects of type
+<a href="../Classes/DJIBatteryWarningInformation.html">DJIBatteryWarningInformation</a>. Need to check <a href="#//api/name/isSmartBattery">isSmartBattery</a> method before using this method.
+Not supported by OSMO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getWarningInformationRecordsWithCompletion:(void ( ^ ) ( NSArray&lt;DJIBatteryWarningInformation*&gt; *history , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result callback block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isSmartBattery" title="isSmartBattery"></a>
+	<h3 class="subsubtitle method-title">isSmartBattery</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if battery is a smart battery.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isSmartBattery</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSelfDischargeDay:withCompletion:" title="setSelfDischargeDay:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setSelfDischargeDay:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets battery&rsquo;s custom self-discharge configuration in the range of [1, 10] days.
+For example, if the value for &lsquo;day&rsquo; is set to 10, the battery will discharge over
+the course of 10 days. Need to check <a href="#//api/name/isSmartBattery">isSmartBattery</a> method before using this method.
+Not supported by OSMO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSelfDischargeDay:(uint8_t)<em>day</em> withCompletion:(DJICompletionBlock)<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>day</em></dt>
+			<dd><p>Day for self-discharge</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result error block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIBattery.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
                     
                     
-          
-				</main>
-
-				<footer>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
 					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
-						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
-				</footer>
+				</div>
 			</div>
-		</div>
-	</article>
-
-	<script src="../js/script.js"></script>
-</body>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
 </html>

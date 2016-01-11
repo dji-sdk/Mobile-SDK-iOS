@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIError.html">
+	<File path="Classes/DJICameraLensState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIError</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJICameraLensState</TokenIdentifier>
+			<Abstract type="html">This class contains the information about the lens&apos; current state, including lens type, focus status, focus mode,
+focus assistant state and AF switch state.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
             
 			
 			<NodeRef refid="10"/>
@@ -13,114 +14,296 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/setErrorCode:</TokenIdentifier>
-			<Abstract type="html">Error code.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setIsLensInstalled:</TokenIdentifier>
+			<Abstract type="html">If the Lens is installed on the camera or not.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic, readonly) NSUInteger errorCode</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isLensInstalled</Declaration>
 			
 			
-			<Anchor>//api/name/errorCode</Anchor>
+			<Anchor>//api/name/isLensInstalled</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/errorCode</TokenIdentifier>
-			<Abstract type="html">Error code.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/isLensInstalled</TokenIdentifier>
+			<Abstract type="html">If the Lens is installed on the camera or not.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic, readonly) NSUInteger errorCode</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isLensInstalled</Declaration>
 			
 			
-			<Anchor>//api/name/errorCode</Anchor>
+			<Anchor>//api/name/isLensInstalled</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIError/errorCode</TokenIdentifier>
-			<Abstract type="html">Error code.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/isLensInstalled</TokenIdentifier>
+			<Abstract type="html">If the Lens is installed on the camera or not.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic, readonly) NSUInteger errorCode</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isLensInstalled</Declaration>
 			
 			
-			<Anchor>//api/name/errorCode</Anchor>
+			<Anchor>//api/name/isLensInstalled</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/setErrorDescription:</TokenIdentifier>
-			<Abstract type="html">Error description.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setLensType:</TokenIdentifier>
+			<Abstract type="html">The installed lens type. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic, readonly) NSString *errorDescription</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILensType lensType</Declaration>
 			
 			
-			<Anchor>//api/name/errorDescription</Anchor>
+			<Anchor>//api/name/lensType</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/errorDescription</TokenIdentifier>
-			<Abstract type="html">Error description.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/lensType</TokenIdentifier>
+			<Abstract type="html">The installed lens type. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic, readonly) NSString *errorDescription</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILensType lensType</Declaration>
 			
 			
-			<Anchor>//api/name/errorDescription</Anchor>
+			<Anchor>//api/name/lensType</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIError/errorDescription</TokenIdentifier>
-			<Abstract type="html">Error description.</Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/lensType</TokenIdentifier>
+			<Abstract type="html">The installed lens type. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>@property (strong, nonatomic, readonly) NSString *errorDescription</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILensType lensType</Declaration>
 			
 			
-			<Anchor>//api/name/errorDescription</Anchor>
+			<Anchor>//api/name/lensType</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIError/errorWithErrorCode:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setIsAFSwitchOn:</TokenIdentifier>
+			<Abstract type="html">The AF switch on the lens is on. If the lens is not installed, the value is undefined.
+If the property is YES, user can call setLensFocusMode and control the focal point with the SDK.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>+ (instancetype)errorWithErrorCode:(NSUInteger)errorCode</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isAFSwitchOn</Declaration>
 			
 			
-			<Anchor>//api/name/errorWithErrorCode:</Anchor>
+			<Anchor>//api/name/isAFSwitchOn</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/initWithErrorCode:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/isAFSwitchOn</TokenIdentifier>
+			<Abstract type="html">The AF switch on the lens is on. If the lens is not installed, the value is undefined.
+If the property is YES, user can call setLensFocusMode and control the focal point with the SDK.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>- (id)initWithErrorCode:(NSUInteger)errCode</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isAFSwitchOn</Declaration>
 			
 			
-			<Anchor>//api/name/initWithErrorCode:</Anchor>
+			<Anchor>//api/name/isAFSwitchOn</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIError/setErrorDescription:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIError.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/isAFSwitchOn</TokenIdentifier>
+			<Abstract type="html">The AF switch on the lens is on. If the lens is not installed, the value is undefined.
+If the property is YES, user can call setLensFocusMode and control the focal point with the SDK.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
 			
-			<Declaration>- (void)setErrorDescription:(NSString *)errorDescription</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isAFSwitchOn</Declaration>
 			
 			
-			<Anchor>//api/name/setErrorDescription:</Anchor>
+			<Anchor>//api/name/isAFSwitchOn</Anchor>
             <NodeRef refid="10"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setFocusMode:</TokenIdentifier>
+			<Abstract type="html">The current focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusMode focusMode</Declaration>
+			
+			
+			<Anchor>//api/name/focusMode</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/focusMode</TokenIdentifier>
+			<Abstract type="html">The current focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusMode focusMode</Declaration>
+			
+			
+			<Anchor>//api/name/focusMode</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/focusMode</TokenIdentifier>
+			<Abstract type="html">The current focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusMode focusMode</Declaration>
+			
+			
+			<Anchor>//api/name/focusMode</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setFocusStatus:</TokenIdentifier>
+			<Abstract type="html">The focus status of the lens. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusStatus focusStatus</Declaration>
+			
+			
+			<Anchor>//api/name/focusStatus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/focusStatus</TokenIdentifier>
+			<Abstract type="html">The focus status of the lens. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusStatus focusStatus</Declaration>
+			
+			
+			<Anchor>//api/name/focusStatus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/focusStatus</TokenIdentifier>
+			<Abstract type="html">The focus status of the lens. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJICameraLensFocusStatus focusStatus</Declaration>
+			
+			
+			<Anchor>//api/name/focusStatus</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setIsFocusAssistantEnabledForMF:</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Manual focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForMF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForMF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/isFocusAssistantEnabledForMF</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Manual focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForMF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForMF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/isFocusAssistantEnabledForMF</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Manual focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForMF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForMF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setIsFocusAssistantEnabledForAF:</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Auto focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForAF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForAF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/isFocusAssistantEnabledForAF</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Auto focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForAF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForAF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/isFocusAssistantEnabledForAF</TokenIdentifier>
+			<Abstract type="html">If the focus assistant enabled for Auto focus mode. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantEnabledForAF</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantEnabledForAF</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/setIsFocusAssistantWorking:</TokenIdentifier>
+			<Abstract type="html">If the focus target is zooming out. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantWorking</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantWorking</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraLensState/isFocusAssistantWorking</TokenIdentifier>
+			<Abstract type="html">If the focus target is zooming out. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantWorking</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantWorking</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraLensState/isFocusAssistantWorking</TokenIdentifier>
+			<Abstract type="html">If the focus target is zooming out. If the lens is not installed, the value is undefined.</Abstract>
+			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFocusAssistantWorking</Declaration>
+			
+			
+			<Anchor>//api/name/isFocusAssistantWorking</Anchor>
+            <NodeRef refid="10"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

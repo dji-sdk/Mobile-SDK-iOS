@@ -1,9 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="">
+	<File path="Constants/DJIWaypointMissionExecuteState.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionExecuteState</TokenIdentifier>
+			<Abstract type="html">Current waypoint mission state.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+			
+			<NodeRef refid="161"/>
+		</Token>
 		
 		
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateInitializing</TokenIdentifier>
+            <Abstract type="html">Waypoint mission is initializing, which means the mission has
+started and the aircraft is going to the first waypoint.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateInitializing</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateMoving</TokenIdentifier>
+            <Abstract type="html">Aircraft is currently moving toward the mission&apos;s next waypoint. happens when the &apos;flightPathMode&apos; is set as DJIWaypointMissionFlightPathNormal.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateMoving</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateCurveModeMoving</TokenIdentifier>
+            <Abstract type="html">Aircraft is currently moving. happens when the &apos;flightPathMode&apos; is set as DJIWaypointMissionFlightPathCurved.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateCurveModeMoving</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateCurveModeTurning</TokenIdentifier>
+            <Abstract type="html">Aircraft is currently turning. happens when the &apos;flightPathMode&apos; is set as DJIWaypointMissionFlightPathCurved.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateCurveModeTurning</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateBeginAction</TokenIdentifier>
+            <Abstract type="html">Aircraft has reached a waypoint, has rotated to the new heading and is now processing actions.
+This state will be called before the waypoint actions starts executing and will occur for each waypoint action.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateBeginAction</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateDoingAction</TokenIdentifier>
+            <Abstract type="html">Aircraft is at a waypoint and is executing an action.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateDoingAction</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateFinishedAction</TokenIdentifier>
+            <Abstract type="html">Aircraft is at a waypoint and has finished executing the current waypoint
+action. This state occurs once for each waypoint action.
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateFinishedAction</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateReturnToFirstWaypoint</TokenIdentifier>
+            <Abstract type="html">Aircraft is return to first waypoint. happens when the &apos;finishedAction&apos; is set as DJIWaypointMissionFinishedGoFirstWaypoint
+     </Abstract>
+            <Declaration>DJIWaypointMissionExecuteStateReturnToFirstWaypoint</Declaration>
+            
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            
+            <NodeRef refid="161"/>
+        </Token>
         
 	</File>
 </Tokens>

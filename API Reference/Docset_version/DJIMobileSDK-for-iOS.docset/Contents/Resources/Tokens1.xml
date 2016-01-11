@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIAppManager.html">
+	<File path="Classes/DJIAirLink.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIAppManager</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIAirLink</TokenIdentifier>
+			<Abstract type="html">This class contains DJI WiFi and DJI Lightbridge components, you can check if the current device supports WiFi and
+Lightbridge features by accessing the following two BOOL variables.</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
             
 			
 			<NodeRef refid="1"/>
@@ -13,91 +14,149 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/connectedDrone</TokenIdentifier>
-			<Abstract type="html">Get the connected drone.</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/setIsWifiLinkSupported:</TokenIdentifier>
+			<Abstract type="html">YES if WiFi Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (DJIDrone *)connectedDrone</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isWifiLinkSupported</Declaration>
 			
-			<ReturnValue><Abstract type="html">Connected drone object in currently.</Abstract></ReturnValue>
-			<Anchor>//api/name/connectedDrone</Anchor>
+			
+			<Anchor>//api/name/isWifiLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/closeConnectionWhenEnterBackground:</TokenIdentifier>
-			<Abstract type="html">Decide whether or not the SDK should close the connection when the application entered background. Default is YES</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/isWifiLinkSupported</TokenIdentifier>
+			<Abstract type="html">YES if WiFi Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (void)closeConnectionWhenEnterBackground:(BOOL)close</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isWifiLinkSupported</Declaration>
 			
 			
-			<Anchor>//api/name/closeConnectionWhenEnterBackground:</Anchor>
+			<Anchor>//api/name/isWifiLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/forceReconnect</TokenIdentifier>
-			<Abstract type="html">Force the SDK reconnect to the drone.</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIAirLink/isWifiLinkSupported</TokenIdentifier>
+			<Abstract type="html">YES if WiFi Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (void)forceReconnect</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isWifiLinkSupported</Declaration>
 			
 			
-			<Anchor>//api/name/forceReconnect</Anchor>
+			<Anchor>//api/name/isWifiLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/registerApp:withDelegate:</TokenIdentifier>
-			<Abstract type="html">Regist app. User should call once while the app first used and should connect to the internet at the first time registration.</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/setIsLBAirLinkSupported:</TokenIdentifier>
+			<Abstract type="html">YES if LB Air Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (void)registerApp:(NSString *)appKey withDelegate:(id&lt;DJIAppManagerDelegate&gt;)delegate</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>appKey</Name>
-					<Abstract type="html">App key that applied from dji&apos;s developer website.</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Regist result callback</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) BOOL isLBAirLinkSupported</Declaration>
 			
-			<Anchor>//api/name/registerApp:withDelegate:</Anchor>
+			
+			<Anchor>//api/name/isLBAirLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/getErrorDescryption:</TokenIdentifier>
-			<Abstract type="html">Get error descryption with error code.</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/isLBAirLinkSupported</TokenIdentifier>
+			<Abstract type="html">YES if LB Air Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)getErrorDescryption:(int)errorCode</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>errorCode</Name>
-					<Abstract type="html">Error code return from regist callback</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The error descryption</Abstract></ReturnValue>
-			<Anchor>//api/name/getErrorDescryption:</Anchor>
+			<Declaration>@property (nonatomic, readonly) BOOL isLBAirLinkSupported</Declaration>
+			
+			
+			<Anchor>//api/name/isLBAirLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIAppManager/getFrameworkVersion</TokenIdentifier>
-			<Abstract type="html">Get DJI SDK framework version</Abstract>
-			<DeclaredIn>DJIAppManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIAirLink/isLBAirLinkSupported</TokenIdentifier>
+			<Abstract type="html">YES if LB Air Link is supported</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
 			
-			<Declaration>+ (NSString *)getFrameworkVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isLBAirLinkSupported</Declaration>
 			
-			<ReturnValue><Abstract type="html">Version of framework.</Abstract></ReturnValue>
-			<Anchor>//api/name/getFrameworkVersion</Anchor>
+			
+			<Anchor>//api/name/isLBAirLinkSupported</Anchor>
             <NodeRef refid="1"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/setWifiLink:</TokenIdentifier>
+			<Abstract type="html">Returns WiFiLink if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJIWiFiLink *wifiLink</Declaration>
+			
+			
+			<Anchor>//api/name/wifiLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/wifiLink</TokenIdentifier>
+			<Abstract type="html">Returns WiFiLink if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJIWiFiLink *wifiLink</Declaration>
+			
+			
+			<Anchor>//api/name/wifiLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIAirLink/wifiLink</TokenIdentifier>
+			<Abstract type="html">Returns WiFiLink if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJIWiFiLink *wifiLink</Declaration>
+			
+			
+			<Anchor>//api/name/wifiLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/setLbAirLink:</TokenIdentifier>
+			<Abstract type="html">Returns Lightbridge Link if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJILBAirLink *lbAirLink</Declaration>
+			
+			
+			<Anchor>//api/name/lbAirLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIAirLink/lbAirLink</TokenIdentifier>
+			<Abstract type="html">Returns Lightbridge Link if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJILBAirLink *lbAirLink</Declaration>
+			
+			
+			<Anchor>//api/name/lbAirLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIAirLink/lbAirLink</TokenIdentifier>
+			<Abstract type="html">Returns Lightbridge Link if it&apos;s available</Abstract>
+			<DeclaredIn>DJIAirLink.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) DJILBAirLink *lbAirLink</Declaration>
+			
+			
+			<Anchor>//api/name/lbAirLink</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

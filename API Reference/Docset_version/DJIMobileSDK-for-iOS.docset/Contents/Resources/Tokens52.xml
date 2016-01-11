@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIWaypointAction.html">
+	<File path="Classes/DJIShootPhotoStep.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIWaypointAction</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIShootPhotoStep</TokenIdentifier>
+			<Abstract type="html">This class represents a step related to photo-shooting for a custom mission. By creating an object of this class and adding it into a custom mission, user can shoot photo during the custom mission execution.</Abstract>
+			<DeclaredIn>DJIShootPhotoStep.h</DeclaredIn>
             
 			
 			<NodeRef refid="52"/>
@@ -13,114 +13,37 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/setActionType:</TokenIdentifier>
-			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
-reaches the waypoint. Please find all the possible actions in the enum named
-DJIWaypointActionType above.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIShootPhotoStep/initWithSingleShootPhoto</TokenIdentifier>
+			<Abstract type="html">Initialized step for taking a single photo.</Abstract>
+			<DeclaredIn>DJIShootPhotoStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
+			<Declaration>- (instancetype _Nullable)initWithSingleShootPhoto</Declaration>
 			
-			
-			<Anchor>//api/name/actionType</Anchor>
+			<ReturnValue><Abstract type="html">Instance of DJIShootPhotoStep.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithSingleShootPhoto</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/actionType</TokenIdentifier>
-			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
-reaches the waypoint. Please find all the possible actions in the enum named
-DJIWaypointActionType above.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIShootPhotoStep/initWithPhotoCount:timeInterval:</TokenIdentifier>
+			<Abstract type="html">Initialized step for continous shoot photo.</Abstract>
+			<DeclaredIn>DJIShootPhotoStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
-			
-			
-			<Anchor>//api/name/actionType</Anchor>
+			<Declaration>- (instancetype _Nullable)initWithPhotoCount:(int)count timeInterval:(double)interval</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>count</Name>
+					<Abstract type="html">Photo count.</Abstract>
+				</Parameter><Parameter>
+					<Name>interval</Name>
+					<Abstract type="html">Time interval in seconds between shooting photos.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Instance of DJIShootPhotoStep.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithPhotoCount:timeInterval:</Anchor>
             <NodeRef refid="52"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointAction/actionType</TokenIdentifier>
-			<Abstract type="html">Waypoint action of type DJIWaypointActionType the aircraft will execute once the aircraft
-reaches the waypoint. Please find all the possible actions in the enum named
-DJIWaypointActionType above.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIWaypointActionType actionType</Declaration>
-			
-			
-			<Anchor>//api/name/actionType</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/setActionParam:</TokenIdentifier>
-			<Abstract type="html">Action parameter of a waypoint action. There are two situation where the action
-parameter value will be important. First, when the time to stay at a waypoint is
-set and when a part of the aircraft or the entire aircraft needs to be rotated.
-In that case, the action parameter will be the angle of rotation. For waypoint
-actions where there are no rotations involved or the aircraft is not being asked
-to stay at a certain location for a set amount of time, the action parameter
-of a waypoint action will be ignored.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
-			
-			
-			<Anchor>//api/name/actionParam</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/actionParam</TokenIdentifier>
-			<Abstract type="html">Action parameter of a waypoint action. There are two situation where the action
-parameter value will be important. First, when the time to stay at a waypoint is
-set and when a part of the aircraft or the entire aircraft needs to be rotated.
-In that case, the action parameter will be the angle of rotation. For waypoint
-actions where there are no rotations involved or the aircraft is not being asked
-to stay at a certain location for a set amount of time, the action parameter
-of a waypoint action will be ignored.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
-			
-			
-			<Anchor>//api/name/actionParam</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointAction/actionParam</TokenIdentifier>
-			<Abstract type="html">Action parameter of a waypoint action. There are two situation where the action
-parameter value will be important. First, when the time to stay at a waypoint is
-set and when a part of the aircraft or the entire aircraft needs to be rotated.
-In that case, the action parameter will be the angle of rotation. For waypoint
-actions where there are no rotations involved or the aircraft is not being asked
-to stay at a certain location for a set amount of time, the action parameter
-of a waypoint action will be ignored.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) int16_t actionParam</Declaration>
-			
-			
-			<Anchor>//api/name/actionParam</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointAction/initWithActionType:param:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
-			
-			<Declaration>- (id)initWithActionType:(DJIWaypointActionType)type param:(int16_t)param</Declaration>
-			
-			
-			<Anchor>//api/name/initWithActionType:param:</Anchor>
-            <NodeRef refid="52"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJICameraSDCardInfo.html">
+	<File path="Classes/DJIBatteryState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJICameraSDCardInfo</TokenIdentifier>
-			<Abstract type="html">Provide SD card general informations and status</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIBatteryState</TokenIdentifier>
+			<Abstract type="html">The DJIBatteryState is used to keep track the real-time state of the battery.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
             
 			
 			<NodeRef refid="7"/>
@@ -13,438 +13,314 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setHasError:</TokenIdentifier>
-			<Abstract type="html">The SD card has error.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setFullChargeEnergy:</TokenIdentifier>
+			<Abstract type="html">Returns the volume (mAh - milliamp hours) of the total amount of energy stored in the battery
+when the battery is fully charged. The volume of the battery at full charge changes over time
+as the battery continues to get used. Over time, as the battery continues to get charged, the
+value of fullChargeEnergy will decrease.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger fullChargeEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/fullChargeEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/hasError</TokenIdentifier>
-			<Abstract type="html">The SD card has error.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/fullChargeEnergy</TokenIdentifier>
+			<Abstract type="html">Returns the volume (mAh - milliamp hours) of the total amount of energy stored in the battery
+when the battery is fully charged. The volume of the battery at full charge changes over time
+as the battery continues to get used. Over time, as the battery continues to get charged, the
+value of fullChargeEnergy will decrease.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger fullChargeEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/fullChargeEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/hasError</TokenIdentifier>
-			<Abstract type="html">The SD card has error.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/fullChargeEnergy</TokenIdentifier>
+			<Abstract type="html">Returns the volume (mAh - milliamp hours) of the total amount of energy stored in the battery
+when the battery is fully charged. The volume of the battery at full charge changes over time
+as the battery continues to get used. Over time, as the battery continues to get charged, the
+value of fullChargeEnergy will decrease.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger fullChargeEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/fullChargeEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setReadOnly:</TokenIdentifier>
-			<Abstract type="html">The SD card is read only.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setCurrentEnergy:</TokenIdentifier>
+			<Abstract type="html">Returns the remaining energy stored in the battery (mAh - milliamp hours).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL readOnly</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/readOnly</Anchor>
+			<Anchor>//api/name/currentEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/readOnly</TokenIdentifier>
-			<Abstract type="html">The SD card is read only.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/currentEnergy</TokenIdentifier>
+			<Abstract type="html">Returns the remaining energy stored in the battery (mAh - milliamp hours).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL readOnly</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/readOnly</Anchor>
+			<Anchor>//api/name/currentEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/readOnly</TokenIdentifier>
-			<Abstract type="html">The SD card is read only.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/currentEnergy</TokenIdentifier>
+			<Abstract type="html">Returns the remaining energy stored in the battery (mAh - milliamp hours).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL readOnly</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentEnergy</Declaration>
 			
 			
-			<Anchor>//api/name/readOnly</Anchor>
+			<Anchor>//api/name/currentEnergy</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setInvalidFormat:</TokenIdentifier>
-			<Abstract type="html">The SD card&apos;s format is invalid.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setCurrentVoltage:</TokenIdentifier>
+			<Abstract type="html">Returns the current battery voltage (mV).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL invalidFormat</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentVoltage</Declaration>
 			
 			
-			<Anchor>//api/name/invalidFormat</Anchor>
+			<Anchor>//api/name/currentVoltage</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/invalidFormat</TokenIdentifier>
-			<Abstract type="html">The SD card&apos;s format is invalid.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/currentVoltage</TokenIdentifier>
+			<Abstract type="html">Returns the current battery voltage (mV).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL invalidFormat</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentVoltage</Declaration>
 			
 			
-			<Anchor>//api/name/invalidFormat</Anchor>
+			<Anchor>//api/name/currentVoltage</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/invalidFormat</TokenIdentifier>
-			<Abstract type="html">The SD card&apos;s format is invalid.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/currentVoltage</TokenIdentifier>
+			<Abstract type="html">Returns the current battery voltage (mV).</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL invalidFormat</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentVoltage</Declaration>
 			
 			
-			<Anchor>//api/name/invalidFormat</Anchor>
+			<Anchor>//api/name/currentVoltage</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setIsFormated:</TokenIdentifier>
-			<Abstract type="html">The SD card is formated.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setCurrentCurrent:</TokenIdentifier>
+			<Abstract type="html">Returns the real time current draw of the battery (mA). A negative value means the battery is being discharged,
+while positive means it&apos;s being charged.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormated</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentCurrent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormated</Anchor>
+			<Anchor>//api/name/currentCurrent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/isFormated</TokenIdentifier>
-			<Abstract type="html">The SD card is formated.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/currentCurrent</TokenIdentifier>
+			<Abstract type="html">Returns the real time current draw of the battery (mA). A negative value means the battery is being discharged,
+while positive means it&apos;s being charged.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormated</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentCurrent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormated</Anchor>
+			<Anchor>//api/name/currentCurrent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/isFormated</TokenIdentifier>
-			<Abstract type="html">The SD card is formated.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/currentCurrent</TokenIdentifier>
+			<Abstract type="html">Returns the real time current draw of the battery (mA). A negative value means the battery is being discharged,
+while positive means it&apos;s being charged.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormated</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger currentCurrent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormated</Anchor>
+			<Anchor>//api/name/currentCurrent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setIsFormating:</TokenIdentifier>
-			<Abstract type="html">The SD card is formating</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setLifetimeRemainingPercent:</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of remaining lifetime value of the battery. The range of this
+value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormating</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger lifetimeRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormating</Anchor>
+			<Anchor>//api/name/lifetimeRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/isFormating</TokenIdentifier>
-			<Abstract type="html">The SD card is formating</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/lifetimeRemainingPercent</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of remaining lifetime value of the battery. The range of this
+value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormating</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger lifetimeRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormating</Anchor>
+			<Anchor>//api/name/lifetimeRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/isFormating</TokenIdentifier>
-			<Abstract type="html">The SD card is formating</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/lifetimeRemainingPercent</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of remaining lifetime value of the battery. The range of this
+value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFormating</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger lifetimeRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFormating</Anchor>
+			<Anchor>//api/name/lifetimeRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setIsFull:</TokenIdentifier>
-			<Abstract type="html">The SD card is full.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setBatteryEnergyRemainingPercent:</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of battery energy left. The range of this value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryEnergyRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFull</Anchor>
+			<Anchor>//api/name/batteryEnergyRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/isFull</TokenIdentifier>
-			<Abstract type="html">The SD card is full.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/batteryEnergyRemainingPercent</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of battery energy left. The range of this value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryEnergyRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFull</Anchor>
+			<Anchor>//api/name/batteryEnergyRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/isFull</TokenIdentifier>
-			<Abstract type="html">The SD card is full.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/batteryEnergyRemainingPercent</TokenIdentifier>
+			<Abstract type="html">Returns the percentage of battery energy left. The range of this value is [0 - 100].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryEnergyRemainingPercent</Declaration>
 			
 			
-			<Anchor>//api/name/isFull</Anchor>
+			<Anchor>//api/name/batteryEnergyRemainingPercent</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setIsValid:</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is a valid card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setBatteryTemperature:</TokenIdentifier>
+			<Abstract type="html">Returns the temperature of battery in Centigrade, with the range [-128 to 127].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryTemperature</Declaration>
 			
 			
-			<Anchor>//api/name/isValid</Anchor>
+			<Anchor>//api/name/batteryTemperature</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/isValid</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is a valid card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/batteryTemperature</TokenIdentifier>
+			<Abstract type="html">Returns the temperature of battery in Centigrade, with the range [-128 to 127].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryTemperature</Declaration>
 			
 			
-			<Anchor>//api/name/isValid</Anchor>
+			<Anchor>//api/name/batteryTemperature</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/isValid</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is a valid card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/batteryTemperature</TokenIdentifier>
+			<Abstract type="html">Returns the temperature of battery in Centigrade, with the range [-128 to 127].</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger batteryTemperature</Declaration>
 			
 			
-			<Anchor>//api/name/isValid</Anchor>
+			<Anchor>//api/name/batteryTemperature</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setIsInserted:</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is inserted into the camera.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/setNumberOfDischarge:</TokenIdentifier>
+			<Abstract type="html">Returns the total number of discharges the battery has gone through over its lifetime.
+The total number of discharges includes discharges that happen through normal use and
+discharges that are manually set.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger numberOfDischarge</Declaration>
 			
 			
-			<Anchor>//api/name/isInserted</Anchor>
+			<Anchor>//api/name/numberOfDischarge</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/isInserted</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is inserted into the camera.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryState/numberOfDischarge</TokenIdentifier>
+			<Abstract type="html">Returns the total number of discharges the battery has gone through over its lifetime.
+The total number of discharges includes discharges that happen through normal use and
+discharges that are manually set.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger numberOfDischarge</Declaration>
 			
 			
-			<Anchor>//api/name/isInserted</Anchor>
+			<Anchor>//api/name/numberOfDischarge</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/isInserted</TokenIdentifier>
-			<Abstract type="html">Whether the SD card is inserted into the camera.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryState/numberOfDischarge</TokenIdentifier>
+			<Abstract type="html">Returns the total number of discharges the battery has gone through over its lifetime.
+The total number of discharges includes discharges that happen through normal use and
+discharges that are manually set.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			<Declaration>@property (nonatomic, readonly) NSInteger numberOfDischarge</Declaration>
 			
 			
-			<Anchor>//api/name/isInserted</Anchor>
+			<Anchor>//api/name/numberOfDischarge</Anchor>
             <NodeRef refid="7"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setTotalSize:</TokenIdentifier>
-			<Abstract type="html">Total size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int totalSize</Declaration>
-			
-			
-			<Anchor>//api/name/totalSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/totalSize</TokenIdentifier>
-			<Abstract type="html">Total size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int totalSize</Declaration>
-			
-			
-			<Anchor>//api/name/totalSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/totalSize</TokenIdentifier>
-			<Abstract type="html">Total size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int totalSize</Declaration>
-			
-			
-			<Anchor>//api/name/totalSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setRemainSize:</TokenIdentifier>
-			<Abstract type="html">Remain size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int remainSize</Declaration>
-			
-			
-			<Anchor>//api/name/remainSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/remainSize</TokenIdentifier>
-			<Abstract type="html">Remain size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int remainSize</Declaration>
-			
-			
-			<Anchor>//api/name/remainSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/remainSize</TokenIdentifier>
-			<Abstract type="html">Remain size of the SD card.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int remainSize</Declaration>
-			
-			
-			<Anchor>//api/name/remainSize</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setAvailableCaptureCount:</TokenIdentifier>
-			<Abstract type="html">The available count for taking photo.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
-			
-			
-			<Anchor>//api/name/availableCaptureCount</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/availableCaptureCount</TokenIdentifier>
-			<Abstract type="html">The available count for taking photo.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
-			
-			
-			<Anchor>//api/name/availableCaptureCount</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/availableCaptureCount</TokenIdentifier>
-			<Abstract type="html">The available count for taking photo.</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
-			
-			
-			<Anchor>//api/name/availableCaptureCount</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/setAvailableRecordingTime:</TokenIdentifier>
-			<Abstract type="html">Time available for recording. Supported in Inspire 1/Phantom3 professional</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableRecordingTime</Declaration>
-			
-			
-			<Anchor>//api/name/availableRecordingTime</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardInfo/availableRecordingTime</TokenIdentifier>
-			<Abstract type="html">Time available for recording. Supported in Inspire 1/Phantom3 professional</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableRecordingTime</Declaration>
-			
-			
-			<Anchor>//api/name/availableRecordingTime</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardInfo/availableRecordingTime</TokenIdentifier>
-			<Abstract type="html">Time available for recording. Supported in Inspire 1/Phantom3 professional</Abstract>
-			<DeclaredIn>DJICameraSDCardInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) int availableRecordingTime</Declaration>
-			
-			
-			<Anchor>//api/name/availableRecordingTime</Anchor>
-            <NodeRef refid="7"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIRangeExtender.html">
+	<File path="Classes/DJIRemoteController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIRangeExtender</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIRemoteController</TokenIdentifier>
+			<Abstract type="html">The class represents the remote controller of the aircraft. It provides mothods to change the settings of the physical remote controller. For some products (e.g. Inspire 1 and Matric 100), the class provides methods to manager the slave/master mode of the remote controllers.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="49"/>
@@ -13,23 +13,11 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Range extender power level update delegate</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRangeExtenderDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/delegate</TokenIdentifier>
-			<Abstract type="html">Range extender power level update delegate</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRangeExtenderDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -37,11 +25,11 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRangeExtender/delegate</TokenIdentifier>
-			<Abstract type="html">Range extender power level update delegate</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIRangeExtenderDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -49,158 +37,554 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/startRangeExtenderPowerLevelUpdates</TokenIdentifier>
-			<Abstract type="html">Start power level update.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIRemoteController/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (void)startRangeExtenderPowerLevelUpdates</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/startRangeExtenderPowerLevelUpdates</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/stopRangeExtenderPowerLevelUpdates</TokenIdentifier>
-			<Abstract type="html">Stop power level update.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/isRCRemoteFocusCheckingSupported</TokenIdentifier>
+			<Abstract type="html">Query method to check if the Remote Controller supports Remote Focus State Checking.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (void)stopRangeExtenderPowerLevelUpdates</Declaration>
+			<Declaration>- (BOOL)isRCRemoteFocusCheckingSupported</Declaration>
 			
 			
-			<Anchor>//api/name/stopRangeExtenderPowerLevelUpdates</Anchor>
+			<Anchor>//api/name/isRCRemoteFocusCheckingSupported</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getRangeExtenderPowerLevel</TokenIdentifier>
-			<Abstract type="html">Get the power level of the range extender.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCName:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the Remote Controller&apos;s name.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (int)getRangeExtenderPowerLevel</Declaration>
-			
-			<ReturnValue><Abstract type="html">Power level between [0, 10]. -1 is invalid power level.</Abstract></ReturnValue>
-			<Anchor>//api/name/getRangeExtenderPowerLevel</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/bindRangeExtenderWithCameraMAC:</TokenIdentifier>
-			<Abstract type="html">Bind mac address to the range extender.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)bindRangeExtenderWithCameraMAC:(NSString *)macAddr</Declaration>
+			<Declaration>- (void)setRCName:(NSString *_Nonnull)name withCompletion:(DJICompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>macAddr</Name>
-					<Abstract type="html">The target bind camera&apos;s MAC address, get frome the QR code stick on the aircraft. the input MAC address should be this format:  60:60:1f:xx:xx:xx</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Return bind result. if YES then bind Succeeded.
-
-@attention If bind success, the range extender will reboot automatically.</Abstract></ReturnValue>
-			<Anchor>//api/name/bindRangeExtenderWithCameraMAC:</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getCurrentBindingMAC</TokenIdentifier>
-			<Abstract type="html">Get the binding mac address of the range extender.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)getCurrentBindingMAC</Declaration>
-			
-			<ReturnValue><Abstract type="html">Return the binding MAC address. return nil if no binding.</Abstract></ReturnValue>
-			<Anchor>//api/name/getCurrentBindingMAC</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getCurrentBindingSSID</TokenIdentifier>
-			<Abstract type="html">Get the binding ssid</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)getCurrentBindingSSID</Declaration>
-			
-			<ReturnValue><Abstract type="html">Return the binding SSID, return nil if no binding.</Abstract></ReturnValue>
-			<Anchor>//api/name/getCurrentBindingSSID</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getMacAddressOfRangeExtender</TokenIdentifier>
-			<Abstract type="html">Get MAC Address of range extender.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)getMacAddressOfRangeExtender</Declaration>
-			
-			<ReturnValue><Abstract type="html">MAC address of range extender.</Abstract></ReturnValue>
-			<Anchor>//api/name/getMacAddressOfRangeExtender</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getSsidOfRangeExtender</TokenIdentifier>
-			<Abstract type="html">Get SSID of range extender.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)getSsidOfRangeExtender</Declaration>
-			
-			<ReturnValue><Abstract type="html">SSID of range extender.</Abstract></ReturnValue>
-			<Anchor>//api/name/getSsidOfRangeExtender</Anchor>
-            <NodeRef refid="49"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/renameSsidOfRangeExtender:</TokenIdentifier>
-			<Abstract type="html">Rename the range extender&apos;s ssid.</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)renameSsidOfRangeExtender:(NSString *)newSsid</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>newName</Name>
-					<Abstract type="html">New ssid name of range extender, must has prefix &quot;Phantom_&quot;
-@attention If rename operation success, the range extender will reboot automatically.</Abstract>
+					<Name>name</Name>
+					<Abstract type="html">Remote controller name to be set. Six characters at most.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/renameSsidOfRangeExtender:</Anchor>
+			<Anchor>//api/name/setRCName:withCompletion:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/getRangeExtenderWiFiPassword</TokenIdentifier>
-			<Abstract type="html">Get wifi password</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCNameWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the Remote Controller&apos;s name.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)getRangeExtenderWiFiPassword</Declaration>
+			<Declaration>- (void)getRCNameWithCompletion:(void ( ^ ) ( NSString *_Nullable name , NSError *_Nullable error ))completion</Declaration>
 			
-			<ReturnValue><Abstract type="html">WIFI password or nil</Abstract></ReturnValue>
-			<Anchor>//api/name/getRangeExtenderWiFiPassword</Anchor>
+			
+			<Anchor>//api/name/getRCNameWithCompletion:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRangeExtender/setRangeExtenderWiFiPassword:</TokenIdentifier>
-			<Abstract type="html">Set wifi password</Abstract>
-			<DeclaredIn>DJIRangeExtender.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCPassword:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the Remote Controller&apos;s password.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)setRangeExtenderWiFiPassword:(NSString *)password</Declaration>
+			<Declaration>- (void)setRCPassword:(NSString *_Nonnull)password withCompletion:(DJICompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>password</Name>
-					<Abstract type="html">New wifi passwords that is made up of letters and numbers and should be 8 - 16 characters。
-set nil to cancel setup password
-@attention Hard reset range extender will clean password</Abstract>
+					<Abstract type="html">password Remote controller password to be set, using a string consisted by 4 digits.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Completion block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setRangeExtenderWiFiPassword:</Anchor>
+			<Anchor>//api/name/setRCPassword:withCompletion:</Anchor>
             <NodeRef refid="49"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCPasswordWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the Remote Controller&apos;s password.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCPasswordWithCompletion:(void ( ^ ) ( NSString *_Nullable password , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCPasswordWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCControlMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the Remote Controller&apos;s control mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCControlMode:(DJIRCControlMode)mode withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Remote Controller control mode to be set.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCControlMode:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCControlModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the master Remote Controller&apos;s control mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCControlModeWithCompletion:(void ( ^ ) ( DJIRCControlMode mode , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCControlModeWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/enterRCToAircraftPairingModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Enters pairing mode, where the Remote Controller starts pairing with the aircraft.
+This method is used when the Remote Controller no longer recognizes which aircraft
+it is paired with.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)enterRCToAircraftPairingModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/enterRCToAircraftPairingModeWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/exitRCToAircraftPairingModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Exits pairing mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)exitRCToAircraftPairingModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/exitRCToAircraftPairingModeWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCToAircraftPairingStateWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the pairing status as the Remote Controller is pairing with the aircraft.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCToAircraftPairingStateWithCompletion:(void ( ^ ) ( DJIRCToAircraftPairingState state , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCToAircraftPairingStateWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCWheelGimbalSpeed:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the gimbal&apos;s pitch speed for the Remote Controller&apos;s upper left wheel (Gimbal Dial).</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCWheelGimbalSpeed:(uint8_t)speed withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Speed to be set for the gimbal&apos;s pitch, which should in the range of [0, 100],
+where 0 represents very slow and 100 represents very fast.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCWheelGimbalSpeed:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCWheelGimbalSpeedWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the gimbal&apos;s pitch speed for the Remote Controller&apos;s upper left wheel (Gimbal Dial).</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCWheelGimbalSpeedWithCompletion:(void ( ^ ) ( uint8_t speed , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCWheelGimbalSpeedWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCControlGimbalDirection:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control. The
+three options (pitch, roll, and yaw) are outlined in the enum named DJIRCGimbalControlDirection
+in DJIRemoteControllerDef.h.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCControlGimbalDirection:(DJIRCGimbalControlDirection)direction withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>direction</Name>
+					<Abstract type="html">Gimbal direction to be set that the top left wheel on the Remote Controller
+will control.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCControlGimbalDirection:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCControlGimbalDirectionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCControlGimbalDirectionWithCompletion:(void ( ^ ) ( DJIRCGimbalControlDirection direction , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCControlGimbalDirectionWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRCCustomButton1Tag:customButton2Tag:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets custom button&apos;s (Back Button&apos;s) tags, which can be used by the user to record user settings for a particular Remote Controller. Unlike all other buttons, switches and sticks on the Remote Controller, the custom buttons only send state to the Mobile Device and not the aircraft.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRCCustomButton1Tag:(uint8_t)tag1 customButton2Tag:(uint8_t)tag2 withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>tag1</Name>
+					<Abstract type="html">Button 1&apos;s custom tag.</Abstract>
+				</Parameter><Parameter>
+					<Name>tag2</Name>
+					<Abstract type="html">Button 2&apos;s custom tag.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRCCustomButton1Tag:customButton2Tag:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRCCustomButtonTagWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the custom button&apos;s (Back Button&apos;s) tags.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRCCustomButtonTagWithCompletion:(void ( ^ ) ( uint8_t tag1 , uint8_t tag2 , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRCCustomButtonTagWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/isMasterSlaveModeSupported</TokenIdentifier>
+			<Abstract type="html">Query method to check if the Remote Controller supports master/slave mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isMasterSlaveModeSupported</Declaration>
+			
+			
+			<Anchor>//api/name/isMasterSlaveModeSupported</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setRemoteControllerMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the Remote Controller&apos;s mode. See DJIRemoteControllerMode enum for all possible Remote Controller modes.
+The master and slave modes are only supported for the Inspire 1, Inspire 1 Pro and M100.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setRemoteControllerMode:(DJIRemoteControllerMode)mode withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Mode of type DJIRemoteControllerMode to be set for the Remote Controller.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setRemoteControllerMode:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getRemoteControllerModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the Remote Controller&apos;s mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getRemoteControllerModeWithCompletion:(void ( ^ ) ( DJIRemoteControllerMode mode , BOOL isConnected , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getRemoteControllerModeWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/joinMasterWithID:masterName:masterPassword:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Used by a slave Remote Controller to join a master Remote Controller. If the master Remote Controller accepts the request, the master Remote Controller will control the aircraft and the slave Remote Controller will control the gimbal and/or be able to view the downlink video.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)joinMasterWithID:(DJIRCID)masterId masterName:(NSString *_Nonnull)masterName masterPassword:(NSString *_Nonnull)masterPassword withCompletion:(void ( ^ ) ( DJIRCJoinMasterResult result , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>password</Name>
+					<Abstract type="html">Master&apos;s password</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execution result callback block.</Abstract>
+				</Parameter><Parameter>
+					<Name>hostId</Name>
+					<Abstract type="html">Master&apos;s unique identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Master&apos;s name</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/joinMasterWithID:masterName:masterPassword:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getJoinedMasterNameAndPassword:</TokenIdentifier>
+			<Abstract type="html">Returns the master Remote Controller&apos;s information, which includes the unique identifier, name, and password.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getJoinedMasterNameAndPassword:(void ( ^ ) ( DJIRCID masterId , NSString *_Nullable masterName , NSString *_Nullable masterPassword , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getJoinedMasterNameAndPassword:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/startMasterRCSearchWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Starts search by slave Remote Controller for nearby master Remote Controllers. To get the list of master Remote Controllers use getAvailableMastersWithCallbackBlock then call stopMasterRCSearchWithCompletion to end th search.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)startMasterRCSearchWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/startMasterRCSearchWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getAvailableMastersWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Returns all available master Remote Controllers nearby. Before this method can be used, the method startMasterRCSearchWithCompletion needs to be called to start the search for master Remote Controllers. Once the list of masters is received, call stopMasterRCSearchWithCompletion to end the search.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAvailableMastersWithCompletion:(void ( ^ ) ( NSArray&lt;DJIRCInfo*&gt; *masters , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getAvailableMastersWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/stopMasterRCSearchWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Used by a slave Remote Controller to stop the search for nearby master Remote Controllers.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopMasterRCSearchWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/stopMasterRCSearchWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getMasterRCSearchStateWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Returns the state of the master Remote Controller search. The search is initiated by the Mobile Device, but performed by the Remote Controller. Therefore, if the Mobile Device&apos;s application crashes while a search is ongoing, this method can be used to let the new instance of the application understand the Remote Controller state.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getMasterRCSearchStateWithCompletion:(void ( ^ ) ( BOOL isStarted , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getMasterRCSearchStateWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/removeMaster:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Removes a master Remote Controller from the current slave Remote Controller.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)removeMaster:(DJIRCID)masterId withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>masterId</Name>
+					<Abstract type="html">The connected master&apos;s identifier</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeMaster:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/requestGimbalControlRightWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Called by the slave Remote Controller to request gimbal control from the master Remote Controller.
+s</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)requestGimbalControlRightWithCompletion:(void ( ^ ) ( DJIRCRequestGimbalControlResult result , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/requestGimbalControlRightWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setSlaveControlMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the Remote Contoller&apos;s slave control mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSlaveControlMode:(DJIRCControlMode)mode withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Control mode to be set. the mode&apos;s style should be RCSlaveControlStyleXXX</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSlaveControlMode:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getSlaveControlModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the Remote Controller&apos;s slave control mode.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveControlModeWithCompletion:(void ( ^ ) ( DJIRCControlMode mode , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getSlaveControlModeWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/setSlaveJoystickControlGimbalSpeed:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Called by the slave Remote Controller to set the gimbal&apos;s pitch, roll, and yaw speed with range [0, 100].</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSlaveJoystickControlGimbalSpeed:(DJIRCGimbalControlSpeed)speed withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Gimal&apos;s pitch, roll, and yaw speed with range [0, 100].</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSlaveJoystickControlGimbalSpeed:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getSlaveJoystickControlGimbalSpeedWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the current slave&apos;s gimbal&apos;s pitch, roll, and yaw speed with range [0, 100].</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveJoystickControlGimbalSpeedWithCompletion:(void ( ^ ) ( DJIRCGimbalControlSpeed speed , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getSlaveJoystickControlGimbalSpeedWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/getSlaveListWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Used by the current master Remote Controller to get all the slaves connected to it.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSlaveListWithCompletion:(void ( ^ ) ( NSArray&lt;DJIRCInfo*&gt; *slaveList , NSError *_Nullable error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execution result callback block. The arrray of slaves contains objects
+of type DJIRCInfo.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSlaveListWithCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/removeSlave:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Removes a slave Remote Controller from the current master Remote Controller.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)removeSlave:(DJIRCID)slaveId withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>slaveId</Name>
+					<Abstract type="html">Target slave to be remove.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeSlave:withCompletion:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIRemoteController/responseRequester:forGimbalControlRight:</TokenIdentifier>
+			<Abstract type="html">When a slave Remote Controller requests a master Remote Controller to control the gimbal, this
+method is used by a master Remote Controller to respond to the slave Remote Controller&apos;s request.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			
+			<Declaration>- (void)responseRequester:(DJIRCID)requesterId forGimbalControlRight:(BOOL)isAgree</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>requesterId</Name>
+					<Abstract type="html">The slave Remote Controller&apos;s identifier.</Abstract>
+				</Parameter><Parameter>
+					<Name>isAgree</Name>
+					<Abstract type="html">YES if the master Remote Controller agrees to give the slave
+Remote Controller the right to control the gimbal.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/responseRequester:forGimbalControlRight:</Anchor>
+            <NodeRef refid="49"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

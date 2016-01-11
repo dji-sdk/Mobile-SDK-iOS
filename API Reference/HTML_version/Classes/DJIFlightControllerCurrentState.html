@@ -1,0 +1,1370 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIFlightControllerCurrentState Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIFlightControllerCurrentState Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/aircraftLocation">&nbsp;&nbsp;&nbsp;&nbsp;aircraftLocation</option>
+	
+	<option value="//api/name/altitude">&nbsp;&nbsp;&nbsp;&nbsp;altitude</option>
+	
+	<option value="//api/name/areMotorsOn">&nbsp;&nbsp;&nbsp;&nbsp;areMotorsOn</option>
+	
+	<option value="//api/name/attitude">&nbsp;&nbsp;&nbsp;&nbsp;attitude</option>
+	
+	<option value="//api/name/flightMode">&nbsp;&nbsp;&nbsp;&nbsp;flightMode</option>
+	
+	<option value="//api/name/flightModeString">&nbsp;&nbsp;&nbsp;&nbsp;flightModeString</option>
+	
+	<option value="//api/name/gpsSignalStatus">&nbsp;&nbsp;&nbsp;&nbsp;gpsSignalStatus</option>
+	
+	<option value="//api/name/homeLocation">&nbsp;&nbsp;&nbsp;&nbsp;homeLocation</option>
+	
+	<option value="//api/name/isFailsafe">&nbsp;&nbsp;&nbsp;&nbsp;isFailsafe</option>
+	
+	<option value="//api/name/isFlying">&nbsp;&nbsp;&nbsp;&nbsp;isFlying</option>
+	
+	<option value="//api/name/isIMUPreheating">&nbsp;&nbsp;&nbsp;&nbsp;isIMUPreheating</option>
+	
+	<option value="//api/name/isUltrasonicBeingUsed">&nbsp;&nbsp;&nbsp;&nbsp;isUltrasonicBeingUsed</option>
+	
+	<option value="//api/name/isVisionSensorBeingUsed">&nbsp;&nbsp;&nbsp;&nbsp;isVisionSensorBeingUsed</option>
+	
+	<option value="//api/name/noFlyStatus">&nbsp;&nbsp;&nbsp;&nbsp;noFlyStatus</option>
+	
+	<option value="//api/name/noFlyZoneCenter">&nbsp;&nbsp;&nbsp;&nbsp;noFlyZoneCenter</option>
+	
+	<option value="//api/name/noFlyZoneRadius">&nbsp;&nbsp;&nbsp;&nbsp;noFlyZoneRadius</option>
+	
+	<option value="//api/name/orientationMode">&nbsp;&nbsp;&nbsp;&nbsp;orientationMode</option>
+	
+	<option value="//api/name/remainingBattery">&nbsp;&nbsp;&nbsp;&nbsp;remainingBattery</option>
+	
+	<option value="//api/name/satelliteCount">&nbsp;&nbsp;&nbsp;&nbsp;satelliteCount</option>
+	
+	<option value="//api/name/smartGoHomeStatus">&nbsp;&nbsp;&nbsp;&nbsp;smartGoHomeStatus</option>
+	
+	<option value="//api/name/ultrasonicHeight">&nbsp;&nbsp;&nbsp;&nbsp;ultrasonicHeight</option>
+	
+	<option value="//api/name/velocityX">&nbsp;&nbsp;&nbsp;&nbsp;velocityX</option>
+	
+	<option value="//api/name/velocityY">&nbsp;&nbsp;&nbsp;&nbsp;velocityY</option>
+	
+	<option value="//api/name/velocityZ">&nbsp;&nbsp;&nbsp;&nbsp;velocityZ</option>
+	
+	
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/aircraftLocation">aircraftLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/altitude">altitude</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/areMotorsOn">areMotorsOn</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attitude">attitude</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flightMode">flightMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flightModeString">flightModeString</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gpsSignalStatus">gpsSignalStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/homeLocation">homeLocation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isFailsafe">isFailsafe</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isFlying">isFlying</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isIMUPreheating">isIMUPreheating</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isUltrasonicBeingUsed">isUltrasonicBeingUsed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isVisionSensorBeingUsed">isVisionSensorBeingUsed</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/noFlyStatus">noFlyStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/noFlyZoneCenter">noFlyZoneCenter</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/noFlyZoneRadius">noFlyZoneRadius</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/orientationMode">orientationMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/remainingBattery">remainingBattery</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/satelliteCount">satelliteCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/smartGoHomeStatus">smartGoHomeStatus</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ultrasonicHeight">ultrasonicHeight</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/velocityX">velocityX</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/velocityY">velocityY</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/velocityZ">velocityZ</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIFlightControllerCurrentState Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIFlightControllerCurrentState Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIFlightControllerCurrentState.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class contains current state of the flight controller.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/satelliteCount">&nbsp;&nbsp;satelliteCount</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/homeLocation">&nbsp;&nbsp;homeLocation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/aircraftLocation">&nbsp;&nbsp;aircraftLocation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/velocityX">&nbsp;&nbsp;velocityX</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/velocityY">&nbsp;&nbsp;velocityY</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/velocityZ">&nbsp;&nbsp;velocityZ</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/altitude">&nbsp;&nbsp;altitude</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/attitude">&nbsp;&nbsp;attitude</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/remainingBattery">&nbsp;&nbsp;remainingBattery</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isFlying">&nbsp;&nbsp;isFlying</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flightMode">&nbsp;&nbsp;flightMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/noFlyStatus">&nbsp;&nbsp;noFlyStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/noFlyZoneCenter">&nbsp;&nbsp;noFlyZoneCenter</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/noFlyZoneRadius">&nbsp;&nbsp;noFlyZoneRadius</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/smartGoHomeStatus">&nbsp;&nbsp;smartGoHomeStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/orientationMode">&nbsp;&nbsp;orientationMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gpsSignalStatus">&nbsp;&nbsp;gpsSignalStatus</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isFailsafe">&nbsp;&nbsp;isFailsafe</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isIMUPreheating">&nbsp;&nbsp;isIMUPreheating</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isUltrasonicBeingUsed">&nbsp;&nbsp;isUltrasonicBeingUsed</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ultrasonicHeight">&nbsp;&nbsp;ultrasonicHeight</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isVisionSensorBeingUsed">&nbsp;&nbsp;isVisionSensorBeingUsed</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/areMotorsOn">&nbsp;&nbsp;areMotorsOn</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flightModeString">&nbsp;&nbsp;flightModeString</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/aircraftLocation" title="aircraftLocation"></a>
+	<h3 class="subsubtitle method-title">aircraftLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current location of the aircraft as a coordinate.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationCoordinate2D aircraftLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/altitude" title="altitude"></a>
+	<h3 class="subsubtitle method-title">altitude</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Relative altitude of the aircraft relative to take off location, measured by the barometer, in meters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float altitude</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/areMotorsOn" title="areMotorsOn"></a>
+	<h3 class="subsubtitle method-title">areMotorsOn</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if motors are on.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL areMotorsOn</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/attitude" title="attitude"></a>
+	<h3 class="subsubtitle method-title">attitude</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attitude of the aircraft where the pitch, roll, and yaw values will be in the range of [-180, 180].
+If the values of the pitch, roll, and yaw are 0, the aircraft will be hovering level with a True North heading.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIAttitude attitude</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flightMode" title="flightMode"></a>
+	<h3 class="subsubtitle method-title">flightMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aircraft&rsquo;s current flight mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIFlightControllerFlightMode flightMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flightModeString" title="flightModeString"></a>
+	<h3 class="subsubtitle method-title">flightModeString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the flight mode as a string. For example, &ldquo;P-GPS&rdquo; or &ldquo;P-Atti&rdquo;.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *flightModeString</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gpsSignalStatus" title="gpsSignalStatus"></a>
+	<h3 class="subsubtitle method-title">gpsSignalStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aircraft&rsquo;s current GPS signal quality.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIGPSSignalStatus gpsSignalStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/homeLocation" title="homeLocation"></a>
+	<h3 class="subsubtitle method-title">homeLocation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Home location of the aircraft as a coordinate.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationCoordinate2D homeLocation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isFailsafe" title="isFailsafe"></a>
+	<h3 class="subsubtitle method-title">isFailsafe</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if the signal lost between remote controller and aircraft fail safe is enabled.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isFailsafe</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isFlying" title="isFlying"></a>
+	<h3 class="subsubtitle method-title">isFlying</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if aircraft is flying.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isFlying</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isIMUPreheating" title="isIMUPreheating"></a>
+	<h3 class="subsubtitle method-title">isIMUPreheating</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if IMU is preheating.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isIMUPreheating</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isUltrasonicBeingUsed" title="isUltrasonicBeingUsed"></a>
+	<h3 class="subsubtitle method-title">isUltrasonicBeingUsed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if the ultrasonic sensor is being used. Variables that can impact the quality of the ultrasound measurement
+and whether it is used or not are height above ground and the type of ground (if it reflects sound waves well).
+Usually the ultrasonic sensor works when the aircraft is less than 8m above ground.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isUltrasonicBeingUsed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isVisionSensorBeingUsed" title="isVisionSensorBeingUsed"></a>
+	<h3 class="subsubtitle method-title">isVisionSensorBeingUsed</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if vision sensor is being used. Variables that can impact the quality of the vision measurement
+and whether it is used or not are height above ground and the type of ground (if it has sufficiently rich texture).
+Usually the vision sensor works when the aircraft is less than 3m above ground.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isVisionSensorBeingUsed</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/noFlyStatus" title="noFlyStatus"></a>
+	<h3 class="subsubtitle method-title">noFlyStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aircraft&rsquo;s current no fly status.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIFlightControllerNoFlyStatus noFlyStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/noFlyZoneCenter" title="noFlyZoneCenter"></a>
+	<h3 class="subsubtitle method-title">noFlyZoneCenter</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>No fly zone&rsquo;s center coordinate.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) CLLocationCoordinate2D noFlyZoneCenter</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/noFlyZoneRadius" title="noFlyZoneRadius"></a>
+	<h3 class="subsubtitle method-title">noFlyZoneRadius</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>No fly zone&rsquo;s radius in meters.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int noFlyZoneRadius</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/orientationMode" title="orientationMode"></a>
+	<h3 class="subsubtitle method-title">orientationMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aircraft&rsquo;s current orientation mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIFlightOrientationMode orientationMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/remainingBattery" title="remainingBattery"></a>
+	<h3 class="subsubtitle method-title">remainingBattery</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Recommended action based on remaining battery life.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIAircraftRemainingBatteryState remainingBattery</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/satelliteCount" title="satelliteCount"></a>
+	<h3 class="subsubtitle method-title">satelliteCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>GPS satellite count.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int satelliteCount</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/smartGoHomeStatus" title="smartGoHomeStatus"></a>
+	<h3 class="subsubtitle method-title">smartGoHomeStatus</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Aircraft’s smart go home data. If smart go home is enabled, all the
+smart go home data will be available in DJIFlightControllerSmartGoHomeStatus.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIFlightControllerSmartGoHomeStatus smartGoHomeStatus</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/ultrasonicHeight" title="ultrasonicHeight"></a>
+	<h3 class="subsubtitle method-title">ultrasonicHeight</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Height of aircraft measured by the ultrasonic sensor in meters. The data will only be
+available if <a href="#//api/name/isUltrasonicBeingUsed">isUltrasonicBeingUsed</a> returns YES. Height has a precision of 0.1m.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float ultrasonicHeight</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/velocityX" title="velocityX"></a>
+	<h3 class="subsubtitle method-title">velocityX</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current speed of the aircraft in the x direction in meters per second.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float velocityX</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/velocityY" title="velocityY"></a>
+	<h3 class="subsubtitle method-title">velocityY</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current speed of the aircraft in the y direction in meters per second.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float velocityY</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/velocityZ" title="velocityZ"></a>
+	<h3 class="subsubtitle method-title">velocityZ</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Current speed of the aircraft in the z direction in meters per second.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) float velocityZ</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightControllerCurrentState.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

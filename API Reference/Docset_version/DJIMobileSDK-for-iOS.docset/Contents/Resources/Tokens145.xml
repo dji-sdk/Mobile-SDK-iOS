@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/GSActionType.html">
+	<File path="Constants/DJIRCJoinMasterResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/GSActionType</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCJoinMasterResult</TokenIdentifier>
+			<Abstract type="html">Result when a slave Remote Controller tries to join
+a master Remote Controller.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="145"/>
@@ -14,95 +15,81 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionOpen</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionOpen</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultSuccessful</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
+the master Remote Controller was successful.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultSuccessful</Declaration>
             
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionClose</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionClose</Declaration>
-            
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionUploadTask</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionUploadTask</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultPasswordError</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
+the master Remote Controller was unsuccessful
+due to a password error.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultPasswordError</Declaration>
             
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionDownloadTask</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionDownloadTask</Declaration>
-            
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionStart</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionStart</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultRejected</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
+the master Remote Controller was rejected.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultRejected</Declaration>
             
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionStop</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionStop</Declaration>
-            
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionPause</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionPause</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultReachMaximum</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
+the master Remote Controller was unsuccesful
+because the master Remote Controller is at the
+maximum number of slaves it can have.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultReachMaximum</Declaration>
             
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionContinue</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionContinue</Declaration>
-            
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/GSActionGoHome</TokenIdentifier>
-            <Abstract type="html"></Abstract>
-            <Declaration>GSActionGoHome</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultResponseTimeout</TokenIdentifier>
+            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
+the master Remote Controller was unsuccessful
+because the request timed out.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultResponseTimeout</Declaration>
             
-            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultUnknown</TokenIdentifier>
+            <Abstract type="html">The result of the slave Remote Controller&apos;s
+attempt to join the master Remote Controller
+is unknown.
+     </Abstract>
+            <Declaration>DJIRCJoinMasterResultUnknown</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="145"/>
+        </Token>
         
 	</File>
 </Tokens>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointMissionFinishedAction.html">
+	<File path="Constants/DJIRCControlChannelName.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFinishedAction</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCControlChannelName</TokenIdentifier>
+			<Abstract type="html">Remote Controller control channels. These will be used in RC Custom Control Style. Please refer to
+RCControlStyleCustom and RCSlaveControlStyleCustom.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="140"/>
@@ -14,66 +15,48 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedNoAction</TokenIdentifier>
-            <Abstract type="html">No action will be taken. The aircraft will exit the task and hover in the
-air where the task was completed. After that, the aircraft will be able
-to be controlled by the remote controller.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCControlChannelNameThrottle</TokenIdentifier>
+            <Abstract type="html">Throttle control channel.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedNoAction</Declaration>
+            <Declaration>DJIRCControlChannelNameThrottle</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="140"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoHome</TokenIdentifier>
-            <Abstract type="html">The aicraft will go home.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCControlChannelNamePitch</TokenIdentifier>
+            <Abstract type="html">Pitch control channel.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedGoHome</Declaration>
+            <Declaration>DJIRCControlChannelNamePitch</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="140"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedAutoLand</TokenIdentifier>
-            <Abstract type="html">The aircraft will land automatically.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCControlChannelNameRoll</TokenIdentifier>
+            <Abstract type="html">Roll control channel.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedAutoLand</Declaration>
+            <Declaration>DJIRCControlChannelNameRoll</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="140"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoFirstWaypoint</TokenIdentifier>
-            <Abstract type="html">The aircraft will go back to its first waypoint.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCControlChannelNameYaw</TokenIdentifier>
+            <Abstract type="html">Yaw control channel.
      </Abstract>
-            <Declaration>DJIWaypointMissionFinishedGoFirstWaypoint</Declaration>
+            <Declaration>DJIRCControlChannelNameYaw</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="140"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedContinueUntilEnd</TokenIdentifier>
-            <Abstract type="html">If the user attempts to pull the aircraft back along the flight path as the
-mission is being executed, the aircarft will move towards the previous waypoint
-and will continue to do so until there are no more waypoint to move back to or
-the user has stopped attempting to move the aircraft back. In the process of moving the
-aircraft back, if the user ever stops attempting to do so the aircraft will,
-automatically continue the mission until the end.</Abstract>
-            <Declaration>DJIWaypointMissionFinishedContinueUntilEnd</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="140"/>
         </Token>
-        
         
 	</File>
 </Tokens>

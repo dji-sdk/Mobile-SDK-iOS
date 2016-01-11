@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJINavigationDelegate.html">
+	<File path="Protocols/DJIHandheldControllerDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJINavigationDelegate</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIHandheldControllerDelegate</TokenIdentifier>
+			<Abstract type="html">This protocol provides a delegate method to receive the updated power mode of the handheld controller.</Abstract>
+			<DeclaredIn>DJIHandheldController.h</DeclaredIn>
             
 			
 			<NodeRef refid="69"/>
@@ -13,26 +13,25 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationDelegate/onNavigationMissionStatusChanged:</TokenIdentifier>
-			<Abstract type="html">Updates the navigation mission status. If the missionType is of type DJINavigationMissionWaypoint
-then the missionStatus will be of class DJIWaypointMissionStatus. If missionType is
-DJINavigationMissionHotpoint then the missionStatus will be of class DJIHotpointMissionStatus.
-If the missionType is DJINavigationMissionFollowMe then the missionStatus will be of class DJIFollowMeMissionStatus.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIHandheldControllerDelegate/handheldController:didUpdatePowerMode:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that a handheld controller&apos;s power mode is updated.</Abstract>
+			<DeclaredIn>DJIHandheldController.h</DeclaredIn>
 			
-			<Declaration>- (void)onNavigationMissionStatusChanged:(DJINavigationMissionStatus *)missionStatus</Declaration>
+			<Declaration>- (void)handheldController:(DJIHandheldController *)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>missionStatus</Name>
-					<Abstract type="html">Mission status based on the current mission.</Abstract>
+					<Name>controller</Name>
+					<Abstract type="html">the handheld controller that updates the power mode</Abstract>
+				</Parameter><Parameter>
+					<Name>powerMode</Name>
+					<Abstract type="html">handheld controller&apos;s current power mode</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/onNavigationMissionStatusChanged:</Anchor>
+			<Anchor>//api/name/handheldController:didUpdatePowerMode:</Anchor>
             <NodeRef refid="69"/>
 		</Token>
 		
-        
         
 	</File>
 </Tokens>

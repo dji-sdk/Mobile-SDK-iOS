@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIGroundStationFlyingInfo.html">
+	<File path="Classes/DJICustomMissionStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIGroundStationFlyingInfo</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJICustomMissionStatus</TokenIdentifier>
+			<Abstract type="html">This class contains real-time status of the executing custom mission.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="17"/>
@@ -13,510 +13,77 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setTargetWaypointIndex:</TokenIdentifier>
-			<Abstract type="html">Target waypoint index that will fly to. -1 if the task not start</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICustomMissionStatus/setCurrentExecutingStep:</TokenIdentifier>
+			<Abstract type="html">The mission step executing in currently.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int targetWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionStep *currentExecutingStep</Declaration>
 			
 			
-			<Anchor>//api/name/targetWaypointIndex</Anchor>
+			<Anchor>//api/name/currentExecutingStep</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/targetWaypointIndex</TokenIdentifier>
-			<Abstract type="html">Target waypoint index that will fly to. -1 if the task not start</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICustomMissionStatus/currentExecutingStep</TokenIdentifier>
+			<Abstract type="html">The mission step executing in currently.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int targetWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionStep *currentExecutingStep</Declaration>
 			
 			
-			<Anchor>//api/name/targetWaypointIndex</Anchor>
+			<Anchor>//api/name/currentExecutingStep</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/targetWaypointIndex</TokenIdentifier>
-			<Abstract type="html">Target waypoint index that will fly to. -1 if the task not start</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICustomMissionStatus/currentExecutingStep</TokenIdentifier>
+			<Abstract type="html">The mission step executing in currently.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int targetWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionStep *currentExecutingStep</Declaration>
 			
 			
-			<Anchor>//api/name/targetWaypointIndex</Anchor>
+			<Anchor>//api/name/currentExecutingStep</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setSatelliteCount:</TokenIdentifier>
-			<Abstract type="html">Satellite count. if the satelliteCount &gt;= 6, home point will be set</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICustomMissionStatus/setProgressStatus:</TokenIdentifier>
+			<Abstract type="html">The execution progress status of current mission step.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int satelliteCount</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionProgressStatus *progressStatus</Declaration>
 			
 			
-			<Anchor>//api/name/satelliteCount</Anchor>
+			<Anchor>//api/name/progressStatus</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/satelliteCount</TokenIdentifier>
-			<Abstract type="html">Satellite count. if the satelliteCount &gt;= 6, home point will be set</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICustomMissionStatus/progressStatus</TokenIdentifier>
+			<Abstract type="html">The execution progress status of current mission step.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int satelliteCount</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionProgressStatus *progressStatus</Declaration>
 			
 			
-			<Anchor>//api/name/satelliteCount</Anchor>
+			<Anchor>//api/name/progressStatus</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/satelliteCount</TokenIdentifier>
-			<Abstract type="html">Satellite count. if the satelliteCount &gt;= 6, home point will be set</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICustomMissionStatus/progressStatus</TokenIdentifier>
+			<Abstract type="html">The execution progress status of current mission step.</Abstract>
+			<DeclaredIn>DJICustomMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int satelliteCount</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIMissionProgressStatus *progressStatus</Declaration>
 			
 			
-			<Anchor>//api/name/satelliteCount</Anchor>
+			<Anchor>//api/name/progressStatus</Anchor>
             <NodeRef refid="17"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setHomeLocation:</TokenIdentifier>
-			<Abstract type="html">Home point</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D homeLocation</Declaration>
-			
-			
-			<Anchor>//api/name/homeLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/homeLocation</TokenIdentifier>
-			<Abstract type="html">Home point</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D homeLocation</Declaration>
-			
-			
-			<Anchor>//api/name/homeLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/homeLocation</TokenIdentifier>
-			<Abstract type="html">Home point</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D homeLocation</Declaration>
-			
-			
-			<Anchor>//api/name/homeLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setDroneLocation:</TokenIdentifier>
-			<Abstract type="html">Current location of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D droneLocation</Declaration>
-			
-			
-			<Anchor>//api/name/droneLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/droneLocation</TokenIdentifier>
-			<Abstract type="html">Current location of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D droneLocation</Declaration>
-			
-			
-			<Anchor>//api/name/droneLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/droneLocation</TokenIdentifier>
-			<Abstract type="html">Current location of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D droneLocation</Declaration>
-			
-			
-			<Anchor>//api/name/droneLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setTargetWaypointLocation:</TokenIdentifier>
-			<Abstract type="html">The target waypoint location will fly to</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D targetWaypointLocation</Declaration>
-			
-			
-			<Anchor>//api/name/targetWaypointLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/targetWaypointLocation</TokenIdentifier>
-			<Abstract type="html">The target waypoint location will fly to</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D targetWaypointLocation</Declaration>
-			
-			
-			<Anchor>//api/name/targetWaypointLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/targetWaypointLocation</TokenIdentifier>
-			<Abstract type="html">The target waypoint location will fly to</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) CLLocationCoordinate2D targetWaypointLocation</Declaration>
-			
-			
-			<Anchor>//api/name/targetWaypointLocation</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setVelocityX:</TokenIdentifier>
-			<Abstract type="html">Speed on x (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityX</Declaration>
-			
-			
-			<Anchor>//api/name/velocityX</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/velocityX</TokenIdentifier>
-			<Abstract type="html">Speed on x (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityX</Declaration>
-			
-			
-			<Anchor>//api/name/velocityX</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/velocityX</TokenIdentifier>
-			<Abstract type="html">Speed on x (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityX</Declaration>
-			
-			
-			<Anchor>//api/name/velocityX</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setVelocityY:</TokenIdentifier>
-			<Abstract type="html">Speed on y (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityY</Declaration>
-			
-			
-			<Anchor>//api/name/velocityY</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/velocityY</TokenIdentifier>
-			<Abstract type="html">Speed on y (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityY</Declaration>
-			
-			
-			<Anchor>//api/name/velocityY</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/velocityY</TokenIdentifier>
-			<Abstract type="html">Speed on y (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityY</Declaration>
-			
-			
-			<Anchor>//api/name/velocityY</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setVelocityZ:</TokenIdentifier>
-			<Abstract type="html">Speed on z (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityZ</Declaration>
-			
-			
-			<Anchor>//api/name/velocityZ</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/velocityZ</TokenIdentifier>
-			<Abstract type="html">Speed on z (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityZ</Declaration>
-			
-			
-			<Anchor>//api/name/velocityZ</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/velocityZ</TokenIdentifier>
-			<Abstract type="html">Speed on z (m/s)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float velocityZ</Declaration>
-			
-			
-			<Anchor>//api/name/velocityZ</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setAltitude:</TokenIdentifier>
-			<Abstract type="html">Altitude of the drone, (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float altitude</Declaration>
-			
-			
-			<Anchor>//api/name/altitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/altitude</TokenIdentifier>
-			<Abstract type="html">Altitude of the drone, (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float altitude</Declaration>
-			
-			
-			<Anchor>//api/name/altitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/altitude</TokenIdentifier>
-			<Abstract type="html">Altitude of the drone, (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float altitude</Declaration>
-			
-			
-			<Anchor>//api/name/altitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setTargetAltitude:</TokenIdentifier>
-			<Abstract type="html">The target altitude will flying to (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float targetAltitude</Declaration>
-			
-			
-			<Anchor>//api/name/targetAltitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/targetAltitude</TokenIdentifier>
-			<Abstract type="html">The target altitude will flying to (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float targetAltitude</Declaration>
-			
-			
-			<Anchor>//api/name/targetAltitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/targetAltitude</TokenIdentifier>
-			<Abstract type="html">The target altitude will flying to (0.1m)</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) float targetAltitude</Declaration>
-			
-			
-			<Anchor>//api/name/targetAltitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setAttitude:</TokenIdentifier>
-			<Abstract type="html">Attitude of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJIAttitude attitude</Declaration>
-			
-			
-			<Anchor>//api/name/attitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/attitude</TokenIdentifier>
-			<Abstract type="html">Attitude of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJIAttitude attitude</Declaration>
-			
-			
-			<Anchor>//api/name/attitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/attitude</TokenIdentifier>
-			<Abstract type="html">Attitude of the drone</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJIAttitude attitude</Declaration>
-			
-			
-			<Anchor>//api/name/attitude</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setControlMode:</TokenIdentifier>
-			<Abstract type="html">Control mode</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationControlMode controlMode</Declaration>
-			
-			
-			<Anchor>//api/name/controlMode</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/controlMode</TokenIdentifier>
-			<Abstract type="html">Control mode</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationControlMode controlMode</Declaration>
-			
-			
-			<Anchor>//api/name/controlMode</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/controlMode</TokenIdentifier>
-			<Abstract type="html">Control mode</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationControlMode controlMode</Declaration>
-			
-			
-			<Anchor>//api/name/controlMode</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setGpsStatus:</TokenIdentifier>
-			<Abstract type="html">Gps status : good, weak, bad</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationGpsStatus gpsStatus</Declaration>
-			
-			
-			<Anchor>//api/name/gpsStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/gpsStatus</TokenIdentifier>
-			<Abstract type="html">Gps status : good, weak, bad</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationGpsStatus gpsStatus</Declaration>
-			
-			
-			<Anchor>//api/name/gpsStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/gpsStatus</TokenIdentifier>
-			<Abstract type="html">Gps status : good, weak, bad</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationGpsStatus gpsStatus</Declaration>
-			
-			
-			<Anchor>//api/name/gpsStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/setDroneStatus:</TokenIdentifier>
-			<Abstract type="html">Drone status:</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationDroneStatus droneStatus</Declaration>
-			
-			
-			<Anchor>//api/name/droneStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationFlyingInfo/droneStatus</TokenIdentifier>
-			<Abstract type="html">Drone status:</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationDroneStatus droneStatus</Declaration>
-			
-			
-			<Anchor>//api/name/droneStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationFlyingInfo/droneStatus</TokenIdentifier>
-			<Abstract type="html">Drone status:</Abstract>
-			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) GroundStationDroneStatus droneStatus</Declaration>
-			
-			
-			<Anchor>//api/name/droneStatus</Anchor>
-            <NodeRef refid="17"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

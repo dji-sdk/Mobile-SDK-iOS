@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointActionType.html">
+	<File path="Constants/DJIMediaType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointActionType</TokenIdentifier>
-			<Abstract type="html">Waypoint action types.</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIMediaType</TokenIdentifier>
+			<Abstract type="html">Media types.</Abstract>
+			<DeclaredIn>DJIMedia.h</DeclaredIn>
             
 			
 			<NodeRef refid="138"/>
@@ -14,86 +14,81 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStay</TokenIdentifier>
-            <Abstract type="html">Keeps the aircraft at the waypoint&apos;s location. The actionParam parameter
-will determine how much time in millisecond the airactaft will stay at the
-location. This actionParam parameter can be set in the range of [0, 32767] milliseconds.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown.
      </Abstract>
-            <Declaration>DJIWaypointActionStay</Declaration>
+            <Declaration>DJIMediaTypeUnknown</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStartTakePhoto</TokenIdentifier>
-            <Abstract type="html">Starts to take photo. The actionParam for the waypoint action will be ignored.
-The maximum time set to excute this waypoint action is 6 seconds. If the time,
-while executing the waypoint action, goes above 6 seconds, the aircraft will
-stop executing the waypoint action and will move on to the next waypoint action,
-if there is one.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeJPEG</TokenIdentifier>
+            <Abstract type="html">JPEG.
      </Abstract>
-            <Declaration>DJIWaypointActionStartTakePhoto</Declaration>
+            <Declaration>DJIMediaTypeJPEG</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStartRecord</TokenIdentifier>
-            <Abstract type="html">Starts recording. The actionParam for the waypoint action will be ignored.
-The maximum time set to excute this waypoint action is 6 seconds. If the time,
-while executing the waypoint action, goes above 6 seconds, the aircraft will
-stop executing the waypoint action and will move on to the next waypoint action,
-if there is one.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeMP4</TokenIdentifier>
+            <Abstract type="html">MP4.
      </Abstract>
-            <Declaration>DJIWaypointActionStartRecord</Declaration>
+            <Declaration>DJIMediaTypeMP4</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionStopRecord</TokenIdentifier>
-            <Abstract type="html">Stops recording. The actionParam for the waypoint action will be ignored.
-The maximum time set to excute this waypoint action is 6 seconds. If the time,
-while executing the waypoint action, goes above 6 seconds, the aircraft will
-stop executing the waypoint action and will move on to the next waypoint action,
-if there is one.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeMOV</TokenIdentifier>
+            <Abstract type="html">MOV.
      </Abstract>
-            <Declaration>DJIWaypointActionStopRecord</Declaration>
+            <Declaration>DJIMediaTypeMOV</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionRotateAircraft</TokenIdentifier>
-            <Abstract type="html">Rotates the aircraft&apos;s yaw. The rotationg direction will deternminded by the waypoint&apos;s
-turnMode property. The actionParam value must be in the range of [-180, 180] degrees.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeM4V</TokenIdentifier>
+            <Abstract type="html">M4V.
      </Abstract>
-            <Declaration>DJIWaypointActionRotateAircraft</Declaration>
+            <Declaration>DJIMediaTypeM4V</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointActionRotateGimbalPitch</TokenIdentifier>
-            <Abstract type="html">Rotates the gimbal&apos;s pitch. The actionParam value should in range [-90, 0] degrees.
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypeRAWDNG</TokenIdentifier>
+            <Abstract type="html">DNG.
      </Abstract>
-            <Declaration>DJIWaypointActionRotateGimbalPitch</Declaration>
+            <Declaration>DJIMediaTypeRAWDNG</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
             
             <NodeRef refid="138"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIMediaTypePanorama</TokenIdentifier>
+            <Abstract type="html">Panorama
+     </Abstract>
+            <Declaration>DJIMediaTypePanorama</Declaration>
+            
+            <DeclaredIn>DJIMedia.h</DeclaredIn>
+            
+            <NodeRef refid="138"/>
+        </Token>
         
 	</File>
 </Tokens>

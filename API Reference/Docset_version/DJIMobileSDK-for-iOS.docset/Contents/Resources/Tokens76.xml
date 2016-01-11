@@ -1,62 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/CameraActionWhenBreak.html">
+	<File path="Protocols/DJIWiFiLinkDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/CameraActionWhenBreak</TokenIdentifier>
-			<Abstract type="html">Camera will perform action when connection is broken</Abstract>
-			<DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIWiFiLinkDelegate</TokenIdentifier>
+			<Abstract type="html">This protocol provides a delegate method to receive the updated WiFi signal quality.</Abstract>
+			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
             
 			
 			<NodeRef refid="76"/>
 		</Token>
 		
 		
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraKeepCurrentState</TokenIdentifier>
-            <Abstract type="html">Keep current state
-     </Abstract>
-            <Declaration>CameraKeepCurrentState</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWiFiLinkDelegate/wifiLink:didUpdatesWiFiSignalQuality:</TokenIdentifier>
+			<Abstract type="html">Updates WiFi Signal Quality.</Abstract>
+			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			
+			<Declaration>- (void)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdatesWiFiSignalQuality:(DJIWiFiSignalQuality)quality</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>link</Name>
+					<Abstract type="html">DJIWiFiLink object</Abstract>
+				</Parameter><Parameter>
+					<Name>quality</Name>
+					<Abstract type="html">WiFi signal quality</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/wifiLink:didUpdatesWiFiSignalQuality:</Anchor>
             <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraEnterContiuousShooting</TokenIdentifier>
-            <Abstract type="html">Start continue shooting
-     </Abstract>
-            <Declaration>CameraEnterContiuousShooting</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraEnterRecording</TokenIdentifier>
-            <Abstract type="html">Start recording
-     </Abstract>
-            <Declaration>CameraEnterRecording</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/CameraActionUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
-     </Abstract>
-            <Declaration>CameraActionUnknown</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
-            <NodeRef refid="76"/>
-        </Token>
-        
+		</Token>
+		
         
 	</File>
 </Tokens>

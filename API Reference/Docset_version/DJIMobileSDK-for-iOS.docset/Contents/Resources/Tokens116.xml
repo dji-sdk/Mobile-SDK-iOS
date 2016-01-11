@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIHorizontalControlMode.html">
+	<File path="Constants/DJIGimbalRotateAngleMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIHorizontalControlMode</TokenIdentifier>
-			<Abstract type="html">Horizontal control mode, will affect the mPitch and mRoll of DJIFlightControlData</Abstract>
-			<DeclaredIn>DJIFlightControl.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalRotateAngleMode</TokenIdentifier>
+			<Abstract type="html">The rotation angle of gimbal can be defined as either Absolute (relative to heading), or Relative (relative to it&apos;s current angle).</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
             
 			
 			<NodeRef refid="116"/>
@@ -14,27 +14,26 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHorizontalControlAngle</TokenIdentifier>
-            <Abstract type="html">The value of mPitch and mRoll is a angle value. mPitch and mRoll will in range [-30, 30] degree
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalAngleModeRelativeAngle</TokenIdentifier>
+            <Abstract type="html">The angle value, when the gimbal is rotating, will be relative to the current angle.
      </Abstract>
-            <Declaration>DJIHorizontalControlAngle</Declaration>
+            <Declaration>DJIGimbalAngleModeRelativeAngle</Declaration>
             
-            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="116"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHorizontalControlVelocity</TokenIdentifier>
-            <Abstract type="html">The value of mPitch and mRoll is a velocity value. mPitch and mRoll will in range [-15, 15] m/s
+            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalAngleModeAbsoluteAngle</TokenIdentifier>
+            <Abstract type="html">The angle value, when the gimbal is rotating, will be relative to 0 degrees (aircraft heading).
      </Abstract>
-            <Declaration>DJIHorizontalControlVelocity</Declaration>
+            <Declaration>DJIGimbalAngleModeAbsoluteAngle</Declaration>
             
-            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="116"/>
         </Token>
-        
         
 	</File>
 </Tokens>

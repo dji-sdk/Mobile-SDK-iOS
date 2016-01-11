@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIGimbalRotationDirection.html">
+	<File path="Constants/DJIFollowMeMissionExecutionState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalRotationDirection</TokenIdentifier>
-			<Abstract type="html">Rotation direction</Abstract>
-			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeMissionExecutionState</TokenIdentifier>
+			<Abstract type="html">All possible follow me mission execution states.</Abstract>
+			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="113"/>
@@ -14,27 +14,37 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RotationForward</TokenIdentifier>
-            <Abstract type="html">Forward
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecutionStateInitializing</TokenIdentifier>
+            <Abstract type="html">The mission is currently being initialized (uploaded to the aircraft).
      </Abstract>
-            <Declaration>RotationForward</Declaration>
+            <Declaration>DJIFollowMeMissionExecutionStateInitializing</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="113"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RotationBackward</TokenIdentifier>
-            <Abstract type="html">Backward
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecutionStateMoving</TokenIdentifier>
+            <Abstract type="html">The aircraft is currently moving.
      </Abstract>
-            <Declaration>RotationBackward</Declaration>
+            <Declaration>DJIFollowMeMissionExecutionStateMoving</Declaration>
             
-            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="113"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateWaiting</TokenIdentifier>
+            <Abstract type="html">The mission is currently waiting to continue. This will happen if the follow me coordinate is not updated in 6 seconds, or the GPS signal quality is poor or broken.
+     </Abstract>
+            <Declaration>DJIFollowMeMissionExecuteStateWaiting</Declaration>
+            
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+            
+            <NodeRef refid="113"/>
+        </Token>
         
 	</File>
 </Tokens>

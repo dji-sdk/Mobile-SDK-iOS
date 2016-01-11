@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantom3ProRemoteController.html">
+	<File path="Classes/DJIPanoramaMissionStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3ProRemoteController</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPanoramaMissionStatus</TokenIdentifier>
+			<Abstract type="html">This class provides the real-time status of an executing panorama mission.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="45"/>
@@ -13,120 +13,119 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/setRCWheelControlGimbalSpeed:withResult:</TokenIdentifier>
-			<Abstract type="html">Set RC&apos;s wheel control the gimbal&apos;s pitch speed</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/setTotalNumber:</TokenIdentifier>
+			<Abstract type="html">The total number of photos will be shot during the mission.
+In the full circle mode, the number should be 8.
+In the half circle mode, the number should be 5.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)setRCWheelControlGimbalSpeed:(uint8_t)speed withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>speed</Name>
-					<Abstract type="html">Speed of control gimbal. value should be in range [0, 100]</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger totalNumber</Declaration>
 			
-			<Anchor>//api/name/setRCWheelControlGimbalSpeed:withResult:</Anchor>
+			
+			<Anchor>//api/name/totalNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/getRCWheelControlGimbalSpeedWithResult:</TokenIdentifier>
-			<Abstract type="html">Get RC&apos;s wheel control gimbal&apos;s speed</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/totalNumber</TokenIdentifier>
+			<Abstract type="html">The total number of photos will be shot during the mission.
+In the full circle mode, the number should be 8.
+In the half circle mode, the number should be 5.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)getRCWheelControlGimbalSpeedWithResult:(void ( ^ ) ( uint8_t speed , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger totalNumber</Declaration>
 			
-			<Anchor>//api/name/getRCWheelControlGimbalSpeedWithResult:</Anchor>
+			
+			<Anchor>//api/name/totalNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/setRCControlGimbalDirection:withResult:</TokenIdentifier>
-			<Abstract type="html">Set RC&apos;s wheel that on the top left will control which direction(pitch or roll or yaw) of gimbal.</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIPanoramaMissionStatus/totalNumber</TokenIdentifier>
+			<Abstract type="html">The total number of photos will be shot during the mission.
+In the full circle mode, the number should be 8.
+In the half circle mode, the number should be 5.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)setRCControlGimbalDirection:(DJIRCGimbalControlDirection)direction withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>direction</Name>
-					<Abstract type="html">Gimbal&apos;s direction control by the wheel</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger totalNumber</Declaration>
 			
-			<Anchor>//api/name/setRCControlGimbalDirection:withResult:</Anchor>
+			
+			<Anchor>//api/name/totalNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/getRCControlGimbalDirectionWithResult:</TokenIdentifier>
-			<Abstract type="html">Get RC control gimbal&apos;s direction</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/setCurrentShotNumber:</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been shot.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)getRCControlGimbalDirectionWithResult:(void ( ^ ) ( DJIRCGimbalControlDirection direction , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentShotNumber</Declaration>
 			
-			<Anchor>//api/name/getRCControlGimbalDirectionWithResult:</Anchor>
+			
+			<Anchor>//api/name/currentShotNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/setRCCustomButton1Index:customButtonIndex2:withResult:</TokenIdentifier>
-			<Abstract type="html">Set custom button index. The index is used by user to record user settings</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/currentShotNumber</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been shot.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)setRCCustomButton1Index:(uint8_t)index1 customButtonIndex2:(uint8_t)index2 withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>index1</Name>
-					<Abstract type="html">Custom button1&apos;s index</Abstract>
-				</Parameter><Parameter>
-					<Name>index2</Name>
-					<Abstract type="html">Custom button2&apos;s index</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentShotNumber</Declaration>
 			
-			<Anchor>//api/name/setRCCustomButton1Index:customButtonIndex2:withResult:</Anchor>
+			
+			<Anchor>//api/name/currentShotNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProRemoteController/getRCCustomButtonIndexWithResult:</TokenIdentifier>
-			<Abstract type="html">Get custom button&apos;s index settings</Abstract>
-			<DeclaredIn>DJIPhantom3ProRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIPanoramaMissionStatus/currentShotNumber</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been shot.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)getRCCustomButtonIndexWithResult:(void ( ^ ) ( uint8_t index1 , uint8_t index2 , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentShotNumber</Declaration>
 			
-			<Anchor>//api/name/getRCCustomButtonIndexWithResult:</Anchor>
+			
+			<Anchor>//api/name/currentShotNumber</Anchor>
             <NodeRef refid="45"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/setCurrentSavedNumber:</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been saved to SD card.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentSavedNumber</Declaration>
+			
+			
+			<Anchor>//api/name/currentSavedNumber</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMissionStatus/currentSavedNumber</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been saved to SD card.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentSavedNumber</Declaration>
+			
+			
+			<Anchor>//api/name/currentSavedNumber</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIPanoramaMissionStatus/currentSavedNumber</TokenIdentifier>
+			<Abstract type="html">The number of photos that have been saved to SD card.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSUInteger currentSavedNumber</Declaration>
+			
+			
+			<Anchor>//api/name/currentSavedNumber</Anchor>
+            <NodeRef refid="45"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

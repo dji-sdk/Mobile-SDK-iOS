@@ -1,937 +1,2054 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta charset="utf-8">
-
-	<title>DJIRemoteController Class Reference</title>
-
-	<link rel="stylesheet" href="../css/style.css">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
-	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
-</head>
-<body class="appledoc">
-	<header>
-		<div class="container" class="hide-in-xcode">
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIRemoteController Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
 			
-			<h1 id="library-title">
-				<a href="../index.html">DJI Mobile SDK For iOS </a>
-			</h1>
-
-			<p id="developer-home">
-				<a href="../index.html">DJI</a>
-			</p>
-			
-		</div>
-	</header>
-
-	<aside>
-		<div class="container">
-			<nav>
-				<ul id="header-buttons" role="toolbar">
-					<li><a href="../index.html">Index</a></li>
-<li><a href="../hierarchy.html">Hierarchy</a></li>
-
-					<li id="on-this-page" role="navigation">
-						<label>
-							On This Page
-
-							<div class="chevron">
-								<div class="chevy chevron-left"></div>
-								<div class="chevy chevron-right"></div>
-							</div>
-
-							<select id="jump-to">
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIRemoteController Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
-
+	<option value="overview">Overview</option>
+	
+	
 	
 	
 	<option value="tasks">Tasks</option>
 	
 	
-
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/delegate">delegate</option>
-		
-	</optgroup>
 	
-
 	
-
 	
-	<optgroup label="Instance Methods">
-		
-		<option value="//api/name/enterRCPairingModeWithResult:">- enterRCPairingModeWithResult:</option>
-		
-		<option value="//api/name/exitRCCalibrationWithResult:">- exitRCCalibrationWithResult:</option>
-		
-		<option value="//api/name/exitRCParingModeWithResult:">- exitRCParingModeWithResult:</option>
-		
-		<option value="//api/name/getRCCalibrationStateWithResult:">- getRCCalibrationStateWithResult:</option>
-		
-		<option value="//api/name/getRCControlModeWithResult:">- getRCControlModeWithResult:</option>
-		
-		<option value="//api/name/getRCNameWithResult:">- getRCNameWithResult:</option>
-		
-		<option value="//api/name/getRCParingStateWithResult:">- getRCParingStateWithResult:</option>
-		
-		<option value="//api/name/getRCPasswordWithResult:">- getRCPasswordWithResult:</option>
-		
-		<option value="//api/name/getVersionWithResult:">- getVersionWithResult:</option>
-		
-		<option value="//api/name/recordRCCalibrationExtremeValueWithResult:">- recordRCCalibrationExtremeValueWithResult:</option>
-		
-		<option value="//api/name/recordRCCalibrationMiddleValueWithResult:">- recordRCCalibrationMiddleValueWithResult:</option>
-		
-		<option value="//api/name/setRCControlMode:withResult:">- setRCControlMode:withResult:</option>
-		
-		<option value="//api/name/setRCName:withResult:">- setRCName:withResult:</option>
-		
-		<option value="//api/name/setRCPassword:withResult:">- setRCPassword:withResult:</option>
-		
-	</optgroup>
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/enterRCToAircraftPairingModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- enterRCToAircraftPairingModeWithCompletion:</option>
+	
+	<option value="//api/name/exitRCToAircraftPairingModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- exitRCToAircraftPairingModeWithCompletion:</option>
+	
+	<option value="//api/name/getAvailableMastersWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getAvailableMastersWithCompletion:</option>
+	
+	<option value="//api/name/getJoinedMasterNameAndPassword:">&nbsp;&nbsp;&nbsp;&nbsp;- getJoinedMasterNameAndPassword:</option>
+	
+	<option value="//api/name/getMasterRCSearchStateWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getMasterRCSearchStateWithCompletion:</option>
+	
+	<option value="//api/name/getRCControlGimbalDirectionWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCControlGimbalDirectionWithCompletion:</option>
+	
+	<option value="//api/name/getRCControlModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCControlModeWithCompletion:</option>
+	
+	<option value="//api/name/getRCCustomButtonTagWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCCustomButtonTagWithCompletion:</option>
+	
+	<option value="//api/name/getRCNameWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCNameWithCompletion:</option>
+	
+	<option value="//api/name/getRCPasswordWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCPasswordWithCompletion:</option>
+	
+	<option value="//api/name/getRCToAircraftPairingStateWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCToAircraftPairingStateWithCompletion:</option>
+	
+	<option value="//api/name/getRCWheelGimbalSpeedWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRCWheelGimbalSpeedWithCompletion:</option>
+	
+	<option value="//api/name/getRemoteControllerModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getRemoteControllerModeWithCompletion:</option>
+	
+	<option value="//api/name/getSlaveControlModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getSlaveControlModeWithCompletion:</option>
+	
+	<option value="//api/name/getSlaveJoystickControlGimbalSpeedWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getSlaveJoystickControlGimbalSpeedWithCompletion:</option>
+	
+	<option value="//api/name/getSlaveListWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getSlaveListWithCompletion:</option>
+	
+	<option value="//api/name/isMasterSlaveModeSupported">&nbsp;&nbsp;&nbsp;&nbsp;- isMasterSlaveModeSupported</option>
+	
+	<option value="//api/name/isRCRemoteFocusCheckingSupported">&nbsp;&nbsp;&nbsp;&nbsp;- isRCRemoteFocusCheckingSupported</option>
+	
+	<option value="//api/name/joinMasterWithID:masterName:masterPassword:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- joinMasterWithID:masterName:masterPassword:withCompletion:</option>
+	
+	<option value="//api/name/removeMaster:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- removeMaster:withCompletion:</option>
+	
+	<option value="//api/name/removeSlave:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- removeSlave:withCompletion:</option>
+	
+	<option value="//api/name/requestGimbalControlRightWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- requestGimbalControlRightWithCompletion:</option>
+	
+	<option value="//api/name/responseRequester:forGimbalControlRight:">&nbsp;&nbsp;&nbsp;&nbsp;- responseRequester:forGimbalControlRight:</option>
+	
+	<option value="//api/name/setRCControlGimbalDirection:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCControlGimbalDirection:withCompletion:</option>
+	
+	<option value="//api/name/setRCControlMode:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCControlMode:withCompletion:</option>
+	
+	<option value="//api/name/setRCCustomButton1Tag:customButton2Tag:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCCustomButton1Tag:customButton2Tag:withCompletion:</option>
+	
+	<option value="//api/name/setRCName:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCName:withCompletion:</option>
+	
+	<option value="//api/name/setRCPassword:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCPassword:withCompletion:</option>
+	
+	<option value="//api/name/setRCWheelGimbalSpeed:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRCWheelGimbalSpeed:withCompletion:</option>
+	
+	<option value="//api/name/setRemoteControllerMode:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setRemoteControllerMode:withCompletion:</option>
+	
+	<option value="//api/name/setSlaveControlMode:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setSlaveControlMode:withCompletion:</option>
+	
+	<option value="//api/name/setSlaveJoystickControlGimbalSpeed:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setSlaveJoystickControlGimbalSpeed:withCompletion:</option>
+	
+	<option value="//api/name/startMasterRCSearchWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- startMasterRCSearchWithCompletion:</option>
+	
+	<option value="//api/name/stopMasterRCSearchWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- stopMasterRCSearchWithCompletion:</option>
+	
 	
 	
 </select>
-						</label>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</aside>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
 
-	<article>
-		<div id="overview_contents" class="container">
-			<div id="content">
-				<main role="main">
-					<h1 class="title">DJIRemoteController Class Reference</h1>
 
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enterRCToAircraftPairingModeWithCompletion:">enterRCToAircraftPairingModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exitRCToAircraftPairingModeWithCompletion:">exitRCToAircraftPairingModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAvailableMastersWithCompletion:">getAvailableMastersWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getJoinedMasterNameAndPassword:">getJoinedMasterNameAndPassword:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMasterRCSearchStateWithCompletion:">getMasterRCSearchStateWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCControlGimbalDirectionWithCompletion:">getRCControlGimbalDirectionWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCControlModeWithCompletion:">getRCControlModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCCustomButtonTagWithCompletion:">getRCCustomButtonTagWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCNameWithCompletion:">getRCNameWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCPasswordWithCompletion:">getRCPasswordWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCToAircraftPairingStateWithCompletion:">getRCToAircraftPairingStateWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRCWheelGimbalSpeedWithCompletion:">getRCWheelGimbalSpeedWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getRemoteControllerModeWithCompletion:">getRemoteControllerModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSlaveControlModeWithCompletion:">getSlaveControlModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSlaveJoystickControlGimbalSpeedWithCompletion:">getSlaveJoystickControlGimbalSpeedWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSlaveListWithCompletion:">getSlaveListWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isMasterSlaveModeSupported">isMasterSlaveModeSupported</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isRCRemoteFocusCheckingSupported">isRCRemoteFocusCheckingSupported</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/joinMasterWithID:masterName:masterPassword:withCompletion:">joinMasterWithID:masterName:masterPassword:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeMaster:withCompletion:">removeMaster:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeSlave:withCompletion:">removeSlave:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestGimbalControlRightWithCompletion:">requestGimbalControlRightWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/responseRequester:forGimbalControlRight:">responseRequester:forGimbalControlRight:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCControlGimbalDirection:withCompletion:">setRCControlGimbalDirection:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCControlMode:withCompletion:">setRCControlMode:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCCustomButton1Tag:customButton2Tag:withCompletion:">setRCCustomButton1Tag:customButton2Tag:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCName:withCompletion:">setRCName:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCPassword:withCompletion:">setRCPassword:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRCWheelGimbalSpeed:withCompletion:">setRCWheelGimbalSpeed:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setRemoteControllerMode:withCompletion:">setRemoteControllerMode:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSlaveControlMode:withCompletion:">setSlaveControlMode:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setSlaveJoystickControlGimbalSpeed:withCompletion:">setSlaveJoystickControlGimbalSpeed:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startMasterRCSearchWithCompletion:">startMasterRCSearchWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopMasterRCSearchWithCompletion:">stopMasterRCSearchWithCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIRemoteController Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIRemoteController Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Inherits from</th>
-	<td><a href="../Classes/DJIObject.html">DJIObject</a> : NSObject</td>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/DJIBaseComponent.html">DJIBaseComponent</a> : NSObject</td>
 </tr><tr>
-	<th>Declared in</th>
-	<td>DJIRemoteController.h</td>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIRemoteController.h</td>
 </tr>
 						</tbody></table></div>
 					
-
                     
-
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The class represents the remote controller of the aircraft. It provides mothods to change the settings of the physical remote controller. For some products (e.g. Inspire 1 and Matric 100), the class provides methods to manager the slave/master mode of the remote controllers.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
 						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
 						
 
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isRCRemoteFocusCheckingSupported">&ndash;&nbsp;isRCRemoteFocusCheckingSupported</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCName:withCompletion:">&ndash;&nbsp;setRCName:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCNameWithCompletion:">&ndash;&nbsp;getRCNameWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCPassword:withCompletion:">&ndash;&nbsp;setRCPassword:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCPasswordWithCompletion:">&ndash;&nbsp;getRCPasswordWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCControlMode:withCompletion:">&ndash;&nbsp;setRCControlMode:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCControlModeWithCompletion:">&ndash;&nbsp;getRCControlModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enterRCToAircraftPairingModeWithCompletion:">&ndash;&nbsp;enterRCToAircraftPairingModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/exitRCToAircraftPairingModeWithCompletion:">&ndash;&nbsp;exitRCToAircraftPairingModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCToAircraftPairingStateWithCompletion:">&ndash;&nbsp;getRCToAircraftPairingStateWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCWheelGimbalSpeed:withCompletion:">&ndash;&nbsp;setRCWheelGimbalSpeed:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCWheelGimbalSpeedWithCompletion:">&ndash;&nbsp;getRCWheelGimbalSpeedWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCControlGimbalDirection:withCompletion:">&ndash;&nbsp;setRCControlGimbalDirection:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCControlGimbalDirectionWithCompletion:">&ndash;&nbsp;getRCControlGimbalDirectionWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRCCustomButton1Tag:customButton2Tag:withCompletion:">&ndash;&nbsp;setRCCustomButton1Tag:customButton2Tag:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRCCustomButtonTagWithCompletion:">&ndash;&nbsp;getRCCustomButtonTagWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isMasterSlaveModeSupported">&ndash;&nbsp;isMasterSlaveModeSupported</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setRemoteControllerMode:withCompletion:">&ndash;&nbsp;setRemoteControllerMode:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getRemoteControllerModeWithCompletion:">&ndash;&nbsp;getRemoteControllerModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/joinMasterWithID:masterName:masterPassword:withCompletion:">&ndash;&nbsp;joinMasterWithID:masterName:masterPassword:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getJoinedMasterNameAndPassword:">&ndash;&nbsp;getJoinedMasterNameAndPassword:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startMasterRCSearchWithCompletion:">&ndash;&nbsp;startMasterRCSearchWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getAvailableMastersWithCompletion:">&ndash;&nbsp;getAvailableMastersWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopMasterRCSearchWithCompletion:">&ndash;&nbsp;stopMasterRCSearchWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getMasterRCSearchStateWithCompletion:">&ndash;&nbsp;getMasterRCSearchStateWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeMaster:withCompletion:">&ndash;&nbsp;removeMaster:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestGimbalControlRightWithCompletion:">&ndash;&nbsp;requestGimbalControlRightWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSlaveControlMode:withCompletion:">&ndash;&nbsp;setSlaveControlMode:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSlaveControlModeWithCompletion:">&ndash;&nbsp;getSlaveControlModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setSlaveJoystickControlGimbalSpeed:withCompletion:">&ndash;&nbsp;setSlaveJoystickControlGimbalSpeed:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSlaveJoystickControlGimbalSpeedWithCompletion:">&ndash;&nbsp;getSlaveJoystickControlGimbalSpeedWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSlaveListWithCompletion:">&ndash;&nbsp;getSlaveListWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeSlave:withCompletion:">&ndash;&nbsp;removeSlave:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/responseRequester:forGimbalControlRight:">&ndash;&nbsp;responseRequester:forGimbalControlRight:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
 						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/delegate" title="delegate"></a>
-	<h3 class="method-title"><code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-
-			<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;DJIRemoteControllerDelegate&gt; delegate</code></div>
-
-		    
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getVersionWithResult:" title="getVersionWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getVersionWithResult:">&ndash;&nbsp;getVersionWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get remote controller&rsquo;s firmware version.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getVersionWithResult:(void ( ^ ) ( NSString *version , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result callback.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setRCName:withResult:" title="setRCName:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setRCName:withResult:">&ndash;&nbsp;setRCName:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set RC Name</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setRCName:(DJIRCName)<em>name</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>name</code></th>
-						<td><p>RC name to be set</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getRCNameWithResult:" title="getRCNameWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getRCNameWithResult:">&ndash;&nbsp;getRCNameWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get RC Name</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getRCNameWithResult:(void ( ^ ) ( DJIRCName name , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setRCPassword:withResult:" title="setRCPassword:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setRCPassword:withResult:">&ndash;&nbsp;setRCPassword:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set RC Password</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setRCPassword:(DJIRCPassword)<em>password</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>password</code></th>
-						<td><p>RC Password to be set</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getRCPasswordWithResult:" title="getRCPasswordWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getRCPasswordWithResult:">&ndash;&nbsp;getRCPasswordWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get RC Password</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getRCPasswordWithResult:(void ( ^ ) ( DJIRCPassword password , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/setRCControlMode:withResult:" title="setRCControlMode:withResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/setRCControlMode:withResult:">&ndash;&nbsp;setRCControlMode:withResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Set RC&rsquo;s control mode.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)setRCControlMode:(DJIRCControlMode)<em>mode</em> withResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>mode</code></th>
-						<td><p>Control mode to be set. the mode&rsquo;s style should be RCMasterControlStyleXXX.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getRCControlModeWithResult:" title="getRCControlModeWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getRCControlModeWithResult:">&ndash;&nbsp;getRCControlModeWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get master&rsquo;s control mode</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getRCControlModeWithResult:(void ( ^ ) ( DJIRCControlMode mode , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/enterRCPairingModeWithResult:" title="enterRCPairingModeWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/enterRCPairingModeWithResult:">&ndash;&nbsp;enterRCPairingModeWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Enter frequency pairing mode.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)enterRCPairingModeWithResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/exitRCParingModeWithResult:" title="exitRCParingModeWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/exitRCParingModeWithResult:">&ndash;&nbsp;exitRCParingModeWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Exit frequency pairing mode.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)exitRCParingModeWithResult:(DJIExecuteResultBlock)<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getRCCalibrationStateWithResult:" title="getRCCalibrationStateWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getRCCalibrationStateWithResult:">&ndash;&nbsp;getRCCalibrationStateWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get RC Calibration state</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getRCCalibrationStateWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/recordRCCalibrationMiddleValueWithResult:" title="recordRCCalibrationMiddleValueWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/recordRCCalibrationMiddleValueWithResult:">&ndash;&nbsp;recordRCCalibrationMiddleValueWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Record RC Calibration middle value</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)recordRCCalibrationMiddleValueWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/recordRCCalibrationExtremeValueWithResult:" title="recordRCCalibrationExtremeValueWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/recordRCCalibrationExtremeValueWithResult:">&ndash;&nbsp;recordRCCalibrationExtremeValueWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Record RC Calibration extreme value</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)recordRCCalibrationExtremeValueWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/exitRCCalibrationWithResult:" title="exitRCCalibrationWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/exitRCCalibrationWithResult:">&ndash;&nbsp;exitRCCalibrationWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Exit RC Calibration</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)exitRCCalibrationWithResult:(void ( ^ ) ( DJIRCCalibrationState state , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/getRCParingStateWithResult:" title="getRCParingStateWithResult:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getRCParingStateWithResult:">&ndash;&nbsp;getRCParingStateWithResult:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get frequency pairing status.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)getRCParingStateWithResult:(void ( ^ ) ( DJIRCParingState state , DJIError *error ))<em>block</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>block</code></th>
-						<td><p>Remote execute result.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">DJIRemoteController.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
+						<div class="section-method">
+	<a name="//api/name/enterRCToAircraftPairingModeWithCompletion:" title="enterRCToAircraftPairingModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">enterRCToAircraftPairingModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enters pairing mode, where the Remote Controller starts pairing with the aircraft.
+This method is used when the Remote Controller no longer recognizes which aircraft
+it is paired with.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enterRCToAircraftPairingModeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
 </div>
-						</div>
+						
+						<div class="section-method">
+	<a name="//api/name/exitRCToAircraftPairingModeWithCompletion:" title="exitRCToAircraftPairingModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">exitRCToAircraftPairingModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Exits pairing mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)exitRCToAircraftPairingModeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getAvailableMastersWithCompletion:" title="getAvailableMastersWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getAvailableMastersWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns all available master Remote Controllers nearby. Before this method can be used, the method startMasterRCSearchWithCompletion needs to be called to start the search for master Remote Controllers. Once the list of masters is received, call stopMasterRCSearchWithCompletion to end the search.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getAvailableMastersWithCompletion:(void ( ^ ) ( NSArray&lt;DJIRCInfo*&gt; *masters , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getJoinedMasterNameAndPassword:" title="getJoinedMasterNameAndPassword:"></a>
+	<h3 class="subsubtitle method-title">getJoinedMasterNameAndPassword:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the master Remote Controller&rsquo;s information, which includes the unique identifier, name, and password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getJoinedMasterNameAndPassword:(void ( ^ ) ( DJIRCID masterId , NSString *_Nullable masterName , NSString *_Nullable masterPassword , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getMasterRCSearchStateWithCompletion:" title="getMasterRCSearchStateWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getMasterRCSearchStateWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the state of the master Remote Controller search. The search is initiated by the Mobile Device, but performed by the Remote Controller. Therefore, if the Mobile Device&rsquo;s application crashes while a search is ongoing, this method can be used to let the new instance of the application understand the Remote Controller state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getMasterRCSearchStateWithCompletion:(void ( ^ ) ( BOOL isStarted , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCControlGimbalDirectionWithCompletion:" title="getRCControlGimbalDirectionWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCControlGimbalDirectionWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCControlGimbalDirectionWithCompletion:(void ( ^ ) ( DJIRCGimbalControlDirection direction , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCControlModeWithCompletion:" title="getRCControlModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCControlModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the master Remote Controller&rsquo;s control mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCControlModeWithCompletion:(void ( ^ ) ( DJIRCControlMode mode , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCCustomButtonTagWithCompletion:" title="getRCCustomButtonTagWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCCustomButtonTagWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the custom button&rsquo;s (Back Button&rsquo;s) tags.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCCustomButtonTagWithCompletion:(void ( ^ ) ( uint8_t tag1 , uint8_t tag2 , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCNameWithCompletion:" title="getRCNameWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCNameWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the Remote Controller&rsquo;s name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCNameWithCompletion:(void ( ^ ) ( NSString *_Nullable name , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCPasswordWithCompletion:" title="getRCPasswordWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCPasswordWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the Remote Controller&rsquo;s password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCPasswordWithCompletion:(void ( ^ ) ( NSString *_Nullable password , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCToAircraftPairingStateWithCompletion:" title="getRCToAircraftPairingStateWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCToAircraftPairingStateWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the pairing status as the Remote Controller is pairing with the aircraft.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCToAircraftPairingStateWithCompletion:(void ( ^ ) ( DJIRCToAircraftPairingState state , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRCWheelGimbalSpeedWithCompletion:" title="getRCWheelGimbalSpeedWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRCWheelGimbalSpeedWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the gimbal&rsquo;s pitch speed for the Remote Controller&rsquo;s upper left wheel (Gimbal Dial).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRCWheelGimbalSpeedWithCompletion:(void ( ^ ) ( uint8_t speed , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getRemoteControllerModeWithCompletion:" title="getRemoteControllerModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getRemoteControllerModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the Remote Controller&rsquo;s mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getRemoteControllerModeWithCompletion:(void ( ^ ) ( DJIRemoteControllerMode mode , BOOL isConnected , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSlaveControlModeWithCompletion:" title="getSlaveControlModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getSlaveControlModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the Remote Controller&rsquo;s slave control mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getSlaveControlModeWithCompletion:(void ( ^ ) ( DJIRCControlMode mode , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSlaveJoystickControlGimbalSpeedWithCompletion:" title="getSlaveJoystickControlGimbalSpeedWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getSlaveJoystickControlGimbalSpeedWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the current slave&rsquo;s gimbal&rsquo;s pitch, roll, and yaw speed with range [0, 100].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getSlaveJoystickControlGimbalSpeedWithCompletion:(void ( ^ ) ( DJIRCGimbalControlSpeed speed , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSlaveListWithCompletion:" title="getSlaveListWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getSlaveListWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used by the current master Remote Controller to get all the slaves connected to it.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getSlaveListWithCompletion:(void ( ^ ) ( NSArray&lt;DJIRCInfo*&gt; *slaveList , NSError *_Nullable error ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result callback block. The arrray of slaves contains objects
+of type <a href="../Classes/DJIRCInfo.html">DJIRCInfo</a>.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isMasterSlaveModeSupported" title="isMasterSlaveModeSupported"></a>
+	<h3 class="subsubtitle method-title">isMasterSlaveModeSupported</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Query method to check if the Remote Controller supports master/slave mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isMasterSlaveModeSupported</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isRCRemoteFocusCheckingSupported" title="isRCRemoteFocusCheckingSupported"></a>
+	<h3 class="subsubtitle method-title">isRCRemoteFocusCheckingSupported</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Query method to check if the Remote Controller supports Remote Focus State Checking.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isRCRemoteFocusCheckingSupported</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/joinMasterWithID:masterName:masterPassword:withCompletion:" title="joinMasterWithID:masterName:masterPassword:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">joinMasterWithID:masterName:masterPassword:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used by a slave Remote Controller to join a master Remote Controller. If the master Remote Controller accepts the request, the master Remote Controller will control the aircraft and the slave Remote Controller will control the gimbal and/or be able to view the downlink video.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)joinMasterWithID:(DJIRCID)<em>masterId</em> masterName:(NSString *_Nonnull)<em>masterName</em> masterPassword:(NSString *_Nonnull)<em>masterPassword</em> withCompletion:(void ( ^ ) ( DJIRCJoinMasterResult result , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>Master&rsquo;s password</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Remote execution result callback block.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hostId</em></dt>
+			<dd><p>Master&rsquo;s unique identifier</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>Master&rsquo;s name</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeMaster:withCompletion:" title="removeMaster:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">removeMaster:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a master Remote Controller from the current slave Remote Controller.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeMaster:(DJIRCID)<em>masterId</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>masterId</em></dt>
+			<dd><p>The connected master&rsquo;s identifier</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeSlave:withCompletion:" title="removeSlave:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">removeSlave:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Removes a slave Remote Controller from the current master Remote Controller.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)removeSlave:(DJIRCID)<em>slaveId</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>slaveId</em></dt>
+			<dd><p>Target slave to be remove.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestGimbalControlRightWithCompletion:" title="requestGimbalControlRightWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">requestGimbalControlRightWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called by the slave Remote Controller to request gimbal control from the master Remote Controller.
+s</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)requestGimbalControlRightWithCompletion:(void ( ^ ) ( DJIRCRequestGimbalControlResult result , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/responseRequester:forGimbalControlRight:" title="responseRequester:forGimbalControlRight:"></a>
+	<h3 class="subsubtitle method-title">responseRequester:forGimbalControlRight:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>When a slave Remote Controller requests a master Remote Controller to control the gimbal, this
+method is used by a master Remote Controller to respond to the slave Remote Controller&rsquo;s request.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)responseRequester:(DJIRCID)<em>requesterId</em> forGimbalControlRight:(BOOL)<em>isAgree</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>requesterId</em></dt>
+			<dd><p>The slave Remote Controller&rsquo;s identifier.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isAgree</em></dt>
+			<dd><p>YES if the master Remote Controller agrees to give the slave
+Remote Controller the right to control the gimbal.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCControlGimbalDirection:withCompletion:" title="setRCControlGimbalDirection:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCControlGimbalDirection:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control. The
+three options (pitch, roll, and yaw) are outlined in the enum named <a href="../Constants/DJIRCGimbalControlDirection.html">DJIRCGimbalControlDirection</a>
+in DJIRemoteControllerDef.h.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCControlGimbalDirection:(DJIRCGimbalControlDirection)<em>direction</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>direction</em></dt>
+			<dd><p>Gimbal direction to be set that the top left wheel on the Remote Controller
+will control.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCControlMode:withCompletion:" title="setRCControlMode:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCControlMode:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Remote Controller&rsquo;s control mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCControlMode:(DJIRCControlMode)<em>mode</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mode</em></dt>
+			<dd><p>Remote Controller control mode to be set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCCustomButton1Tag:customButton2Tag:withCompletion:" title="setRCCustomButton1Tag:customButton2Tag:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCCustomButton1Tag:customButton2Tag:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets custom button&rsquo;s (Back Button&rsquo;s) tags, which can be used by the user to record user settings for a particular Remote Controller. Unlike all other buttons, switches and sticks on the Remote Controller, the custom buttons only send state to the Mobile Device and not the aircraft.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCCustomButton1Tag:(uint8_t)<em>tag1</em> customButton2Tag:(uint8_t)<em>tag2</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tag1</em></dt>
+			<dd><p>Button 1&rsquo;s custom tag.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tag2</em></dt>
+			<dd><p>Button 2&rsquo;s custom tag.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCName:withCompletion:" title="setRCName:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCName:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Remote Controller&rsquo;s name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCName:(NSString *_Nonnull)<em>name</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>Remote controller name to be set. Six characters at most.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCPassword:withCompletion:" title="setRCPassword:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCPassword:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Remote Controller&rsquo;s password.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCPassword:(NSString *_Nonnull)<em>password</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>password</em></dt>
+			<dd><p>password Remote controller password to be set, using a string consisted by 4 digits.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRCWheelGimbalSpeed:withCompletion:" title="setRCWheelGimbalSpeed:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRCWheelGimbalSpeed:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the gimbal&rsquo;s pitch speed for the Remote Controller&rsquo;s upper left wheel (Gimbal Dial).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRCWheelGimbalSpeed:(uint8_t)<em>speed</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>speed</em></dt>
+			<dd><p>Speed to be set for the gimbal&rsquo;s pitch, which should in the range of [0, 100],
+where 0 represents very slow and 100 represents very fast.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setRemoteControllerMode:withCompletion:" title="setRemoteControllerMode:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setRemoteControllerMode:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Remote Controller&rsquo;s mode. See <a href="../Constants/DJIRemoteControllerMode.html">DJIRemoteControllerMode</a> enum for all possible Remote Controller modes.
+The master and slave modes are only supported for the Inspire 1, Inspire 1 Pro and M100.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setRemoteControllerMode:(DJIRemoteControllerMode)<em>mode</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mode</em></dt>
+			<dd><p>Mode of type <a href="../Constants/DJIRemoteControllerMode.html">DJIRemoteControllerMode</a> to be set for the Remote Controller.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSlaveControlMode:withCompletion:" title="setSlaveControlMode:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setSlaveControlMode:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the Remote Contoller&rsquo;s slave control mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSlaveControlMode:(DJIRCControlMode)<em>mode</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mode</em></dt>
+			<dd><p>Control mode to be set. the mode&rsquo;s style should be RCSlaveControlStyleXXX</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setSlaveJoystickControlGimbalSpeed:withCompletion:" title="setSlaveJoystickControlGimbalSpeed:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setSlaveJoystickControlGimbalSpeed:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called by the slave Remote Controller to set the gimbal&rsquo;s pitch, roll, and yaw speed with range [0, 100].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setSlaveJoystickControlGimbalSpeed:(DJIRCGimbalControlSpeed)<em>speed</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>speed</em></dt>
+			<dd><p>Gimal&rsquo;s pitch, roll, and yaw speed with range [0, 100].</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startMasterRCSearchWithCompletion:" title="startMasterRCSearchWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">startMasterRCSearchWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts search by slave Remote Controller for nearby master Remote Controllers. To get the list of master Remote Controllers use getAvailableMastersWithCallbackBlock then call stopMasterRCSearchWithCompletion to end th search.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)startMasterRCSearchWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopMasterRCSearchWithCompletion:" title="stopMasterRCSearchWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">stopMasterRCSearchWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Used by a slave Remote Controller to stop the search for nearby master Remote Controllers.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)stopMasterRCSearchWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIRemoteController.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 					</div>
 					
 					
-
                     
                     
-          
-				</main>
-
-				<footer>
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
 					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
 						
-						<p class="copyright">Copyright &copy; 2015 DJI. All rights reserved. Updated: 2015-11-24</p>
-						
-						
-						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
 					</div>
-				</footer>
+				</div>
 			</div>
-		</div>
-	</article>
-
-	<script src="../js/script.js"></script>
-</body>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
 </html>

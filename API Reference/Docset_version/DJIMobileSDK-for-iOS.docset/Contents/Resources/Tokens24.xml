@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIInspireCamera.html">
+	<File path="Classes/DJIGimbal.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIInspireCamera</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIGimbal</TokenIdentifier>
+			<Abstract type="html">This class provides multiple methods to control gimbal, like set gimbal work mode, rotate gimbal with angle, start gimbal auto calibration, etc.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
             
 			
 			<NodeRef refid="24"/>
@@ -13,1180 +13,581 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVersion</TokenIdentifier>
-			<Abstract type="html">Get the camera&apos;s firmware version</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setDelegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)getCameraVersion</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIGimbalDelegate&gt; delegate</Declaration>
 			
-			<ReturnValue><Abstract type="html">Return the firmware version of the camera.</Abstract></ReturnValue>
-			<Anchor>//api/name/getCameraVersion</Anchor>
+			
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/startTakePhoto:withResult:</TokenIdentifier>
-			<Abstract type="html">Take photo with mode, if the capture mode is CameraMultiCapture or CameraContinousCapture, you should call stopTakePhotoWithResult to stop photoing</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)startTakePhoto:(CameraCaptureMode)captureMode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIGimbalDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbal/delegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, weak) id&lt;DJIGimbalDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setAttitudeInDegrees:</TokenIdentifier>
+			<Abstract type="html">Returns the latest gimbal attitude data and nil if none is available.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
+			
+			
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/attitudeInDegrees</TokenIdentifier>
+			<Abstract type="html">Returns the latest gimbal attitude data and nil if none is available.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
+			
+			
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbal/attitudeInDegrees</TokenIdentifier>
+			<Abstract type="html">Returns the latest gimbal attitude data and nil if none is available.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude attitudeInDegrees</Declaration>
+			
+			
+			<Anchor>//api/name/attitudeInDegrees</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setCompletionTimeForControlAngleAction:</TokenIdentifier>
+			<Abstract type="html">Sets the completion time, in seconds, to complete an action to control the gimbal. If
+the method rotateGimbalWithAngleMode:pitch:roll:yaw:withCompletion is used to control the gimbal&apos;s absolute
+angle，this property will be used to determine in what duration of time the gimbal should
+rotate to its new position. For example, if the value of this property is set to 2.0
+seconds, the gimbal will rotate to its target position in 2.0 seconds.
+Range is [0.1,25.5] seconds.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			
+			
+			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/completionTimeForControlAngleAction</TokenIdentifier>
+			<Abstract type="html">Sets the completion time, in seconds, to complete an action to control the gimbal. If
+the method rotateGimbalWithAngleMode:pitch:roll:yaw:withCompletion is used to control the gimbal&apos;s absolute
+angle，this property will be used to determine in what duration of time the gimbal should
+rotate to its new position. For example, if the value of this property is set to 2.0
+seconds, the gimbal will rotate to its target position in 2.0 seconds.
+Range is [0.1,25.5] seconds.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			
+			
+			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbal/completionTimeForControlAngleAction</TokenIdentifier>
+			<Abstract type="html">Sets the completion time, in seconds, to complete an action to control the gimbal. If
+the method rotateGimbalWithAngleMode:pitch:roll:yaw:withCompletion is used to control the gimbal&apos;s absolute
+angle，this property will be used to determine in what duration of time the gimbal should
+rotate to its new position. For example, if the value of this property is set to 2.0
+seconds, the gimbal will rotate to its target position in 2.0 seconds.
+Range is [0.1,25.5] seconds.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			
+			
+			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalWorkMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the gimbal&apos;s work mode. See enum DJIGimbalWorkMode for modes.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>- (void)setGimbalWorkMode:(DJIGimbalWorkMode)workMode withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>captureMode</Name>
-					<Abstract type="html">Capture mode for camera.</Abstract>
+					<Name>workMode</Name>
+					<Abstract type="html">Gimbal work mode to be set.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
+					<Abstract type="html">Remote execution result error block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startTakePhoto:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalWorkMode:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/stopTakePhotoWithResult:</TokenIdentifier>
-			<Abstract type="html">Stop the mutil capture or continous capture. should match the startTakePhoto action.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalConstraints</TokenIdentifier>
+			<Abstract type="html">Gets the gimbal&apos;s constraints including which axes are adjustable, and what the axis stops are.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)stopTakePhotoWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (nullable DJIGimbalConstraints *)getGimbalConstraints</Declaration>
+			
+			<ReturnValue><Abstract type="html">Gimbal&apos;s constraints. If the SDK and the aircraft have lost connection with each other, the
+method will return nil.</Abstract></ReturnValue>
+			<Anchor>//api/name/getGimbalConstraints</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/rotateGimbalWithAngleMode:pitch:roll:yaw:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Rotate the gimbal&apos;s pitch, roll, and yaw in Angle Mode. The direction can either be set to clockwise or counter-clockwise.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>- (void)rotateGimbalWithAngleMode:(DJIGimbalRotateAngleMode)angleMode pitch:(DJIGimbalAngleRotation)pitch roll:(DJIGimbalAngleRotation)roll yaw:(DJIGimbalAngleRotation)yaw withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopTakePhotoWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/startRecord:</TokenIdentifier>
-			<Abstract type="html">Start recording</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startRecord:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startRecord:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/stopRecord:</TokenIdentifier>
-			<Abstract type="html">Stop recording</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopRecord:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopRecord:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/startCameraSystemStateUpdates</TokenIdentifier>
-			<Abstract type="html">Start the system state updates.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startCameraSystemStateUpdates</Declaration>
-			
-			
-			<Anchor>//api/name/startCameraSystemStateUpdates</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/stopCameraSystemStateUpdates</TokenIdentifier>
-			<Abstract type="html">Stop the system state updates</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopCameraSystemStateUpdates</Declaration>
-			
-			
-			<Anchor>//api/name/stopCameraSystemStateUpdates</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraWorkMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s work mode. camera action will execute successfully on the corresponding work mode</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraWorkMode:(CameraWorkMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Work mode to be set to camera</Abstract>
+					<Name>pitch</Name>
+					<Abstract type="html">Gimbal&apos;s pitch rotation.</Abstract>
+				</Parameter><Parameter>
+					<Name>roll</Name>
+					<Abstract type="html">Gimbal&apos;s roll rotation.</Abstract>
+				</Parameter><Parameter>
+					<Name>yaw</Name>
+					<Abstract type="html">Gimbal&apos;s yaw rotation.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Execution result error block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraWorkMode:withResult:</Anchor>
+			<Anchor>//api/name/rotateGimbalWithAngleMode:pitch:roll:yaw:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraWorkModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s current work mode.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/rotateGimbalBySpeedWithPitch:roll:yaw:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Rotate the gimbal&apos;s pitch, roll, and yaw using speed. The direction can either be set to
+clockwise or counter-clockwise.
+For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available.
+For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available.
+For OSMO, roll rotation is not available. The yaw angleVelocity of DJIGimbalSpeedRotation range is (0, 120).</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraWorkModeWithResult:(void ( ^ ) ( CameraWorkMode , DJIError *))block</Declaration>
+			<Declaration>- (void)rotateGimbalBySpeedWithPitch:(DJIGimbalSpeedRotation)pitch roll:(DJIGimbalSpeedRotation)roll yaw:(DJIGimbalSpeedRotation)yaw withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraWorkModeWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/enterMultipleEditMode</TokenIdentifier>
-			<Abstract type="html">Enter multiple edit mode. The camera work mode should be CameraWorkModePlayback</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)enterMultipleEditMode</Declaration>
-			
-			
-			<Anchor>//api/name/enterMultipleEditMode</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/exitMultipleEditMode</TokenIdentifier>
-			<Abstract type="html">Exit multiple edit mode.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)exitMultipleEditMode</Declaration>
-			
-			
-			<Anchor>//api/name/exitMultipleEditMode</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/selectFileAtIndex:</TokenIdentifier>
-			<Abstract type="html">Select a file at index</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)selectFileAtIndex:(int)index</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">File at index to be select</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/selectFileAtIndex:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/unselectFileAtIndex:</TokenIdentifier>
-			<Abstract type="html">Unselect file at index</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)unselectFileAtIndex:(int)index</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">File at index unselect</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/unselectFileAtIndex:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/selectAllFiles</TokenIdentifier>
-			<Abstract type="html">Select all files on the SD card</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)selectAllFiles</Declaration>
-			
-			
-			<Anchor>//api/name/selectAllFiles</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/unselectAllFiles</TokenIdentifier>
-			<Abstract type="html">Unselect all files</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)unselectAllFiles</Declaration>
-			
-			
-			<Anchor>//api/name/unselectAllFiles</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/selectAllFilesInPage</TokenIdentifier>
-			<Abstract type="html">Select all file in current page</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)selectAllFilesInPage</Declaration>
-			
-			
-			<Anchor>//api/name/selectAllFilesInPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/unselectAllFilesInPage</TokenIdentifier>
-			<Abstract type="html">Unselect all file in current page</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)unselectAllFilesInPage</Declaration>
-			
-			
-			<Anchor>//api/name/unselectAllFilesInPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/deleteAllSelectedFiles</TokenIdentifier>
-			<Abstract type="html">Delete all selected files</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)deleteAllSelectedFiles</Declaration>
-			
-			
-			<Anchor>//api/name/deleteAllSelectedFiles</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/downloadAllSelectedFilesWithPreparingBlock:dataBlock:completionBlock:</TokenIdentifier>
-			<Abstract type="html">Download the selected files. The camera&apos;s work mode will be auto changed to CameraWorkModeDownload</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)downloadAllSelectedFilesWithPreparingBlock:(DJIFileDownloadPreparingBlock)prepareBlock dataBlock:(DJIFileDownloadingBlock)dataBlock completionBlock:(DJIFileDownloadCompletionBlock)completion</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>prepareBlock</Name>
-					<Abstract type="html">File prepare for download callback</Abstract>
+					<Name>pitch</Name>
+					<Abstract type="html">Gimbal&apos;s pitch rotation.</Abstract>
 				</Parameter><Parameter>
-					<Name>dataBlock</Name>
-					<Abstract type="html">File data downloaded callback</Abstract>
+					<Name>roll</Name>
+					<Abstract type="html">Gimbal&apos;s roll rotation.</Abstract>
 				</Parameter><Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">File download completed callback</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/downloadAllSelectedFilesWithPreparingBlock:dataBlock:completionBlock:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/enterMultiplePreviewMode</TokenIdentifier>
-			<Abstract type="html">Enter multiple file preview mode. The camera work mode should be CameraWorkModePlayback</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)enterMultiplePreviewMode</Declaration>
-			
-			
-			<Anchor>//api/name/enterMultiplePreviewMode</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/multiplePreviewNextPage</TokenIdentifier>
-			<Abstract type="html">Go to next page</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)multiplePreviewNextPage</Declaration>
-			
-			
-			<Anchor>//api/name/multiplePreviewNextPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/multiplePreviewPreviousPage</TokenIdentifier>
-			<Abstract type="html">Back to previous page</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)multiplePreviewPreviousPage</Declaration>
-			
-			
-			<Anchor>//api/name/multiplePreviewPreviousPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/enterSinglePreviewModeWithIndex:</TokenIdentifier>
-			<Abstract type="html">Enter single file preview mode. The camera work mode should be CameraWorkModePlayback</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)enterSinglePreviewModeWithIndex:(uint8_t)index</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">File to be preview</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/enterSinglePreviewModeWithIndex:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/singlePreviewNextPage</TokenIdentifier>
-			<Abstract type="html">Go to next file</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)singlePreviewNextPage</Declaration>
-			
-			
-			<Anchor>//api/name/singlePreviewNextPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/singlePreviewPreviousPage</TokenIdentifier>
-			<Abstract type="html">Back to previous file</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)singlePreviewPreviousPage</Declaration>
-			
-			
-			<Anchor>//api/name/singlePreviewPreviousPage</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/deleteCurrentPreviewFile</TokenIdentifier>
-			<Abstract type="html">Delete current previewing file</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)deleteCurrentPreviewFile</Declaration>
-			
-			
-			<Anchor>//api/name/deleteCurrentPreviewFile</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setPhotoZoomScale:</TokenIdentifier>
-			<Abstract type="html">Set photo&apos;s zoom scale</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoZoomScale:(float)scale</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>scale</Name>
-					<Abstract type="html">scale is in range [0, 1]. if scale is negative value, then enter mutiple preview mode automatically.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoZoomScale:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/movePhotoCenterCoordinateTo:</TokenIdentifier>
-			<Abstract type="html">Move photo center coordinate to specific position.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)movePhotoCenterCoordinateTo:(CGPoint)position</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>position</Name>
-					<Abstract type="html">Position to be move to</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/movePhotoCenterCoordinateTo:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/startVideoPlayback</TokenIdentifier>
-			<Abstract type="html">Start video playback. The slected file should be a video file.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startVideoPlayback</Declaration>
-			
-			
-			<Anchor>//api/name/startVideoPlayback</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/pauseVideoPlayback</TokenIdentifier>
-			<Abstract type="html">Pause video playback.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)pauseVideoPlayback</Declaration>
-			
-			
-			<Anchor>//api/name/pauseVideoPlayback</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/stopVideoPlayback</TokenIdentifier>
-			<Abstract type="html">Stop video playback</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopVideoPlayback</Declaration>
-			
-			
-			<Anchor>//api/name/stopVideoPlayback</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setVideoPlaybackFromLocation:</TokenIdentifier>
-			<Abstract type="html">Play from specific location.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoPlaybackFromLocation:(uint8_t)location</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>location</Name>
-					<Abstract type="html">location in range [0, 100]</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoPlaybackFromLocation:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraQuickViewParam:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s quick view parameters</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraQuickViewParam:(CameraQuickViewParam)param withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>param</Name>
-					<Abstract type="html">Quick view parameters set to camera</Abstract>
+					<Name>yaw</Name>
+					<Abstract type="html">Gimbal&apos;s yaw rotation.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Execution result error block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraQuickViewParam:withResult:</Anchor>
+			<Anchor>//api/name/rotateGimbalBySpeedWithPitch:roll:yaw:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraQuickViewParamWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s quick view parameters</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/resetGimbalWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Resets the gimbal. The gimbal&apos;s pitch, roll, and yaw will be set to the origin, which is
+the standard position for the gimbal.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraQuickViewParamWithResult:(void ( ^ ) ( CameraQuickViewParam param , DJIError *error ))block</Declaration>
+			<Declaration>- (void)resetGimbalWithCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Remote execution result error block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getCameraQuickViewParamWithResult:</Anchor>
+			<Anchor>//api/name/resetGimbalWithCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/startGimbalAutoCalibrationWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Starts calibrating the gimbal.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (void)startGimbalAutoCalibrationWithCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>quality</Name>
-					<Abstract type="html">Video quality set to camera</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">Remote execution result error block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startGimbalAutoCalibrationWithCompletion:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/fineTuneGimbalRollInDegrees:withCompletion:</TokenIdentifier>
+			<Abstract type="html">The gimbal roll can be fine tuned with a custom offset. The range for the custom offset is
+[-10, 10] degrees. If the offset is negative, the gimbal will be fine tuned the specified
+number of degrees in the counterclockwise direction.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>- (void)fineTuneGimbalRollInDegrees:(float)offset withCompletion:(DJICompletionBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>offset</Name>
+					<Abstract type="html">Fine-tune offset in degrees to be tuned.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Completion block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
+			<Anchor>//api/name/fineTuneGimbalRollInDegrees:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video quality</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/isUserConfigSupported</TokenIdentifier>
+			<Abstract type="html">YES if gimbal supports a user config (OSMO only).</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
+			<Declaration>- (BOOL)isUserConfigSupported</Declaration>
+			
+			
+			<Anchor>//api/name/isUserConfigSupported</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalUserConfigType:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets gimbal user config type.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
+			
+			<Declaration>- (void)setGimbalUserConfigType:(DJIGimbalUserConfigType)userConfigType withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
-			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
-*  PAL:4096x2160P_24fps
-        4096x2160P_25fps
-        3840x2160P_24fps
-        3840x2160P_25fps
-        1920x1080P_24fps
-        1920x1080P_25fps
-        1920x1080P_48fps
-        1920x1080P_50fps
-        1280x720P_24fps
-        1280x720P_25fps
-        1280x720P_48fps
-        1280x720P_50fps</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>format</Name>
-					<Abstract type="html">Storage format for video</Abstract>
+					<Name>userConfigType</Name>
+					<Abstract type="html">Gimbal User Configure type.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Set Gimbal User Config result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalUserConfigType:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalUserConfigTypeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets gimbal user config type.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
+			<Declaration>- (void)getGimbalUserConfigTypeWithCompletion:(void ( ^ ) ( DJIGimbalUserConfigType userConfigType , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">Get Gimbal User Config result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
+			<Anchor>//api/name/getGimbalUserConfigTypeWithCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalSmoothTrackAxisEnabledOnAxis:isEnabled:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Enables a gimbal SmoothTrack axis.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Declaration>- (void)setGimbalSmoothTrackAxisEnabledOnAxis:(DJIGimbalSmoothTrackAxis)axis isEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>videoStandard</Name>
-					<Abstract type="html">Video standard set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/fetchMediaListWithResultBlock:</TokenIdentifier>
-			<Abstract type="html">Fetch media list from remote album. The camera&apos;s work mode should be set as CameraWorkModePlayback or CameraWorkModeDownload before call this api.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)fetchMediaListWithResultBlock:(void ( ^ ) ( NSArray *mediaList , NSError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result. Objects in mediaList is kind of class DJIMedia.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/fetchMediaListWithResultBlock:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/deleteMedias:withResult:</TokenIdentifier>
-			<Abstract type="html">Delete media from remote album. The camera&apos;s work mode should be set as CameraWorkModePlayback or CameraWorkModeDownload before call this api.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)deleteMedias:(NSArray *)medias withResult:(void ( ^ ) ( NSArray *failureDeletes , DJIError *error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>medias</Name>
-					<Abstract type="html">Medias to be delete.</Abstract>
+					<Name>enabled</Name>
+					<Abstract type="html">YES if SmoothTrack is to be enabled on axis.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result, &apos;failureDeletes&apos; will contain medias which failured delete.</Abstract>
+					<Abstract type="html">set if Gimbal SmoothTrack Adjustment is available to be customized in the specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/deleteMedias:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalSmoothTrackAxisEnabledOnAxis:isEnabled:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/saveCameraSettingsTo:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s current setting to the specific user</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalSmoothTrackAxisEnabledOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets whether an axis has SmoothTrack enabled.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)saveCameraSettingsTo:(CameraUserSettings)settings withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Declaration>- (void)getGimbalSmoothTrackAxisEnabledOnAxis:(DJIGimbalSmoothTrackAxis)axis withCompletion:(void ( ^ ) ( BOOL isEnabled , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>settings</Name>
-					<Abstract type="html">Specific user to store the settings</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/saveCameraSettingsTo:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/loadCameraSettingsFrom:withResult:</TokenIdentifier>
-			<Abstract type="html">Load specific settings form user</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)loadCameraSettingsFrom:(CameraUserSettings)settings withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>settings</Name>
-					<Abstract type="html">Settings to be load</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/loadCameraSettingsFrom:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraExposureMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s exposure mode</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraExposureMode:(CameraExposureMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Exposure mode to be set</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">get if Gimbal SmoothTrack Adjustment is available to be customized in the specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraExposureMode:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalSmoothTrackAxisEnabledOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraExposureModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s exposure mode</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalSmoothTrackSpeedOnAxis:speed:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets gimbal SmoothTrack catch up speed on an axis. SmoothTrack speed determines how fast the gimbal will catch up with a large, translated handle movement and has a range [0,100].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraExposureModeWithResult:(void ( ^ ) ( CameraExposureMode , DJIError *))block</Declaration>
+			<Declaration>- (void)setGimbalSmoothTrackSpeedOnAxis:(DJIGimbalSmoothTrackAxis)axis speed:(NSInteger)speed withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraExposureModeWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraPhotoSize:andRatio:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s photo size</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraPhotoSize:(CameraPhotoSizeType)photoSize andRatio:(CameraPhotoRatioType)ratio withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>photoSize</Name>
-					<Abstract type="html">Photo size set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Photo ration set to camera</Abstract>
+					<Name>speed</Name>
+					<Abstract type="html">SmoothTrack speed [0,100].</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">set Gimbal SmoothTrack Adjustment speed in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraPhotoSize:andRatio:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalSmoothTrackSpeedOnAxis:speed:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraPhotoSizeAndRatioWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s photo size setting</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalSmoothTrackSpeedOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets gimbal SmoothTrack speed on an axis. SmoothTrack speed determines how fast the gimbal will catch up with a large, translated handle movement and will have a range [0,100].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraPhotoSizeAndRatioWithResult:(void ( ^ ) ( CameraPhotoSizeType photoSize , CameraPhotoRatioType ratio , DJIError *error ))block</Declaration>
+			<Declaration>- (void)getGimbalSmoothTrackSpeedOnAxis:(DJIGimbalSmoothTrackAxis)axis withCompletion:(void ( ^ ) ( NSInteger speed , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraPhotoSizeAndRatioWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraPhotoQuality:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s photo quality</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraPhotoQuality:(CameraPhotoQualityType)quality withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>quality</Name>
-					<Abstract type="html">Photo quality set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">get Gimbal SmoothTrack Adjustment speed in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraPhotoQuality:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalSmoothTrackSpeedOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraPhotoQualityWithResult:</TokenIdentifier>
-			<Abstract type="html">Get cameras&apos; photo quality setting</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalSmoothTrackDeadbandOnAxis:deadband:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets SmoothTrack deadband on an axis. A larger deadband requires more handle movement to translate into gimbal motion. Deadband has a range of [0,90] degrees.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraPhotoQualityWithResult:(void ( ^ ) ( CameraPhotoQualityType quality , DJIError *error ))block</Declaration>
+			<Declaration>- (void)setGimbalSmoothTrackDeadbandOnAxis:(DJIGimbalSmoothTrackAxis)axis deadband:(NSInteger)deadband withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraPhotoQualityWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraSpotMeteringArea:withResult:</TokenIdentifier>
-			<Abstract type="html">Set spot metering area. the area size is row(12) by column(8). so the areaIndex value is in range [0, 95]</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraSpotMeteringArea:(uint8_t)areaIndex withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>areaIndex</Name>
-					<Abstract type="html">Area index set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
+				</Parameter><Parameter>
+					<Name>deadband</Name>
+					<Abstract type="html">SmoothTrack deadband [0,90].</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">set Gimbal SmoothTrack Adjustment deadband in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraSpotMeteringArea:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalSmoothTrackDeadbandOnAxis:deadband:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraSpotMeteringAreaWithResult:</TokenIdentifier>
-			<Abstract type="html">Get spot metering area index</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalSmoothTrackDeadbandOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets SmoothTrack deadband on an axis. A larger deadband requires more handle movement to translate into gimbal motion. Deadband has a range of [0,90] degrees.</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraSpotMeteringAreaWithResult:(void ( ^ ) ( uint8_t areaIndex , DJIError *error ))block</Declaration>
+			<Declaration>- (void)getGimbalSmoothTrackDeadbandOnAxis:(DJIGimbalSmoothTrackAxis)axis withCompletion:(void ( ^ ) ( NSInteger deadband , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraSpotMeteringAreaWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraShutterSpeed:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera shutter speed. the avaliable value of shutterSpeed is defined as DJICameraShutterSpeedx.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraShutterSpeed:(double)shutterSpeed withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>shutterSpeed</Name>
-					<Abstract type="html">Shutter speed set to camear</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">get Gimbal SmoothTrack Adjustment deadband in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraShutterSpeed:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalSmoothTrackDeadbandOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraShutterSpeedWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s shutter speed settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalSmoothTrackAccelerationOnAxis:acceleration:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets SmoothTrack acceleration on an axis. Acceleration determines how closely the camera will follow the translated yaw handle movement and has a range of [0,30].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraShutterSpeedWithResult:(void ( ^ ) ( double shutterSpeed , DJIError *error ))block</Declaration>
+			<Declaration>- (void)setGimbalSmoothTrackAccelerationOnAxis:(DJIGimbalSmoothTrackAxis)axis acceleration:(NSInteger)acceleration withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraShutterSpeedWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraColourTemperature:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s Colour temperature.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraColourTemperature:(uint8_t)temperature withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>temperature</Name>
-					<Abstract type="html">Colour temperature in range [20, 100]</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
+				</Parameter><Parameter>
+					<Name>acceleration</Name>
+					<Abstract type="html">SmoothTrack acceleration [0,30].</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">set Gimbal SmoothTrack Adjustment acceleration in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraColourTemperature:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalSmoothTrackAccelerationOnAxis:acceleration:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraColourTemperatureWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s colour temperature settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalSmoothTrackAccelerationOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets SmoothTrack acceleration on an axis. Acceleration determines how closely the camera will follow the translated yaw handle movement and has a range of [0,30].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraColourTemperatureWithResult:(void ( ^ ) ( uint8_t temperature , DJIError *error ))block</Declaration>
+			<Declaration>- (void)getGimbalSmoothTrackAccelerationOnAxis:(DJIGimbalSmoothTrackAxis)axis withCompletion:(void ( ^ ) ( NSInteger acceleration , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraColourTemperatureWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraSaturation:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s saturation</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraSaturation:(int8_t)saturation withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>saturation</Name>
-					<Abstract type="html">Saturation in range [-3, 3]</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">get Gimbal SmoothTrack Adjustment acceleration in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraSaturation:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalSmoothTrackAccelerationOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraSaturationWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s saturation</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalJoystickSmoothingOnAxis:smoothing:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets joystick smoothing on an axis. Joystick smoothing controls the deceleration of the gimbal. A small value will cause the gimbal to stop abruptly. Smoothing has a range of [0,30].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraSaturationWithResult:(void ( ^ ) ( int8_t saturation , DJIError *error ))block</Declaration>
+			<Declaration>- (void)setGimbalJoystickSmoothingOnAxis:(DJIGimbalJoystickAxis)axis smoothing:(NSInteger)smoothing withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraSaturationWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraHue:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s Hue</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraHue:(int8_t)hue withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>hue</Name>
-					<Abstract type="html">Hue in range [-3, 3]</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
+				</Parameter><Parameter>
+					<Name>smoothing</Name>
+					<Abstract type="html">Joystick Smoothing [0,30].</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">set Gimbal Joystick Smoothing in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraHue:withResult:</Anchor>
+			<Anchor>//api/name/setGimbalJoystickSmoothingOnAxis:smoothing:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraHueWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s hue settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalJoystickSmoothingOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets joystick smoothing on an axis. Joystick smoothing controls the deceleration of the gimbal. A small value will cause the gimbal to stop abruptly. Smoothing has a range of [0,30].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraHueWithResult:(void ( ^ ) ( int8_t hue , DJIError *error ))block</Declaration>
+			<Declaration>- (void)getGimbalJoystickSmoothingOnAxis:(DJIGimbalJoystickAxis)axis withCompletion:(void ( ^ ) ( NSInteger smoothing , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraHueWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraDigitalFilter:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s digital filter.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraDigitalFilter:(CameraDigitalFilter)filter withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>filter</Name>
-					<Abstract type="html">Digital filter set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal Joystick Direction.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">get Gimbal Joystick Smoothing in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraDigitalFilter:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalJoystickSmoothingOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraDigitalFilterWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s digital filter settings</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/setGimbalJoystickSpeedOnAxis:speed:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets joystick speed on an axis. Speed has a range of [0,100].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)getCameraDigitalFilterWithResult:(void ( ^ ) ( CameraDigitalFilter filter , DJIError *error ))block</Declaration>
+			<Declaration>- (void)setGimbalJoystickSpeedOnAxis:(DJIGimbalJoystickAxis)axis speed:(NSInteger)speed withCompletion:(DJICompletionBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal axis.</Abstract>
+				</Parameter><Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Joystick speed [0,100].</Abstract>
+				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Abstract type="html">set Gimbal Joystick Speed in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getCameraDigitalFilterWithResult:</Anchor>
+			<Anchor>//api/name/setGimbalJoystickSpeedOnAxis:speed:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraFileIndexMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camra&apos;s file index mode. if set as CameraFileIndexReset, the new file will be start as index 1 when you change a new SD card.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbal/getGimbalJoystickSpeedOnAxis:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets joystick speed on an axis. Speed has a range of [0,100].</Abstract>
+			<DeclaredIn>DJIGimbal.h</DeclaredIn>
 			
-			<Declaration>- (void)setCameraFileIndexMode:(CameraFileIndexMode)fileIndex withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Declaration>- (void)getGimbalJoystickSpeedOnAxis:(DJIGimbalJoystickAxis)axis withCompletion:(void ( ^ ) ( NSInteger speed , BOOL success ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>fileIndex</Name>
-					<Abstract type="html">File index mode set to camera</Abstract>
+					<Name>axis</Name>
+					<Abstract type="html">Gimbal Joystick Direction.</Abstract>
 				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">get Gimbal Joystick Speed in specific direction result block.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setCameraFileIndexMode:withResult:</Anchor>
+			<Anchor>//api/name/getGimbalJoystickSpeedOnAxis:withCompletion:</Anchor>
             <NodeRef refid="24"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraFileIndexModeWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s file index mode.</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraFileIndexModeWithResult:(void ( ^ ) ( CameraFileIndexMode fileIndex , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraFileIndexModeWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraAEBParam:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera&apos;s AEB continue capture parameters</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraAEBParam:(CameraAEBParam)aebParam withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>aebParam</Name>
-					<Abstract type="html">AEB capture parameters set to camera</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraAEBParam:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraAEBParamWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s AEB parameters</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraAEBParamWithResult:(void ( ^ ) ( CameraAEBParam aeb , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraAEBParamWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/setCameraAELock:withResult:</TokenIdentifier>
-			<Abstract type="html">Set camera AE lock</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraAELock:(BOOL)isLock withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>isLock</Name>
-					<Abstract type="html">Lock or unlock AE</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraAELock:withResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireCamera/getCameraAELockWithResult:</TokenIdentifier>
-			<Abstract type="html">Get camera&apos;s AE lock status</Abstract>
-			<DeclaredIn>DJIInspireCamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraAELockWithResult:(void ( ^ ) ( BOOL isLocked , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraAELockWithResult:</Anchor>
-            <NodeRef refid="24"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

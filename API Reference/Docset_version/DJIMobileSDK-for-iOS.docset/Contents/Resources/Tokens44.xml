@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIPhantom3ProMainController.html">
+	<File path="Classes/DJIPanoramaMission.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3ProMainController</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPanoramaMission</TokenIdentifier>
+			<Abstract type="html">User can use this mission to rotate camera 360 or 180 degrees to takes several photos. Then download the photos to render a panorama. Please note that
+photo stitching is not provided in the SDK. In full circle mode, 8 photos are taken. In half circle mode, 5 photos are taken.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="44"/>
@@ -13,182 +14,66 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/getMainControllerVersion</TokenIdentifier>
-			<Abstract type="html">Main controller&apos;s firmware version.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMission/setPanoramaMode:</TokenIdentifier>
+			<Abstract type="html">Returns the current panorama mode of this mission.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (NSString *)getMainControllerVersion</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIPanoramaMode panoramaMode</Declaration>
 			
 			
-			<Anchor>//api/name/getMainControllerVersion</Anchor>
+			<Anchor>//api/name/panoramaMode</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/startUpdateMCSystemState</TokenIdentifier>
-			<Abstract type="html">Start update main controller&apos;s system state</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMission/panoramaMode</TokenIdentifier>
+			<Abstract type="html">Returns the current panorama mode of this mission.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)startUpdateMCSystemState</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIPanoramaMode panoramaMode</Declaration>
 			
 			
-			<Anchor>//api/name/startUpdateMCSystemState</Anchor>
+			<Anchor>//api/name/panoramaMode</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/stopUpdateMCSystemState</TokenIdentifier>
-			<Abstract type="html">Stop update main controller&apos;s system state</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIPanoramaMission/panoramaMode</TokenIdentifier>
+			<Abstract type="html">Returns the current panorama mode of this mission.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)stopUpdateMCSystemState</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIPanoramaMode panoramaMode</Declaration>
 			
 			
-			<Anchor>//api/name/stopUpdateMCSystemState</Anchor>
+			<Anchor>//api/name/panoramaMode</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/setMultipleFlightModeOpen:withResult:</TokenIdentifier>
-			<Abstract type="html">Set multiple flight mode open. if set open, then the remote controller&apos;s mode switch will be available.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMission/initWithPanoramaMode:</TokenIdentifier>
+			<Abstract type="html">Initializer for the Panorama mission object with panorama mode.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)setMultipleFlightModeOpen:(BOOL)isOpen withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>isOpen</Name>
-					<Abstract type="html">Whether or not open the multiple flight mode.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (id)initWithPanoramaMode:(DJIPanoramaMode)mode</Declaration>
 			
-			<Anchor>//api/name/setMultipleFlightModeOpen:withResult:</Anchor>
+			
+			<Anchor>//api/name/initWithPanoramaMode:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/setLowBatteryWarning:withResult:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPanoramaMission/getPanoramaMediaFileWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Retrieves the DJIMedia object for the recently finished panorama mission. Use fetchSubMediaFileListWithCompletion: method on the retrieved DJIMedia to
+retrieve the panorama photos.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
 			
-			<Declaration>- (void)setLowBatteryWarning:(uint8_t)percent withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (void)getPanoramaMediaFileWithCompletion:(void ( ^ ) ( DJIMedia *_Nullable panoMedia , NSError *_Nullable error ))block</Declaration>
 			
 			
-			<Anchor>//api/name/setLowBatteryWarning:withResult:</Anchor>
+			<Anchor>//api/name/getPanoramaMediaFileWithCompletion:</Anchor>
             <NodeRef refid="44"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/getLowBatteryWarningWithResult:</TokenIdentifier>
-			<Abstract type="html">Get low battery warning data.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)getLowBatteryWarningWithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getLowBatteryWarningWithResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/setSeriousLowBattery:withResult:</TokenIdentifier>
-			<Abstract type="html">Set serious low battery waning data, percentage of voltage in range [10, 25].</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)setSeriousLowBattery:(uint8_t)percent withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>percent</Name>
-					<Abstract type="html">Percentage of serious low battery</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setSeriousLowBattery:withResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/getSeriousLowBatteryWarningwithResult:</TokenIdentifier>
-			<Abstract type="html">Get serious low battery warning data.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)getSeriousLowBatteryWarningwithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getSeriousLowBatteryWarningwithResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/setHomePointUsingAircraftCurrentLocationWithResult:</TokenIdentifier>
-			<Abstract type="html">Set home point use the aircraft&apos;s current location.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)setHomePointUsingAircraftCurrentLocationWithResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setHomePointUsingAircraftCurrentLocationWithResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/setAircraftName:withResult:</TokenIdentifier>
-			<Abstract type="html">Set aircraft name. the length of aircraft name should be less than 32 characters</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)setAircraftName:(NSString *)name withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>name</Name>
-					<Abstract type="html">Name to be set to the aricraft.</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setAircraftName:withResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3ProMainController/getAircraftNameWithResult:</TokenIdentifier>
-			<Abstract type="html">Get aircraft name.</Abstract>
-			<DeclaredIn>DJIPhantom3ProMainController.h</DeclaredIn>
-			
-			<Declaration>- (void)getAircraftNameWithResult:(void ( ^ ) ( NSString *name , DJIError *error ))result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getAircraftNameWithResult:</Anchor>
-            <NodeRef refid="44"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

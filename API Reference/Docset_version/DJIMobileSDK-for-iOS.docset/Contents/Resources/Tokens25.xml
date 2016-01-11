@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIInspireGimbal.html">
+	<File path="Classes/DJIGimbalAttitudeStep.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIInspireGimbal</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIGimbalAttitudeStep</TokenIdentifier>
+			<Abstract type="html">Subclass of DJIMission Step, you can control gimbal attitude using this mission step.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
             
 			
 			<NodeRef refid="25"/>
@@ -13,142 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/setCompletionTimeForControlAngleAction:</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalAttitudeStep/setCompletionTime:</TokenIdentifier>
+			<Abstract type="html">Completion time in seconds for gimbal go to target attitude from current attitude. Default is 1s.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, assign) double completionTime</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/completionTime</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/completionTimeForControlAngleAction</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalAttitudeStep/completionTime</TokenIdentifier>
+			<Abstract type="html">Completion time in seconds for gimbal go to target attitude from current attitude. Default is 1s.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, assign) double completionTime</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/completionTime</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIInspireGimbal/completionTimeForControlAngleAction</TokenIdentifier>
-			<Abstract type="html">Set completion time for control gimbal angle action. If user use API setGimbalPitch:Roll:Yaw:withResult: to control the gimbal&apos;s angle (AbsoluteAngle)， this property will be used. the precision is 0.1s. for example, the property value is set as 2.0, then the gimbal will rotate to the target position in 2.0s</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalAttitudeStep/completionTime</TokenIdentifier>
+			<Abstract type="html">Completion time in seconds for gimbal go to target attitude from current attitude. Default is 1s.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) double completionTimeForControlAngleAction</Declaration>
+			<Declaration>@property (nonatomic, assign) double completionTime</Declaration>
 			
 			
-			<Anchor>//api/name/completionTimeForControlAngleAction</Anchor>
+			<Anchor>//api/name/completionTime</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/startGimbalAutoCalibrationWithResult:</TokenIdentifier>
-			<Abstract type="html">Start gimbal calibration</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalAttitudeStep/setTargetAttitude:</TokenIdentifier>
+			<Abstract type="html">Target gimbal attitude.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
 			
-			<Declaration>- (void)startGimbalAutoCalibrationWithResult:(DJIExecuteResultBlock)result</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude targetAttitude</Declaration>
+			
+			
+			<Anchor>//api/name/targetAttitude</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalAttitudeStep/targetAttitude</TokenIdentifier>
+			<Abstract type="html">Target gimbal attitude.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude targetAttitude</Declaration>
+			
+			
+			<Anchor>//api/name/targetAttitude</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIGimbalAttitudeStep/targetAttitude</TokenIdentifier>
+			<Abstract type="html">Target gimbal attitude.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) DJIGimbalAttitude targetAttitude</Declaration>
+			
+			
+			<Anchor>//api/name/targetAttitude</Anchor>
+            <NodeRef refid="25"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIGimbalAttitudeStep/initWithAttitude:</TokenIdentifier>
+			<Abstract type="html">Initialized instance with gimbal target attitude.</Abstract>
+			<DeclaredIn>DJIGimbalAttitudeStep.h</DeclaredIn>
+			
+			<Declaration>- (instancetype _Nullable)initWithAttitude:(DJIGimbalAttitude)attitude</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
+					<Name>attitude</Name>
+					<Abstract type="html">Gimbal target attitude.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/startGimbalAutoCalibrationWithResult:</Anchor>
+			<ReturnValue><Abstract type="html">Instance of DJIGimbalAttitudeStep.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithAttitude:</Anchor>
             <NodeRef refid="25"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/setGimbalWorkMode:withResult:</TokenIdentifier>
-			<Abstract type="html">Set gimbal&apos;s work mode</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalWorkMode:(DJIGimbalWorkMode)workMode withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>workMode</Name>
-					<Abstract type="html">Work mode</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setGimbalWorkMode:withResult:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/resetGimbalWithResult:</TokenIdentifier>
-			<Abstract type="html">Reset gimbal. the gimbal&apos;s pitch roll yaw will back to origin.</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)resetGimbalWithResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/resetGimbalWithResult:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/setGimbalRollFineTune:withResult:</TokenIdentifier>
-			<Abstract type="html">Gimbal&apos;s roll fine-tune. if fineTune is negative number, then the roll will adjust specificed angle anticlockwise. 1fineTune = 0.1degree</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalRollFineTune:(int8_t)fineTune withResult:(DJIExecuteResultBlock)result</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter><Parameter>
-					<Name>angle</Name>
-					<Abstract type="html">Fine-tune angle</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setGimbalRollFineTune:withResult:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIInspireGimbal/setGimbalPitch:Roll:Yaw:withResult:</TokenIdentifier>
-			<Abstract type="html">Control gimbal rotate</Abstract>
-			<DeclaredIn>DJIInspireGimbal.h</DeclaredIn>
-			
-			<Declaration>- (void)setGimbalPitch:(DJIGimbalRotation)pitch Roll:(DJIGimbalRotation)roll Yaw:(DJIGimbalRotation)yaw withResult:(DJIExecuteResultBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>pitch</Name>
-					<Abstract type="html">Pitch rotation parameters. Inspire is in range [-90, 30] and Phantom3 Pression is in range [-90, 0]. the input angle precision is 0.1 degree</Abstract>
-				</Parameter><Parameter>
-					<Name>roll</Name>
-					<Abstract type="html">Roll rotation parameters. angel is in range [-180, +180]. the input angle precision is 0.1 degree</Abstract>
-				</Parameter><Parameter>
-					<Name>yaw</Name>
-					<Abstract type="html">Yaw rotation parameters. angel is in range [-180, +180]. the input angle precision is 0.1 degree</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setGimbalPitch:Roll:Yaw:withResult:</Anchor>
-            <NodeRef refid="25"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

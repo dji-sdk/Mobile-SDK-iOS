@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointMissionExecuteState.html">
+	<File path="Constants/DJIPanoramaMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionExecuteState</TokenIdentifier>
-			<Abstract type="html">Current waypoint mission state.</Abstract>
-			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIPanoramaMode</TokenIdentifier>
+			<Abstract type="html">Defines options for different types of modes for panorama mission.</Abstract>
+			<DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="139"/>
@@ -14,75 +14,37 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateInitializing</TokenIdentifier>
-            <Abstract type="html">Waypoint mission is initializing, which means the mission has
-started and the aircraft is going to the first waypoint.
+            <TokenIdentifier>//apple_ref/c/econst/DJIPanoramaModeFullCircle</TokenIdentifier>
+            <Abstract type="html">360 Degree Panorama mode
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateInitializing</Declaration>
+            <Declaration>DJIPanoramaModeFullCircle</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
             <NodeRef refid="139"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateMoving</TokenIdentifier>
-            <Abstract type="html">Aircraft is currently moving towards the mission&apos;s next waypoint.
+            <TokenIdentifier>//apple_ref/c/econst/DJIPanoramaModeHalfCircle</TokenIdentifier>
+            <Abstract type="html">180 Degree Panorama mode. Also known as selfie mode in OSMO.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateMoving</Declaration>
+            <Declaration>DJIPanoramaModeHalfCircle</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
             <NodeRef refid="139"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateRotating</TokenIdentifier>
-            <Abstract type="html">Aircraft is currently rotating.
+            <TokenIdentifier>//apple_ref/c/econst/DJIPanoramaModeUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown mode.
      </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateRotating</Declaration>
+            <Declaration>DJIPanoramaModeUnknown</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIPanoramaMission.h</DeclaredIn>
             
             <NodeRef refid="139"/>
         </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateBeginAction</TokenIdentifier>
-            <Abstract type="html">Aircraft has reached a waypoint and is processing the current waypoint&apos;s
-actions. This state is before any waypoint action is executed. This state
-occurs once for each waypoint action.
-     </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateBeginAction</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="139"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateDoingAction</TokenIdentifier>
-            <Abstract type="html">Aircraft is at a waypoint and is executing the current action.
-     </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateDoingAction</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="139"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionExecuteStateFinishedAction</TokenIdentifier>
-            <Abstract type="html">Aircraft is at a waypoint and has finished executing the current waypoint
-action. This state occurs once for each waypoint action.
-     </Abstract>
-            <Declaration>DJIWaypointMissionExecuteStateFinishedAction</Declaration>
-            
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
-            
-            <NodeRef refid="139"/>
-        </Token>
-        
         
 	</File>
 </Tokens>

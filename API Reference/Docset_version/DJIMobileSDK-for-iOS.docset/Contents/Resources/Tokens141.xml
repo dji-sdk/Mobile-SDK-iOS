@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointMissionFlightPathMode.html">
+	<File path="Constants/DJIRCControlStyle.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFlightPathMode</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCControlStyle</TokenIdentifier>
+			<Abstract type="html">Remote Controller&apos;s control style.</Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="141"/>
@@ -14,30 +14,86 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFlightPathNormal</TokenIdentifier>
-            <Abstract type="html">The flight path will be normal and the aircraft will
-move from one waypoint to the next in straight lines.
+            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleJapanese</TokenIdentifier>
+            <Abstract type="html">Remote Controller uses Japanese controls (also known as Mode 1). In this mode the left stick controls Pitch
+and Yaw, and the right stick controls Throttle and Roll
      </Abstract>
-            <Declaration>DJIWaypointMissionFlightPathNormal</Declaration>
+            <Declaration>RCControlStyleJapanese</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFlightPathCurved</TokenIdentifier>
-            <Abstract type="html">The flight path will be curved and the aircraft will
-move from one waypoint to the next in a curved motion,
-adhering to the cornerRadius, which is set in DJIWaypoint.h.
+            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleAmerican</TokenIdentifier>
+            <Abstract type="html">Remote Controller uses American controls (also known as Mode 2). In this mode
+the left stick controls Throttle and Yaw, and the right stick controls Pitch and Roll.
      </Abstract>
-            <Declaration>DJIWaypointMissionFlightPathCurved</Declaration>
+            <Declaration>RCControlStyleAmerican</Declaration>
             
-            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleChinese</TokenIdentifier>
+            <Abstract type="html">Remote Controller uses Chinese controls (also know as Mode 3). In this mode the left stick controls Pitch and Roll, and the right stick controls Throttle and Yaw.
+     </Abstract>
+            <Declaration>RCControlStyleChinese</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="141"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleCustom</TokenIdentifier>
+            <Abstract type="html">Stick channel mapping for Roll, Pitch, Yaw and Throttle can be customized.
+     </Abstract>
+            <Declaration>RCControlStyleCustom</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="141"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCSlaveControlStyleDefault</TokenIdentifier>
+            <Abstract type="html">Default Remote Controller controls and settings for slave
+Remote Controller.
+     </Abstract>
+            <Declaration>RCSlaveControlStyleDefault</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="141"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCSlaveControlStyleCustom</TokenIdentifier>
+            <Abstract type="html">Slave remote controller stick channel mapping for Roll, Pitch, Yaw and
+Throttle can be customized.
+     </Abstract>
+            <Declaration>RCSlaveControlStyleCustom</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="141"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleUnknown</TokenIdentifier>
+            <Abstract type="html">The Remote Controller&apos;s control style is
+unknown.
+     </Abstract>
+            <Declaration>RCControlStyleUnknown</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="141"/>
+        </Token>
         
 	</File>
 </Tokens>

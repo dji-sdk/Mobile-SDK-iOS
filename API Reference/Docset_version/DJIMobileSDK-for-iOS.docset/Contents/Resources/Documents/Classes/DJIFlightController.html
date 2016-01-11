@@ -1,0 +1,1932 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJIFlightController Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJIFlightController Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/compass">&nbsp;&nbsp;&nbsp;&nbsp;compass</option>
+	
+	<option value="//api/name/delegate">&nbsp;&nbsp;&nbsp;&nbsp;delegate</option>
+	
+	<option value="//api/name/flightLimitation">&nbsp;&nbsp;&nbsp;&nbsp;flightLimitation</option>
+	
+	<option value="//api/name/landingGear">&nbsp;&nbsp;&nbsp;&nbsp;landingGear</option>
+	
+	<option value="//api/name/rollPitchControlMode">&nbsp;&nbsp;&nbsp;&nbsp;rollPitchControlMode</option>
+	
+	<option value="//api/name/rollPitchCoordinateSystem">&nbsp;&nbsp;&nbsp;&nbsp;rollPitchCoordinateSystem</option>
+	
+	<option value="//api/name/verticalControlMode">&nbsp;&nbsp;&nbsp;&nbsp;verticalControlMode</option>
+	
+	<option value="//api/name/yawControlMode">&nbsp;&nbsp;&nbsp;&nbsp;yawControlMode</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/autoLandingWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- autoLandingWithCompletion:</option>
+	
+	<option value="//api/name/cancelAutoLandingWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAutoLandingWithCompletion:</option>
+	
+	<option value="//api/name/cancelGoHomeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelGoHomeWithCompletion:</option>
+	
+	<option value="//api/name/cancelTakeoffWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelTakeoffWithCompletion:</option>
+	
+	<option value="//api/name/disableVirtualStickControlModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- disableVirtualStickControlModeWithCompletion:</option>
+	
+	<option value="//api/name/enableVirtualStickControlModeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- enableVirtualStickControlModeWithCompletion:</option>
+	
+	<option value="//api/name/getGoHomeAltitudeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getGoHomeAltitudeWithCompletion:</option>
+	
+	<option value="//api/name/getGoHomeBatteryThresholdWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getGoHomeBatteryThresholdWithCompletion:</option>
+	
+	<option value="//api/name/getHomeLocationWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getHomeLocationWithCompletion:</option>
+	
+	<option value="//api/name/getLandImmediatelyBatteryThresholdWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- getLandImmediatelyBatteryThresholdWithCompletion:</option>
+	
+	<option value="//api/name/goHomeWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- goHomeWithCompletion:</option>
+	
+	<option value="//api/name/isOnboardSDKDeviceAvailable">&nbsp;&nbsp;&nbsp;&nbsp;- isOnboardSDKDeviceAvailable</option>
+	
+	<option value="//api/name/isVirtualStickControlModeAvailable">&nbsp;&nbsp;&nbsp;&nbsp;- isVirtualStickControlModeAvailable</option>
+	
+	<option value="//api/name/lockCourseUsingCurrentDirectionWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- lockCourseUsingCurrentDirectionWithCompletion:</option>
+	
+	<option value="//api/name/sendDataToOnboardSDKDevice:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendDataToOnboardSDKDevice:withCompletion:</option>
+	
+	<option value="//api/name/sendVirtualStickFlightControlData:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- sendVirtualStickFlightControlData:withCompletion:</option>
+	
+	<option value="//api/name/setFlightOrientationMode:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setFlightOrientationMode:withCompletion:</option>
+	
+	<option value="//api/name/setGoHomeAltitude:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setGoHomeAltitude:withCompletion:</option>
+	
+	<option value="//api/name/setGoHomeBatteryThreshold:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setGoHomeBatteryThreshold:withCompletion:</option>
+	
+	<option value="//api/name/setHomeLocation:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setHomeLocation:withCompletion:</option>
+	
+	<option value="//api/name/setHomeLocationUsingAircraftCurrentLocationWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setHomeLocationUsingAircraftCurrentLocationWithCompletion:</option>
+	
+	<option value="//api/name/setLandImmediatelyBatteryThreshold:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- setLandImmediatelyBatteryThreshold:withCompletion:</option>
+	
+	<option value="//api/name/takeoffWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- takeoffWithCompletion:</option>
+	
+	<option value="//api/name/turnOffMotorsWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- turnOffMotorsWithCompletion:</option>
+	
+	<option value="//api/name/turnOnMotorsWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;- turnOnMotorsWithCompletion:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_VirtualStickControlMode Methods">VirtualStickControlMode Methods</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DJIFlightOrientationMode Methods">DJIFlightOrientationMode Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compass">compass</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/delegate">delegate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flightLimitation">flightLimitation</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/landingGear">landingGear</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rollPitchControlMode">rollPitchControlMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rollPitchCoordinateSystem">rollPitchCoordinateSystem</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/verticalControlMode">verticalControlMode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/yawControlMode">yawControlMode</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoLandingWithCompletion:">autoLandingWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAutoLandingWithCompletion:">cancelAutoLandingWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelGoHomeWithCompletion:">cancelGoHomeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelTakeoffWithCompletion:">cancelTakeoffWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/disableVirtualStickControlModeWithCompletion:">disableVirtualStickControlModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableVirtualStickControlModeWithCompletion:">enableVirtualStickControlModeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getGoHomeAltitudeWithCompletion:">getGoHomeAltitudeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getGoHomeBatteryThresholdWithCompletion:">getGoHomeBatteryThresholdWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getHomeLocationWithCompletion:">getHomeLocationWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getLandImmediatelyBatteryThresholdWithCompletion:">getLandImmediatelyBatteryThresholdWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/goHomeWithCompletion:">goHomeWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isOnboardSDKDeviceAvailable">isOnboardSDKDeviceAvailable</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isVirtualStickControlModeAvailable">isVirtualStickControlModeAvailable</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/lockCourseUsingCurrentDirectionWithCompletion:">lockCourseUsingCurrentDirectionWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendDataToOnboardSDKDevice:withCompletion:">sendDataToOnboardSDKDevice:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sendVirtualStickFlightControlData:withCompletion:">sendVirtualStickFlightControlData:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFlightOrientationMode:withCompletion:">setFlightOrientationMode:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGoHomeAltitude:withCompletion:">setGoHomeAltitude:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setGoHomeBatteryThreshold:withCompletion:">setGoHomeBatteryThreshold:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHomeLocation:withCompletion:">setHomeLocation:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHomeLocationUsingAircraftCurrentLocationWithCompletion:">setHomeLocationUsingAircraftCurrentLocationWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setLandImmediatelyBatteryThreshold:withCompletion:">setLandImmediatelyBatteryThreshold:withCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/takeoffWithCompletion:">takeoffWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turnOffMotorsWithCompletion:">turnOffMotorsWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/turnOnMotorsWithCompletion:">turnOnMotorsWithCompletion:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJIFlightController Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJIFlightController Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value"><a href="../Classes/DJIBaseComponent.html">DJIBaseComponent</a> : NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJIFlightController.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class contains components of the flight controller. Also, it provides methods to send different commands to the flight controller.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/delegate">&nbsp;&nbsp;delegate</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flightLimitation">&nbsp;&nbsp;flightLimitation</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/landingGear">&nbsp;&nbsp;landingGear</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compass">&nbsp;&nbsp;compass</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/verticalControlMode">&nbsp;&nbsp;verticalControlMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rollPitchControlMode">&nbsp;&nbsp;rollPitchControlMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/yawControlMode">&nbsp;&nbsp;yawControlMode</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/rollPitchCoordinateSystem">&nbsp;&nbsp;rollPitchCoordinateSystem</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/takeoffWithCompletion:">&ndash;&nbsp;takeoffWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelTakeoffWithCompletion:">&ndash;&nbsp;cancelTakeoffWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/autoLandingWithCompletion:">&ndash;&nbsp;autoLandingWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelAutoLandingWithCompletion:">&ndash;&nbsp;cancelAutoLandingWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/turnOnMotorsWithCompletion:">&ndash;&nbsp;turnOnMotorsWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/turnOffMotorsWithCompletion:">&ndash;&nbsp;turnOffMotorsWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/goHomeWithCompletion:">&ndash;&nbsp;goHomeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancelGoHomeWithCompletion:">&ndash;&nbsp;cancelGoHomeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHomeLocation:withCompletion:">&ndash;&nbsp;setHomeLocation:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHomeLocationUsingAircraftCurrentLocationWithCompletion:">&ndash;&nbsp;setHomeLocationUsingAircraftCurrentLocationWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getHomeLocationWithCompletion:">&ndash;&nbsp;getHomeLocationWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGoHomeAltitude:withCompletion:">&ndash;&nbsp;setGoHomeAltitude:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getGoHomeAltitudeWithCompletion:">&ndash;&nbsp;getGoHomeAltitudeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isOnboardSDKDeviceAvailable">&ndash;&nbsp;isOnboardSDKDeviceAvailable</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendDataToOnboardSDKDevice:withCompletion:">&ndash;&nbsp;sendDataToOnboardSDKDevice:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setGoHomeBatteryThreshold:withCompletion:">&ndash;&nbsp;setGoHomeBatteryThreshold:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getGoHomeBatteryThresholdWithCompletion:">&ndash;&nbsp;getGoHomeBatteryThresholdWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setLandImmediatelyBatteryThreshold:withCompletion:">&ndash;&nbsp;setLandImmediatelyBatteryThreshold:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getLandImmediatelyBatteryThresholdWithCompletion:">&ndash;&nbsp;getLandImmediatelyBatteryThresholdWithCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="VirtualStickControlMode Methods" name="task_VirtualStickControlMode Methods"></a>
+						<h3 class="subsubtitle task-title">VirtualStickControlMode Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isVirtualStickControlModeAvailable">&ndash;&nbsp;isVirtualStickControlModeAvailable</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableVirtualStickControlModeWithCompletion:">&ndash;&nbsp;enableVirtualStickControlModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/disableVirtualStickControlModeWithCompletion:">&ndash;&nbsp;disableVirtualStickControlModeWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sendVirtualStickFlightControlData:withCompletion:">&ndash;&nbsp;sendVirtualStickFlightControlData:withCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="DJIFlightOrientationMode Methods" name="task_DJIFlightOrientationMode Methods"></a>
+						<h3 class="subsubtitle task-title">DJIFlightOrientationMode Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFlightOrientationMode:withCompletion:">&ndash;&nbsp;setFlightOrientationMode:withCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/lockCourseUsingCurrentDirectionWithCompletion:">&ndash;&nbsp;lockCourseUsingCurrentDirectionWithCompletion:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/compass" title="compass"></a>
+	<h3 class="subsubtitle method-title">compass</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Compass object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJICompass *compass</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/delegate" title="delegate"></a>
+	<h3 class="subsubtitle method-title">delegate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flight controller&rsquo;s delegate.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak) id&lt;DJIFlightControllerDelegate&gt; delegate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flightLimitation" title="flightLimitation"></a>
+	<h3 class="subsubtitle method-title">flightLimitation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flight limitation object. This object sets, gets and tracks state of the maximum flight height
+and radius allowed.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJIFlightLimitation *flightLimitation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/landingGear" title="landingGear"></a>
+	<h3 class="subsubtitle method-title">landingGear</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Landing Gear object. For products with moveable landing gear only.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) DJILandingGear *landingGear</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rollPitchControlMode" title="rollPitchControlMode"></a>
+	<h3 class="subsubtitle method-title">rollPitchControlMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>RollPitch control mode</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIVirtualStickRollPitchControlMode rollPitchControlMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/rollPitchCoordinateSystem" title="rollPitchCoordinateSystem"></a>
+	<h3 class="subsubtitle method-title">rollPitchCoordinateSystem</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>RollPitch control coordinate system</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIVirtualStickFlightCoordinateSystem rollPitchCoordinateSystem</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/verticalControlMode" title="verticalControlMode"></a>
+	<h3 class="subsubtitle method-title">verticalControlMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Vertical control mode</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIVirtualStickVerticalControlMode verticalControlMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/yawControlMode" title="yawControlMode"></a>
+	<h3 class="subsubtitle method-title">yawControlMode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Yaw control mode</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIVirtualStickYawControlMode yawControlMode</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/autoLandingWithCompletion:" title="autoLandingWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">autoLandingWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts auto-landing of the aircraft. Landing is considered complete once the aircraft lands on the ground,
+and powers down propellors to medium throttle.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)autoLandingWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelAutoLandingWithCompletion:" title="cancelAutoLandingWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">cancelAutoLandingWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops auto-landing the aircraft. If called before startAutoLandingWithCompletion is complete, then the auto
+landing will be cancelled (startAutoLandingWithCompletion completeion block will return an error) and the
+aircraft will hover at its current location.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cancelAutoLandingWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelGoHomeWithCompletion:" title="cancelGoHomeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">cancelGoHomeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The aircraft will stop going home and will hover in place. goHomeWithCompletion completion block will immediately return an error.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cancelGoHomeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancelTakeoffWithCompletion:" title="cancelTakeoffWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">cancelTakeoffWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stops aircraft takeoff. If called before takeoffWithCompletion is complete, the aircraft will cancel
+takeoff (takeoffWithCompletion completion block will return an error) and hover at the current height.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cancelTakeoffWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/disableVirtualStickControlModeWithCompletion:" title="disableVirtualStickControlModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">disableVirtualStickControlModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disables virtual stick control mode.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)disableVirtualStickControlModeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableVirtualStickControlModeWithCompletion:" title="enableVirtualStickControlModeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">enableVirtualStickControlModeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enables virtual stick control mode. By enabling virtual stick control mode, the aircraft can be controlled
+using <a href="#//api/name/sendVirtualStickFlightControlData:withCompletion:">sendVirtualStickFlightControlData:withCompletion:</a> method.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)enableVirtualStickControlModeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getGoHomeAltitudeWithCompletion:" title="getGoHomeAltitudeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getGoHomeAltitudeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the minimum altitude the aircraft must be at before going home.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getGoHomeAltitudeWithCompletion:(void ( ^ ) ( float altitude , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getGoHomeBatteryThresholdWithCompletion:" title="getGoHomeBatteryThresholdWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getGoHomeBatteryThresholdWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets go home battery percentage threshold. The value of the percent parameter will
+be in the range [25, 50].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getGoHomeBatteryThresholdWithCompletion:(void ( ^ ) ( uint8_t percent , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getHomeLocationWithCompletion:" title="getHomeLocationWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getHomeLocationWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the home point of the aircraft.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getHomeLocationWithCompletion:(void ( ^ ) ( CLLocationCoordinate2D homePoint , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getLandImmediatelyBatteryThresholdWithCompletion:" title="getLandImmediatelyBatteryThresholdWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">getLandImmediatelyBatteryThresholdWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the land immediately battery percentage threshold. The value of the percent parameter will
+be in the range [10, 25].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getLandImmediatelyBatteryThresholdWithCompletion:(void ( ^ ) ( uint8_t percent , NSError *_Nullable error ))<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/goHomeWithCompletion:" title="goHomeWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">goHomeWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The aircraft will start to go home.  This method is considered complete once the aircraft has landed at
+its home position.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)goHomeWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isOnboardSDKDeviceAvailable" title="isOnboardSDKDeviceAvailable"></a>
+	<h3 class="subsubtitle method-title">isOnboardSDKDeviceAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if the onboard SDK device is available</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isOnboardSDKDeviceAvailable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isVirtualStickControlModeAvailable" title="isVirtualStickControlModeAvailable"></a>
+	<h3 class="subsubtitle method-title">isVirtualStickControlModeAvailable</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Responds whether the virtual stick control interface can be used. If there is a mission running in mission manager, then this property will be NO.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isVirtualStickControlModeAvailable</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/lockCourseUsingCurrentDirectionWithCompletion:" title="lockCourseUsingCurrentDirectionWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">lockCourseUsingCurrentDirectionWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Locks the current heading of the aircraft as the Couse Lock. Used when Flight Orientation Mode is DJIFlightOrientationModeCourseLock.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)lockCourseUsingCurrentDirectionWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendDataToOnboardSDKDevice:withCompletion:" title="sendDataToOnboardSDKDevice:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">sendDataToOnboardSDKDevice:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If there is a device connected to the aircraft using the Onboard SDK, then this method will send data to that device. The size of the data cannot be greater than 100 bytes, and will be sent in 40 byte increments every 14ms. This method is only supported on products that support the Onboard SDK (Matrice 100).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendDataToOnboardSDKDevice:(NSData *)<em>data</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>data to be sent to external device.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sendVirtualStickFlightControlData:withCompletion:" title="sendVirtualStickFlightControlData:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">sendVirtualStickFlightControlData:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sends flight control data using virtual stick commands. The property &lsquo;isVirtualStickControlModeAvailable&rsquo; needs to be YES to use Virtual Stick Control.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)sendVirtualStickFlightControlData:(DJIVirtualStickFlightControlData)<em>controlData</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>controlData</em></dt>
+			<dd><p>Flight control data</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFlightOrientationMode:withCompletion:" title="setFlightOrientationMode:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setFlightOrientationMode:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the aircraft flight orientation relative to Aircraft Heading, Course Lock or Home Lock. Additional information describing flight orientation is in the getting started guide.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setFlightOrientationMode:(DJIFlightOrientationMode)<em>type</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGoHomeAltitude:withCompletion:" title="setGoHomeAltitude:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setGoHomeAltitude:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the minimum altitude relative to where the aircraft took off that the aircraft must be at before going
+home. This can be useful when the user foresees obstacles in the aircraft’s way. If the aircraft’s current
+altitude is higher than the minimum go home altitude, it will go home at its current altitude.
+The valid range for the altitude is from 20m to 500m.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGoHomeAltitude:(float)<em>altitude</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>altitude</em></dt>
+			<dd><p>Aircraft’s minimum go home altitude.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setGoHomeBatteryThreshold:withCompletion:" title="setGoHomeBatteryThreshold:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setGoHomeBatteryThreshold:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets go home battery percentage threshold. The percentage must be in the range [25, 50].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setGoHomeBatteryThreshold:(uint8_t)<em>percent</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>percent</em></dt>
+			<dd><p>Low bettery warning percentage.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHomeLocation:withCompletion:" title="setHomeLocation:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setHomeLocation:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the home location of the aircraft. The home location is used as the
+location the aircraft goes to when commanded by goHomeWithCompletion, when the
+signal to the aircraft is lost or when the battery is below the lowBatteryWarning
+threashold. The user should be careful where they set a new home point location as in
+some scenarios the product will not be in control of the user when going to this location.
+A home location is valid if it is within 30m of initial take-off location, current aircraft&rsquo;s location or
+current remote controller&rsquo;s location as shown by RC GPS.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHomeLocation:(CLLocationCoordinate2D)<em>homePoint</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>homeLocation</em></dt>
+			<dd><p>Home location latitude and longitude in degrees.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHomeLocationUsingAircraftCurrentLocationWithCompletion:" title="setHomeLocationUsingAircraftCurrentLocationWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">setHomeLocationUsingAircraftCurrentLocationWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the home location of the aircraft with the current location of the aircraft.
+See <a href="#//api/name/setHomeLocation:withCompletion:">setHomeLocation:withCompletion:</a> for details on when the home point is used</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setHomeLocationUsingAircraftCurrentLocationWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setLandImmediatelyBatteryThreshold:withCompletion:" title="setLandImmediatelyBatteryThreshold:withCompletion:"></a>
+	<h3 class="subsubtitle method-title">setLandImmediatelyBatteryThreshold:withCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the land immediately battery percentage threshold. The percentage must be in the
+range [10, 25].</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setLandImmediatelyBatteryThreshold:(uint8_t)<em>percent</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>percent</em></dt>
+			<dd><p>Serious low bettery warning percentage.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>Completion block</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/takeoffWithCompletion:" title="takeoffWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">takeoffWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts aircraft takeoff. Takeoff is considered complete when the aircraft is hovering 1.2 meters (4 feet)
+above the ground. Completion block is called when aircraft crosses 0.5 meters (1.6 feet).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)takeoffWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/turnOffMotorsWithCompletion:" title="turnOffMotorsWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">turnOffMotorsWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns off the aircraft&rsquo;s motors. The method can only be called when the aircraft is on the ground.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)turnOffMotorsWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/turnOnMotorsWithCompletion:" title="turnOnMotorsWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">turnOnMotorsWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Turns on the aircraft&rsquo;s motors.
+This method is not supported by the current firmware version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)turnOnMotorsWithCompletion:(DJICompletionBlock)<em>completion</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIFlightController.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

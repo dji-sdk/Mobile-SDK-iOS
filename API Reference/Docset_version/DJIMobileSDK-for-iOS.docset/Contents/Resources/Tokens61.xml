@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJIFollowMeMission.html">
+	<File path="Categories/NSError+DJISDK.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJIFollowMeMission</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSError(DJISDK)</TokenIdentifier>
+			<Abstract type="html">NSError&apos;s DJISDK category. It contains methods to create custom NSErrors.</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
             
 			
 			<NodeRef refid="61"/>
@@ -13,167 +13,113 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/setUserCoordinate:</TokenIdentifier>
-			<Abstract type="html">User&apos;s initial coordinate.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKErrorForCode:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D userCoordinate</Declaration>
-			
-			
-			<Anchor>//api/name/userCoordinate</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/userCoordinate</TokenIdentifier>
-			<Abstract type="html">User&apos;s initial coordinate.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D userCoordinate</Declaration>
-			
-			
-			<Anchor>//api/name/userCoordinate</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJIFollowMeMission/userCoordinate</TokenIdentifier>
-			<Abstract type="html">User&apos;s initial coordinate.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D userCoordinate</Declaration>
-			
-			
-			<Anchor>//api/name/userCoordinate</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/setHeadingMode:</TokenIdentifier>
-			<Abstract type="html">The aircraft&apos;s heading mode during the mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIFollowMeHeadingMode headingMode</Declaration>
-			
-			
-			<Anchor>//api/name/headingMode</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/headingMode</TokenIdentifier>
-			<Abstract type="html">The aircraft&apos;s heading mode during the mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIFollowMeHeadingMode headingMode</Declaration>
-			
-			
-			<Anchor>//api/name/headingMode</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJIFollowMeMission/headingMode</TokenIdentifier>
-			<Abstract type="html">The aircraft&apos;s heading mode during the mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIFollowMeHeadingMode headingMode</Declaration>
-			
-			
-			<Anchor>//api/name/headingMode</Anchor>
-            <NodeRef refid="61"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/startMissionWithResult:</TokenIdentifier>
-			<Abstract type="html">Starts the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
-			
-			<Declaration>- (void)startMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>+ (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKError</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startMissionWithResult:</Anchor>
+			<Anchor>//api/name/DJISDKErrorForCode:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/pauseMissionWithResult:</TokenIdentifier>
-			<Abstract type="html">Pauses the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKCameraErrorForCode:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKCameraError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
 			
-			<Declaration>- (void)pauseMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>+ (_Nullable instancetype)DJISDKCameraErrorForCode:(NSInteger)errorCode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKCameraError</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/pauseMissionWithResult:</Anchor>
+			<Anchor>//api/name/DJISDKCameraErrorForCode:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/resumeMissionWithResult:</TokenIdentifier>
-			<Abstract type="html">Resumes the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKFlightControllerErrorForCode:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKFlightControllerError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
 			
-			<Declaration>- (void)resumeMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>+ (_Nullable instancetype)DJISDKFlightControllerErrorForCode:(NSInteger)errorCode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKFlightControllerError</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/resumeMissionWithResult:</Anchor>
+			<Anchor>//api/name/DJISDKFlightControllerErrorForCode:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/stopMissionWithResult:</TokenIdentifier>
-			<Abstract type="html">Stops the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKMissionErrorForCode:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKMissionError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
 			
-			<Declaration>- (void)stopMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>+ (_Nullable instancetype)DJISDKMissionErrorForCode:(NSInteger)errorCode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result.</Abstract>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKMissionError</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/stopMissionWithResult:</Anchor>
+			<Anchor>//api/name/DJISDKMissionErrorForCode:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJIFollowMeMission/updateUserCoordinate:withResult:</TokenIdentifier>
-			<Abstract type="html">Updates the user&apos;s coordinates the aircraft will follow. Once the follow me mission is initialized,
-this method will be used to dictate where the aircraft will move to next.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKRegistrationErrorForCode:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKRegistrationError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
 			
-			<Declaration>- (void)updateUserCoordinate:(CLLocationCoordinate2D)coordinate withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>+ (_Nullable instancetype)DJISDKRegistrationErrorForCode:(DJISDKRegistrationError)errorCode</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>coordinate</Name>
-					<Abstract type="html">User coordinate the aricraft will follow.</Abstract>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKRegistrationError</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/DJISDKRegistrationErrorForCode:</Anchor>
+            <NodeRef refid="61"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NSError/DJISDKErrorForCode:domain:desc:</TokenIdentifier>
+			<Abstract type="html">Get DJISDKError</Abstract>
+			<DeclaredIn>NSError+DJISDK.h</DeclaredIn>
+			
+			<Declaration>+ (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode domain:(NSString *_Nonnull)errorDomain desc:(const NSString *_Nonnull)desc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>errorCode</Name>
+					<Abstract type="html">errorCode for DJISDKError</Abstract>
 				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>errorDomain</Name>
+					<Abstract type="html">domain for DJISDKError</Abstract>
+				</Parameter><Parameter>
+					<Name>desc</Name>
+					<Abstract type="html">desc for DJISDKError</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/updateUserCoordinate:withResult:</Anchor>
+			<Anchor>//api/name/DJISDKErrorForCode:domain:desc:</Anchor>
             <NodeRef refid="61"/>
 		</Token>
 		
-        
         
 	</File>
 </Tokens>

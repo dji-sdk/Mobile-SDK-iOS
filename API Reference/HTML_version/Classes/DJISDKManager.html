@@ -1,0 +1,908 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>DJISDKManager Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.2 (build 963)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
+				<a id="developerHome" href="../index.html">DJI</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">DJISDKManager Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/closeConnectionWhenEnterBackground:">&nbsp;&nbsp;&nbsp;&nbsp;+ closeConnectionWhenEnterBackground:</option>
+	
+	<option value="//api/name/enableRemoteLoggingWithDeviceID:logServerURLString:">&nbsp;&nbsp;&nbsp;&nbsp;+ enableRemoteLoggingWithDeviceID:logServerURLString:</option>
+	
+	<option value="//api/name/enterDebugModeWithDebugId:">&nbsp;&nbsp;&nbsp;&nbsp;+ enterDebugModeWithDebugId:</option>
+	
+	<option value="//api/name/getSDKVersion">&nbsp;&nbsp;&nbsp;&nbsp;+ getSDKVersion</option>
+	
+	<option value="//api/name/product">&nbsp;&nbsp;&nbsp;&nbsp;+ product</option>
+	
+	<option value="//api/name/registerApp:withDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ registerApp:withDelegate:</option>
+	
+	<option value="//api/name/setCompletionBlockQueue:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCompletionBlockQueue:</option>
+	
+	<option value="//api/name/setDebugServerDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ setDebugServerDelegate:</option>
+	
+	<option value="//api/name/startConnectionToProduct">&nbsp;&nbsp;&nbsp;&nbsp;+ startConnectionToProduct</option>
+	
+	<option value="//api/name/startSDKDebugServerWithCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;+ startSDKDebugServerWithCompletion:</option>
+	
+	<option value="//api/name/stopConnectionToProduct">&nbsp;&nbsp;&nbsp;&nbsp;+ stopConnectionToProduct</option>
+	
+	<option value="//api/name/stopSDKDebugServer">&nbsp;&nbsp;&nbsp;&nbsp;+ stopSDKDebugServer</option>
+	
+	
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_DebugServer Methods">DebugServer Methods</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/closeConnectionWhenEnterBackground:">closeConnectionWhenEnterBackground:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enableRemoteLoggingWithDeviceID:logServerURLString:">enableRemoteLoggingWithDeviceID:logServerURLString:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enterDebugModeWithDebugId:">enterDebugModeWithDebugId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSDKVersion">getSDKVersion</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/product">product</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerApp:withDelegate:">registerApp:withDelegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCompletionBlockQueue:">setCompletionBlockQueue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDebugServerDelegate:">setDebugServerDelegate:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startConnectionToProduct">startConnectionToProduct</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startSDKDebugServerWithCompletion:">startSDKDebugServerWithCompletion:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopConnectionToProduct">stopConnectionToProduct</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stopSDKDebugServer">stopSDKDebugServer</a></span></li>
+	
+</ul></li>
+
+
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="DJISDKManager Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">DJISDKManager Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">DJISDKManager.h</td>
+</tr>
+						</tbody></table></div>
+					
+                    
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class contains methods to register the app, start or stop connection with the <a href="#//api/name/product">product</a>, and use the DJI Bridge app and Remote Logger tools, etc. After the registration, user can access the connected <a href="#//api/name/product">product</a> through DJISDKManager. Then user can start to control the components of the <a href="#//api/name/product">product</a>.</p>
+
+<p>This class provides methods for you to start and stop SDK debug server. You can use them with DJI Bridge App for remote debugging.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/product">+&nbsp;product</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/registerApp:withDelegate:">+&nbsp;registerApp:withDelegate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCompletionBlockQueue:">+&nbsp;setCompletionBlockQueue:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startConnectionToProduct">+&nbsp;startConnectionToProduct</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopConnectionToProduct">+&nbsp;stopConnectionToProduct</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/closeConnectionWhenEnterBackground:">+&nbsp;closeConnectionWhenEnterBackground:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getSDKVersion">+&nbsp;getSDKVersion</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enterDebugModeWithDebugId:">+&nbsp;enterDebugModeWithDebugId:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enableRemoteLoggingWithDeviceID:logServerURLString:">+&nbsp;enableRemoteLoggingWithDeviceID:logServerURLString:</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="DebugServer Methods" name="task_DebugServer Methods"></a>
+						<h3 class="subsubtitle task-title">DebugServer Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/startSDKDebugServerWithCompletion:">+&nbsp;startSDKDebugServerWithCompletion:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDebugServerDelegate:">+&nbsp;setDebugServerDelegate:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stopSDKDebugServer">+&nbsp;stopSDKDebugServer</a></code>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/closeConnectionWhenEnterBackground:" title="closeConnectionWhenEnterBackground:"></a>
+	<h3 class="subsubtitle method-title">closeConnectionWhenEnterBackground:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set SDK to close the connection automatically when app enters the background and resume connection automatically when the app enters the foreground. Default is YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)closeConnectionWhenEnterBackground:(BOOL)<em>isClose</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>isClose</em></dt>
+			<dd><p>Close connection or not when app enter background.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enableRemoteLoggingWithDeviceID:logServerURLString:" title="enableRemoteLoggingWithDeviceID:logServerURLString:"></a>
+	<h3 class="subsubtitle method-title">enableRemoteLoggingWithDeviceID:logServerURLString:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enter enable remote logging with log server URL.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)enableRemoteLoggingWithDeviceID:(NSString *_Nullable)<em>deviceID</em> logServerURLString:(NSString *)<em>url</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>deviceID</em></dt>
+			<dd><p>Optional device id to uniquely identify logs from an installation.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>URL of the remote log server</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/enterDebugModeWithDebugId:" title="enterDebugModeWithDebugId:"></a>
+	<h3 class="subsubtitle method-title">enterDebugModeWithDebugId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Enter debug mode with debug id.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)enterDebugModeWithDebugId:(NSString *)<em>debugId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>debugId</em></dt>
+			<dd><p>Debug id from the DJI Bridge App</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getSDKVersion" title="getSDKVersion"></a>
+	<h3 class="subsubtitle method-title">getSDKVersion</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Gets the DJI Mobile SDK Version</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)getSDKVersion</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>SDK version as a string.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/product" title="product"></a>
+	<h3 class="subsubtitle method-title">product</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Product connected to the mobile device. The product is accessible only after successful registration of the app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (__kindof DJIBaseProduct *_Nullable)product</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>available <a href="../Classes/DJIBaseProduct.html">DJIBaseProduct</a> object. nil if no product is available.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/registerApp:withDelegate:" title="registerApp:withDelegate:"></a>
+	<h3 class="subsubtitle method-title">registerApp:withDelegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The first time the app is initialized after installation, the app connects to a DJI Server through the internet to verify the Application Key. Subsequent app starts will use locally cached verification information to register the app.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)registerApp:(NSString *)<em>appKey</em> withDelegate:(id&lt;DJISDKManagerDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>appKey</em></dt>
+			<dd><p>Application key that was provided by DJI after the application was registered.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>Registration result callback delegate</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCompletionBlockQueue:" title="setCompletionBlockQueue:"></a>
+	<h3 class="subsubtitle method-title">setCompletionBlockQueue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Queue in which completion blocks are called. If left unset, completion blocks are called in main queue.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setCompletionBlockQueue:(dispatch_queue_t)<em>completionBlockQueue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completionBlockQueue</em></dt>
+			<dd><p>dispatch queue.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDebugServerDelegate:" title="setDebugServerDelegate:"></a>
+	<h3 class="subsubtitle method-title">setDebugServerDelegate:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Register the delegate object to get the connection status of the debug server with the Remote controller and the debug client.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setDebugServerDelegate:(id&lt;DJISDKDebugServerDelegate&gt;)<em>delegate</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startConnectionToProduct" title="startConnectionToProduct"></a>
+	<h3 class="subsubtitle method-title">startConnectionToProduct</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start a connection to the DJI <a href="#//api/name/product">product</a>. This method should be called after successful registration of the app. <code>sdkManagerProductDidChangeFrom:to:</code> delegate method will be called if the connection succeeded.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (BOOL)startConnectionToProduct</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if the connection is started successfully.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/startSDKDebugServerWithCompletion:" title="startSDKDebugServerWithCompletion:"></a>
+	<h3 class="subsubtitle method-title">startSDKDebugServerWithCompletion:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Start debug sever.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)startSDKDebugServerWithCompletion:(void ( ^ ) ( NSString *ipaddress ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>block returns the IP address of the sever.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopConnectionToProduct" title="stopConnectionToProduct"></a>
+	<h3 class="subsubtitle method-title">stopConnectionToProduct</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Disconnect the existing connection to the DJI <a href="#//api/name/product">product</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)stopConnectionToProduct</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stopSDKDebugServer" title="stopSDKDebugServer"></a>
+	<h3 class="subsubtitle method-title">stopSDKDebugServer</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Stop the debug server and release the service objects used by the server.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)stopSDKDebugServer</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJISDKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+                    
+                    
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

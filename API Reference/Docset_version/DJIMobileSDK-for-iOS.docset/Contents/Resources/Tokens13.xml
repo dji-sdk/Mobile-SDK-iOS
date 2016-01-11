@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIFollowMeMissionStatus.html">
+	<File path="Classes/DJICameraSDCardState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIFollowMeMissionStatus</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJICameraSDCardState</TokenIdentifier>
+			<Abstract type="html">This class provides the SD card&apos;s general information and current status.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
             
 			
 			<NodeRef refid="13"/>
@@ -13,123 +13,446 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/setExecState:</TokenIdentifier>
-			<Abstract type="html">Returns the current execute state of the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setHasError:</TokenIdentifier>
+			<Abstract type="html">YES if there is an SD card error.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIFollowMeMissionExecuteState execState</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
 			
 			
-			<Anchor>//api/name/execState</Anchor>
+			<Anchor>//api/name/hasError</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/execState</TokenIdentifier>
-			<Abstract type="html">Returns the current execute state of the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/hasError</TokenIdentifier>
+			<Abstract type="html">YES if there is an SD card error.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIFollowMeMissionExecuteState execState</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
 			
 			
-			<Anchor>//api/name/execState</Anchor>
+			<Anchor>//api/name/hasError</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIFollowMeMissionStatus/execState</TokenIdentifier>
-			<Abstract type="html">Returns the current execute state of the follow me mission.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/hasError</TokenIdentifier>
+			<Abstract type="html">YES if there is an SD card error.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIFollowMeMissionExecuteState execState</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
 			
 			
-			<Anchor>//api/name/execState</Anchor>
+			<Anchor>//api/name/hasError</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/setDistance:</TokenIdentifier>
-			<Abstract type="html">Returns the horizontal distance in meters between the aircraft and the coordinate the
-aircraft needs to follow.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsReadOnly:</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is read only.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float distance</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/isReadOnly</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/distance</TokenIdentifier>
-			<Abstract type="html">Returns the horizontal distance in meters between the aircraft and the coordinate the
-aircraft needs to follow.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isReadOnly</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is read only.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float distance</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/isReadOnly</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIFollowMeMissionStatus/distance</TokenIdentifier>
-			<Abstract type="html">Returns the horizontal distance in meters between the aircraft and the coordinate the
-aircraft needs to follow.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isReadOnly</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is read only.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) float distance</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReadOnly</Declaration>
 			
 			
-			<Anchor>//api/name/distance</Anchor>
+			<Anchor>//api/name/isReadOnly</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/setError:</TokenIdentifier>
-			<Abstract type="html">Returns the error that occured in executing the follow me mission, if interruped
-unexpectedly. This will show the user why the follow me mission stopped unexpectedly.
-If error.errorCode returns ERR_Succeeded, then there was no error.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsInvalidFormat:</TokenIdentifier>
+			<Abstract type="html">YES if SD card filesystem format is invalid.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIError *error</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isInvalidFormat</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
+			<Anchor>//api/name/isInvalidFormat</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIFollowMeMissionStatus/error</TokenIdentifier>
-			<Abstract type="html">Returns the error that occured in executing the follow me mission, if interruped
-unexpectedly. This will show the user why the follow me mission stopped unexpectedly.
-If error.errorCode returns ERR_Succeeded, then there was no error.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isInvalidFormat</TokenIdentifier>
+			<Abstract type="html">YES if SD card filesystem format is invalid.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIError *error</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isInvalidFormat</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
+			<Anchor>//api/name/isInvalidFormat</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIFollowMeMissionStatus/error</TokenIdentifier>
-			<Abstract type="html">Returns the error that occured in executing the follow me mission, if interruped
-unexpectedly. This will show the user why the follow me mission stopped unexpectedly.
-If error.errorCode returns ERR_Succeeded, then there was no error.</Abstract>
-			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isInvalidFormat</TokenIdentifier>
+			<Abstract type="html">YES if SD card filesystem format is invalid.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIError *error</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isInvalidFormat</Declaration>
 			
 			
-			<Anchor>//api/name/error</Anchor>
+			<Anchor>//api/name/isInvalidFormat</Anchor>
             <NodeRef refid="13"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsFormatted:</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatted.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatted</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isFormatted</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatted.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatted</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isFormatted</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatted.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatted</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsFormatting:</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatting.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatting</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatting</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isFormatting</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatting.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatting</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatting</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isFormatting</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is formatting.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFormatting</Declaration>
+			
+			
+			<Anchor>//api/name/isFormatting</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsFull:</TokenIdentifier>
+			<Abstract type="html">YES if the SD card cannot save any more media.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			
+			
+			<Anchor>//api/name/isFull</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isFull</TokenIdentifier>
+			<Abstract type="html">YES if the SD card cannot save any more media.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			
+			
+			<Anchor>//api/name/isFull</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isFull</TokenIdentifier>
+			<Abstract type="html">YES if the SD card cannot save any more media.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isFull</Declaration>
+			
+			
+			<Anchor>//api/name/isFull</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsVerified:</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is verified genuine. The SD card will not be valid if it is fake,
+which can be a problem if the SD card was purchased by a non-reputable retailer.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isVerified</Declaration>
+			
+			
+			<Anchor>//api/name/isVerified</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isVerified</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is verified genuine. The SD card will not be valid if it is fake,
+which can be a problem if the SD card was purchased by a non-reputable retailer.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isVerified</Declaration>
+			
+			
+			<Anchor>//api/name/isVerified</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isVerified</TokenIdentifier>
+			<Abstract type="html">YES if the SD card is verified genuine. The SD card will not be valid if it is fake,
+which can be a problem if the SD card was purchased by a non-reputable retailer.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isVerified</Declaration>
+			
+			
+			<Anchor>//api/name/isVerified</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setIsInserted:</TokenIdentifier>
+			<Abstract type="html">YES if SD card is inserted in camera.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			
+			
+			<Anchor>//api/name/isInserted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/isInserted</TokenIdentifier>
+			<Abstract type="html">YES if SD card is inserted in camera.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			
+			
+			<Anchor>//api/name/isInserted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/isInserted</TokenIdentifier>
+			<Abstract type="html">YES if SD card is inserted in camera.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isInserted</Declaration>
+			
+			
+			<Anchor>//api/name/isInserted</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setTotalSpaceInMegaBytes:</TokenIdentifier>
+			<Abstract type="html">Total space in Megabytes (MB) available on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int totalSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/totalSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/totalSpaceInMegaBytes</TokenIdentifier>
+			<Abstract type="html">Total space in Megabytes (MB) available on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int totalSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/totalSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/totalSpaceInMegaBytes</TokenIdentifier>
+			<Abstract type="html">Total space in Megabytes (MB) available on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int totalSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/totalSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setRemainingSpaceInMegaBytes:</TokenIdentifier>
+			<Abstract type="html">Remaining space in Megabytes (MB) on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int remainingSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/remainingSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/remainingSpaceInMegaBytes</TokenIdentifier>
+			<Abstract type="html">Remaining space in Megabytes (MB) on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int remainingSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/remainingSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/remainingSpaceInMegaBytes</TokenIdentifier>
+			<Abstract type="html">Remaining space in Megabytes (MB) on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int remainingSpaceInMegaBytes</Declaration>
+			
+			
+			<Anchor>//api/name/remainingSpaceInMegaBytes</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setAvailableCaptureCount:</TokenIdentifier>
+			<Abstract type="html">Returns the number of pictures that can be taken with the remaining space available
+on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
+			
+			
+			<Anchor>//api/name/availableCaptureCount</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/availableCaptureCount</TokenIdentifier>
+			<Abstract type="html">Returns the number of pictures that can be taken with the remaining space available
+on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
+			
+			
+			<Anchor>//api/name/availableCaptureCount</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/availableCaptureCount</TokenIdentifier>
+			<Abstract type="html">Returns the number of pictures that can be taken with the remaining space available
+on the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableCaptureCount</Declaration>
+			
+			
+			<Anchor>//api/name/availableCaptureCount</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/setAvailableRecordingTimeInSeconds:</TokenIdentifier>
+			<Abstract type="html">Returns the number of seconds available for recording with the remaining space available
+in the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableRecordingTimeInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/availableRecordingTimeInSeconds</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJICameraSDCardState/availableRecordingTimeInSeconds</TokenIdentifier>
+			<Abstract type="html">Returns the number of seconds available for recording with the remaining space available
+in the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableRecordingTimeInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/availableRecordingTimeInSeconds</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJICameraSDCardState/availableRecordingTimeInSeconds</TokenIdentifier>
+			<Abstract type="html">Returns the number of seconds available for recording with the remaining space available
+in the SD card.</Abstract>
+			<DeclaredIn>DJICamera.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int availableRecordingTimeInSeconds</Declaration>
+			
+			
+			<Anchor>//api/name/availableRecordingTimeInSeconds</Anchor>
+            <NodeRef refid="13"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

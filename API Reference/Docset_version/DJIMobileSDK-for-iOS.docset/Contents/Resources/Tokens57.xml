@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJICompass.html">
+	<File path="Classes/DJIWaypointMission.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJICompass</TokenIdentifier>
-			<Abstract type="html">Compass of the aricraft.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIWaypointMission</TokenIdentifier>
+			<Abstract type="html">In the waypoint mission, the aircraft will travel between waypoints, execute actions at
+waypoints, and adjust heading and altitude between waypoints.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="57"/>
@@ -13,184 +14,544 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/setHeading:</TokenIdentifier>
-			<Abstract type="html">Represents the direction in degrees, where 0 degrees is true North. [-180, 180] degrees. This value is equals to the &apos;DJIMCSystemState.attitude.yaw&apos;</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setWaypointCount:</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double heading</Declaration>
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
 			
 			
-			<Anchor>//api/name/heading</Anchor>
+			<Anchor>//api/name/waypointCount</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/heading</TokenIdentifier>
-			<Abstract type="html">Represents the direction in degrees, where 0 degrees is true North. [-180, 180] degrees. This value is equals to the &apos;DJIMCSystemState.attitude.yaw&apos;</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/waypointCount</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double heading</Declaration>
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
 			
 			
-			<Anchor>//api/name/heading</Anchor>
+			<Anchor>//api/name/waypointCount</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJICompass/heading</TokenIdentifier>
-			<Abstract type="html">Represents the direction in degrees, where 0 degrees is true North. [-180, 180] degrees. This value is equals to the &apos;DJIMCSystemState.attitude.yaw&apos;</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/waypointCount</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) double heading</Declaration>
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
 			
 			
-			<Anchor>//api/name/heading</Anchor>
+			<Anchor>//api/name/waypointCount</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/setHasError:</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass has error. if YES, the compass need to calibration.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setMaxFlightSpeed:</TokenIdentifier>
+			<Abstract type="html">While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
+remote controller. maxFlightSpeed is this offset when the joystick is pushed to maximum deflection. For example,
+If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed,
+while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
+deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
+If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
+waypoint, it will then hover in place until a positive speed is applied.
+maxFlightSpeed has a range of [2,15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/hasError</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass has error. if YES, the compass need to calibration.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/maxFlightSpeed</TokenIdentifier>
+			<Abstract type="html">While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
+remote controller. maxFlightSpeed is this offset when the joystick is pushed to maximum deflection. For example,
+If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed,
+while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
+deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
+If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
+waypoint, it will then hover in place until a positive speed is applied.
+maxFlightSpeed has a range of [2,15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJICompass/hasError</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass has error. if YES, the compass need to calibration.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/maxFlightSpeed</TokenIdentifier>
+			<Abstract type="html">While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
+remote controller. maxFlightSpeed is this offset when the joystick is pushed to maximum deflection. For example,
+If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed,
+while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
+deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
+If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
+waypoint, it will then hover in place until a positive speed is applied.
+maxFlightSpeed has a range of [2,15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL hasError</Declaration>
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/hasError</Anchor>
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/setIsCalibrating:</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass is in calibrating.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setAutoFlightSpeed:</TokenIdentifier>
+			<Abstract type="html">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/isCalibrating</Anchor>
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/isCalibrating</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass is in calibrating.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/autoFlightSpeed</TokenIdentifier>
+			<Abstract type="html">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/isCalibrating</Anchor>
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJICompass/isCalibrating</TokenIdentifier>
-			<Abstract type="html">Whether or not the compass is in calibrating.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/autoFlightSpeed</TokenIdentifier>
+			<Abstract type="html">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isCalibrating</Declaration>
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
 			
 			
-			<Anchor>//api/name/isCalibrating</Anchor>
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/setCalibrationStatus:</TokenIdentifier>
-			<Abstract type="html">Show the calibration status.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setFinishedAction:</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJICompassCalibrationStatus calibrationStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
 			
 			
-			<Anchor>//api/name/calibrationStatus</Anchor>
+			<Anchor>//api/name/finishedAction</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/calibrationStatus</TokenIdentifier>
-			<Abstract type="html">Show the calibration status.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/finishedAction</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJICompassCalibrationStatus calibrationStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
 			
 			
-			<Anchor>//api/name/calibrationStatus</Anchor>
+			<Anchor>//api/name/finishedAction</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJICompass/calibrationStatus</TokenIdentifier>
-			<Abstract type="html">Show the calibration status.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/finishedAction</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJICompassCalibrationStatus calibrationStatus</Declaration>
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
 			
 			
-			<Anchor>//api/name/calibrationStatus</Anchor>
+			<Anchor>//api/name/finishedAction</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/startCalibrationWithResult:</TokenIdentifier>
-			<Abstract type="html">Start compass calibration. Make sure there are no magnets or metal objects near the compass.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setHeadingMode:</TokenIdentifier>
+			<Abstract type="html">Heading of the aircraft as it moves between waypoints. Default is DJIWaypointMissionHeadingAuto.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>- (void)startCalibrationWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/headingMode</TokenIdentifier>
+			<Abstract type="html">Heading of the aircraft as it moves between waypoints. Default is DJIWaypointMissionHeadingAuto.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/headingMode</TokenIdentifier>
+			<Abstract type="html">Heading of the aircraft as it moves between waypoints. Default is DJIWaypointMissionHeadingAuto.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setFlightPathMode:</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/flightPathMode</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/flightPathMode</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setGotoFirstWaypointMode:</TokenIdentifier>
+			<Abstract type="html">Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode</Declaration>
+			
+			
+			<Anchor>//api/name/gotoFirstWaypointMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/gotoFirstWaypointMode</TokenIdentifier>
+			<Abstract type="html">Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode</Declaration>
+			
+			
+			<Anchor>//api/name/gotoFirstWaypointMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/gotoFirstWaypointMode</TokenIdentifier>
+			<Abstract type="html">Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode</Declaration>
+			
+			
+			<Anchor>//api/name/gotoFirstWaypointMode</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setExitMissionOnRCSignalLost:</TokenIdentifier>
+			<Abstract type="html">Determines whether exit mission when RC signal lost. Default is NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL exitMissionOnRCSignalLost</Declaration>
+			
+			
+			<Anchor>//api/name/exitMissionOnRCSignalLost</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/exitMissionOnRCSignalLost</TokenIdentifier>
+			<Abstract type="html">Determines whether exit mission when RC signal lost. Default is NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL exitMissionOnRCSignalLost</Declaration>
+			
+			
+			<Anchor>//api/name/exitMissionOnRCSignalLost</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/exitMissionOnRCSignalLost</TokenIdentifier>
+			<Abstract type="html">Determines whether exit mission when RC signal lost. Default is NO.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL exitMissionOnRCSignalLost</Declaration>
+			
+			
+			<Anchor>//api/name/exitMissionOnRCSignalLost</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setPointOfInterest:</TokenIdentifier>
+			<Abstract type="html">Property is used when &apos;headingMode&apos; is &apos;DJIWaypointMissionHeadingTowardPointOfInterest&apos;. Aircraft will always heading to
+point while executing mission. Default is kCLLocationCoordinate2DInvalid.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D pointOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterest</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/pointOfInterest</TokenIdentifier>
+			<Abstract type="html">Property is used when &apos;headingMode&apos; is &apos;DJIWaypointMissionHeadingTowardPointOfInterest&apos;. Aircraft will always heading to
+point while executing mission. Default is kCLLocationCoordinate2DInvalid.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D pointOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterest</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/pointOfInterest</TokenIdentifier>
+			<Abstract type="html">Property is used when &apos;headingMode&apos; is &apos;DJIWaypointMissionHeadingTowardPointOfInterest&apos;. Aircraft will always heading to
+point while executing mission. Default is kCLLocationCoordinate2DInvalid.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D pointOfInterest</Declaration>
+			
+			
+			<Anchor>//api/name/pointOfInterest</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setRotateGimbalPitch:</TokenIdentifier>
+			<Abstract type="html">Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If &apos;YES&apos; then aircraft will control gimal pitch rotation between waypoints using &apos;gimbalPitch&apos; of DJIWaypoint.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL rotateGimbalPitch</Declaration>
+			
+			
+			<Anchor>//api/name/rotateGimbalPitch</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/rotateGimbalPitch</TokenIdentifier>
+			<Abstract type="html">Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If &apos;YES&apos; then aircraft will control gimal pitch rotation between waypoints using &apos;gimbalPitch&apos; of DJIWaypoint.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL rotateGimbalPitch</Declaration>
+			
+			
+			<Anchor>//api/name/rotateGimbalPitch</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/rotateGimbalPitch</TokenIdentifier>
+			<Abstract type="html">Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If &apos;YES&apos; then aircraft will control gimal pitch rotation between waypoints using &apos;gimbalPitch&apos; of DJIWaypoint.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) BOOL rotateGimbalPitch</Declaration>
+			
+			
+			<Anchor>//api/name/rotateGimbalPitch</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/setRepeatTimes:</TokenIdentifier>
+			<Abstract type="html">Repeat times for mission execution. Default is 1.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int repeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/repeatTimes</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/repeatTimes</TokenIdentifier>
+			<Abstract type="html">Repeat times for mission execution. Default is 1.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int repeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/repeatTimes</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypointMission/repeatTimes</TokenIdentifier>
+			<Abstract type="html">Repeat times for mission execution. Default is 1.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) int repeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/repeatTimes</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/addWaypoint:</TokenIdentifier>
+			<Abstract type="html">Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)addWaypoint:(DJIWaypoint *_Nonnull)waypoint</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>Waypoint</Name>
+					<Abstract type="html">to be added to the waypoint mission.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/startCalibrationWithResult:</Anchor>
+			<Anchor>//api/name/addWaypoint:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJICompass/stopCalibrationWithResult:</TokenIdentifier>
-			<Abstract type="html">Stop compass calibration.</Abstract>
-			<DeclaredIn>DJICompass.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/addWaypoints:</TokenIdentifier>
+			<Abstract type="html">Adds an array of waypoints to the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>- (void)stopCalibrationWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Declaration>- (void)addWaypoints:(NSArray *_Nonnull)waypoints</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result callback.</Abstract>
+					<Name>Array</Name>
+					<Abstract type="html">of waypoints to be added to the waypoint mission.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/stopCalibrationWithResult:</Anchor>
+			<Anchor>//api/name/addWaypoints:</Anchor>
             <NodeRef refid="57"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/removeWaypoint:</TokenIdentifier>
+			<Abstract type="html">Removes a specific waypoint previously added.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeWaypoint:(DJIWaypoint *_Nonnull)waypoint</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>waypoint</Name>
+					<Abstract type="html">Waypoint object to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWaypoint:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/removeWaypointAtIndex:</TokenIdentifier>
+			<Abstract type="html">Removes the waypoint at an index.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeWaypointAtIndex:(int)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">Index of waypoint to be removed from the waypoint mission from
+the array of all waypoints.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWaypointAtIndex:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/removeAllWaypoints</TokenIdentifier>
+			<Abstract type="html">Removes all waypoints from the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllWaypoints</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllWaypoints</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypointMission/getWaypointAtIndex:</TokenIdentifier>
+			<Abstract type="html">Gets a waypoint at an index in the mission waypoint array.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (DJIWaypoint *_Nullable)getWaypointAtIndex:(int)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">Index of the waypoint wanting to be retrieved from the array of waypoints in the
+waypoint mission.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Waypoint of type DJIWaypoint if the index exists.</Abstract></ReturnValue>
+			<Anchor>//api/name/getWaypointAtIndex:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIWaypointMission/setAutoFlightSpeed:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>+ (void)setAutoFlightSpeed:(float)speed withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to the maxFlightSpeed. It&apos;s range is then [-maxFlightSpeed, maxFlightSpeed] m/s.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAutoFlightSpeed:withCompletion:</Anchor>
+            <NodeRef refid="57"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

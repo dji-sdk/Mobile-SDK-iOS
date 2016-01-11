@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJINavigationMission.html">
+	<File path="Protocols/DJILBAirLinkDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJINavigationMission</TokenIdentifier>
-			<Abstract type="html">Navigation mission base protocol.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJILBAirLinkDelegate</TokenIdentifier>
+			<Abstract type="html">This protocol provides delegate methods to recevie updated signal information for channels and updated video data from Lightbridge 2.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
             
 			
 			<NodeRef refid="70"/>
@@ -13,189 +13,105 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/setIsSupported:</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is supported for the connected aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJILBAirLinkDelegate/lbAirLink:didUpdateRemoteControllerSignalInformation:</TokenIdentifier>
+			<Abstract type="html">Signal quality and strength information for current downlink channel on each Remote Controller antenna.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isSupported</Declaration>
+			<Declaration>- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateRemoteControllerSignalInformation:(NSArray *_Nonnull)antennas</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lbAirLink</Name>
+					<Abstract type="html">LBAirLink Instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>antennas</Name>
+					<Abstract type="html">DJISignalInformation object.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/isSupported</Anchor>
+			<Anchor>//api/name/lbAirLink:didUpdateRemoteControllerSignalInformation:</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/isSupported</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is supported for the connected aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJILBAirLinkDelegate/lbAirLink:didUpdateLBAirLinkModuleSignalInformation:</TokenIdentifier>
+			<Abstract type="html">Signal quality and strength information for current uplink channel on each air link module antenna.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isSupported</Declaration>
+			<Declaration>- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateLBAirLinkModuleSignalInformation:(NSArray *_Nonnull)antennas</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lbAirLink</Name>
+					<Abstract type="html">lbAirLink Instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>antennas</Name>
+					<Abstract type="html">DJISignalInformation object.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/isSupported</Anchor>
+			<Anchor>//api/name/lbAirLink:didUpdateLBAirLinkModuleSignalInformation:</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJINavigationMission/isSupported</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is supported for the connected aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJILBAirLinkDelegate/lbAirLink:didUpdateAllChannelSignalStrengths:</TokenIdentifier>
+			<Abstract type="html">Signal strength for all available downlink channels.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isSupported</Declaration>
+			<Declaration>- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateAllChannelSignalStrengths:(DJILBAirLinkAllChannelSignalStrengths)signalStrength</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lbAirLink</Name>
+					<Abstract type="html">LBAirLink Instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>freqPower</Name>
+					<Abstract type="html">Frequency power.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/isSupported</Anchor>
+			<Anchor>//api/name/lbAirLink:didUpdateAllChannelSignalStrengths:</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/setIsRunning:</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is already running in the aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJILBAirLinkDelegate/lbAirLink:didFPVBandwidthPercentChanged:</TokenIdentifier>
+			<Abstract type="html">Callback for when the FPV video bandwidth percentage has changed. Each Remote Controller can create a secondary video from the FPV and HD Gimbal video downlink information. For the slave Remote Controllers it&apos;s important to know if the percentage bandwidth has changed so the right PIP display mode (DJIPIPDisplayMode) can be selected. For example, if the FPV video bandwidth goes to 100%, then DJIALPIPModeLB should be used.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
+			<Declaration>- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didFPVBandwidthPercentChanged:(float)bandwidthPercent</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lbAirLink</Name>
+					<Abstract type="html">LBAirLink instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>bandwidthPercent</Name>
+					<Abstract type="html">Output bandwidth percentage.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/isRunning</Anchor>
+			<Anchor>//api/name/lbAirLink:didFPVBandwidthPercentChanged:</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/isRunning</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is already running in the aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJILBAirLinkDelegate/lbAirLink:didReceiveVideoData:</TokenIdentifier>
+			<Abstract type="html">Tells the delegate that a updated Video data is received.</Abstract>
+			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
+			<Declaration>- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>lbAirLink</Name>
+					<Abstract type="html">LBAirLink Instance.</Abstract>
+				</Parameter><Parameter>
+					<Name>data</Name>
+					<Abstract type="html">The received video data.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/isRunning</Anchor>
+			<Anchor>//api/name/lbAirLink:didReceiveVideoData:</Anchor>
             <NodeRef refid="70"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJINavigationMission/isRunning</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission is already running in the aircraft.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isRunning</Declaration>
-			
-			
-			<Anchor>//api/name/isRunning</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/setIsValid:</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission&apos;s parameters is valid for execution. If this property
-returns NO, then the attempt to startMission will have failed.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
-			
-			
-			<Anchor>//api/name/isValid</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/isValid</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission&apos;s parameters is valid for execution. If this property
-returns NO, then the attempt to startMission will have failed.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
-			
-			
-			<Anchor>//api/name/isValid</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJINavigationMission/isValid</TokenIdentifier>
-			<Abstract type="html">Whether or not the mission&apos;s parameters is valid for execution. If this property
-returns NO, then the attempt to startMission will have failed.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
-			
-			
-			<Anchor>//api/name/isValid</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/setFailureReason:</TokenIdentifier>
-			<Abstract type="html">Show failure reason for checking parameters of mission. Value will be set after calling &apos;isValid&apos;.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *failureReason</Declaration>
-			
-			
-			<Anchor>//api/name/failureReason</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/failureReason</TokenIdentifier>
-			<Abstract type="html">Show failure reason for checking parameters of mission. Value will be set after calling &apos;isValid&apos;.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *failureReason</Declaration>
-			
-			
-			<Anchor>//api/name/failureReason</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJINavigationMission/failureReason</TokenIdentifier>
-			<Abstract type="html">Show failure reason for checking parameters of mission. Value will be set after calling &apos;isValid&apos;.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) NSString *failureReason</Declaration>
-			
-			
-			<Anchor>//api/name/failureReason</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/setMissionType:</TokenIdentifier>
-			<Abstract type="html">Returns the navigation mission type.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
-			
-			
-			<Anchor>//api/name/missionType</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJINavigationMission/missionType</TokenIdentifier>
-			<Abstract type="html">Returns the navigation mission type.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
-			
-			
-			<Anchor>//api/name/missionType</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/DJINavigationMission/missionType</TokenIdentifier>
-			<Abstract type="html">Returns the navigation mission type.</Abstract>
-			<DeclaredIn>DJINavigation.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
-			
-			
-			<Anchor>//api/name/missionType</Anchor>
-            <NodeRef refid="70"/>
-		</Token>
-		
-        
         
 	</File>
 </Tokens>

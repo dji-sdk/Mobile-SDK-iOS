@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIGroundStationTask.html">
+	<File path="Classes/DJIFlightController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIGroundStationTask</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIFlightController</TokenIdentifier>
+			<Abstract type="html">This class contains components of the flight controller. Also, it provides methods to send different commands to the flight controller.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
             
 			
 			<NodeRef refid="18"/>
@@ -13,196 +13,670 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/setWaypointCount:</TokenIdentifier>
-			<Abstract type="html">Waypoints count in the task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Flight controller&apos;s delegate.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIFlightControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/waypointCount</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/waypointCount</TokenIdentifier>
-			<Abstract type="html">Waypoints count in the task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/delegate</TokenIdentifier>
+			<Abstract type="html">Flight controller&apos;s delegate.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIFlightControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/waypointCount</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationTask/waypointCount</TokenIdentifier>
-			<Abstract type="html">Waypoints count in the task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/delegate</TokenIdentifier>
+			<Abstract type="html">Flight controller&apos;s delegate.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIFlightControllerDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/waypointCount</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/setStartWaypointIndex:</TokenIdentifier>
-			<Abstract type="html">The first waypoint index of task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setFlightLimitation:</TokenIdentifier>
+			<Abstract type="html">Flight limitation object. This object sets, gets and tracks state of the maximum flight height
+and radius allowed.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) int startWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIFlightLimitation *flightLimitation</Declaration>
 			
 			
-			<Anchor>//api/name/startWaypointIndex</Anchor>
+			<Anchor>//api/name/flightLimitation</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/startWaypointIndex</TokenIdentifier>
-			<Abstract type="html">The first waypoint index of task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/flightLimitation</TokenIdentifier>
+			<Abstract type="html">Flight limitation object. This object sets, gets and tracks state of the maximum flight height
+and radius allowed.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) int startWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIFlightLimitation *flightLimitation</Declaration>
 			
 			
-			<Anchor>//api/name/startWaypointIndex</Anchor>
+			<Anchor>//api/name/flightLimitation</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationTask/startWaypointIndex</TokenIdentifier>
-			<Abstract type="html">The first waypoint index of task.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/flightLimitation</TokenIdentifier>
+			<Abstract type="html">Flight limitation object. This object sets, gets and tracks state of the maximum flight height
+and radius allowed.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) int startWaypointIndex</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIFlightLimitation *flightLimitation</Declaration>
 			
 			
-			<Anchor>//api/name/startWaypointIndex</Anchor>
+			<Anchor>//api/name/flightLimitation</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/setIsLoop:</TokenIdentifier>
-			<Abstract type="html">Whether execute task looply. Default is NO</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setLandingGear:</TokenIdentifier>
+			<Abstract type="html">Landing Gear object. For products with moveable landing gear only.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL isLoop</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILandingGear *landingGear</Declaration>
 			
 			
-			<Anchor>//api/name/isLoop</Anchor>
+			<Anchor>//api/name/landingGear</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/isLoop</TokenIdentifier>
-			<Abstract type="html">Whether execute task looply. Default is NO</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/landingGear</TokenIdentifier>
+			<Abstract type="html">Landing Gear object. For products with moveable landing gear only.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL isLoop</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILandingGear *landingGear</Declaration>
 			
 			
-			<Anchor>//api/name/isLoop</Anchor>
+			<Anchor>//api/name/landingGear</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIGroundStationTask/isLoop</TokenIdentifier>
-			<Abstract type="html">Whether execute task looply. Default is NO</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/landingGear</TokenIdentifier>
+			<Abstract type="html">Landing Gear object. For products with moveable landing gear only.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) BOOL isLoop</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJILandingGear *landingGear</Declaration>
 			
 			
-			<Anchor>//api/name/isLoop</Anchor>
+			<Anchor>//api/name/landingGear</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIGroundStationTask/newTask</TokenIdentifier>
-			<Abstract type="html">Create new task</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setCompass:</TokenIdentifier>
+			<Abstract type="html">Compass object.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>+ (id)newTask</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJICompass *compass</Declaration>
 			
 			
-			<Anchor>//api/name/newTask</Anchor>
+			<Anchor>//api/name/compass</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/addWaypoint:</TokenIdentifier>
-			<Abstract type="html">Add waypoint, The maximum waypoint count is 16.</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/compass</TokenIdentifier>
+			<Abstract type="html">Compass object.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>- (void)addWaypoint:(DJIGroundStationWaypoint *)waypoint</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJICompass *compass</Declaration>
 			
 			
-			<Anchor>//api/name/addWaypoint:</Anchor>
+			<Anchor>//api/name/compass</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/removeWaypoint:</TokenIdentifier>
-			<Abstract type="html">Remove one waypoint</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/compass</TokenIdentifier>
+			<Abstract type="html">Compass object.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>- (void)removeWaypoint:(DJIGroundStationWaypoint *)waypoint</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJICompass *compass</Declaration>
+			
+			
+			<Anchor>//api/name/compass</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setVerticalControlMode:</TokenIdentifier>
+			<Abstract type="html">Vertical control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickVerticalControlMode verticalControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/verticalControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/verticalControlMode</TokenIdentifier>
+			<Abstract type="html">Vertical control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickVerticalControlMode verticalControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/verticalControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/verticalControlMode</TokenIdentifier>
+			<Abstract type="html">Vertical control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickVerticalControlMode verticalControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/verticalControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setRollPitchControlMode:</TokenIdentifier>
+			<Abstract type="html">RollPitch control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickRollPitchControlMode rollPitchControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/rollPitchControlMode</TokenIdentifier>
+			<Abstract type="html">RollPitch control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickRollPitchControlMode rollPitchControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/rollPitchControlMode</TokenIdentifier>
+			<Abstract type="html">RollPitch control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickRollPitchControlMode rollPitchControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setYawControlMode:</TokenIdentifier>
+			<Abstract type="html">Yaw control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickYawControlMode yawControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/yawControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/yawControlMode</TokenIdentifier>
+			<Abstract type="html">Yaw control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickYawControlMode yawControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/yawControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/yawControlMode</TokenIdentifier>
+			<Abstract type="html">Yaw control mode</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickYawControlMode yawControlMode</Declaration>
+			
+			
+			<Anchor>//api/name/yawControlMode</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setRollPitchCoordinateSystem:</TokenIdentifier>
+			<Abstract type="html">RollPitch control coordinate system</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickFlightCoordinateSystem rollPitchCoordinateSystem</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchCoordinateSystem</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/rollPitchCoordinateSystem</TokenIdentifier>
+			<Abstract type="html">RollPitch control coordinate system</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickFlightCoordinateSystem rollPitchCoordinateSystem</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchCoordinateSystem</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIFlightController/rollPitchCoordinateSystem</TokenIdentifier>
+			<Abstract type="html">RollPitch control coordinate system</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIVirtualStickFlightCoordinateSystem rollPitchCoordinateSystem</Declaration>
+			
+			
+			<Anchor>//api/name/rollPitchCoordinateSystem</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/takeoffWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Starts aircraft takeoff. Takeoff is considered complete when the aircraft is hovering 1.2 meters (4 feet)
+above the ground. Completion block is called when aircraft crosses 0.5 meters (1.6 feet).</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)takeoffWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/takeoffWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/cancelTakeoffWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Stops aircraft takeoff. If called before takeoffWithCompletion is complete, the aircraft will cancel
+takeoff (takeoffWithCompletion completion block will return an error) and hover at the current height.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelTakeoffWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/cancelTakeoffWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/autoLandingWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Starts auto-landing of the aircraft. Landing is considered complete once the aircraft lands on the ground,
+and powers down propellors to medium throttle.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)autoLandingWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/autoLandingWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/cancelAutoLandingWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Stops auto-landing the aircraft. If called before startAutoLandingWithCompletion is complete, then the auto
+landing will be cancelled (startAutoLandingWithCompletion completeion block will return an error) and the
+aircraft will hover at its current location.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelAutoLandingWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/cancelAutoLandingWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/turnOnMotorsWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Turns on the aircraft&apos;s motors.
+This method is not supported by the current firmware version.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)turnOnMotorsWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/turnOnMotorsWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/turnOffMotorsWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Turns off the aircraft&apos;s motors. The method can only be called when the aircraft is on the ground.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)turnOffMotorsWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/turnOffMotorsWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/goHomeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">The aircraft will start to go home.  This method is considered complete once the aircraft has landed at
+its home position.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)goHomeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/goHomeWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/cancelGoHomeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">The aircraft will stop going home and will hover in place. goHomeWithCompletion completion block will immediately return an error.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)cancelGoHomeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/cancelGoHomeWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setHomeLocation:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the home location of the aircraft. The home location is used as the
+location the aircraft goes to when commanded by goHomeWithCompletion, when the
+signal to the aircraft is lost or when the battery is below the lowBatteryWarning
+threashold. The user should be careful where they set a new home point location as in
+some scenarios the product will not be in control of the user when going to this location.
+A home location is valid if it is within 30m of initial take-off location, current aircraft&apos;s location or
+current remote controller&apos;s location as shown by RC GPS.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)setHomeLocation:(CLLocationCoordinate2D)homePoint withCompletion:(DJICompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>waypoint</Name>
-					<Abstract type="html">Waypoint will be removed</Abstract>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter><Parameter>
+					<Name>homeLocation</Name>
+					<Abstract type="html">Home location latitude and longitude in degrees.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/removeWaypoint:</Anchor>
+			<Anchor>//api/name/setHomeLocation:withCompletion:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/removeAllWaypoint</TokenIdentifier>
-			<Abstract type="html">Remove all waypoints</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setHomeLocationUsingAircraftCurrentLocationWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the home location of the aircraft with the current location of the aircraft.
+See setHomeLocation:withCompletion: for details on when the home point is used</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>- (void)removeAllWaypoint</Declaration>
+			<Declaration>- (void)setHomeLocationUsingAircraftCurrentLocationWithCompletion:(DJICompletionBlock)completion</Declaration>
 			
 			
-			<Anchor>//api/name/removeAllWaypoint</Anchor>
+			<Anchor>//api/name/setHomeLocationUsingAircraftCurrentLocationWithCompletion:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/waypointAtIndex:</TokenIdentifier>
-			<Abstract type="html">Get waypoint at index</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/getHomeLocationWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the home point of the aircraft.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>- (DJIGroundStationWaypoint *)waypointAtIndex:(int)index</Declaration>
+			<Declaration>- (void)getHomeLocationWithCompletion:(void ( ^ ) ( CLLocationCoordinate2D homePoint , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getHomeLocationWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setGoHomeAltitude:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the minimum altitude relative to where the aircraft took off that the aircraft must be at before going
+home. This can be useful when the user foresees obstacles in the aircraft’s way. If the aircraft’s current
+altitude is higher than the minimum go home altitude, it will go home at its current altitude.
+The valid range for the altitude is from 20m to 500m.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)setGoHomeAltitude:(float)altitude withCompletion:(DJICompletionBlock)completion</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>index</Name>
-					<Abstract type="html">Index of array</Abstract>
+					<Name>altitude</Name>
+					<Abstract type="html">Aircraft’s minimum go home altitude.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">Waypoint object</Abstract></ReturnValue>
-			<Anchor>//api/name/waypointAtIndex:</Anchor>
+			
+			<Anchor>//api/name/setGoHomeAltitude:withCompletion:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIGroundStationTask/allWaypoints</TokenIdentifier>
-			<Abstract type="html">Get all waypoints</Abstract>
-			<DeclaredIn>DJIGroundStationTask.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/getGoHomeAltitudeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the minimum altitude the aircraft must be at before going home.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
 			
-			<Declaration>- (NSArray *)allWaypoints</Declaration>
+			<Declaration>- (void)getGoHomeAltitudeWithCompletion:(void ( ^ ) ( float altitude , NSError *_Nullable error ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			<ReturnValue><Abstract type="html">Waypoint array</Abstract></ReturnValue>
-			<Anchor>//api/name/allWaypoints</Anchor>
+			<Anchor>//api/name/getGoHomeAltitudeWithCompletion:</Anchor>
             <NodeRef refid="18"/>
 		</Token>
 		
-        
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/isOnboardSDKDeviceAvailable</TokenIdentifier>
+			<Abstract type="html">Check if the onboard SDK device is available</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isOnboardSDKDeviceAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/isOnboardSDKDeviceAvailable</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/sendDataToOnboardSDKDevice:withCompletion:</TokenIdentifier>
+			<Abstract type="html">If there is a device connected to the aircraft using the Onboard SDK, then this method will send data to that device. The size of the data cannot be greater than 100 bytes, and will be sent in 40 byte increments every 14ms. This method is only supported on products that support the Onboard SDK (Matrice 100).</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)sendDataToOnboardSDKDevice:(NSData *)data withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract type="html">data to be sent to external device.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendDataToOnboardSDKDevice:withCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setGoHomeBatteryThreshold:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets go home battery percentage threshold. The percentage must be in the range [25, 50].</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)setGoHomeBatteryThreshold:(uint8_t)percent withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Low bettery warning percentage.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setGoHomeBatteryThreshold:withCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/getGoHomeBatteryThresholdWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets go home battery percentage threshold. The value of the percent parameter will
+be in the range [25, 50].</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)getGoHomeBatteryThresholdWithCompletion:(void ( ^ ) ( uint8_t percent , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getGoHomeBatteryThresholdWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setLandImmediatelyBatteryThreshold:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the land immediately battery percentage threshold. The percentage must be in the
+range [10, 25].</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)setLandImmediatelyBatteryThreshold:(uint8_t)percent withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Serious low bettery warning percentage.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setLandImmediatelyBatteryThreshold:withCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/getLandImmediatelyBatteryThresholdWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Gets the land immediately battery percentage threshold. The value of the percent parameter will
+be in the range [10, 25].</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)getLandImmediatelyBatteryThresholdWithCompletion:(void ( ^ ) ( uint8_t percent , NSError *_Nullable error ))completion</Declaration>
+			
+			
+			<Anchor>//api/name/getLandImmediatelyBatteryThresholdWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/isVirtualStickControlModeAvailable</TokenIdentifier>
+			<Abstract type="html">Responds whether the virtual stick control interface can be used. If there is a mission running in mission manager, then this property will be NO.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)isVirtualStickControlModeAvailable</Declaration>
+			
+			
+			<Anchor>//api/name/isVirtualStickControlModeAvailable</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/enableVirtualStickControlModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Enables virtual stick control mode. By enabling virtual stick control mode, the aircraft can be controlled
+using sendVirtualStickFlightControlData:withCompletion: method.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)enableVirtualStickControlModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/enableVirtualStickControlModeWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/disableVirtualStickControlModeWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Disables virtual stick control mode.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)disableVirtualStickControlModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/disableVirtualStickControlModeWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/sendVirtualStickFlightControlData:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sends flight control data using virtual stick commands. The property &apos;isVirtualStickControlModeAvailable&apos; needs to be YES to use Virtual Stick Control.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)sendVirtualStickFlightControlData:(DJIVirtualStickFlightControlData)controlData withCompletion:(DJICompletionBlock)completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>controlData</Name>
+					<Abstract type="html">Flight control data</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">Completion block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/sendVirtualStickFlightControlData:withCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/setFlightOrientationMode:withCompletion:</TokenIdentifier>
+			<Abstract type="html">Sets the aircraft flight orientation relative to Aircraft Heading, Course Lock or Home Lock. Additional information describing flight orientation is in the getting started guide.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)setFlightOrientationMode:(DJIFlightOrientationMode)type withCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/setFlightOrientationMode:withCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFlightController/lockCourseUsingCurrentDirectionWithCompletion:</TokenIdentifier>
+			<Abstract type="html">Locks the current heading of the aircraft as the Couse Lock. Used when Flight Orientation Mode is DJIFlightOrientationModeCourseLock.</Abstract>
+			<DeclaredIn>DJIFlightController.h</DeclaredIn>
+			
+			<Declaration>- (void)lockCourseUsingCurrentDirectionWithCompletion:(DJICompletionBlock)completion</Declaration>
+			
+			
+			<Anchor>//api/name/lockCourseUsingCurrentDirectionWithCompletion:</Anchor>
+            <NodeRef refid="18"/>
+		</Token>
+		
         
 	</File>
 </Tokens>

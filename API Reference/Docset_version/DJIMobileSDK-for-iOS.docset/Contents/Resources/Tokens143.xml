@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIWaypointTurnMode.html">
+	<File path="Constants/DJIRCHardwareFlightModeSwitchState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointTurnMode</TokenIdentifier>
-			<Abstract type="html">Aircraft heading turn modes,</Abstract>
-			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCHardwareFlightModeSwitchState</TokenIdentifier>
+			<Abstract type="html">Current transformation switch state.
+     </Abstract>
+			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
 			
 			<NodeRef refid="143"/>
@@ -14,27 +15,37 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointTurnClockwise</TokenIdentifier>
-            <Abstract type="html">Changes the heading of the aircraft by rotating the aircraft clockwise.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCHardwareFlightModeSwitchStateF</TokenIdentifier>
+            <Abstract type="html">The Remote Controller&apos;s flight mode switch is set to the F (Function) mode on the left. Remote Controller must be in Function mode to enable Mission Manager functions from the Mobile Device.
      </Abstract>
-            <Declaration>DJIWaypointTurnClockwise</Declaration>
+            <Declaration>DJIRCHardwareFlightModeSwitchStateF</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="143"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointTurnCounterClockwise</TokenIdentifier>
-            <Abstract type="html">Changes the heading of the aircraft by rotating the aircraft anti-clockwise.
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCHardwareFlightModeSwitchStateA</TokenIdentifier>
+            <Abstract type="html">The Remote Controller&apos;s flight mode switch is set to the A (Attitude) mode in the middle. Attitude mode does not use GPS and the vision system for hovering or flying, but uses the barometer to maintain alititude. If the GPS signal is strong enough, the aircraft can still return to home in this mode.
      </Abstract>
-            <Declaration>DJIWaypointTurnCounterClockwise</Declaration>
+            <Declaration>DJIRCHardwareFlightModeSwitchStateA</Declaration>
             
-            <DeclaredIn>DJIWaypoint.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
             
             <NodeRef refid="143"/>
         </Token>
         
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DJIRCHardwareFlightModeSwitchStateP</TokenIdentifier>
+            <Abstract type="html">The Remote Controller&apos;s flight mode switch is set to the P (Positioning) mode on the right. Positioning mode can use both GPS and the vision system (when available) to fly and hover.
+     </Abstract>
+            <Declaration>DJIRCHardwareFlightModeSwitchStateP</Declaration>
+            
+            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            
+            <NodeRef refid="143"/>
+        </Token>
         
 	</File>
 </Tokens>
