@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DJIStepsCollectionView">
+            <connections>
+                <outlet property="collectionView" destination="bBK-Fd-xX1" id="3Si-XO-LbL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="266"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="bBK-Fd-xX1">
+                    <rect key="frame" x="0.0" y="0.0" width="337" height="224"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="224" id="ddS-gw-uDE"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wd4-7U-Irb">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nSW-NJ-nw7"/>
+                        <outlet property="delegate" destination="-1" id="b3h-fs-2On"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIn-37-pT7">
+                    <rect key="frame" x="168.5" y="224" width="168.5" height="42"/>
+                    <color key="backgroundColor" red="0.1058823529" green="0.1450980392" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="VYW-Cv-tal"/>
+                    </constraints>
+                    <state key="normal" title="OK"/>
+                    <connections>
+                        <action selector="onOKButtonClicked:" destination="-1" eventType="touchUpInside" id="aDI-R3-xfZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeJ-Sz-g9d">
+                    <rect key="frame" x="0.0" y="224" width="168" height="42"/>
+                    <color key="backgroundColor" red="0.1058823529" green="0.1450980392" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="AVP-NB-5QL"/>
+                    </constraints>
+                    <state key="normal" title="DEL"/>
+                    <connections>
+                        <action selector="onDELButtonClicked:" destination="-1" eventType="touchUpInside" id="nc1-fF-dsx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bBK-Fd-xX1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3Jl-g9-t43"/>
+                <constraint firstAttribute="trailing" secondItem="fIn-37-pT7" secondAttribute="trailing" id="EeB-4U-kuG"/>
+                <constraint firstAttribute="bottom" secondItem="fIn-37-pT7" secondAttribute="bottom" id="Ges-1l-FL5"/>
+                <constraint firstItem="fIn-37-pT7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gms-Xp-p1D"/>
+                <constraint firstItem="TeJ-Sz-g9d" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OMC-gl-L3U"/>
+                <constraint firstItem="fIn-37-pT7" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="Oxk-fw-De5"/>
+                <constraint firstItem="bBK-Fd-xX1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VaN-oN-kLp"/>
+                <constraint firstAttribute="bottom" secondItem="TeJ-Sz-g9d" secondAttribute="bottom" id="c8K-oW-Nxr"/>
+                <constraint firstAttribute="bottom" secondItem="fIn-37-pT7" secondAttribute="bottom" id="cBb-gx-11K"/>
+                <constraint firstAttribute="trailing" secondItem="fIn-37-pT7" secondAttribute="trailing" id="dKX-gQ-05f"/>
+                <constraint firstItem="TeJ-Sz-g9d" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="l0W-fT-Egi"/>
+                <constraint firstAttribute="trailing" secondItem="bBK-Fd-xX1" secondAttribute="trailing" id="rvh-pW-CId"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="EeB-4U-kuG"/>
+                    <exclude reference="Gms-Xp-p1D"/>
+                    <exclude reference="cBb-gx-11K"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="174.5" y="208"/>
+        </view>
+    </objects>
+</document>

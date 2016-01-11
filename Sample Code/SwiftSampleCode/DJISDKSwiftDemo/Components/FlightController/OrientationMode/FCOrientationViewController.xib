@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCOrientationViewController">
+            <connections>
+                <outlet property="orientationModeLabel" destination="JQZ-9X-C9X" id="pua-55-qKt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmr-O7-rAp">
+                    <rect key="frame" x="236" y="228" width="128" height="37"/>
+                    <state key="normal" title="Course Lock" backgroundImage="btn">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onCourseLockButtonClicked:" destination="-1" eventType="touchUpInside" id="m1u-xd-4PJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-1b-sxZ">
+                    <rect key="frame" x="236" y="281" width="128" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="18u-8E-Fna"/>
+                        <constraint firstAttribute="width" constant="128" id="zZU-vH-eAP"/>
+                    </constraints>
+                    <state key="normal" title="Home Lock" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onHomeLockButtonClicked:" destination="-1" eventType="touchUpInside" id="obA-GL-dIx"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Lock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQZ-9X-C9X">
+                    <rect key="frame" x="201" y="181" width="198" height="27"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="198" id="KJF-mi-z4X"/>
+                        <constraint firstAttribute="height" constant="27" id="ofs-D3-Nkw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Flight Orientation Mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPo-4q-qga">
+                    <rect key="frame" x="201" y="150" width="198" height="27"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qw-cf-fgc">
+                    <rect key="frame" x="236" y="335.5" width="128" height="37"/>
+                    <state key="normal" title="Default" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onDefaultButtonClicked:" destination="-1" eventType="touchUpInside" id="qhc-Dw-0Dr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2Qw-cf-fgc" firstAttribute="width" secondItem="Crf-1b-sxZ" secondAttribute="width" id="2mH-fo-P59"/>
+                <constraint firstItem="2Qw-cf-fgc" firstAttribute="height" secondItem="Crf-1b-sxZ" secondAttribute="height" id="51k-MQ-BLd"/>
+                <constraint firstItem="JQZ-9X-C9X" firstAttribute="top" secondItem="OPo-4q-qga" secondAttribute="bottom" constant="4" id="BJ4-7W-ihe"/>
+                <constraint firstItem="JQZ-9X-C9X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.65" id="C9G-Z3-Lhf"/>
+                <constraint firstItem="Zmr-O7-rAp" firstAttribute="height" secondItem="Crf-1b-sxZ" secondAttribute="height" id="IZ8-Pu-ETK"/>
+                <constraint firstItem="OPo-4q-qga" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MVs-dh-mgQ"/>
+                <constraint firstItem="Crf-1b-sxZ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="PyD-GV-1J0"/>
+                <constraint firstItem="Zmr-O7-rAp" firstAttribute="width" secondItem="Crf-1b-sxZ" secondAttribute="width" id="Qcc-tF-aVD"/>
+                <constraint firstItem="Zmr-O7-rAp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VyW-Wh-Sxp"/>
+                <constraint firstItem="2Qw-cf-fgc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WHr-U1-wuf"/>
+                <constraint firstItem="OPo-4q-qga" firstAttribute="width" secondItem="JQZ-9X-C9X" secondAttribute="width" id="Y6l-4N-3Mw"/>
+                <constraint firstItem="Crf-1b-sxZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g3q-fF-aDr"/>
+                <constraint firstItem="Zmr-O7-rAp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jfA-eX-ne9"/>
+                <constraint firstItem="JQZ-9X-C9X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kw8-HR-Yec"/>
+                <constraint firstItem="2Qw-cf-fgc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.18" id="ppJ-aW-60x"/>
+                <constraint firstItem="Zmr-O7-rAp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.82" id="yhS-Et-PGG"/>
+                <constraint firstItem="OPo-4q-qga" firstAttribute="height" secondItem="JQZ-9X-C9X" secondAttribute="height" id="zHw-Lt-1g7"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="jfA-eX-ne9"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn" width="17" height="34"/>
+    </resources>
+</document>

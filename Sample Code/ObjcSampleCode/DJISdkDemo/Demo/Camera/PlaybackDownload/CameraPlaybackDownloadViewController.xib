@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraPlaybackDownloadViewController">
+            <connections>
+                <outlet property="downloadButton" destination="jXz-RB-4xs" id="u5w-Dz-Q8w"/>
+                <outlet property="selectFirstButton" destination="jqN-jY-kQG" id="zmn-NO-SzH"/>
+                <outlet property="selectSecondButton" destination="xWz-X3-53v" id="x4H-iA-WLC"/>
+                <outlet property="statusLabel" destination="RbB-WR-oR7" id="qCE-S4-AOb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqN-jY-kQG">
+                    <rect key="frame" x="168" y="139" width="76" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="76" id="20S-t3-FWS"/>
+                        <constraint firstAttribute="height" constant="34" id="qtY-2z-DLC"/>
+                    </constraints>
+                    <state key="normal" title="Select 0" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onSelectFirstClicked:" destination="-1" eventType="touchUpInside" id="ubT-Xg-UkQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWz-X3-53v">
+                    <rect key="frame" x="262" y="139" width="76" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="ABs-4d-gL8"/>
+                        <constraint firstAttribute="width" constant="76" id="aVd-AD-2yy"/>
+                    </constraints>
+                    <state key="normal" title="Select 1" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onSelectSecondClicked:" destination="-1" eventType="touchUpInside" id="84r-X6-VQn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-RB-4xs">
+                    <rect key="frame" x="357" y="139" width="76" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="6Vl-Gm-sdK"/>
+                        <constraint firstAttribute="width" constant="76" id="LX0-qQ-TS0"/>
+                    </constraints>
+                    <state key="normal" title="Download" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onDownloadClicked:" destination="-1" eventType="touchUpInside" id="8j0-Bn-PSa"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbB-WR-oR7">
+                    <rect key="frame" x="115" y="443" width="370" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="370" id="I4W-NJ-2aV"/>
+                        <constraint firstAttribute="height" constant="21" id="p2a-fq-O49"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RbB-WR-oR7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="153.5" id="0kT-5C-1hN"/>
+                <constraint firstItem="RbB-WR-oR7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cz3-SY-K0R"/>
+                <constraint firstItem="jqN-jY-kQG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-94" id="MsA-5W-yWh"/>
+                <constraint firstItem="xWz-X3-53v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RWx-fa-hXQ"/>
+                <constraint firstItem="jXz-RB-4xs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="kfM-HT-ahO"/>
+                <constraint firstItem="jXz-RB-4xs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="95" id="mtS-Zi-FCJ"/>
+                <constraint firstItem="jqN-jY-kQG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="uVN-a9-xf6"/>
+                <constraint firstItem="xWz-X3-53v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="xeL-eY-YTN"/>
+            </constraints>
+            <point key="canvasLocation" x="362" y="509"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn" width="17" height="34"/>
+    </resources>
+</document>

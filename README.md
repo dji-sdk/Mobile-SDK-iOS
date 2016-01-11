@@ -17,7 +17,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Registering an App Key
 
-Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/mobile-sdk/), select the "Mobile SDK" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps), select the "Mobile SDK" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
 
 >Note: Please type in "com.dji.sdk" in the `Identification Code` field, because the default bundle identifier in the sample Xcode project is "com.dji.sdk".
 
@@ -63,7 +63,7 @@ Once you finish it, build and run the project and you can start to try different
 
 DJI Bridge App is a universal app supports both iPhone and iPad. You can use it to debug app for Phantom 3 Professional, Phantom 3 Advanced, Inspire 1, M100 and other products using USB/MFI connection between RC and your app.
 
-For more details, please check the [**DJI Bridge App Tutorial**](https://github.com/dji-dev/DJI-Mobile-SDK-Beta/tree/master/iOS/DJIBridgeAppDemo).
+For more details, please check the [**DJI Bridge App Tutorial**](./DJIBridgeAppDemo/README.md).
 
 You can download the DJI Bridge App source code from here: <https://github.com/dji-sdk/DJI-Bridge-App>.
 
@@ -71,7 +71,7 @@ You can download the DJI Bridge App source code from here: <https://github.com/d
 
 DJI Remote Logger is a tool to show the log messages in your source code on a webpage. It use Ruby log server to show log contents.
 
-For more details, please check the [**DJI Remote Logger Tutorial**](https://github.com/dji-dev/DJI-Mobile-SDK-Beta/tree/master/iOS/DJIRemoteLoggerDemo)
+For more details, please check the [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
 
 ## Concepts
 
@@ -115,7 +115,7 @@ You can get support from DJI with the following methods:
 
 ### 注册App Key
 
-首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/en/user/mobile-sdk/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“iOS”作为开发平台. 接着在弹出的对话框中输入信息.
+首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“iOS”作为开发平台. 接着在弹出的对话框中输入信息.
 
 >注意: 请在`标识码`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认bundle identifier就是 "com.dji.sdk".
 
@@ -161,7 +161,7 @@ You can get support from DJI with the following methods:
 
 DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可以使用它来为Phantom 3 Professional, Phantom 3 Advanced， Inspire 1, M100 和其它产品进行应用程序调试操作。它使用了USB 或者MFI，将遥控器和你的应用程序连接起来.
 
-想了解更多信息，请查看: [**DJI Bridge App 教程**](https://github.com/dji-dev/DJI-Mobile-SDK-Beta/tree/master/iOS/DJIBridgeAppDemo).
+想了解更多信息，请查看: [**DJI Bridge App 教程**](./DJIBridgeAppDemo/README.md).
 
 你可以从这里下载到 DJI Bridge App 的源代码: <https://github.com/dji-sdk/DJI-Bridge-App>.
 
@@ -169,7 +169,7 @@ DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可�
 
 DJI Remote Logger 是一个可以将源代码中的日志信息展示到网页上的工具。它使用了Ruby 服务器脚本进行日志展示。
 
-想了解更多信息，请查看: [**DJI Remote Logger Tutorial**](https://github.com/dji-dev/DJI-Mobile-SDK-Beta/tree/master/iOS/DJIRemoteLoggerDemo)
+想了解更多信息，请查看: [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
 
 ## 基本概念
 
