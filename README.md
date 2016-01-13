@@ -92,6 +92,10 @@ For an improved reading experience of DJI Mobile SDK Tutorials, please check our
 
 [**iOS SDK API Documentation**](http://developer.dji.com/mobile-sdk/documentation/)
 
+## MFi Application Process
+
+Please check this [**tutorial**](./MFi Application Process/README.md) for MFi Approval Process details.
+
 ## Support
 
 You can get support from DJI with the following methods:
@@ -192,6 +196,10 @@ DJI Remote Logger 是一个可以将源代码中的日志信息展示到网页�
 ## SDK API 文档
 
 [**iOS SDK API 文档**](http://developer.dji.com/mobile-sdk/documentation/)
+
+## MFi 认证申请流程
+
+请查看本 [**教程**](./MFi Application Process/README.md) 了解 MFi 认证申请流程细节.
 
 ## 技术支持
 
