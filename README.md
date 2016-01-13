@@ -57,7 +57,7 @@ Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **DJIRootViewContro
 > ![appTransportSecurity](./Images/appTransportSecurity.png)
 > 
 > - In order to prepare your app for App Store submission, create a new "Run Script Phase" in your app's target's "Build Phases" and paste the following snippet in the script text field(see below image): `bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/scrip-frameworks.sh"` This step is required to work around an App Store submission bug when archiving universal binaries.
-> ![runScript](./Images/runScript.png)
+> ![runScript](./Images/runShellScript.png)
 
 Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
 
@@ -157,7 +157,7 @@ You can get support from DJI with the following methods:
 > ![appTransportSecurity](./Images/appTransportSecurity.png)
 > 
 > - 准备提交app到App Store审核时, 请在你的app target的"Build Phases" 里面新建一个"Run Script Phase", 然后粘贴以下脚本内容: `bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/scrip-frameworks.sh"` 这一步是必须的，可以帮你解决在归档通用二进制文件时，提交App Store审核的bug.
-> ![runScript](./Images/runScript.png)
+> ![runScript](./Images/runShellScript.png)
 
 最后编译运行该工程，你就可以开始流畅地体验实例代码中的不同功能了。
 
