@@ -75,6 +75,10 @@ DJI Remote Logger is a tool to show the log messages in your source code on a we
 
 For more details, please check the [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
 
+## FFmpeg Customization
+
+We have forked the original FFmpeg and add customized features to provide more infos of video frame, including frame's width and height, frame rate number, etc. These features will help to implement video hardware decoding. For more details, please check the AVCodecParserContext struct of avcodec.h file from this [Github Page](https://github.com/dji-sdk/FFmpeg).
+
 ## Concepts
 
 - [**DJI Mobile SDK Framework Handbook**](https://github.com/dji-sdk/Mobile-SDK-Handbook): 
