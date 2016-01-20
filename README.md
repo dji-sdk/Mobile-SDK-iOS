@@ -19,7 +19,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps), select the "Mobile SDK" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
 
->Note: Please type in "com.dji.sdk" in the `Identification Code` field, because the default bundle identifier in the sample Xcode project is "com.dji.sdk".
+>Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the default bundle identifier in the sample Xcode project is "com.dji.sdkdemo".
 
 Once you complete it, you may see the following App Key status:
 
