@@ -13,7 +13,7 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 ### Prerequisites
 
 - Xcode 7.0+ or higher
-- Deployment target of 8.0 or higher
+- Deployment target of 8.1 or higher
 
 ### Registering an App Key
 
@@ -128,7 +128,7 @@ You can get support from DJI with the following methods:
 ### 开发工具版本要求
 
 - Xcode 7.0+ or higher
-- Deployment target of 8.0 or higher
+- Deployment target of 8.1 or higher
 
 ### 注册App Key
 
