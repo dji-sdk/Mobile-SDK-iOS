@@ -184,7 +184,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         super.viewWillAppear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
         }
         
         self.missionManager.delegate = self
@@ -196,7 +196,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.navigationController!.navigationBarHidden = false
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            if aircraft!.flightController!.delegate === self {
+            if aircraft!.flightController?.delegate === self {
                 aircraft!.flightController!.delegate = nil
             }
         }
@@ -304,6 +304,10 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.waypointMission.addWaypoint(wp2)
         self.waypointMission.addWaypoint(wp3)
         self.waypointMission.addWaypoint(wp4)
+        self.waypointMission.addWaypoint(wp1)
+        self.waypointMission.addWaypoint(wp2)
+        self.waypointMission.addWaypoint(wp3)
+        self.waypointMission.addWaypoint(wp4)
         if self.waypointMission.flightPathMode == DJIWaypointMissionFlightPathMode.Curved {
             self.calcCornerRadius()
         }
@@ -316,6 +320,11 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.waypointMission.headingMode = DJIWaypointMissionHeadingMode(rawValue: UInt(self.waypointMissionConfigView!.headingMode.selectedSegmentIndex))!
         self.waypointMission.flightPathMode = DJIWaypointMissionFlightPathMode(rawValue: UInt(self.waypointMissionConfigView!.airlineMode.selectedSegmentIndex))!
         self.waypointMission.removeAllWaypoints()
+        
+        let point = self.waypointList.first;
+        if (point != nil){
+            self.waypointList.append(point!)
+        }
         self.waypointMission.addWaypoints(self.waypointList)
         if self.waypointMission.flightPathMode == DJIWaypointMissionFlightPathMode.Curved {
             self.calcCornerRadius()

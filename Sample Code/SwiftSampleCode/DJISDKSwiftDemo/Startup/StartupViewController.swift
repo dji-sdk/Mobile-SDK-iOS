@@ -58,7 +58,7 @@ extension StartupViewController : DJISDKManagerDelegate
         logDebug("Registered!")
         #if arch(i386) || arch(x86_64)
             //Simulator
-            DJISDKManager.enterDebugModeWithDebugId("192.168.1.161")
+            DJISDKManager.enterDebugModeWithDebugId("192.168.1.102")
         #else
             //Device
             DJISDKManager.startConnectionToProduct()

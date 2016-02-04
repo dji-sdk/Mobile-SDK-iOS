@@ -21,7 +21,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
             // Do any additional setup after loading the view from its nib.
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
 
         }
         for var i = 100; i < 105; i++ {
@@ -50,7 +50,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         super.viewDidAppear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
         }
     }
 
@@ -58,7 +58,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         super.viewWillDisappear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            if aircraft!.flightController!.delegate === self {
+            if aircraft!.flightController?.delegate === self {
                 aircraft!.flightController!.delegate = nil
             }
         }
@@ -73,7 +73,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         if aircraft != nil {
             
         let type: DJIFlightOrientationMode = DJIFlightOrientationMode(rawValue: UInt8(self.iocTypeSegmentCtrl.selectedSegmentIndex))!
-        aircraft!.flightController!.setFlightOrientationMode(type, withCompletion: {[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.setFlightOrientationMode(type, withCompletion: {[weak self] (error: NSError?) -> Void in
             if (error != nil){
                 self?.showAlertResult("Start IOC: \(error!.description)")
             }
@@ -86,7 +86,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         if aircraft != nil {
         
         
-        aircraft!.flightController!.setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, withCompletion: {[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, withCompletion: {[weak self] (error: NSError?) -> Void in
             if (error != nil) {
                 self?.showAlertResult("Stop IOC: \(error!.description)")
             }
@@ -123,7 +123,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         if aircraft == nil {
             return
         }
-        aircraft!.flightController!.lockCourseUsingCurrentDirectionWithCompletion({[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.lockCourseUsingCurrentDirectionWithCompletion({[weak self] (error: NSError?) -> Void in
             
             if (error != nil ) {
                 self?.showAlertResult("Lock Course: \(error!.description)")

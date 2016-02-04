@@ -165,6 +165,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
             NSLog("\(product.model) connected. ")
             ConnectedProductManager.sharedInstance.connectedProduct = product
             ConnectedProductManager.sharedInstance.setDelegate(self)
+
         }
         else {
             NSLog("Product disconnected. ")
@@ -173,6 +174,34 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         }
     }
 
+    func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
+       //     (newComponent as? DJICamera)?.delegate = self
+        if ((newComponent is DJICamera) == true && (self is DJICameraDelegate) == true) {
+            (newComponent as! DJICamera).delegate = self as? DJICameraDelegate
+            
+        }
+        if ((newComponent is DJICamera) == true && (self is DJIPlaybackDelegate) == true) {
+            (newComponent as! DJICamera).playbackManager.delegate = self as? DJIPlaybackDelegate
+        }
+        
+        if ((newComponent is DJIFlightController) == true && (self is DJIFlightControllerDelegate) == true) {
+            (newComponent as! DJIFlightController).delegate = self as? DJIFlightControllerDelegate
+        }
+        
+        if ((newComponent is DJIBattery) == true && (self is DJIBatteryDelegate) == true) {
+            (newComponent as! DJIBattery).delegate = self as? DJIBatteryDelegate
+        }
+        
+        if ((newComponent is DJIGimbal) == true && (self is DJIGimbalDelegate) == true) {
+            (newComponent as! DJIGimbal).delegate = self as? DJIGimbalDelegate
+        }
+        
+        if ((newComponent is DJIRemoteController) == true && (self is DJIRemoteControllerDelegate) == true) {
+            (newComponent as! DJIRemoteController).delegate = self as? DJIRemoteControllerDelegate
+        }
+        
+    }
+    
     
     func showAlertResult(info:String) {
         // create the alert

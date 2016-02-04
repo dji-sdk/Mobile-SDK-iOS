@@ -109,7 +109,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         super.viewDidAppear(animated)
         // flight controller should be ready
         if (self.aircraft != nil) {
-            self.aircraft!.flightController!.delegate = self
+            self.aircraft!.flightController?.delegate = self
         }
         // set mission manager delegate
         self.missionManager = DJIMissionManager.sharedInstance()!
@@ -124,8 +124,8 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
      
         if (self.aircraft != nil){
-            if self.aircraft!.flightController!.delegate === self {
-                self.aircraft!.flightController!.delegate = nil
+            if self.aircraft!.flightController?.delegate === self {
+                self.aircraft!.flightController?.delegate = nil
             }
         }
     }

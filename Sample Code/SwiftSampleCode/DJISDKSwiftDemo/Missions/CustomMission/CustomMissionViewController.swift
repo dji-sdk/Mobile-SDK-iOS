@@ -76,7 +76,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
             aircraft!.delegate = self
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
         }
         
         self.waypointList = [AnyObject]()
@@ -90,7 +90,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         self.navigationController!.title = ""
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            if aircraft!.flightController!.delegate === self {
+            if aircraft!.flightController?.delegate === self {
                 aircraft!.flightController!.delegate = nil
             }
         }
@@ -262,9 +262,19 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         waypoint3.actionRepeatTimes = 1
         waypoint3.actionTimeoutInSeconds = 60
         waypoint3.turnMode = DJIWaypointTurnMode.Clockwise
+        
+        let waypoint4: DJIWaypoint = DJIWaypoint(coordinate: loc1)
+        waypoint4.altitude = 15
+        waypoint4.heading = 0
+        waypoint4.actionRepeatTimes = 1
+        waypoint4.actionTimeoutInSeconds = 60
+        waypoint4.cornerRadiusInMeters = 5
+        waypoint4.turnMode = DJIWaypointTurnMode.Clockwise
+        
         mission.addWaypoint(waypoint1)
         mission.addWaypoint(waypoint2)
         mission.addWaypoint(waypoint3)
+        mission.addWaypoint(waypoint4)
         return mission
     }
 

@@ -61,7 +61,7 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         var aircraft: DJIAircraft? = nil
         aircraft = self.fetchAircraft()
         if aircraft != nil {
-            aircraft!.flightController!.delegate = self
+            aircraft!.flightController?.delegate = self
         }
         // set mission manager delegate
         self.missionManager = DJIMissionManager.sharedInstance()
@@ -72,7 +72,7 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         super.viewWillDisappear(animated)
         let aircraft:DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
-            if aircraft!.flightController!.delegate === self {
+            if aircraft!.flightController?.delegate === self {
                 aircraft!.flightController!.delegate = nil
             }
         }
