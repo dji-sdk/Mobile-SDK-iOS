@@ -104,16 +104,6 @@
     }
 }
 
--(void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    if ([DemoComponentHelper fetchProduct]) {
-        if ([DemoComponentHelper fetchProduct].delegate == self) {
-            [DemoComponentHelper fetchProduct].delegate = nil;
-        }
-    }
-}
-
 #pragma mark - DJIBaseProductDelegate
 
 // Callback for the connectivity change for a component.
@@ -132,7 +122,7 @@
     }
 
     for (DemoSettingItem* item in self.items[0]) {
-        if ([item.itemName isEqualToString:key]) {
+        if ([item.itemName isEqualToString:[key capitalizedString]]) {
             if (oldComponent != nil && newComponent == nil) { // a component is disconnected
                 [self.items[0] removeObject:item];
                 [self.tableView reloadData];
