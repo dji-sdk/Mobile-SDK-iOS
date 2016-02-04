@@ -32,9 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  The DJICustomMission class is a subclass of DJIMission. You can use it to create a custom mission that
- *  is made up of a sequence of mission steps.
+ *  is made up of a sequence of mission steps. Custom mission is a mechanism designed by Mobile SDK to
+ *  simplify the development process. Missions (e.g. waypoint mission) and operations of components are
+ *  represented as mission steps. Developer can use SDK to accomplish complex tasks by just creating steps
+ *  and organizing the steps.
  *  After the custom mission is uploaded and started, the sequence of mission steps will be executed.
  *
+ *  @see DJIMissionStep
  */
 @interface DJICustomMission : DJIMission
 

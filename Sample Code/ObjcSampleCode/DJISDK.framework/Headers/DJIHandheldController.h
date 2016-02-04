@@ -36,14 +36,14 @@ typedef NS_ENUM (uint8_t, DJIHandheldWiFiFrequencyType){
 typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
     /**
      *  The Handheld Power Mode is awake.
-     *  For OSMO, when it is in this mode, all the components in DJIHandheld are accessible.
+     *  For Osmo, when it is in this mode, all the components in DJIHandheld are accessible.
      */
     DJIHandheldPowerModeAwake,
     /**
      *  The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
      *  to the Mobile device alive but most other components are off. The power consumption is low
      *  in this mode.
-     *  For OSMO, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
+     *  For Osmo, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
      *  are accessible.
      */
     DJIHandheldPowerModeSleeping,

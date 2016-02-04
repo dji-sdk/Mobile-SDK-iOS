@@ -56,7 +56,7 @@ typedef NS_ENUM (NSUInteger, DJICameraLensFocusStatus) {
  *  This class contains the information about the lens' current state, including lens type, focus status, focus mode,
  *  focus assistant state and AF switch state.
  *
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  */
 @interface DJICameraLensState : NSObject
 

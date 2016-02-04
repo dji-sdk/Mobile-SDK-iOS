@@ -179,6 +179,8 @@ ss += ll; \
             if (avcodec_open2(_pCodecCtx, pCodec, NULL) != 0) {
                  NSLog(@"Could not open codec");
             }
+            
+            av_log_set_level(AV_LOG_QUIET);
         }
     }
     return self;

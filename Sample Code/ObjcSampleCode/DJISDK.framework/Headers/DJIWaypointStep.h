@@ -12,8 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJIWaypointMission;
 
 /**
- *  This class represents a way-point step for a custom mission. By creating an object of this class and adding it into
- *  a custom mission, a way-point action will be performed during the custom mission.
+ *  This class represents a waypoint step for a custom mission. By creating an object of this class and adding it into a custom mission, a waypoint action will be performed during the custom mission.
+ *
+ *  @warning Data related to a waypoint mission will be uploaded to the aircraft right before the execution of each waypoint mission step. The uploading process may take minutes depending on the number of waypoints and the connection status.
+ *
  *  @see DJIWaypointMission
  */
 @interface DJIWaypointStep : DJIMissionStep

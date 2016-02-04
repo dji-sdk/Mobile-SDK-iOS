@@ -126,7 +126,7 @@ typedef NS_ENUM (uint8_t, DJIGimbalWorkMode){
     DJIGimbalWorkModeFreeMode,
     /**
      *  The gimbal's work mode is FPV mode. In this mode, the gimbal yaw will follow the aircraft's heading, the gimbal roll will follow the RC's roll channel value. While the pitch will be available to move.
-     *  Not supported by OSMO.
+     *  Not supported by Osmo.
      *
      */
     DJIGimbalWorkModeFpvMode,
@@ -145,7 +145,7 @@ typedef NS_ENUM (uint8_t, DJIGimbalWorkMode){
 #pragma mark DJIGimbalUserConfigType
 //-----------------------------------------------------------------
 /**
- *  Gimbal User Config. This is only supported by OSMO gimbal.
+ *  Gimbal User Config. This is only supported by Osmo gimbal.
  *
  *  The gimbal has a feature called SmoothTrack
  *  SmoothTrack smooths out larger transitions in pitch and yaw (as opposed to keeping the camera pointed in the same direction at all times)
@@ -183,7 +183,7 @@ typedef NS_ENUM (uint8_t, DJIGimbalUserConfigType){
 #pragma mark DJIGimbalSmoothTrackSettings
 //-----------------------------------------------------------------
 /**
- *  Gimbal's SmoothTrack axis. This is only supported by the OSMO gimbal when using a Custom configuration in DJIGimbalUserConfigType.
+ *  Gimbal's SmoothTrack axis. This is only supported by the Osmo gimbal when using a Custom configuration in DJIGimbalUserConfigType.
  */
 typedef NS_ENUM (uint8_t, DJIGimbalSmoothTrackAxis){
     /**
@@ -201,7 +201,7 @@ typedef NS_ENUM (uint8_t, DJIGimbalSmoothTrackAxis){
 #pragma mark DJIGimbalJoystick
 //-----------------------------------------------------------------
 /**
- *  Gimbal joystick axis. This is only supported by the OSMO gimbal when using a Custom configuration in DJIGimbalUserConfigType.
+ *  Gimbal joystick axis. This is only supported by the Osmo gimbal when using a Custom configuration in DJIGimbalUserConfigType.
  */
 typedef NS_ENUM (uint8_t, DJIGimbalJoystickAxis){
     /**
@@ -342,7 +342,7 @@ typedef NS_ENUM (uint8_t, DJIGimbalJoystickAxis){
  *
  *  This class provides advanced configuration of the gimbal. By changing the configuration, user can
  *  adjust the responsivity of the gimbal.
- *  Currently, the advanced configuration is only supported by OSMO.
+ *  Currently, the advanced configuration is only supported by Osmo.
  */
 @interface DJIGimbalConfig : NSObject
 
@@ -453,7 +453,7 @@ typedef void (^GimbalAttitudeResultBlock)(DJIGimbalAttitude attitudeInDegrees);
 - (void)gimbalController:(DJIGimbal *)controller didUpdateGimbalState:(DJIGimbalState *)gimbalState;
 
 /**
- *  Update the gimbal's user config data. Method only supported for OSMO.
+ *  Update the gimbal's user config data. Method only supported for Osmo.
  */
 - (void)gimbalController:(DJIGimbal *)controller didUpdateGimbalConfig:(DJIGimbalConfig *)gimbalConfig;
 
@@ -514,7 +514,7 @@ typedef void (^GimbalAttitudeResultBlock)(DJIGimbalAttitude attitudeInDegrees);
 /**
  *  Rotate the gimbal's pitch, roll, and yaw in Angle Mode. The direction can either be set to clockwise or counter-clockwise.
  *
- *  For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available. For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available. The range for roll rotation is [-15, 15]. For OSMO, roll rotation is not available.
+ *  For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available. For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available. The range for roll rotation is [-15, 15]. For Osmo, roll rotation is not available.
  *
  *  @param pitch Gimbal's pitch rotation.
  *  @param roll Gimbal's roll rotation.
@@ -528,7 +528,7 @@ typedef void (^GimbalAttitudeResultBlock)(DJIGimbalAttitude attitudeInDegrees);
  *  clockwise or counter-clockwise.
  *  For Phantom 3 Professional, Phantom 3 Advanced and Phantom 3 Standard, roll and yaw rotations are not available.
  *  For Inspire 1, Inspire Pro and M100, pitch, roll and yaw rotations are available.
- *  For OSMO, roll rotation is not available. The yaw angleVelocity of DJIGimbalSpeedRotation range is (0, 120).
+ *  For Osmo, roll rotation is not available. The yaw angleVelocity of DJIGimbalSpeedRotation range is (0, 120).
  *
  *  @param pitch Gimbal's pitch rotation.
  *  @param roll Gimbal's roll rotation.
@@ -570,7 +570,7 @@ typedef void (^GimbalAttitudeResultBlock)(DJIGimbalAttitude attitudeInDegrees);
 //-----------------------------------------------------------------
 
 /**
- *   YES if gimbal supports a user config (OSMO only).
+ *   YES if gimbal supports a user config (Osmo only).
  */
 - (BOOL)isUserConfigSupported;
 

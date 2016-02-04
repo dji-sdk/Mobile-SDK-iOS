@@ -42,7 +42,7 @@
     
     // Follow-me mission required the aircraft location before initializing the mission
     // Therefore, we disable the prepare button until the aircraft location is valid
-    [self.prepareButton setEnabled:CLLocationCoordinate2DIsValid(self.homeLocation)];
+    [self.prepareButton setEnabled:CLLocationCoordinate2DIsValid(self.aircraftLocation)];
 }
 
 -(void)setAircraftLocation:(CLLocationCoordinate2D)aircraftLocation {

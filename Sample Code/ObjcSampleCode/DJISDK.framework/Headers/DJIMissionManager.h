@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  YES if mission is ready to be executed.  It is ready when the uploadMission method completes successfully.
  */
-@property(nonatomic, readonly) BOOL isMissionReadyToExecute;
+@property(nonatomic, readonly) BOOL isMissionReadyToExecute DJI_API_DEPRECATED("This property will be removed in the future version.");
 
 + (DJIMissionManager *_Nullable)sharedInstance;
 

@@ -46,11 +46,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic, readonly, getter = isConnected) BOOL connected;
 
 /**
- *  The name of the component. Different types of components will have different names.
- */
-@property (copy, nonatomic, readonly)  NSString *_Nonnull name;
-
-/**
  *  Product to which this component is connected
  */
 @property (nonatomic, readonly, weak)  DJIBaseProduct *_Nullable product;

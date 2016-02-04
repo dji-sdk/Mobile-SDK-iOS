@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  NOTE: No automatic action will be taken if any of the properties below return true,
  *  which is why it becomes imperative the user is notified of the issue.
  *
- *  All states are not supported by OSMO.
+ *  All states are not supported by Osmo.
  */
 @interface DJIBatteryWarningInformation : NSObject
 
@@ -198,7 +198,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Gets the battery's history. The DJI battery keeps the history for
  *  the past 30 days. The NSArray named history in the block holds objects of type
  *  DJIBatteryWarningInformation. Need to check isSmartBattery method before using this method.
- *  Not supported by OSMO.
+ *  Not supported by Osmo.
  *
  *  @param block Remote execution result callback block.
  */
@@ -207,7 +207,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets the battery's current state, which is one of seven battery states, which
  *  can be found at the top of DJIBattery.h. Need to check isSmartBattery method before using this method.
- *  Not supported by OSMO.
+ *  Not supported by Osmo.
  *
  *  @param block Remote execution result callback block.
  */
@@ -229,7 +229,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets battery's custom self-discharge configuration in the range of [1, 10] days.
  *  For example, if the value for 'day' is set to 10, the battery will discharge over
  *  the course of 10 days. Need to check isSmartBattery method before using this method.
- *  Not supported by OSMO.
+ *  Not supported by Osmo.
  *
  *  @param day   Day for self-discharge
  *  @param block Remote execution result error block.
@@ -238,7 +238,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Gets the battery's custom self-discharge configuration. Need to check isSmartBattery method before using this method.
- *  Not supported by OSMO.
+ *  Not supported by Osmo.
  *
  *  @param result Remote execution result error block.
  */

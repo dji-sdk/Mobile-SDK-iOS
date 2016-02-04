@@ -121,6 +121,11 @@
 // 2. When a new component is connected (newComponent is not nil), we add an item to the table.
 -(void) componentWithKey:(NSString *)key changedFrom:(DJIBaseComponent *)oldComponent to:(DJIBaseComponent *)newComponent {
     if (oldComponent == nil && newComponent != nil) { // a new component is connected
+        for (DemoSettingItem* item in self.items[0]) {
+            if ([item.itemName isEqualToString:[key capitalizedString]]) {
+                return;
+            }
+        }
         [self.items[0] addObject:[DemoSettingItem itemWithName:[key capitalizedString] andClass:[[self componentVCDict] objectForKey:key]]];
         [self.tableView reloadData];
         return;

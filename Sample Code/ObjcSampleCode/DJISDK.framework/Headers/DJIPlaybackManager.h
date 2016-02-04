@@ -93,14 +93,14 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 - (void)deleteAllSelectedFiles;
 
 /**
- *  Downloads the selected files. When this method is called. The dataBlock gets called continuously until all the data is downloaded.
- *  The prepare and completion blocks are called once for each file being downloaded. In the prepareBlock, you can get the forthcoming file's info, like file name, file size, etc.
- *
- *  If an error occurs before the downloading of any files, only the overallCompletionBlock will be called with an error returned.
- *  If an error occurs during the downloading of a file, both dataBlock and overallCompletionBlock will be called with an error returned.
+ *  Downloads the selected files. When this method is called, the dataBlock gets called continuously until all the data is downloaded.
+ *  The prepare and completion blocks are called once for each file being downloaded. In the prepareBlock, you can get the forthcoming file's info, like file name, file size,
+ *  etc. If an error occurs, the overallCompletionBlock will be called with an error returned. If the entire download process finishes successfuly, overallCompletionBlock will
+ *  be called without any errors.
  *
  *  @param prepareBlock         Callback to prepare each file for download.
- *  @param dataBlock            Callback while a file is downloading. The dataBlock can be called multiple times for a file.
+ *  @param dataBlock            Callback while a file is downloading. The dataBlock can be called multiple times for a file. The error argument in DJIFileDownloadingBlock is
+ *                              not used, so should be ignored.
  *  @param fileCompletionBlock  Callback after each file have been downloaded.
  *  @param finishBlock          Callback after the downloading is finished.
  */

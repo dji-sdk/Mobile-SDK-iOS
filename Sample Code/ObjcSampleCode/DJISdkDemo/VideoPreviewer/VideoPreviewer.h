@@ -10,12 +10,15 @@
 #import "MovieGLView.h"
 #import "DJILinkQueues.h"
 
+@class DJIBaseProduct; 
+
 #define RENDER_FRAME_NUMBER (4)
 
 #define kDJIDecoderDataSoureNone                    (0)
 #define kDJIDecoderDataSoureInspire                 (1)
 #define kDJIDecoderDataSourePhantom3Advanced        (4)
 #define kDJIDecoderDataSourePhantom3Professional    (5)
+#define kDJIDecoderDataSourceLightbridge2           (6)
 
 typedef struct{
     BOOL isInit:1;      // The initialized status
@@ -31,6 +34,11 @@ typedef struct{
 typedef NS_ENUM(NSUInteger, VideoPreviewerEvent){
     VideoPreviewerEventNoImage,     //
     VideoPreviewerEventHasImage,    //
+};
+
+typedef NS_ENUM(NSUInteger, VideoPreviewerDecoderType){
+    VideoPreviewerDecoderTypeSoftwareDecoder,
+    VideoPreviewerDecoderTypeHardwareDecoder
 };
 
 @protocol VideoPreviewerDelegate <NSObject>
@@ -125,6 +133,16 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerEvent){
  *
  *  @param type See reference kDJIDecoderDataSoureXXX
  */
-- (void) setDecoderDataSource:(int)type;
+- (void) setDecoderDataSource:(int)type __attribute__((deprecated("Please use setDecoderWithProduct:andDecoderType:")));
+
+/**
+ *  Sets video stream decoder based on the product and the desired decoder type.
+ *  Currently, only some cameras support hardware decoders.
+ *
+ *  @param product  The camera that uses the video previewer.
+ *  @param decoder  The desired decoder type.
+ *  @return Yes if there is suitable decoder for the camera on the product and the decoder is enabled successfully.
+ */
+- (BOOL) setDecoderWithProduct:(DJIBaseProduct*)product andDecoderType:(VideoPreviewerDecoderType)decoder;
 
 @end

@@ -112,6 +112,8 @@
     [mission addWaypoint:southWP];
     [mission addWaypoint:westWP];
     
+    [mission setFinishedAction:DJIWaypointMissionFinishedNoAction];
+    
     DJIMissionStep* step = [[DJIWaypointStep alloc] initWithWaypointMission:mission];
     
     return step;

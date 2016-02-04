@@ -33,7 +33,7 @@
     self.needToSetMode = YES;
     
     [[VideoPreviewer instance] start];
-    [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
+    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -53,35 +53,18 @@
 
 /**
  *  VideoPreviewer is used to decode the video data and display the decoded frame on the view. VideoPreviewer provides both software 
- *  decoding and hardware decoding. When using hardware decoding, for different products, the decoding protocols are different.
+ *  decoding and hardware decoding. When using hardware decoding, for different products, the decoding protocols are different and the hardware decoding is only supported by some products.
  */
 -(IBAction) onSegmentControlValueChanged:(UISegmentedControl*)sender
 {
     if (sender.selectedSegmentIndex == 0) {
-        [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
+    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
     }
     else
     {
-        DJIBaseProduct* product = [DemoComponentHelper fetchProduct];
-        if (product) {
-            NSString* productName = product.model;
-            if ([productName isEqualToString:@"Inspire 1"] ||
-                [productName isEqualToString:@"Inspire Pro"] ||
-                [productName isEqualToString:@"M100"] ||
-                [productName isEqualToString:@"OSMO"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureInspire];
-            }
-            else if ([productName isEqualToString:@"Phantom3 Advanced"]
-                     || [productName isEqualToString:@"Phantom3 Standard"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSourePhantom3Advanced];
-            }
-            else if ([productName isEqualToString:@"Phantom3 Professional"]) {
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSourePhantom3Professional];
-            }
-            else  {
-                NSLog(@"ERROR: the camera type is not recognized. ");
-                [[VideoPreviewer instance] setDecoderDataSource:kDJIDecoderDataSoureNone];
-            }
+        BOOL result = [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeHardwareDecoder];
+        if (!result) {
+            NSLog(@"Not suitable hardware decoder for the current product. "); 
         }
     }
 }

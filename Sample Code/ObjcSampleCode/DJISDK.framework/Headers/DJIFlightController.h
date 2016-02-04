@@ -118,20 +118,20 @@ DJI_API_EXTERN const float DJIVirtualStickRollPitchControlMinAngle;
 typedef NS_ENUM (uint8_t, DJIVirtualStickRollPitchControlMode){
     /**
      *  Sets the VirtualStickControlMode roll and pitch values to be an angle relative to
-     *  a level aircraft. In the body coordinate system, positive and negative pitch angle is for the aircraft rotating about 
-     *  the y axis in positive direction or in negative direction respectively. Positive and negative roll angle is the positive direction or 
+     *  a level aircraft. In the body coordinate system, positive and negative pitch angle is for the aircraft rotating about
+     *  the y axis in positive direction or in negative direction respectively. Positive and negative roll angle is the positive direction or
      *  negative direction rotation angle about the x axis respectively.
      *  However in the ground coordinate system, positive and negative pitch angle is the angle value for the aircraft moving south and
      *  north respectively. Positive and negative roll angle is the angle when the aircraft is moving east and west respectively.
-     *  Maximum angle is defined as DJIVirtualStickRollPitchControlMaxAngle; 
+     *  Maximum angle is defined as DJIVirtualStickRollPitchControlMaxAngle;
      *  Minimum angle is defined as DJIVirtualStickRollPitchControlMinAngle;
      */
     DJIVirtualStickRollPitchControlModeAngle,
     /**
      *  Sets the VirtualStickControlMode roll and pitch values to be a velocity.
-     *  In the body coordinate system, positive and negative pitch velocity is for the aircraft moving towards the positive direction or 
+     *  In the body coordinate system, positive and negative pitch velocity is for the aircraft moving towards the positive direction or
      *  negative direction along the pitch axis/y axis respectively. Positive and negative roll velocity is when the aircraft is moving towards
-     *  the positive direction or negative direction along the roll axis/x axis respectively. 
+     *  the positive direction or negative direction along the roll axis/x axis respectively.
      *  However, in the ground coordinate system, positive and negative pitch velocity is for the aircraft moving east and west respectively.
      *  Positive and negative roll velocity is when the aircraft is moving north and south respectively.
      *  Maximum velocity is defined as DJIVirtualStickRollPitchControlMaxVelocity;
@@ -186,13 +186,13 @@ typedef struct
     /**
      *  Velocity (m/s) in Y axis or Angle (degrees) value for pitch. Use DJIVirtualStickRollPitchControlMode to
      *  set velocity or angle mode. Note that the argument has different meanings in different coordinate systems.
-     *  Please refer to the Get Started Flight Controller User Guide to find more details. 
+     *  Please refer to the Get Started Flight Controller User Guide to find more details.
      */
     float pitch;
     /**
      *  Velocity (m/s) in X axis or Angle (degrees) value for roll. Use DJIVirtualStickRollPitchControlMode to
      *  set velocity or angle mode. Note that the argument has different meanings in different coordinate systems.
-     *  Please refer to the Get Started Flight Controller User Guide to find more details. 
+     *  Please refer to the Get Started Flight Controller User Guide to find more details.
      */
     float roll;
     /**
@@ -294,6 +294,8 @@ typedef struct
  *  Starts aircraft takeoff. Takeoff is considered complete when the aircraft is hovering 1.2 meters (4 feet)
  *  above the ground. Completion block is called when aircraft crosses 0.5 meters (1.6 feet).
  *
+ *  If the motors are already on, this command can not be executed.
+ *
  */
 - (void)takeoffWithCompletion:(DJICompletionBlock)completion;
 
@@ -321,7 +323,7 @@ typedef struct
 
 /**
  *  Turns on the aircraft's motors.
- *  This method is not supported by the current firmware version. 
+ *  Currently, this method will be supported by Matrice 100 with upcoming firmware version.
  */
 - (void)turnOnMotorsWithCompletion:(DJICompletionBlock)completion;
 

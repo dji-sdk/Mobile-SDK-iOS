@@ -10,33 +10,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class DJILBAirLink;
+@class DJISignalInformation;
 
 /**
  *  Define the air link max supported channel count
  */
 #define DJI_LBAIRLINK_SUPPORTED_CHANNEL_COUNT (8)
-
-/*********************************************************************************/
-#pragma mark - DJISignalInformation
-/*********************************************************************************/
-
-/**
- *  This class contains signal status of a channel.
- */
-@interface DJISignalInformation : NSObject
-
-/**
- *  Signal quality in percent [0, 100].
- */
-@property(nonatomic, readonly) int percent;
-
-/**
- *  Signal strength in dBm.
- *
- */
-@property(nonatomic, readonly) int power;
-
-@end
 
 /*********************************************************************************/
 #pragma mark - Data Struct
@@ -242,40 +221,41 @@ typedef struct
 /*********************************************************************************/
 
 /**
- *  This protocol provides delegate methods to recevie updated signal information for channels and updated video data from Lightbridge 2.
+ *  This protocol provides delegate methods to receive updated signal information for channels and updated video data from Lightbridge 2.
  */
 @protocol DJILBAirLinkDelegate <NSObject>
 
 @optional
 
 /**
- *  Signal quality and strength information for current downlink channel on each Remote Controller antenna.
+ *  Signal quality and strength information for current uplink channel on each Remote Controller antenna.
  *
- *  @param lbAirLink     LBAirLink Instance.
- *  @param antennas    DJISignalInformation object.
+ *  @param lbAirLink   DJILBAirLink Instance.
+ *  @param antennas    DJISignalInformation object. The power property is valid only when the connecting product is Lightbridge 2.
+ *                     For other products, the value of power is always 0.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateRemoteControllerSignalInformation:(NSArray *_Nonnull)antennas;
 
 /**
- *  Signal quality and strength information for current uplink channel on each air link module antenna.
+ *  Signal quality and strength information for current downlink channel on each air link module antenna.
  *
- *  @param lbAirLink lbAirLink Instance.
- *  @param antennas    DJISignalInformation object.
+ *  @param lbAirLink    DJILBAirLink Instance.
+ *  @param antennas     DJISignalInformation object.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateLBAirLinkModuleSignalInformation:(NSArray *_Nonnull)antennas;
 
 /**
  *  Signal strength for all available downlink channels.
  *
- *  @param lbAirLink LBAirLink Instance.
- *  @param freqPower   Frequency power.
+ *  @param lbAirLink        DJILBAirLink Instance.
+ *  @param signalStrength   The strength of the signal.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateAllChannelSignalStrengths:(DJILBAirLinkAllChannelSignalStrengths)signalStrength;
 
 /**
  *  Callback for when the FPV video bandwidth percentage has changed. Each Remote Controller can create a secondary video from the FPV and HD Gimbal video downlink information. For the slave Remote Controllers it's important to know if the percentage bandwidth has changed so the right PIP display mode (DJIPIPDisplayMode) can be selected. For example, if the FPV video bandwidth goes to 100%, then DJIALPIPModeLB should be used.
  *
- *  @param lbAirLink          LBAirLink instance.
+ *  @param lbAirLink        DJILBAirLink instance.
  *  @param bandwidthPercent Output bandwidth percentage.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didFPVBandwidthPercentChanged:(float)bandwidthPercent;
@@ -283,8 +263,8 @@ typedef struct
 /**
  *  Tells the delegate that a updated Video data is received.
  *
- *  @param lbAirLink     LBAirLink Instance.
- *  @param data        The received video data.
+ *  @param lbAirLink    DJILBAirLink Instance.
+ *  @param data         The received video data.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data;
 
@@ -298,7 +278,7 @@ typedef struct
 /**
  *  This class contains methods to change settings of the Lightbridge Air Link.
  */
-@interface DJILBAirLink : DJIBaseComponent
+@interface DJILBAirLink : NSObject
 
 @property(nonatomic, weak) id<DJILBAirLinkDelegate> delegate;
 
