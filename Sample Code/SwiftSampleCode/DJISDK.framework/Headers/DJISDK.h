@@ -47,9 +47,12 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #pragma mark Camera
 //-----------------------------------------------------------------
 #import <DJISDK/DJICamera.h>
+#import <DJISDK/DJICameraSettingsDef.h>
 #import <DJISDK/DJICameraPlaybackState.h>
 #import <DJISDK/DJICameraSystemState.h>
 #import <DJISDK/DJICameraLensState.h>
+#import <DJISDK/DJICameraSDCardState.h>
+#import <DJISDK/DJICameraSSDState.h>
 #import <DJISDK/DJICameraParameters.h>
 #import <DJISDK/DJIMediaManager.h>
 #import <DJISDK/DJIMedia.h>
@@ -71,6 +74,8 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIAirLink.h>
 #import <DJISDK/DJILBAirLink.h>
 #import <DJISDK/DJIWiFiLink.h>
+#import <DJISDK/DJIAuxLink.h>
+#import <DJISDK/DJISignalInformation.h>
 
 //-----------------------------------------------------------------
 #pragma mark Handheld Controller

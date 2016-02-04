@@ -71,7 +71,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 
 /**
  *  Returns the time when the media file was created as a string in
- *  the format "YYYY-MM-DD hh:mm:ss".
+ *  the format "yyyy-MM-dd HH:mm:ss".
  */
 @property(nonatomic, readonly) NSString *timeCreated;
 

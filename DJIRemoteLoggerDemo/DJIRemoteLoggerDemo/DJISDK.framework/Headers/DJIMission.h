@@ -1,82 +1,54 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIMission.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIMission.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import "DJIBaseProduct.h"
 
-
-#define PROGRESS_END_BOUNDARY   100.0
-
 NS_ASSUME_NONNULL_BEGIN
 
+
+/**
+ *  The class is an abstract class representing the progress of an executing mission.
+ */
 @interface DJIMissionProgressStatus : NSObject
 
-@property(nonatomic, readonly) NSError* _Nullable error;
+/**
+ *  Error happens in mission execution.
+ */
+@property(nonatomic, readonly) NSError *_Nullable error;
 
 @end
 
 @class DJIMission;
 
 /**
- *  Type of the progress.
+ *  Returns the progress status from 0.0 to 1.0
  */
-typedef NS_ENUM(uint8_t, DJIProgressType){
-    /**
-     * Upload progress.
-     */
-    DJIProgressTypeUpload,
-
-    /**
-     * Executing progress
-     */
-    DJIProgressTypeExecute,
-    /**
-     * Download progress
-     */
-    DJIProgressTypeDownload,
-
-    /**
-     * Custom mission progress
-     */
-    DJIProgressTypeCustom,
-};
+typedef void (^_Nullable DJIMissionProgressHandler)(float progress);
 
 /**
- * Returns the progress status from 0.0 to PROGRESS_END_BOUNDARY which is defined as 100.0
+ *  Download mission completion block.
+ *
+ *  @param newMission New downloaded mission.
+ *  @param error      Error happens in downloading.
  */
-typedef void (^_Nullable DJIMissionProgressHandler)(DJIProgressType type, float progress);
+typedef void (^_Nullable DJIMissionDownloadCompletionBlock)(DJIMission *_Nullable newMission, NSError *_Nullable error);
 
-
-typedef void (^_Nullable DJIDownloadMissionCompletionBlock)(DJIMission* _Nullable newMission, NSError* _Nullable error);
-
-
-
+/**
+ *  The class is an abstract class representing a mission that can be executed by the mission manager.
+ */
 @interface DJIMission : NSObject
 
 /**
- *  Whether or not the mission's parameters are valid for execution. If this property
- *  returns NO, then the attempt to startMission will have failed.
+ *  Whether current mission can be paused.
  *
- *  @attention The result of 'isValid' just show whether the mission's local parameters are valid. Not for all execution condition.
- *
+ *  @return YES if mission can be paused. No if mission can not be paused.
  */
-@property(nonatomic, readonly) BOOL isValid;
-
-/**
- *  Show failure reason for checking parameters of mission. Value will be set after calling 'isValid'.
- *
- */
-@property(nonatomic, readonly) NSString* failureReason;
-
-
--(BOOL) isPausable;
-
+- (BOOL)isPausable;
 
 @end
 

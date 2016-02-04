@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIFlightOrientationMode.html">
+	<File path="Constants/DJIFollowMeMissionExecuteState.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIFlightOrientationMode</TokenIdentifier>
-			<Abstract type="html">Tells the aircraft how to interpret flight commands for forward, backward, left and right.
-Additional information should be seen in the getting started guide.</Abstract>
-			<DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeMissionExecuteState</TokenIdentifier>
+			<Abstract type="html">All possible follow me mission execution states.</Abstract>
+			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="111"/>
@@ -15,37 +14,40 @@ Additional information should be seen in the getting started guide.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeCourseLock</TokenIdentifier>
-            <Abstract type="html">The aicraft should move relative to a locked course heading.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateInitializing</TokenIdentifier>
+            <Abstract type="html">The mission is currently being initialized.
      </Abstract>
-            <Declaration>DJIFlightOrientationModeCourseLock</Declaration>
+            <Declaration>DJIFollowMeMissionExecuteStateInitializing</Declaration>
             
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeHomeLock</TokenIdentifier>
-            <Abstract type="html">The aicraft should move relative radially to the Home Point.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateMoving</TokenIdentifier>
+            <Abstract type="html">The aircraft is currently moving.
      </Abstract>
-            <Declaration>DJIFlightOrientationModeHomeLock</Declaration>
+            <Declaration>DJIFollowMeMissionExecuteStateMoving</Declaration>
             
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightOrientationModeDefaultAircraftHeading</TokenIdentifier>
-            <Abstract type="html">The aicraft should move relative to the front of the aircraft.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeMissionExecuteStateWaiting</TokenIdentifier>
+            <Abstract type="html">The mission is currently waiting to continue. For example,
+if the GPS quality is poor or the connection is broken, the
+aircraft will continue to wait.
      </Abstract>
-            <Declaration>DJIFlightOrientationModeDefaultAircraftHeading</Declaration>
+            <Declaration>DJIFollowMeMissionExecuteStateWaiting</Declaration>
             
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="111"/>
         </Token>
+        
         
 	</File>
 </Tokens>

@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIMedia.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIMedia.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import "DJIBaseProduct.h"
@@ -20,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Media types.
  */
-typedef NS_ENUM(NSUInteger, DJIMediaType){
+typedef NS_ENUM (NSUInteger, DJIMediaType){
     /**
      *  Unknown.
      */
@@ -56,12 +54,15 @@ typedef NS_ENUM(NSUInteger, DJIMediaType){
 #pragma mark - DJIMedia
 /*********************************************************************************/
 
+/**
+ *  This class contains the information about a multi-media file on the SD card. It also provides methods to fetch the data of the file.
+ */
 @interface DJIMedia : NSObject
 
 /**
  *  Returns the name of the media file.
  */
-@property(nonatomic, readonly) NSString* fileName;
+@property(nonatomic, readonly) NSString *fileName;
 
 /**
  *  Returns the size, in bytes, of the media file.
@@ -70,14 +71,13 @@ typedef NS_ENUM(NSUInteger, DJIMediaType){
 
 /**
  *  Returns the time when the media file was created as a string in
- *  the format "YYYY-MM-DD hh:mm:ss".
+ *  the format "yyyy-MM-dd HH:mm:ss".
  */
-@property(nonatomic, readonly) NSString* timeCreated;
+@property(nonatomic, readonly) NSString *timeCreated;
 
 /**
  *  If the media file is a video, this property returns the duration
- *  of the video in seconds.
- *
+ *  of the video in seconds. Will be 0s if media file is a photo.
  */
 @property(nonatomic, readonly) float durationInSeconds;
 
@@ -90,17 +90,17 @@ typedef NS_ENUM(NSUInteger, DJIMediaType){
  *  Returns the thumbnail for this media. If this property returns nil,
  *  the user should call fetchThumbnailWithCompletion
  */
-@property(nonatomic, readonly) UIImage* _Nullable thumbnail;
+@property(nonatomic, readonly) UIImage *_Nullable thumbnail;
 
 /**
  *  Fetches this media's thumbnail from the SD card. This method can be used
  *  to fetch either a photo or a video, where the first frame of the video is
  *  the thumbnail that is fetched.
- *  It is available only if the media type is DJIMediaTypePanorama.
+ *  It is not available if the media type is DJIMediaTypePanorama.
  *
  *  @param block Completion block.
  */
--(void) fetchThumbnailWithCompletion:(DJICompletionBlock)block;
+- (void)fetchThumbnailWithCompletion:(DJICompletionBlock)block;
 
 /**
  *  Fetches this media's data from the SD card. The difference with fetching
@@ -111,15 +111,16 @@ typedef NS_ENUM(NSUInteger, DJIMediaType){
  *  @param block Data callback will be called when media data has been received
  *  from the SD card or an error has occurred.
  */
--(void) fetchMediaDataWithCompletion:(void(^)(NSData* _Nullable data, BOOL* _Nullable stop, NSError* _Nullable error))block;
+- (void)fetchMediaDataWithCompletion:(void (^)(NSData *_Nullable data, BOOL *_Nullable stop, NSError *_Nullable error))block;
 
 /**
- *  Fetch media's preview image. The preview image is lower resolution (960 x 540) version of a still picture or
+ *  Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of a still picture or
  *  the first frame of a video. The mediaType of this media object should be 'DJIMediaTypeJPG'.
- *  It is available only if the media type is DJIMediaTypePanorama.
+ *  It is not available if the media type is DJIMediaTypePanorama.
  *
+ *  @param block Remote execute result callback.
  */
--(void) fetchPreviewImageWithCompletion:(void(^)(UIImage* image, NSError* _Nullable error))block;
+- (void)fetchPreviewImageWithCompletion:(void (^)(UIImage *image, NSError *_Nullable error))block;
 
 
 /**
@@ -129,7 +130,7 @@ typedef NS_ENUM(NSUInteger, DJIMediaType){
  *
  *  @param block Remote execute result callback.
  */
--(void) fetchSubMediaFileListWithCompletion:(void(^)(NSArray<DJIMedia*> *_Nullable mediaList, NSError* _Nullable error))block;
+- (void)fetchSubMediaFileListWithCompletion:(void (^)(NSArray<DJIMedia *> *_Nullable mediaList, NSError *_Nullable error))block;
 
 @end
 

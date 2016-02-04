@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJILBAirLinkDataRate.html">
+	<File path="Constants/DJIMainControllerNoFlyStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJILBAirLinkDataRate</TokenIdentifier>
-			<Abstract type="html">Wireless downlink data rate. Lower rates are used for longer ranges, but will have lower video quality.</Abstract>
-			<DeclaredIn>DJILBAirLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIMainControllerNoFlyStatus</TokenIdentifier>
+			<Abstract type="html">No fly status</Abstract>
+			<DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
 			
 			<NodeRef refid="127"/>
@@ -14,59 +14,93 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILBAirLinkDataRate4Mbps</TokenIdentifier>
-            <Abstract type="html">4 Mbps (Potential range up to 3 km)
+            <TokenIdentifier>//apple_ref/c/econst/DroneNormalFlying</TokenIdentifier>
+            <Abstract type="html">Drone normal flying
      </Abstract>
-            <Declaration>DJILBAirLinkDataRate4Mbps</Declaration>
+            <Declaration>DroneNormalFlying</Declaration>
             
-            <DeclaredIn>DJILBAirLink.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="127"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILBAirLinkDataRate6Mbps</TokenIdentifier>
-            <Abstract type="html">6 Mbps (Potential range up to 2 km)
+            <TokenIdentifier>//apple_ref/c/econst/DroneTakeOffProhibited</TokenIdentifier>
+            <Abstract type="html">Drone is in a no fly zone, take off prohibited
      </Abstract>
-            <Declaration>DJILBAirLinkDataRate6Mbps</Declaration>
+            <Declaration>DroneTakeOffProhibited</Declaration>
             
-            <DeclaredIn>DJILBAirLink.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="127"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILBAirLinkDataRate8Mbps</TokenIdentifier>
-            <Abstract type="html">8 Mbps (Potential range up to 1.5 km)
+            <TokenIdentifier>//apple_ref/c/econst/DroneFroceAutoLanding</TokenIdentifier>
+            <Abstract type="html">Drone is in a no fly zone, will force landing
      </Abstract>
-            <Declaration>DJILBAirLinkDataRate8Mbps</Declaration>
+            <Declaration>DroneFroceAutoLanding</Declaration>
             
-            <DeclaredIn>DJILBAirLink.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="127"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILBAirLinkDataRate10Mbps</TokenIdentifier>
-            <Abstract type="html">10 Mbps (Potential range up to 0.7 km)
+            <TokenIdentifier>//apple_ref/c/econst/DroneApproachingNoFlyZone</TokenIdentifier>
+            <Abstract type="html">Drone is approaching to a no fly zone
      </Abstract>
-            <Declaration>DJILBAirLinkDataRate10Mbps</Declaration>
+            <Declaration>DroneApproachingNoFlyZone</Declaration>
             
-            <DeclaredIn>DJILBAirLink.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="127"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILBAirLinkDataRateUnknown</TokenIdentifier>
-            <Abstract type="html">Unknown
+            <TokenIdentifier>//apple_ref/c/econst/DroneReachMaxFlyingHeight</TokenIdentifier>
+            <Abstract type="html">Drone had reach the max flying height
      </Abstract>
-            <Declaration>DJILBAirLinkDataRateUnknown</Declaration>
+            <Declaration>DroneReachMaxFlyingHeight</Declaration>
             
-            <DeclaredIn>DJILBAirLink.h</DeclaredIn>
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
             
             <NodeRef refid="127"/>
         </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DroneReachMaxFlyingDistance</TokenIdentifier>
+            <Abstract type="html">Drone had reach the max flying distance
+     </Abstract>
+            <Declaration>DroneReachMaxFlyingDistance</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="127"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/DroneUnderLimitFlyZone</TokenIdentifier>
+            <Abstract type="html">Drone is in a no fly zone, the flying heigh will limited
+     </Abstract>
+            <Declaration>DroneUnderLimitFlyZone</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="127"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/UnknownStatus</TokenIdentifier>
+            <Abstract type="html">Unknown status
+     </Abstract>
+            <Declaration>UnknownStatus</Declaration>
+            
+            <DeclaredIn>DJIMCSystemState.h</DeclaredIn>
+            
+            <NodeRef refid="127"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

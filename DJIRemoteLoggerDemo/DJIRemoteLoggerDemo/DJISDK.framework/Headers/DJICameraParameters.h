@@ -1,7 +1,8 @@
 //
-//  DJICameraParameters.h
+//  DJICameraParameter.h
 //  DJISDK
-//  Copyright © 2015年 DJI. All rights reserved.
+//
+//  Copyright © 2015 DJI. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Range Key of the change dictionary.
 //CameraVideoResolutionAndFrameRateRange key
 extern NSString *const DJISupportedCameraVideoResolutionAndFrameRateRange;
-//CameraWorkModeRange key
-extern NSString *const DJISupportedCameraWorkModeRange;
+//CameraModeRange key
+extern NSString *const DJISupportedCameraModeRange;
 //CameraExposureModeRange key
 extern NSString *const DJISupportedCameraExposureModeRange;
 //CameraISORange key
@@ -27,6 +28,9 @@ extern NSString *const DJISupportedCameraApertureRange;
 
 @class DJICameraParameters;
 
+/**
+ *  This protocol provides a method to get notified when the camera parameters' range changes.
+ */
 @protocol DJICameraParametersListener <NSObject>
 
 @optional
@@ -37,7 +41,7 @@ extern NSString *const DJISupportedCameraApertureRange;
  *  @param parameters The parameters.
  *  @param change     The new range and key.
  */
-- (void)cameraParameters:(nonnull DJICameraParameters *)parameters change:(nonnull NSDictionary<id,NSString *> *)change;
+- (void)cameraParameters:(nonnull DJICameraParameters *)parameters change:(nonnull NSDictionary<id, NSString *> *)change;
 
 @end
 
@@ -46,16 +50,18 @@ extern NSString *const DJISupportedCameraApertureRange;
  *  valid range is for a parameter. Type-casting is requried to get the corresponding enumerator value for each
  *  range element.
  */
+
 @interface DJICameraParameters : NSObject
 
 + (nonnull instancetype)sharedInstance;
 
 /**
  *  Returns the current valid range for video resolution (DJICameraVideoResolution) and frame rate
- *  (DJICameraVideoFrameRate). Returns nil if current camera  does not support any video resolution or frame rate
+ *  (DJICameraVideoFrameRate). Returns nil if current camera does not support any video resolution or frame rate
  *  setting or the camera is disconnected.
  *
- *  @return Array of pairs. Each pair represents a valid DJICameraVideoResolution value and DJICameraVideoFrameRate value.
+ *  @return Array of pairs. Each pair represents a valid DJICameraVideoResolution value and DJICameraVideoFrameRate
+ *          value.
  */
 - (nonnull NSArray<NSArray<NSNumber *> *> *)supportedCameraVideoResolutionAndFrameRateRange;
 
@@ -65,7 +71,7 @@ extern NSString *const DJISupportedCameraApertureRange;
  *
  *  @return Array of NSNumber. Each element represents one current supported camera mode.
  */
-- (nonnull NSArray<NSNumber *> *)supportedCameraWorkModeRange;
+- (nonnull NSArray<NSNumber *> *)supportedCameraModeRange;
 
 /**
  *  Returns the current valid range for camera's exposure mode (DJICameraExposureMode). Returns nil if current
@@ -109,6 +115,9 @@ extern NSString *const DJISupportedCameraApertureRange;
 
 @end
 
+/**
+ *  A category of DJICameraParameters. It provides methods to add or remove listeners for valid range change.
+ */
 @interface DJICameraParameters (Listener)
 
 /**
@@ -119,14 +128,14 @@ extern NSString *const DJISupportedCameraApertureRange;
 - (void)addListener:(nonnull id<DJICameraParametersListener>)listener;
 
 /**
- *  remove listener which is listening to the camera range change.
+ *  Remove listener which is listening to the camera range change.
  *
  *  @param listener listener
  */
 - (void)removeListener:(nonnull id<DJICameraParametersListener>)listener;
 
 /**
- *  remove all listeners.
+ *  Remove all listeners.
  */
 - (void)removeAllListeners;
 

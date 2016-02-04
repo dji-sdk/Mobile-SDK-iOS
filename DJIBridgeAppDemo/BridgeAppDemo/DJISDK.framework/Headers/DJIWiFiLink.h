@@ -30,7 +30,7 @@ typedef NS_ENUM (uint8_t, DJIWiFiFrequencyBand){
 };
 
 /**
- *  WiFi Signal Quality - for OSMO only. WiFi Signal quality as measured by OSMO.
+ *  WiFi Signal Quality - for Osmo only. WiFi Signal quality as measured by Osmo.
  */
 typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
     /**
@@ -133,7 +133,7 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 //-----------------------------------------------------------------
 /**
  *  YES if product allows user to change WiFi frequency bands.
- *  Currently, only OSMO supports this feature.
+ *  Currently, only Osmo supports this feature.
  */
 - (BOOL)isWiFiFrequencyBandEditable;
 

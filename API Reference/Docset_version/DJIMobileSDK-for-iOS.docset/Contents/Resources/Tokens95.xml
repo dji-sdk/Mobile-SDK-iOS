@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJICameraPhotoTimeLapseFileFormat.html">
+	<File path="Constants/CameraRecordingFovType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJICameraPhotoTimeLapseFileFormat</TokenIdentifier>
-			<Abstract type="html">File format for camera when it is in time-lapse mode. The
-default file format is video. If video+JPEG is selected the minimum interval will be 2 seconds.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CameraRecordingFovType</TokenIdentifier>
+			<Abstract type="html">Camera FOV</Abstract>
 			<DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
 			
@@ -15,10 +14,10 @@ default file format is video. If video+JPEG is selected the minimum interval wil
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatVideo</TokenIdentifier>
-            <Abstract type="html">The camera in time-lapse mode will generate video
+            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV0</TokenIdentifier>
+            <Abstract type="html">Wide FOV
      </Abstract>
-            <Declaration>DJICameraPhotoTimeLapseFileFormatVideo</Declaration>
+            <Declaration>CameraRecordingFOV0</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -26,10 +25,10 @@ default file format is video. If video+JPEG is selected the minimum interval wil
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatVideoAndJPEG</TokenIdentifier>
-            <Abstract type="html">The camera in time-lapse mode will generate video and JPEG
+            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV1</TokenIdentifier>
+            <Abstract type="html">Middle FOV, Only support in Phantom 2 Vision
      </Abstract>
-            <Declaration>DJICameraPhotoTimeLapseFileFormatVideoAndJPEG</Declaration>
+            <Declaration>CameraRecordingFOV1</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -37,15 +36,27 @@ default file format is video. If video+JPEG is selected the minimum interval wil
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraPhotoTimeLapseFileFormatUnknown</TokenIdentifier>
-            <Abstract type="html">The file format is unknown
+            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOV2</TokenIdentifier>
+            <Abstract type="html">Narrow FOV, Only support in Phantom 2 Vision
      </Abstract>
-            <Declaration>DJICameraPhotoTimeLapseFileFormatUnknown</Declaration>
+            <Declaration>CameraRecordingFOV2</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
             <NodeRef refid="95"/>
         </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/CameraRecordingFOVUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown
+     </Abstract>
+            <Declaration>CameraRecordingFOVUnknown</Declaration>
+            
+            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
+            
+            <NodeRef refid="95"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

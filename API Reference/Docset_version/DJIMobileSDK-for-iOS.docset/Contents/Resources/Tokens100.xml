@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJICameraShootPhotoMode.html">
+	<File path="Constants/CameraVideoResolution.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJICameraShootPhotoMode</TokenIdentifier>
-			<Abstract type="html">Camera work mode ShootPhoto itself can have several modes. The default value is DJICameraShootPhotoModeSingle.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/CameraVideoResolution</TokenIdentifier>
+			<Abstract type="html">Camera&apos;s video resolution. Used in Inspire/Phantom3 professional camera</Abstract>
 			<DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeSingle</TokenIdentifier>
-            <Abstract type="html">Sets the camera to take a single photo.
+            <TokenIdentifier>//apple_ref/c/econst/CameraVideoResolution1280x720p</TokenIdentifier>
+            <Abstract type="html">1280x720P
      </Abstract>
-            <Declaration>DJICameraShootPhotoModeSingle</Declaration>
+            <Declaration>CameraVideoResolution1280x720p</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -25,11 +25,10 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeHDR</TokenIdentifier>
-            <Abstract type="html">Sets the camera to take a HDR photo.
-Currently, X5 does not support HDR mode.
+            <TokenIdentifier>//apple_ref/c/econst/CameraVideoResolution1920x1080p</TokenIdentifier>
+            <Abstract type="html">1920x1080P
      </Abstract>
-            <Declaration>DJICameraShootPhotoModeHDR</Declaration>
+            <Declaration>CameraVideoResolution1920x1080p</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -37,10 +36,10 @@ Currently, X5 does not support HDR mode.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeBurst</TokenIdentifier>
-            <Abstract type="html">Set the camera to take multiple photos at once.
+            <TokenIdentifier>//apple_ref/c/econst/CameraVideoResolution3840x2160p</TokenIdentifier>
+            <Abstract type="html">3840x2160P
      </Abstract>
-            <Declaration>DJICameraShootPhotoModeBurst</Declaration>
+            <Declaration>CameraVideoResolution3840x2160p</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -48,12 +47,10 @@ Currently, X5 does not support HDR mode.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeAEB</TokenIdentifier>
-            <Abstract type="html">Automatic Exposure Bracketing (AEB) capture. In this mode you can
-quickly take multiple shots (the default is 3) at different exposures
-without having to manually change any settings between frames.
+            <TokenIdentifier>//apple_ref/c/econst/CameraVideoResolution4096x2160p</TokenIdentifier>
+            <Abstract type="html">4096x2160
      </Abstract>
-            <Declaration>DJICameraShootPhotoModeAEB</Declaration>
+            <Declaration>CameraVideoResolution4096x2160p</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
@@ -61,32 +58,16 @@ without having to manually change any settings between frames.
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeInterval</TokenIdentifier>
-            <Abstract type="html">Sets the camera to take a picture (or multiple pictures) continuously at a set time interval.
-The minimum interval for JPEG format of any quality is 2s.
-The minimum interval for Raw or Raw+JPEG format is 10s.
+            <TokenIdentifier>//apple_ref/c/econst/CameraVideoResolutionUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown
      </Abstract>
-            <Declaration>DJICameraShootPhotoModeInterval</Declaration>
+            <Declaration>CameraVideoResolutionUnknown</Declaration>
             
             <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
             
             <NodeRef refid="100"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJICameraShootPhotoModeTimeLapse</TokenIdentifier>
-            <Abstract type="html">Sets the camera to take a picture (or multiple pictures) continuously at a set time interval.
-The camera will merge the photo sequence and the output is a video.
-The minimum interval for Video only format is 1 s.
-The minimum interval for Video+Photo format is 2 s.
-Supported only by OSMO camera.
-     </Abstract>
-            <Declaration>DJICameraShootPhotoModeTimeLapse</Declaration>
-            
-            <DeclaredIn>DJICameraSettingsDef.h</DeclaredIn>
-            
-            <NodeRef refid="100"/>
-        </Token>
         
 	</File>
 </Tokens>

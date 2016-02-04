@@ -1,19 +1,20 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJICompass.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJICompass.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJIBaseComponent.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, DJICompassCalibrationStatus)
-{
+typedef NS_ENUM (NSUInteger, DJICompassCalibrationStatus){
+    /**
+     *  Compass not in calibration.
+     */
+    DJICompassCalibrationStatusNone,
     /**
      *  Compass horizontal calibration. User should hold the aircraft horizontally and rotate it 360 degree.
      */
@@ -37,7 +38,7 @@ typedef NS_ENUM(NSUInteger, DJICompassCalibrationStatus)
 };
 
 /**
- *  Compass of the aircraft.
+ *  This class contains important status of the compass of the product. Also it provides methods to calibrate the compass.
  */
 @interface DJICompass : NSObject
 
@@ -47,12 +48,12 @@ typedef NS_ENUM(NSUInteger, DJICompassCalibrationStatus)
 @property(nonatomic, readonly) double heading;
 
 /**
- *  Whether or not the compass has error. If YES, the compass needs calibration.
+ *  YES if the compass has error. If YES, the compass needs calibration.
  */
 @property(nonatomic, readonly) BOOL hasError;
 
 /**
- *  Whether or not the compass is currently calibrating.
+ *  YES if the compass is currently calibrating.
  */
 @property(nonatomic, readonly) BOOL isCalibrating;
 
@@ -65,13 +66,13 @@ typedef NS_ENUM(NSUInteger, DJICompassCalibrationStatus)
  *  Starts compass calibration. Make sure there are no magnets or metal objects near the compass.
  *
  */
--(void) startCalibrationWithCompletion:(DJICompletionBlock)completion;
+- (void)startCalibrationWithCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Stops compass calibration.
  *
  */
--(void) stopCalibrationWithCompletion:(DJICompletionBlock)completion;
+- (void)stopCalibrationWithCompletion:(DJICompletionBlock)completion;
 
 @end
 

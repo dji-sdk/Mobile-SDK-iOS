@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRCJoinMasterResult.html">
+	<File path="Constants/DJIYawControlMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRCJoinMasterResult</TokenIdentifier>
-			<Abstract type="html">Result when a slave Remote Controller tries to join
-a master Remote Controller.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIYawControlMode</TokenIdentifier>
+			<Abstract type="html">Yaw control mode, will affect the mYaw of DJIFlightControlData</Abstract>
+			<DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
 			
 			<NodeRef refid="145"/>
@@ -15,81 +14,27 @@ a master Remote Controller.</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultSuccessful</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
-the master Remote Controller was successful.
+            <TokenIdentifier>//apple_ref/c/econst/DJIYawControlAngle</TokenIdentifier>
+            <Abstract type="html">The value of mYaw is a angle value, mYaw will in range [-180, 180] degree
      </Abstract>
-            <Declaration>DJIRCJoinMasterResultSuccessful</Declaration>
+            <Declaration>DJIYawControlAngle</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultPasswordError</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
-the master Remote Controller was unsuccessful
-due to a password error.
+            <TokenIdentifier>//apple_ref/c/econst/DJIYawControlPalstance</TokenIdentifier>
+            <Abstract type="html">The value of mYaw is a palstance value. mYaw will in range [-100, 100] degree/s
      </Abstract>
-            <Declaration>DJIRCJoinMasterResultPasswordError</Declaration>
+            <Declaration>DJIYawControlPalstance</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIFlightControl.h</DeclaredIn>
             
             <NodeRef refid="145"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultRejected</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
-the master Remote Controller was rejected.
-     </Abstract>
-            <Declaration>DJIRCJoinMasterResultRejected</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultReachMaximum</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
-the master Remote Controller was unsuccesful
-because the master Remote Controller is at the
-maximum number of slaves it can have.
-     </Abstract>
-            <Declaration>DJIRCJoinMasterResultReachMaximum</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultResponseTimeout</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s attempt to join
-the master Remote Controller was unsuccessful
-because the request timed out.
-     </Abstract>
-            <Declaration>DJIRCJoinMasterResultResponseTimeout</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRCJoinMasterResultUnknown</TokenIdentifier>
-            <Abstract type="html">The result of the slave Remote Controller&apos;s
-attempt to join the master Remote Controller
-is unknown.
-     </Abstract>
-            <Declaration>DJIRCJoinMasterResultUnknown</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="145"/>
-        </Token>
         
 	</File>
 </Tokens>

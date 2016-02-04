@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIFlightControllerNoFlyStatus.html">
+	<File path="Constants/DJIFollowMeHeadingMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIFlightControllerNoFlyStatus</TokenIdentifier>
-			<Abstract type="html">No fly status. Please refer to http://wiki.dji.com/en/index.php/Phantom3Professional-FlightLimitsandNo-Fly_Zones for more information on no fly zones.</Abstract>
-			<DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIFollowMeHeadingMode</TokenIdentifier>
+			<Abstract type="html">Aircraft&apos;s heading during a follow me mission.</Abstract>
+			<DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="110"/>
@@ -14,94 +14,31 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusFlyingNormally</TokenIdentifier>
-            <Abstract type="html">The aircraft is normally flying.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeHeadingControlledByRemoteController</TokenIdentifier>
+            <Abstract type="html">Aircraft&apos;s heading will be controlled by the remote controller.
      </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusFlyingNormally</Declaration>
+            <Declaration>DJIFollowMeHeadingControlledByRemoteController</Declaration>
             
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="110"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusTakeOffProhibited</TokenIdentifier>
-            <Abstract type="html">The aircraft is in a no fly zone, so take off is prohibited.
+            <TokenIdentifier>//apple_ref/c/econst/DJIFollowMeHeadingTowardsFollowPosition</TokenIdentifier>
+            <Abstract type="html">Aircraft&apos;s heading will be towards the coordinate it needs
+to follow. When the mission is first initialized, the heading
+will be towards the initial coordinate (userCoordinate) and
+from there onwards, it&apos;s heading will be dicated to what the
+userCoordinate&apos;s value is updated to.
      </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusTakeOffProhibited</Declaration>
+            <Declaration>DJIFollowMeHeadingTowardsFollowPosition</Declaration>
             
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
+            <DeclaredIn>DJIFollowMeMission.h</DeclaredIn>
             
             <NodeRef refid="110"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusForceAutoLanding</TokenIdentifier>
-            <Abstract type="html">The aircraft is in a no fly zone, so it is executing a force landing.
-     </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusForceAutoLanding</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusApproachingNoFlyZone</TokenIdentifier>
-            <Abstract type="html">The aircraft is within 100m of a no fly zone boundary.
-     </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusApproachingNoFlyZone</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusReachMaxFlyingHeight</TokenIdentifier>
-            <Abstract type="html">The aircraft has reached its max flying height.
-     </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusReachMaxFlyingHeight</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusReachMaxFlyingDistance</TokenIdentifier>
-            <Abstract type="html">The aircraft has reached its max flying distance.
-     </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusReachMaxFlyingDistance</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusHeightLimited</TokenIdentifier>
-            <Abstract type="html">Some no fly zones have several areas. A central area where no aircraft can fly or take off in, and then
-an intermediate area where flight height is restricted. This intermediate area can have a gradually
-relaxing height restriction as the aircraft moves further from the no fly zone center. If the aircarft
-is flying in this intermediate area, then the DJIFlightControllerNoFlyStatusHeightLimited enum will be used.</Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusHeightLimited</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIFlightControllerNoFlyStatusUnknownStatus</TokenIdentifier>
-            <Abstract type="html">The aircraft&apos;s no fly status is unknown.
-     </Abstract>
-            <Declaration>DJIFlightControllerNoFlyStatusUnknownStatus</Declaration>
-            
-            <DeclaredIn>DJIFlightControllerCurrentState.h</DeclaredIn>
-            
-            <NodeRef refid="110"/>
-        </Token>
         
 	</File>
 </Tokens>

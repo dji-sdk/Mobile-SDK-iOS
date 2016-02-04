@@ -264,7 +264,7 @@ typedef NS_ENUM (NSInteger, DJIWaypointMissionGotoWaypointMode) {
 @property(nonatomic, assign) int repeatTimes;
 
 /**
- *  Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.
+ *  Add a waypoint to the waypoint mission. The number of waypoints should be in range [DJIWaypointMissionMinimumWaypointCount, DJIWaypointMissionMaximumWaypointCount]. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.
  *
  *  @param Waypoint to be added to the waypoint mission.
  */

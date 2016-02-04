@@ -14,7 +14,7 @@
 #define DJI_API_EXTERN       extern __attribute__((visibility("default")))
 #endif
 
-#define DJI_API_DEPRECATED __attribute__((__deprecated__))
+#define DJI_API_DEPRECATED(_msg_) __attribute__((deprecated(_msg_)))
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -75,7 +75,7 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
  *  Connectivity status. In case of aircraft, if the aircraft is out of range or turned off, then the connectivity status changes to NOT connected.
  *
  */
-@property (assign, nonatomic, readonly, getter = isConnected) BOOL connected;
+@property (nonatomic, readonly, getter = isConnected) BOOL connected;
 
 /**
  *  Contains a dictionary of all the available components

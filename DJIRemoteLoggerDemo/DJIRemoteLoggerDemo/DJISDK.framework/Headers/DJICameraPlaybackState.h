@@ -1,66 +1,67 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJICameraPlaybackState.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
-
 //
+//  DJICameraPlaybackState.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
+
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 /**
  *  Media file type
  */
-typedef NS_ENUM(uint8_t, DJICameraPlaybackFileFormat){
+typedef NS_ENUM (uint8_t, DJICameraPlaybackFileFormat){
     /**
      *  JPEG file
      */
-    DJICameraPlaybackFileFormatJPEG = 0x00,
+    DJICameraPlaybackFileFormatJPEG,
     /**
      *  DNG file
      */
-    DJICameraPlaybackFileFormatRAWDNG = 0x01,
+    DJICameraPlaybackFileFormatRAWDNG,
     /**
      *  Video file
      */
-    DJICameraPlaybackFileFormatVIDEO =0x02,
+    DJICameraPlaybackFileFormatVIDEO,
+    /**
+     *  The playback file format is unknown.
+     */
+    DJICameraPlaybackFileFormatUnknown = 0xFF
 };
 
 /**
- *  Playback mode
+ *  A playback mode represents a task that the Playback manager is executing.
  */
-typedef NS_ENUM(uint8_t, DJICameraPlaybackMode){
+typedef NS_ENUM (uint8_t, DJICameraPlaybackMode){
     /**
      *  Single file preview
-     */
-    DJICameraPlaybackModeSingleFilePreview = 0x00,
+     */
+    DJICameraPlaybackModeSingleFilePreview,
     /**
      *  Single photo zoomed
      */
-    DJICameraPlaybackModeSinglePhotoZoomMode = 0x01,
+    DJICameraPlaybackModeSinglePhotoZoomMode,
     /**
      *  Single video play start
      */
-    DJICameraPlaybackModeSingleVideoPlaybackStart = 0x02,
+    DJICameraPlaybackModeSingleVideoPlaybackStart,
     /**
      *  Single video play pause
      */
-    DJICameraPlaybackModeSingleVideoPlaybackPause = 0x03,
+    DJICameraPlaybackModeSingleVideoPlaybackPause,
     /**
      *  Multiple file edit
      */
-    DJICameraPlaybackModeMultipleFilesEdit = 0x04,
+    DJICameraPlaybackModeMultipleFilesEdit,
     /**
      *  Multiple file preview
      */
-    DJICameraPlaybackModeMultipleFilesPreview = 0x05,
+    DJICameraPlaybackModeMultipleFilesPreview,
     /**
      *  Download file
      */
-    DJICameraPlaybackModeDownload = 0x06,
+    DJICameraPlaybackModeDownload,
     /**
      *  Unknown mode
      */
@@ -68,9 +69,9 @@ typedef NS_ENUM(uint8_t, DJICameraPlaybackMode){
 };
 
 /**
- *  Status for delete a media file
+ *  Status for a media file being deleted
  */
-typedef NS_ENUM(uint8_t, DJICameraPlaybackDeletionStatus){
+typedef NS_ENUM (uint8_t, DJICameraPlaybackDeletionStatus){
     /**
      *  Delete failed
      */
@@ -85,72 +86,104 @@ typedef NS_ENUM(uint8_t, DJICameraPlaybackDeletionStatus){
     DJICameraPlaybackDeletionStatusSuccess,
 };
 
+/**
+ *  This class provides the current state of the Playback manager, like numbers of thumbnail and media files, video duration, video play progress, file download state, etc.
+ */
 @interface DJICameraPlaybackState : NSObject
 
-// the mode of playback.
+/**
+ *  The current mode of the Playback manager
+ */
 @property(nonatomic, readonly) DJICameraPlaybackMode playbackMode;
 
-// the media file type.
-// attention:
-//      value is type of DJICameraPlaybackFileFormat while playbackMode is in SinglePhotoPlayback/SinglePhotoZoomMode/SingleVideoPlaybackStart
-//      value's bit will indicate file type of multiple media while playbackMode is in MultipleMediaFilesDelete/MultipleMediaFilesDisplay. bit[i] = 0 photo, bit[i] = 1 video. ex. value = 0x003A, then the file index of 1, 3, 4, 5 is video file.
+/**
+ *  The type of the current file.
+ *  The value of this property is valid only when the playbackMode is DJICameraPlaybackModeSingleFilePreview, DJICameraPlaybackModeSingleVideoPlaybackStart nor DJICameraPlaybackModeSingleVideoPlaybackPause.
+ */
 @property(nonatomic, readonly) DJICameraPlaybackFileFormat mediaFileType;
 
-// numbers of thumbnail.
-// attention:
-//      value is valid while playbackMode is in MultipleFilesPreview
-@property(nonatomic, readonly) int numbersOfThumbnail;
+/**
+ *  The total number of thumbnails for both the photos and videos being viewed on the page. The value of the property is valid when the playbackMode is DJICameraPlaybackModeMultipleFilesPreview or DJICameraPlaybackModeMultipleFilesEdit.
+ */
+@property(nonatomic, readonly) int numberOfThumbnails;
 
-// numbers of media files, include photos and videos.
-@property(nonatomic, readonly) int numbersOfMediaFiles;
+/**
+ *  The total number of media files on the SD card, including photos and videos.
+ *
+ */
+@property(nonatomic, readonly) int numberOfMediaFiles;
 
-// current selected file index.
+/**
+ *  The index of the current selected file.
+ *
+ */
 @property(nonatomic, readonly) int currentSelectedFileIndex;
 
-// duration in second of video.
-// attention:
-//      value is valid while playbackMode is in SingleVideoPlaybackStart
+/**
+ *  The duration in second of the playing video. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ */
 @property(nonatomic, readonly) int videoDuration;
 
-// progress in percentage of video playback. range in [0, 100]
-// attention:
-//      value is valid while playbackMode is in SingleVideoPlaybackStart
+/**
+ *  The progress in percentage of the playing video. The valid range is [0, 100].
+ *  The value the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ */
 @property(nonatomic, readonly) int videoPlayProgress;
 
-// current playing location of the videoplay
-// attention:
-//      value is valid while playbackMode is in SingleVideoPlaybackStart
+/**
+ *  The played duration in second of the playing video.
+ *
+ *  The value the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ */
 @property(nonatomic, readonly) int videoPlayPosition;
 
-// number of the selected file
-// attention:
-//      value is valid while playbackMode is in MultipleFilesEdit
-@property(nonatomic, readonly) int numbersOfSelected;
+/**
+ *  The total number of the selected files.
+ *
+ *  The value is valid while playbackMode is in DJICameraPlaybackModeMultipleFilesEdit.
+ */
+@property(nonatomic, readonly) int numberOfSelectedFiles;
 
-// numbers of photos in the SD card
-@property(nonatomic, readonly) int numbersOfPhotos;
+/**
+ *  The total number of photos in the SD card.
+ *
+ */
+@property(nonatomic, readonly) int numberOfPhotos;
 
-// numbers of videos in the SD card
-@property(nonatomic, readonly) int numbersOfVideos;
+/**
+ *  The total number of videos in the SD card.
+ *
+ */
+@property(nonatomic, readonly) int numberOfVideos;
 
-// zoom scale of photo.
-@property(nonatomic, readonly) int zoomScale;
-
-// photo size
+/**
+ *  The dimension of the previewing photo. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview and mediaFileType is DJICameraPlaybackFileFormatJPEG.
+ *
+ */
 @property(nonatomic, readonly) CGSize photoSize;
 
-// center coordinate of photo in current zoom scale.
-@property(nonatomic, readonly) CGPoint photoCenterCoordinate;
-
-// file delete status.
+/**
+ *  The current status of a file when the user tries to delete it.
+ *
+ */
 @property(nonatomic, readonly) DJICameraPlaybackDeletionStatus fileDeleteStatus;
 
-// is all files selected in current view.
+/**
+ *  YES if all the files on the current page are selected.
+ *
+ */
 @property(nonatomic, readonly) BOOL isAllFilesInPageSelected;
 
-// is the selected file is a valid photo/video file.
+/**
+ *  YES if the previewing file is a valid photo or video. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview.
+ *
+ */
 @property(nonatomic, readonly) BOOL isSelectedFileValid;
 
-// is the file ever been downloaded.
+/**
+ *  YES if the previewing file has been downloaded. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview.
+ *
+ */
 @property(nonatomic, readonly) BOOL isFileDownloaded;
+
 @end

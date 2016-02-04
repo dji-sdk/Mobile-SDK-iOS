@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIBaseComponent.html">
+	<File path="Classes/DJIBatteryCell.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIBaseComponent</TokenIdentifier>
-			<Abstract type="html">Abstract class for components in a DJI Product.
-A component can be a camera, gimbal, remote controller, etc. A DJI product consists of several
-components.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIBatteryCell</TokenIdentifier>
+			<Abstract type="html">Description The battery cell</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
             
 			
 			<NodeRef refid="3"/>
@@ -15,173 +13,54 @@ components.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/setConnectivityDelegate:</TokenIdentifier>
-			<Abstract type="html">Use this delegate to get notified on connectivity status changes.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryCell/setVoltage:</TokenIdentifier>
+			<Abstract type="html">The voltage battery cell.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIComponentConnectivityDelegate&gt; connectivityDelegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) uint16_t voltage</Declaration>
 			
 			
-			<Anchor>//api/name/connectivityDelegate</Anchor>
+			<Anchor>//api/name/voltage</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/connectivityDelegate</TokenIdentifier>
-			<Abstract type="html">Use this delegate to get notified on connectivity status changes.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryCell/voltage</TokenIdentifier>
+			<Abstract type="html">The voltage battery cell.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIComponentConnectivityDelegate&gt; connectivityDelegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) uint16_t voltage</Declaration>
 			
 			
-			<Anchor>//api/name/connectivityDelegate</Anchor>
+			<Anchor>//api/name/voltage</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIBaseComponent/connectivityDelegate</TokenIdentifier>
-			<Abstract type="html">Use this delegate to get notified on connectivity status changes.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIBatteryCell/voltage</TokenIdentifier>
+			<Abstract type="html">The voltage battery cell.</Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIComponentConnectivityDelegate&gt; connectivityDelegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) uint16_t voltage</Declaration>
 			
 			
-			<Anchor>//api/name/connectivityDelegate</Anchor>
+			<Anchor>//api/name/voltage</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/setConnected:</TokenIdentifier>
-			<Abstract type="html">The connectivity of the component.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIBatteryCell/initWithVolgate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIBattery.h</DeclaredIn>
 			
-			<Declaration>@property (assign, nonatomic, readonly, getter=isConnected) BOOL connected</Declaration>
+			<Declaration>- (id)initWithVolgate:(uint16_t)voltage</Declaration>
 			
 			
-			<Anchor>//api/name/connected</Anchor>
+			<Anchor>//api/name/initWithVolgate:</Anchor>
             <NodeRef refid="3"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/isConnected</TokenIdentifier>
-			<Abstract type="html">The connectivity of the component.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (assign, nonatomic, readonly, getter=isConnected) BOOL connected</Declaration>
-			
-			
-			<Anchor>//api/name/connected</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIBaseComponent/connected</TokenIdentifier>
-			<Abstract type="html">The connectivity of the component.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (assign, nonatomic, readonly, getter=isConnected) BOOL connected</Declaration>
-			
-			
-			<Anchor>//api/name/connected</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/setName:</TokenIdentifier>
-			<Abstract type="html">The name of the component. Different types of components will have different names.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/name</TokenIdentifier>
-			<Abstract type="html">The name of the component. Different types of components will have different names.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIBaseComponent/name</TokenIdentifier>
-			<Abstract type="html">The name of the component. Different types of components will have different names.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (copy, nonatomic, readonly) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/setProduct:</TokenIdentifier>
-			<Abstract type="html">Product to which this component is connected</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, weak) DJIBaseProduct *product</Declaration>
-			
-			
-			<Anchor>//api/name/product</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/product</TokenIdentifier>
-			<Abstract type="html">Product to which this component is connected</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, weak) DJIBaseProduct *product</Declaration>
-			
-			
-			<Anchor>//api/name/product</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIBaseComponent/product</TokenIdentifier>
-			<Abstract type="html">Product to which this component is connected</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, readonly, weak) DJIBaseProduct *product</Declaration>
-			
-			
-			<Anchor>//api/name/product</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/getFirmwareVersionWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Get component&apos;s firmware version</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>- (void)getFirmwareVersionWithCompletion:(void ( ^ ) ( NSString *_Nullable version , NSError *_Nullable error ))block</Declaration>
-			
-			
-			<Anchor>//api/name/getFirmwareVersionWithCompletion:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIBaseComponent/getSerialNumberWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Get serial number of the component. Please note this serial number does not match with the serial number found in the physical component.</Abstract>
-			<DeclaredIn>DJIBaseComponent.h</DeclaredIn>
-			
-			<Declaration>- (void)getSerialNumberWithCompletion:(void ( ^ ) ( NSString *_Nullable serialNumber , NSError *_Nullable error ))block</Declaration>
-			
-			
-			<Anchor>//api/name/getSerialNumberWithCompletion:</Anchor>
-            <NodeRef refid="3"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

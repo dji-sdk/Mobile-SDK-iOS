@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIRCInfo.html">
+	<File path="Classes/DJIPhantomMainController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIRCInfo</TokenIdentifier>
-			<Abstract type="html">This class contains the information of a remote controller.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantomMainController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
             
 			
 			<NodeRef refid="47"/>
@@ -13,197 +13,94 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setIdentifier:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s unique identifier.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomMainController/getMCSystemMode:</TokenIdentifier>
+			<Abstract type="html">Get main controller&apos;s system mode.</Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
+			<Declaration>- (void)getMCSystemMode:(void ( ^ ) ( DJIMCSystemMode mode , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/getMCSystemMode:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/identifier</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s unique identifier.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomMainController/setSmartGoHomeEnable:withResult:</TokenIdentifier>
+			<Abstract type="html">Set smart go home enable.</Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
+			<Declaration>- (void)setSmartGoHomeEnable:(BOOL)isEnable withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>isEnable</Name>
+					<Abstract type="html">Enable for smart go home</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/setSmartGoHomeEnable:withResult:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/identifier</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s unique identifier.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomMainController/getSmartGoHomeEnable:</TokenIdentifier>
+			<Abstract type="html">Get smart go home enable.</Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) DJIRCID identifier</Declaration>
+			<Declaration>- (void)getSmartGoHomeEnable:(void ( ^ ) ( BOOL isEnable , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/identifier</Anchor>
+			<Anchor>//api/name/getSmartGoHomeEnable:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setName:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s name.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomMainController/confirmGoHomeReuqest:</TokenIdentifier>
+			<Abstract type="html">Confirm go home request. use to confirm go home request while the DJIMCSmartGoHome&apos;s droneRequestGoHome property is set.</Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>- (void)confirmGoHomeReuqest:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/confirmGoHomeReuqest:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/name</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s name.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantomMainController/ignoreGoHomeReuqest:</TokenIdentifier>
+			<Abstract type="html">Ignore go home request. use to ingore go home request while the DJIMCSmartGoHome&apos;s droneRequestGoHome property is set.</Abstract>
+			<DeclaredIn>DJIPhantomMainController.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
+			<Declaration>- (void)ignoreGoHomeReuqest:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/name</Anchor>
+			<Anchor>//api/name/ignoreGoHomeReuqest:</Anchor>
             <NodeRef refid="47"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/name</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s name.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *name</Declaration>
-			
-			
-			<Anchor>//api/name/name</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setPassword:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s password.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/password</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s password.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/password</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s password.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, strong) NSString *password</Declaration>
-			
-			
-			<Anchor>//api/name/password</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setSignalQuality:</TokenIdentifier>
-			<Abstract type="html">Signal quality of a conneected master or slave Remote Controller.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQualityOfConnectedRC signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/signalQuality</TokenIdentifier>
-			<Abstract type="html">Signal quality of a conneected master or slave Remote Controller.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQualityOfConnectedRC signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/signalQuality</TokenIdentifier>
-			<Abstract type="html">Signal quality of a conneected master or slave Remote Controller.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCSignalQualityOfConnectedRC signalQuality</Declaration>
-			
-			
-			<Anchor>//api/name/signalQuality</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/setControlPermission:</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s control permissions.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/controlPermission</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s control permissions.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIRCInfo/controlPermission</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s control permissions.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIRCControlPermission controlPermission</Declaration>
-			
-			
-			<Anchor>//api/name/controlPermission</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIRCInfo/RCIdentifier</TokenIdentifier>
-			<Abstract type="html">Converts the Remote Controller&apos;s unique identifier from the property &apos;identifier&apos; to a string.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
-			
-			<Declaration>- (NSString *)RCIdentifier</Declaration>
-			
-			<ReturnValue><Abstract type="html">Remote Controller&apos;s identifier as a string.</Abstract></ReturnValue>
-			<Anchor>//api/name/RCIdentifier</Anchor>
-            <NodeRef refid="47"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

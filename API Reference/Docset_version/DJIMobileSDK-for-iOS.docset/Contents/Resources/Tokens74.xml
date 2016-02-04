@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJISDKDebugServerDelegate.html">
+	<File path="Protocols/DJIWaypointMission.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJISDKDebugServerDelegate</TokenIdentifier>
-			<Abstract type="html">This protocol provides delegate methods to receive the updated connection status between the debug server, remote controller and debug client.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIWaypointMission</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="74"/>
@@ -13,25 +13,497 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJISDKDebugServerDelegate/sdkDebugServerWithRCConnectionStatus:andDebugClientConnectionStatus:</TokenIdentifier>
-			<Abstract type="html">Callback delegate method after the Debug server is started.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setWaypointCount:</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
 			
-			<Declaration>- (void)sdkDebugServerWithRCConnectionStatus:(BOOL)isRCConnected andDebugClientConnectionStatus:(BOOL)isWifiConnected</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>isRCConnected</Name>
-					<Abstract type="html">is true if the RC is connected with the Debug server.</Abstract>
-				</Parameter><Parameter>
-					<Name>isWifiConnected</Name>
-					<Abstract type="html">is true if the debug client is connected with the Debug server based on WiFi.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
 			
-			<Anchor>//api/name/sdkDebugServerWithRCConnectionStatus:andDebugClientConnectionStatus:</Anchor>
+			
+			<Anchor>//api/name/waypointCount</Anchor>
             <NodeRef refid="74"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/waypointCount</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
+			
+			
+			<Anchor>//api/name/waypointCount</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/waypointCount</TokenIdentifier>
+			<Abstract type="html">Number of waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) int waypointCount</Declaration>
+			
+			
+			<Anchor>//api/name/waypointCount</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setMaxFlightSpeed:</TokenIdentifier>
+			<Abstract type="html">Max flight speed for a waypoint mission. The maxFlightSpeed value will be
+the result of the autoFlightSpeed value plus the max controlled speed by remote controller,
+the maxFlightSpeed should be in range [2, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/maxFlightSpeed</TokenIdentifier>
+			<Abstract type="html">Max flight speed for a waypoint mission. The maxFlightSpeed value will be
+the result of the autoFlightSpeed value plus the max controlled speed by remote controller,
+the maxFlightSpeed should be in range [2, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/maxFlightSpeed</TokenIdentifier>
+			<Abstract type="html">Max flight speed for a waypoint mission. The maxFlightSpeed value will be
+the result of the autoFlightSpeed value plus the max controlled speed by remote controller,
+the maxFlightSpeed should be in range [2, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float maxFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/maxFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setAutoFlightSpeed:</TokenIdentifier>
+			<Abstract type="html">The automatically flight speed for a waypoint mission. The autoFlightSpeed&apos;s absolute value
+should be smaller than the maxFlightSpeed value.the autoFlightSpeed should be in range [-15, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/autoFlightSpeed</TokenIdentifier>
+			<Abstract type="html">The automatically flight speed for a waypoint mission. The autoFlightSpeed&apos;s absolute value
+should be smaller than the maxFlightSpeed value.the autoFlightSpeed should be in range [-15, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/autoFlightSpeed</TokenIdentifier>
+			<Abstract type="html">The automatically flight speed for a waypoint mission. The autoFlightSpeed&apos;s absolute value
+should be smaller than the maxFlightSpeed value.the autoFlightSpeed should be in range [-15, 15]m/s.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float autoFlightSpeed</Declaration>
+			
+			
+			<Anchor>//api/name/autoFlightSpeed</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setFinishedAction:</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
+			
+			
+			<Anchor>//api/name/finishedAction</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/finishedAction</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
+			
+			
+			<Anchor>//api/name/finishedAction</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/finishedAction</TokenIdentifier>
+			<Abstract type="html">Action the aircraft will take when the waypoint mission is complete.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</Declaration>
+			
+			
+			<Anchor>//api/name/finishedAction</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setHeadingMode:</TokenIdentifier>
+			<Abstract type="html">Heading mode the aircraft will adhere to during the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/headingMode</TokenIdentifier>
+			<Abstract type="html">Heading mode the aircraft will adhere to during the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/headingMode</TokenIdentifier>
+			<Abstract type="html">Heading mode the aircraft will adhere to during the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</Declaration>
+			
+			
+			<Anchor>//api/name/headingMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setFlightPathMode:</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/flightPathMode</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIWaypointMission/flightPathMode</TokenIdentifier>
+			<Abstract type="html">Flight path mode of the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</Declaration>
+			
+			
+			<Anchor>//api/name/flightPathMode</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/addWaypoint:</TokenIdentifier>
+			<Abstract type="html">Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger then DJIWaypointMissionMaximumWaypointCount. and DJIWaypointMissionMinimumWaypointCount at least. The distance(three dimensions) between adjacent two waypoints should be in range (2, 2000) meters.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)addWaypoint:(DJIWaypoint *)waypoint</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>Waypoint</Name>
+					<Abstract type="html">to be added to the waypoint mission.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addWaypoint:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/addWaypoints:</TokenIdentifier>
+			<Abstract type="html">Adds an array of waypoints to the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)addWaypoints:(NSArray *)waypoints</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>Array</Name>
+					<Abstract type="html">of waypoints to be added to the waypoint mission.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addWaypoints:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/removeWaypoint:</TokenIdentifier>
+			<Abstract type="html">Removes the waypoint passed in as a parameter from the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeWaypoint:(DJIWaypoint *)waypoint</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>waypoint</Name>
+					<Abstract type="html">Waypoint object to be removed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWaypoint:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/removeWaypointAtIndex:</TokenIdentifier>
+			<Abstract type="html">Removes the waypoint at the index passed in as a parameter from the array of
+all waypoints in the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeWaypointAtIndex:(int)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">Index of waypoint to be removed from the waypoint mission from
+the array of all waypoints.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeWaypointAtIndex:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/removeAllWaypoints</TokenIdentifier>
+			<Abstract type="html">Removes all waypoints from the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)removeAllWaypoints</Declaration>
+			
+			
+			<Anchor>//api/name/removeAllWaypoints</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/waypointAtIndex:</TokenIdentifier>
+			<Abstract type="html">Gets a waypoint from the array of waypoints in a waypoint mission based on
+the index passsed into the method.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (DJIWaypoint *)waypointAtIndex:(int)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract type="html">Index of the waypoint wanting to be retrieved from the array of waypoints in the
+waypoint mission.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">Waypoint of type DJIWaypoint if the index exists.</Abstract></ReturnValue>
+			<Anchor>//api/name/waypointAtIndex:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setUploadProgressHandler:</TokenIdentifier>
+			<Abstract type="html">Sets up the upload progress handler, which will tell the user how much progress has been
+made in uploading the waypoint mission. The handler will return an integer in the range
+of [0, 100] percent.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)setUploadProgressHandler:(DJIWaypointMissionUploadProgressHandler)handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">Upload progress handler.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUploadProgressHandler:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/setDownloadProgressHandler:</TokenIdentifier>
+			<Abstract type="html">Sets up the download progress handler, which will tell the user how much progress has been
+made in downloading the waypoint mission. The handler will return an integer in the range
+of [0, 100] percent.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)setDownloadProgressHandler:(DJIWaypointMissionDownloadProgressHandler)handler</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>handler</Name>
+					<Abstract type="html">Download progress handler.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setDownloadProgressHandler:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/uploadMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Uploads the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)uploadMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/uploadMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/downloadMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Downloads the waypoint mission from the aircraft. If the download is successful, the
+mission&apos;s properties will be updated.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)downloadMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/downloadMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/startMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Starts the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)startMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/startMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/pauseMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Pauses the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)pauseMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/pauseMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/resumeMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Resumes the waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)resumeMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resumeMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/stopMissionWithResult:</TokenIdentifier>
+			<Abstract type="html">Stops the waypoint mission. If mission stops successfully, the user will not be able to start
+the mission again.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)stopMissionWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/stopMissionWithResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIWaypointMission/resetAutoFlightSpeed:withResult:</TokenIdentifier>
+			<Abstract type="html">Resets the auto flight speed. This can be used to change the auto flight speed during a
+waypoint mission.</Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
+			
+			<Declaration>- (void)resetAutoFlightSpeed:(float)speed withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>speed</Name>
+					<Abstract type="html">Auto flight speed to be set. The autoFlightSpeed value should be smaller than the
+maxFlightSpeed value, should be greater than the DJIWaypointMissionMinimumAutoFlightSpeed value,
+and should not exceed the DJIWaypointMissionMaxAutoFlightSpeed value.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/resetAutoFlightSpeed:withResult:</Anchor>
+            <NodeRef refid="74"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

@@ -1,51 +1,51 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJICameraSystemState.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJICameraSystemState.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJICameraSettingsDef.h>
 
+/**
+ *  This class provides general information and current status of the camera.
+ */
 @interface DJICameraSystemState : NSObject
 
 /**
- *  Show the camera is taking RAW capture or JPEG capture.
+ *  YES when camera is performing any photo capture in any shootPhotoMode. Between photo capture in interval and time lapse mode, this property will be NO. The camera is shooting single photo.
  *
  */
-@property(nonatomic, readonly) BOOL isTakingRawCapture;
+@property(nonatomic, readonly) BOOL isShootingSinglePhoto;
 
 /**
- *  The camera is taking continuous capture.
- *
+ *  YES when the camera is performing a photo capture in RAW or RAW+JPEG format. Between photo capture in interval and time lapse mode, this property will
+ *  be NO. If saving the photo in JPEG only, this property will always be NO.
  */
-@property(nonatomic, readonly) BOOL isTakingContinousCapture;
+@property(nonatomic, readonly) BOOL isShootingSinglePhotoInRAWFormat;
 
 /**
- *  The camera is taking multi capture.
+ *  YES when camera is performing an interval capture. Will be yes after startShootPhoto is called, and NO after stopShootPhoto is called.
  */
-@property(nonatomic, readonly) BOOL isTakingMultiCapture;
+@property(nonatomic, readonly) BOOL isShootingIntervalPhoto;
 
 /**
- *  The camera is taking single capture.
- *
+ *  YES when camera is performing a burst capture. Will be yes after startShootPhoto is called, and NO after burst is complete.
+ *  The camera is shooting burst photos.
  */
-@property(nonatomic, readonly) BOOL isTakingSingleCapture;
-
-/**
- *  YES if the camera time is synced by the mobile or other device with time. DJICamera does not have
- *  timer.  Once it is restarted, the previous synced time will be lost. Check syncTime: method to see
- *  how to set time for the camera.
- */
-@property(nonatomic, readonly) BOOL isCameraTimeSynced;
+@property(nonatomic, readonly) BOOL isShootingBurstPhoto;
 
 /**
  *  YES if camera is recording video
  */
 @property(nonatomic, readonly) BOOL isRecording;
+
+/**
+ *  YES if camera is storing a photo.
+ *  When isStoringPhoto is YES, user cannot change the camera mode or start to shoot another photo.
+ */
+@property(nonatomic, readonly) BOOL isStoringPhoto;
 
 /**
  *  YES if camera is too hot.
@@ -58,20 +58,14 @@
 @property(nonatomic, readonly) BOOL isCameraError;
 
 /**
- *  Indicate whether the SD card exists in the camera.
- */
-@property(nonatomic, readonly) BOOL isSDCardExist;
-
-/**
  *  Indicate whether the camera is in usb mode.
  */
 @property(nonatomic, readonly) BOOL isUSBMode;
 
-
 /**
  *  Current mode of the camera.
  */
-@property(nonatomic, readonly) DJICameraMode workMode;
+@property(nonatomic, readonly) DJICameraMode mode;
 
 /**
  *  Time of current video being recorded by camera in seconds.

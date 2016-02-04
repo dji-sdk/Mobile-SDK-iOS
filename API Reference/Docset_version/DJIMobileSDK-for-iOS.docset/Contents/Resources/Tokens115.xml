@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIGimbalJoystickAxis.html">
+	<File path="Constants/DJIGimbalWorkMode.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalJoystickAxis</TokenIdentifier>
-			<Abstract type="html">Gimbal joystick axis. This is only supported by the OSMO gimbal when using a Custom configuration in DJIGimbalUserConfigType.</Abstract>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIGimbalWorkMode</TokenIdentifier>
+			<Abstract type="html">Gimbal work mode</Abstract>
 			<DeclaredIn>DJIGimbal.h</DeclaredIn>
             
 			
@@ -14,10 +14,10 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalJoystickAxisYaw</TokenIdentifier>
-            <Abstract type="html">The axis of gimbal&apos;s joystick direction is yaw.
+            <TokenIdentifier>//apple_ref/c/econst/GimbalFreeMode</TokenIdentifier>
+            <Abstract type="html">Free mode (not follow)
      </Abstract>
-            <Declaration>DJIGimbalJoystickAxisYaw</Declaration>
+            <Declaration>GimbalFreeMode</Declaration>
             
             <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
@@ -25,15 +25,38 @@
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIGimbalJoystickAxisPitch</TokenIdentifier>
-            <Abstract type="html">The axis of gimbal&apos;s joystick direction is pitch.
+            <TokenIdentifier>//apple_ref/c/econst/GimbalFpvMode</TokenIdentifier>
+            <Abstract type="html">FPV mode
      </Abstract>
-            <Declaration>DJIGimbalJoystickAxisPitch</Declaration>
+            <Declaration>GimbalFpvMode</Declaration>
             
             <DeclaredIn>DJIGimbal.h</DeclaredIn>
             
             <NodeRef refid="115"/>
         </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GimbalYawFollowMode</TokenIdentifier>
+            <Abstract type="html">Follow Yaw mode
+     </Abstract>
+            <Declaration>GimbalYawFollowMode</Declaration>
+            
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            
+            <NodeRef refid="115"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/GimbalWorkModeUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown
+     </Abstract>
+            <Declaration>GimbalWorkModeUnknown</Declaration>
+            
+            <DeclaredIn>DJIGimbal.h</DeclaredIn>
+            
+            <NodeRef refid="115"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

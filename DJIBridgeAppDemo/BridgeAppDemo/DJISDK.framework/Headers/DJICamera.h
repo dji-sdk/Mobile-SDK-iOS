@@ -10,88 +10,61 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <DJISDK/DJIBaseComponent.h>
 #import <DJISDK/DJICameraSettingsDef.h>
+#import <DJISDK/DJICameraSSDState.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class DJIMedia;
 @class DJICamera;
 @class DJICameraSystemState;
+@class DJICameraSDCardState;
 @class DJICameraPlaybackState;
 @class DJICameraLensState;
 @class DJIMediaManager;
 @class DJIPlaybackManager;
+@class UIImage;
 
 /*********************************************************************************/
-#pragma mark - DJICameraSDCardState
+#pragma mark - Strings for cameras' type
 /*********************************************************************************/
+/**
+ *  The display names for different cameras.
+ */
+extern NSString *const DJICameraDisplayNamePhantom3StandardCamera;
+extern NSString *const DJICameraDisplayNamePhantom3AdvancedCamera;
+extern NSString *const DJICameraDisplayNamePhantom3ProfessionalCamera;
+extern NSString *const DJICameraDisplayNamePhantom34KCamera;
+extern NSString *const DJICameraDisplayNameX3;
+extern NSString *const DJICameraDisplayNameX5;
+extern NSString *const DJICameraDisplayNameX5R;
+
+/*********************************************************************************/
+#pragma mark - DJICameraExposureParameters
+/*********************************************************************************/
+/**
+ *  This class contains current values for some camera parameters. When the camera is in different exposure modes, different parameters are being automatically changed by the camera to either get the correct exposure (in Program, Shutter Priority and Aperture Priority modes), or report back the current exposure (in Manual mode). The current values of these parameters the camera is currently using can be found in this class.
+ */
+@interface DJICameraExposureParameters : NSObject
 
 /**
- *  This class provides the SD card's general information and current status.
- *
+ *  Returns the current aperture value being used by the camera. For cameras that do not support adjustable aperture (e.g. Zenmuse X3), the real aperture value is fixed.
  */
-@interface DJICameraSDCardState : NSObject
+@property(nonatomic, readonly) DJICameraAperture aperture;
 
 /**
- *  YES if there is an SD card error.
+ *  Returns the current shutter speed being used by the camera.
  */
-@property(nonatomic, readonly) BOOL hasError;
+@property(nonatomic, readonly) DJICameraShutterSpeed shutterSpeed;
 
 /**
- *  YES if the SD card is read only.
+ *  Returns the current ISO value being used by the camera. DJICameraISO defines a number ISO values separated by one exposure stop. However, when the ISO is in automatic mode, the camera can select ISO values less than one stop apart, and therefore this property is the actual ISO value being used by the camera.
  */
-@property(nonatomic, readonly) BOOL isReadOnly;
+@property(nonatomic, readonly) NSUInteger iso;
 
 /**
- *  YES if SD card filesystem format is invalid.
+ *  Returns the camera's current exposure compensation. In Program, Aperture Priority and Shutter Priority modes, this value changes the exposure target the camera is using to calculate correct exposure and is set by the user. In Manual mode, this value is reported from the camera and reports how much the exposure needs to be compensated for to get to what the camera thinks is the correct exposure. The range of exposure compensation reported by the camera is -2.0 EV to 2.0 EV.
  */
-@property(nonatomic, readonly) BOOL isInvalidFormat;
-
-/**
- *  YES if the SD card is formatted.
- */
-@property(nonatomic, readonly) BOOL isFormatted;
-
-/**
- *  YES if the SD card is formatting.
- */
-@property(nonatomic, readonly) BOOL isFormatting;
-/**
- *  YES if the SD card cannot save any more media.
- */
-@property(nonatomic, readonly) BOOL isFull;
-
-/**
- *  YES if the SD card is verified genuine. The SD card will not be valid if it is fake,
- *  which can be a problem if the SD card was purchased by a non-reputable retailer.
- */
-@property(nonatomic, readonly) BOOL isVerified;
-
-/**
- *  YES if SD card is inserted in camera.
- */
-@property(nonatomic, readonly) BOOL isInserted;
-
-/**
- *  Total space in Megabytes (MB) available on the SD card.
- */
-@property(nonatomic, readonly) int totalSpaceInMegaBytes;
-
-/**
- *  Remaining space in Megabytes (MB) on the SD card.
- */
-@property(nonatomic, readonly) int remainingSpaceInMegaBytes;
-
-/**
- *  Returns the number of pictures that can be taken with the remaining space available
- *  on the SD card.
- */
-@property(nonatomic, readonly) int availableCaptureCount;
-
-/**
- *  Returns the number of seconds available for recording with the remaining space available
- *  in the SD card.
- */
-@property(nonatomic, readonly) int availableRecordingTimeInSeconds;
+@property(nonatomic, readonly) DJICameraExposureCompensation exposureCompensation;
 
 @end
 
@@ -121,19 +94,65 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Updates the camera's current state.
  *
- *  @param camera      Camera that sends out the video data.
+ *  @param camera      Camera that updates the current state.
  *  @param systemState The camera's system state.
  */
 - (void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState;
 
 /**
  *  Tells the delegate that the lens information is updated.
- *  This protocol is available only when isChangeableLensSupported is YES.
+ *  This method is available only when isChangeableLensSupported is YES.
  *
  *  @param camera      Camera that sends out the updatd lens information.
  *  @param lensState   The camera's lens state.
  */
 - (void)camera:(DJICamera *)camera didUpdateLensState:(DJICameraLensState *)lensState;
+
+/**
+ *  Tells the delegate that a new media file (photo or video) is generated.
+ *
+ *  @param camera   Camera that generates the new media file.
+ *  @param newMedia The new media file. 
+ *
+ *  @warning In this delegate, the DJIMedia instance properties "thumbnail" and "durationInSeconds" require special consideration. The property "thumbnail" normally has a pointer to a UIImage of the thumbnail, however this is only available when the camera is in DJICameraModeMediaDownload work mode. Additionally, for this instance of DJIMedia the "durationInSeconds" property holds 0. 
+ */
+- (void)camera:(DJICamera *)camera didGenerateNewMediaFile:(DJIMedia *)newMedia;
+
+/**
+ *  Tells the delegate that a preview image for the Time-lapse is generated.
+ *  This method is only available for Osmo with the upcoming firmware version. 
+ *
+ *  @param camera       Camera that generates the Time-lapse preview image.
+ *  @param previewImage The new generated preview image.
+ */
+- (void)camera:(DJICamera *)camera didGenerateTimeLapsePreview:(UIImage *)previewImage;
+
+/**
+ *  Tells the delegate that the camera's SD card state is updated.
+ *
+ *  @param camera       Camera that sends out the updated SD card state.
+ *  @param sdCardState  The camera's SD card state.
+ */
+- (void)camera:(DJICamera *)camera didUpdateSDCardState:(DJICameraSDCardState *)sdCardState;
+
+/**
+ *  Tells the delegate that the camera's SSD state is updated.
+ *  This method is available only when isSSDSupported is YES.
+ *
+ *  @param camera   Camera that sends out the updated SSD state.
+ *  @param ssdState The camera's SSD state.
+ */
+- (void)camera:(DJICamera *)camera didUpdateSSDState:(DJICameraSSDState *)ssdState;
+
+/**
+ *  Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically updated to let the user know how much the exposure needs to be compensated for to get to an exposure the camera thinks is correct.
+ *
+ *  @param camera   Camera that sends out the video data.
+ *  @param values   The updated real values for parameters.
+ *
+ *  @see DJICameraExposureParameters
+ */
+- (void)camera:(DJICamera *)camera didUpdateCurrentExposureValues:(DJICameraExposureParameters *)values;
 
 @end
 
@@ -148,9 +167,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DJICamera : DJIBaseComponent
 
 /**
- *  Delegate that recevies the information pushed by the camera
+ *  Delegate that recevies the information pushed by the camera.
  */
 @property(nonatomic, weak) id<DJICameraDelegate> delegate;
+
+/**
+ *  String that represents name of the camera.
+ */
+@property(nonatomic, readonly) NSString *displayName;
 
 /**
  *  Media Manager is used for interaction when camera is in DJICameraModeMediaDownload.
@@ -188,8 +212,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark Shoot photos
 //-----------------------------------------------------------------
 /**
- *  Check if the current device supports Timelapse.
- *  Supported only by OSMO camera.
+ *  Check if the current device supports Time-lapse shoot mode.
+ *  Supported only by Osmo camera.
  */
 - (BOOL)isTimeLapseSupported;
 
@@ -228,7 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
 //-----------------------------------------------------------------
 /**
  *  Check if the current device supports Slow Motion video recording.
- *  Currently Slow Motion is supported only by the OSMO camera.
+ *  Currently Slow Motion is supported only by the Osmo camera.
  */
 - (BOOL)isSlowMotionSupported;
 
@@ -236,7 +260,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets whether Slow Motion mode is enabled or not.
  *  When it is enabled, the resolution and frame rate will change to 1920x1080 120fps.
  *  When it is disabled, the reolution and frame rate will recover to previous setting.
- *  Supported only by OSMO camera.
+ *  Supported only by Osmo camera.
  *
  *  @param enabled  Enable or disable Slow Motion video.
  *  @param block    The execution callback with the execution result returned.
@@ -245,7 +269,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Gets whether Slow Motion mode is enabled or not.
- *  Supported only by the OSMO camera.
+ *  Supported only by the Osmo camera.
  *
  *  @param block The execution callback with the value(s) returned.
  */
@@ -296,29 +320,26 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets the camera's video resolution and frame rate.
  *
  *  @warning The supported resolutions and frame rates for the two different analog television standards PAL and NSTC are below:
- *  PAL:4096x2160_24fps
- *      4096x2160_25fps
- *      3840x2160_24fps
- *      3840x2160_25fps
- *      1920x1080_24fps
- *      1920x1080_25fps
- *      1920x1080_48fps
- *      1920x1080_50fps
- *      1280x720_24fps
- *      1280x720_25fps
- *      1280x720_48fps
- *      1280x720_50fps
- *  NTSC:4096x2160_24fps
- *      3840x2160_24fps
- *      3840x2160_30fps
- *      1920x1080_24fps
- *      1920x1080_30fps
- *      1920x1080_48fps
- *      1920x1080_60fps
- *      1280x720_24fps
- *      1280x720_30fps
- *      1280x720_48fps
- *      1280x720_60fps
+ *       NTSC: Resolution_4096x2160, FrameRate_24fps
+ *             Resolution_3840x2160, FrameRate_24fps
+ *             Resolution_3840x2160, FrameRate_30fps
+ *             Resolution_2704X1520, FrameRate_24fps
+ *             Resolution_2704X1520, FrameRate_30fps
+ *             Resolution_1920x1080, FrameRate_60fps
+ *             Resolution_1920x1080, FrameRate_48fps
+ *             Resolution_1920x1080, FrameRate_30fps
+ *             Resolution_1920x1080, FrameRate_24fps
+ *
+ *       PAL:  Resolution_4096x2160, FrameRate_25fps
+ *             Resolution_4096x2160, FrameRate_24fps
+ *             Resolution_3840x2160, FrameRate_25fps
+ *             Resolution_3840x2160, FrameRate_24fps
+ *             Resolution_2704X1520, FrameRate_25fps
+ *             Resolution_2704X1520, FrameRate_24fps
+ *             Resolution_1920x1080, FrameRate_50fps
+ *             Resolution_1920x1080, FrameRate_48fps
+ *             Resolution_1920x1080, FrameRate_25fps
+ *             Resolution_1920x1080, FrameRate_24fps
  *
  *  @param resolution Resolution to be set for the video.
  *  @param rate       Frame rate to be set for the video.
@@ -471,7 +492,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  Precondition:
  *  Camera should be in TimeLapse mode of CameraShootPhotoMode.
- *  Supported only by OSMO.
+ *  Supported only by Osmo.
  *
  *  @param interval     The time between image captures.
  *                      An integer falls in the range, [10, 8191]. The unit is 100ms. Please note that when
@@ -486,7 +507,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setPhotoTimeLapseInterval:(NSUInteger)interval duration:(NSUInteger)duration fileFormat:(DJICameraPhotoTimeLapseFileFormat)format withCompletion:(DJICompletionBlock)block;
 /**
- *  Supported only by OSMO camera.
+ *  Supported only by Osmo camera.
  *  Gets the TimeLapse parameters including interval, duration and file format when saving.
  *
  *  Precondition:
@@ -520,7 +541,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets the camera's ISO value. Check the enum named DJICameraISO in
  *  DJICameraSettingsDef.h to find all possible ISO options that the camera can be set to.
  *
- *  For all cameras except X5 the ISO value can only be set when the camera exposure mode is Manual mode. For X5, the ISO value can be set for all modes. Refer to setExposureMode:withCompletion: method for how to set exposure mode.
+ *  For all cameras except X5 camera and X5R camera the ISO value can only be set when the camera exposure mode is Manual mode. For X5 and X5R, the ISO value can be set for all modes. Refer to setExposureMode:withCompletion: method for how to set exposure mode.
  *
  *  @param iso ISO value to be set.
  *  @param block   Completion block.
@@ -576,8 +597,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets the spot metering area index. The camera image is divided into 96 spots defined by 12 columns and 8 rows.
  *  The row index falls in [0,7] where the values increase top to bottom across the image. The column index falls
  *  in [0, 11], where the values increase left to right.
- *  In order to make the method work, The camera exposure mode should be 'Program', 'Shutter' or 'Aperture' and the
- *  exposure metering mode should be DJICameraMeteringModeSpot.
+ *  In order to make the method work, The camera exposure mode should be 'Program', 'Shutter' or 'Aperture', the
+ *  exposure metering mode should be DJICameraMeteringModeSpot and AELock should be NO.
  *
  *  @param rowIndex  Spot metering area row index to be set.
  *  @param colIndex  Spot metering area column index to be set.
@@ -776,13 +797,13 @@ NS_ASSUME_NONNULL_BEGIN
 //-----------------------------------------------------------------
 /**
  *  Check if the current device supports audio recording.
- *  Currently audio recording is supported only by the OSMO camera.
+ *  Currently audio recording is supported only by the Osmo camera.
  */
 - (BOOL)isAudioRecordSupported;
 
 /**
  *  Enables audio recording when capturing video.
- *  Supported only by OSMO camera.
+ *  Supported only by Osmo camera.
  *
  *  @param enabled   Enable or disable audio recording.
  *  @param block     The execution callback with the execution result returned.
@@ -791,7 +812,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setAudioRecordEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block;
 
 /**
- *  Supported only by OSMO camera.
+ *  Supported only by Osmo camera.
  *  Gets whether the audio record is enabled or not.
  *
  *  @param block    The execution callback with the value(s) returned.
@@ -801,14 +822,16 @@ NS_ASSUME_NONNULL_BEGIN
 //-----------------------------------------------------------------
 #pragma mark Advanced Camera Settings
 //-----------------------------------------------------------------
+
 /**
  *  Gets whether the changeable lens is supported by the camera.
- *  Currently, a changeable lens is supported only by X5 camera.
+ *  Currently, a changeable lens is supported only by X5 camera and X5R camera.
  */
 - (BOOL)isChangeableLensSupported;
+
 /**
  *  Gets details of the installed lens.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *  It is available only when isChangeableLensSupported returns YES.
  *
  *  @param callback The execution callback with the value(s) returned.
@@ -817,14 +840,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Gets whether the camera supports an adjustable aperture.
- *  Currently, adjustable aperture is supported only by X5 camera.
+ *  Currently, adjustable aperture is supported only by X5 camera and X5R camera.
  */
 - (BOOL)isAdjustableApertureSupported;
 
 /**
  *  Sets the aperture value.
  *  It is available only when isAdjustableApertureSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  Precondition:
  *  The exposure mode should be in Manual or AperturePriority.
@@ -837,7 +860,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets the lens aperture.
  *  It is available only when isAdjustableApertureSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param block The execution callback with the value(s) returned.
  */
@@ -845,14 +868,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Gets whether the camera supports an adjustable focal point.
- *  Currently, adjustable focal point is supported only by X5 camera.
+ *  Currently, adjustable focal point is supported only by X5 camera and X5R camera.
  */
 - (BOOL)isAdjustableFocalPointSupported;
 
 /**
  *  Sets the lens focus mode. Check enum CameraLensFocusMode in DJICameraSettingsDef.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param focusMode    Focus mode to set. Please refer to DJICameraLensFocusMode for more detail.
  *  @param block        The execution callback with the execution result returned.
@@ -862,7 +885,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets the lens focus mode. Please check enum CameraLensFocusMode in DJICameraSettingsDef.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  * @param block The execution callback with the value(s) returned.
  */
@@ -874,7 +897,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  When the focus mode is manual, the target point is the zoom out area if the focus assistant is enabled for
  *  the manual mode.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param focusTarget  The focus target to set. The range for x and y is from 0.0 to 1.0. The point [0.0, 0.0]
  *                      represents the top-left angle of the screen.
@@ -886,7 +909,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets the lens focus Target point.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param callback The execution callback with the value(s) returned.
  */
@@ -896,7 +919,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Sets whether the lens focus assistant is enabled or not.
  *  If the focus assistant is enabled, a specific area of the screen will zoom out during focusing.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param enabledMF    Sets whether the lens focus assistant under MF mode is enabled or not.
  *  @param enabledAF    Sets whether the lens focus assistant under AF mode is enabled or not.
@@ -907,7 +930,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets whether the lens focus assistant is enabled or not.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param block The execution callback with the value(s) returned.
  *  The first result stands for MF, the second result stands for AF.
@@ -917,29 +940,35 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Gets the lens focusing ring value's max value.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param callback The execution callback with the value(s) returned.
  */
 - (void)getLensFocusRingValueUpperBoundWithCompletion:(void (^)(NSUInteger upperBound, NSError *_Nullable error))block;
 
 /**
- *  Set the focal distance by simulating the focus ring adjustment. Value can have a range of [0, getLensFocusRingValueUpperBoundWithCompletion] which represents the closest possible focal distance and infinity.
+ *  Set the focal distance by simulating the focus ring adjustment. Value can have a range of [0, getLensFocusRingValueUpperBoundWithCompletion] which represents infinity and the closest possible focal distance.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
- *  @param value    An integer value to adjust the focusing ring.
+ *  For some lenses, the minimum focus ring value is larger than 0. For example the minimum of DJI MFT 15mm f/1.7 ASPH is 270.
+ *  To retrieve the minimum value, perform the following steps:
+ *
+ *  - Call setLensFocusMode with DJICameraLensFocusModeAuto.
+ *  - Call setLensFocusTarget with the furthest target (>30m).
+ *  - Call getLensFocusRingValue to get the current focus ring value. This is the minimum value. The maximum value can be retrieved using getLensFocusRingValueUpperBoundWithCompletion.
+ *
+ *   @param value   Value to adjust focus ring to.
  *                  The minimum value is 0, the maximum value depends on the installed lens. Please use method
  *                  getLensFocusRingValueUpperBoundWithCompletion to ensure the input argument is valid.
  *  @param block    The execution callback with the execution result returned.
- *
  */
 - (void)setLensFocusRingValue:(NSUInteger)value withCompletion:(DJICompletionBlock)block;
 
 /**
  *  Gets lens focus ring value.
  *  It is available only when isAdjustableFocalPointSupported returns YES.
- *  Supported only by X5 camera.
+ *  Supported only by X5 camera and X5R camera.
  *
  *  @param callback The execution callback with the value(s) returned.
  */
@@ -1015,16 +1044,74 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)formatSDCardWithCompletion:(DJICompletionBlock)block;
 
 /**
- *  Gets the current state of the SD card. For instance, accessing the sdInfo
- *  parameter of the block will tell you whether or not the SD card is inserted
- *  into the camera or how much memory is remaining. For more information on all
- *  possible current states of the SD card, refer to DJICameraSDCardState.
+ *  Gets the current state of the SD card. For instance, accessing the sdInfo parameter of the block will tell you whether or not the SD card is inserted into the camera or how much memory is remaining. For more information on all possible current states of the SD card, refer to DJICameraSDCardState.
  *
  *  @param block Remote execution result callback block.
+ *
+ *  @deprecated Please use method [DJICameraDelegate camera:didUpdateSDCardState:] instead.
  */
-- (void)getSDCardInfoWithCompletion:(void (^)(DJICameraSDCardState *_Nullable sdInfo, NSError *_Nullable error))block;
+- (void)getSDCardInfoWithCompletion:(void (^)(DJICameraSDCardState *_Nullable sdInfo, NSError *_Nullable error))block DJI_API_DEPRECATED("Use camera:didUpdateSDCardState: in DJICameraDelegate instead. ");
 
 @end
 
+/*********************************************************************************/
+#pragma mark - DJISSDOperations
+/*********************************************************************************/
+
+@interface DJICamera (SSDOperations)
+/**
+ *  Gets whether the SSD is supported by the camera.
+ *  Currently, the SSD is supported only by X5R camera.
+ */
+- (BOOL)isSSDSupported;
+
+/**
+ *  Formats the SSD by deleting all the data on the SSD. This
+ *  does not change any settings the user may have set on the SSD.
+ */
+- (void)formatSSDWithCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set Raw Video Resolution and Frame Rate of the SSD.
+ *
+ *  Note, only raw video is saved to the SSD. Compressed video, compressed pictures
+ *  and raw pictures are all saved to the SD Card. During video capture, Raw video and
+ *  compressed video are saved simultaneously to the SSD and SD Card respectively.
+ *
+ *  @warning The supported resolutions and frame rates for SSD Raw Videos are shown below:
+ *    NTSC: Resolution_4096x2160, FrameRate_24fps
+ *          Resolution_3840x2160, FrameRate_24fps
+ *          Resolution_3840x2160, FrameRate_30fps
+ *          Resolution_2704X1520, FrameRate_24fps
+ *          Resolution_2704X1520, FrameRate_30fps
+ *          Resolution_1920x1080, FrameRate_60fps
+ *          Resolution_1920x1080, FrameRate_48fps
+ *          Resolution_1920x1080, FrameRate_30fps
+ *          Resolution_1920x1080, FrameRate_24fps
+ *    PAL:  Resolution_4096x2160, FrameRate_25fps
+ *          Resolution_4096x2160, FrameRate_24fps
+ *          Resolution_3840x2160, FrameRate_25fps
+ *          Resolution_3840x2160, FrameRate_24fps
+ *          Resolution_2704X1520, FrameRate_25fps
+ *          Resolution_2704X1520, FrameRate_24fps
+ *          Resolution_1920x1080, FrameRate_50fps
+ *          Resolution_1920x1080, FrameRate_48fps
+ *          Resolution_1920x1080, FrameRate_25fps
+ *          Resolution_1920x1080, FrameRate_24fps
+ *
+ *  @param resolution Resolution to be set for the video.
+ *  @param frameRate Frame rate to be set for the video.
+ *  @param block Remote execution result error block.
+ */
+- (void)setSSDRawVideoResolution:(DJICameraVideoResolution)resolution andFrameRate:(DJICameraVideoFrameRate)frameRate withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Get Raw Video Format and Frame Rate of the SSD.
+ *
+ *  @param block Get raw video resolution and frame rate result callback block.
+ */
+- (void)getSSDRawVideoResolutionAndFrameRateWithCompletion:(void (^)(DJICameraVideoResolution resolution, DJICameraVideoFrameRate frameRate, NSError *_Nullable error))block;
+
+@end
 
 NS_ASSUME_NONNULL_END

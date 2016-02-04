@@ -1,47 +1,45 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIBaseProduct.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIBaseProduct.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJIBaseComponent.h>
 
 #ifdef __cplusplus
-#define DJI_API_EXTERN       extern "C" __attribute__((visibility ("default")))
+#define DJI_API_EXTERN       extern "C" __attribute__((visibility("default")))
 #else
-#define DJI_API_EXTERN       extern __attribute__((visibility ("default")))
+#define DJI_API_EXTERN       extern __attribute__((visibility("default")))
 #endif
 
-#define DJI_API_DEPRECATED __attribute__ ((__deprecated__))
+#define DJI_API_DEPRECATED(_msg_) __attribute__((deprecated(_msg_)))
 
 NS_ASSUME_NONNULL_BEGIN
 
 //Keys for components dictionary
-extern NSString * const DJIFlightControllerComponentKey;
-extern NSString * const DJIRemoteControllerComponentKey;
-extern NSString * const DJICameraComponentKey;
-extern NSString * const DJIGimbalComponentKey;
-extern NSString * const DJIAirLinkComponentKey;
-extern NSString * const DJIBatteryComponentKey;
-extern NSString * const DJIHandheldControllerComponentKey;
+extern NSString *const DJIFlightControllerComponentKey;
+extern NSString *const DJIRemoteControllerComponentKey;
+extern NSString *const DJICameraComponentKey;
+extern NSString *const DJIGimbalComponentKey;
+extern NSString *const DJIAirLinkComponentKey;
+extern NSString *const DJIBatteryComponentKey;
+extern NSString *const DJIHandheldControllerComponentKey;
 
 /**
  *  Completion block for asynchronous operations. This completion block is used for methods that return at an unknown future time.
  *
  *  @param error Error object if an error occured during async operation. nil if no error occurred.
  */
-typedef void (^_Nullable DJICompletionBlock)(NSError* _Nullable error);
+typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 
 @class DJIBaseComponent;
 @class DJIBaseProduct;
 
-
 /**
- *  Delegate protocol to get notified on component and product connectivity changes.
+ *
+ *  This protocol provides delegate methods to get notified on component and product connectivity changes.
  *
  */
 @protocol DJIBaseProductDelegate <NSObject>
@@ -52,17 +50,18 @@ typedef void (^_Nullable DJICompletionBlock)(NSError* _Nullable error);
  *  Callback delegate method when a component object changed
  *
  */
-- (void)componentWithKey: (NSString*) key changedFrom: (DJIBaseComponent* _Nullable) oldComponent to: (DJIBaseComponent* _Nullable) newComponent;
+- (void)componentWithKey:(NSString *)key changedFrom:(DJIBaseComponent *_Nullable)oldComponent to:(DJIBaseComponent *_Nullable)newComponent;
 
 /**
  *  Called when connectivity status changed for the base product.
  *
  */
-- (void) product: (DJIBaseProduct*) product connectivityChanged: (BOOL) isConnected;
+- (void)product:(DJIBaseProduct *)product connectivityChanged:(BOOL)isConnected;
 
 @end
 
 /**
+ *
  *  Abstract class for all DJI Products
  */
 @interface DJIBaseProduct : NSObject
@@ -76,24 +75,24 @@ typedef void (^_Nullable DJICompletionBlock)(NSError* _Nullable error);
  *  Connectivity status. In case of aircraft, if the aircraft is out of range or turned off, then the connectivity status changes to NOT connected.
  *
  */
-@property (assign, nonatomic, readonly, getter=isConnected) BOOL connected;
+@property (nonatomic, readonly, getter = isConnected) BOOL connected;
 
 /**
  *  Contains a dictionary of all the available components
  *
  */
-@property (nonatomic, readonly) NSDictionary<NSString*, NSArray<DJIBaseComponent*>*>* _Nullable components;
+@property (nonatomic, readonly) NSDictionary<NSString *, NSArray<DJIBaseComponent *> *> *_Nullable components;
 
 /**
  *  Get product's firmware package version
  *
  */
--(void) getFirmwarePackageVersionWithCompletion:(void(^)(NSString* version, NSError* _Nullable error))block;
+- (void)getFirmwarePackageVersionWithCompletion:(void (^)(NSString *_Nullable version, NSError *_Nullable error))block;
 
 /**
  *  Returns the model of the product.
  */
-@property (nonatomic, strong, readonly) NSString* _Nullable model;
+@property (nonatomic, strong, readonly) NSString *_Nullable model;
 
 @end
 NS_ASSUME_NONNULL_END

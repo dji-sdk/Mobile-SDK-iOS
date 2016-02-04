@@ -260,9 +260,33 @@ typedef NS_ENUM (NSInteger, DJISDKCameraError){
      */
     DJISDKCameraErrorSystemError = -3008L,
     /**
-     *  Media type error.
+     *  The command is not supported by the media file type.
      */
     DJISDKCameraErrorMediaTypeError = -3009L,
+    /**
+     *  The media file is not found in SD card.
+     */
+    DJISDKCameraErrorNoSuchMediaFile = -3010L,
+    /**
+     *  The command is aborted unexpectedly.
+     */
+    DJISDKCameraErrorMediaCommandAborted = -3011L,
+    /**
+     *  Data is corrupted during the file transmission.
+     */
+    DJISDKCameraErrorMediaFileDataCorrupted = -3012L,
+    /**
+     *  The media command is invalid.
+     */
+    DJISDKCameraErrorInvalidMediaCommand = -3013L,
+    /**
+     *  There is no permission to access the media file.
+     */
+    DJISDKCameraErrorNoPermission = -3014L,
+    /**
+     *  The download process of DJIPlaybackManager is interrupted unexpectly.
+     */
+    DJISDKCameraErrorPlaybackDownloadInterruption = -3015L
 };
 
 //-----------------------------------------------------------------
@@ -324,7 +348,7 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
     /**
      *  Aircraft in a no fly zone.
      */
-    DJISDKFlightControllerErrorInNoFlyZone = -4013,
+    DJISDKFlightControllerErrorInNoFlyZone = -4013L,
     /**
      *  Compass calibration
      */
@@ -357,6 +381,14 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      *  The virtual stick control mode is not available.
      */
     DJISDKFlightControllerErrorVirtualStickControlModeError = -4020L,
+    /**
+     *  The aircraft is not at auto landing state.
+     */
+    DJISDKFlightControllerErrorAircraftNotAutoLanding = -4021L,
+    /**
+     *  The aircraft is not at go home state.
+     */
+    DJISDKFlightControllerErrorAircraftNotGoingHome = -4022L,
 };
 
 //-----------------------------------------------------------------

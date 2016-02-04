@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  NSError+DJISDK.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  NSError+DJISDK.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 
@@ -21,237 +19,280 @@ FOUNDATION_EXPORT NSString * _Nonnull const DJISDKErrorDomain;
 /**
  *  SDK camera error domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKCameraErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKCameraErrorDomain;
 /**
  *  SDK mission error domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKMissionErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKMissionErrorDomain;
 /**
  *  SDK battery error domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKBatteryErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKBatteryErrorDomain;
 /**
  *  SDK gimbal error domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKGimbalErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKGimbalErrorDomain;
 /**
  *  SDK flight controller domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKFlightControllerErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKFlightControllerErrorDomain;
 /**
  *  SDK remote controller domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKRemoteControllerErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRemoteControllerErrorDomain;
 /**
  *  SDK registration error domain
  */
-FOUNDATION_EXPORT NSString * _Nonnull const DJISDKRegistrationErrorDomain;
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRegistrationErrorDomain;
 
 //-----------------------------------------------------------------
 #pragma mark DJISDKRegistrationError
 //-----------------------------------------------------------------
-typedef NS_ENUM(NSInteger, DJISDKRegistrationError){
+typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
     /**
      *  The application is not able to connect to the internet the first time it registers.
      */
-    DJISDKRegistrationErrorCouldNotConnectToInternet            = -1L,
-    
+    DJISDKRegistrationErrorCouldNotConnectToInternet = -1L,
+
     /**
      *  The application key you provided is incorrect.
      */
-    DJISDKRegistrationErrorInvalidAppKey                = -2L,
-    
+    DJISDKRegistrationErrorInvalidAppKey = -2L,
+
     /**
      *  The network you are trying to reach is busy, or the server is unreachable.
      */
-    DJISDKRegistrationErrorHTTPTimeout                          = -3L,
-    
+    DJISDKRegistrationErrorHTTPTimeout = -3L,
+
     /**
      *  The attempt to copy meta data from another registered device to the device that is
      *  currently connected is not allowed. For example, if a developer has two devices and
      *  the application is activated with the application key onto one of the devices, if the
      *  other device is plugged in and tries to register the application, this error will occur.
      */
-    DJISDKRegistrationErrorDeviceDoesNotMatch                   = -4L,
-    
+    DJISDKRegistrationErrorDeviceDoesNotMatch = -4L,
+
     /**
      *  The bundle identifier of your application does not match the bundle identifier you
      *  registered on the website when you applied to obtain an application key.
      */
-    DJISDKRegistrationErrorBundleIdDoesNotMatch                 = -5L,
-    
+    DJISDKRegistrationErrorBundleIdDoesNotMatch = -5L,
+
     /**
      *  The application key is prohibited. This occurs when an application key that has already
      *  been released by DJI is revoked. Please contact DJI for assistance.
      */
-    DJISDKRegistrationErrorAppKeyProhibited             = -6L,
-    
+    DJISDKRegistrationErrorAppKeyProhibited = -6L,
+
     /**
      *  There is a maximum number of devices one application key can be used to activate. The
      *  maximum number of devices is given when an application is registered on the DJI developer
      *  website. This error will occur if the maximum number of activations has been reached.
      */
-    DJISDKRegistrationErrorMaxActivationCountReached           = -7L,
-    
+    DJISDKRegistrationErrorMaxActivationCountReached = -7L,
+
     /**
      *  This error occurrs when an application key was given for a specific platform and is trying
      *  to be used to activate an application for another platform. For instance, if an application
      *  key was given for an iOS applicationa and is used to activate an Android application, this
      *  error will occur.
      */
-    DJISDKRegistrationErrorAppKeyInvalidPlatformError                  = -8L,
-    
+    DJISDKRegistrationErrorAppKeyInvalidPlatformError = -8L,
+
     /**
      *  The application key does not exist. Please make sure the application key you are entering
      *  is correct.
      */
-    DJISDKRegistrationErrorAppKeyDoesNotExist                   = -9L,
-    
+    DJISDKRegistrationErrorAppKeyDoesNotExist = -9L,
+
     /**
      *  There are two levels for the SDK framework, level 1 and level 2. If an application key was
      *  given under one level and is trying to be used to active an application using another level
      *  SDK framework, this error will occur.
      */
-    DJISDKRegistrationErrorAppKeyLevelNotPermitted                 = -10L,
-    
+    DJISDKRegistrationErrorAppKeyLevelNotPermitted = -10L,
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
-    DJISDKRegistrationErrorServerParseFailure                   = -11L,
-    
+    DJISDKRegistrationErrorServerParseFailure = -11L,
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
-    DJISDKRegistrationErrorServerWriteError                     = -12L,
-    
+    DJISDKRegistrationErrorServerWriteError = -12L,
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
-    DJISDKRegistrationErrorServerDataAbnormal                   = -13L,
-    
+    DJISDKRegistrationErrorServerDataAbnormal = -13L,
+
     /**
      *  The activation data received from server
      *  valid. Please reconnect to the internet and try again.
      */
-    DJISDKRegistrationErrorInvalidMetaData                      = -14L,
-    
+    DJISDKRegistrationErrorInvalidMetaData = -14L,
+
     /**
      *  No application key was inputted.
      */
-    DJISDKRegistrationErrorEmptyAppKey                          = -15L,
-    
+    DJISDKRegistrationErrorEmptyAppKey = -15L,
+
     /**
      *  An unknown error occurred when the application was trying to register. Please contact DJI
      *  for assistance.
      */
-    DJISDKRegistrationErrorUnknown                              = -999L
+    DJISDKRegistrationErrorUnknown = -999L
 };
 
 //-----------------------------------------------------------------
 #pragma mark DJISDKError
 //-----------------------------------------------------------------
-typedef NS_ENUM(NSInteger, DJISDKError){
+typedef NS_ENUM (NSInteger, DJISDKError){
     /**
      *  Feature not supported error.
      */
-    DJISDKErrorSDKFeatureNotSupported   = -1000L,
+    DJISDKErrorSDKFeatureNotSupported = -1000L,
     /**
      *  Application not activated error.
      */
-    DJISDKErrorApplicationNotActivated  = -1001L,
+    DJISDKErrorApplicationNotActivated = -1001L,
     /**
      *  SDKLevel not permitted error
      */
-    DJISDKErrorSDKLevelNotPermitted     = -1002L,
+    DJISDKErrorSDKLevelNotPermitted = -1002L,
     /**
      *  Timeout error.
      */
-    DJISDKErrorTimeout                  = -1003L,
+    DJISDKErrorTimeout = -1003L,
     /**
      *  System busy error
      */
-    DJISDKErrorSystemBusy               = -1004L,
+    DJISDKErrorSystemBusy = -1004L,
     /**
      *  Parameters invalid error
      */
-    DJISDKErrorInvalidParameters        = -1005L,
+    DJISDKErrorInvalidParameters = -1005L,
     /**
      *  Get parameter failed error.
      */
-    DJISDKErrorParameterGetFailed       = -1006L,
+    DJISDKErrorParameterGetFailed = -1006L,
     /**
      *  Set parameter failed error.
      */
-    DJISDKErrorParameterSetFailed       = -1007L,
+    DJISDKErrorParameterSetFailed = -1007L,
     /**
      *  Command execute failed error.
      */
-    DJISDKErrorCommandExecutionFailed   = -1008L,
+    DJISDKErrorCommandExecutionFailed = -1008L,
     /**
      *  Send data failed error.
      */
-    DJISDKErrorSendDataFailed           = -1009L,
+    DJISDKErrorSendDataFailed = -1009L,
     /**
      *  Connection to SDK failed error.
      */
-    DJISDKErrorConnectionToSDKFailed    = -1010L,
+    DJISDKErrorConnectionToSDKFailed = -1010L,
+    /**
+     *  Server data not ready.
+     */
+    DJISDKErrorServerDataNotReady = -1011L,
+    /**
+     *  Product unknown.
+     */
+    DJISDKErrorProductUnknown = -1012L,
+    /**
+     *  Product not support.
+     */
+    DJISDKErrorProductNotSupport = -1013L,
+    /**
+     *  Device not found.
+     */
+    DJISDKErrorDeviceNotFound = -1014L,
+    /**
+     *  The command is not supported by the current firmware version.
+     */
+    DJISDKErrorNotSupportedByFirmware = -1015L,
     /**
      *  Not defined error.
      */
-    DJISDKErrorNotDefined               = -1999L,
+    DJISDKErrorNotDefined = -1999L,
 };
 
 //-----------------------------------------------------------------
 #pragma mark DJISDKCameraError
 //-----------------------------------------------------------------
-typedef NS_ENUM(NSInteger, DJISDKCameraError)
-{
+typedef NS_ENUM (NSInteger, DJISDKCameraError){
     /**
      *  Not supported command or command not support in this firmware.
      */
-    DJISDKCameraErrorFirmwareDoesNotSupportCommand     = -3000L,
+    DJISDKCameraErrorFirmwareDoesNotSupportCommand = -3000L,
     /**
      *  Camera memory allocation failed error.
      */
-    DJISDKCameraErrorMemoryAllocationFailed            = -3001L,
+    DJISDKCameraErrorMemoryAllocationFailed = -3001L,
     /**
      *  Camera busy or command could not execute in current state.
      */
-    DJISDKCameraErrorCommandCurrentlyNotEnabled        = -3002L,
+    DJISDKCameraErrorCommandCurrentlyNotEnabled = -3002L,
     /**
      *  Camera time not synced.
      */
-    DJISDKCameraErrorTimeNotSynced                     = -3003L,
+    DJISDKCameraErrorTimeNotSynced = -3003L,
     /**
      *  No SD card.
      */
-    DJISDKCameraErrorSDCardNotInserted                 = -3004L,
+    DJISDKCameraErrorSDCardNotInserted = -3004L,
     /**
      *  SD card full.
      */
-    DJISDKCameraErrorSDCardFull                        = -3005L,
+    DJISDKCameraErrorSDCardFull = -3005L,
     /**
      *  SD card error.
      */
-    DJISDKCameraErrorSDCardError                       = -3006L,
+    DJISDKCameraErrorSDCardError = -3006L,
     /**
      *  Camera sensor error.
      */
-    DJISDKCameraErrorSensorError                       = -3007L,
+    DJISDKCameraErrorSensorError = -3007L,
     /**
      *  Camera system error.
      */
-    DJISDKCameraErrorSystemError                       = -3008L,
+    DJISDKCameraErrorSystemError = -3008L,
     /**
-     *  Media type error.
+     *  The command is not supported by the media file type.
      */
-    DJISDKCameraErrorMediaTypeError                    = -3009L,
+    DJISDKCameraErrorMediaTypeError = -3009L,
+    /**
+     *  The media file is not found in SD card.
+     */
+    DJISDKCameraErrorNoSuchMediaFile = -3010L,
+    /**
+     *  The command is aborted unexpectedly.
+     */
+    DJISDKCameraErrorMediaCommandAborted = -3011L,
+    /**
+     *  Data is corrupted during the file transmission.
+     */
+    DJISDKCameraErrorMediaFileDataCorrupted = -3012L,
+    /**
+     *  The media command is invalid.
+     */
+    DJISDKCameraErrorInvalidMediaCommand = -3013L,
+    /**
+     *  There is no permission to access the media file.
+     */
+    DJISDKCameraErrorNoPermission = -3014L,
+    /**
+     *  The download process of DJIPlaybackManager is interrupted unexpectly.
+     */
+    DJISDKCameraErrorPlaybackDownloadInterruption = -3015L
 };
 
 //-----------------------------------------------------------------
 #pragma mark DJISDKFlightControllerError
 //-----------------------------------------------------------------
-typedef NS_ENUM(NSInteger, DJISDKFlightControllerError) {
+typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
     /**
      *  Mode error
      */
@@ -307,7 +348,7 @@ typedef NS_ENUM(NSInteger, DJISDKFlightControllerError) {
     /**
      *  Aircraft in a no fly zone.
      */
-    DJISDKFlightControllerErrorInNoFlyZone = -4013,
+    DJISDKFlightControllerErrorInNoFlyZone = -4013L,
     /**
      *  Compass calibration
      */
@@ -316,13 +357,44 @@ typedef NS_ENUM(NSInteger, DJISDKFlightControllerError) {
      *  Gimbal not removed.
      */
     DJISDKFlightControllerErrorGimbalNotRemoved = -4014L,
+    /**
+     *  Try to turn off motors during flight.
+     */
+    DJISDKFlightControllerErrorAircraftFlying = -4015L,
+    /**
+     *  The new home point is too far.
+     */
+    DJISDKFlightControllerErrorHomePointTooFar = -4016L,
+    /**
+     *  The new home altitude is too low.
+     */
+    DJISDKFlightControllerErrorGoHomeAltitudeTooLow = -4017L,
+    /**
+     *  The new home altitude is too high.
+     */
+    DJISDKFlightControllerErrorGoHomeAltitudeTooHigh = -4018L,
+    /**
+     *  The remote controller's mode switch is not in correct mode.
+     */
+    DJISDKFlightControllerErrorRemoteControllerModeError = -4019L,
+    /**
+     *  The virtual stick control mode is not available.
+     */
+    DJISDKFlightControllerErrorVirtualStickControlModeError = -4020L,
+    /**
+     *  The aircraft is not at auto landing state.
+     */
+    DJISDKFlightControllerErrorAircraftNotAutoLanding = -4021L,
+    /**
+     *  The aircraft is not at go home state.
+     */
+    DJISDKFlightControllerErrorAircraftNotGoingHome = -4022L,
 };
 
 //-----------------------------------------------------------------
 #pragma mark DJISDKMissionError
 //-----------------------------------------------------------------
-typedef NS_ENUM(NSInteger, DJISDKMissionError)
-{
+typedef NS_ENUM (NSInteger, DJISDKMissionError){
     /**
      *  Mode error. Remote controller's mode switch should be in 'F' mode.
      */
@@ -428,20 +500,72 @@ typedef NS_ENUM(NSInteger, DJISDKMissionError)
      */
     DJISDKMissionErrorAircraftAlreadyInCommandState = -5025L,
     /**
+     *  Mission not prepare
+     */
+    DJISDKMissionErrorMissionNotReady = -5026L,
+    /**
+     *  Custom mission step can not be paused.
+     */
+    DJISDKMissionErrorCustomMissionStepCannotPause = -5027L,
+    /**
      * Custom mission is not initialized with the mission steps.  The Steps array is empty.
      */
-    DJISDKMissionErrorCustomMissionStepsNotInitialized
-
+    DJISDKMissionErrorCustomMissionStepsNotInitialized = -5028L,
+    /**
+     *  Current mission step is initializing.
+     */
+    DJISDKMissionErrorCustomMissionStepInitializing = -5029L,
 };
 
+/**
+ *  NSError's DJISDK category. It contains methods to create custom NSErrors.
+ *
+ */
 @interface NSError (DJISDK)
 
-+ (_Nullable instancetype) DJISDKErrorForCode: (NSInteger) errorCode;
-+ (_Nullable instancetype) DJISDKCameraErrorForCode: (NSInteger) errorCode;
-+ (_Nullable instancetype) DJISDKFlightControllerErrorForCode: (NSInteger) errorCode;
-+ (_Nullable instancetype) DJISDKMissionErrorForCode: (NSInteger) errorCode;
-+ (_Nullable instancetype) DJISDKRegistrationErrorForCode: (DJISDKRegistrationError) errorCode;
-+ (_Nullable instancetype) DJISDKErrorForCode:(NSInteger)errorCode domain:(NSString*_Nonnull)errorDomain desc:(const NSString* _Nonnull)desc;
+/**
+ *  Get DJISDKError
+ *
+ *  @param errorCode errorCode for DJISDKError
+ */
++ (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode;
+
+/**
+ *  Get DJISDKCameraError
+ *
+ *  @param errorCode errorCode for DJISDKCameraError
+ */
++ (_Nullable instancetype)DJISDKCameraErrorForCode:(NSInteger)errorCode;
+
+/**
+ *  Get DJISDKFlightControllerError
+ *
+ *  @param errorCode errorCode for DJISDKFlightControllerError
+ */
++ (_Nullable instancetype)DJISDKFlightControllerErrorForCode:(NSInteger)errorCode;
+
+/**
+ *  Get DJISDKMissionError
+ *
+ *  @param errorCode errorCode for DJISDKMissionError
+ */
++ (_Nullable instancetype)DJISDKMissionErrorForCode:(NSInteger)errorCode;
+
+/**
+ *  Get DJISDKRegistrationError
+ *
+ *  @param errorCode errorCode for DJISDKRegistrationError
+ */
++ (_Nullable instancetype)DJISDKRegistrationErrorForCode:(DJISDKRegistrationError)errorCode;
+
+/**
+ *  Get DJISDKError
+ *
+ *  @param errorCode errorCode for DJISDKError
+ *  @param errorDomain domain for DJISDKError
+ *  @param desc desc for DJISDKError
+ */
++ (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode domain:(NSString *_Nonnull)errorDomain desc:(const NSString *_Nonnull)desc;
 
 @end
 

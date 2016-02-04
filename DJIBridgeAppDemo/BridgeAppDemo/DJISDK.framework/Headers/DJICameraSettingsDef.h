@@ -38,7 +38,7 @@ typedef NS_ENUM (NSUInteger, DJICameraMode){
      *  Playback mode. In this mode, the user can preview photos and videos, and
      *  they can delete files.
      *
-     *  Not supported by OSMO, Phantom 3 Standard.
+     *  Not supported by Osmo, Phantom 3 Standard or Phantom 3 4K.
      */
     DJICameraModePlayback = 0x02,
     /**
@@ -47,7 +47,7 @@ typedef NS_ENUM (NSUInteger, DJICameraMode){
      *  Supported by Phantom 3 Professional, Phantom 3 Advanced, Phantom 3 Standard, X3.
      */
     DJICameraModeMediaDownload = 0x03,
-    
+
     /**
      *  The camera work mode is unknown.
      */
@@ -67,7 +67,7 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
     DJICameraShootPhotoModeSingle,
     /**
      *  Sets the camera to take a HDR photo.
-     *  Currently, X5 does not support HDR mode.
+     *  Currently, X5 camera and X5R camera does not support HDR mode.
      */
     DJICameraShootPhotoModeHDR,
     /**
@@ -91,7 +91,11 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
      *  The camera will merge the photo sequence and the output is a video.
      *  The minimum interval for Video only format is 1 s.
      *  The minimum interval for Video+Photo format is 2 s.
-     *  Supported only by OSMO camera.
+     *  Supported only by Osmo camera.
+     *
+     *  For the upcoming Osmo firmware version, no video feed will be received if the camera is shooting
+     *  photos with Time-lapse mode. Instead, user can receive a sequence of preview images using delegate
+     *  method camera:didGenerateTimeLapsePreview:.
      */
     DJICameraShootPhotoModeTimeLapse
 };
@@ -106,7 +110,7 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
  *  be set automatically or manually. Exposure compensation can be changed in all modes
  *  except Manual mode where it is not settable.
  *
- *  X5:
+ *  X5 camera and X5R camera:
  *       Program Mode:       Shutter: Auto     Aperture: Auto     ISO: Manual or Auto
  *       Shutter Priority:   Shutter: Manual   Aperture: Auto     ISO: Manual or Auto
  *       Aperture Priority:  Shutter: Auto     Aperture: Manual   ISO: Manual or Auto
@@ -175,10 +179,6 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoFileFormat){
  */
 typedef NS_ENUM (NSUInteger, DJICameraVideoResolution){
     /**
-     *  The camera's video resolution is 2704x1520.
-     */
-    DJICameraVideoResolution2704x1520,
-    /**
      *  The camera's video resolution is 1280x720.
      */
     DJICameraVideoResolution1280x720,
@@ -186,6 +186,10 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoResolution){
      *  The camera's video resolution is 1920x1080.
      */
     DJICameraVideoResolution1920x1080,
+    /**
+     *  The camera's video resolution is 2704x1520.
+     */
+    DJICameraVideoResolution2704x1520,
     /**
      *  The camera's video resolution is 3840x2160.
      */
@@ -430,12 +434,12 @@ typedef struct
      *  If 255 is selected, then the camera will continue to take pictures until stopShootPhotoWithCompletion is called.
      */
     uint8_t captureCount;
-    
+
     /**
      *  The time interval between when two photos are taken.
      *  The range for this parameter depends the photo file format(DJICameraPhotoFileFormat).
      *  When the file format is JPEG, the range is [2, 2^16-1] seconds.
-     *  For X5 when the file format is RAW or RAW+JPEG, the range is [5, 2^16-1] seconds, for all other
+     *  For X5 camera and X5R camera when the file format is RAW or RAW+JPEG, the range is [5, 2^16-1] seconds, for all other
      *  products the range is [10, 2^16-1].
      */
     uint16_t timeIntervalInSeconds;
@@ -509,7 +513,7 @@ typedef NS_ENUM (NSUInteger, DJICameraShutterSpeed) {
     DJICameraShutterSpeed20p0 = 0x37,       // 20.0 s
     DJICameraShutterSpeed25p0 = 0x38,       // 25.0 s
     DJICameraShutterSpeed30p0 = 0x39,       // 30.0 s
-    
+
     DJICameraShutterSpeedUnknown = 0xFF
 };
 
@@ -570,7 +574,7 @@ typedef NS_ENUM (NSUInteger, DJICameraISO){
 #pragma mark DJICameraAperture
 //-----------------------------------------------------------------
 /**
- *  Camera aperture values. Currently, only X5 and X5 Raw support
+ *  Camera aperture values. Currently, only X5 camera and X5R camera support
  *  this setting.
  *
  */
@@ -1002,7 +1006,7 @@ typedef NS_ENUM (NSUInteger, DJICameraDigitalFilter){
      */
     DJICameraDigitalFilterBright,
     /**
-     *  The digital filter is set to movie.
+     *  The digital filter is set to movie, also known as D-Cinelike.
      */
     DJICameraDigitalFilterMovie,
     /**
@@ -1070,7 +1074,7 @@ typedef NS_ENUM (NSUInteger, DJICameraDigitalFilter){
      */
     DJICameraDigitalFilterVisionX,
     /**
-     *  The digital filter is set to neutral.
+     *  The digital filter is set to neutral, also known as D-Log.
      */
     DJICameraDigitalFilterNeutral,
     /**

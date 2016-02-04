@@ -1,13 +1,12 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIWaypointMission.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIWaypointMission.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 #import "DJIMission.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -26,24 +25,27 @@ DJI_API_EXTERN const int DJIWaypointMissionMaximumWaypointCount;
  */
 DJI_API_EXTERN const int DJIWaypointMissionMinimumWaypointCount;
 
-
 /**
  *  Current waypoint mission state.
  */
-typedef NS_ENUM(uint8_t, DJIWaypointMissionExecuteState){
+typedef NS_ENUM (uint8_t, DJIWaypointMissionExecuteState){
     /**
      *  Waypoint mission is initializing, which means the mission has
      *  started and the aircraft is going to the first waypoint.
      */
     DJIWaypointMissionExecuteStateInitializing,
     /**
-     *  Aircraft is currently moving toward the mission's next waypoint.
+     *  Aircraft is currently moving toward the mission's next waypoint. happens when the 'flightPathMode' is set as DJIWaypointMissionFlightPathNormal.
      */
     DJIWaypointMissionExecuteStateMoving,
     /**
-     *  Aircraft is currently rotating at a waypoint to the waypoint's assigne heading.
+     *  Aircraft is currently moving. happens when the 'flightPathMode' is set as DJIWaypointMissionFlightPathCurved.
      */
-    DJIWaypointMissionExecuteStateRotating,
+    DJIWaypointMissionExecuteStateCurveModeMoving,
+    /**
+     *  Aircraft is currently turning. happens when the 'flightPathMode' is set as DJIWaypointMissionFlightPathCurved.
+     */
+    DJIWaypointMissionExecuteStateCurveModeTurning,
     /**
      *  Aircraft has reached a waypoint, has rotated to the new heading and is now processing actions.
      * This state will be called before the waypoint actions starts executing and will occur for each waypoint action.
@@ -58,13 +60,16 @@ typedef NS_ENUM(uint8_t, DJIWaypointMissionExecuteState){
      *  action. This state occurs once for each waypoint action.
      */
     DJIWaypointMissionExecuteStateFinishedAction,
+    /**
+     *  Aircraft is return to first waypoint. happens when the 'finishedAction' is set as DJIWaypointMissionFinishedGoFirstWaypoint
+     */
+    DJIWaypointMissionExecuteStateReturnToFirstWaypoint
 };
 
 /**
  *  Actions for when the waypoint mission has finished.
  */
-typedef NS_ENUM(uint8_t, DJIWaypointMissionFinishedAction)
-{
+typedef NS_ENUM (uint8_t, DJIWaypointMissionFinishedAction){
     /**
      *  No further action will be taken on completion of mission. At this point, the aircraft can be controlled by the remote controller.
      */
@@ -73,41 +78,26 @@ typedef NS_ENUM(uint8_t, DJIWaypointMissionFinishedAction)
      *  The aicraft will go home when the mission is complete.
      *  If the aircraft is more than 20m away from the home point it will go home and land.
      *  Otherwise, it will land directly at the current location.
-     *
      */
     DJIWaypointMissionFinishedGoHome,
     /**
      *  The aircraft will land automatically at the last waypoint.
-     *
      */
     DJIWaypointMissionFinishedAutoLand,
     /**
      *  The aircraft will go back to its first waypoint and hover in position.
-     *
      */
     DJIWaypointMissionFinishedGoFirstWaypoint,
     /**
-     *  If the user attempts to pull the aircraft back along the flight path as the
-     *  mission is being executed, the aircarft will move towards the previous waypoint
-     *  and will continue to do so until there are no more waypoint to move back to or
-     *  the user has stopped attempting to move the aircraft back. In the process of moving the
-     *  aircraft back, if the user ever stops attempting to do so the aircraft will,
-     *  automatically continue the mission until the end.
-     *
-     *  If the aircraft had been pulled back along the flight path all the way to the
-     *  first waypoint, and the user continued to pull the back, the aircarft would continue
-     *  to hover at the first waypoint. Now, if the user stopped attempting to pull the aircraft
-     *  back, the aicraft would execute the mission from start to finish, as it would've if you
-     *  had just started the waypoint mission for the first time.
-     *
+     *  When the aircraft reaches its final waypoint, it will hover without ending the mission. The joystick can still be used to pull the aircraft back along its previous waypoints. The only way this mission can end is if stopMission is called.
      */
-    DJIWaypointMissionFinishedContinueUntilEnd
+    DJIWaypointMissionFinishedContinueUntilStop
 };
 
 /**
  *  Current waypoint mission heading mode.
  */
-typedef NS_ENUM(NSUInteger, DJIWaypointMissionHeadingMode){
+typedef NS_ENUM (NSUInteger, DJIWaypointMissionHeadingMode){
     /**
      *  Aircraft's heading will always be in the direction of flight.
      */
@@ -121,14 +111,16 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionHeadingMode){
      */
     DJIWaypointMissionHeadingControledByRemoteController,
     /**
-     *  Aircraft's heading will be set to the previous waypoint's heading while travelling between waypoints.
-     *
+     *  Aircraft's heading will gradually change between waypoints.
      */
     DJIWaypointMissionHeadingUsingWaypointHeading,
+    /**
+     *  Aircraft's heading will always toward point of interest.
+     */
+    DJIWaypointMissionHeadingTowardPointOfInterest,
 };
 
-typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
-{
+typedef NS_ENUM (NSUInteger, DJIWaypointMissionFlightPathMode){
     /**
      *  The flight path will be normal and the aircraft will
      *  move from one waypoint to the next in straight lines.
@@ -143,6 +135,21 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
     DJIWaypointMissionFlightPathCurved
 };
 
+typedef NS_ENUM (NSInteger, DJIWaypointMissionGotoWaypointMode) {
+    /**
+     *  Go to waypoint safely. Aircraft will rise to the same altitude of waypoint if current altitude is lower then the waypoint
+     *  altitude. then go to waypoint coordinate from altitude, then go to altitude of waypoint.
+     */
+    DJIWaypointMissionGotoWaypointSafely,
+    /**
+     *  Go to waypoint frome current aircraft point to the waypoint directly.
+     */
+    DJIWaypointMissionGotoWaypointPointToPoint,
+};
+
+/**
+ *  This class provides the real-time status of an executing waypoint mission.
+ */
 @interface DJIWaypointMissionStatus : DJIMissionProgressStatus
 
 /**
@@ -151,9 +158,7 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
 @property(nonatomic, readonly) NSInteger targetWaypointIndex;
 
 /**
- *  Whether or not the aircraft has reached a waypoint. Will return
- *  true if a waypoint has been reached.
- *
+ *  YES when aircraft reaches a waypoint. After waypoint actions and heading change is complete, the targetWaypointIndex will increment and this property will become NO.
  */
 @property(nonatomic, readonly) BOOL isWaypointReached;
 
@@ -162,12 +167,27 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  */
 @property(nonatomic, readonly) DJIWaypointMissionExecuteState execState;
 
-
 @end
 
 /*********************************************************************************/
 #pragma mark - Mission
 /*********************************************************************************/
+
+/**
+ *  In the waypoint mission, the aircraft will travel between waypoints, execute actions at
+ *  waypoints, and adjust heading and altitude between waypoints.
+ *
+ *  The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
+ *  using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
+ *  will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
+ *  travel back along the path it came. When the aircraft is travelling through waypoints in the reverse order, it will
+ *  not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
+ *  waypoints in the original order, and continue to execute waypoint actions (even if executed previously).
+ *
+ *  If the aircraft is pulled back along the waypoint mission all the way to the first waypoint, then it will hover in place
+ *  until the stick is released enough for it to again progress through the mission from start to finish.
+ */
+
 @interface DJIWaypointMission : DJIMission
 /*********************************************************************************/
 #pragma mark - Mission Presets
@@ -186,8 +206,7 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  *  deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
  *  If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
  *  waypoint, it will then hover in place until a positive speed is applied.
- *  maxFlightSpeed has a range of [2,10] m/s.
- *
+ *  maxFlightSpeed has a range of [2,15] m/s.
  */
 @property(nonatomic, assign) float maxFlightSpeed;
 
@@ -197,10 +216,9 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  *  The aircraft's actual speed is a combination of the base automatic speed, and the speed control
  *  given by the throttle joystick on the remote controller.
  *
- *  If autoFlightSpeed <>0: Actual speed is autoFlightSpeed + Joystick Speed (with combined max of maxFlightSpeed)
+ *  If autoFlightSpeed >0: Actual speed is autoFlightSpeed + Joystick Speed (with combined max of maxFlightSpeed)
  *  If autoFlightSpeed =0: Actual speed is controlled only by the remote controller joystick.
  *  If autoFlightSpeed <0 and the aircraft is at the first waypoint, then the aircraft will hover in place until the speed is made positive by the remote controller joystick.
- *
  */
 @property(nonatomic, assign) float autoFlightSpeed;
 
@@ -220,41 +238,52 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
 @property(nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode;
 
 /**
- * Tracks the upload progress
+ *  Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.
  */
-@property (nonatomic, strong) DJIMissionProgressHandler uploadProgressListener;
+@property(nonatomic, assign) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode;
 
 /**
- * Tracks the upload completion
+ *  Determines whether exit mission when RC signal lost. Default is NO.
  */
-@property (nonatomic, strong) DJICompletionBlock uploadCompletionListener;
+@property(nonatomic, assign) BOOL exitMissionOnRCSignalLost;
 
 /**
- * Tracks the upload completion
+ *  Property is used when 'headingMode' is 'DJIWaypointMissionHeadingTowardPointOfInterest'. Aircraft will always heading to
+ *  point while executing mission. Default is kCLLocationCoordinate2DInvalid.
  */
-@property (nonatomic, strong) DJICompletionBlock executionCompletionListener;
+@property(nonatomic, assign) CLLocationCoordinate2D pointOfInterest;
 
 /**
- *  Add a waypoint to the waypoint mission. The maximum number of waypoints should not larger than DJIWaypointMissionMaximumWaypointCount. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [2,2000] meters.
+ *  Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If 'YES' then aircraft will control gimal pitch rotation between waypoints using 'gimbalPitch' of DJIWaypoint.
+ */
+@property(nonatomic, assign) BOOL rotateGimbalPitch;
+
+/**
+ *  Repeat times for mission execution. Default is 1.
+ */
+@property(nonatomic, assign) int repeatTimes;
+
+/**
+ *  Add a waypoint to the waypoint mission. The number of waypoints should be in range [DJIWaypointMissionMinimumWaypointCount, DJIWaypointMissionMaximumWaypointCount]. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.
  *
  *  @param Waypoint to be added to the waypoint mission.
  */
--(void) addWaypoint:(DJIWaypoint* _Nonnull)waypoint;
+- (void)addWaypoint:(DJIWaypoint *_Nonnull)waypoint;
 
 /**
  *  Adds an array of waypoints to the waypoint mission.
  *
  *  @param Array of waypoints to be added to the waypoint mission.
  */
--(void) addWaypoints:(NSArray* _Nonnull)waypoints;
+- (void)addWaypoints:(NSArray *_Nonnull)waypoints;
 
 /**
- *  Removes the specific waypoint previously added.
+ *  Removes a specific waypoint previously added.
  *
  *  @param waypoint Waypoint object to be removed.
  *
  */
--(void) removeWaypoint:(DJIWaypoint* _Nonnull)waypoint;
+- (void)removeWaypoint:(DJIWaypoint *_Nonnull)waypoint;
 
 /**
  *  Removes the waypoint at an index.
@@ -262,12 +291,12 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  *  @param index Index of waypoint to be removed from the waypoint mission from
  *  the array of all waypoints.
  */
--(void) removeWaypointAtIndex:(int)index;
+- (void)removeWaypointAtIndex:(int)index;
 
 /**
  *  Removes all waypoints from the waypoint mission.
  */
--(void) removeAllWaypoints;
+- (void)removeAllWaypoints;
 
 /**
  *  Gets a waypoint at an index in the mission waypoint array.
@@ -277,7 +306,7 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  *
  *  @return Waypoint of type DJIWaypoint if the index exists.
  */
--(DJIWaypoint* _Nullable) getWaypointAtIndex:(int)index;
+- (DJIWaypoint *_Nullable)getWaypointAtIndex:(int)index;
 
 /*********************************************************************************/
 #pragma mark - Mission Updates
@@ -291,9 +320,7 @@ typedef NS_ENUM(NSUInteger, DJIWaypointMissionFlightPathMode)
  *  @param completion Completion block.
  *
  */
-+(void) setAutoFlightSpeed:(float)speed withCompletion:(DJICompletionBlock)completion;
-
-
++ (void)setAutoFlightSpeed:(float)speed withCompletion:(DJICompletionBlock)completion;
 
 @end
 

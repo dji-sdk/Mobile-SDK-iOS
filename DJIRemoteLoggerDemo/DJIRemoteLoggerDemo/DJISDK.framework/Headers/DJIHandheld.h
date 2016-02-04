@@ -2,7 +2,7 @@
 //  DJIHandheld.h
 //  DJISDK
 //
-//  Copyright © 2015 DJI. All rights reserved.
+//  Copyright © 2015, DJI. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,30 +13,46 @@
 @class DJIBattery;
 @class DJICamera;
 @class DJIHandheldController;
+@class DJIAirLink;
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  Handheld device model names.
+ */
+extern NSString *const DJIHandheldModelNameUnknownHandheld;
+extern NSString *const DJIHandheldModelNameOsmo;
+
+/**
+ *
+ *  This class contains the components of a handheld device.
+ */
 @interface DJIHandheld : DJIBaseProduct
 
 /**
  *  Returns an instance of the handheld device's camera.
  */
-@property(nonatomic, readonly) DJICamera* _Nullable camera;
+@property(nonatomic, readonly) DJICamera *_Nullable camera;
 
 /**
  *  Returns an instance of the handheld device's gimbal.
  */
-@property(nonatomic, readonly) DJIGimbal* _Nullable gimbal;
+@property(nonatomic, readonly) DJIGimbal *_Nullable gimbal;
 
 /**
  *  Returns an instance of the handheld device's battery.
  */
-@property(nonatomic, readonly) DJIBattery* _Nullable battery;
+@property(nonatomic, readonly) DJIBattery *_Nullable battery;
 
 /**
  *  Returns an instance of the handheld device's handheldController.
  */
-@property(nonatomic, readonly) DJIHandheldController* _Nullable handheldController;
+@property(nonatomic, readonly) DJIHandheldController *_Nullable handheldController;
+
+/**
+ *  Returns an instance of the handheld's airLink.
+ */
+@property(nonatomic, readonly) DJIAirLink *_Nullable airLink;
 
 @end
 

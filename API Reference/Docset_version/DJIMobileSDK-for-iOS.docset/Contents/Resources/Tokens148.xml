@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRCRequestGimbalControlResult.html">
+	<File path="Constants/GSExecuteStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRCRequestGimbalControlResult</TokenIdentifier>
-			<Abstract type="html">Result when a slave Remote Controller requests permission to control the gimbal.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/GSExecuteStatus</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
             
 			
 			<NodeRef refid="148"/>
@@ -14,61 +14,35 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAgree</TokenIdentifier>
-            <Abstract type="html">The master Remote Controller agrees to the slave&apos;s request.
-     </Abstract>
-            <Declaration>RCRequestGimbalControlResultAgree</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/GSExecStatusBegan</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>GSExecStatusBegan</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultDeny</TokenIdentifier>
-            <Abstract type="html">The master Remote Controller denies the slave&apos;s request. If the slave Remote Controller wants to control the
-gimbal, it must send a request to master Remote Controller first. Then the master Remote Controller can decide to
-approve or deny the request.
-     </Abstract>
-            <Declaration>RCRequestGimbalControlResultDeny</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultTimeout</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s request timed out.
-     </Abstract>
-            <Declaration>RCRequestGimbalControlResultTimeout</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/GSExecStatusSucceeded</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>GSExecStatusSucceeded</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="148"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAuthorized</TokenIdentifier>
-            <Abstract type="html">The master Remote Controller authorizes the slave request to control the gimbal.
-     </Abstract>
-            <Declaration>RCRequestGimbalControlResultAuthorized</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultUnknown</TokenIdentifier>
-            <Abstract type="html">The slave Remote Controller&apos;s request is unknown.
-     </Abstract>
-            <Declaration>RCRequestGimbalControlResultUnknown</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/GSExecStatusFailed</TokenIdentifier>
+            <Abstract type="html"></Abstract>
+            <Declaration>GSExecStatusFailed</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStation.h</DeclaredIn>
             
             <NodeRef refid="148"/>
         </Token>
+        
         
 	</File>
 </Tokens>

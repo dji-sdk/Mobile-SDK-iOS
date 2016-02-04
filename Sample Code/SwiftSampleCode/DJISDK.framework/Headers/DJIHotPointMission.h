@@ -131,7 +131,7 @@ typedef NS_ENUM (uint8_t, DJIHotpointMissionExecutionState){
 @property(nonatomic, assign) CLLocationCoordinate2D hotPoint;
 
 /**
- *  Sets the altitude of the hot point orbit in meters with range [5,120] meters. The altitude is relative
+ *  Sets the altitude of the hot point orbit in meters with range [5,500] meters. The altitude is relative
  *  to the ground altitude from which the aircraft took off.
  */
 @property(nonatomic, assign) float altitude;

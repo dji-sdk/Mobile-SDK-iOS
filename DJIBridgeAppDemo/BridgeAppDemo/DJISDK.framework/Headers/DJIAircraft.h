@@ -19,6 +19,18 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
+ *  Aircraft's model names.
+ */
+extern NSString *const DJIAircraftModelNameUnknownAircraft;
+extern NSString *const DJIAircraftModelNameInspire1;
+extern NSString *const DJIAircraftModelNameInspire1Pro;
+extern NSString *const DJIAircraftModelNameInspire1RAW;
+extern NSString *const DJIAircraftModelNamePhantom3Professional;
+extern NSString *const DJIAircraftModelNamePhantom3Advanced;
+extern NSString *const DJIAircraftModelNamePhantom3Standard;
+extern NSString *const DJIAircraftModelNamePhantom34K;
+extern NSString *const DJIAircraftModelNameMatrice100;
+/**
  *
  *  This class contains the components of an aircraft.
  */

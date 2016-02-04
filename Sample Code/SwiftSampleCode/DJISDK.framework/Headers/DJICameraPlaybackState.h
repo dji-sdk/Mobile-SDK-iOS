@@ -15,15 +15,15 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackFileFormat){
     /**
      *  JPEG file
      */
-    DJICameraPlaybackFileFormatJPEG = 0x00,
+    DJICameraPlaybackFileFormatJPEG,
     /**
      *  DNG file
      */
-    DJICameraPlaybackFileFormatRAWDNG = 0x01,
+    DJICameraPlaybackFileFormatRAWDNG,
     /**
      *  Video file
      */
-    DJICameraPlaybackFileFormatVIDEO = 0x02,
+    DJICameraPlaybackFileFormatVIDEO,
     /**
      *  The playback file format is unknown.
      */
@@ -37,31 +37,31 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackMode){
     /**
      *  Single file preview
      */
-    DJICameraPlaybackModeSingleFilePreview = 0x00,
+    DJICameraPlaybackModeSingleFilePreview,
     /**
      *  Single photo zoomed
      */
-    DJICameraPlaybackModeSinglePhotoZoomMode = 0x01,
+    DJICameraPlaybackModeSinglePhotoZoomMode,
     /**
      *  Single video play start
      */
-    DJICameraPlaybackModeSingleVideoPlaybackStart = 0x02,
+    DJICameraPlaybackModeSingleVideoPlaybackStart,
     /**
      *  Single video play pause
      */
-    DJICameraPlaybackModeSingleVideoPlaybackPause = 0x03,
+    DJICameraPlaybackModeSingleVideoPlaybackPause,
     /**
      *  Multiple file edit
      */
-    DJICameraPlaybackModeMultipleFilesEdit = 0x04,
+    DJICameraPlaybackModeMultipleFilesEdit,
     /**
      *  Multiple file preview
      */
-    DJICameraPlaybackModeMultipleFilesPreview = 0x05,
+    DJICameraPlaybackModeMultipleFilesPreview,
     /**
      *  Download file
      */
-    DJICameraPlaybackModeDownload = 0x06,
+    DJICameraPlaybackModeDownload,
     /**
      *  Unknown mode
      */

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIMediaManager.html">
+	<File path="Classes/DJIPhantom3AdvancedMainController.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIMediaManager</TokenIdentifier>
-			<Abstract type="html">The media manager is used to interact with the file system in the SD card.
-By using the manager, user can get the meta data for all the multimedia
-files and access to each single multimedia file.</Abstract>
-			<DeclaredIn>DJIMediaManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3AdvancedMainController</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
             
 			
 			<NodeRef refid="39"/>
@@ -15,42 +13,182 @@ files and access to each single multimedia file.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMediaManager/fetchMediaListWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Fetch media list from remote album. The camera&apos;s work mode should be set as DJICameraModeMediaDownload.</Abstract>
-			<DeclaredIn>DJIMediaManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/getMainControllerVersion</TokenIdentifier>
+			<Abstract type="html">Main controller&apos;s firmware version.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
 			
-			<Declaration>- (void)fetchMediaListWithCompletion:(void ( ^ ) ( NSArray&lt;DJIMedia*&gt; *_Nullable mediaList , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result. Objects in mediaList are kind of class DJIMedia.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (NSString *)getMainControllerVersion</Declaration>
 			
-			<Anchor>//api/name/fetchMediaListWithCompletion:</Anchor>
+			
+			<Anchor>//api/name/getMainControllerVersion</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIMediaManager/deleteMedia:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Delete media from remote album. The camera&apos;s work mode should be set as DJICameraModeMediaDownload.</Abstract>
-			<DeclaredIn>DJIMediaManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/startUpdateMCSystemState</TokenIdentifier>
+			<Abstract type="html">Start update main controller&apos;s system state</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
 			
-			<Declaration>- (void)deleteMedia:(NSArray&lt;DJIMedia*&gt; *)media withCompletion:(void ( ^ ) ( NSArray&lt;DJIMedia*&gt; *_Nonnull deleteFailures , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>media</Name>
-					<Abstract type="html">Media files to be deleted.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execute result, &apos;deleteFailures&apos; will contain media which failed to delete.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)startUpdateMCSystemState</Declaration>
 			
-			<Anchor>//api/name/deleteMedia:withCompletion:</Anchor>
+			
+			<Anchor>//api/name/startUpdateMCSystemState</Anchor>
             <NodeRef refid="39"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/stopUpdateMCSystemState</TokenIdentifier>
+			<Abstract type="html">Stop update main controller&apos;s system state</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)stopUpdateMCSystemState</Declaration>
+			
+			
+			<Anchor>//api/name/stopUpdateMCSystemState</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/setMultipleFlightModeOpen:withResult:</TokenIdentifier>
+			<Abstract type="html">Set multiple flight mode open. if set open, then the remote controller&apos;s mode switch will be available.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)setMultipleFlightModeOpen:(BOOL)isOpen withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>isOpen</Name>
+					<Abstract type="html">Whether or not open the multiple flight mode.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMultipleFlightModeOpen:withResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/setLowBatteryWarning:withResult:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)setLowBatteryWarning:(uint8_t)percent withResult:(DJIExecuteResultBlock)block</Declaration>
+			
+			
+			<Anchor>//api/name/setLowBatteryWarning:withResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/getLowBatteryWarningWithResult:</TokenIdentifier>
+			<Abstract type="html">Get low battery warning data.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)getLowBatteryWarningWithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getLowBatteryWarningWithResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/setSeriousLowBattery:withResult:</TokenIdentifier>
+			<Abstract type="html">Set serious low battery waning data, percentage of voltage in range [10, 25].</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)setSeriousLowBattery:(uint8_t)percent withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>percent</Name>
+					<Abstract type="html">Percentage of serious low battery</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setSeriousLowBattery:withResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/getSeriousLowBatteryWarningwithResult:</TokenIdentifier>
+			<Abstract type="html">Get serious low battery warning data.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)getSeriousLowBatteryWarningwithResult:(void ( ^ ) ( uint8_t percent , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getSeriousLowBatteryWarningwithResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/setHomePointUsingAircraftCurrentLocationWithResult:</TokenIdentifier>
+			<Abstract type="html">Set home point use the aircraft&apos;s current location.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)setHomePointUsingAircraftCurrentLocationWithResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setHomePointUsingAircraftCurrentLocationWithResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/setAircraftName:withResult:</TokenIdentifier>
+			<Abstract type="html">Set aircraft name. the length of aircraft name should be less than 32 characters</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)setAircraftName:(NSString *)name withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">Name to be set to the aricraft.</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setAircraftName:withResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedMainController/getAircraftNameWithResult:</TokenIdentifier>
+			<Abstract type="html">Get aircraft name.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedMainController.h</DeclaredIn>
+			
+			<Declaration>- (void)getAircraftNameWithResult:(void ( ^ ) ( NSString *name , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getAircraftNameWithResult:</Anchor>
+            <NodeRef refid="39"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

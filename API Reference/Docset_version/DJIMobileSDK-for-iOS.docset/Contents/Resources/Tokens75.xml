@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/DJISDKManagerDelegate.html">
+	<File path="Protocols/GroundStationDelegate.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/DJISDKManagerDelegate</TokenIdentifier>
-			<Abstract type="html">This protocol provides delegate methods to receive the updated registration status and the change of the connected product.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/GroundStationDelegate</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
             
 			
 			<NodeRef refid="75"/>
@@ -13,42 +13,70 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJISDKManagerDelegate/sdkManagerDidRegisterAppWithError:</TokenIdentifier>
-			<Abstract type="html">Callback delegate method after the application attempts to register.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/GroundStationDelegate/groundStation:didExecuteWithResult:</TokenIdentifier>
+			<Abstract type="html">Ground station execute result delegate.</Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
 			
-			<Declaration>- (void)sdkManagerDidRegisterAppWithError:(NSError *_Nullable)error</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>error</Name>
-					<Abstract type="html">nil if registration is successful. Otherwise it contains NSError object with error codes from DJISDKRegistrationError.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)groundStation:(id&lt;DJIGroundStation&gt;)gs didExecuteWithResult:(GroundStationExecuteResult *)result</Declaration>
 			
-			<Anchor>//api/name/sdkManagerDidRegisterAppWithError:</Anchor>
+			
+			<Anchor>//api/name/groundStation:didExecuteWithResult:</Anchor>
             <NodeRef refid="75"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/DJISDKManagerDelegate/sdkManagerProductDidChangeFrom:to:</TokenIdentifier>
-			<Abstract type="html">Called when the product property changed.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/GroundStationDelegate/groundStation:didUpdateFlyingInformation:</TokenIdentifier>
+			<Abstract type="html">Ground station flying status.</Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
 			
-			<Declaration>- (void)sdkManagerProductDidChangeFrom:(DJIBaseProduct *_Nullable)oldProduct to:(DJIBaseProduct *_Nullable)newProduct</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>oldProduct</Name>
-					<Abstract type="html">Old product object. Nil if starting up.</Abstract>
-				</Parameter><Parameter>
-					<Name>newProduct</Name>
-					<Abstract type="html">New product object. Nil if the USB link or WiFi link between the product and phone is disconnected.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)groundStation:(id&lt;DJIGroundStation&gt;)gs didUpdateFlyingInformation:(DJIGroundStationFlyingInfo *)flyingInfo</Declaration>
 			
-			<Anchor>//api/name/sdkManagerProductDidChangeFrom:to:</Anchor>
+			
+			<Anchor>//api/name/groundStation:didUpdateFlyingInformation:</Anchor>
             <NodeRef refid="75"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/GroundStationDelegate/groundStation:didUploadWaypointMissionWithProgress:</TokenIdentifier>
+			<Abstract type="html">Upload waypoint mission with progress</Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
+			
+			<Declaration>- (void)groundStation:(id&lt;DJIGroundStation&gt;)gs didUploadWaypointMissionWithProgress:(uint8_t)progress</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>gs</Name>
+					<Abstract type="html">Ground Station Instance</Abstract>
+				</Parameter><Parameter>
+					<Name>progress</Name>
+					<Abstract type="html">Upload mission progress, [0, 100]</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/groundStation:didUploadWaypointMissionWithProgress:</Anchor>
+            <NodeRef refid="75"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/GroundStationDelegate/groundStation:didDownloadWaypointMissionWithProgress:</TokenIdentifier>
+			<Abstract type="html">Upload waypoint mission with progress</Abstract>
+			<DeclaredIn>DJIGroundStation.h</DeclaredIn>
+			
+			<Declaration>- (void)groundStation:(id&lt;DJIGroundStation&gt;)gs didDownloadWaypointMissionWithProgress:(uint8_t)progress</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>gs</Name>
+					<Abstract type="html">Ground Station Instance</Abstract>
+				</Parameter><Parameter>
+					<Name>progress</Name>
+					<Abstract type="html">Download mission progress, [0, 100]</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/groundStation:didDownloadWaypointMissionWithProgress:</Anchor>
+            <NodeRef refid="75"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

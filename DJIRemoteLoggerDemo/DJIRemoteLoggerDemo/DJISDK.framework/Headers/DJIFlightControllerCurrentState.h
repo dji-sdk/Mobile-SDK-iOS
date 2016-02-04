@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIFlightControllerCurrentState.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIFlightControllerCurrentState.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
@@ -33,10 +31,10 @@ typedef struct
 #pragma mark DJIFlightControllerFlightMode
 //-----------------------------------------------------------------
 /**
- *  Flight controller flight modes.
- *  Dhanush Comment: Need a link to a document that explains these modes. P3 Manual may be?
+ *  Flight controller flight modes. For more info, please refer to http://wiki.dji.com/en/index.php/Phantom_3_Professional-Aircraft
+ *
  */
-typedef NS_ENUM(NSUInteger, DJIFlightControllerFlightMode){
+typedef NS_ENUM (NSUInteger, DJIFlightControllerFlightMode){
     /**
      *  Manual mode.
      */
@@ -124,16 +122,39 @@ typedef NS_ENUM(NSUInteger, DJIFlightControllerFlightMode){
     /**
      *  The main controller flight mode is unknown.
      */
-    DJIFlightControllerFlightModeUnknown= 0xFF,
+    DJIFlightControllerFlightModeUnknown = 0xFF,
+};
+
+/*********************************************************************************/
+#pragma mark - DJIFlightOrientationMode
+/*********************************************************************************/
+
+/**
+ *  Tells the aircraft how to interpret flight commands for forward, backward, left and right.
+ *  Additional information should be seen in the getting started guide.
+ */
+typedef NS_ENUM (uint8_t, DJIFlightOrientationMode){
+    /**
+     * The aicraft should move relative to a locked course heading.
+     */
+    DJIFlightOrientationModeCourseLock,
+    /**
+     * The aicraft should move relative radially to the Home Point.
+     */
+    DJIFlightOrientationModeHomeLock,
+    /**
+     *  The aicraft should move relative to the front of the aircraft.
+     */
+    DJIFlightOrientationModeDefaultAircraftHeading,
 };
 
 //-----------------------------------------------------------------
 #pragma mark DJIFlightControllerNoFlyStatus
 //-----------------------------------------------------------------
 /**
- *  No fly status. Please refer to  http://wiki.dji.com/en/index.php/Phantom_3_Professional-_Flight_Limits_and_No-Fly_Zones for more information on no fly zones.
+ *  No fly status. Please refer to http://wiki.dji.com/en/index.php/Phantom_3_Professional-_Flight_Limits_and_No-Fly_Zones for more information on no fly zones.
  */
-typedef NS_ENUM(NSUInteger, DJIFlightControllerNoFlyStatus){
+typedef NS_ENUM (NSUInteger, DJIFlightControllerNoFlyStatus){
     /**
      *  The aircraft is normally flying.
      */
@@ -147,8 +168,7 @@ typedef NS_ENUM(NSUInteger, DJIFlightControllerNoFlyStatus){
      */
     DJIFlightControllerNoFlyStatusForceAutoLanding,
     /**
-     *  The aircraft is approaching a no fly zone.
-     *
+     *  The aircraft is within 100m of a no fly zone boundary.
      */
     DJIFlightControllerNoFlyStatusApproachingNoFlyZone,
     /**
@@ -160,17 +180,20 @@ typedef NS_ENUM(NSUInteger, DJIFlightControllerNoFlyStatus){
      */
     DJIFlightControllerNoFlyStatusReachMaxFlyingDistance,
     /**
-     *  The aircraft is under limit fly zone, which means it's max flying height
-     *  and distance are limited.
+     * Some no fly zones have several areas. A central area where no aircraft can fly or take off in, and then
+     * an intermediate area where flight height is restricted. This intermediate area can have a gradually
+     * relaxing height restriction as the aircraft moves further from the no fly zone center. If the aircarft
+     * is flying in this intermediate area, then the DJIFlightControllerNoFlyStatusHeightLimited enum will be used.
      *
+     * Note, the no fly zone state update that alerts if an aircraft is within 100m of a no fly zone, will trigger to
+     * the outer most area of a multi-area no fly zone.
      */
-    DJIFlightControllerNoFlyStatusUnderLimitFlyZone,
+    DJIFlightControllerNoFlyStatusHeightLimited,
     /**
      *  The aircraft's no fly status is unknown.
      */
     DJIFlightControllerNoFlyStatusUnknownStatus,
 };
-
 
 //-----------------------------------------------------------------
 #pragma mark DJIGPSSignalStatus
@@ -178,7 +201,7 @@ typedef NS_ENUM(NSUInteger, DJIFlightControllerNoFlyStatus){
 /**
  *  GPS signal levels, which are used to measure the signal quality.
  */
-typedef NS_ENUM(uint8_t, DJIGPSSignalStatus){
+typedef NS_ENUM (uint8_t, DJIGPSSignalStatus){
     /**
      *  The GPS has almost no signal, which is very bad.
      */
@@ -218,9 +241,8 @@ typedef NS_ENUM(uint8_t, DJIGPSSignalStatus){
 typedef struct
 {
     /**
-     *  The remaining time, in seconds, it will take the aircraft to go home.
+     *  The estimated remaining time, in seconds, it will take the aircraft to go home with 10% battery buffer remaining.
      *  This time includes landing the aircraft.
-     *
      */
     NSUInteger remainingFlightTime;
 
@@ -239,8 +261,7 @@ typedef struct
 
     /**
      *  The estimated battery percentage, in the range of [0 - 100], needed for the aircraft
-     *  to go home. This includes landing of the aircraft.
-     *
+     *  to go home and have 10% battery remaining. This includes landing of the aircraft.
      */
     NSUInteger batteryPercentageNeededToGoHome;
 
@@ -262,7 +283,8 @@ typedef struct
     /**
      *  Returns whether or not the aircraft is requesting to go home. If the value of
      *  aircraftShouldGoHome is YES and the user does not respond after 10 seconds,
-     *  the aircraft will automatically go back to its home location. It is recommended
+     *  the aircraft will automatically go back to its home location. This can be cancelled
+     *  at any time with the cancelGoHome method (which will also clear aircraftShouldGoHome). It is recommended
      *  that an alert view is shown to the user when aircraftShouldGoHome returns YES.
      *  During this time, the Remote Controller will beep.
      *
@@ -271,7 +293,6 @@ typedef struct
      *
      *  The two main situations in which aircraftShouldGoHome will return YES are if the
      *  aircraft's battery is too low or if the airacraft has flown too far away.
-     *
      */
     BOOL aircraftShouldGoHome;
 } DJIFlightControllerSmartGoHomeStatus;
@@ -281,8 +302,8 @@ typedef struct
 //-----------------------------------------------------------------
 /**
  *  Remaining battery life state. This state describes the recommended action based on remaining battery life.
-*/
-typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
+ */
+typedef NS_ENUM (uint8_t, DJIAircraftRemainingBatteryState){
     /**
      *  Remaining battery life sufficient for normal flying.
      */
@@ -301,10 +322,15 @@ typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
     DJIAircraftRemainingBatteryStateReserved,
 };
 
-
 /*********************************************************************************/
 #pragma mark - DJIFlightControllerCurrentState
 /*********************************************************************************/
+
+/**
+ *
+ *  This class contains current state of the flight controller.
+ *
+ */
 @interface DJIFlightControllerCurrentState : NSObject
 
 /**
@@ -375,7 +401,6 @@ typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
 
 /**
  *  No fly zone's radius in meters.
- *
  */
 @property(nonatomic, readonly) int noFlyZoneRadius;
 
@@ -384,6 +409,11 @@ typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
  *  smart go home data will be available in DJIFlightControllerSmartGoHomeStatus.
  */
 @property(nonatomic, readonly) DJIFlightControllerSmartGoHomeStatus smartGoHomeStatus;
+
+/**
+ *  Aircraft's current orientation mode.
+ */
+@property(nonatomic, readonly) DJIFlightOrientationMode orientationMode;
 
 /**
  *  Aircraft's current GPS signal quality.
@@ -399,24 +429,20 @@ typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
  */
 @property(nonatomic, readonly) BOOL isIMUPreheating;
 /**
- *  YES if the compass has an error.
- *
- */
-@property(nonatomic, readonly) BOOL hasCompassError;
-/**
- *  YES if the ultrasonic sensor is being used. It is only used when equal to or less than XXm above the ground.
- *
+ *  YES if the ultrasonic sensor is being used. Variables that can impact the quality of the ultrasound measurement
+ *  and whether it is used or not are height above ground and the type of ground (if it reflects sound waves well).
+ *  Usually the ultrasonic sensor works when the aircraft is less than 8m above ground.
  */
 @property(nonatomic, readonly) BOOL isUltrasonicBeingUsed;
 /**
  *  Height of aircraft measured by the ultrasonic sensor in meters. The data will only be
- *  available if isUltrasonicBeingUsed returns YES.
- *
+ *  available if isUltrasonicBeingUsed returns YES. Height has a precision of 0.1m.
  */
 @property(nonatomic, readonly) float ultrasonicHeight;
 /**
- *  YES if vision sensor is being used.
- *
+ *  YES if vision sensor is being used. Variables that can impact the quality of the vision measurement
+ *  and whether it is used or not are height above ground and the type of ground (if it has sufficiently rich texture).
+ *  Usually the vision sensor works when the aircraft is less than 3m above ground.
  */
 @property(nonatomic, readonly) BOOL isVisionSensorBeingUsed;
 /**
@@ -427,7 +453,7 @@ typedef NS_ENUM(uint8_t, DJIAircraftRemainingBatteryState){
 /**
  *  Returns the flight mode as a string. For example, "P-GPS" or "P-Atti".
  */
-@property(nonatomic, readonly) NSString* flightModeString;
+@property(nonatomic, readonly) NSString *flightModeString;
 
 @end
 

@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIAppManager.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJISDK.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
@@ -16,7 +14,6 @@ FOUNDATION_EXPORT double DJISDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DJISDK/PublicHeader.h>
-
 
 /*********************************************************************************/
 #pragma mark - SDK Manager
@@ -45,15 +42,17 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #pragma mark RemoteController
 //-----------------------------------------------------------------
 #import <DJISDK/DJIRemoteController.h>
-#import <DJISDK/DJIWiFiLink.h>
 
 //-----------------------------------------------------------------
 #pragma mark Camera
 //-----------------------------------------------------------------
 #import <DJISDK/DJICamera.h>
+#import <DJISDK/DJICameraSettingsDef.h>
 #import <DJISDK/DJICameraPlaybackState.h>
 #import <DJISDK/DJICameraSystemState.h>
 #import <DJISDK/DJICameraLensState.h>
+#import <DJISDK/DJICameraSDCardState.h>
+#import <DJISDK/DJICameraSSDState.h>
 #import <DJISDK/DJICameraParameters.h>
 #import <DJISDK/DJIMediaManager.h>
 #import <DJISDK/DJIMedia.h>
@@ -73,6 +72,10 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #pragma mark AirLink
 //-----------------------------------------------------------------
 #import <DJISDK/DJIAirLink.h>
+#import <DJISDK/DJILBAirLink.h>
+#import <DJISDK/DJIWiFiLink.h>
+#import <DJISDK/DJIAuxLink.h>
+#import <DJISDK/DJISignalInformation.h>
 
 //-----------------------------------------------------------------
 #pragma mark Handheld Controller
@@ -89,7 +92,6 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #pragma mark - Missions
 /*********************************************************************************/
 #import <DJISDK/DJIMissionManager.h>
-#import <DJISDK/DJIMissionStep.h>
 #import <DJISDK/DJIMission.h>
 #import <DJISDK/DJIWaypoint.h>
 #import <DJISDK/DJIWaypointMission.h>
@@ -97,6 +99,17 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIFollowMeMission.h>
 #import <DJISDK/DJICustomMission.h>
 #import <DJISDK/DJIPanoramaMission.h>
+
+#import <DJISDK/DJIMissionStep.h>
+#import <DJISDK/DJIWaypointStep.h>
+#import <DJISDK/DJIHotpointStep.h>
+#import <DJISDK/DJIFollowMeStep.h>
+#import <DJISDK/DJITakeoffStep.h>
+#import <DJISDK/DJIGoHomeStep.h>
+#import <DJISDK/DJIGoToStep.h>
+#import <DJISDK/DJIRecordVideoStep.h>
+#import <DJISDK/DJIShootPhotoStep.h>
+#import <DJISDK/DJIGimbalAttitudeStep.h>
 
 /*********************************************************************************/
 #pragma mark - Categories

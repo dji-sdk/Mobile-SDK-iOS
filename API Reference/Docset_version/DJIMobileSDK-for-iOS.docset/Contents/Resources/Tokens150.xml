@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRemoteControllerMode.html">
+	<File path="Constants/GroundStationDroneStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRemoteControllerMode</TokenIdentifier>
-			<Abstract type="html">Remote Controller mode of operation can be normal (single RC connected to aircraft), master,
-slave,  or unknown</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/GroundStationDroneStatus</TokenIdentifier>
+			<Abstract type="html">Drone status</Abstract>
+			<DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
             
 			
 			<NodeRef refid="150"/>
@@ -15,48 +14,49 @@ slave,  or unknown</Abstract>
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeMaster</TokenIdentifier>
-            <Abstract type="html">Remote Controller is a master (will route a connected slave Remote Controller&apos;s commands to the aircraft).
+            <TokenIdentifier>//apple_ref/c/econst/GSDroneDeadStick</TokenIdentifier>
+            <Abstract type="html">Dead stick
      </Abstract>
-            <Declaration>DJIRemoteControllerModeMaster</Declaration>
+            <Declaration>GSDroneDeadStick</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeSlave</TokenIdentifier>
-            <Abstract type="html">Remote Controller is currently a slave Remote Controller (sends commands to aircraft through a master Remote Controller).
+            <TokenIdentifier>//apple_ref/c/econst/GSDroneTakingOff</TokenIdentifier>
+            <Abstract type="html">Taking off
      </Abstract>
-            <Declaration>DJIRemoteControllerModeSlave</Declaration>
+            <Declaration>GSDroneTakingOff</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeNormal</TokenIdentifier>
-            <Abstract type="html">Remote Controller is unconnected to another Remote Controller.
+            <TokenIdentifier>//apple_ref/c/econst/GSDroneInFlying</TokenIdentifier>
+            <Abstract type="html">In flying
      </Abstract>
-            <Declaration>DJIRemoteControllerModeNormal</Declaration>
+            <Declaration>GSDroneInFlying</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIRemoteControllerModeUnknown</TokenIdentifier>
-            <Abstract type="html">The Remote Controller&apos;s mode is unknown.
+            <TokenIdentifier>//apple_ref/c/econst/GSDroneUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown
      </Abstract>
-            <Declaration>DJIRemoteControllerModeUnknown</Declaration>
+            <Declaration>GSDroneUnknown</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIGroundStationFlyingInfo.h</DeclaredIn>
             
             <NodeRef refid="150"/>
         </Token>
+        
         
 	</File>
 </Tokens>

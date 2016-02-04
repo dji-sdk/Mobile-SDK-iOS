@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJILandingGearMode.html">
+	<File path="Constants/DJIRCJoinMasterResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJILandingGearMode</TokenIdentifier>
-			<Abstract type="html">Current Mode of the Landing Gear</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCJoinMasterResult</TokenIdentifier>
+			<Abstract type="html">Join master result</Abstract>
+			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
 			
 			<NodeRef refid="134"/>
@@ -14,48 +14,71 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearModeNormal</TokenIdentifier>
-            <Abstract type="html">Landing Gear can be deployed and retracted through function calls
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterSucceeded</TokenIdentifier>
+            <Abstract type="html">Join master Succeeded
      </Abstract>
-            <Declaration>DJILandingGearModeNormal</Declaration>
+            <Declaration>RCJoinMasterSucceeded</Declaration>
             
-            <DeclaredIn>DJILandingGear.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="134"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearModeTransport</TokenIdentifier>
-            <Abstract type="html">Landing Gear is in transport mode (either it is moving into, moving out of, or stopped in transport position)
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterPasswordError</TokenIdentifier>
+            <Abstract type="html">Join master failed for the password error
      </Abstract>
-            <Declaration>DJILandingGearModeTransport</Declaration>
+            <Declaration>RCJoinMasterPasswordError</Declaration>
             
-            <DeclaredIn>DJILandingGear.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="134"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearModeAuto</TokenIdentifier>
-            <Abstract type="html">Landing Gear automatically transitions between deployed and retracted depending on altitude. During take-off, the transition point is 1.2m above ground. After take-off (during flight or when landing), the transition point is 0.5m above ground.
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterRejected</TokenIdentifier>
+            <Abstract type="html">Join request was rejected by master
      </Abstract>
-            <Declaration>DJILandingGearModeAuto</Declaration>
+            <Declaration>RCJoinMasterRejected</Declaration>
             
-            <DeclaredIn>DJILandingGear.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="134"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILandingGearModeUnknown</TokenIdentifier>
-            <Abstract type="html">Landing Gear is in an unknown mode
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterReachMaximum</TokenIdentifier>
+            <Abstract type="html">Join master failed for the master&apos;s salve count has reach maximum
      </Abstract>
-            <Declaration>DJILandingGearModeUnknown</Declaration>
+            <Declaration>RCJoinMasterReachMaximum</Declaration>
             
-            <DeclaredIn>DJILandingGear.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="134"/>
         </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterResponseTimeout</TokenIdentifier>
+            <Abstract type="html">Join master request timeout
+     </Abstract>
+            <Declaration>RCJoinMasterResponseTimeout</Declaration>
+            
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            
+            <NodeRef refid="134"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCJoinMasterUnknown</TokenIdentifier>
+            <Abstract type="html">Join master unknown
+     </Abstract>
+            <Declaration>RCJoinMasterUnknown</Declaration>
+            
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            
+            <NodeRef refid="134"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

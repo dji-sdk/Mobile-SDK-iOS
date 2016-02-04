@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJICamera.html">
+	<File path="Classes/DJIDrone.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJICamera</TokenIdentifier>
-			<Abstract type="html">This class contains media manager and playback manager to manage the Camera&apos;s media content. Also, it provides methods to change settings of the camera and perform
-actions of the camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIDrone</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
             
 			
 			<NodeRef refid="9"/>
@@ -14,23 +13,11 @@ actions of the camera.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Delegate that recevies the information pushed by the camera</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Drone delegate</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJICameraDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate that recevies the information pushed by the camera</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, weak) id&lt;DJICameraDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIDroneDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -38,11 +25,11 @@ actions of the camera.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICamera/delegate</TokenIdentifier>
-			<Abstract type="html">Delegate that recevies the information pushed by the camera</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/delegate</TokenIdentifier>
+			<Abstract type="html">Drone delegate</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJICameraDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIDroneDelegate&gt; delegate</Declaration>
 			
 			
 			<Anchor>//api/name/delegate</Anchor>
@@ -50,1723 +37,390 @@ actions of the camera.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setMediaManager:</TokenIdentifier>
-			<Abstract type="html">Media Manager is used for interaction when camera is in DJICameraModeMediaDownload.
-User can only access to the manager when isMediaDownloadModeSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/delegate</TokenIdentifier>
+			<Abstract type="html">Drone delegate</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMediaManager *mediaManager</Declaration>
+			<Declaration>@property (nonatomic, weak) id&lt;DJIDroneDelegate&gt; delegate</Declaration>
 			
 			
-			<Anchor>//api/name/mediaManager</Anchor>
+			<Anchor>//api/name/delegate</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/mediaManager</TokenIdentifier>
-			<Abstract type="html">Media Manager is used for interaction when camera is in DJICameraModeMediaDownload.
-User can only access to the manager when isMediaDownloadModeSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setIsConnected:</TokenIdentifier>
+			<Abstract type="html">Whether or not the app is connected to the drone. Actually, for the Inpsire/Phantom 3 PRO/Phantom 3 Advanced this property just indicate the connection status to the remote controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMediaManager *mediaManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isConnected</Declaration>
 			
 			
-			<Anchor>//api/name/mediaManager</Anchor>
+			<Anchor>//api/name/isConnected</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICamera/mediaManager</TokenIdentifier>
-			<Abstract type="html">Media Manager is used for interaction when camera is in DJICameraModeMediaDownload.
-User can only access to the manager when isMediaDownloadModeSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/isConnected</TokenIdentifier>
+			<Abstract type="html">Whether or not the app is connected to the drone. Actually, for the Inpsire/Phantom 3 PRO/Phantom 3 Advanced this property just indicate the connection status to the remote controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIMediaManager *mediaManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isConnected</Declaration>
 			
 			
-			<Anchor>//api/name/mediaManager</Anchor>
+			<Anchor>//api/name/isConnected</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPlaybackManager:</TokenIdentifier>
-			<Abstract type="html">Playback Manager is used for interaction when camera is in DJICameraModePlayback.
-User can only access to the manager when isPlaybackSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/isConnected</TokenIdentifier>
+			<Abstract type="html">Whether or not the app is connected to the drone. Actually, for the Inpsire/Phantom 3 PRO/Phantom 3 Advanced this property just indicate the connection status to the remote controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIPlaybackManager *playbackManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isConnected</Declaration>
 			
 			
-			<Anchor>//api/name/playbackManager</Anchor>
+			<Anchor>//api/name/isConnected</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/playbackManager</TokenIdentifier>
-			<Abstract type="html">Playback Manager is used for interaction when camera is in DJICameraModePlayback.
-User can only access to the manager when isPlaybackSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setDroneType:</TokenIdentifier>
+			<Abstract type="html">Drone type</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIPlaybackManager *playbackManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIDroneType droneType</Declaration>
 			
 			
-			<Anchor>//api/name/playbackManager</Anchor>
+			<Anchor>//api/name/droneType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJICamera/playbackManager</TokenIdentifier>
-			<Abstract type="html">Playback Manager is used for interaction when camera is in DJICameraModePlayback.
-User can only access to the manager when isPlaybackSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/droneType</TokenIdentifier>
+			<Abstract type="html">Drone type</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJIPlaybackManager *playbackManager</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIDroneType droneType</Declaration>
 			
 			
-			<Anchor>//api/name/playbackManager</Anchor>
+			<Anchor>//api/name/droneType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setCameraMode:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s work mode to taking pictures, video, playback or download. See enum DJICameraMode in
-DJICameraSettingsDef.h to find details on camera work modes. Please note that you cannot change the mode
-when a certain task is executing, e.g. taking photo(s), recording video, downloading and saving files.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setCameraMode:(DJICameraMode)mode withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Camera work mode.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setCameraMode:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getCameraModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s current work mode.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getCameraModeWithCompletion:(void ( ^ ) ( DJICameraMode , NSError *_Nullable ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getCameraModeWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isTimeLapseSupported</TokenIdentifier>
-			<Abstract type="html">Check if the current device supports Timelapse.
-Supported only by OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isTimeLapseSupported</Declaration>
-			
-			
-			<Anchor>//api/name/isTimeLapseSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/startShootPhoto:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Camera starts to take photo with one of the camera capture modes (shoot
-photo modes).</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startShootPhoto:(DJICameraShootPhotoMode)shootMode withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>shootMode</Name>
-					<Abstract type="html">Shoot photo mode for camera to start taking photos with.
-Check the enum named CameraShootPhotoMode in DJICameraSettingsDef to find all possible camera
-shoot modes.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startShootPhoto:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/stopShootPhotoWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Camera stops taking photos.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopShootPhotoWithCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopShootPhotoWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isSlowMotionSupported</TokenIdentifier>
-			<Abstract type="html">Check if the current device supports Slow Motion video recording.
-Currently Slow Motion is supported only by the OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isSlowMotionSupported</Declaration>
-			
-			
-			<Anchor>//api/name/isSlowMotionSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setVideoSlowMotionEnabled:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets whether Slow Motion mode is enabled or not.
-When it is enabled, the resolution and frame rate will change to 1920x1080 120fps.
-When it is disabled, the reolution and frame rate will recover to previous setting.
-Supported only by OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoSlowMotionEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>enabled</Name>
-					<Abstract type="html">Enable or disable Slow Motion video.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoSlowMotionEnabled:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getVideoSlowMotionEnabledWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets whether Slow Motion mode is enabled or not.
-Supported only by the OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getVideoSlowMotionEnabledWithCompletion:(void ( ^ ) ( BOOL enabled , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getVideoSlowMotionEnabledWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/startRecordVideoWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Starts recording video. Camera must be in DJICameraModeRecordVideo work mode.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)startRecordVideoWithCompletion:(DJICompletionBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/startRecordVideoWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/stopRecordVideoWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Stops recording video.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)stopRecordVideoWithCompletion:(DJICompletionBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/stopRecordVideoWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isPlaybackSupported</TokenIdentifier>
-			<Abstract type="html">Check if the current device supports Playback Mode</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isPlaybackSupported</Declaration>
-			
-			
-			<Anchor>//api/name/isPlaybackSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setFileIndexMode:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s file index mode. The default value of DJICameraFileIndexMode is set to DJICameraFileIndexModeReset.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setFileIndexMode:(DJICameraFileIndexMode)fileIndex withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>fileIndex</Name>
-					<Abstract type="html">File index mode to be set for the camera&apos;s SD card.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setFileIndexMode:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getFileIndexModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s file index mode.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getFileIndexModeWithCompletion:(void ( ^ ) ( DJICameraFileIndexMode fileIndex , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getFileIndexModeWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setVideoResolution:andFrameRate:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s video resolution and frame rate.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoResolution:(DJICameraVideoResolution)resolution andFrameRate:(DJICameraVideoFrameRate)rate withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>resolution</Name>
-					<Abstract type="html">Resolution to be set for the video.</Abstract>
-				</Parameter><Parameter>
-					<Name>rate</Name>
-					<Abstract type="html">Frame rate to be set for the video.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoResolution:andFrameRate:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getVideoResolutionAndFrameRateWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s video resolution and frame rate values.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/droneType</TokenIdentifier>
+			<Abstract type="html">Drone type</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getVideoResolutionAndFrameRateWithCompletion:(void ( ^ ) ( DJICameraVideoResolution resolution , DJICameraVideoFrameRate rate , NSError *_Nullable error ))block</Declaration>
-			
-			
-			<Anchor>//api/name/getVideoResolutionAndFrameRateWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setVideoFileFormat:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s video file format. The default value is DJICameraVideoFileFormatMOV.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoFileFormat:(DJICameraVideoFileFormat)format withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>format</Name>
-					<Abstract type="html">Video file format to be set for videos.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoFileFormat:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getVideoFileFormatWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s video file format.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getVideoFileFormatWithCompletion:(void ( ^ ) ( DJICameraVideoFileFormat format , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block to return the current video file format.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getVideoFileFormatWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setVideoStandard:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s analog video standard. Setting the video standard to PAL or NTSC will limit the available resolutions and frame rates to those compatible with the chosen video standard.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setVideoStandard:(DJICameraVideoStandard)videoStandard withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>videoStandard</Name>
-					<Abstract type="html">Video standard value to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setVideoStandard:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getVideoStandardWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s video standard value.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getVideoStandardWithCompletion:(void ( ^ ) ( DJICameraVideoStandard videoStandard , NSError *_Nullable error ))block</Declaration>
-			
-			
-			<Anchor>//api/name/getVideoStandardWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoRatio:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s aspect ratio for photos. Check the enum named DJICameraPhotoAspectRatio
-in DJICameraSettingsDef.h to find all possible ratios.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoRatio:(DJICameraPhotoAspectRatio)ratio withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ratio</Name>
-					<Abstract type="html">Aspect ratio for photos to be taken by camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoRatio:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoRatioWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s aspect ratio for photos.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getPhotoRatioWithCompletion:(void ( ^ ) ( DJICameraPhotoAspectRatio ratio , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoRatioWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoQuality:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s photo quality for JPEG images. Check the enum named DJICameraPhotoQuality in
-DJICameraSettingsDef.h to find all possible camera photo qualities.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoQuality:(DJICameraPhotoQuality)quality withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>quality</Name>
-					<Abstract type="html">Camera photo quality to set to.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoQuality:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoQualityWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s photo quality.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getPhotoQualityWithCompletion:(void ( ^ ) ( DJICameraPhotoQuality quality , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoQualityWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoFileFormat:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s photo file format. Check the enum named DJICameraPhotoFileFormat in
-DJICameraSettingsDef.h to find all possible photo formats the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoFileFormat:(DJICameraPhotoFileFormat)photoFormat withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>photoFormat</Name>
-					<Abstract type="html">Photo file format used when the camera takes a photo.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoFileFormat:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoFileFormatWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s photo file format.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getPhotoFileFormatWithCompletion:(void ( ^ ) ( DJICameraPhotoFileFormat photoFormat , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoFileFormatWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoBurstCount:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets burst shoot count for the camera, for the case when the user wants to use burst shoot.
-Check the enum named DJICameraPhotoBurstCount in DJICameraSettingsDef.h to find all possible
-burst count values the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoBurstCount:(DJICameraPhotoBurstCount)count withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>count</Name>
-					<Abstract type="html">The number of photos to take in one burst shoot</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoBurstCount:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoBurstCountWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the burst count type.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getPhotoBurstCountWithCompletion:(void ( ^ ) ( DJICameraPhotoBurstCount count , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoBurstCountWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoAEBParam:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s AEB capture parameters.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoAEBParam:(DJICameraPhotoAEBParam)aebParam withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>aebParam</Name>
-					<Abstract type="html">AEB capture parameters to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoAEBParam:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoAEBParamWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s AEB capture parameters.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIDroneType droneType</Declaration>
 			
-			<Declaration>- (void)getPhotoAEBParamWithCompletion:(void ( ^ ) ( DJICameraPhotoAEBParam aeb , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getPhotoAEBParamWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoIntervalParam:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the interval shoot parameters. The camera will capture a photo, wait a specified interval of time,
-take another photo, and continue in this manner until it has taken the required number of photos.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoIntervalParam:(DJICameraPhotoIntervalParam)param withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>count</Name>
-					<Abstract type="html">The number of photos to capture. The value should fall in [2, 255]. If the value of
-captureCount is set to 255, the camera will continue to take photos at the specified
-interval until stopShootPhotoWithCompletion is called.</Abstract>
-				</Parameter><Parameter>
-					<Name>interval</Name>
-					<Abstract type="html">The time interval between when two photos are taken.
-The range for this parameter depends the photo file format(DJICameraPhotoFileFormat).
-When the file format is JPEG, the range is [2, 2^16-1] seconds.
-When the file format is RAW or RAW+JPEG, the range is [10, 2^16-1] seconds.
-Inspire PRO is an exception. The range for Inspire PRO is [5, 2^16-1] seconds for all formats.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoIntervalParam:withCompletion:</Anchor>
+			<Anchor>//api/name/droneType</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoIntervalParamWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s interval shoot parameters.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setCamera:</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s camera.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getPhotoIntervalParamWithCompletion:(void ( ^ ) ( DJICameraPhotoIntervalParam captureParam , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoIntervalParamWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoTimeLapseInterval:duration:fileFormat:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the TimeLapse parameters including interval, duration and file format when saving.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoTimeLapseInterval:(NSUInteger)interval duration:(NSUInteger)duration fileFormat:(DJICameraPhotoTimeLapseFileFormat)format withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>interval</Name>
-					<Abstract type="html">The time between image captures.
-An integer falls in the range, [10, 8191]. The unit is 100ms. Please note that when
-the format is JPEG+Video, the minimum interval is 20(2 seconds).</Abstract>
-				</Parameter><Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">The time for the whole action. An integer falls in the range, [0, 2^31-1] seconds.
-If the value is set to be 0, it means that it shoots forever until invoking
-stopShootPhoto method.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution block with the execution result returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>fileFormat</Name>
-					<Abstract type="html">A enum type of the file format to be used.
-Please refer to DJICameraPhotoTimeLapseFileFormat in DJICameraSettingsDef.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoTimeLapseInterval:duration:fileFormat:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoTimeLapseIntervalDurationAndFileFormatWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Supported only by OSMO camera.
-Gets the TimeLapse parameters including interval, duration and file format when saving.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJICamera *camera</Declaration>
 			
-			<Declaration>- (void)getPhotoTimeLapseIntervalDurationAndFileFormatWithCompletion:(void ( ^ ) ( NSUInteger interval , NSUInteger duration , DJICameraPhotoTimeLapseFileFormat format , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getPhotoTimeLapseIntervalDurationAndFileFormatWithCompletion:</Anchor>
+			<Anchor>//api/name/camera</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setExposureMode:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s exposure mode. Check the enum named DJICameraExposureMode in
-DJICameraSettingsDef.h to find all possible camera exposure modes.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setExposureMode:(DJICameraExposureMode)mode withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>mode</Name>
-					<Abstract type="html">Camera exposure mode to set to.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/camera</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s camera.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/setExposureMode:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getExposureModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s exposure mode.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJICamera *camera</Declaration>
 			
-			<Declaration>- (void)getExposureModeWithCompletion:(void ( ^ ) ( DJICameraExposureMode , NSError *_Nullable ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getExposureModeWithCompletion:</Anchor>
+			<Anchor>//api/name/camera</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setISO:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s ISO value. Check the enum named DJICameraISO in
-DJICameraSettingsDef.h to find all possible ISO options that the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setISO:(DJICameraISO)iso withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>iso</Name>
-					<Abstract type="html">ISO value to be set.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/camera</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s camera.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/setISO:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getISOWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s ISO value.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJICamera *camera</Declaration>
 			
-			<Declaration>- (void)getISOWithCompletion:(void ( ^ ) ( DJICameraISO iso , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getISOWithCompletion:</Anchor>
+			<Anchor>//api/name/camera</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setShutterSpeed:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera shutter speed. For all available values shutterSpeed can be set to, check the
-top of DJICameraSettingsDef.h.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setShutterSpeed:(DJICameraShutterSpeed)shutterSpeed withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>shutterSpeed</Name>
-					<Abstract type="html">Shutter speed value to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setMainController:</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s main controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/setShutterSpeed:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getShutterSpeedWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s shutter speed.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIMainController *mainController</Declaration>
 			
-			<Declaration>- (void)getShutterSpeedWithCompletion:(void ( ^ ) ( DJICameraShutterSpeed shutterSpeed , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getShutterSpeedWithCompletion:</Anchor>
+			<Anchor>//api/name/mainController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setMeteringMode:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s exposure metering. Check the enum named DJICameraMeteringMode in
-DJICameraSettingsDef.h to find all possible exposure metering the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setMeteringMode:(DJICameraMeteringMode)meteringType withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>meteringType</Name>
-					<Abstract type="html">Exposure metering to be set.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/mainController</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s main controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/setMeteringMode:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getMeteringModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s exposure metering.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIMainController *mainController</Declaration>
 			
-			<Declaration>- (void)getMeteringModeWithCompletion:(void ( ^ ) ( DJICameraMeteringMode exposureMetering , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getMeteringModeWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setSpotMeteringAreaRowIndex:andColIndex:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the spot metering area index. The camera image is divided into 96 spots defined by 12 columns and 8 rows.
-The row index falls in [0,7] where the values increase top to bottom across the image. The column index falls
-in [0, 11], where the values increase left to right.
-In order to make the method work, The camera exposure mode should be &apos;Program&apos;, &apos;Shutter&apos; or &apos;Aperture&apos; and the
-exposure metering mode should be DJICameraMeteringModeSpot.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setSpotMeteringAreaRowIndex:(uint8_t)rowIndex andColIndex:(uint8_t)colIndex withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>rowIndex</Name>
-					<Abstract type="html">Spot metering area row index to be set.</Abstract>
-				</Parameter><Parameter>
-					<Name>colIndex</Name>
-					<Abstract type="html">Spot metering area column index to be set.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setSpotMeteringAreaRowIndex:andColIndex:withCompletion:</Anchor>
+			<Anchor>//api/name/mainController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getSpotMeteringAreaRowIndexAndColIndexWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the spot metering area row index and column index.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/mainController</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s main controller.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getSpotMeteringAreaRowIndexAndColIndexWithCompletion:(void ( ^ ) ( uint8_t rowIndex , uint8_t colIndex , NSError *_Nullable error ))block</Declaration>
-			
-			
-			<Anchor>//api/name/getSpotMeteringAreaRowIndexAndColIndexWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setExposureCompensation:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s exposure compensation. Check the enum named DJICameraExposureCompensation
-in DJICameraSettingsDef.h to find all possible exposure compensations the camera can be set to.
-In order to use this function, the camera exposure mode should be &apos;shutter&apos;, &apos;program&apos; or &apos;aperture&apos;.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setExposureCompensation:(DJICameraExposureCompensation)compensationType withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>compensationType</Name>
-					<Abstract type="html">Exposure compensation value to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setExposureCompensation:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getExposureCompensationWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s exposure compensation.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIMainController *mainController</Declaration>
 			
-			<Declaration>- (void)getExposureCompensationWithCompletion:(void ( ^ ) ( DJICameraExposureCompensation exposureCompensation , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getExposureCompensationWithCompletion:</Anchor>
+			<Anchor>//api/name/mainController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setAELock:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets whether or not the camera&apos;s AE (auto exposure) lock is locked or not.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setGimbal:</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s gimbal.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)setAELock:(BOOL)isLock withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>isLock</Name>
-					<Abstract type="html">YES if the camera AE lock is locked or unlocked.</Abstract>
-				</Parameter><Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setAELock:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getAELockWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets if the camera&apos;s AE (auto exposure) lock is locked or not.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIGimbal *gimbal</Declaration>
 			
-			<Declaration>- (void)getAELockWithCompletion:(void ( ^ ) ( BOOL isLocked , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getAELockWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setWhiteBalance:andColorTemperature:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera’s white balance and color temperature.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setWhiteBalance:(DJICameraWhiteBalance)whiteBalance andColorTemperature:(uint8_t)colorTemperature withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>whiteBalance</Name>
-					<Abstract type="html">White balance value to be set.</Abstract>
-				</Parameter><Parameter>
-					<Name>colorTemperature</Name>
-					<Abstract type="html">Color temperature value to be set in the range of [20, 100]. Real color temperature value(K) = value * 100. For example, 50 -&gt; 5000K.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setWhiteBalance:andColorTemperature:withCompletion:</Anchor>
+			<Anchor>//api/name/gimbal</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getWhiteBalanceAndColorTemperatureWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s white balance and color temperature.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getWhiteBalanceAndColorTemperatureWithCompletion:(void ( ^ ) ( DJICameraWhiteBalance whiteBalance , uint8_t colorTemperature , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/gimbal</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s gimbal.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getWhiteBalanceAndColorTemperatureWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setAntiFlicker:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s anti-flicker for video recording.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIGimbal *gimbal</Declaration>
 			
-			<Declaration>- (void)setAntiFlicker:(DJICameraAntiFlicker)antiFlickerType withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>antiFlickerType</Name>
-					<Abstract type="html">Anti-flicker value to set for the camera. Please check the enum DJICameraAntiFlicker
-to find all the possible anti-flicker type the camera can be set to.</Abstract>
-				</Parameter><Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setAntiFlicker:withCompletion:</Anchor>
+			<Anchor>//api/name/gimbal</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getAntiFlickerWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s anti-flicker.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getAntiFlickerWithCompletion:(void ( ^ ) ( DJICameraAntiFlicker antiFlicker , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/gimbal</TokenIdentifier>
+			<Abstract type="html">Drone&apos;s gimbal.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getAntiFlickerWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setSharpness:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s sharpness. Check the enum named DJICameraSharpness
-in DJICameraSettingsDef.h to find all possible sharpnesss the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIGimbal *gimbal</Declaration>
 			
-			<Declaration>- (void)setSharpness:(DJICameraSharpness)sharpness withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>sharpness</Name>
-					<Abstract type="html">Sharpness value to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setSharpness:withCompletion:</Anchor>
+			<Anchor>//api/name/gimbal</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getSharpnessWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s sharpness.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getSharpnessWithCompletion:(void ( ^ ) ( DJICameraSharpness sharpness , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setRangeExtender:</TokenIdentifier>
+			<Abstract type="html">Range extender.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getSharpnessWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setContrast:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s contrast. Check the enum named DJICameraContrast
-in DJICameraSettingsDef.h to find all possible contrasts the camera can be set to.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRangeExtender *rangeExtender</Declaration>
 			
-			<Declaration>- (void)setContrast:(DJICameraContrast)contrast withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>contrast</Name>
-					<Abstract type="html">Contrast value to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setContrast:withCompletion:</Anchor>
+			<Anchor>//api/name/rangeExtender</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getContrastWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s contrast.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getContrastWithCompletion:(void ( ^ ) ( DJICameraContrast contrast , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Completion block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/rangeExtender</TokenIdentifier>
+			<Abstract type="html">Range extender.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getContrastWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setSaturation:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s saturation. The default value of the saturation value is 0.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRangeExtender *rangeExtender</Declaration>
 			
-			<Declaration>- (void)setSaturation:(int8_t)saturation withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>saturation</Name>
-					<Abstract type="html">Saturation value to be set in the range of [-3, 3].</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setSaturation:withCompletion:</Anchor>
+			<Anchor>//api/name/rangeExtender</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getSaturationWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s saturation.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/rangeExtender</TokenIdentifier>
+			<Abstract type="html">Range extender.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getSaturationWithCompletion:(void ( ^ ) ( int8_t saturation , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getSaturationWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setHue:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s hue. The default value of the saturation value is 0.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRangeExtender *rangeExtender</Declaration>
 			
-			<Declaration>- (void)setHue:(int8_t)hue withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>hue</Name>
-					<Abstract type="html">Hue value to be set in the range of [-3, 3].</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/setHue:withCompletion:</Anchor>
+			<Anchor>//api/name/rangeExtender</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getHueWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s hue.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setSmartBattery:</TokenIdentifier>
+			<Abstract type="html">Smart battery</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getHueWithCompletion:(void ( ^ ) ( int8_t hue , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>@property (nonatomic, readonly) DJIBattery *smartBattery</Declaration>
 			
-			<Anchor>//api/name/getHueWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setDigitalFilter:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s digital filter. The default value is DJICameraDigitalFilterNone.
-For a list of all possible camera digital filters, check the enum named DJICameraDigitalFilter in
-DJICameraSettingsDef.h.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setDigitalFilter:(DJICameraDigitalFilter)filter withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>filter</Name>
-					<Abstract type="html">Digital filter to be set to the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setDigitalFilter:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getDigitalFilterWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s digital filter.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>- (void)getDigitalFilterWithCompletion:(void ( ^ ) ( DJICameraDigitalFilter filter , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getDigitalFilterWithCompletion:</Anchor>
+			<Anchor>//api/name/smartBattery</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isPhotoQuickViewSupported</TokenIdentifier>
-			<Abstract type="html">Returns whether or not the device supports quick view. Quick view is an amount of time a photo is shown as a preview after it is taken and before the camera returns back to the live camera view.
-seconds.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isPhotoQuickViewSupported</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/smartBattery</TokenIdentifier>
+			<Abstract type="html">Smart battery</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
+			<Declaration>@property (nonatomic, readonly) DJIBattery *smartBattery</Declaration>
 			
-			<Anchor>//api/name/isPhotoQuickViewSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setPhotoQuickViewDuration:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the camera&apos;s quick view duration. The valid range is [0, 10] seconds. When duration is 0, it means that the quick view
-is disabled. The default value is 0 second.
-It is not supported by Phantom 3 Standard. Please check isPhotoQuickViewSupported before using this method.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setPhotoQuickViewDuration:(NSUInteger)duration withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>duration</Name>
-					<Abstract type="html">Quick view duration to be set for the camera.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setPhotoQuickViewDuration:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getPhotoQuickViewDurationWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the camera&apos;s quick view duration.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
 			
-			<Declaration>- (void)getPhotoQuickViewDurationWithCompletion:(void ( ^ ) ( NSUInteger duration , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getPhotoQuickViewDurationWithCompletion:</Anchor>
+			<Anchor>//api/name/smartBattery</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isAudioRecordSupported</TokenIdentifier>
-			<Abstract type="html">Check if the current device supports audio recording.
-Currently audio recording is supported only by the OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/smartBattery</TokenIdentifier>
+			<Abstract type="html">Smart battery</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isAudioRecordSupported</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIBattery *smartBattery</Declaration>
 			
 			
-			<Anchor>//api/name/isAudioRecordSupported</Anchor>
+			<Anchor>//api/name/smartBattery</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setAudioRecordEnabled:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Enables audio recording when capturing video.
-Supported only by OSMO camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setAudioRecordEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>enabled</Name>
-					<Abstract type="html">Enable or disable audio recording.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setImageTransmitter:</TokenIdentifier>
+			<Abstract type="html">Image transmitter</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/setAudioRecordEnabled:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getAudioRecordEnabledWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Supported only by OSMO camera.
-Gets whether the audio record is enabled or not.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIImageTransmitter *imageTransmitter</Declaration>
 			
-			<Declaration>- (void)getAudioRecordEnabledWithCompletion:(void ( ^ ) ( BOOL enabled , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getAudioRecordEnabledWithCompletion:</Anchor>
+			<Anchor>//api/name/imageTransmitter</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isChangeableLensSupported</TokenIdentifier>
-			<Abstract type="html">Gets whether the changeable lens is supported by the camera.
-Currently, a changeable lens is supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (BOOL)isChangeableLensSupported</Declaration>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/imageTransmitter</TokenIdentifier>
+			<Abstract type="html">Image transmitter</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			
-			<Anchor>//api/name/isChangeableLensSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensInformationWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets details of the installed lens.
-Supported only by X5 camera.
-It is available only when isChangeableLensSupported returns YES.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIImageTransmitter *imageTransmitter</Declaration>
 			
-			<Declaration>- (void)getLensInformationWithCompletion:(void ( ^ ) ( NSString *_Nullable info , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getLensInformationWithCompletion:</Anchor>
+			<Anchor>//api/name/imageTransmitter</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isAdjustableApertureSupported</TokenIdentifier>
-			<Abstract type="html">Gets whether the camera supports an adjustable aperture.
-Currently, adjustable aperture is supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/imageTransmitter</TokenIdentifier>
+			<Abstract type="html">Image transmitter</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isAdjustableApertureSupported</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJIImageTransmitter *imageTransmitter</Declaration>
 			
 			
-			<Anchor>//api/name/isAdjustableApertureSupported</Anchor>
+			<Anchor>//api/name/imageTransmitter</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setAperture:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the aperture value.
-It is available only when isAdjustableApertureSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setAperture:(DJICameraAperture)aperture withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>aperture</Name>
-					<Abstract type="html">The aperture to set. Check enum CameraLensFocusMode in DJICameraSettingsDef.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setAperture:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getApertureWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the lens aperture.
-It is available only when isAdjustableApertureSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getApertureWithCompletion:(void ( ^ ) ( DJICameraAperture aperture , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/setRemoteController:</TokenIdentifier>
+			<Abstract type="html">Remote Controller</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getApertureWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isAdjustableFocalPointSupported</TokenIdentifier>
-			<Abstract type="html">Gets whether the camera supports an adjustable focal point.
-Currently, adjustable focal point is supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRemoteController *remoteController</Declaration>
 			
-			<Declaration>- (BOOL)isAdjustableFocalPointSupported</Declaration>
 			
-			
-			<Anchor>//api/name/isAdjustableFocalPointSupported</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setLensFocusMode:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the lens focus mode. Check enum CameraLensFocusMode in DJICameraSettingsDef.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setLensFocusMode:(DJICameraLensFocusMode)focusMode withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>focusMode</Name>
-					<Abstract type="html">Focus mode to set. Please refer to DJICameraLensFocusMode for more detail.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLensFocusMode:withCompletion:</Anchor>
+			<Anchor>//api/name/remoteController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensFocusModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the lens focus mode. Please check enum CameraLensFocusMode in DJICameraSettingsDef.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/remoteController</TokenIdentifier>
+			<Abstract type="html">Remote Controller</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getLensFocusModeWithCompletion:(void ( ^ ) ( DJICameraLensFocusMode focusMode , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getLensFocusModeWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setLensFocusTarget:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets the lens focus Target point.
-When the focus mode is auto, the target point is the focal point.
-When the focus mode is manual, the target point is the zoom out area if the focus assistant is enabled for
-the manual mode.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setLensFocusTarget:(CGPoint)focusTarget withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>focusTarget</Name>
-					<Abstract type="html">The focus target to set. The range for x and y is from 0.0 to 1.0. The point [0.0, 0.0]
-represents the top-left angle of the screen.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLensFocusTarget:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensFocusTargetWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the lens focus Target point.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRemoteController *remoteController</Declaration>
 			
-			<Declaration>- (void)getLensFocusTargetWithCompletion:(void ( ^ ) ( CGPoint focusTarget , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getLensFocusTargetWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setLensFocusAssistantEnabledForMF:andAF:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets whether the lens focus assistant is enabled or not.
-If the focus assistant is enabled, a specific area of the screen will zoom out during focusing.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setLensFocusAssistantEnabledForMF:(BOOL)MFenabled andAF:(BOOL)AFenabled withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter><Parameter>
-					<Name>enabledAF</Name>
-					<Abstract type="html">Sets whether the lens focus assistant under AF mode is enabled or not.</Abstract>
-				</Parameter><Parameter>
-					<Name>enabledMF</Name>
-					<Abstract type="html">Sets whether the lens focus assistant under MF mode is enabled or not.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLensFocusAssistantEnabledForMF:andAF:withCompletion:</Anchor>
+			<Anchor>//api/name/remoteController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensFocusAssistantEnabledForMFAndAFWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets whether the lens focus assistant is enabled or not.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)getLensFocusAssistantEnabledForMFAndAFWithCompletion:(void ( ^ ) ( BOOL MFenabled , BOOL AFenabled , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.
-The first result stands for MF, the second result stands for AF.</Abstract>
-				</Parameter>
-			</Parameters>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIDrone/remoteController</TokenIdentifier>
+			<Abstract type="html">Remote Controller</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Anchor>//api/name/getLensFocusAssistantEnabledForMFAndAFWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensFocusRingValueUpperBoundWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the lens focusing ring value&apos;s max value.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>@property (nonatomic, readonly) DJIRemoteController *remoteController</Declaration>
 			
-			<Declaration>- (void)getLensFocusRingValueUpperBoundWithCompletion:(void ( ^ ) ( NSUInteger upperBound , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getLensFocusRingValueUpperBoundWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/setLensFocusRingValue:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Set the focal distance by simulating the focus ring adjustment. Value can have a range of [0, getLensFocusRingValueUpperBoundWithCompletion] which represents the closest possible focal distance and infinity.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)setLensFocusRingValue:(NSUInteger)value withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>value</Name>
-					<Abstract type="html">An integer value to adjust the focusing ring.
-The minimum value is 0, the maximum value depends on the installed lens. Please use method
-getLensFocusRingValueUpperBoundWithCompletion to ensure the input argument is valid.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setLensFocusRingValue:withCompletion:</Anchor>
+			<Anchor>//api/name/remoteController</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getLensFocusRingValueWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets lens focus ring value.
-It is available only when isAdjustableFocalPointSupported returns YES.
-Supported only by X5 camera.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/initWithType:</TokenIdentifier>
+			<Abstract type="html">init drone object with type</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)getLensFocusRingValueWithCompletion:(void ( ^ ) ( NSUInteger distance , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the value(s) returned.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getLensFocusRingValueWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/loadFactorySettings:</TokenIdentifier>
-			<Abstract type="html">Load the camera&apos;s factory settings. &lt;br&gt;</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>- (id)initWithType:(DJIDroneType)type</Declaration>
 			
-			<Declaration>- (void)loadFactorySettings:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>callback</Name>
-					<Abstract type="html">The execution callback with the execution result returned.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/loadFactorySettings:</Anchor>
+			<Anchor>//api/name/initWithType:</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/saveSettingsTo:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Saves the current camera settings permanently to the specified user. Check the enum named DJICameraCustomSettings in
-DJICameraSettingsDef.h to find all possible camera users.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/connectToDrone</TokenIdentifier>
+			<Abstract type="html">Connect to the drone. once this function was called, the DJIDrone will automatically connect to the drone</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)saveSettingsTo:(DJICameraCustomSettings)settings withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>settings</Name>
-					<Abstract type="html">Camera user to store camera settings to.</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (void)connectToDrone</Declaration>
 			
-			<Anchor>//api/name/saveSettingsTo:withCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/loadSettingsFrom:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Load camera settings from the specified user.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
-			
-			<Declaration>- (void)loadSettingsFrom:(DJICameraCustomSettings)settings withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>settings</Name>
-					<Abstract type="html">Camera user to load camera settings from.</Abstract>
-				</Parameter><Parameter>
-					<Name>result</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/loadSettingsFrom:withCompletion:</Anchor>
+			<Anchor>//api/name/connectToDrone</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/formatSDCardWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Formats the SD card by deleting all the data on the SD card. This
-does not change any settings the user may have set on the SD card.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/disconnectToDrone</TokenIdentifier>
+			<Abstract type="html">Disconnect to the drone.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (void)formatSDCardWithCompletion:(DJICompletionBlock)block</Declaration>
-			
-			
-			<Anchor>//api/name/formatSDCardWithCompletion:</Anchor>
-            <NodeRef refid="9"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/getSDCardInfoWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets the current state of the SD card. For instance, accessing the sdInfo
-parameter of the block will tell you whether or not the SD card is inserted
-into the camera or how much memory is remaining. For more information on all
-possible current states of the SD card, refer to DJICameraSDCardState.</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<Declaration>- (void)disconnectToDrone</Declaration>
 			
-			<Declaration>- (void)getSDCardInfoWithCompletion:(void ( ^ ) ( DJICameraSDCardState *_Nullable sdInfo , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result callback block.</Abstract>
-				</Parameter>
-			</Parameters>
 			
-			<Anchor>//api/name/getSDCardInfoWithCompletion:</Anchor>
+			<Anchor>//api/name/disconnectToDrone</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICamera/isMediaDownloadModeSupported</TokenIdentifier>
-			<Abstract type="html">Check if the current device support Media Download Mode</Abstract>
-			<DeclaredIn>DJICamera.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIDrone/destroy</TokenIdentifier>
+			<Abstract type="html">Destroy the drone object, user should call this interface to release all objects.</Abstract>
+			<DeclaredIn>DJIDrone.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isMediaDownloadModeSupported</Declaration>
+			<Declaration>- (void)destroy</Declaration>
 			
 			
-			<Anchor>//api/name/isMediaDownloadModeSupported</Anchor>
+			<Anchor>//api/name/destroy</Anchor>
             <NodeRef refid="9"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>

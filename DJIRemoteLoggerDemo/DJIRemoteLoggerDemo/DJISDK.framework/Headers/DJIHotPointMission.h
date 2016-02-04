@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIHotPointMission.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIHotPointMission.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
@@ -24,7 +22,7 @@ DJI_API_EXTERN const float DJIHotPointMinRadius;
 /**
  *  Aircraft start point relative to hot point.
  */
-typedef NS_ENUM(NSUInteger, DJIHotPointStartPoint){
+typedef NS_ENUM (NSUInteger, DJIHotPointStartPoint){
     /**
      *  Start from the North.
      */
@@ -51,7 +49,7 @@ typedef NS_ENUM(NSUInteger, DJIHotPointStartPoint){
 /**
  *  Heading of the aircraft while orbiting the hot point.
  */
-typedef NS_ENUM(NSUInteger, DJIHotPointHeading){
+typedef NS_ENUM (NSUInteger, DJIHotPointHeading){
     /**
      *  Heading is in the forward direction of travel along the circular path.
      */
@@ -81,7 +79,7 @@ typedef NS_ENUM(NSUInteger, DJIHotPointHeading){
 /**
  *  All possible hot point mission execution states.
  */
-typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
+typedef NS_ENUM (uint8_t, DJIHotpointMissionExecutionState){
     /**
      *  The mission has been started and the aircraft is flying to the start point.
      */
@@ -91,12 +89,15 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
      */
     DJIHotpointMissionExecutionStateMoving,
     /**
-     *  The mission is currently paused.
-     *
+     *  The mission is currently paused by the user.
      */
     DJIHotpointMissionExecutionStatePaused,
 };
 
+/**
+ *  This class provides the real-time status of the executing hot-point mission.
+ *
+ */
 @interface DJIHotPointMissionStatus : DJIMissionProgressStatus
 
 /**
@@ -105,8 +106,7 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
 @property(nonatomic, readonly) DJIHotpointMissionExecutionState executionState;
 
 /**
- *  The current distance between the aircraft and the hot point in meters.
- *
+ *  The current horizontal distance between the aircraft and the hot point in meters.
  */
 @property(nonatomic, readonly) float currentDistanceToHotpoint;
 
@@ -116,6 +116,10 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
 #pragma mark - Mission
 /*********************************************************************************/
 
+/**
+ *  The class represents a hotpoint mission, which can be executed by the mission manager. User can control the aircraft to fly around the hotpoint with specific radius and altitude. During the execution, user can also using the physical remote controller to modify its radius and speed.
+ *
+ */
 @interface DJIHotPointMission : DJIMission
 
 /*********************************************************************************/
@@ -127,9 +131,8 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
 @property(nonatomic, assign) CLLocationCoordinate2D hotPoint;
 
 /**
- *  Sets the altitude of the hot point in meters with range [5,120] meters. The altitude is relative
+ *  Sets the altitude of the hot point orbit in meters with range [5,500] meters. The altitude is relative
  *  to the ground altitude from which the aircraft took off.
- *
  */
 @property(nonatomic, assign) float altitude;
 
@@ -141,17 +144,14 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
 
 /**
  *  YES if the aircraft is to travel around the hotpoint in the clockwise direction.
- *
- *
  */
 @property(nonatomic, assign) BOOL isClockwise;
 
 /**
- *  Sets the angular velocity of the aircraft with range [0,30] degrees/second as it orbits the hot point.
+ *  Sets the angular velocity (in degrees/second) of the aircraft as it orbits the hot point.
  *  The default value is 20 degrees/s.
  *  The angular velocity is relative to the orbit radius. You can use the maxAngularVelocityForRadius:radius method
  *  to get the maximum supported angular velocity for a given radius.
- *
  */
 @property(nonatomic, assign) float angularVelocity;
 
@@ -167,13 +167,6 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
 @property(nonatomic, assign) DJIHotPointHeading heading;
 
 /**
- *  Tracks the mission upload completion.
- *
- */
-@property (nonatomic, strong) DJICompletionBlock executionCompletionListener;
-
-
-/**
  *  Returns the supported maximum angular velocity in degrees/second for the given
  *  hot point radius in meters.
  *
@@ -181,6 +174,6 @@ typedef NS_ENUM(uint8_t, DJIHotpointMissionExecutionState){
  *
  *  @return Returns the supported maximum angular velocity for the given radius. Will return 0 if an unsupported radius is input.
  */
-+(float) maxAngularVelocityForRadius:(float)radius;
++ (float)maxAngularVelocityForRadius:(float)radius;
 
 @end

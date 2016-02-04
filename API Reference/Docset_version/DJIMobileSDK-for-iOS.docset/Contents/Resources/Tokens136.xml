@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJILensType.html">
+	<File path="Constants/DJIRCRequestGimbalControlResult.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJILensType</TokenIdentifier>
-			<Abstract type="html">The type of the installed lens.</Abstract>
-			<DeclaredIn>DJICameraLensState.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIRCRequestGimbalControlResult</TokenIdentifier>
+			<Abstract type="html">Result of slave who request for gimbal control permission</Abstract>
+			<DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
 			
 			<NodeRef refid="136"/>
@@ -14,39 +14,60 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILensTypeAF</TokenIdentifier>
-            <Abstract type="html">The lens supports Auto Focus.
-For this type, DJI SDK can control the focus point.
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAgree</TokenIdentifier>
+            <Abstract type="html">Request was agreed
      </Abstract>
-            <Declaration>DJILensTypeAF</Declaration>
+            <Declaration>RCRequestGimbalControlResultAgree</Declaration>
             
-            <DeclaredIn>DJICameraLensState.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="136"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILensTypeMF</TokenIdentifier>
-            <Abstract type="html">The lens supports only Manual Focus.
-For this type, DJI SDK cannot control the focus point.
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultDeny</TokenIdentifier>
+            <Abstract type="html">Request was denied
      </Abstract>
-            <Declaration>DJILensTypeMF</Declaration>
+            <Declaration>RCRequestGimbalControlResultDeny</Declaration>
             
-            <DeclaredIn>DJICameraLensState.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="136"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJILensTypeUnknown</TokenIdentifier>
-            <Abstract type="html">The lens type is unkown.
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultTimeout</TokenIdentifier>
+            <Abstract type="html">Request was timeout
      </Abstract>
-            <Declaration>DJILensTypeUnknown</Declaration>
+            <Declaration>RCRequestGimbalControlResultTimeout</Declaration>
             
-            <DeclaredIn>DJICameraLensState.h</DeclaredIn>
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
             
             <NodeRef refid="136"/>
         </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultAuthorized</TokenIdentifier>
+            <Abstract type="html">Request was Authorized
+     </Abstract>
+            <Declaration>RCRequestGimbalControlResultAuthorized</Declaration>
+            
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            
+            <NodeRef refid="136"/>
+        </Token>
+        
+        <Token>
+            <TokenIdentifier>//apple_ref/c/econst/RCRequestGimbalControlResultUnknown</TokenIdentifier>
+            <Abstract type="html">Request was unknown
+     </Abstract>
+            <Declaration>RCRequestGimbalControlResultUnknown</Declaration>
+            
+            <DeclaredIn>DJIRemoteControllerDef.h</DeclaredIn>
+            
+            <NodeRef refid="136"/>
+        </Token>
+        
         
 	</File>
 </Tokens>

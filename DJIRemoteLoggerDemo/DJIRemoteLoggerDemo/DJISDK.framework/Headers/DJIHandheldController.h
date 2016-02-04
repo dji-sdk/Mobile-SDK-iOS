@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIHandheldController.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIHandheldController.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJIBaseComponent.h>
@@ -18,9 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark DJIHandheldWiFiFrequency Type
 //-----------------------------------------------------------------
 /**
- *  Remote controller pairing state.
+ *  Handheld WiFi Frequency Type.
  */
-typedef NS_ENUM(uint8_t, DJIHandheldWiFiFrequencyType){
+typedef NS_ENUM (uint8_t, DJIHandheldWiFiFrequencyType){
     /**
      *  The Handheld WiFi frequency is 2.4G
      */
@@ -35,81 +33,80 @@ typedef NS_ENUM(uint8_t, DJIHandheldWiFiFrequencyType){
 /**
  *  Handheld Power Mode
  */
-typedef NS_ENUM(uint8_t, DJIHandheldPowerMode){
+typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
     /**
-     *  The Handheld Power Mode is operating
+     *  The Handheld Power Mode is awake.
+     *  For Osmo, when it is in this mode, all the components in DJIHandheld are accessible.
      */
-    DJIHandheldPowerModeOperating,
+    DJIHandheldPowerModeAwake,
     /**
-     *  The Handheld Power Mode is sleep
+     *  The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
+     *  to the Mobile device alive but most other components are off. The power consumption is low
+     *  in this mode.
+     *  For Osmo, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
+     *  are accessible.
      */
     DJIHandheldPowerModeSleeping,
-    
+    /**
+     *  The Handheld Power Mode is power-off. Once this mode is set the delegate will receive this mode until the handheld device is
+     *  shut down completely.
+     */
+    DJIHandheldPowerModePowerOff,
+    /**
+     *  The Handheld Power Mode in unkown.
+     */
+    DJIHandheldPowerModeUnknown = 0xFF
 };
 
 @class DJIHandheldController;
 
+/*********************************************************************************/
+#pragma mark - DJIHandheldControllerDelegate
+/*********************************************************************************/
+
+/**
+ *
+ *  This protocol provides a delegate method to receive the updated power mode of the handheld controller.
+ *
+ */
 @protocol DJIHandheldControllerDelegate <NSObject>
 
 @optional
 
 /**
- *  Get Handheld device's work status
+ *  Tells the delegate that a handheld controller's power mode is updated.
  *
- *  @param sleep if handheld device sleep
- *  @param controller DJIHandheldController object
+ *  @param controller   the handheld controller that updates the power mode
+ *  @param powerMode    handheld controller's current power mode
  *
  */
-- (void)getHandheldWorkStatusWithSleep:(BOOL)sleep withHandheldController:(DJIHandheldController *)controller;
+- (void)handheldController:(DJIHandheldController *)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode;
 
 @end
 
 /*********************************************************************************/
 #pragma mark - DJIHandheldController
 /*********************************************************************************/
-@interface DJIHandheldController : DJIBaseComponent
-
-//-----------------------------------------------------------------
-#pragma mark Handheld Device WIFI
-//-----------------------------------------------------------------
-
 /**
- *  Returns the WiFi link
+ *
+ *  This class contains interfaces to control a handheld device. You can make the handheld device enter sleep mode, awake from sleep mode or shut it down.
  */
-@property(nonatomic, strong) DJIWiFiLink *wifiLink;
+@interface DJIHandheldController : DJIBaseComponent
 
 /**
  *  Returns the DJIHandheldController delegate
  */
 @property(nonatomic, weak) id <DJIHandheldControllerDelegate> delegate;
 
-
 /**
- *  Query method to check if the Handheld Device supports wifi settings.
+ *  Set the power mode for handheld.
  *
+ *  @param mode     The power mode to set.
+ *                  CAUTION: when the mode is DJIHandheldPowerModePowerOff, the handheld device will be shut down and
+ *                  the connection will be broken. User then needs to power on the device manually.
+ *  @param block    Remote execution result callback block.
  */
--(BOOL) isWiFiSettingSupported;
-
-/**
- *  Make handheld device enter sleep mode
- *  @param block Completion block.
- *
- */
-- (void)enterSleepModeWithCompletion:(DJICompletionBlock)block;
-
-/**
- *  Make handheld device awake from sleep mode
- *  @param block Completion block.
- *
- */
-- (void)awakeFromSleepModeWithCompletion:(DJICompletionBlock)block;
-
-/**
- *  Shutdown handheld device
- *  @param block Completion block.
- *
- */
-- (void)shutDownHandheldWithCompletion:(DJICompletionBlock)block;
+- (void)setHandheldPowerMode:(DJIHandheldPowerMode)mode withCompletion:(DJICompletionBlock)block;
 
 @end
 NS_ASSUME_NONNULL_END

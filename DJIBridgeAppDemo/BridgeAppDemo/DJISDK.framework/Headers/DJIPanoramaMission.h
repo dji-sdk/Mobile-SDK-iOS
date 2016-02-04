@@ -20,7 +20,7 @@ typedef NS_ENUM (NSUInteger, DJIPanoramaMode) {
      */
     DJIPanoramaModeFullCircle = 0,
     /**
-     *  180 Degree Panorama mode. Also known as selfie mode in OSMO.
+     *  180 Degree Panorama mode. Also known as selfie mode.
      */
     DJIPanoramaModeHalfCircle,
     /**

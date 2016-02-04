@@ -39,6 +39,10 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/auxLink">&nbsp;&nbsp;&nbsp;&nbsp;auxLink</option>
+	
+	<option value="//api/name/isAuxLinkSupported">&nbsp;&nbsp;&nbsp;&nbsp;isAuxLinkSupported</option>
+	
 	<option value="//api/name/isLBAirLinkSupported">&nbsp;&nbsp;&nbsp;&nbsp;isLBAirLinkSupported</option>
 	
 	<option value="//api/name/isWifiLinkSupported">&nbsp;&nbsp;&nbsp;&nbsp;isWifiLinkSupported</option>
@@ -74,6 +78,10 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/auxLink">auxLink</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isAuxLinkSupported">isAuxLinkSupported</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLBAirLinkSupported">isLBAirLinkSupported</a></span></li>
 	
@@ -124,8 +132,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class contains DJI WiFi and DJI Lightbridge components, you can check if the current device supports WiFi and
-Lightbridge features by accessing the following two BOOL variables.</p>
+						<p>The class contains different wireless links between the aircraft, the remote controller and the mobile device. A product may only supports some of the wireless links within DJIAirLink. Please check the query method (e.g. isWiFiLinkSupported) before accessing a wireless link.</p>
 					</div>
 					
 					
@@ -155,6 +162,12 @@ Lightbridge features by accessing the following two BOOL variables.</p>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/isAuxLinkSupported">&nbsp;&nbsp;isAuxLinkSupported</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/wifiLink">&nbsp;&nbsp;wifiLink</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -162,6 +175,12 @@ Lightbridge features by accessing the following two BOOL variables.</p>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/lbAirLink">&nbsp;&nbsp;lbAirLink</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/auxLink">&nbsp;&nbsp;auxLink</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -179,13 +198,85 @@ Lightbridge features by accessing the following two BOOL variables.</p>
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/auxLink" title="auxLink"></a>
+	<h3 class="subsubtitle method-title">auxLink</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the auxiliary control link if it&rsquo;s available</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) DJIAuxLink *auxLink</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIAirLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isAuxLinkSupported" title="isAuxLinkSupported"></a>
+	<h3 class="subsubtitle method-title">isAuxLinkSupported</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>YES if the auxiliary control link is supported. The auxiliary control link is the wireless link between remote controller and aircraft on products that have a WiFi Video link. Phantom 3 Standard, and Phantom 3 4K have auxiliary control link.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isAuxLinkSupported</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJIAirLink.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/isLBAirLinkSupported" title="isLBAirLinkSupported"></a>
 	<h3 class="subsubtitle method-title">isLBAirLinkSupported</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>YES if LB Air Link is supported</p>
+		<p>YES if Lightbridge Link is supported</p>
 	</div>		
 	
     
@@ -341,7 +432,7 @@ Lightbridge features by accessing the following two BOOL variables.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-02-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

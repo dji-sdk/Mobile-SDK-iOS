@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIHandheldPowerMode.html">
+	<File path="Constants/DJIIOCType.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIHandheldPowerMode</TokenIdentifier>
-			<Abstract type="html">Handheld Power Mode</Abstract>
-			<DeclaredIn>DJIHandheldController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIIOCType</TokenIdentifier>
+			<Abstract type="html">IOC(Intelligent Orientation Control) type.</Abstract>
+			<DeclaredIn>DJIIOCMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="121"/>
@@ -14,54 +14,44 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeAwake</TokenIdentifier>
-            <Abstract type="html">The Handheld Power Mode is awake.
-For OSMO, when it is in this mode, all the components in DJIHandheld are accessible.
+            <TokenIdentifier>//apple_ref/c/econst/DJIIOCTypeCourseLock</TokenIdentifier>
+            <Abstract type="html">As the aircraft follows a specific route, the direction is locked.
+The method lockCourseUsingCurrentDirectionWithResult: will lock
+the direction of the aircraft to the current direction.
      </Abstract>
-            <Declaration>DJIHandheldPowerModeAwake</Declaration>
+            <Declaration>DJIIOCTypeCourseLock</Declaration>
             
-            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
+            <DeclaredIn>DJIIOCMission.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeSleeping</TokenIdentifier>
-            <Abstract type="html">The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
-to the Mobile device alive but most other components are off. The power consumption is low
-in this mode.
-For OSMO, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
-are accessible.
-     </Abstract>
-            <Declaration>DJIHandheldPowerModeSleeping</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIIOCTypeHomeLock</TokenIdentifier>
+            <Abstract type="html">Having the aircraft in this mode will allow the aircraft to move
+towards the home point without having to know the exact
+direction the aircraft needs to be in to return to home.
+For example, if the aircraft is extremely far out from the home point,
+using the remote controller to move the aircraft backwards will
+move the aircraft towards home instead of backwards.</Abstract>
+            <Declaration>DJIIOCTypeHomeLock</Declaration>
             
-            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
-            
-            <NodeRef refid="121"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModePowerOff</TokenIdentifier>
-            <Abstract type="html">The Handheld Power Mode is power-off. Once this mode is set the delegate will receive this mode until the handheld device is
-shut down completely.
-     </Abstract>
-            <Declaration>DJIHandheldPowerModePowerOff</Declaration>
-            
-            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
+            <DeclaredIn>DJIIOCMission.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/DJIHandheldPowerModeUnknown</TokenIdentifier>
-            <Abstract type="html">The Handheld Power Mode in unkown.
+            <TokenIdentifier>//apple_ref/c/econst/DJIIOCTypeUnknown</TokenIdentifier>
+            <Abstract type="html">Unknown type.
      </Abstract>
-            <Declaration>DJIHandheldPowerModeUnknown</Declaration>
+            <Declaration>DJIIOCTypeUnknown</Declaration>
             
-            <DeclaredIn>DJIHandheldController.h</DeclaredIn>
+            <DeclaredIn>DJIIOCMission.h</DeclaredIn>
             
             <NodeRef refid="121"/>
         </Token>
+        
         
 	</File>
 </Tokens>

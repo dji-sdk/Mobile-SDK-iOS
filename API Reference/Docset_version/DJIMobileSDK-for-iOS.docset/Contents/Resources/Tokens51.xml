@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJISDKManager.html">
+	<File path="Classes/DJIWaypoint.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJISDKManager</TokenIdentifier>
-			<Abstract type="html">This class contains methods to register the app, start or stop connection with the product, and use the DJI Bridge app and Remote Logger tools, etc. After the registration, user can access the connected product through DJISDKManager. Then user can start to control the components of the product.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIWaypoint</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
             
 			
 			<NodeRef refid="51"/>
@@ -13,185 +13,413 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/product</TokenIdentifier>
-			<Abstract type="html">Product connected to the mobile device. The product is accessible only after successful registration of the app.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setCoordinate:</TokenIdentifier>
+			<Abstract type="html">Coordinate of the waypoint in degrees.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>+ (__kindof DJIBaseProduct *_Nullable)product</Declaration>
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D coordinate</Declaration>
 			
-			<ReturnValue><Abstract type="html">available DJIBaseProduct object. nil if no product is available.</Abstract></ReturnValue>
-			<Anchor>//api/name/product</Anchor>
+			
+			<Anchor>//api/name/coordinate</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/registerApp:withDelegate:</TokenIdentifier>
-			<Abstract type="html">The first time the app is initialized after installation, the app connects to a DJI Server through the internet to verify the Application Key. Subsequent app starts will use locally cached verification information to register the app.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/coordinate</TokenIdentifier>
+			<Abstract type="html">Coordinate of the waypoint in degrees.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>+ (void)registerApp:(NSString *)appKey withDelegate:(id&lt;DJISDKManagerDelegate&gt;)delegate</Declaration>
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/coordinate</TokenIdentifier>
+			<Abstract type="html">Coordinate of the waypoint in degrees.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/coordinate</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setAltitude:</TokenIdentifier>
+			<Abstract type="html">Altitude of the aircraft in meters when it reaches the waypoint. The altitude of the
+aircarft is relative to the ground. Setting this value will take the aircraft to the
+altitude relative to the ground (the altitude at which it initially took off).
+The value of this property must be in the range of [-200, 500] meters and should not be
+larger then the aircraft&apos;s max limited height.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
+			
+			
+			<Anchor>//api/name/altitude</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/altitude</TokenIdentifier>
+			<Abstract type="html">Altitude of the aircraft in meters when it reaches the waypoint. The altitude of the
+aircarft is relative to the ground. Setting this value will take the aircraft to the
+altitude relative to the ground (the altitude at which it initially took off).
+The value of this property must be in the range of [-200, 500] meters and should not be
+larger then the aircraft&apos;s max limited height.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
+			
+			
+			<Anchor>//api/name/altitude</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/altitude</TokenIdentifier>
+			<Abstract type="html">Altitude of the aircraft in meters when it reaches the waypoint. The altitude of the
+aircarft is relative to the ground. Setting this value will take the aircraft to the
+altitude relative to the ground (the altitude at which it initially took off).
+The value of this property must be in the range of [-200, 500] meters and should not be
+larger then the aircraft&apos;s max limited height.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
+			
+			
+			<Anchor>//api/name/altitude</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setHeading:</TokenIdentifier>
+			<Abstract type="html">Heading of aircraft when it reaches the waypoint. The value of this property must be
+in the range of [-180, 180] degrees, where 0 represent true north. This property will be
+used when the waypoint mission&apos;s headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/heading</TokenIdentifier>
+			<Abstract type="html">Heading of aircraft when it reaches the waypoint. The value of this property must be
+in the range of [-180, 180] degrees, where 0 represent true north. This property will be
+used when the waypoint mission&apos;s headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/heading</TokenIdentifier>
+			<Abstract type="html">Heading of aircraft when it reaches the waypoint. The value of this property must be
+in the range of [-180, 180] degrees, where 0 represent true north. This property will be
+used when the waypoint mission&apos;s headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float heading</Declaration>
+			
+			
+			<Anchor>//api/name/heading</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setActionRepeatTimes:</TokenIdentifier>
+			<Abstract type="html">Dictates how many times a waypoint action is repeated. The default value is one time.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger actionRepeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/actionRepeatTimes</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/actionRepeatTimes</TokenIdentifier>
+			<Abstract type="html">Dictates how many times a waypoint action is repeated. The default value is one time.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger actionRepeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/actionRepeatTimes</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/actionRepeatTimes</TokenIdentifier>
+			<Abstract type="html">Dictates how many times a waypoint action is repeated. The default value is one time.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) NSUInteger actionRepeatTimes</Declaration>
+			
+			
+			<Anchor>//api/name/actionRepeatTimes</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setActionTimeout:</TokenIdentifier>
+			<Abstract type="html">The maximum time set to excute all the waypoint actions for a waypoint. If the time,
+while executing the waypoint actions, goes above the time set, the aircraft will
+stop executing the waypoint actions for the current waypoint and will move on to
+the next waypoint. The value of this property must be in the range of [0, 999] seconds.
+The default value is 60 seconds.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) int actionTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/actionTimeout</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/actionTimeout</TokenIdentifier>
+			<Abstract type="html">The maximum time set to excute all the waypoint actions for a waypoint. If the time,
+while executing the waypoint actions, goes above the time set, the aircraft will
+stop executing the waypoint actions for the current waypoint and will move on to
+the next waypoint. The value of this property must be in the range of [0, 999] seconds.
+The default value is 60 seconds.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) int actionTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/actionTimeout</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/actionTimeout</TokenIdentifier>
+			<Abstract type="html">The maximum time set to excute all the waypoint actions for a waypoint. If the time,
+while executing the waypoint actions, goes above the time set, the aircraft will
+stop executing the waypoint actions for the current waypoint and will move on to
+the next waypoint. The value of this property must be in the range of [0, 999] seconds.
+The default value is 60 seconds.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) int actionTimeout</Declaration>
+			
+			
+			<Anchor>//api/name/actionTimeout</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setCornerRadius:</TokenIdentifier>
+			<Abstract type="html">Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
+the flight path as the aircraft reaches a waypoint will be a rounded corner. The value of
+this property must be in the range of [0.2, 1000] meters, and should smaller than the minimum distance(three dimensions) to the previous and the next waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
+the flight path as the aircraft reaches a waypoint will be a rounded corner. The value of
+this property must be in the range of [0.2, 1000] meters, and should smaller than the minimum distance(three dimensions) to the previous and the next waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/cornerRadius</TokenIdentifier>
+			<Abstract type="html">Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
+the flight path as the aircraft reaches a waypoint will be a rounded corner. The value of
+this property must be in the range of [0.2, 1000] meters, and should smaller than the minimum distance(three dimensions) to the previous and the next waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, assign) float cornerRadius</Declaration>
+			
+			
+			<Anchor>//api/name/cornerRadius</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setTurnMode:</TokenIdentifier>
+			<Abstract type="html">Determines how the aircraft will turn when rotating. Please take a look at the
+enum named DJIWaypointTurnMode at the top of this file to see the two possible
+turn modes.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) DJIWaypointTurnMode turnMode</Declaration>
+			
+			
+			<Anchor>//api/name/turnMode</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/turnMode</TokenIdentifier>
+			<Abstract type="html">Determines how the aircraft will turn when rotating. Please take a look at the
+enum named DJIWaypointTurnMode at the top of this file to see the two possible
+turn modes.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) DJIWaypointTurnMode turnMode</Declaration>
+			
+			
+			<Anchor>//api/name/turnMode</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/turnMode</TokenIdentifier>
+			<Abstract type="html">Determines how the aircraft will turn when rotating. Please take a look at the
+enum named DJIWaypointTurnMode at the top of this file to see the two possible
+turn modes.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic) DJIWaypointTurnMode turnMode</Declaration>
+			
+			
+			<Anchor>//api/name/turnMode</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/setWaypointActions:</TokenIdentifier>
+			<Abstract type="html">Array of all waypoint actions for the respective waypoint. The waypoint actions will
+be executed one at a time consecutively from the start of the array once the aircraft
+reaches the waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *waypointActions</Declaration>
+			
+			
+			<Anchor>//api/name/waypointActions</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/waypointActions</TokenIdentifier>
+			<Abstract type="html">Array of all waypoint actions for the respective waypoint. The waypoint actions will
+be executed one at a time consecutively from the start of the array once the aircraft
+reaches the waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *waypointActions</Declaration>
+			
+			
+			<Anchor>//api/name/waypointActions</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/DJIWaypoint/waypointActions</TokenIdentifier>
+			<Abstract type="html">Array of all waypoint actions for the respective waypoint. The waypoint actions will
+be executed one at a time consecutively from the start of the array once the aircraft
+reaches the waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSArray *waypointActions</Declaration>
+			
+			
+			<Anchor>//api/name/waypointActions</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/initWithCoordinate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate</Declaration>
+			
+			
+			<Anchor>//api/name/initWithCoordinate:</Anchor>
+            <NodeRef refid="51"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/addAction:</TokenIdentifier>
+			<Abstract type="html">Adds a waypoint action to a waypoint. In order for this method to work, the
+number of current waypoint actions added to the waypoint should not be larger
+than DJIMaxActionCount. The action will only be executed when the mission&apos;s
+flightPathMode property is set to DJIWaypointMissionFlightPathNormal. Actions
+cannot be added when the mission&apos;s flightPathMode property is set to
+DJIWaypointMissionFlightPathCurved.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
+			
+			<Declaration>- (BOOL)addAction:(DJIWaypointAction *)action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>appKey</Name>
-					<Abstract type="html">Application key that was provided by DJI after the application was registered.</Abstract>
-				</Parameter><Parameter>
-					<Name>delegate</Name>
-					<Abstract type="html">Registration result callback delegate</Abstract>
+					<Name>action</Name>
+					<Abstract type="html">Waypoint action to be added to the waypoint.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/registerApp:withDelegate:</Anchor>
+			<ReturnValue><Abstract type="html">Whether or not the waypoint action has been added to the waypoint. If the
+number of current waypoint actions added to the waypoint is larger
+than DJIMaxActionCount, the waypoint does not exist in the action list,
+or the waypoint action&apos;s actionParam is invalid, this method returns NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/addAction:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/setCompletionBlockQueue:</TokenIdentifier>
-			<Abstract type="html">Queue in which completion blocks are called. If left unset, completion blocks are called in main queue.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/removeAction:</TokenIdentifier>
+			<Abstract type="html">Removes a waypoint action from the waypoint.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>+ (void)setCompletionBlockQueue:(dispatch_queue_t)completionBlockQueue</Declaration>
+			<Declaration>- (BOOL)removeAction:(DJIWaypointAction *)action</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>completionBlockQueue</Name>
-					<Abstract type="html">dispatch queue.</Abstract>
+					<Name>action</Name>
+					<Abstract type="html">Waypoint action to be removed from the waypoint.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/setCompletionBlockQueue:</Anchor>
+			<ReturnValue><Abstract type="html">Whether or not the waypoint action has been removed from the waypoint.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeAction:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/startConnectionToProduct</TokenIdentifier>
-			<Abstract type="html">Start a connection to the DJI product. This method should be called after successful registration of the app. sdkManagerProductDidChangeFrom:to: delegate method will be called if the connection succeeded.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIWaypoint/removeActionAtIndex:</TokenIdentifier>
+			<Abstract type="html">Remove a waypoint action by index.</Abstract>
+			<DeclaredIn>DJIWaypoint.h</DeclaredIn>
 			
-			<Declaration>+ (BOOL)startConnectionToProduct</Declaration>
-			
-			<ReturnValue><Abstract type="html">YES if the connection is started successfully.</Abstract></ReturnValue>
-			<Anchor>//api/name/startConnectionToProduct</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/stopConnectionToProduct</TokenIdentifier>
-			<Abstract type="html">Disconnect the existing connection to the DJI product</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)stopConnectionToProduct</Declaration>
-			
-			
-			<Anchor>//api/name/stopConnectionToProduct</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/closeConnectionWhenEnterBackground:</TokenIdentifier>
-			<Abstract type="html">Set SDK to close the connection automatically when app enters the background and resume connection automatically when the app enters the foreground. Default is YES.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)closeConnectionWhenEnterBackground:(BOOL)isClose</Declaration>
+			<Declaration>- (BOOL)removeActionAtIndex:(int)index</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>isClose</Name>
-					<Abstract type="html">Close connection or not when app enter background.</Abstract>
+					<Name>index</Name>
+					<Abstract type="html">Waypoint action to be removed at index.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/closeConnectionWhenEnterBackground:</Anchor>
+			<ReturnValue><Abstract type="html">Whether or not the waypoint action has been removed from the waypoint.</Abstract></ReturnValue>
+			<Anchor>//api/name/removeActionAtIndex:</Anchor>
             <NodeRef refid="51"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/getSDKVersion</TokenIdentifier>
-			<Abstract type="html">Gets the DJI Mobile SDK Version</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (NSString *)getSDKVersion</Declaration>
-			
-			<ReturnValue><Abstract type="html">SDK version as a string.</Abstract></ReturnValue>
-			<Anchor>//api/name/getSDKVersion</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/enterDebugModeWithDebugId:</TokenIdentifier>
-			<Abstract type="html">Enter debug mode with debug id.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)enterDebugModeWithDebugId:(NSString *)debugId</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>debugId</Name>
-					<Abstract type="html">Debug id from the DJI Bridge App</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/enterDebugModeWithDebugId:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/enableRemoteLoggingWithDeviceID:logServerURLString:</TokenIdentifier>
-			<Abstract type="html">Enter enable remote logging with log server URL.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)enableRemoteLoggingWithDeviceID:(NSString *_Nullable)deviceID logServerURLString:(NSString *)url</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>deviceID</Name>
-					<Abstract type="html">Optional device id to uniquely identify logs from an installation.</Abstract>
-				</Parameter><Parameter>
-					<Name>url</Name>
-					<Abstract type="html">URL of the remote log server</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/enableRemoteLoggingWithDeviceID:logServerURLString:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/startSDKDebugServerWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Start debug sever.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)startSDKDebugServerWithCompletion:(void ( ^ ) ( NSString *ipaddress ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>completion</Name>
-					<Abstract type="html">block returns the IP address of the sever.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startSDKDebugServerWithCompletion:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/setDebugServerDelegate:</TokenIdentifier>
-			<Abstract type="html">Register the delegate object to get the connection status of the debug server with the Remote controller and the debug client.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)setDebugServerDelegate:(id&lt;DJISDKDebugServerDelegate&gt;)delegate</Declaration>
-			
-			
-			<Anchor>//api/name/setDebugServerDelegate:</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJISDKManager/stopSDKDebugServer</TokenIdentifier>
-			<Abstract type="html">Stop the debug server and release the service objects used by the server.</Abstract>
-			<DeclaredIn>DJISDKManager.h</DeclaredIn>
-			
-			<Declaration>+ (void)stopSDKDebugServer</Declaration>
-			
-			
-			<Anchor>//api/name/stopSDKDebugServer</Anchor>
-            <NodeRef refid="51"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

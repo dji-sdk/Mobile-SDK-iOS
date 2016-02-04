@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJILandingGear.html">
+	<File path="Classes/DJIPhantom3AdvancedCamera.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJILandingGear</TokenIdentifier>
-			<Abstract type="html">This class contains the state of the landing gear. It also provides methods to control the landing gear.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIPhantom3AdvancedCamera</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
             
 			
 			<NodeRef refid="37"/>
@@ -13,165 +13,823 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/setStatus:</TokenIdentifier>
-			<Abstract type="html">The current state/position of the landing gear.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVersion</TokenIdentifier>
+			<Abstract type="html">Get the camera&apos;s firmware version</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearStatus status</Declaration>
+			<Declaration>- (NSString *)getCameraVersion</Declaration>
 			
-			
-			<Anchor>//api/name/status</Anchor>
+			<ReturnValue><Abstract type="html">Return the firmware version of the camera.</Abstract></ReturnValue>
+			<Anchor>//api/name/getCameraVersion</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/status</TokenIdentifier>
-			<Abstract type="html">The current state/position of the landing gear.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/startTakePhoto:withResult:</TokenIdentifier>
+			<Abstract type="html">Take photo with mode, if the capture mode is CameraMultiCapture or CameraContinousCapture, user should call stopTakePhotoWithResult to stop photoing if needed. User should check the SD card state before calling this API.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearStatus status</Declaration>
+			<Declaration>- (void)startTakePhoto:(CameraCaptureMode)captureMode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>captureMode</Name>
+					<Abstract type="html">Capture mode.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/startTakePhoto:withResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJILandingGear/status</TokenIdentifier>
-			<Abstract type="html">The current state/position of the landing gear.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/stopTakePhotoWithResult:</TokenIdentifier>
+			<Abstract type="html">Stop the multi capture or continous capture.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearStatus status</Declaration>
+			<Declaration>- (void)stopTakePhotoWithResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/status</Anchor>
+			<Anchor>//api/name/stopTakePhotoWithResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/setMode:</TokenIdentifier>
-			<Abstract type="html">The mode the landing gear is in.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/startRecord:</TokenIdentifier>
+			<Abstract type="html">Start recording. User should check the SD card state before calling this API.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearMode mode</Declaration>
+			<Declaration>- (void)startRecord:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/mode</Anchor>
+			<Anchor>//api/name/startRecord:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/mode</TokenIdentifier>
-			<Abstract type="html">The mode the landing gear is in.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/stopRecord:</TokenIdentifier>
+			<Abstract type="html">Stop recording.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearMode mode</Declaration>
+			<Declaration>- (void)stopRecord:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The remote execute result</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/mode</Anchor>
+			<Anchor>//api/name/stopRecord:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJILandingGear/mode</TokenIdentifier>
-			<Abstract type="html">The mode the landing gear is in.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/startCameraSystemStateUpdates</TokenIdentifier>
+			<Abstract type="html">Start the camera&apos;s system state updates.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, readonly) DJILandingGearMode mode</Declaration>
+			<Declaration>- (void)startCameraSystemStateUpdates</Declaration>
 			
 			
-			<Anchor>//api/name/mode</Anchor>
+			<Anchor>//api/name/startCameraSystemStateUpdates</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/isLandingGearMovable</TokenIdentifier>
-			<Abstract type="html">YES if the landing gear is supported for the connected aircraft.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/stopCameraSystemStateUpdates</TokenIdentifier>
+			<Abstract type="html">Stop the camera&apos;s system state updates.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isLandingGearMovable</Declaration>
+			<Declaration>- (void)stopCameraSystemStateUpdates</Declaration>
 			
 			
-			<Anchor>//api/name/isLandingGearMovable</Anchor>
+			<Anchor>//api/name/stopCameraSystemStateUpdates</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/turnOnAutoLandingGearWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Turns on the self-adaptive landing gear. If self-adaptive landing gear is turned on the landing Gear automatically
-transitions between deployed and retracted depending on altitude. During take-off, the transition point is 1.2m above
-ground. After take-off (during flight or when landing), the transition point is 0.5m above ground.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraWorkMode:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s work mode.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)turnOnAutoLandingGearWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)setCameraWorkMode:(CameraWorkMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Work mode for camera.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/turnOnAutoLandingGearWithCompletion:</Anchor>
+			<Anchor>//api/name/setCameraWorkMode:withResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/turnOffAutoLandingGearWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Turns off the self-adaptive landing gear. If self-adaptive landing gear is turned off,
-the aircraft will not automatically lower and raise the landing gear when the aircraft
-is 0.5m above the ground.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraWorkModeWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s work mode.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)turnOffAutoLandingGearWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)getCameraWorkModeWithResult:(void ( ^ ) ( CameraWorkMode , DJIError *))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/turnOffAutoLandingGearWithCompletion:</Anchor>
+			<Anchor>//api/name/getCameraWorkModeWithResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/enterTransportModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Enters the transport mode. In transport mode, the landing gear will be in the same plane as the aircraft body, so that it can be easily transported.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/saveCameraSettingsTo:withResult:</TokenIdentifier>
+			<Abstract type="html">Save camera&apos;s current setting to the specific user.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)enterTransportModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)saveCameraSettingsTo:(CameraUserSettings)settings withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>settings</Name>
+					<Abstract type="html">Specific user to store the settings.</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/enterTransportModeWithCompletion:</Anchor>
+			<Anchor>//api/name/saveCameraSettingsTo:withResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/exitTransportModeWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Exit transport mode.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/loadCameraSettingsFrom:withResult:</TokenIdentifier>
+			<Abstract type="html">Load specific settings form user.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)exitTransportModeWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)loadCameraSettingsFrom:(CameraUserSettings)settings withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>settings</Name>
+					<Abstract type="html">Settings to be load</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/exitTransportModeWithCompletion:</Anchor>
+			<Anchor>//api/name/loadCameraSettingsFrom:withResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/retractLandingGearWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Retracts the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraExposureMode:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s exposure mode</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)retractLandingGearWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)setCameraExposureMode:(CameraExposureMode)mode withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>mode</Name>
+					<Abstract type="html">Exposure mode to be set</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/retractLandingGearWithCompletion:</Anchor>
+			<Anchor>//api/name/setCameraExposureMode:withResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJILandingGear/deployLandingGearWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Deploys the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.</Abstract>
-			<DeclaredIn>DJILandingGear.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraExposureModeWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s exposure mode setting</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
 			
-			<Declaration>- (void)deployLandingGearWithCompletion:(DJICompletionBlock)completion</Declaration>
+			<Declaration>- (void)getCameraExposureModeWithResult:(void ( ^ ) ( CameraExposureMode , DJIError *))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
 			
-			
-			<Anchor>//api/name/deployLandingGearWithCompletion:</Anchor>
+			<Anchor>//api/name/getCameraExposureModeWithResult:</Anchor>
             <NodeRef refid="37"/>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraPhotoSize:andRatio:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s photo size</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraPhotoSize:(CameraPhotoSizeType)photoSize andRatio:(CameraPhotoRatioType)ratio withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>photoSize</Name>
+					<Abstract type="html">Photo size set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>ratio</Name>
+					<Abstract type="html">Photo ration set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraPhotoSize:andRatio:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraPhotoSizeAndRatioWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s photo size setting</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraPhotoSizeAndRatioWithResult:(void ( ^ ) ( CameraPhotoSizeType photoSize , CameraPhotoRatioType ratio , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraPhotoSizeAndRatioWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraPhotoQuality:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s photo quality</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraPhotoQuality:(CameraPhotoQualityType)quality withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>quality</Name>
+					<Abstract type="html">Photo quality set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraPhotoQuality:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraPhotoQualityWithResult:</TokenIdentifier>
+			<Abstract type="html">Get cameras&apos; photo quality setting</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraPhotoQualityWithResult:(void ( ^ ) ( CameraPhotoQualityType quality , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraPhotoQualityWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraSpotMeteringArea:withResult:</TokenIdentifier>
+			<Abstract type="html">Set spot metering area. the area size is row(12) by column(8). so the areaIndex value is in range [0, 95]</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraSpotMeteringArea:(uint8_t)areaIndex withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>areaIndex</Name>
+					<Abstract type="html">Area index set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraSpotMeteringArea:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraSpotMeteringAreaWithResult:</TokenIdentifier>
+			<Abstract type="html">Get spot metering area index</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraSpotMeteringAreaWithResult:(void ( ^ ) ( uint8_t areaIndex , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraSpotMeteringAreaWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraShutterSpeed:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera shutter speed. the avaliable value of shutterSpeed is defined as DJICameraShutterSpeedx.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraShutterSpeed:(double)shutterSpeed withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>shutterSpeed</Name>
+					<Abstract type="html">Shutter speed set to camear</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraShutterSpeed:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraShutterSpeedWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s shutter speed settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraShutterSpeedWithResult:(void ( ^ ) ( double shutterSpeed , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraShutterSpeedWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraColourTemperature:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s Colour temperature.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraColourTemperature:(uint8_t)temperature withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>temperature</Name>
+					<Abstract type="html">Colour temperature value in range [20, 100]</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraColourTemperature:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraColourTemperatureWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s colour temperature settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraColourTemperatureWithResult:(void ( ^ ) ( uint8_t temperature , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraColourTemperatureWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraSaturation:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s saturation</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraSaturation:(int8_t)saturation withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>saturation</Name>
+					<Abstract type="html">Saturation in range [-3, 3]</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraSaturation:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraSaturationWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s saturation</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraSaturationWithResult:(void ( ^ ) ( int8_t saturation , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraSaturationWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraHue:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s Hue</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraHue:(int8_t)hue withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>hue</Name>
+					<Abstract type="html">Hue in range [-3, 3]</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraHue:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraHueWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s hue settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraHueWithResult:(void ( ^ ) ( int8_t hue , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraHueWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraDigitalFilter:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s digital filter.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraDigitalFilter:(CameraDigitalFilter)filter withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filter</Name>
+					<Abstract type="html">Digital filter set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraDigitalFilter:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraDigitalFilterWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s digital filter settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraDigitalFilterWithResult:(void ( ^ ) ( CameraDigitalFilter filter , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraDigitalFilterWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraFileIndexMode:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camra&apos;s file index mode. if set as CameraFileIndexReset, the new file will be start as index 1 when you change a new SD card.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraFileIndexMode:(CameraFileIndexMode)fileIndex withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>fileIndex</Name>
+					<Abstract type="html">File index mode set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraFileIndexMode:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraFileIndexModeWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s file index mode.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraFileIndexModeWithResult:(void ( ^ ) ( CameraFileIndexMode fileIndex , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraFileIndexModeWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraAEBParam:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s AEB continue capture parameters</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraAEBParam:(CameraAEBParam)aebParam withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>aebParam</Name>
+					<Abstract type="html">AEB capture parameters set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraAEBParam:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraAEBParamWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s AEB parameters</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraAEBParamWithResult:(void ( ^ ) ( CameraAEBParam aeb , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraAEBParamWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraAELock:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera AE lock</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraAELock:(BOOL)isLock withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>isLock</Name>
+					<Abstract type="html">Lock or unlock AE</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraAELock:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraAELockWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s AE lock status</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraAELockWithResult:(void ( ^ ) ( BOOL isLocked , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraAELockWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/fetchMediaListWithResultBlock:</TokenIdentifier>
+			<Abstract type="html">Fetch media list from remote album. The camera&apos;s work mode should be set as CameraWorkModePlayback or CameraWorkModeDownload before call this api.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)fetchMediaListWithResultBlock:(void ( ^ ) ( NSArray *mediaList , NSError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result. Objects in mediaList is kind of class DJIMedia.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/fetchMediaListWithResultBlock:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/deleteMedias:withResult:</TokenIdentifier>
+			<Abstract type="html">Delete media from remote album. The camera&apos;s work mode should be set as CameraWorkModePlayback or CameraWorkModeDownload before call this api.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)deleteMedias:(NSArray *)medias withResult:(void ( ^ ) ( NSArray *failureDeletes , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>medias</Name>
+					<Abstract type="html">Medias to be delete.</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result, &apos;failureDeletes&apos; will contain medias which failured delete.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/deleteMedias:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoQuality:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoQuality:(VideoQuality)quality withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>quality</Name>
+					<Abstract type="html">Video quality set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoQuality:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoQualityWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video quality</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoQualityWithResult:(void ( ^ ) ( VideoQuality quality , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoQualityWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoResolution:andFrameRate:withResult:</TokenIdentifier>
+			<Abstract type="html">*  Set camera&apos;s video resolution and frame rate. The supported resolution and frame rate is below:
+*  PAL:
+        1920x1080P_24fps
+        1920x1080P_25fps
+        1920x1080P_48fps
+        1920x1080P_50fps
+        1280x720P_24fps
+        1280x720P_25fps
+        1280x720P_48fps
+        1280x720P_50fps</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoResolution:(CameraVideoResolution)resolution andFrameRate:(CameraVideoFrameRate)rate withResult:(DJIExecuteResultBlock)block</Declaration>
+			
+			
+			<Anchor>//api/name/setCameraVideoResolution:andFrameRate:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoResolutionAndFrameRate:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video resolution and frame rate</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoResolutionAndFrameRate:(void ( ^ ) ( CameraVideoResolution resolution , CameraVideoFrameRate rate , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoResolutionAndFrameRate:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStorageFormat:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video storage format</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStorageFormat:(CameraVideoStorageFormat)format withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>format</Name>
+					<Abstract type="html">Storage format for video</Abstract>
+				</Parameter><Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStorageFormat:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStorageFormatWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video storage format settings</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStorageFormatWithResult:(void ( ^ ) ( CameraVideoStorageFormat format , DJIError *error ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStorageFormatWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/setCameraVideoStandard:withResult:</TokenIdentifier>
+			<Abstract type="html">Set camera&apos;s video standard.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)setCameraVideoStandard:(CameraVideoStandard)videoStandard withResult:(DJIExecuteResultBlock)result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>videoStandard</Name>
+					<Abstract type="html">Video standard set to camera</Abstract>
+				</Parameter><Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCameraVideoStandard:withResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIPhantom3AdvancedCamera/getCameraVideoStandardWithResult:</TokenIdentifier>
+			<Abstract type="html">Get camera&apos;s video staandard.</Abstract>
+			<DeclaredIn>DJIPhantom3AdvancedCamera.h</DeclaredIn>
+			
+			<Declaration>- (void)getCameraVideoStandardWithResult:(void ( ^ ) ( CameraVideoStandard videoStandard , DJIError *error ))result</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>result</Name>
+					<Abstract type="html">Remote execute result callback.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getCameraVideoStandardWithResult:</Anchor>
+            <NodeRef refid="37"/>
+		</Token>
+		
+        
         
 	</File>
 </Tokens>

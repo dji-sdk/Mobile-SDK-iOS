@@ -43,9 +43,19 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
+	<option value="//api/name/camera:didGenerateNewMediaFile:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didGenerateNewMediaFile:</option>
+	
+	<option value="//api/name/camera:didGenerateTimeLapsePreview:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didGenerateTimeLapsePreview:</option>
+	
 	<option value="//api/name/camera:didReceiveVideoData:length:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didReceiveVideoData:length:</option>
 	
+	<option value="//api/name/camera:didUpdateCurrentExposureValues:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didUpdateCurrentExposureValues:</option>
+	
 	<option value="//api/name/camera:didUpdateLensState:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didUpdateLensState:</option>
+	
+	<option value="//api/name/camera:didUpdateSDCardState:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didUpdateSDCardState:</option>
+	
+	<option value="//api/name/camera:didUpdateSSDState:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didUpdateSSDState:</option>
 	
 	<option value="//api/name/camera:didUpdateSystemState:">&nbsp;&nbsp;&nbsp;&nbsp;- camera:didUpdateSystemState:</option>
 	
@@ -77,9 +87,19 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didGenerateNewMediaFile:">camera:didGenerateNewMediaFile:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didGenerateTimeLapsePreview:">camera:didGenerateTimeLapsePreview:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didReceiveVideoData:length:">camera:didReceiveVideoData:length:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didUpdateCurrentExposureValues:">camera:didUpdateCurrentExposureValues:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didUpdateLensState:">camera:didUpdateLensState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didUpdateSDCardState:">camera:didUpdateSDCardState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didUpdateSSDState:">camera:didUpdateSSDState:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/camera:didUpdateSystemState:">camera:didUpdateSystemState:</a></span></li>
 	
@@ -154,6 +174,36 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didGenerateNewMediaFile:">&ndash;&nbsp;camera:didGenerateNewMediaFile:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didGenerateTimeLapsePreview:">&ndash;&nbsp;camera:didGenerateTimeLapsePreview:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didUpdateSDCardState:">&ndash;&nbsp;camera:didUpdateSDCardState:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didUpdateSSDState:">&ndash;&nbsp;camera:didUpdateSSDState:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/camera:didUpdateCurrentExposureValues:">&ndash;&nbsp;camera:didUpdateCurrentExposureValues:</a></code>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -170,6 +220,114 @@
 					<div class="section section-methods">
 						<a title="Instance Methods" name="instance_methods"></a>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didGenerateNewMediaFile:" title="camera:didGenerateNewMediaFile:"></a>
+	<h3 class="subsubtitle method-title">camera:didGenerateNewMediaFile:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that a new media file (photo or video) is generated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(DJICamera *)<em>camera</em> didGenerateNewMediaFile:(DJIMedia *)<em>newMedia</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>Camera that generates the new media file.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>newMedia</em></dt>
+			<dd><p>The new media file.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<div class="warning"><p><strong>Warning:</strong> In this delegate, the <a href="../Classes/DJIMedia.html">DJIMedia</a> instance properties &ldquo;thumbnail&rdquo; and &ldquo;durationInSeconds&rdquo; require special consideration. The property &ldquo;thumbnail&rdquo; normally has a pointer to a UIImage of the thumbnail, however this is only available when the camera is in DJICameraModeMediaDownload work mode. Additionally, for this instance of <a href="../Classes/DJIMedia.html">DJIMedia</a> the &ldquo;durationInSeconds&rdquo; property holds 0.</p></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didGenerateTimeLapsePreview:" title="camera:didGenerateTimeLapsePreview:"></a>
+	<h3 class="subsubtitle method-title">camera:didGenerateTimeLapsePreview:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that a preview image for the Time-lapse is generated.
+This method is only available for Osmo with the upcoming firmware version.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(DJICamera *)<em>camera</em> didGenerateTimeLapsePreview:(UIImage *)<em>previewImage</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>Camera that generates the Time-lapse preview image.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>previewImage</em></dt>
+			<dd><p>The new generated preview image.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICamera.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/camera:didReceiveVideoData:length:" title="camera:didReceiveVideoData:length:"></a>
@@ -231,6 +389,66 @@ units for the video buffer are bytes.</p></dd>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/camera:didUpdateCurrentExposureValues:" title="camera:didUpdateCurrentExposureValues:"></a>
+	<h3 class="subsubtitle method-title">camera:didUpdateCurrentExposureValues:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically updated to let the user know how much the exposure needs to be compensated for to get to an exposure the camera thinks is correct.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(DJICamera *)<em>camera</em> didUpdateCurrentExposureValues:(DJICameraExposureParameters *)<em>values</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>Camera that sends out the video data.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>values</em></dt>
+			<dd><p>The updated real values for parameters.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Classes/DJICameraExposureParameters.html">DJICameraExposureParameters</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/camera:didUpdateLensState:" title="camera:didUpdateLensState:"></a>
 	<h3 class="subsubtitle method-title">camera:didUpdateLensState:</h3>
 	
@@ -238,7 +456,7 @@ units for the video buffer are bytes.</p></dd>
 	
 	<div class="method-subsection brief-description">
 		<p>Tells the delegate that the lens information is updated.
-This protocol is available only when isChangeableLensSupported is YES.</p>
+This method is available only when isChangeableLensSupported is YES.</p>
 	</div>		
 	
     
@@ -258,6 +476,109 @@ This protocol is available only when isChangeableLensSupported is YES.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>lensState</em></dt>
 			<dd><p>The camera&rsquo;s lens state.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didUpdateSDCardState:" title="camera:didUpdateSDCardState:"></a>
+	<h3 class="subsubtitle method-title">camera:didUpdateSDCardState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the camera&rsquo;s SD card state is updated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(DJICamera *)<em>camera</em> didUpdateSDCardState:(DJICameraSDCardState *)<em>sdCardState</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>Camera that sends out the updated SD card state.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sdCardState</em></dt>
+			<dd><p>The camera&rsquo;s SD card state.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">DJICamera.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/camera:didUpdateSSDState:" title="camera:didUpdateSSDState:"></a>
+	<h3 class="subsubtitle method-title">camera:didUpdateSSDState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells the delegate that the camera&rsquo;s SSD state is updated.
+This method is available only when isSSDSupported is YES.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)camera:(DJICamera *)<em>camera</em> didUpdateSSDState:(DJICameraSSDState *)<em>ssdState</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>camera</em></dt>
+			<dd><p>Camera that sends out the updated SSD state.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>ssdState</em></dt>
+			<dd><p>The camera&rsquo;s SSD state.</p></dd>
 		</dl>
 		
 	</div>
@@ -303,7 +624,7 @@ This protocol is available only when isChangeableLensSupported is YES.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>camera</em></dt>
-			<dd><p>Camera that sends out the video data.</p></dd>
+			<dd><p>Camera that updates the current state.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -348,7 +669,7 @@ This protocol is available only when isChangeableLensSupported is YES.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-01-08)</span><br />
+						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-02-01)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						

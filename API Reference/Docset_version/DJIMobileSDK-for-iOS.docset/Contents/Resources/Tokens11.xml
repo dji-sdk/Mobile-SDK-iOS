@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJICameraParameters.html">
+	<File path="Classes/DJIFirmwareManager.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJICameraParameters</TokenIdentifier>
-			<Abstract type="html">Some of the camera&apos;s parameters have dynamic ranges. DJICameraParameters provides the interface to query what the
-valid range is for a parameter. Type-casting is requried to get the corresponding enumerator value for each
-range element.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJIFirmwareManager</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIFirmwareManager.h</DeclaredIn>
             
 			
 			<NodeRef refid="11"/>
@@ -15,156 +13,35 @@ range element.</Abstract>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJICameraParameters/sharedInstance</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/clm/DJIFirmwareManager/defaultManager</TokenIdentifier>
 			<Abstract type="html"></Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
+			<DeclaredIn>DJIFirmwareManager.h</DeclaredIn>
 			
-			<Declaration>+ (nonnull instancetype)sharedInstance</Declaration>
+			<Declaration>+ (instancetype)defaultManager</Declaration>
 			
 			
-			<Anchor>//api/name/sharedInstance</Anchor>
+			<Anchor>//api/name/defaultManager</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraVideoResolutionAndFrameRateRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for video resolution (DJICameraVideoResolution and frame rate
-(DJICameraVideoFrameRate. Returns nil if current camera does not support any video resolution or frame rate
-setting or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJIFirmwareManager/firmwarePackagesForDrone:</TokenIdentifier>
+			<Abstract type="html">Get firmware packages for drone.</Abstract>
+			<DeclaredIn>DJIFirmwareManager.h</DeclaredIn>
 			
-			<Declaration>- (nonnull NSArray&lt;NSArray&lt;NSNumber*&gt; *&gt; *)supportedCameraVideoResolutionAndFrameRateRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of pairs. Each pair represents a valid DJICameraVideoResolution value and DJICameraVideoFrameRate
-value.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraVideoResolutionAndFrameRateRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraModeRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera mode (DJICameraMode. Returns nil if current camera has no supported
-camera mode or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraModeRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represents one current supported camera mode.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraModeRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraExposureModeRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera&apos;s exposure mode (DJICameraExposureMode. Returns nil if current
-camera does not support any exposure mode or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraExposureModeRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represent one current supported exposure mode.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraExposureModeRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraISORange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera&apos;s ISO (DJICameraISO. Returns nil if current camera does not support
-any ISO value or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraISORange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represent one current supported ISO value.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraISORange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraShutterSpeedRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera&apos;s shutter speed (DJICameraShutterSpeed. Returns nil if current
-camera does not support any shutter speed value or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraShutterSpeedRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represent one current supported shutter speed value.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraShutterSpeedRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraExposureCompensationRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera&apos;s exposure compensation (DJICameraExposureCompensation. Returns
-nil if current camera does not support any exposure compensation value or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraExposureCompensationRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represent one current supported exposure compensation value.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraExposureCompensationRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/supportedCameraApertureRange</TokenIdentifier>
-			<Abstract type="html">Returns the current valid range for camera&apos;s aperture (DJICameraAperture. Returns nil if current camera does
-not support any aperture value or the camera is disconnected.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (nonnull NSArray&lt;NSNumber*&gt; *)supportedCameraApertureRange</Declaration>
-			
-			<ReturnValue><Abstract type="html">Array of NSNumber. Each element represent one current supported aperture value.</Abstract></ReturnValue>
-			<Anchor>//api/name/supportedCameraApertureRange</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/addListener:</TokenIdentifier>
-			<Abstract type="html">Add listener to listen for the camera range change.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (void)addListener:(nonnull id&lt;DJICameraParametersListener&gt;)listener</Declaration>
+			<Declaration>- (NSArray *)firmwarePackagesForDrone:(DJIDroneType)type</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>listener</Name>
-					<Abstract type="html">listener</Abstract>
+					<Name>type</Name>
+					<Abstract type="html">Type of drone.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/addListener:</Anchor>
+			<ReturnValue><Abstract type="html">Return firmware packages that contains object with class DJIFirmwarePackage.</Abstract></ReturnValue>
+			<Anchor>//api/name/firmwarePackagesForDrone:</Anchor>
             <NodeRef refid="11"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/removeListener:</TokenIdentifier>
-			<Abstract type="html">Remove listener which is listening to the camera range change.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (void)removeListener:(nonnull id&lt;DJICameraParametersListener&gt;)listener</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>listener</Name>
-					<Abstract type="html">listener</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/removeListener:</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJICameraParameters/removeAllListeners</TokenIdentifier>
-			<Abstract type="html">Remove all listeners.</Abstract>
-			<DeclaredIn>DJICameraParameters.h</DeclaredIn>
-			
-			<Declaration>- (void)removeAllListeners</Declaration>
-			
-			
-			<Anchor>//api/name/removeAllListeners</Anchor>
-            <NodeRef refid="11"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

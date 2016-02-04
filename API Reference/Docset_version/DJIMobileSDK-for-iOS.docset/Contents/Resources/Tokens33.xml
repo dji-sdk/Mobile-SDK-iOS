@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIHotPointMission.html">
+	<File path="Classes/DJINavigationMissionStatus.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIHotPointMission</TokenIdentifier>
-			<Abstract type="html">The class represents a hotpoint mission, which can be executed by the mission manager. User can control the aircraft to fly around the hotpoint with specific radius and altitude. During the execution, user can also using the physical remote controller to modify its radius and speed.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/DJINavigationMissionStatus</TokenIdentifier>
+			<Abstract type="html">Current navigation mission status</Abstract>
+			<DeclaredIn>DJINavigation.h</DeclaredIn>
             
 			
 			<NodeRef refid="33"/>
@@ -13,293 +13,57 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setHotPoint:</TokenIdentifier>
-			<Abstract type="html">Sets the coordinate of the hot point.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJINavigationMissionStatus/setMissionType:</TokenIdentifier>
+			<Abstract type="html">Returns the navigation mission type as part of the
+current status of the navigation mission.</Abstract>
+			<DeclaredIn>DJINavigation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D hotPoint</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
 			
 			
-			<Anchor>//api/name/hotPoint</Anchor>
+			<Anchor>//api/name/missionType</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/hotPoint</TokenIdentifier>
-			<Abstract type="html">Sets the coordinate of the hot point.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJINavigationMissionStatus/missionType</TokenIdentifier>
+			<Abstract type="html">Returns the navigation mission type as part of the
+current status of the navigation mission.</Abstract>
+			<DeclaredIn>DJINavigation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D hotPoint</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
 			
 			
-			<Anchor>//api/name/hotPoint</Anchor>
+			<Anchor>//api/name/missionType</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/hotPoint</TokenIdentifier>
-			<Abstract type="html">Sets the coordinate of the hot point.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instp/DJINavigationMissionStatus/missionType</TokenIdentifier>
+			<Abstract type="html">Returns the navigation mission type as part of the
+current status of the navigation mission.</Abstract>
+			<DeclaredIn>DJINavigation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) CLLocationCoordinate2D hotPoint</Declaration>
+			<Declaration>@property (nonatomic, readonly) DJINavigationMissionType missionType</Declaration>
 			
 			
-			<Anchor>//api/name/hotPoint</Anchor>
+			<Anchor>//api/name/missionType</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setAltitude:</TokenIdentifier>
-			<Abstract type="html">Sets the altitude of the hot point orbit in meters with range [5,120] meters. The altitude is relative
-to the ground altitude from which the aircraft took off.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/instm/DJINavigationMissionStatus/initWithType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJINavigation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
+			<Declaration>- (id)initWithType:(DJINavigationMissionType)type</Declaration>
 			
 			
-			<Anchor>//api/name/altitude</Anchor>
+			<Anchor>//api/name/initWithType:</Anchor>
             <NodeRef refid="33"/>
 		</Token>
 		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/altitude</TokenIdentifier>
-			<Abstract type="html">Sets the altitude of the hot point orbit in meters with range [5,120] meters. The altitude is relative
-to the ground altitude from which the aircraft took off.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
-			
-			
-			<Anchor>//api/name/altitude</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/altitude</TokenIdentifier>
-			<Abstract type="html">Sets the altitude of the hot point orbit in meters with range [5,120] meters. The altitude is relative
-to the ground altitude from which the aircraft took off.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float altitude</Declaration>
-			
-			
-			<Anchor>//api/name/altitude</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setRadius:</TokenIdentifier>
-			<Abstract type="html">Sets the circular flight path radius the aircraft will fly around the hotpoint.
-the hot point is. The value of this property should be in range of [DJIHotPointMinRadius, DJIHotPointMaxRadius] meters.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float radius</Declaration>
-			
-			
-			<Anchor>//api/name/radius</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/radius</TokenIdentifier>
-			<Abstract type="html">Sets the circular flight path radius the aircraft will fly around the hotpoint.
-the hot point is. The value of this property should be in range of [DJIHotPointMinRadius, DJIHotPointMaxRadius] meters.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float radius</Declaration>
-			
-			
-			<Anchor>//api/name/radius</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/radius</TokenIdentifier>
-			<Abstract type="html">Sets the circular flight path radius the aircraft will fly around the hotpoint.
-the hot point is. The value of this property should be in range of [DJIHotPointMinRadius, DJIHotPointMaxRadius] meters.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float radius</Declaration>
-			
-			
-			<Anchor>//api/name/radius</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setIsClockwise:</TokenIdentifier>
-			<Abstract type="html">YES if the aircraft is to travel around the hotpoint in the clockwise direction.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL isClockwise</Declaration>
-			
-			
-			<Anchor>//api/name/isClockwise</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/isClockwise</TokenIdentifier>
-			<Abstract type="html">YES if the aircraft is to travel around the hotpoint in the clockwise direction.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL isClockwise</Declaration>
-			
-			
-			<Anchor>//api/name/isClockwise</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/isClockwise</TokenIdentifier>
-			<Abstract type="html">YES if the aircraft is to travel around the hotpoint in the clockwise direction.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) BOOL isClockwise</Declaration>
-			
-			
-			<Anchor>//api/name/isClockwise</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setAngularVelocity:</TokenIdentifier>
-			<Abstract type="html">Sets the angular velocity (in degrees/second) of the aircraft as it orbits the hot point.
-The default value is 20 degrees/s.
-The angular velocity is relative to the orbit radius. You can use the maxAngularVelocityForRadius:radius method
-to get the maximum supported angular velocity for a given radius.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float angularVelocity</Declaration>
-			
-			
-			<Anchor>//api/name/angularVelocity</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/angularVelocity</TokenIdentifier>
-			<Abstract type="html">Sets the angular velocity (in degrees/second) of the aircraft as it orbits the hot point.
-The default value is 20 degrees/s.
-The angular velocity is relative to the orbit radius. You can use the maxAngularVelocityForRadius:radius method
-to get the maximum supported angular velocity for a given radius.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float angularVelocity</Declaration>
-			
-			
-			<Anchor>//api/name/angularVelocity</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/angularVelocity</TokenIdentifier>
-			<Abstract type="html">Sets the angular velocity (in degrees/second) of the aircraft as it orbits the hot point.
-The default value is 20 degrees/s.
-The angular velocity is relative to the orbit radius. You can use the maxAngularVelocityForRadius:radius method
-to get the maximum supported angular velocity for a given radius.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) float angularVelocity</Declaration>
-			
-			
-			<Anchor>//api/name/angularVelocity</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setStartPoint:</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s initial point on the circular flight path when starting the hot point mission.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointStartPoint startPoint</Declaration>
-			
-			
-			<Anchor>//api/name/startPoint</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/startPoint</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s initial point on the circular flight path when starting the hot point mission.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointStartPoint startPoint</Declaration>
-			
-			
-			<Anchor>//api/name/startPoint</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/startPoint</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s initial point on the circular flight path when starting the hot point mission.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointStartPoint startPoint</Declaration>
-			
-			
-			<Anchor>//api/name/startPoint</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/setHeading:</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s heading while flying around the hot point. It can be pointed towards or away from the hot point,
-forwards or backwards along its flight route, or be controlled by the remote controller.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointHeading heading</Declaration>
-			
-			
-			<Anchor>//api/name/heading</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIHotPointMission/heading</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s heading while flying around the hot point. It can be pointed towards or away from the hot point,
-forwards or backwards along its flight route, or be controlled by the remote controller.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointHeading heading</Declaration>
-			
-			
-			<Anchor>//api/name/heading</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIHotPointMission/heading</TokenIdentifier>
-			<Abstract type="html">Aircraft&apos;s heading while flying around the hot point. It can be pointed towards or away from the hot point,
-forwards or backwards along its flight route, or be controlled by the remote controller.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>@property (nonatomic, assign) DJIHotPointHeading heading</Declaration>
-			
-			
-			<Anchor>//api/name/heading</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/DJIHotPointMission/maxAngularVelocityForRadius:</TokenIdentifier>
-			<Abstract type="html">Returns the supported maximum angular velocity in degrees/second for the given
-hot point radius in meters.</Abstract>
-			<DeclaredIn>DJIHotPointMission.h</DeclaredIn>
-			
-			<Declaration>+ (float)maxAngularVelocityForRadius:(float)radius</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>radius</Name>
-					<Abstract type="html">Hot point radius with range [5,500] meters to calculate maximum angular velocity.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">Returns the supported maximum angular velocity for the given radius. Will return 0 if an unsupported radius is input.</Abstract></ReturnValue>
-			<Anchor>//api/name/maxAngularVelocityForRadius:</Anchor>
-            <NodeRef refid="33"/>
-		</Token>
-		
+        
         
 	</File>
 </Tokens>

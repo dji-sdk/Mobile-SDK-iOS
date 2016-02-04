@@ -1,11 +1,9 @@
-/*
- *  DJI iOS Mobile SDK Framework
- *  DJIWaypoint.h
- *
- *  Copyright (c) 2015, DJI.
- *  All rights reserved.
- *
- */
+//
+//  DJIWaypoint.h
+//  DJISDK
+//
+//  Copyright © 2015, DJI. All rights reserved.
+//
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
@@ -21,14 +19,13 @@ DJI_API_EXTERN const int DJIMaxActionCount;
 /**
  *  Maximum number of times a single waypoint action can be repeated. Currently, the maximum number
  *  supported is 15.
- *
  */
 DJI_API_EXTERN const int DJIMaxActionRepeatTimes;
 
 /**
  *  How the aircraft will turn at a waypoint to transition between headings.
  */
-typedef NS_ENUM(NSUInteger, DJIWaypointTurnMode){
+typedef NS_ENUM (NSUInteger, DJIWaypointTurnMode){
     /**
      *  Changes the heading of the aircraft by rotating the aircraft clockwise.
      */
@@ -43,13 +40,13 @@ typedef NS_ENUM(NSUInteger, DJIWaypointTurnMode){
  *  Waypoint action types.
  *
  */
-typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
+typedef NS_ENUM (NSUInteger, DJIWaypointActionType){
     /**
      *  Keeps the aircraft at the waypoint's location. The actionParam parameter
      *  will determine how much time in milliseconds the aircraft will stay at the
      *  location. This actionParam parameter can be set in the range of [0, 32767] milliseconds.
      */
-    DJIWaypointActionStay,
+    DJIWaypointActionTypeStay,
     /**
      *  Starts to shoot photo. The actionParam for the waypoint action will be ignored.
      *  The maximum time set to excute this waypoint action is 6 seconds. If the time,
@@ -58,36 +55,39 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
      *  if there is one.
      *
      */
-    DJIWaypointActionStartTakePhoto,
+    DJIWaypointActionTypeShootPhoto,
     /**
      *  Starts recording. The actionParam for the waypoint action will be ignored.
      *  The maximum time set to excute this waypoint action is 6 seconds. If the time,
-     *  while executing the waypoint action, goes above 6 seconds, the aircraft will
-     *  stop executing the waypoint action and will move on to the next waypoint action,
+     *  while executing the waypoint action, goes above 6 seconds (e.g. in the case of the camera not being present)
+     *  the aircraft will stop executing the waypoint action and will move on to the next waypoint action,
      *  if there is one.
-     *
      */
-    DJIWaypointActionStartRecord,
+    DJIWaypointActionTypeStartRecord,
     /**
      *  Stops recording. The actionParam for the waypoint action will be ignored.
      *  The maximum time set to excute this waypoint action is 6 seconds. If the time,
-     *  while executing the waypoint action, goes above 6 seconds, the aircraft will
-     *  stop executing the waypoint action and will move on to the next waypoint action,
+     *  while executing the waypoint action, goes above 6 seconds (e.g. in the case of the camera not being present)
+     *  the aircraft will stop executing the waypoint action and will move on to the next waypoint action,
      *  if there is one.
-     *
      */
-    DJIWaypointActionStopRecord,
+    DJIWaypointActionTypeStopRecord,
     /**
      *  Rotates the aircraft's yaw. The rotationg direction will determined by the waypoint's
      *  turnMode property. The actionParam value must be in the range of [-180, 180] degrees.
      */
-    DJIWaypointActionRotateAircraft,
+    DJIWaypointActionTypeRotateAircraft,
     /**
      *  Rotates the gimbal's pitch. The actionParam value should be in range [-90, 0] degrees.
      */
-    DJIWaypointActionRotateGimbalPitch,
+    DJIWaypointActionTypeRotateGimbalPitch,
 };
 
+/**
+ *
+ *  This class represents a waypoint action for DJIWaypoint. It determines what action is performed when the aircraft reaches the corresponding waypoint.
+ *
+ */
 @interface DJIWaypointAction : NSObject
 
 /**
@@ -103,15 +103,16 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
 @property(nonatomic, assign) int16_t actionParam;
 
 /**
- * Initializer with actions type
- * 
- * @param type DJIWaypointActionType
- * @param param value relevant for the action required such as gimbal's pitch angle in DJIWaypointActionRotateGimbalPitch
+ *  Initialize the class with a specific action type and corresponding parameter.
  */
--(id) initWithActionType:(DJIWaypointActionType)type param:(int16_t)param;
+- (id)initWithActionType:(DJIWaypointActionType)type param:(int16_t)param;
 
 @end
 
+/**
+ *  The class represents a target point in the waypoint mission. For a waypoint mission, a flight route consists of multiple DJIWaypoint objects. User can also define the actions to perform for each DJIWaypoint.
+ *
+ */
 @interface DJIWaypoint : NSObject
 
 /**
@@ -122,20 +123,17 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
 /**
  *  Altitude of the aircraft in meters when it reaches waypoint. The altitude of the
  *  aircraft is relative to the ground at the take-off location, has a range of [-200,500] and should not be larger than the aircraft's max limited altitude. If two adjacent waypoints have different alitutdes, then the alitude will gradually change as the aircraft flys between waypoints.
- *
  */
 @property(nonatomic, assign) float altitude;
 
 /**
- *  Heading the aircraft will rotate to after it reaches the waypoint. The aircraft will fly at the previous waypoints heading until it reaches the current waypoint. Once it reaches the waypoint, it will rotate to the new heading, then execute actions (if available). Heading has a range of [-180, 180] degrees, where 0 represents True North. This property will be
- *  used when the waypoint mission's headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading.
- *
+ *  Heading the aircraft will rotate to by the time it reaches the waypoint. The aircraft heading will gradually change between two waypoints with different
+ *  headings if the waypoint mission's headingMode is set to DJIWaypointMissionHeadingUsingWaypointHeading. Heading has a range of [-180, 180] degrees, where 0 represents True North.
  */
 @property(nonatomic, assign) float heading;
 
 /**
- *  Dictates how many times a waypoint action is repeated. The default value is one time.
- *
+ *  Dictates how many times the set of waypoint actions are repeated. The default value is one time and maximum is DJIMaxActionRepeatTimes.
  */
 @property(nonatomic, assign) NSUInteger actionRepeatTimes;
 
@@ -150,60 +148,67 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
 
 /**
  *  Corner radius of the waypoint. When the flight path mode is DJIWaypointMissionFlightPathCurved
- *  the flight path through a waypoint will be a curve (rounded corner) with radius [0 or 0.2,1000].
- *  By default, the radius is 0 m (no curve).
- *  If a radius is desired, then a minimum of 0.2m is can be set.
- *  The radius should not be larger than the three dimensional distance between the any two of
+ *  the flight path near a waypoint will be a curve (rounded corner) with radius [0.2,1000]. When there is a corner radius, the aircraft will never go through the waypoint. By default, the radius is 0.2 m.
+ *  The radius should not be larger than the three dimensional distance between any two of
  *  the three waypoints which make the corner.
- *  If a radius is defined, then the aircraft will not travel directly between the waypoints. Rather it will
- *  fly out of the corner lines to form the tangent with the curve.
- *
  */
 @property(nonatomic, assign) float cornerRadiusInMeters;
 
 /**
- *  Determines whether the aircraft will turn clockwise or anticlockwise when changing its heading as it travels
- *  toward this waypoint.
- *  This is used when the property headingMode of the waypoint mission (DJIWaypointMission class)
- *  is DJIWaypointMissionHeadingMode
- *
+ *  Determines whether the aircraft will turn clockwise or anitclockwise when changing it's heading.
  */
 @property(nonatomic) DJIWaypointTurnMode turnMode;
+
+/**
+ *  Gimbal pitch angle when reached this waypoint. Property is used when DJIWaypointMission property 'rotateGimbalPitch' is YES.
+ *  Value should in range [-90, 0] degree.
+ */
+@property(nonatomic, assign) float gimbalPitch;
 
 /**
  *  Array of all waypoint actions for the respective waypoint. The waypoint actions will
  *  be executed consecutively from the start of the array once the aircraft
  *  reaches the waypoint.
  */
-@property(nonatomic, readonly) NSArray* waypointActions;
+@property(nonatomic, readonly) NSArray *waypointActions;
 
 
 /**
+ *  Initiate instance with specific waypoint.
  */
--(id) initWithCoordinate:(CLLocationCoordinate2D)coordinate;
+- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
  *  Adds a waypoint action to a waypoint. The number of waypoint actions should not be
  *  larger than DJIMaxActionCount. The action will only be executed when the mission's
  *  flightPathMode property is set to DJIWaypointMissionFlightPathNormal and will be
  *  not be executed when the mission's flightPathMode property is set to
- *  DJIWaypointMissionFlightPathCurved.
+ *  DJIWaypointMissionFlightPathCurved. The maximum number of DJIWaypointAction you can add is 15.
  *
  *  @param action Waypoint action to be added to the waypoint.
  *
  *  @return Yes if the waypoint action has been added to the waypoint. NO if the waypoint action
  *  count is too high, or if the waypoint action was incorrectly setup.
- *
  */
--(BOOL) addAction:(DJIWaypointAction*)action;
+- (BOOL)addAction:(DJIWaypointAction *)action;
+
+/**
+ *  Insert a waypoint action at index.
+ *
+ *  @param action   Waypoint action to be inserted to the waypoint.
+ *  @param index    Index of the inserted action
+ *
+ *  @return Yes, if the waypoint action has been inserted. No if the waypoint action count is too high or index is invalid.
+ */
+- (BOOL)insertAction:(DJIWaypointAction *)action atIndex:(int)index;
 
 /**
  *  Removes the last waypoint action from the waypoint.
  *
  *  @param action Waypoint action to be removed from the waypoint.
- *  @return Whether or not the waypoint action has been removed from the waypoint.
+ *  @return YES if the waypoint action has been removed from the waypoint.
  */
--(BOOL) removeAction:(DJIWaypointAction*)action;
+- (BOOL)removeAction:(DJIWaypointAction *)action;
 
 /**
  *  Removes a waypoint action from the waypoint by index. After removal, all actions higher in index will
@@ -213,7 +218,12 @@ typedef NS_ENUM(NSUInteger, DJIWaypointActionType){
  *
  *  @return YES if waypoint action has been removed from the waypoint.
  */
--(BOOL) removeActionAtIndex:(int)index;
+- (BOOL)removeActionAtIndex:(int)index;
+
+/**
+ *  Remove all the actions.
+ */
+- (void)removeAllActions;
 
 @end
 

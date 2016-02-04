@@ -2,8 +2,7 @@
 //  DJIWiFiLink.h
 //  DJISDK
 //
-//  Created by DJI on 30/11/15.
-//  Copyright © 2015 DJI. All rights reserved.
+//  Copyright © 2015, DJI. All rights reserved.
 //
 
 #import <DJISDK/DJISDK.h>
@@ -11,11 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
 /**
  *  WiFi frequency band
  */
-typedef NS_ENUM(uint8_t, DJIWiFiFrequencyBand){
+typedef NS_ENUM (uint8_t, DJIWiFiFrequencyBand){
     /**
      *  The WiFi Frequency band is 2.4G
      */
@@ -32,22 +30,19 @@ typedef NS_ENUM(uint8_t, DJIWiFiFrequencyBand){
 };
 
 /**
- *  WiFi Signal Quality
- *
+ *  WiFi Signal Quality - for Osmo only. WiFi Signal quality as measured by Osmo.
  */
-typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
+typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
     /**
      *  WiFi Signal Quality is good
      */
     DJIWiFiSignalQualityGood = 0,
     /**
-     *  WiFi Signal Quality is medium
-     *
+     *  WiFi Signal Quality is medium. At this level, the video quality will be degraded compared to when the signal quality is good.
      */
     DJIWiFiSignalQualityMedium = 1,
     /**
-     *  WiFi Signal Quality is bad
-     *
+     *  WiFi Signal Quality is bad. At this level, the video quality will be degraded compared to when the signal quality is medium.
      */
     DJIWiFiSignalQualityBad = 2,
     /**
@@ -56,8 +51,13 @@ typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
     DJIWiFiSignalQualityUnknown = 0xFF,
 };
 
-
 @class DJIWiFiLink;
+
+/**
+ *
+ *  This protocol provides a delegate method to receive the updated WiFi signal quality.
+ *
+ */
 @protocol DJIWiFiLinkDelegate <NSObject>
 
 @optional
@@ -69,12 +69,16 @@ typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
  *  @param quality WiFi signal quality
  *
  */
-- (void)wifiLink:(DJIWiFiLink* _Nonnull)link didUpdatesWiFiSignalQuality:(DJIWiFiSignalQuality)quality;
+- (void)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdatesWiFiSignalQuality:(DJIWiFiSignalQuality)quality;
 @end
 
 //-----------------------------------------------------------------
 #pragma mark WiFi Component
 //-----------------------------------------------------------------
+
+/**
+ *  This class provides methods to change the setting of the product's WiFi. You can also reboot the WiFi adapter inside product in order to make the new setting take effect.
+ */
 @interface DJIWiFiLink : NSObject
 
 /**
@@ -83,17 +87,11 @@ typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
 @property (nonatomic, weak) id <DJIWiFiLinkDelegate> delegate;
 
 /**
- *  Returns the WiFi signal quality.
- *
- */
-@property (nonatomic, readonly) DJIWiFiSignalQuality wifiSignalQuality;
-
-/**
  *  Reboot WiFi.
  *
  *  @param block Remote execution result error block.
  */
--(void) rebootWiFiWithCompletion:(DJICompletionBlock)block;
+- (void)rebootWiFiWithCompletion:(DJICompletionBlock)block;
 
 //-----------------------------------------------------------------
 #pragma mark SSID and Password
@@ -103,31 +101,31 @@ typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
  *
  *  @param block Remote execution result error block.
  */
--(void) getWiFiSSIDWithCompletion:(void(^)(NSString* ssid, NSError* _Nullable error))block;
+- (void)getWiFiSSIDWithCompletion:(void (^)(NSString *ssid, NSError *_Nullable error))block;
 
 /**
  *  Sets WiFi SSID.
  *
- *  @param ssid the WiFi ssid want to change.
+ *  @param ssid the WiFi ssid want to change. It should just include alphabet, number, space, '-' and should not be more than 30 characters.
  *  @param block Remote execution result error block.
  *
  */
--(void) setWiFiSSID:(NSString *)ssid withCompletion:(DJICompletionBlock)block;
+- (void)setWiFiSSID:(NSString *)ssid withCompletion:(DJICompletionBlock)block;
 
 /**
  *  Gets WiFi Password.
  *
  *  @param block Remote execution result error block.
  */
--(void) getWiFiPasswordWithCompletion:(void(^)(NSString* password, NSError* _Nullable error))block;
+- (void)getWiFiPasswordWithCompletion:(void (^)(NSString *password, NSError *_Nullable error))block;
 
 /**
  *  Sets WiFi Password.
  *
- *  @param password The new WiFi password.
+ *  @param password The new WiFi password. It should be at least 8 characters and only includes alphabet characters and numbers.
  *  @param block Remote execution result error block.
  */
--(void) setWiFiPassword:(NSString *)password withCompletion:(DJICompletionBlock)block;
+- (void)setWiFiPassword:(NSString *)password withCompletion:(DJICompletionBlock)block;
 
 
 //-----------------------------------------------------------------
@@ -135,25 +133,26 @@ typedef NS_ENUM(uint8_t, DJIWiFiSignalQuality) {
 //-----------------------------------------------------------------
 /**
  *  YES if product allows user to change WiFi frequency bands.
- *  Currently, only OSMO supports this feature.
+ *  Currently, only Osmo supports this feature.
  */
--(BOOL) isWiFiFrequencyBandSetable;
+- (BOOL)isWiFiFrequencyBandEditable;
 
 /**
  *  Sets WiFi frequency band.
- *  It can be called only if isWiFiFrequencyBandSetable returns YES.
+ *  It can be called only if isWiFiFrequencyBandEditable returns YES.
  *
  *  @param frequencyBand WiFi frequency band to change to.
  *  @param block Remote execution result error block.
  */
--(void)setWiFiFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand withCompletion:(DJICompletionBlock)block;
+- (void)setWiFiFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand withCompletion:(DJICompletionBlock)block;
 
 /**
  *  Gets current WiFi frequency band.
- *  It can be called only if isWiFiFrequencyBandSetable returns YES.
+ *  It can be called only if isWiFiFrequencyBandEditable returns YES.
  *
+ *  @param block Remote execution result error block.
  */
--(void)getWiFiFrequencyBandWithCompletion:(void (^)(DJIWiFiFrequencyBand frequencyBand, NSError* _Nullable error))block;
+- (void)getWiFiFrequencyBandWithCompletion:(void (^)(DJIWiFiFrequencyBand frequencyBand, NSError *_Nullable error))block;
 
 
 @end

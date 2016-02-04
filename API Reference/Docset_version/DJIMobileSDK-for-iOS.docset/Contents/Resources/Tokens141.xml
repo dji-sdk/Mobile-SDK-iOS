@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Constants/DJIRCControlStyle.html">
+	<File path="Constants/DJIWaypointMissionFinishedAction.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/c/tdef/DJIRCControlStyle</TokenIdentifier>
-			<Abstract type="html">Remote Controller&apos;s control style.</Abstract>
-			<DeclaredIn>DJIRemoteController.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/c/tdef/DJIWaypointMissionFinishedAction</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
 			
 			<NodeRef refid="141"/>
@@ -14,86 +14,66 @@
 		
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleJapanese</TokenIdentifier>
-            <Abstract type="html">Remote Controller uses Japanese controls (also known as Mode 1). In this mode the left stick controls Pitch
-and Yaw, and the right stick controls Throttle and Roll
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedNoAction</TokenIdentifier>
+            <Abstract type="html">No action will be taken. The aircraft will exit the task and hover in the
+air where the task was completed. After that, the aircraft will be able
+to be controlled by the remote controller.
      </Abstract>
-            <Declaration>RCControlStyleJapanese</Declaration>
+            <Declaration>DJIWaypointMissionFinishedNoAction</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleAmerican</TokenIdentifier>
-            <Abstract type="html">Remote Controller uses American controls (also known as Mode 2). In this mode
-the left stick controls Throttle and Yaw, and the right stick controls Pitch and Roll.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoHome</TokenIdentifier>
+            <Abstract type="html">The aicraft will go home.
      </Abstract>
-            <Declaration>RCControlStyleAmerican</Declaration>
+            <Declaration>DJIWaypointMissionFinishedGoHome</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleChinese</TokenIdentifier>
-            <Abstract type="html">Remote Controller uses Chinese controls (also know as Mode 3). In this mode the left stick controls Pitch and Roll, and the right stick controls Throttle and Yaw.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedAutoLand</TokenIdentifier>
+            <Abstract type="html">The aircraft will land automatically.
      </Abstract>
-            <Declaration>RCControlStyleChinese</Declaration>
+            <Declaration>DJIWaypointMissionFinishedAutoLand</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleCustom</TokenIdentifier>
-            <Abstract type="html">Stick channel mapping for Roll, Pitch, Yaw and Throttle can be customized.
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedGoFirstWaypoint</TokenIdentifier>
+            <Abstract type="html">The aircraft will go back to its first waypoint.
      </Abstract>
-            <Declaration>RCControlStyleCustom</Declaration>
+            <Declaration>DJIWaypointMissionFinishedGoFirstWaypoint</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
         <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCSlaveControlStyleDefault</TokenIdentifier>
-            <Abstract type="html">Default Remote Controller controls and settings for slave
-Remote Controller.
-     </Abstract>
-            <Declaration>RCSlaveControlStyleDefault</Declaration>
+            <TokenIdentifier>//apple_ref/c/econst/DJIWaypointMissionFinishedContinueUntilEnd</TokenIdentifier>
+            <Abstract type="html">If the user attempts to pull the aircraft back along the flight path as the
+mission is being executed, the aircarft will move towards the previous waypoint
+and will continue to do so until there are no more waypoint to move back to or
+the user has stopped attempting to move the aircraft back. In the process of moving the
+aircraft back, if the user ever stops attempting to do so the aircraft will,
+automatically continue the mission until the end.</Abstract>
+            <Declaration>DJIWaypointMissionFinishedContinueUntilEnd</Declaration>
             
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="141"/>
-        </Token>
-        
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCSlaveControlStyleCustom</TokenIdentifier>
-            <Abstract type="html">Slave remote controller stick channel mapping for Roll, Pitch, Yaw and
-Throttle can be customized.
-     </Abstract>
-            <Declaration>RCSlaveControlStyleCustom</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
+            <DeclaredIn>DJIWaypointMission.h</DeclaredIn>
             
             <NodeRef refid="141"/>
         </Token>
         
-        <Token>
-            <TokenIdentifier>//apple_ref/c/econst/RCControlStyleUnknown</TokenIdentifier>
-            <Abstract type="html">The Remote Controller&apos;s control style is
-unknown.
-     </Abstract>
-            <Declaration>RCControlStyleUnknown</Declaration>
-            
-            <DeclaredIn>DJIRemoteController.h</DeclaredIn>
-            
-            <NodeRef refid="141"/>
-        </Token>
         
 	</File>
 </Tokens>

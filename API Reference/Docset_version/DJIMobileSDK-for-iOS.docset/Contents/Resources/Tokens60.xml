@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/DJIWiFiLink.html">
+	<File path="Protocols/DJIFlightLimitation.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/DJIWiFiLink</TokenIdentifier>
-			<Abstract type="html">This class provides methods to change the setting of the product&apos;s WiFi. You can also reboot the WiFi adapter inside product in order to make the new setting take effect.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/DJIFlightLimitation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
             
 			
 			<NodeRef refid="60"/>
@@ -13,184 +13,189 @@
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/setDelegate:</TokenIdentifier>
-			<Abstract type="html">Returns the DJIWiFiLink delegate.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/setIsReachedMaxFlightHeight:</TokenIdentifier>
+			<Abstract type="html">Whether or not the aircraft has reached max flight height.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIWiFiLinkDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightHeight</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/isReachedMaxFlightHeight</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/delegate</TokenIdentifier>
-			<Abstract type="html">Returns the DJIWiFiLink delegate.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/isReachedMaxFlightHeight</TokenIdentifier>
+			<Abstract type="html">Whether or not the aircraft has reached max flight height.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIWiFiLinkDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightHeight</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/isReachedMaxFlightHeight</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/DJIWiFiLink/delegate</TokenIdentifier>
-			<Abstract type="html">Returns the DJIWiFiLink delegate.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIFlightLimitation/isReachedMaxFlightHeight</TokenIdentifier>
+			<Abstract type="html">Whether or not the aircraft has reached max flight height.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>@property (nonatomic, weak) id&lt;DJIWiFiLinkDelegate&gt; delegate</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightHeight</Declaration>
 			
 			
-			<Anchor>//api/name/delegate</Anchor>
+			<Anchor>//api/name/isReachedMaxFlightHeight</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/rebootWiFiWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Reboot WiFi.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/setIsReachedMaxFlightRadius:</TokenIdentifier>
+			<Abstract type="html">Whether or not the aricraft has reached max flight radius.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>- (void)rebootWiFiWithCompletion:(DJICompletionBlock)block</Declaration>
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightRadius</Declaration>
+			
+			
+			<Anchor>//api/name/isReachedMaxFlightRadius</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/isReachedMaxFlightRadius</TokenIdentifier>
+			<Abstract type="html">Whether or not the aricraft has reached max flight radius.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightRadius</Declaration>
+			
+			
+			<Anchor>//api/name/isReachedMaxFlightRadius</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/DJIFlightLimitation/isReachedMaxFlightRadius</TokenIdentifier>
+			<Abstract type="html">Whether or not the aricraft has reached max flight radius.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isReachedMaxFlightRadius</Declaration>
+			
+			
+			<Anchor>//api/name/isReachedMaxFlightRadius</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/setMaxFlightHeight:withResult:</TokenIdentifier>
+			<Abstract type="html">Set max flight height limitation for aircraft. maxHeight value should be in range [20, 500] m</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
+			
+			<Declaration>- (void)setMaxFlightHeight:(float)maxHeight withResult:(DJIExecuteResultBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/rebootWiFiWithCompletion:</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/getWiFiSSIDWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets WiFi SSID.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
-			
-			<Declaration>- (void)getWiFiSSIDWithCompletion:(void ( ^ ) ( NSString *ssid , NSError *_Nullable error ))block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/getWiFiSSIDWithCompletion:</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/setWiFiSSID:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets WiFi SSID.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
-			
-			<Declaration>- (void)setWiFiSSID:(NSString *)ssid withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>ssid</Name>
-					<Abstract type="html">the WiFi ssid want to change. It should just include alphabet, number, space, &apos;-&apos; and should not be more than 30 characters.</Abstract>
+					<Name>maxHeight</Name>
+					<Abstract type="html">Maximum height can be fly for aircraft</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
+					<Abstract type="html">Remote execute result callback</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setWiFiSSID:withCompletion:</Anchor>
+			<Anchor>//api/name/setMaxFlightHeight:withResult:</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/getWiFiPasswordWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets WiFi Password.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/getMaxFlightHeightWithResult:</TokenIdentifier>
+			<Abstract type="html">Get max flight heigh limitation from aircraft</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>- (void)getWiFiPasswordWithCompletion:(void ( ^ ) ( NSString *password , NSError *_Nullable error ))block</Declaration>
+			<Declaration>- (void)getMaxFlightHeightWithResult:(void ( ^ ) ( float height , DJIError *error ))block</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
+					<Abstract type="html">Remote execute result callback</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getWiFiPasswordWithCompletion:</Anchor>
+			<Anchor>//api/name/getMaxFlightHeightWithResult:</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/setWiFiPassword:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets WiFi Password.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/setMaxFlightRadius:withResult:</TokenIdentifier>
+			<Abstract type="html">Set max flight radius limitation for aricraft. the radius is calculated from the home point. maxRadius value should be in range [15, 500] m</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>- (void)setWiFiPassword:(NSString *)password withCompletion:(DJICompletionBlock)block</Declaration>
+			<Declaration>- (void)setMaxFlightRadius:(float)maxRadius withResult:(DJIExecuteResultBlock)block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>password</Name>
-					<Abstract type="html">The new WiFi password. It should be at least 8 characters and only includes alphabet characters and numbers.</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result callback</Abstract>
+				</Parameter><Parameter>
+					<Name>radius</Name>
+					<Abstract type="html">Maximum flight radius can be fly for aircraft.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setMaxFlightRadius:withResult:</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/getMaxFlightRadiusWithResult:</TokenIdentifier>
+			<Abstract type="html">Get max flight radius limitation from aircraft.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
+			
+			<Declaration>- (void)getMaxFlightRadiusWithResult:(void ( ^ ) ( float radius , DJIError *))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">Remote execute result block</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/getMaxFlightRadiusWithResult:</Anchor>
+            <NodeRef refid="60"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/setMaxFlightRadiusLimitationEnable:withResult:</TokenIdentifier>
+			<Abstract type="html">Set max flight radius limitation enable. if enable is No, then no max flight radius limitation.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
+			
+			<Declaration>- (void)setMaxFlightRadiusLimitationEnable:(BOOL)enable withResult:(DJIExecuteResultBlock)block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>enable</Name>
+					<Abstract type="html">Max flight radius limitation enable.</Abstract>
 				</Parameter><Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
+					<Abstract type="html">Remote execute result callback</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/setWiFiPassword:withCompletion:</Anchor>
+			<Anchor>//api/name/setMaxFlightRadiusLimitationEnable:withResult:</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/isWiFiFrequencyBandEditable</TokenIdentifier>
-			<Abstract type="html">YES if product allows user to change WiFi frequency bands.
-Currently, only OSMO supports this feature.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intfm/DJIFlightLimitation/getMaxFlightRadiusLimitationEnableWithResult:</TokenIdentifier>
+			<Abstract type="html">Get max flight radius limitation enable.</Abstract>
+			<DeclaredIn>DJIFlightLimitation.h</DeclaredIn>
 			
-			<Declaration>- (BOOL)isWiFiFrequencyBandEditable</Declaration>
-			
-			
-			<Anchor>//api/name/isWiFiFrequencyBandEditable</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/setWiFiFrequencyBand:withCompletion:</TokenIdentifier>
-			<Abstract type="html">Sets WiFi frequency band.
-It can be called only if isWiFiFrequencyBandEditable returns YES.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
-			
-			<Declaration>- (void)setWiFiFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand withCompletion:(DJICompletionBlock)block</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>frequencyBand</Name>
-					<Abstract type="html">WiFi frequency band to change to.</Abstract>
-				</Parameter><Parameter>
-					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/setWiFiFrequencyBand:withCompletion:</Anchor>
-            <NodeRef refid="60"/>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/DJIWiFiLink/getWiFiFrequencyBandWithCompletion:</TokenIdentifier>
-			<Abstract type="html">Gets current WiFi frequency band.
-It can be called only if isWiFiFrequencyBandEditable returns YES.</Abstract>
-			<DeclaredIn>DJIWiFiLink.h</DeclaredIn>
-			
-			<Declaration>- (void)getWiFiFrequencyBandWithCompletion:(void ( ^ ) ( DJIWiFiFrequencyBand frequencyBand , NSError *_Nullable error ))block</Declaration>
+			<Declaration>- (void)getMaxFlightRadiusLimitationEnableWithResult:(void ( ^ ) ( BOOL , DJIError *))block</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>block</Name>
-					<Abstract type="html">Remote execution result error block.</Abstract>
+					<Abstract type="html">Remote execute result callback</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/getWiFiFrequencyBandWithCompletion:</Anchor>
+			<Anchor>//api/name/getMaxFlightRadiusLimitationEnableWithResult:</Anchor>
             <NodeRef refid="60"/>
 		</Token>
 		
+        
         
 	</File>
 </Tokens>
