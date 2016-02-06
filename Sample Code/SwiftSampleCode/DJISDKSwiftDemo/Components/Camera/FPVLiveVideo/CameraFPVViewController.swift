@@ -21,7 +21,6 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
         }
         self.isSettingMode = false
         VideoPreviewer.instance().start()
-        VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSoureNone)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,25 +39,13 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
     }
     
     @IBAction func onSegmentControlValueChanged(sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSoureNone)
-        }
-        else {
-            let product: DJIBaseProduct? = ConnectedProductManager.sharedInstance.connectedProduct
-            if product != nil {
-                if (product!.model == "Inspire 1") || (product!.model == "M100") || (product!.model == "OSMO") {
-                    VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSoureInspire)
-                }
-                else if (product!.model == "Phantom3 Advanced") || (product!.model == "Phantom3 Standard") {
-                    VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSourePhantom3Advanced)
-                }
-                else if (product!.model == "Phantom3 Professional") {
-                    VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSourePhantom3Professional)
-                }
-                else {
-                    NSLog("ERROR: the camera type is not recognized. ")
-                    VideoPreviewer.instance().setDecoderDataSource(kDJIDecoderDataSoureInspire)
-                }
+        let product: DJIBaseProduct? = ConnectedProductManager.sharedInstance.connectedProduct
+        if product != nil {
+            if sender.selectedSegmentIndex == 0 {
+                VideoPreviewer.instance().setDecoderWithProduct(product, andDecoderType:VideoPreviewerDecoderType.SoftwareDecoder)
+            }
+            else {
+                VideoPreviewer.instance().setDecoderWithProduct(product, andDecoderType:VideoPreviewerDecoderType.HardwareDecoder)
             }
         }
     }

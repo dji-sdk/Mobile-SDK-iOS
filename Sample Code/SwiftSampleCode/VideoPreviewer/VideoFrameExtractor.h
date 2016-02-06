@@ -22,8 +22,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 #import "MovieGLView.h"
+
+struct AVCodecContext;
+struct AVFrame;
+struct AVCodecParserContext;
 
 @protocol VideoDataProcessDelegate <NSObject>
 
@@ -34,7 +37,11 @@
 
 
 @interface VideoFrameExtractor : NSObject
-{    
+{
+	struct AVCodecContext *_pCodecCtx;
+    struct AVFrame *_pFrame;
+    struct AVCodecParserContext *_pCodecPaser;
+    
 	int _videoStream;
 	int _sourceWidth, _sourceHeight;
 	int _outputWidth, _outputHeight;

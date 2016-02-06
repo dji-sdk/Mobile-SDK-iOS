@@ -1,24 +1,16 @@
 //
 //  VideoPreviewer.h
-//  SDK
+//  DJI
 //
-//  Copyright (c) 2016. All rights reserved.
+//  Copyright (c) 2013. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "VideoFrameExtractor.h"
 #import "MovieGLView.h"
 #import "DJILinkQueues.h"
 
-//! Project version number for VideoPreviewer.
-FOUNDATION_EXPORT double VideoPreviewerVersionNumber;
-
-//! Project version string for VideoPreviewer.
-FOUNDATION_EXPORT const unsigned char VideoPreviewerVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <VideoPreviewer/PublicHeader.h>
-
+@class DJIBaseProduct; 
 
 #define RENDER_FRAME_NUMBER (4)
 
@@ -26,6 +18,7 @@ FOUNDATION_EXPORT const unsigned char VideoPreviewerVersionString[];
 #define kDJIDecoderDataSoureInspire                 (1)
 #define kDJIDecoderDataSourePhantom3Advanced        (4)
 #define kDJIDecoderDataSourePhantom3Professional    (5)
+#define kDJIDecoderDataSourceLightbridge2           (6)
 
 typedef struct{
     BOOL isInit:1;      // The initialized status
@@ -41,6 +34,11 @@ typedef struct{
 typedef NS_ENUM(NSUInteger, VideoPreviewerEvent){
     VideoPreviewerEventNoImage,     //
     VideoPreviewerEventHasImage,    //
+};
+
+typedef NS_ENUM(NSUInteger, VideoPreviewerDecoderType){
+    VideoPreviewerDecoderTypeSoftwareDecoder,
+    VideoPreviewerDecoderTypeHardwareDecoder
 };
 
 @protocol VideoPreviewerDelegate <NSObject>
@@ -135,6 +133,16 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerEvent){
  *
  *  @param type See reference kDJIDecoderDataSoureXXX
  */
-- (void) setDecoderDataSource:(int)type;
+- (void) setDecoderDataSource:(int)type __attribute__((deprecated("Please use setDecoderWithProduct:andDecoderType:")));
+
+/**
+ *  Sets video stream decoder based on the product and the desired decoder type.
+ *  Currently, only some cameras support hardware decoders.
+ *
+ *  @param product  The camera that uses the video previewer.
+ *  @param decoder  The desired decoder type.
+ *  @return Yes if there is suitable decoder for the camera on the product and the decoder is enabled successfully.
+ */
+- (BOOL) setDecoderWithProduct:(DJIBaseProduct*)product andDecoderType:(VideoPreviewerDecoderType)decoder;
 
 @end

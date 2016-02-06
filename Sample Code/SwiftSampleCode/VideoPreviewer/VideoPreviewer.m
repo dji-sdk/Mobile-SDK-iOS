@@ -7,13 +7,16 @@
 
 #import "VideoPreviewer.h"
 #import "DJIVTH264DecoderPublic.h"
-#import "libavformat/avformat.h"
+#import "LB2AUDHackParser.h"
 
 
 #define BEGIN_DISPATCH_QUEUE dispatch_async(_dispatchQueue, ^{
 #define END_DISPATCH_QUEUE   });
 
-@interface VideoPreviewer ()<DJIVTH264DecoderOutput>
+
+@import DJISDK;
+
+@interface VideoPreviewer ()<DJIVTH264DecoderOutput, LB2AUDHackParserDelegate>
 
 @property(nonatomic, strong) id<DJIVTH264DecoderProtocol> hwDecoder; //hardware decoder;
 
@@ -24,6 +27,11 @@
 
 @property(nonatomic, assign) int badFrameCounter;
 @property(nonatomic, assign) BOOL canReset;
+
+//Remove the redundant AUD for lb2
+@property (nonatomic) BOOL isLB2;
+@property (strong, nonatomic) LB2AUDHackParser* lb2Hack;
+
 @end
 
 @implementation VideoPreviewer
@@ -32,8 +40,6 @@ static VideoPreviewer* previewer = nil;
 -(id)init
 {
     self= [super init];
-    
-    av_log_set_level(AV_LOG_QUIET);
     
     _decodeThread = nil;
     _glView = nil;
@@ -60,6 +66,11 @@ static VideoPreviewer* previewer = nil;
     
     memset(&_status, 0, sizeof(VideoPreviewerStatus));
     _status.isInit = YES;
+    
+    //lb2 hack
+    _lb2Hack = [[LB2AUDHackParser alloc] init];
+    _lb2Hack.delegate = self;
+    _isLB2 = NO;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeGround:) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -109,14 +120,94 @@ static VideoPreviewer* previewer = nil;
 {
     if (type == kDJIDecoderDataSoureNone) {
         self.useHardware = NO;
+        self.isLB2 = NO;
     }
-    else
-    {
+    else if (type == kDJIDecoderDataSourceLightbridge2) {
+        self.useHardware = NO;
+        self.isLB2 = YES;
+    }
+    else {
         self.useHardware = YES;
+        self.isLB2 = NO;
         [self.hwDecoder setDecoderDataSource:(DJIVTH264DecoderDataSource)type];
     }
-    
 }
+
+- (BOOL) setDecoderWithProduct:(DJIBaseProduct*)product andDecoderType:(VideoPreviewerDecoderType)decoder {
+    if (product == nil) {
+        return NO;
+    }
+    
+    NSString* stringName = product.model;
+    
+    if ([stringName isEqualToString:DJIAircraftModelNameUnknownAircraft]) {
+        // determine if it is Lightbridge 2
+        if ([product isKindOfClass:[DJIAircraft class]]) {
+            DJIAircraft* aircraft = (DJIAircraft*)product;
+            if (aircraft.camera == nil && aircraft.airLink && aircraft.airLink.lbAirLink && [aircraft.airLink.lbAirLink isSecondaryVideoOutputSupported]) {
+                self.useHardware = NO;
+                self.isLB2 = YES;
+                return YES;
+            }
+        }
+        
+        return NO;
+    }
+    
+    // Otherwise, the decoder depends on the camera
+    DJICamera* camera = nil;
+    if ([product isKindOfClass:[DJIAircraft class]]) {
+        DJIAircraft* aircraft = (DJIAircraft*)product;
+        camera = aircraft.camera;
+    }
+    else if ([product isKindOfClass:[DJIHandheld class]]) {
+        DJIHandheld* handheld = (DJIHandheld*)product;
+        camera = handheld.camera;
+    }
+    
+    if (camera == nil) {
+        return NO;
+    }
+    
+    // if the decoder type is software decoder, we don't care about the camera type
+    if (decoder == VideoPreviewerDecoderTypeSoftwareDecoder) {
+        self.useHardware = NO;
+        self.isLB2 = NO;
+        
+        return YES;
+    }
+    
+    DJIVTH264DecoderDataSource dataSource = [VideoPreviewer getDataSourceWithCameraName:camera.displayName];
+    if (dataSource == DJIVTH264DecoderDataSourceNone) { // The product does not support hardware decoding
+        return NO;
+    }
+    
+    self.useHardware = YES;
+    self.isLB2 = NO;
+    [self.hwDecoder setDecoderDataSource:dataSource];
+    
+    return YES;
+}
+
++ (DJIVTH264DecoderDataSource) getDataSourceWithCameraName:(NSString*)name {
+    if ([name isEqualToString:DJICameraDisplayNameX3] ||
+        [name isEqualToString:DJICameraDisplayNameX5] ||
+        [name isEqualToString:DJICameraDisplayNameX5R]) {
+        return DJIVTH264DecoderDataSourceInspire;
+    }
+    else if ([name isEqualToString:DJICameraDisplayNamePhantom3ProfessionalCamera]) {
+        return DJIVTH264DecoderDataSourcePhantom3Professional;
+    }
+    else if ([name isEqualToString:DJICameraDisplayNamePhantom3AdvancedCamera]) {
+        return DJIVTH264DecoderDataSourcePhantom3Advanced;
+    }
+    else if ([name isEqualToString:DJICameraDisplayNamePhantom3StandardCamera]) {
+        return DJIVTH264DecoderDataSourcePhantom3Standard;
+    }
+    
+    return DJIVTH264DecoderDataSourceNone;
+}
+
 
 -(BOOL)setView:(UIView *)view
 {
@@ -126,14 +217,18 @@ static VideoPreviewer* previewer = nil;
     else
     {
         BEGIN_DISPATCH_QUEUE
-        if(_glView == nil){
-            _glView = [[MovieGLView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
-            _status.isGLViewInit = YES;
-        }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_glView setFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
-            [view addSubview:_glView];
+            if(_glView == nil){
+                _glView = [[MovieGLView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
+            }
+
+            if(_glView.superview != view){
+                [view addSubview:_glView];
+            }
             [view sendSubviewToBack:_glView];
+            [_glView adjustSize]; 
+            _status.isGLViewInit = YES;
+
         });
         END_DISPATCH_QUEUE
     }
@@ -143,19 +238,13 @@ static VideoPreviewer* previewer = nil;
 -(void)unSetView
 {
     BEGIN_DISPATCH_QUEUE
-    if(_glView != nil)
-    {
-        if (_glView.superview != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [_glView removeFromSuperview];
-                _glView = nil;
-            });
-        }
-        else
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(_glView != nil && _glView.superview !=nil)
         {
-            _glView = nil;
+            [_glView removeFromSuperview];
+            _status.isGLViewInit = NO;
         }
-    }
+    });
     END_DISPATCH_QUEUE
 }
 
@@ -328,7 +417,6 @@ static VideoPreviewer* previewer = nil;
                 if (!_status.isPause && !_status.isBackground) {
                     //use hardware decode
                     [_videoExtractor parse:inputData length:inputDataSize callback:^(uint8_t *frame, int length, int frame_width, int frame_height) {
-                        NSLog(@"FrameSize{%d, %d}", frame_width, frame_height);
                         BOOL sizeChanged = NO;
                         if (frame_width > 0 && frame_height > 0) {
                             if (_frameSize.width == 0 || _frameSize.height == 0) {
@@ -369,32 +457,37 @@ static VideoPreviewer* previewer = nil;
                 if (self.isHardwareDecoding) {
                     self.isHardwareDecoding = NO;
                 }
-                [_videoExtractor decode:inputData length:inputDataSize callback:^(BOOL hasFrame)
-                 {
-                     if (hasFrame) {
-                         self.canReset = YES;
-                         if (_decodeFrameIndex >= RENDER_FRAME_NUMBER) {
-                             _decodeFrameIndex = 0;
-                         }
-                         pthread_rwlock_wrlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
-                         [_videoExtractor getYuvFrame:_renderYUVFrame[_decodeFrameIndex]];
-                         _renderYUVFrame[_decodeFrameIndex]->gray = 0;
-                         pthread_rwlock_unlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
-                         _renderFrameIndex = _decodeFrameIndex;
-                         if(_status.isGLViewInit && !_status.isPause && !_status.isBackground)
-                         {
-                             [_glView render:_renderYUVFrame[_renderFrameIndex]];
-                         }
-                         if((++_decodeFrameIndex)>=RENDER_FRAME_NUMBER){
-                             _decodeFrameIndex = 0;
-                         }
-                     }
-                     else
+                if (self.isLB2) {
+                    [_lb2Hack parse:inputData inSize:inputDataSize];
+                }
+                else {
+                    [_videoExtractor decode:inputData length:inputDataSize callback:^(BOOL hasFrame)
                      {
-                         [self encounterBadFrame];
-                     }
-
-                 }];
+                         if (hasFrame) {
+                             self.canReset = YES;
+                             if (_decodeFrameIndex >= RENDER_FRAME_NUMBER) {
+                                 _decodeFrameIndex = 0;
+                             }
+                             pthread_rwlock_wrlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
+                             [_videoExtractor getYuvFrame:_renderYUVFrame[_decodeFrameIndex]];
+                             _renderYUVFrame[_decodeFrameIndex]->gray = 0;
+                             pthread_rwlock_unlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
+                             _renderFrameIndex = _decodeFrameIndex;
+                             if(_status.isGLViewInit && !_status.isPause && !_status.isBackground)
+                             {
+                                 [_glView render:_renderYUVFrame[_renderFrameIndex]];
+                             }
+                             if((++_decodeFrameIndex)>=RENDER_FRAME_NUMBER){
+                                 _decodeFrameIndex = 0;
+                             }
+                         }
+                         else
+                         {
+                             [self encounterBadFrame];
+                         }
+                         
+                     }];
+                }
             }
             
             free(inputData);
@@ -422,6 +515,8 @@ static VideoPreviewer* previewer = nil;
     [self stop];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    
+    _glView = nil;
 }
 
 //-(void) dealloc
@@ -467,5 +562,36 @@ static VideoPreviewer* previewer = nil;
         }
     }
 }
+
+-(void) lb2AUDHackParser:(id)parser didParsedData:(void *)data size:(int)size{
+    [_videoExtractor decode:data length:size callback:^(BOOL hasFrame)
+     {
+         if (hasFrame) {
+             self.canReset = YES;
+             if (_decodeFrameIndex >= RENDER_FRAME_NUMBER) {
+                 _decodeFrameIndex = 0;
+             }
+             pthread_rwlock_wrlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
+             [_videoExtractor getYuvFrame:_renderYUVFrame[_decodeFrameIndex]];
+             _renderYUVFrame[_decodeFrameIndex]->gray = 0;
+             pthread_rwlock_unlock(&(_renderYUVFrame[_decodeFrameIndex]->mutex));
+             _renderFrameIndex = _decodeFrameIndex;
+             if(_status.isGLViewInit && !_status.isPause && !_status.isBackground)
+             {
+                 [_glView render:_renderYUVFrame[_renderFrameIndex]];
+             }
+             if((++_decodeFrameIndex)>=RENDER_FRAME_NUMBER){
+                 _decodeFrameIndex = 0;
+             }
+         }
+         else
+         {
+             [self encounterBadFrame];
+         }
+         
+     }];
+    
+}
+
 
 @end

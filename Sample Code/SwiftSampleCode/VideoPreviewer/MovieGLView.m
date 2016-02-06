@@ -362,7 +362,6 @@ enum {
 
 - (void)adjustSize{
     CGSize superSize = self.superview.frame.size;
-//    NSLog(@"获取到的帧高度为:%.0f 宽度为:%.0f 当前父视图高度为:%.0f 宽度为:%0.f",_height,_width,superSize.height,superSize.width);
     if(superSize.width*_height!=superSize.height*_width){
         if(superSize.width*_height < superSize.height*_width){
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -412,23 +411,23 @@ enum {
 - (void)layoutSubviews
 {
     return;
-//    NSLog(@"gl layoutSubviews\n");
-//    glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
-//    [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer*)self.layer];
-//	glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_backingWidth);
-//    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_backingHeight);
-//	
-//    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-//	if (status != GL_FRAMEBUFFER_COMPLETE) {
-//		
-//      //  NSLog(@"failed to make complete framebuffer object %x", status);
-//        
-//	} else {
-//        //NSLog(@"OK setup GL framebuffer %d:%d", _backingWidth, _backingHeight);
-//    }
-//    
-//    [self updateVertices];
-//    [self render: nil];
+    NSLog(@"gl layoutSubviews\n");
+    glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
+    [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:(CAEAGLLayer*)self.layer];
+	glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_backingWidth);
+    glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_backingHeight);
+	
+    GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+	if (status != GL_FRAMEBUFFER_COMPLETE) {
+		
+      //  NSLog(@"failed to make complete framebuffer object %x", status);
+        
+	} else {
+        //NSLog(@"OK setup GL framebuffer %d:%d", _backingWidth, _backingHeight);
+    }
+    
+    [self updateVertices];
+    [self render: nil];
 }
 
 - (void)setContentMode:(UIViewContentMode)contentMode
