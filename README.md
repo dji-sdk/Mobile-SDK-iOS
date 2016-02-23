@@ -77,7 +77,9 @@ For more details, please check the [**DJI Remote Logger Tutorial**](./DJIRemoteL
 
 ## FFmpeg Customization
 
-We have forked the original FFmpeg and add customized features to provide more infos of video frame, including frame's width and height, frame rate number, etc. These features will help to implement video hardware decoding. For more details, please check the AVCodecParserContext struct of avcodec.h file from this [Github Page](https://github.com/dji-sdk/FFmpeg).
+We have forked the original FFmpeg and add customized features to provide more infos of video frame, including frame's width and height, frame rate number, etc. These features will help to implement video hardware decoding. 
+
+The SDK Sample Code uses code of [FFmpeg](http://ffmpeg.org) licensed under the [LGPLv2.1](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) and its source code can be downloaded from this [Github Page](https://github.com/dji-sdk/FFmpeg).
 
 ## Concepts
 
@@ -189,6 +191,12 @@ DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可�
 DJI Remote Logger 是一个可以将源代码中的日志信息展示到网页上的工具。它使用了Ruby 服务器脚本进行日志展示。
 
 想了解更多信息，请查看: [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
+
+## 自定义FFmpeg库
+
+我们在官方FFmpeg库的基础上复制了一个新的Github项目，添加了一些自定义特性，提供更多关于视频帧的信息，包括帧的宽和高，帧率等等。这些新特性可以帮助实现视频硬解码。
+
+SDK的Sample Code中使用了[FFmpeg](http://ffmpeg.org)的代码，已获得 [LGPLv2.1](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html)的授权许可, 你可以从这个[Github Page](https://github.com/dji-sdk/FFmpeg)下载源代码.
 
 ## 基本概念
 
