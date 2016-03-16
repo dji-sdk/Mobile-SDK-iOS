@@ -37,7 +37,7 @@ class ComponentsViewController: DemoTableViewController {
    func initializeComponentSection() {
         var components: [AnyObject] = [AnyObject]()
     
-    if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
+        if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
             components.append(DemoSettingItem(name:"Flight Controller", andClass:nil))
         }
     

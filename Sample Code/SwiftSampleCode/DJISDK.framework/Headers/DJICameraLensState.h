@@ -13,17 +13,17 @@
  */
 typedef NS_ENUM (NSUInteger, DJILensType) {
     /**
-     *  The lens supports Auto Focus.
-     *  For this type, DJI SDK can control the focus point.
+     *  The lens supports Auto Focus (AF).
+     *  For this type, the DJI SDK can control the focus point.
      */
     DJILensTypeAF,
     /**
      *  The lens supports only Manual Focus.
-     *  For this type, DJI SDK cannot control the focus point.
+     *  For this type, the DJI SDK cannot control the focus point.
      */
     DJILensTypeMF,
     /**
-     *  The lens type is unkown.
+     *  The lens type is unknown.
      */
     DJILensTypeUnknown
 };
@@ -37,31 +37,30 @@ typedef NS_ENUM (NSUInteger, DJICameraLensFocusStatus) {
      */
     DJICameraLensFocusStatusIdle = 0x00,
     /**
-     *  The lens is focusing to the target.
+     *  The lens is focusing on the target.
      */
     DJICameraLensFocusStatusFocusing,
     /**
-     *  The lens succeeds to fucus on the target.
+     *  The lens succeeded to focus on the target.
      */
     DJICameraLensFocusStatusSuccess,
     /**
-     *  The lens fails to fucus on the target.
-     *  It happens when the target is too near or the camera cannot distinguish the object to focus (e.g. a white w
-     *  wall).
+     *  The lens failed to focus on the target.
+     *  This happens when the target is too close, or the camera cannot distinguish the object to focus (e.g. a white wall).
      */
     DJICameraLensFocusStatusFailure
 };
 
 /**
- *  This class contains the information about the lens' current state, including lens type, focus status, focus mode,
- *  focus assistant state and AF switch state.
+ *  This class contains information about the lens' current state, including lens type, focus status, focus mode,
+ *  focus assistant state, and Auto Focus (AF) switch state.
  *
  *  Supported only by X5 camera and X5R camera.
  */
 @interface DJICameraLensState : NSObject
 
 /**
- *  If the Lens is installed on the camera or not.
+ *  Determines if the Lens is installed on the camera.
  */
 @property(nonatomic, readonly) BOOL isLensInstalled;
 
@@ -71,8 +70,8 @@ typedef NS_ENUM (NSUInteger, DJICameraLensFocusStatus) {
 @property(nonatomic, readonly) DJILensType lensType;
 
 /**
- *  The AF switch on the lens is on. If the lens is not installed, the value is undefined.
- *  If the property is YES, user can call setLensFocusMode and control the focal point with the SDK.
+ *  The Auto Focus (AF) switch on the lens is on. If the lens is not installed, the value is undefined.
+ *  If the property is YES, the user can call `setLensFocusMode` and control the focal point with the SDK.
  */
 @property(nonatomic, readonly) BOOL isAFSwitchOn;
 

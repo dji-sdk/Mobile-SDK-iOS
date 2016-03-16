@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJIHotPointMission;
 
 /**
- *  This class represents a hot-point step for a custom mission. By creating an object of this class and adding it into
+ *  This class represents a hot-point step for a custom mission. By creating an object of this class and adding it to
  *  a custom mission, a hot-point action will be performed during the custom mission execution.
  *  @see DJIHotpointMission
  */
@@ -20,10 +20,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Surrounding angle in degrees. The surrounding angle should be consistant with the hotpoint mission's
- *  direction (isClockwise), default is 360 degree if 'isClockwise' is YES or -360 degree if 'isClockwise' is NO.
+ *  direction (`isClockwise`). The default is 360 degrees if `isClockwise` is YES, and -360 degrees if `isClockwise` is NO.
  */
 @property(nonatomic, assign) double surroundingAngle;
 
+/**
+ *  Initialized instance with a hotpoint mission.
+ *
+ *  @param mission Hotpoint mission.
+ *
+ *  @return Instance of DJIHotpointStep.
+ */
 - (instancetype _Nullable)initWithHotpointMission:(DJIHotPointMission *)mission;
 
 @end

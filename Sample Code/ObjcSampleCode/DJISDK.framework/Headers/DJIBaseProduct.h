@@ -18,19 +18,39 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//Keys for components dictionary
+/**
+ *  Flight Controler Component Key
+ */
 extern NSString *const DJIFlightControllerComponentKey;
+/**
+ *  Remote Controler Component Key
+ */
 extern NSString *const DJIRemoteControllerComponentKey;
+/**
+ *  Camera Component Key
+ */
 extern NSString *const DJICameraComponentKey;
+/**
+ *  Gimbal Component Key
+ */
 extern NSString *const DJIGimbalComponentKey;
+/**
+ *  Airlink Component Key
+ */
 extern NSString *const DJIAirLinkComponentKey;
+/**
+ *  Battery Component Key
+ */
 extern NSString *const DJIBatteryComponentKey;
+/**
+ *  Handheld Controller Component Key
+ */
 extern NSString *const DJIHandheldControllerComponentKey;
 
 /**
  *  Completion block for asynchronous operations. This completion block is used for methods that return at an unknown future time.
  *
- *  @param error Error object if an error occured during async operation. nil if no error occurred.
+ *  @param error An error object if an error occured during async operation, or nil if no error occurred.
  */
 typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 
@@ -39,7 +59,7 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 
 /**
  *
- *  This protocol provides delegate methods to get notified on component and product connectivity changes.
+ *  This protocol provides delegate methods to be notified about component and product connectivity changes.
  *
  */
 @protocol DJIBaseProductDelegate <NSObject>
@@ -47,13 +67,13 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 @optional
 
 /**
- *  Callback delegate method when a component object changed
+ *  Callback delegate method when a component object changes.
  *
  */
 - (void)componentWithKey:(NSString *)key changedFrom:(DJIBaseComponent *_Nullable)oldComponent to:(DJIBaseComponent *_Nullable)newComponent;
 
 /**
- *  Called when connectivity status changed for the base product.
+ *  Called when the connectivity status changes for the base product.
  *
  */
 - (void)product:(DJIBaseProduct *)product connectivityChanged:(BOOL)isConnected;
@@ -62,29 +82,31 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 
 /**
  *
- *  Abstract class for all DJI Products
+ *  Abstract class for all DJI Products.
  */
 @interface DJIBaseProduct : NSObject
 
 /**
- *  Use this delegate to get notified on component changes and connectivity status changes.
+ *  Use this delegate to be notified of component changes and connectivity status changes.
  *
  */
 @property (nonatomic, weak) id<DJIBaseProductDelegate> delegate;
 /**
- *  Connectivity status. In case of aircraft, if the aircraft is out of range or turned off, then the connectivity status changes to NOT connected.
+ *  Connectivity status. In case of aircraft, if the aircraft is out of range or turned off, the connectivity status changes to NOT connected.
  *
  */
 @property (nonatomic, readonly, getter = isConnected) BOOL connected;
 
 /**
- *  Contains a dictionary of all the available components
+ *  Contains a dictionary of all the available components.
  *
  */
 @property (nonatomic, readonly) NSDictionary<NSString *, NSArray<DJIBaseComponent *> *> *_Nullable components;
 
 /**
- *  Get product's firmware package version
+ *  Get the product's firmware package version. For Products except Phantom 4, Internet connection is required and the execution time for this method highly depends on the Internet status. 
+ *
+ *  @param block Completion block to receive the result. 
  *
  */
 - (void)getFirmwarePackageVersionWithCompletion:(void (^)(NSString *_Nullable version, NSError *_Nullable error))block;

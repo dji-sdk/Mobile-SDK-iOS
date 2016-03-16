@@ -10,6 +10,11 @@ import DJISDK
 
 class CameraPushInfoViewController: DemoPushInfoViewController, DJICameraDelegate {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "Push Info"
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // Set the delegate to receive the push data from camera

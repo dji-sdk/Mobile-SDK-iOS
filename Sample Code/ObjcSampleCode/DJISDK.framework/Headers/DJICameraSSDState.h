@@ -9,7 +9,7 @@
 #import <DJISDK/DJICameraSettingsDef.h>
 
 /**
- *  SSD State
+ *  Solid State Drive (SSD) State
  */
 typedef NS_ENUM (NSUInteger, DJICameraSSDOperationState) {
     /**
@@ -43,32 +43,32 @@ typedef NS_ENUM (NSUInteger, DJICameraSSDOperationState) {
 };
 
 /**
- *  SSD Capacity
+ *  Solid State Drive (SSD) Capacity
  */
 typedef NS_ENUM (NSUInteger, DJICameraSSDCapacity) {
     /**
-     *  SSD capacity is 256G
+     *  SSD capacity is 256G.
      */
     DJICameraSSDCapacity256G,
     /**
-     *  SSD capacity is 512G
+     *  SSD capacity is 512G.
      */
     DJICameraSSDCapacity512G,
     /**
-     *  SSD capacity is 1T
+     *  SSD capacity is 1T.
      */
     DJICameraSSDCapacity1T,
     /**
-     *  SSD capacity is unknown
+     *  SSD capacity is unknown.
      */
     DJICameraSSDCapacityUnknown = 0xFF,
 };
 
 
 /**
- *  This class contains the information about camera SSD's info, including state, whether it's connected, its capacity, video size and rate, etc.
+ *  This class contains the information about camera's Solid State Drive (SSD) information, including state, whether it is connected, its capacity, video size and rate, etc.
  *
- *  Supported only by X5R camera.
+ *  Supported only by the X5R camera.
  */
 @interface DJICameraSSDState : NSObject
 
@@ -78,7 +78,7 @@ typedef NS_ENUM (NSUInteger, DJICameraSSDCapacity) {
 @property (nonatomic, readonly) DJICameraSSDOperationState operationState;
 
 /**
- *  YES if SSD is connected. When isConnected is NO, the values for other properties in DJICameraSSDState are undefined.
+ *  YES if the SSD is connected. When `isConnected` is `NO`, the values for other properties in `DJICameraSSDState` are undefined.
  */
 @property (nonatomic, readonly) BOOL isConnected;
 
@@ -88,7 +88,7 @@ typedef NS_ENUM (NSUInteger, DJICameraSSDCapacity) {
 @property (nonatomic, readonly) DJICameraSSDCapacity totalSpace;
 
 /**
- *  SSD's remaining time in seconds assuming the current DJICameraVideoResolution and DJICameraVideoFrameRate.
+ *  SSD's remaining time in seconds, based on the current `DJICameraVideoResolution` and `DJICameraVideoFrameRate`.
  */
 @property (nonatomic, readonly) int availableRecordingTimeInSeconds;
 

@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- *  This class contains signal status of a channel.
+ *  This class contains signal status for a channel.
  */
 @interface DJISignalInformation : NSObject
 

@@ -47,7 +47,6 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         }
     }
     
-    var videoFeedView: UIView? = nil
     @IBOutlet weak var selectFirstButton: UIButton!
     @IBOutlet weak var selectSecondButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
@@ -183,21 +182,12 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     }
 
     func setVideoPreview() {
-        self.videoFeedView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        self.view!.addSubview(self.videoFeedView!)
-        self.view!.sendSubviewToBack(self.videoFeedView!)
-        //    self.videoFeedView.backgroundColor = [UIColor grayColor];
         VideoPreviewer.instance().start()
-        VideoPreviewer.instance().setView(self.videoFeedView)
+        VideoPreviewer.instance().setView(self.view)
     }
 
     func cleanVideoPreview() {
         VideoPreviewer.instance().unSetView()
-        VideoPreviewer.removePreview()
-        if self.videoFeedView != nil {
-            self.videoFeedView!.removeFromSuperview()
-            self.videoFeedView = nil
-        }
     }
 
 
@@ -216,7 +206,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
         memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().dataQueue.push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(pBuffer, length: Int32(size))
     }
 
     func playbackManager(playbackManager: DJIPlaybackManager, didUpdatePlaybackState playbackState: DJICameraPlaybackState) {

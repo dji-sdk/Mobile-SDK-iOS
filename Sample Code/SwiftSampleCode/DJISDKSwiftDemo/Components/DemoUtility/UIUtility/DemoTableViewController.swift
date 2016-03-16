@@ -71,11 +71,17 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         if self.sectionNames.count <= 1 {
             item = self.items[row] as? DemoSettingItem
             if (item == nil) {
-                item = self.items[0][row] as? DemoSettingItem
+                let sectionItems = self.items[0] as? [DemoSettingItem]
+                if (sectionItems?.count > row) {
+                    item = sectionItems![row]
+                }
             }
         }
         else {
-            item = self.items[section][row] as? DemoSettingItem
+            let sectionItems = self.items[section] as? [DemoSettingItem]
+            if (sectionItems?.count > row) {
+                item = sectionItems![row]
+            }
         }
         cell?.textLabel!.text = item?.itemName
         cell?.textLabel?.font = UIFont(name:"Helvetica Neue Light", size:18)
@@ -101,11 +107,17 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         if self.sectionNames.count <= 1 {
             item = self.items[row] as? DemoSettingItem
             if (item == nil) {
-                item = self.items[0][row] as? DemoSettingItem
+                let sectionItems = self.items[0] as? [DemoSettingItem]
+                if (sectionItems?.count > row) {
+                    item = sectionItems![row]
+                }
             }
         }
         else {
-            item = self.items[section][row] as? DemoSettingItem
+            let sectionItems = self.items[section] as? [DemoSettingItem]
+            if (sectionItems?.count > row) {
+                item = sectionItems![row]
+            }
         }
         
         if (item != nil) {

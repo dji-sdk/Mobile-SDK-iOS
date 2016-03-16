@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gme-nO-FVE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gme-nO-FVE">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Trying to connect..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyP-9y-OGU">
-                                <rect key="frame" x="225" y="8" width="151" height="16"/>
+                                <rect key="frame" x="225.5" y="8" width="150.5" height="15.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="RAn-uy-fq3"/>
                                 </constraints>
@@ -78,6 +78,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mER-hO-3x3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="KyP-9y-OGU" secondAttribute="bottom" constant="2" id="1KK-I1-M8J"/>
                             <constraint firstItem="HoW-zr-jsB" firstAttribute="top" secondItem="7qp-w4-rYY" secondAttribute="bottom" priority="750" constant="100" id="DCA-0w-QOL">
                                 <variation key="heightClass=compact" constant="45"/>
                             </constraint>
@@ -87,11 +88,11 @@
                             <constraint firstAttribute="bottomMargin" secondItem="0V5-lw-kCS" secondAttribute="bottom" constant="8" id="IX8-Zf-cNs"/>
                             <constraint firstItem="HoW-zr-jsB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kco-LW-zL8"/>
                             <constraint firstItem="mER-hO-3x3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OmH-1m-uBw"/>
+                            <constraint firstItem="KyP-9y-OGU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PwB-gC-P2w"/>
                             <constraint firstItem="HoW-zr-jsB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fXd-GW-5wr"/>
                             <constraint firstItem="0V5-lw-kCS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o7S-9Z-nxW"/>
-                            <constraint firstItem="KyP-9y-OGU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uQq-E0-Jp5"/>
                             <constraint firstItem="7qp-w4-rYY" firstAttribute="centerX" secondItem="HoW-zr-jsB" secondAttribute="centerX" id="uwK-HC-TKP"/>
-                            <constraint firstItem="KyP-9y-OGU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="x4s-VE-Bn0">
+                            <constraint firstItem="KyP-9y-OGU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" priority="700" constant="8" id="x4s-VE-Bn0">
                                 <variation key="heightClass=compact" constant="52"/>
                             </constraint>
                         </constraints>
@@ -116,13 +117,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" id="PkI-C6-MLc">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComponentCell" id="1u9-52-qsi">
-                                <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1u9-52-qsi" id="q3t-qf-atZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -731,7 +732,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CWB-3O-wPg">
-                                <rect key="frame" x="0.0" y="65" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="601"/>
                             </mapView>
                             <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVy-Xx-ERZ">
                                 <rect key="frame" x="8" y="334" width="52" height="52"/>
@@ -785,7 +786,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bkX-6b-IZZ">
-                                <rect key="frame" x="164" y="119" width="272" height="29"/>
+                                <rect key="frame" x="164" y="51" width="272" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="1ZE-aE-Lgl"/>
                                     <constraint firstAttribute="width" constant="272" id="npA-8h-Xnw"/>
@@ -800,29 +801,27 @@
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="WcI-ut-wVU" secondAttribute="centerY" id="0I7-G0-Zgh"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="leading" secondItem="cUw-Ex-wmz" secondAttribute="leading" id="2Wa-Zn-jvT"/>
-                            <constraint firstAttribute="trailing" secondItem="CWB-3O-wPg" secondAttribute="trailing" id="5qV-pF-GPM"/>
+                            <constraint firstItem="CWB-3O-wPg" firstAttribute="top" secondItem="22e-4W-wZC" secondAttribute="bottom" id="55h-Ya-I8H"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="width" secondItem="cUw-Ex-wmz" secondAttribute="width" id="7Zz-FG-klg"/>
-                            <constraint firstAttribute="bottom" secondItem="CWB-3O-wPg" secondAttribute="bottom" constant="-65" id="8Bq-17-3rX"/>
-                            <constraint firstAttribute="centerY" secondItem="CWB-3O-wPg" secondAttribute="centerY" constant="-65" id="8Nh-oA-ZTy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WcI-ut-wVU" secondAttribute="trailing" constant="-12" id="8pf-19-WfK"/>
                             <constraint firstAttribute="centerY" secondItem="Jal-IL-Hf9" secondAttribute="centerY" constant="123" id="Dl1-01-DqV"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="centerX" secondItem="CWB-3O-wPg" secondAttribute="centerX" constant="334" id="IVi-uq-a0V"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="trailing" secondItem="cUw-Ex-wmz" secondAttribute="trailing" id="J4Y-cm-df6"/>
+                            <constraint firstItem="CWB-3O-wPg" firstAttribute="centerX" secondItem="bkX-6b-IZZ" secondAttribute="centerX" id="J6E-B0-bXk"/>
                             <constraint firstAttribute="centerY" secondItem="cUw-Ex-wmz" secondAttribute="centerY" id="LKZ-X4-tXm"/>
-                            <constraint firstItem="CWB-3O-wPg" firstAttribute="top" secondItem="0dU-YU-Gg9" secondAttribute="top" constant="65" id="N9Y-MP-nFz"/>
-                            <constraint firstAttribute="centerX" secondItem="CWB-3O-wPg" secondAttribute="centerX" id="NhI-zx-UNv"/>
+                            <constraint firstItem="bkX-6b-IZZ" firstAttribute="top" secondItem="22e-4W-wZC" secondAttribute="bottom" constant="51" id="QNY-Ls-Vpb"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="CWB-3O-wPg" secondAttribute="bottom" constant="-65" id="Qd7-5s-y1u"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="height" secondItem="cUw-Ex-wmz" secondAttribute="height" id="R9L-um-Cv6"/>
                             <constraint firstAttribute="centerX" secondItem="Jal-IL-Hf9" secondAttribute="centerX" constant="-334" id="VZf-Lb-1pg"/>
-                            <constraint firstItem="cUw-Ex-wmz" firstAttribute="leading" secondItem="CWB-3O-wPg" secondAttribute="leading" constant="8" id="Wf0-tk-Cbp"/>
-                            <constraint firstItem="CWB-3O-wPg" firstAttribute="top" secondItem="bkX-6b-IZZ" secondAttribute="bottom" constant="-82" id="azM-OD-gym"/>
-                            <constraint firstItem="CWB-3O-wPg" firstAttribute="leading" secondItem="eVy-Xx-ERZ" secondAttribute="leading" constant="-8" id="d1F-mI-eZa"/>
-                            <constraint firstItem="WcI-ut-wVU" firstAttribute="leading" secondItem="CWB-3O-wPg" secondAttribute="trailing" constant="-60" id="dTH-Vi-wFx"/>
                             <constraint firstItem="Jal-IL-Hf9" firstAttribute="centerY" secondItem="CWB-3O-wPg" secondAttribute="centerY" constant="-123" id="eso-4r-d5E"/>
                             <constraint firstAttribute="centerX" secondItem="Jal-IL-Hf9" secondAttribute="centerX" constant="-334" id="fVU-48-tIR"/>
+                            <constraint firstItem="eVy-Xx-ERZ" firstAttribute="leading" secondItem="cUw-Ex-wmz" secondAttribute="leading" id="iIz-Vu-zpI"/>
                             <constraint firstItem="eVy-Xx-ERZ" firstAttribute="top" secondItem="cUw-Ex-wmz" secondAttribute="bottom" constant="40" id="jbr-nT-thg"/>
                             <constraint firstAttribute="centerX" secondItem="bkX-6b-IZZ" secondAttribute="centerX" id="n73-Xp-Q6f"/>
                             <constraint firstItem="cUw-Ex-wmz" firstAttribute="top" secondItem="Jal-IL-Hf9" secondAttribute="bottom" constant="37" id="nQB-Mk-JHk"/>
-                            <constraint firstItem="CWB-3O-wPg" firstAttribute="leading" secondItem="0dU-YU-Gg9" secondAttribute="leading" id="pz1-mL-bRE"/>
+                            <constraint firstItem="CWB-3O-wPg" firstAttribute="leading" secondItem="0dU-YU-Gg9" secondAttribute="leading" id="qZO-YT-M8w"/>
                             <constraint firstAttribute="centerY" secondItem="Jal-IL-Hf9" secondAttribute="centerY" constant="123" id="rvr-d7-KqA"/>
+                            <constraint firstItem="eVy-Xx-ERZ" firstAttribute="leading" secondItem="0dU-YU-Gg9" secondAttribute="leadingMargin" constant="-12" id="typ-Jx-4a8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -2345,13 +2344,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" id="39d-C7-f1d">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComponentCell" id="YEz-nI-6Hp">
-                                <rect key="frame" x="0.0" y="50" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEz-nI-6Hp" id="A7d-Ik-zFo">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>

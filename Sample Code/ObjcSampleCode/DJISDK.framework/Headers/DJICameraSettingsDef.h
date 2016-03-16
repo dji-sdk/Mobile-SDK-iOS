@@ -10,9 +10,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  Camera Focus Area Row.
+ */
 DJI_API_EXTERN const int DJICameraFocusAreaRow;           // 8
+/**
+ *  Camera Focus Area Column.
+ */
 DJI_API_EXTERN const int DJICameraFocusAreaColumn;        // 12
+/**
+ *  Camera Spot Metering Area Row.
+ */
 DJI_API_EXTERN const int DJICameraSpotMeteringAreaRow;    // 8
+/**
+ *  Camera Spot Metering Area Column.
+ */
 DJI_API_EXTERN const int DJICameraSpotMeteringAreaColumn; // 12
 
 /*********************************************************************************/
@@ -36,18 +48,16 @@ typedef NS_ENUM (NSUInteger, DJICameraMode){
     DJICameraModeRecordVideo = 0x01,
     /**
      *  Playback mode. In this mode, the user can preview photos and videos, and
-     *  they can delete files.
-     *
+     *  can delete files.
      *  Not supported by Osmo, Phantom 3 Standard or Phantom 3 4K.
      */
     DJICameraModePlayback = 0x02,
     /**
-     *  In this mode, user can download media to Mobile Device.
-     *
-     *  Supported by Phantom 3 Professional, Phantom 3 Advanced, Phantom 3 Standard, X3.
+     *  In this mode, the user can download media to the Mobile Device.
+     *  Not Supported by X5 and X5R.
      */
     DJICameraModeMediaDownload = 0x03,
-
+    
     /**
      *  The camera work mode is unknown.
      */
@@ -58,7 +68,7 @@ typedef NS_ENUM (NSUInteger, DJICameraMode){
 #pragma mark DJICameraShootPhotoMode
 //-----------------------------------------------------------------
 /**
- *  Camera work mode ShootPhoto itself can have several modes. The default value is DJICameraShootPhotoModeSingle.
+ *  The ShootPhoto mode itself can have several modes. The default value is `DJICameraShootPhotoModeSingle`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
     /**
@@ -66,18 +76,20 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
      */
     DJICameraShootPhotoModeSingle,
     /**
-     *  Sets the camera to take a HDR photo.
-     *  Currently, X5 camera and X5R camera does not support HDR mode.
+     *  Sets the camera to take an HDR photo.
+     *  X5 camera, X5R camera and XT camera do not support HDR mode.
      */
     DJICameraShootPhotoModeHDR,
     /**
      *  Set the camera to take multiple photos at once.
+     *  XT camera does not support Burst mode.
      */
     DJICameraShootPhotoModeBurst,
     /**
      *  Automatic Exposure Bracketing (AEB) capture. In this mode you can
      *  quickly take multiple shots (the default is 3) at different exposures
      *  without having to manually change any settings between frames.
+     *  XT camera does not support AEB mode. 
      */
     DJICameraShootPhotoModeAEB,
     /**
@@ -94,8 +106,8 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
      *  Supported only by Osmo camera.
      *
      *  For the upcoming Osmo firmware version, no video feed will be received if the camera is shooting
-     *  photos with Time-lapse mode. Instead, user can receive a sequence of preview images using delegate
-     *  method camera:didGenerateTimeLapsePreview:.
+     *  photos with Time-lapse mode. Instead, user can receive a sequence of preview images using the delegate
+     *  method `camera:didGenerateTimeLapsePreview:`.
      */
     DJICameraShootPhotoModeTimeLapse
 };
@@ -104,23 +116,23 @@ typedef NS_ENUM (NSUInteger, DJICameraShootPhotoMode){
 #pragma mark DJICameraExposureMode
 //-----------------------------------------------------------------
 /**
- *  Camera exposure modes. The default value is DJICameraExposureModeProgram.
+ *  Camera exposure modes. The default value is `DJICameraExposureModeProgram`.
  *
  *  The different exposure modes define whether Aperture, Shutter Speed, ISO can
  *  be set automatically or manually. Exposure compensation can be changed in all modes
  *  except Manual mode where it is not settable.
  *
- *  X5 camera and X5R camera:
- *       Program Mode:       Shutter: Auto     Aperture: Auto     ISO: Manual or Auto
- *       Shutter Priority:   Shutter: Manual   Aperture: Auto     ISO: Manual or Auto
- *       Aperture Priority:  Shutter: Auto     Aperture: Manual   ISO: Manual or Auto
- *       Manual Mode:        Shutter: Manual   Aperture: Manual   ISO: Manual
+ *  <b>X5 camera and X5R camera:</b><br/>
+ *       Program Mode:       Shutter: Auto     Aperture: Auto     ISO: Manual or Auto<br/>
+ *       Shutter Priority:   Shutter: Manual   Aperture: Auto     ISO: Manual or Auto<br/>
+ *       Aperture Priority:  Shutter: Auto     Aperture: Manual   ISO: Manual or Auto<br/>
+ *       Manual Mode:        Shutter: Manual   Aperture: Manual   ISO: Manual<br/><br/><br/>
  *
  *
- *   All other cameras:
- *       Program Mode:       Shutter: Auto     Aperture: Fixed    ISO: Auto
- *       Shutter Priority:   Shutter: Manual   Aperture: Fixed    ISO: Auto
- *       Aperture Priority:  N/A
+ *   <b>All other cameras:</b><br/>
+ *       Program Mode:       Shutter: Auto     Aperture: Fixed    ISO: Auto<br/>
+ *       Shutter Priority:   Shutter: Manual   Aperture: Fixed    ISO: Auto<br/>
+ *       Aperture Priority:  N/A<br/>
  *       Manual Mode:        Shutter: Manual   Aperture: Manual   ISO: Manual
  */
 typedef NS_ENUM (NSUInteger, DJICameraExposureMode){
@@ -175,7 +187,7 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoFileFormat){
 #pragma mark DJICameraVideoResolution
 //-----------------------------------------------------------------
 /**
- *  Camera video resolution values. The resolutions available for a product can be found from supportedCameraVideoResolutionAndFrameRateRange.
+ *  Camera video resolution values. The resolutions available for a product are in `supportedCameraVideoResolutionAndFrameRateRange`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraVideoResolution){
     /**
@@ -208,7 +220,7 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoResolution){
 #pragma mark DJICameraVideoFrameRate
 //-----------------------------------------------------------------
 /**
- *  Camera video frame rate values. The frame rates available for a product can be found from supportedCameraVideoResolutionAndFrameRateRange.
+ *  Camera video frame rate values. The frame rates available for a product are in `supportedCameraVideoResolutionAndFrameRateRange`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraVideoFrameRate){
     /**
@@ -236,8 +248,7 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoFrameRate){
      */
     DJICameraVideoFrameRate60fps,
     /**
-     *  The camera's video frame rate is 120fps (frames per second).
-     *  The frame rate can only be used when Slow Motion enabled.
+     *  The camera's video frame rate is 120fps (frames per second). This frame rate can only be used when isSlowMotionSupported returns YES.
      */
     DJICameraVideoFrameRate120fps,
     /**
@@ -275,22 +286,25 @@ typedef NS_ENUM (NSUInteger, DJICameraVideoStandard){
 #pragma mark DJICameraPhotoFileFormat
 //-----------------------------------------------------------------
 /**
- *  Camera photo file formats. The default value is CameraPhotoJPEG.
+ *  Camera photo file formats. The default value is `CameraPhotoJPEG`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraPhotoFileFormat){
     /**
      *  The camera's photo storage format is RAW.
      */
-    DJICameraPhotoFileFormatRAW = 0x00,
+    DJICameraPhotoFileFormatRAW,
     /**
      *  The camera's photo storage format is JPEG.
      */
-    DJICameraPhotoFileFormatJPEG = 0x01,
+    DJICameraPhotoFileFormatJPEG,
     /**
-     *  The camera's photo storage format stores both the RAW and JPEG
-     *  formats of the photo.
+     *  The camera stores both the RAW and JPEG formats of the photo.
      */
-    DJICameraPhotoFileFormatRAWAndJPEG = 0x02,
+    DJICameraPhotoFileFormatRAWAndJPEG,
+    /**
+     *  The camera's photo storage format is TIFF (14bit). Only supported for XT camera.
+     */
+    DJICameraPhotoFileFormatTIFF14Bit,
     /**
      *  The camera's photo storage format is unknown.
      */
@@ -324,7 +338,7 @@ typedef NS_ENUM (NSUInteger, DJICameraPhotoTimeLapseFileFormat) {
 //-----------------------------------------------------------------
 /**
  *  Photo quality of the JPEG image. Higher photo quality results in larger file size.
- *  The default value is CameraPhotoQualityExcellent.
+ *  The default value is `CameraPhotoQualityExcellent`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraPhotoQuality){
     /**
@@ -350,7 +364,7 @@ typedef NS_ENUM (NSUInteger, DJICameraPhotoQuality){
 //-----------------------------------------------------------------
 /**
  *  Photo aspect ratio, where the first value is the width and the
- *  second value is the height. The default value is CameraPhotoRatio4_3.
+ *  second value is the height. The default value is `CameraPhotoRatio4_3`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraPhotoAspectRatio){
     /**
@@ -372,21 +386,21 @@ typedef NS_ENUM (NSUInteger, DJICameraPhotoAspectRatio){
 #pragma mark DJICameraPhotoBurstCount
 //-----------------------------------------------------------------
 /**
- *  The amount of photos taken in one burst shot (shooting photo in burst mode).
+ *  The number of photos taken in one burst shot (shooting photo in burst mode).
  */
 typedef NS_ENUM (NSUInteger, DJICameraPhotoBurstCount){
     /**
-     *  The camera burst shoot count is set to shoot 3 at once pictures when the camera
+     *  The camera burst shoot count is set to capture 3 pictures at once when the camera
      *  shoots a photo.
      */
     DJICameraPhotoBurstCount3 = 0x03,
     /**
-     *  The camera burst shoot count is set to capture 5 at once pictures when the camera
+     *  The camera burst shoot count is set to capture 5 pictures at once when the camera
      *  takes a photo.
      */
     DJICameraPhotoBurstCount5 = 0x05,
     /**
-     *  The camera burst shoot count is set to capture 7 at once pictures when the camera
+     *  The camera burst shoot count is set to capture 7 pictures at once when the camera
      *  takes a photo.
      */
     DJICameraPhotoBurstCount7 = 0x07,
@@ -400,12 +414,12 @@ typedef NS_ENUM (NSUInteger, DJICameraPhotoBurstCount){
 #pragma mark DJICameraPhotoAEBParam
 //-----------------------------------------------------------------
 /**
- *  AEB continue capture parameter values.
+ *  AEB continuous capture parameter values.
  */
 typedef struct
 {
     /**
-     *  Exposure offset value. A value is mapped to an exposure offset. 2 = 0.3EV, 3 = 0.7EV,
+     *  Exposure offset value (EV). A value is mapped to an exposure offset. 2 = 0.3EV, 3 = 0.7EV,
      *  4 = 1.0EV, 5 = 1.3EV, 6 = 1.7EV, 7 = 2.0EV, 8 = 2.3EV, 9 = 2.7EV, 10 = 3.0ev.
      *  The default value is 2.3ev.
      *  When captureCount is 3, the valid range for exposureOffset is [2, 10].
@@ -425,22 +439,23 @@ typedef struct
 #pragma mark DJICameraPhotoIntervalParam
 //-----------------------------------------------------------------
 /**
- *  Sets the number of pictures, and the time interval between pictures for the Interval shoot photo mode.
+ *  Sets the number of pictures, and sets the time interval between pictures for the Interval shoot photo mode.
  */
 typedef struct
 {
     /**
-     *  The number of photos to capture. The value should fall in [2, 255].
+     *  The number of photos to capture. The value range is [2, 255].
      *  If 255 is selected, then the camera will continue to take pictures until stopShootPhotoWithCompletion is called.
+     *  For thermal imaging camera, it can only be set to 255.
      */
     uint8_t captureCount;
-
+    
     /**
      *  The time interval between when two photos are taken.
      *  The range for this parameter depends the photo file format(DJICameraPhotoFileFormat).
-     *  When the file format is JPEG, the range is [2, 2^16-1] seconds.
-     *  For X5 camera and X5R camera when the file format is RAW or RAW+JPEG, the range is [5, 2^16-1] seconds, for all other
-     *  products the range is [10, 2^16-1].
+     *  For X5 camera and X5R camera, the range is [5, 2^16 - 1] seconds.
+     *  For XT camera, the range is [1, 60] seconds. 
+     *  For all other products, when the file format is JPEG, the range is [2, 2^16 - 1] seconds; when the file format is RAW or RAW+JPEG, the range is [10, 2^16 - 1] seconds.
      */
     uint16_t timeIntervalInSeconds;
 } DJICameraPhotoIntervalParam;
@@ -455,67 +470,244 @@ typedef struct
  *  Camera's shutter speed options.
  */
 typedef NS_ENUM (NSUInteger, DJICameraShutterSpeed) {
-    DJICameraShutterSpeed1_8000 = 0x00,     // 1/8000 s
-    DJICameraShutterSpeed1_6400 = 0x01,     // 1/6400 s
-    DJICameraShutterSpeed1_5000 = 0x02,     // 1/5000 s
-    DJICameraShutterSpeed1_4000 = 0x03,     // 1/4000 s
-    DJICameraShutterSpeed1_3200 = 0x04,     // 1/3200 s
-    DJICameraShutterSpeed1_2500 = 0x05,     // 1/2500 s
-    DJICameraShutterSpeed1_2000 = 0x06,     // 1/2000 s
-    DJICameraShutterSpeed1_1600 = 0x07,     // 1/1600 s
-    DJICameraShutterSpeed1_1250 = 0x08,     // 1/1250 s
-    DJICameraShutterSpeed1_1000 = 0x09,     // 1/1000 s
-    DJICameraShutterSpeed1_800 = 0x0A,      // 1/800 s
-    DJICameraShutterSpeed1_640 = 0x0B,      // 1/640 s
-    DJICameraShutterSpeed1_500 = 0x0C,      // 1/500 s
-    DJICameraShutterSpeed1_400 = 0x0D,      // 1/400 s
-    DJICameraShutterSpeed1_320 = 0x0E,      // 1/320 s
-    DJICameraShutterSpeed1_240 = 0x0F,      // 1/240 s
-    DJICameraShutterSpeed1_200 = 0x10,      // 1/200 s
-    DJICameraShutterSpeed1_160 = 0x11,      // 1/160 s
-    DJICameraShutterSpeed1_120 = 0x12,      // 1/120 s
-    DJICameraShutterSpeed1_100 = 0x13,      // 1/100 s
-    DJICameraShutterSpeed1_80 = 0x14,       // 1/80 s
-    DJICameraShutterSpeed1_60 = 0x15,       // 1/60 s
-    DJICameraShutterSpeed1_50 = 0x16,       // 1/50 s
-    DJICameraShutterSpeed1_40 = 0x17,       // 1/40 s
-    DJICameraShutterSpeed1_30 = 0x18,       // 1/30 s
-    DJICameraShutterSpeed1_25 = 0x19,       // 1/25 s
-    DJICameraShutterSpeed1_20 = 0x1A,       // 1/20 s
-    DJICameraShutterSpeed1_15 = 0x1B,       // 1/15 s
-    DJICameraShutterSpeed1_12p5 = 0x1C,     // 1/12.5 s
-    DJICameraShutterSpeed1_10 = 0x1D,       // 1/10 s
-    DJICameraShutterSpeed1_8 = 0x1E,        // 1/8 s
-    DJICameraShutterSpeed1_6p25 = 0x1F,     // 1/6.25 s
-    DJICameraShutterSpeed1_5 = 0x20,        // 1/5 s
-    DJICameraShutterSpeed1_4 = 0x21,        // 1/4 s
-    DJICameraShutterSpeed1_3 = 0x22,        // 1/3 s
-    DJICameraShutterSpeed1_2p5 = 0x23,      // 1/2.5 s
-    DJICameraShutterSpeed1_2 = 0x24,        // 1/2 s
-    DJICameraShutterSpeed1_1p67 = 0x25,     // 1/1.67 s
-    DJICameraShutterSpeed1_1p25 = 0x26,     // 1/1.25 s
-    DJICameraShutterSpeed1p0 = 0x27,        // 1.0 s
-    DJICameraShutterSpeed1p3 = 0x28,        // 1.3 s
-    DJICameraShutterSpeed1p6 = 0x29,        // 1.6 s
-    DJICameraShutterSpeed2p0 = 0x2A,        // 2.0 s
-    DJICameraShutterSpeed2p5 = 0x2B,        // 2.5 s
-    DJICameraShutterSpeed3p0 = 0x2C,        // 3.0 s
-    DJICameraShutterSpeed3p2 = 0x2D,        // 3.2 s
-    DJICameraShutterSpeed4p0 = 0x2E,        // 4.0 s
-    DJICameraShutterSpeed5p0 = 0x2F,        // 5.0 s
-    DJICameraShutterSpeed6p0 = 0x30,        // 6.0 s
-    DJICameraShutterSpeed7p0 = 0x31,        // 7.0 s
-    DJICameraShutterSpeed8p0 = 0x32,        // 8.0 s
-    DJICameraShutterSpeed9p0 = 0x33,        // 9.0 s
-    DJICameraShutterSpeed10p0 = 0x34,       // 10.0 s
-    DJICameraShutterSpeed13p0 = 0x35,       // 13.0 s
-    DJICameraShutterSpeed15p0 = 0x36,       // 15.0 s
-    DJICameraShutterSpeed20p0 = 0x37,       // 20.0 s
-    DJICameraShutterSpeed25p0 = 0x38,       // 25.0 s
-    DJICameraShutterSpeed30p0 = 0x39,       // 30.0 s
-
+    /**
+     *  Camera's shutter speed 1/8000 s.
+     */
+    DJICameraShutterSpeed1_8000 = 0x00,
+    /**
+     *  Camera's shutter speed 1/6400 s.
+     */
+    DJICameraShutterSpeed1_6400 = 0x01,
+    /**
+     *  Camera's shutter speed 1/5000 s.
+     */
+    DJICameraShutterSpeed1_5000 = 0x02,
+    /**
+     *  Camera's shutter speed 1/4000 s.
+     */
+    DJICameraShutterSpeed1_4000 = 0x03,
+    /**
+     *  Camera's shutter speed 1/3200 s.
+     */
+    DJICameraShutterSpeed1_3200 = 0x04,
+    /**
+     *  Camera's shutter speed 1/2500 s.
+     */
+    DJICameraShutterSpeed1_2500 = 0x05,
+    /**
+     *  Camera's shutter speed 1/2000 s.
+     */
+    DJICameraShutterSpeed1_2000 = 0x06,
+    /**
+     *  Camera's shutter speed 1/1600 s.
+     */
+    DJICameraShutterSpeed1_1600 = 0x07,
+    /**
+     *  Camera's shutter speed 1/1250 s.
+     */
+    DJICameraShutterSpeed1_1250 = 0x08,
+    /**
+     *  Camera's shutter speed 1/1000 s.
+     */
+    DJICameraShutterSpeed1_1000 = 0x09,
+    /**
+     *  Camera's shutter speed 1/800 s.
+     */
+    DJICameraShutterSpeed1_800 = 0x0A,
+    /**
+     *  Camera's shutter speed 1/640 s.
+     */
+    DJICameraShutterSpeed1_640 = 0x0B,
+    /**
+     *  Camera's shutter speed 1/500 s.
+     */
+    DJICameraShutterSpeed1_500 = 0x0C,
+    /**
+     *  Camera's shutter speed 1/400 s.
+     */
+    DJICameraShutterSpeed1_400 = 0x0D,
+    /**
+     *  Camera's shutter speed 1/320 s.
+     */
+    DJICameraShutterSpeed1_320 = 0x0E,
+    /**
+     *  Camera's shutter speed 1/240 s.
+     */
+    DJICameraShutterSpeed1_240 = 0x0F,
+    /**
+     *  Camera's shutter speed 1/200 s.
+     */
+    DJICameraShutterSpeed1_200 = 0x10,
+    /**
+     *  Camera's shutter speed 1/160 s.
+     */
+    DJICameraShutterSpeed1_160 = 0x11,
+    /**
+     *  Camera's shutter speed 1/120 s.
+     */
+    DJICameraShutterSpeed1_120 = 0x12,
+    /**
+     *  Camera's shutter speed 1/100 s.
+     */
+    DJICameraShutterSpeed1_100 = 0x13,
+    /**
+     *  Camera's shutter speed 1/80 s.
+     */
+    DJICameraShutterSpeed1_80 = 0x14,
+    /**
+     *  Camera's shutter speed 1/60 s.
+     */
+    DJICameraShutterSpeed1_60 = 0x15,
+    /**
+     *  Camera's shutter speed 1/50 s.
+     */
+    DJICameraShutterSpeed1_50 = 0x16,
+    /**
+     *  Camera's shutter speed 1/40 s.
+     */
+    DJICameraShutterSpeed1_40 = 0x17,
+    /**
+     *  Camera's shutter speed 1/30 s.
+     */
+    DJICameraShutterSpeed1_30 = 0x18,
+    /**
+     *  Camera's shutter speed 1/25 s.
+     */
+    DJICameraShutterSpeed1_25 = 0x19,
+    /**
+     *  Camera's shutter speed 1/20 s.
+     */
+    DJICameraShutterSpeed1_20 = 0x1A,
+    /**
+     *  Camera's shutter speed 1/15 s.
+     */
+    DJICameraShutterSpeed1_15 = 0x1B,
+    /**
+     *  Camera's shutter speed 1/12.5 s.
+     */
+    DJICameraShutterSpeed1_12p5 = 0x1C,
+    /**
+     *  Camera's shutter speed 1/10 s.
+     */
+    DJICameraShutterSpeed1_10 = 0x1D,
+    /**
+     *  Camera's shutter speed 1/8 s.
+     */
+    DJICameraShutterSpeed1_8 = 0x1E,
+    /**
+     *  Camera's shutter speed 1/6.25 s.
+     */
+    DJICameraShutterSpeed1_6p25 = 0x1F,
+    /**
+     *  Camera's shutter speed 1/5 s.
+     */
+    DJICameraShutterSpeed1_5 = 0x20,
+    /**
+     *  Camera's shutter speed 1/4 s.
+     */
+    DJICameraShutterSpeed1_4 = 0x21,
+    /**
+     *  Camera's shutter speed 1/3 s.
+     */
+    DJICameraShutterSpeed1_3 = 0x22,
+    /**
+     *  Camera's shutter speed 1/2.5 s.
+     */
+    DJICameraShutterSpeed1_2p5 = 0x23,
+    /**
+     *  Camera's shutter speed 1/2 s.
+     */
+    DJICameraShutterSpeed1_2 = 0x24,
+    /**
+     *  Camera's shutter speed 1/1.67 s.
+     */
+    DJICameraShutterSpeed1_1p67 = 0x25,
+    /**
+     *  Camera's shutter speed 1/1.25 s.
+     */
+    DJICameraShutterSpeed1_1p25 = 0x26,
+    /**
+     *  Camera's shutter speed 1.0 s.
+     */
+    DJICameraShutterSpeed1p0 = 0x27,
+    /**
+     *  Camera's shutter speed 1.3 s.
+     */
+    DJICameraShutterSpeed1p3 = 0x28,
+    /**
+     *  Camera's shutter speed 1.6 s.
+     */
+    DJICameraShutterSpeed1p6 = 0x29,
+    /**
+     *  Camera's shutter speed 2.0 s.
+     */
+    DJICameraShutterSpeed2p0 = 0x2A,
+    /**
+     *  Camera's shutter speed 2.5 s.
+     */
+    DJICameraShutterSpeed2p5 = 0x2B,
+    /**
+     *  Camera's shutter speed 3.0 s.
+     */
+    DJICameraShutterSpeed3p0 = 0x2C,
+    /**
+     *  Camera's shutter speed 3.2 s.
+     */
+    DJICameraShutterSpeed3p2 = 0x2D,
+    /**
+     *  Camera's shutter speed 4.0 s.
+     */
+    DJICameraShutterSpeed4p0 = 0x2E,
+    /**
+     *  Camera's shutter speed 5.0 s.
+     */
+    DJICameraShutterSpeed5p0 = 0x2F,
+    /**
+     *  Camera's shutter speed 6.0 s.
+     */
+    DJICameraShutterSpeed6p0 = 0x30,
+    /**
+     *  Camera's shutter speed 7.0 s.
+     */
+    DJICameraShutterSpeed7p0 = 0x31,
+    /**
+     *  Camera's shutter speed 8.0 s.
+     */
+    DJICameraShutterSpeed8p0 = 0x32,
+    /**
+     *  Camera's shutter speed 9.0 s.
+     */
+    DJICameraShutterSpeed9p0 = 0x33,
+    /**
+     *  Camera's shutter speed 10.0 s.
+     */
+    DJICameraShutterSpeed10p0 = 0x34,
+    /**
+     *  Camera's shutter speed 13.0 s.
+     */
+    DJICameraShutterSpeed13p0 = 0x35,
+    /**
+     *  Camera's shutter speed 15.0 s.
+     */
+    DJICameraShutterSpeed15p0 = 0x36,
+    /**
+     *  Camera's shutter speed 20.0 s.
+     */
+    DJICameraShutterSpeed20p0 = 0x37,
+    /**
+     *  Camera's shutter speed 25.0 s.
+     */
+    DJICameraShutterSpeed25p0 = 0x38,
+    /**
+     *  Camera's shutter speed 30.0 s.
+     */
+    DJICameraShutterSpeed30p0 = 0x39,
+    /**
+     *  Camera's shutter speed unknown.
+     */
     DJICameraShutterSpeedUnknown = 0xFF
 };
+
 
 //-----------------------------------------------------------------
 #pragma mark DJICameraISO
@@ -574,35 +766,109 @@ typedef NS_ENUM (NSUInteger, DJICameraISO){
 #pragma mark DJICameraAperture
 //-----------------------------------------------------------------
 /**
- *  Camera aperture values. Currently, only X5 camera and X5R camera support
+ *  Camera aperture values. Currently only the X5 and X5R cameras support
  *  this setting.
- *
  */
 typedef NS_ENUM (NSUInteger, DJICameraAperture) {
-    DJICameraApertureF1p7,      // f/1.7
-    DJICameraApertureF1p8,      // f/1.8
-    DJICameraApertureF2,        // f/2
-    DJICameraApertureF2p2,      // f/2.2
-    DJICameraApertureF2p5,      // f/2.5
-    DJICameraApertureF2p8,      // f/2.8
-    DJICameraApertureF3p2,      // f/3.2
-    DJICameraApertureF3p5,      // f/3.5
-    DJICameraApertureF4,        // f/4
-    DJICameraApertureF4p5,      // f/4.5
-    DJICameraApertureF5,        // f/5
-    DJICameraApertureF5p6,      // f/5.6
-    DJICameraApertureF6p3,      // f/6.3
-    DJICameraApertureF7p1,      // f/7.1
-    DJICameraApertureF8,        // f/8
-    DJICameraApertureF9,        // f/9
-    DJICameraApertureF10,       // f/10
-    DJICameraApertureF11,       // f/11
-    DJICameraApertureF13,       // f/13
-    DJICameraApertureF14,       // f/14
-    DJICameraApertureF16,       // f/16
-    DJICameraApertureF18,       // f/18
-    DJICameraApertureF20,       // f/20
-    DJICameraApertureF22,       // f/22
+    /**
+     *  The Aperture value is f/1.7.
+     */
+    DJICameraApertureF1p7,
+    /**
+     *  The Aperture value is f/1.8.
+     */
+    DJICameraApertureF1p8,
+    /**
+     *  The Aperture value is f/2.
+     */
+    DJICameraApertureF2,
+    /**
+     *  The Aperture value is f/2.2.
+     */
+    DJICameraApertureF2p2,
+    /**
+     *  The Aperture value is f/2.5.
+     */
+    DJICameraApertureF2p5,
+    /**
+     *  The Aperture value is f/2.8.
+     */
+    DJICameraApertureF2p8,
+    /**
+     *  The Aperture value is f/3.2.
+     */
+    DJICameraApertureF3p2,
+    /**
+     *  The Aperture value is f/3.5.
+     */
+    DJICameraApertureF3p5,
+    /**
+     *  The Aperture value is f/4.
+     */
+    DJICameraApertureF4,
+    /**
+     *  The Aperture value is f/4.5.
+     */
+    DJICameraApertureF4p5,
+    /**
+     *  The Aperture value is f/5.
+     */
+    DJICameraApertureF5,
+    /**
+     *  The Aperture value is f/5.6.
+     */
+    DJICameraApertureF5p6,
+    /**
+     *  The Aperture value is f/6.3.
+     */
+    DJICameraApertureF6p3,
+    /**
+     *  The Aperture value is f/7.1.
+     */
+    DJICameraApertureF7p1,
+    /**
+     *  The Aperture value is f/8.
+     */
+    DJICameraApertureF8,
+    /**
+     *  The Aperture value is f/9.
+     */
+    DJICameraApertureF9,
+    /**
+     *  The Aperture value is f/10.
+     */
+    DJICameraApertureF10,
+    /**
+     *  The Aperture value is f/11.
+     */
+    DJICameraApertureF11,
+    /**
+     *  The Aperture value is f/13.
+     */
+    DJICameraApertureF13,
+    /**
+     *  The Aperture value is f/14.
+     */
+    DJICameraApertureF14,
+    /**
+     *  The Aperture value is f/16.
+     */
+    DJICameraApertureF16,
+    /**
+     *  The Aperture value is f/18.
+     */
+    DJICameraApertureF18,
+    /**
+     *  The Aperture value is f/20.
+     */
+    DJICameraApertureF20,
+    /**
+     *  The Aperture value is f/22.
+     */
+    DJICameraApertureF22,
+    /**
+     *  The Aperture value is Unknown.
+     */
     DJICameraApertureUnknown = 0xFF
 };
 
@@ -610,7 +876,7 @@ typedef NS_ENUM (NSUInteger, DJICameraAperture) {
 #pragma mark DJICameraWhiteBalance
 //-----------------------------------------------------------------
 /**
- *  Camera white balance. The default value is CameraWhiteBalanceAuto.
+ *  Camera white balance. The default value is `CameraWhiteBalanceAuto`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraWhiteBalance){
     /**
@@ -653,7 +919,7 @@ typedef NS_ENUM (NSUInteger, DJICameraWhiteBalance){
 #pragma mark DJICameraMeteringMode
 //-----------------------------------------------------------------
 /**
- *  Camera exposure metering. The default value is CameraExposureMeteringCenter.
+ *  Camera exposure metering. The default value is `CameraExposureMeteringCenter`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraMeteringMode){
     /**
@@ -815,7 +1081,7 @@ typedef NS_ENUM (NSUInteger, DJICameraExposureCompensation){
 #pragma mark DJICameraAntiFlicker
 //-----------------------------------------------------------------
 /**
- *  Camera anti-flickers. The default value is CameraAntiFlicker50Hz.
+ *  Camera anti-flickers. The default value is `CameraAntiFlicker50Hz`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraAntiFlicker){
     /**
@@ -840,7 +1106,7 @@ typedef NS_ENUM (NSUInteger, DJICameraAntiFlicker){
 #pragma mark DJICameraSharpness
 //-----------------------------------------------------------------
 /**
- *  Camera sharpnesss. The default value is CameraSharpnessStandard.
+ *  Camera sharpnesss. The default value is `CameraSharpnessStandard`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraSharpness){
     /**
@@ -865,7 +1131,7 @@ typedef NS_ENUM (NSUInteger, DJICameraSharpness){
 #pragma mark DJICameraContrast
 //-----------------------------------------------------------------
 /**
- *  Camera contrast. The default value is CameraContrastStandard.
+ *  Camera contrast. The default value is `CameraContrastStandard`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraContrast){
     /**
@@ -895,24 +1161,323 @@ typedef NS_ENUM (NSUInteger, DJICameraContrast){
 //-----------------------------------------------------------------
 /**
  *  Camera focus mode.
- *  It is settable only when IsAdjustableFocalPointSupported returns YES and the physical AF switch on the camera is set to auto.
+ *  It is settable only when `IsAdjustableFocalPointSupported` returns YES and the physical AF switch on the camera is set to auto.
  */
 typedef NS_ENUM (NSUInteger, DJICameraLensFocusMode){
-    /*
+    /**
      *  The camera's focus mode is set to manual.
      *  In this mode, user sets the focus ring value to adjust the focal distance.
      */
     DJICameraLensFocusModeManual,
-    /*
+    /**
      *  The camera's focus mode is set to auto.
      *  In this mode, user sets the lens focus target to adjust the focal point.
      */
     DJICameraLensFocusModeAuto,
-    /*
-     *  The camera's focus mode is unkown.
+    /**
+     *  The camera's focus mode is unknown.
      */
     DJICameraLensFocusModeUnknown = 0xFF
 };
+
+/*********************************************************************************/
+#pragma mark - Thermal Imaging Camera Related
+/*********************************************************************************/
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalROI (Region Of Interest)
+//-----------------------------------------------------------------
+/**
+ *  Region of interest. Use this feature to manage color range distribution across the screen to maximize contrast for regions of highest interest.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalROI) {
+    /**
+     *  Causes the color spectrum to be evenly distributed across the entire image depending the default settings.
+     */
+    DJICameraThermalROIFull,
+    /**
+     *  Ignores areas of the sky 33% so that most of the spectrum can be allocated to remaining areas, providing higher contrast and utility for analysis.
+     */
+    DJICameraThermalROISkyExcluded33,
+    /**
+     *  Ignores areas of the sky 50% so that most of the spectrum can be allocated to remaining areas, providing higher contrast and utility for analysis.
+     */
+    DJICameraThermalROISkyExcluded50,
+    /**
+     *  The ROI type is unknown.
+     */
+    DJICameraThermalROIUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalPalette
+//-----------------------------------------------------------------
+/**
+ *  The different colors are used to show various temperatures in the thermal imagery image. The colors are not actually related to wavelengths of light, but rather the grayscale intensity.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalPalette) {
+    /**
+     *  Without Isotherm enabled, the Palette type is WhiteHot. With Isotherm enabled, the Palette type is WhiteHotIso.
+     */
+    DJICameraThermalPaletteWhiteHot,
+    /**
+     *  Without Isotherm enabled, the Palette type is BlackHot. With Isotherm enabled, the Palette type is BlackHotIso.
+     */
+    DJICameraThermalPaletteBlackHot,
+    /**
+     *  Without Isotherm enabled, the Palette type is RedHot. With Isotherm enabled, the Palette type is RedHotIso.
+     */
+    DJICameraThermalPaletteRedHot,
+    /**
+     *  Without Isotherm enabled, the Palette type is GreenHot. With Isotherm enabled, the Palette type is GreenHotIso.
+     */
+    DJICameraThermalPaletteGreenHot,
+    /**
+     *  Without Isotherm enabled, the Palette type is Fusion. With Isotherm enabled, the Palette type is FusionIso.
+     */
+    DJICameraThermalPaletteFusion,
+    /**
+     *  Without Isotherm enabled, the Palette type is Rainbow. With Isotherm enabled, the Palette type is RainbowIso.
+     */
+    DJICameraThermalPaletteRainbow,
+    /**
+     *  Without Isotherm enabled, the Palette type is Ironbow1. With Isotherm enabled, the Palette type is IronbowWHIso.
+     */
+    DJICameraThermalPaletteIronbow1,
+    /**
+     *  Without Isotherm enabled, the Palette type is Ironbow2. With Isotherm enabled, the Palette type is IronbowBHIso.
+     */
+    DJICameraThermalPaletteIronbow2,
+    /**
+     *  Without Isotherm enabled, the Palette type is IceFire. With Isotherm enabled, the Palette type is IceFireIso.
+     */
+    DJICameraThermalPaletteIceFire,
+    /**
+     *  Without Isotherm enabled, the Palette type is Sepia. With Isotherm enabled, the Palette type is SepiaIso.
+     */
+    DJICameraThermalPaletteSepia,
+    /**
+     *  Without Isotherm enabled, the Palette type is Glowbow. With Isotherm enabled, the Palette type is GlowbowIso.
+     */
+    DJICameraThermalPaletteGlowbow,
+    /**
+     *  Without Isotherm enabled, the Palette type is Color1. With Isotherm enabled, the Palette type is MidRangeWHIso.
+     */
+    DJICameraThermalPaletteColor1,
+    /**
+     *  Without Isotherm enabled, the Palette type is Color2. With Isotherm enabled, the Palette type is MidRangeBHIso.
+     */
+    DJICameraThermalPaletteColor2,
+    /**
+     *  Without Isotherm enabled, the Palette type is Rain. With Isotherm enabled, the Palette type is RainbowHCIso.
+     */
+    DJICameraThermalPaletteRain,
+    /**
+     *  The palette type is unknown.
+     */
+    DJICameraThermalPaletteUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalScene
+//-----------------------------------------------------------------
+/**
+ *  Uses the Scene option to instantly enhance your image.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalScene) {
+    /**
+     *  Lienarly transforms the 14-bit sensor pixel data to 8-bit JPEG/MP4 pixel data.
+     */
+    DJICameraThermalSceneLinear,
+    /**
+     *  Automatically adjusts DDE, ACE, SSO, brightness and contrast.
+     */
+    DJICameraThermalSceneDefault,
+    /**
+     *  Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for scenes composed of the sea and the sky scenes.
+     */
+    DJICameraThermalSceneSeaSky,
+    /**
+     *  Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for outdoor scenes.
+     */
+    DJICameraThermalSceneOutdoor,
+    /**
+     *  Automatically adjusts DDE, ACE, SSO, brightness and contrast with presets optimized for indoor scenes.
+     */
+    DJICameraThermalSceneIndoor,
+    /**
+     *  Allows manual setting of DDE, ACE, SSO, brightness and contrast.
+     */
+    DJICameraThermalSceneManual,
+    /**
+     *  First saved settings of DDE, ACE, SSO, brightness and contrast.
+     */
+    DJICameraThermalSceneUser1,
+    /**
+     *  Second saved settings of DDE, ACE, SSO, brightness and contrast.
+     */
+    DJICameraThermalSceneUser2,
+    /**
+     *  Third saved settings of DDE, ACE, SSO, brightness and contrast.
+     */
+    DJICameraThermalSceneUser3,
+    /**
+     *  The Scene type is unknown.
+     */
+    DJICameraThermalSceneUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalIsothermUnit
+//-----------------------------------------------------------------
+/**
+ *  The unit for Isotherm.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalIsothermUnit) {
+    /**
+     *  The unit type is percentage. The allowed range is [0, 100].
+     */
+    DJICameraThermalIsothermUnitPercentage,
+    /**
+     *  The unit type is degrees Celsius. The allowed range is [-40, 1000].
+     */
+    DJICameraThermalIsothermUnitCelsius,
+    /**
+     *  The unit type is unknown.
+     */
+    DJICameraThermalIsothermUnitUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalGainMode
+//-----------------------------------------------------------------
+/**
+ *  The gain mode.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalGainMode) {
+    /**
+     *  The camera will automatically select the optimal gain mode according to the temperature range of the image.
+     */
+    DJICameraThermalGainModeAuto,
+    /**
+     *  The camera covers a wider temperature range but is less sensitive to temperature differences.
+     */
+    DJICameraThermalGainModeLow,
+    /**
+     *  The camera covers a smaller temperature range but is more sensitive to temperature differences.
+     */
+    DJICameraThermalGainModeHigh,
+    /**
+     *  The gain mode is unknown.
+     */
+    DJICameraThermalGainModeUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalResolution
+//-----------------------------------------------------------------
+/**
+ *  The resolution of thermal imaging camera.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalResolution) {
+    /**
+     *  The thermal imaging camera resolution is 336x256.
+     */
+    DJICameraThermalResolution336x256,
+    /**
+     *  The thermal imaging camera resolution is 640x512.
+     */
+    DJICameraThermalResolution640x512,
+    /**
+     *  The thermal imaging camera resolution is unknown.
+     */
+    DJICameraThermalResolutionUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalFrameRateUpperBound
+//-----------------------------------------------------------------
+/**
+ *  The frame rate upper bound supported by the thermal camera.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalFrameRateUpperBound) {
+    /**
+     *  The thermal imaging camera frame rate upper bound is 8.3Hz.
+     */
+    DJICameraThermalFrameRateUpperBound8p3Hz,
+    /**
+     *  The thermal imaging camera frame rate upper bound is 30Hz.
+     */
+    DJICameraThermalFrameRateUpperBound30Hz,
+    /**
+     *  The thermal imaging camera frame rate upper bound is unknown.
+     */
+    DJICameraThermalFrameRateUpperBoundUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalLens
+//-----------------------------------------------------------------
+/**
+ *  The lens model of the thermal imaging camera.
+ *  Supported only by thermal imaging cameras. 
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalLensModel) {
+    /**
+     *  The thermal imaging camera's lens focal length is 6.8 mm.
+     */
+    DJICameraThermalLensModel6p8mm,
+    /**
+     *  The thermal imaging camera's lens focal length is 7.5 mm.
+     */
+    DJICameraThermalLensModel7p5mm,
+    /**
+     *  The thermal imaging camera's lens focal length is 9 mm.
+     */
+    DJICameraThermalLensModel9mm,
+    /**
+     *  The thermal imaging camera's lens focal length is 13 mm.
+     */
+    DJICameraThermalLensModel13mm,
+    /**
+     *  The thermal imaging camera's lens focal length is 19 mm.
+     */
+    DJICameraThermalLensModel19mm,
+    /**
+     *  The thermal imaging camera's lens focal length is unknown.
+     */
+    DJICameraThermalLensModelUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalProfile
+//-----------------------------------------------------------------
+/**
+ *  The profile of the thermal imaging camera, which includes information about resolution, frame rate and focal length.
+ *  Supported only by thermal imaging cameras.
+ */
+typedef struct {
+    /**
+     *  The supported resolution of the thermal imaging camera.
+     */
+    DJICameraThermalResolution resolution;
+    /**
+     *  The supported frame rate upper bound of the thermal imaging camera.
+     */
+    DJICameraThermalFrameRateUpperBound frameRateUpperBound;
+    /**
+     *  The lens model of the thermal imaging camera.
+     */
+    DJICameraThermalLensModel lensModel;
+} DJICameraThermalProfile;
+
 
 /*********************************************************************************/
 #pragma mark - Others
@@ -978,7 +1543,7 @@ typedef NS_ENUM (NSUInteger, DJICameraCustomSettings){
 #pragma mark DJICameraDigitalFilter
 //-----------------------------------------------------------------
 /**
- *  Camera digital filters. The default value is DJICameraDigitalFilterNone.
+ *  Camera digital filters. The default value is `DJICameraDigitalFilterNone`.
  */
 typedef NS_ENUM (NSUInteger, DJICameraDigitalFilter){
     /**
@@ -1081,6 +1646,35 @@ typedef NS_ENUM (NSUInteger, DJICameraDigitalFilter){
      *  The digital filter is unknown.
      */
     DJICameraDigitalFilterUnknown = 0xFF
+};
+
+//-----------------------------------------------------------------
+#pragma mark DJICameraThermalDigitalZoomScale
+//-----------------------------------------------------------------
+/**
+ *  Camera Thermal Digital Zoom Scale. The default value is `DJICameraThermalDigitalZoomScalex1`.
+ */
+typedef NS_ENUM(NSUInteger, DJICameraThermalDigitalZoomScale) {
+    /**
+     *  Camera Thermal Digital Zoom Scale x1.
+     */
+    DJICameraThermalDigitalZoomScalex1,
+    /**
+     *  Camera Thermal Digital Zoom Scale x2.
+     */
+    DJICameraThermalDigitalZoomScalex2,
+    /**
+     *  Camera Thermal Digital Zoom Scale x4.
+     */
+    DJICameraThermalDigitalZoomScalex4,
+    /**
+     *  Camera Thermal Digital Zoom Scale x8.
+     */
+    DJICameraThermalDigitalZoomScalex8,
+    /**
+     *  Camera Thermal Digital Zoom Scale unknown.
+     */
+    DJICameraThermalDigitalZoomScaleUnknown = 0xFF
 };
 
 //-----------------------------------------------------------------

@@ -28,7 +28,7 @@ class FCActionsTableViewController: DemoTableViewController {
     
     func configeItems () {
     
-        self.sectionNames = ["General", "Orientation Mode", "Virtural Stick"]
+        self.sectionNames = ["General", "Orientation Mode", "Virtural Stick", "Intelligent Assistant"]
         //General
         let item0:DemoSettingItem = DemoSettingItem(name: "General Control", andClass: FCGeneralControlViewController.self)
         let item1:DemoSettingItem = DemoSettingItem(name: "Compass", andClass: FCCompassViewController.self)
@@ -42,7 +42,7 @@ class FCActionsTableViewController: DemoTableViewController {
             let  movable:Bool = landingGear!.isLandingGearMovable()
             
             if (movable == true) {
-                let item3: DemoSettingItem = DemoSettingItem(name: "Landing Gear", andClass: FCCompassViewController.self)
+                let item3: DemoSettingItem = DemoSettingItem(name: "Landing Gear", andClass: FCLandingGearViewController.self)
                 self.items.append([item0, item1, item2, item3])
             }else{
                 self.items.append([item0, item1, item2])
@@ -52,7 +52,10 @@ class FCActionsTableViewController: DemoTableViewController {
         self.items.append([DemoSettingItem(name:"Intelligent Orientation", andClass:nil)])
         // Virtual Stick in storyboard
         self.items.append([DemoSettingItem(name:"Virtual Stick", andClass:nil)])
-    
+        // Intelligent Assistent in storyboard
+        if (fc != nil && fc?.intelligentFlightAssistant != nil){
+            self.items.append([DemoSettingItem(name:"Intelligent Assistant", andClass:FCIntelligentAssistantViewController.self)])
+        }
     }
     
     //Passes an instance of the current component selected to IndividualComponentViewController

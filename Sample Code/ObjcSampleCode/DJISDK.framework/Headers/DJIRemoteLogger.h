@@ -6,35 +6,75 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef NS_ENUM (NSUInteger, DJILogLevel) {
+/**
+ *  The DJI Remote Log levels.
+ */
+typedef NS_ENUM(NSUInteger, DJILogLevel) {
+    /**
+     *  Remote Log level off.
+     */
     DJILogLevelOff = 0,
+    /**
+     *  Remote Log level Error.
+     */
     DJILogLevelError,
+    /**
+     *  Remote Log level Warn.
+     */
     DJILogLevelWarn,
+    /**
+     *  Remote Log level Debug.
+     */
     DJILogLevelDebug,
+    /**
+     *  Remote Log level Info.
+     */
     DJILogLevelInfo,
+    /**
+     *  Remote Log level Verbose.
+     */
     DJILogLevelVerbose
-
+    
 };
 
 /**
- *  This class provides class methods for you to get information of current log level. It also contains methods to configure the logger.
+ *  This class provides methods for you to get information about the current log level. It also contains methods to configure the logger.
  *
  */
 @interface DJIRemoteLogger : NSObject
 
+/**
+ *  Returns the current Log level.
+ */
 + (DJILogLevel)currentLogLevel;
+
+/**
+ *  Set the current level of remote log
+ */
 + (void)setCurrentLogLevel:(DJILogLevel)level;
 
-//Preferred method to configure the logger
+/**
+ *  Preferred method to configure the logger
+ */
 + (void)configureLoggerWithDeviceId:(NSString *)deviceID URLString:(NSString *)urlString showLogInConsole:(BOOL)showLogInConsole;
+
+/**
+ *  Reset Remote Logger
+ */
 + (void)resetLogger;
 
+/**
+ *  Log with level, file, function, line and format.
+ */
 + (void)logWithLevel:(DJILogLevel)level
                 file:(const char *)file
             function:(const char *)function
                 line:(NSUInteger)line
               format:(NSString *)format, ...;
 
+/**
+ *  Log with level, file, function, line and string.
+ */
 + (void)logWithLevel:(DJILogLevel)level
                 file:(const char *)file
             function:(const char *)function

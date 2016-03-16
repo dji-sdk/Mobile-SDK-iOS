@@ -11,30 +11,30 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  WiFi frequency band
+ *  WiFi frequency band.
  */
 typedef NS_ENUM (uint8_t, DJIWiFiFrequencyBand){
     /**
-     *  The WiFi Frequency band is 2.4G
+     *  The WiFi Frequency band is 2.4G.
      */
     DJIWiFiFrequencyBand2Dot4G,
     /**
-     *  The WiFi Frequency band is 5.8G
+     *  The WiFi Frequency band is 5.8G.
      */
     DJIWiFiFrequencyBand5Dot8G,
     /**
-     *  The WiFi Frequency is unknown
+     *  The WiFi Frequency is unknown.
      */
     DJIWiFiFrequencyBandUnknown = 0xFF,
-
+    
 };
 
 /**
- *  WiFi Signal Quality - for Osmo only. WiFi Signal quality as measured by Osmo.
+ *  WiFi Signal Quality - as measuremed by Osmo, Phantom 3 4K and Phantom 3 Standard.
  */
 typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
     /**
-     *  WiFi Signal Quality is good
+     *  WiFi Signal Quality is good.
      */
     DJIWiFiSignalQualityGood = 0,
     /**
@@ -46,7 +46,7 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
      */
     DJIWiFiSignalQualityBad = 2,
     /**
-     *  WiFi Signal Quality is Unknown
+     *  WiFi Signal Quality is Unknown.
      */
     DJIWiFiSignalQualityUnknown = 0xFF,
 };
@@ -63,10 +63,10 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 @optional
 
 /**
- *  Updates WiFi Signal Quality.
+ *  Updates the WiFi Signal Quality.
  *
- *  @param link DJIWiFiLink object
- *  @param quality WiFi signal quality
+ *  @param link `DJIWiFiLink` object.
+ *  @param quality WiFi signal quality.
  *
  */
 - (void)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdatesWiFiSignalQuality:(DJIWiFiSignalQuality)quality;
@@ -82,7 +82,7 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 @interface DJIWiFiLink : NSObject
 
 /**
- *  Returns the DJIWiFiLink delegate.
+ *  Returns the `DJIWiFiLink` delegate.
  */
 @property (nonatomic, weak) id <DJIWiFiLinkDelegate> delegate;
 
@@ -97,32 +97,32 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 #pragma mark SSID and Password
 //-----------------------------------------------------------------
 /**
- *  Gets WiFi SSID.
+ *  Gets the WiFi SSID.
  *
  *  @param block Remote execution result error block.
  */
 - (void)getWiFiSSIDWithCompletion:(void (^)(NSString *ssid, NSError *_Nullable error))block;
 
 /**
- *  Sets WiFi SSID.
+ *  Sets the `WiFi SSID.
  *
- *  @param ssid the WiFi ssid want to change. It should just include alphabet, number, space, '-' and should not be more than 30 characters.
+ *  @param ssid the WiFi ssid want to change. It should only include alphabetic characters, numbers, spaces, '-' and should not be more than 30 characters.
  *  @param block Remote execution result error block.
  *
  */
 - (void)setWiFiSSID:(NSString *)ssid withCompletion:(DJICompletionBlock)block;
 
 /**
- *  Gets WiFi Password.
+ *  Gets the WiFi Password.
  *
  *  @param block Remote execution result error block.
  */
 - (void)getWiFiPasswordWithCompletion:(void (^)(NSString *password, NSError *_Nullable error))block;
 
 /**
- *  Sets WiFi Password.
+ *  Sets the WiFi Password.
  *
- *  @param password The new WiFi password. It should be at least 8 characters and only includes alphabet characters and numbers.
+ *  @param password The new WiFi password. It must be at least 8 characters and can only includes alphabetic characters and numbers.
  *  @param block Remote execution result error block.
  */
 - (void)setWiFiPassword:(NSString *)password withCompletion:(DJICompletionBlock)block;
@@ -132,14 +132,14 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 #pragma mark Frequency Band Selection
 //-----------------------------------------------------------------
 /**
- *  YES if product allows user to change WiFi frequency bands.
- *  Currently, only Osmo supports this feature.
+ *  YES if the product allows the user to change WiFi frequency bands.
+ *  Only Osmo supports this feature.
  */
 - (BOOL)isWiFiFrequencyBandEditable;
 
 /**
- *  Sets WiFi frequency band.
- *  It can be called only if isWiFiFrequencyBandEditable returns YES.
+ *  Sets the WiFi frequency band.
+ *  It can be called only if `isWiFiFrequencyBandEditable` returns YES.
  *
  *  @param frequencyBand WiFi frequency band to change to.
  *  @param block Remote execution result error block.
@@ -147,8 +147,8 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 - (void)setWiFiFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand withCompletion:(DJICompletionBlock)block;
 
 /**
- *  Gets current WiFi frequency band.
- *  It can be called only if isWiFiFrequencyBandEditable returns YES.
+ *  Gets the current WiFi frequency band.
+ *  It can be called only if `isWiFiFrequencyBandEditable` returns YES.
  *
  *  @param block Remote execution result error block.
  */

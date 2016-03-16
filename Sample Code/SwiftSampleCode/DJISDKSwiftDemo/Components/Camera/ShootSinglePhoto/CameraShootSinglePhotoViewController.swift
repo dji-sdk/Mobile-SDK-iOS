@@ -29,8 +29,6 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
         }
     }
     
-    var videoFeedView: UIView? = nil
-    
     @IBOutlet weak var shootPhotoButton: UIButton!
     
     override func viewWillAppear(animated: Bool) {
@@ -124,21 +122,12 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
     }
 
     func setVideoPreview() {
-        self.videoFeedView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        self.view!.addSubview(self.videoFeedView!)
-        self.view!.sendSubviewToBack(self.videoFeedView!)
-        //    self.videoFeedView.backgroundColor = [UIColor grayColor];
         VideoPreviewer.instance().start()
-        VideoPreviewer.instance().setView(self.videoFeedView)
+        VideoPreviewer.instance().setView(self.view)
     }
 
     func cleanVideoPreview() {
         VideoPreviewer.instance().unSetView()
-        VideoPreviewer.removePreview()
-        if self.videoFeedView != nil {
-            self.videoFeedView!.removeFromSuperview()
-            self.videoFeedView = nil
-        }
     }
 
     func toggleShootPhotoButton() {
@@ -148,7 +137,7 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
         memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().dataQueue.push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(pBuffer, length: Int32(size))
     }
 
     func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {

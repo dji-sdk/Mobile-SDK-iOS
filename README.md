@@ -63,7 +63,7 @@ Once you finish it, build and run the project and you can start to try different
 
 ## DJI Bridge App
 
-DJI Bridge App is a universal app supports both iPhone and iPad. You can use it to debug app for Phantom 3 Professional, Phantom 3 Advanced, Inspire 1, M100 and other products using USB/MFI connection between RC and your app.
+DJI Bridge App is a universal app supports both iPhone and iPad. You can use it to debug app for Phantom 4, Phantom 3 Professional, Phantom 3 Advanced, Inspire 1, M100 and other products using USB/MFI connection between RC and your app.
 
 For more details, please check the [**DJI Bridge App Tutorial**](./DJIBridgeAppDemo/README.md).
 
@@ -183,7 +183,7 @@ You can get support from DJI with the following methods:
 
 ## DJI Bridge App
 
-DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可以使用它来为Phantom 3 Professional, Phantom 3 Advanced， Inspire 1, M100 和其它产品进行应用程序调试操作。它使用了USB 或者MFI，将遥控器和你的应用程序连接起来.
+DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可以使用它来为Phantom 4, Phantom 3 Professional, Phantom 3 Advanced， Inspire 1, M100 和其它产品进行应用程序调试操作。它使用了USB 或者MFI，将遥控器和你的应用程序连接起来.
 
 想了解更多信息，请查看: [**DJI Bridge App 教程**](./DJIBridgeAppDemo/README.md).
 

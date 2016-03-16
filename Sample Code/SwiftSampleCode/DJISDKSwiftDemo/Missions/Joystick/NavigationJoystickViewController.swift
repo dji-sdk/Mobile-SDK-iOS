@@ -9,12 +9,6 @@ import UIKit
 import CoreLocation
 import DJISDK
 
-
-let DeviceSystemVersion = (CFloat(UIDevice.currentDevice().systemVersion)!)
-let iOS8System = (DeviceSystemVersion >= 8.0)
-let SCREEN_WIDTH = (iOS8System ? UIScreen.mainScreen().bounds.size.width : UIScreen.mainScreen().bounds.size.height)
-let SCREEN_HEIGHT = (iOS8System ? UIScreen.mainScreen().bounds.size.height : UIScreen.mainScreen().bounds.size.width)
-
 class NavigationJoystickViewController: DJIBaseViewController, DJICameraDelegate, DJIFlightControllerDelegate {
     
     var mThrottle: CGFloat = 0.0

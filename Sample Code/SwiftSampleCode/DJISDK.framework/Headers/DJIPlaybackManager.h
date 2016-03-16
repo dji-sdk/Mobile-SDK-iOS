@@ -14,8 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJIPlaybackManager;
 @class DJICameraPlaybackState;
 
+/**
+ *  Block invoked when preparing a file for download.
+ */
 typedef void (^DJIFileDownloadPreparingBlock)(NSString *_Nullable fileName, DJIDownloadFileType fileType, NSUInteger fileSize, BOOL *skip);
+
+/**
+ *  Block invoked when a file is downloading.
+ */
 typedef void (^DJIFileDownloadingBlock)(NSData *_Nullable data, NSError *_Nullable error);
+
+/**
+ *  Block invoked after a file has been downloaded.
+ */
 typedef void (^DJIFileDownloadCompletionBlock)();
 
 /*********************************************************************************/
@@ -23,16 +34,16 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 /*********************************************************************************/
 
 /**
- *  The protocol provides delegate method to receive the updated state of the playback manager.
+ *  The protocol provides a delegate method to receive the updated state of the playback manager.
  */
 @protocol DJIPlaybackDelegate <NSObject>
 
 @required
 /**
- *  Updates playback state of the camera. This update method will only be called when the camera's work
- *  mode is set to DJICameraModePlayback.
+ *  Updates the playback state of the camera. This update method will only be called when the camera's work
+ *  mode is set to `DJICameraModePlayback`.
  *
- *  @param playbackState Camera's playback state.
+ *  @param playbackState The camera's playback state.
  */
 - (void)playbackManager:(DJIPlaybackManager *)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState;
 
@@ -44,14 +55,17 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 
 /**
  *  The playback manager is used to interact with the playback system of the camera.
- *  By using the manager, user can control the playback system.
+ *  By using the playback manager, the user can control the playback system.
  */
 @interface DJIPlaybackManager : NSObject
 
+/**
+ *  Returns the delegate of DJIPlaybackManager
+ */
 @property(nonatomic, weak) id<DJIPlaybackDelegate> delegate;
 
 /**
- *  This enables the user to select, download and/or delete multiple media files when the camera is in Playback mode.
+ *  This enables the user to select, download, or delete multiple media files when the camera is in Playback mode.
  */
 - (void)enterMultipleEditMode;
 
@@ -61,7 +75,7 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 - (void)exitMultipleEditMode;
 
 /**
- *  Selects or unselects a file at the specified index of the current page. This index is unrelated to filename, and used in multiple edit mode.
+ *  Selects or unselects a file at the specified index of the current page. This index is unrelated to the filename, and is used in multiple edit mode.
  *
  *  @param index Index at which to select a file.
  */
@@ -93,14 +107,11 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 - (void)deleteAllSelectedFiles;
 
 /**
- *  Downloads the selected files. When this method is called, the dataBlock gets called continuously until all the data is downloaded.
- *  The prepare and completion blocks are called once for each file being downloaded. In the prepareBlock, you can get the forthcoming file's info, like file name, file size,
- *  etc. If an error occurs, the overallCompletionBlock will be called with an error returned. If the entire download process finishes successfuly, overallCompletionBlock will
- *  be called without any errors.
+ *  Downloads the selected files. When this method is called, the `dataBlock` is called continuously until all the data is downloaded.
+ *  The prepare and completion blocks are called once for each file being downloaded. In the `prepareBlock`, you can get the forthcoming file's information, including the file name, file size, etc. If an error occurs, the `overallCompletionBlock` will be called with an error returned. If the entire download process finishes successfuly, `overallCompletionBlock` will be called without any errors.
  *
  *  @param prepareBlock         Callback to prepare each file for download.
- *  @param dataBlock            Callback while a file is downloading. The dataBlock can be called multiple times for a file. The error argument in DJIFileDownloadingBlock is
- *                              not used, so should be ignored.
+ *  @param dataBlock            Callback while a file is downloading. The dataBlock can be called multiple times for a file. The error argument in `DJIFileDownloadingBlock` is not used and should be ignored.
  *  @param fileCompletionBlock  Callback after each file have been downloaded.
  *  @param finishBlock          Callback after the downloading is finished.
  */
@@ -123,7 +134,7 @@ typedef void (^DJIFileDownloadCompletionBlock)();
 
 /**
  *  Enters single file preview mode for a file at the specified index. In order for this method to be called,
- *  the camera work mode should be DJICameraModePlayback.
+ *  the camera work mode must be `DJICameraModePlayback`.
  *
  *  @param index File to be previewed at the specified index.
  */

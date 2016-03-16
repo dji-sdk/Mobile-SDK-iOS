@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- *  The class is an abstract class representing the progress of an executing mission.
+ *  `DJIMissionProgressStatus` is an abstract class representing the progress of an executing mission.
  */
 @interface DJIMissionProgressStatus : NSObject
 
 /**
- *  Error happens in mission execution.
+ *  An error has occurred during mission execution.
  */
 @property(nonatomic, readonly) NSError *_Nullable error;
 
@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJIMission;
 
 /**
- *  Returns the progress status from 0.0 to 1.0
+ *  Returns the progress status using a range of 0.0 to 1.0.
  */
 typedef void (^_Nullable DJIMissionProgressHandler)(float progress);
 
@@ -34,19 +34,19 @@ typedef void (^_Nullable DJIMissionProgressHandler)(float progress);
  *  Download mission completion block.
  *
  *  @param newMission New downloaded mission.
- *  @param error      Error happens in downloading.
+ *  @param error      An error occurred while downloading.
  */
 typedef void (^_Nullable DJIMissionDownloadCompletionBlock)(DJIMission *_Nullable newMission, NSError *_Nullable error);
 
 /**
- *  The class is an abstract class representing a mission that can be executed by the mission manager.
+ *  `DJIMission` is an abstract class representing a mission that can be executed by the mission manager.
  */
 @interface DJIMission : NSObject
 
 /**
- *  Whether current mission can be paused.
+ *  Determines whether current mission can be paused.
  *
- *  @return YES if mission can be paused. No if mission can not be paused.
+ *  @return YES if the mission can be paused. No if the mission can not be paused.
  */
 - (BOOL)isPausable;
 

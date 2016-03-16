@@ -2,7 +2,7 @@
 //  StartupViewController.swift
 //  DJISDKSwiftDemo
 //
-//  Created by Dhanush Balachandran on 11/13/15.
+//  Created by DJI on 11/13/15.
 //  Copyright © 2015 DJI. All rights reserved.
 //
 
@@ -25,16 +25,7 @@ class StartupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if APP_KEY == "Please enter App Key Here"
-        {
-            let alert = UIAlertController(title: "Message", message: "Please enter App Key", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        else
-        {
-            DJISDKManager.registerApp(APP_KEY, withDelegate: self)
-        }
+        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
         
         openComponents.enabled = false;
 
@@ -58,7 +49,7 @@ extension StartupViewController : DJISDKManagerDelegate
         logDebug("Registered!")
         #if arch(i386) || arch(x86_64)
             //Simulator
-            DJISDKManager.enterDebugModeWithDebugId("192.168.1.102")
+            DJISDKManager.enterDebugModeWithDebugId("10.10.2.72")
         #else
             //Device
             DJISDKManager.startConnectionToProduct()

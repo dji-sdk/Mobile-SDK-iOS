@@ -54,8 +54,11 @@ typedef NS_ENUM (NSUInteger, DJIPanoramaMode) {
 @end
 
 /**
- *  User can use this mission to rotate camera 360 or 180 degrees to takes several photos. Then download the photos to render a panorama. Please note that
- *  photo stitching is not provided in the SDK. In full circle mode, 8 photos are taken. In half circle mode, 5 photos are taken.
+ *  During a Panorama Mission, the user can rotate the camera 360 or 180 degrees to take several photos, and then download the photos to render a panorama.
+ *  In full circle mode, 8 photos are taken. In half circle mode, 5 photos are taken.
+ *  Commands cannot be sent to the camera until the mission is finished. The Panorama Mission does not support the image stitching feature, so the images must be stitched manually. All the images will be stored on the SD card.
+ *
+ *  Panorama Mission is only supported on OSMO.
  */
 @interface DJIPanoramaMission : DJIMission
 
@@ -70,7 +73,7 @@ typedef NS_ENUM (NSUInteger, DJIPanoramaMode) {
 - (id)initWithPanoramaMode:(DJIPanoramaMode)mode;
 
 /**
- *  Retrieves the DJIMedia object for the recently finished panorama mission. Use `fetchSubMediaFileListWithCompletion:` method on the retrieved DJIMedia to
+ *  Retrieves the `DJIMedia` object for the recently finished panorama mission. Call the `fetchSubMediaFileListWithCompletion:` method on the retrieved `DJIMedia` to
  *  retrieve the panorama photos.
  */
 - (void)getPanoramaMediaFileWithCompletion:(void (^)(DJIMedia *_Nullable panoMedia, NSError *_Nullable error))block;

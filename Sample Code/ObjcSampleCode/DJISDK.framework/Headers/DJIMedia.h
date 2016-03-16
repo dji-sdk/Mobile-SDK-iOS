@@ -47,7 +47,10 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
      *  Panorama
      */
     DJIMediaTypePanorama,
-
+    /**
+     *  TIFF
+     */
+    DJIMediaTypeTIFF
 };
 
 /*********************************************************************************/
@@ -55,7 +58,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 /*********************************************************************************/
 
 /**
- *  This class contains the information about a multi-media file on the SD card. It also provides methods to fetch the data of the file.
+ *  This class contains information about a multi-media file on the SD card. It also provides methods to retrieve the data in the file.
  */
 @interface DJIMedia : NSObject
 
@@ -77,7 +80,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 
 /**
  *  If the media file is a video, this property returns the duration
- *  of the video in seconds. Will be 0s if media file is a photo.
+ *  of the video in seconds. Will be 0s if the media file is a photo.
  */
 @property(nonatomic, readonly) float durationInSeconds;
 
@@ -88,7 +91,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 
 /**
  *  Returns the thumbnail for this media. If this property returns nil,
- *  the user should call fetchThumbnailWithCompletion
+ *  call `fetchThumbnailWithCompletion`.
  */
 @property(nonatomic, readonly) UIImage *_Nullable thumbnail;
 
@@ -96,27 +99,27 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
  *  Fetches this media's thumbnail from the SD card. This method can be used
  *  to fetch either a photo or a video, where the first frame of the video is
  *  the thumbnail that is fetched.
- *  It is not available if the media type is DJIMediaTypePanorama.
+ *  It is not available if the media type is `DJIMediaTypePanorama`.
  *
  *  @param block Completion block.
  */
 - (void)fetchThumbnailWithCompletion:(DJICompletionBlock)block;
 
 /**
- *  Fetches this media's data from the SD card. The difference with fetching
- *  the media data and fetching the thumbnil is that fetching the thumbnail will
- *  return a low-resolution image of the actual picture while fetching the media
- *  data will return all data of a video or an image.
+ *  Fetches this media's data from the SD card. The difference between fetching
+ *  the media data and fetching the thumbnail is that fetching the thumbnail will
+ *  return a low-resolution image of the actual picture, while fetching the media
+ *  data will return all data for a video or image.
  *
- *  @param block Data callback will be called when media data has been received
+ *  @param block Data callback will be invoked when media data has been received
  *  from the SD card or an error has occurred.
  */
 - (void)fetchMediaDataWithCompletion:(void (^)(NSData *_Nullable data, BOOL *_Nullable stop, NSError *_Nullable error))block;
 
 /**
  *  Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of a still picture or
- *  the first frame of a video. The mediaType of this media object should be 'DJIMediaTypeJPG'.
- *  It is not available if the media type is DJIMediaTypePanorama.
+ *  the first frame of a video. The `mediaType` of this media object should be 'DJIMediaTypeJPG'.
+ *  It is not available if the media type is `DJIMediaTypePanorama`.
  *
  *  @param block Remote execute result callback.
  */
@@ -125,7 +128,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 
 /**
  *  Fetch sub media files.
- *  It is available only when the media type is DJIMediaTypePanorama. User should use this method to fetch the set
+ *  This is available only when the media type is `DJIMediaTypePanorama`. Call this method to fetch the set
  *  of photos shot in a panorama mission.
  *
  *  @param block Remote execute result callback.

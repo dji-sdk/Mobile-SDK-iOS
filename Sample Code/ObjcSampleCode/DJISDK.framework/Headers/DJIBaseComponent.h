@@ -13,8 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJIBaseProduct;
 
 /**
- *  The DJIComponentConnectivityDelegate defines methods that are called by DJIBaseComponent object
- *  in response to the connectivity change.
+ *  The `DJIComponentConnectivityDelegate` defines methods that are called by the `DJIBaseComponent` object
+ *  in response to a connectivity change.
+ *  A component can be a camera, gimbal, remote controller, etc. A DJI product consists of several components.
  *
  */
 @protocol DJIComponentConnectivityDelegate <NSObject>
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 /**
- *  Called when connectivity status changed for the component.
+ *  Called when the connectivity status has changed for the component.
  */
 - (void)component:(DJIBaseComponent *)component connectivityChanged:(BOOL)isConnected;
 
@@ -36,28 +37,28 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DJIBaseComponent : NSObject
 
 /**
- *  Use this delegate to get notified on connectivity status changes.
+ *  Use this delegate to be notified about connectivity status changes.
  */
 @property (nonatomic, weak) id<DJIComponentConnectivityDelegate> connectivityDelegate;
 
 /**
- *  The connectivity of the component.
+ *  The connectivity status of the component.
  */
 @property (assign, nonatomic, readonly, getter = isConnected) BOOL connected;
 
 /**
- *  Product to which this component is connected
+ *  The product to which this component is connected.
  */
 @property (nonatomic, readonly, weak)  DJIBaseProduct *_Nullable product;
 
 /**
- *  Get component's firmware version
+ *  Get the component's firmware version.
  *
  */
 - (void)getFirmwareVersionWithCompletion:(void (^)(NSString *_Nullable version, NSError *_Nullable error))block;
 
 /**
- *  Get serial number of the component. Please note this serial number does not match with the serial number found in the physical component.
+ *  Get the serial number of the component. Note that this serial number does not match the serial number found on the physical component.
  *
  */
 - (void)getSerialNumberWithCompletion:(void (^)(NSString *_Nullable serialNumber, NSError *_Nullable error))block;

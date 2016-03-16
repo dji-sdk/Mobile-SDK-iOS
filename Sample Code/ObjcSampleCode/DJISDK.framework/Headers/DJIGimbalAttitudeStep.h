@@ -10,13 +10,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Subclass of DJIMission Step, you can control gimbal attitude using this mission step.
+ *  Subclass of `DJIMission`. You can control the gimbal attitude using this mission step.
  *
  */
 @interface DJIGimbalAttitudeStep : DJIMissionStep
 
 /**
- *  Completion time in seconds for gimbal go to target attitude from current attitude. Default is 1s.
+ *  Completion time, in seconds, for the gimbal to go to the target attitude from current attitude. Default is 1 second.
  */
 @property(nonatomic, assign) double completionTime;
 
@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param attitude  Gimbal target attitude.
  *
- *  @return Instance of DJIGimbalAttitudeStep.
+ *  @return Instance of `DJIGimbalAttitudeStep`.
  */
 - (instancetype _Nullable)initWithAttitude:(DJIGimbalAttitude)attitude;
 

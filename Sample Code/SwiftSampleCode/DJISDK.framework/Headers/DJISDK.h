@@ -7,13 +7,17 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for DJISDK.
+/**
+ *  Project version number for DJISDK.
+ */
 FOUNDATION_EXPORT double DJISDKVersionNumber;
 
-//! Project version string for DJISDK.
+/**
+ *  Project version string for DJISDK.
+ */
 FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <DJISDK/PublicHeader.h>
+// In this header, import all the public headers of your framework using statements like #import <DJISDK/PublicHeader.h>
 
 /*********************************************************************************/
 #pragma mark - SDK Manager
@@ -37,6 +41,8 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIFlightLimitation.h>
 #import <DJISDK/DJILandingGear.h>
 #import <DJISDK/DJICompass.h>
+#import <DJISDK/DJIIntelligentFlightAssistant.h>
+#import <DJISDK/DJIIMUState.h>
 
 //-----------------------------------------------------------------
 #pragma mark RemoteController
@@ -99,6 +105,8 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIFollowMeMission.h>
 #import <DJISDK/DJICustomMission.h>
 #import <DJISDK/DJIPanoramaMission.h>
+#import <DJISDK/DJITapFlyMission.h>
+#import <DJISDK/DJIActiveTrackMission.h>
 
 #import <DJISDK/DJIMissionStep.h>
 #import <DJISDK/DJIWaypointStep.h>

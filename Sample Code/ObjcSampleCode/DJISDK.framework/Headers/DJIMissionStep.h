@@ -15,9 +15,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Abstract class for all mission steps. A mission step represents an operation related to one kind of missions or a component. Developer can create a custom mission with multiple steps to accomplish complex tasks.
+ *  Abstract class for all mission steps. A mission step represents an operation related to one kind of mission or a component. You can create a custom mission with multiple steps to accomplish complex tasks.
  *
- *  @warning The execution of a custom mission highly depends on the combination and order of mission steps. User is responsible to check the relation between steps and organize the steps in reasonable order.
+ *  @warning The execution of a custom mission depends on the combination and order of mission steps. The user must check the relationships between steps and organize the steps in a reasonable order.
  *
  *  @see DJICustomMission
  */

@@ -2,7 +2,7 @@
 //  LogHelper.swift
 //  DJISDKSwiftDemo
 //
-//  Created by Dhanush Balachandran on 11/20/15.
+//  Created by DJI on 11/20/15.
 //  Copyright © 2015 DJI. All rights reserved.
 //
 

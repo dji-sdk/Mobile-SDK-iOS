@@ -17,7 +17,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeHeading){
      *  Aircraft's heading will be controlled by the remote controller.
      */
     DJIFollowMeHeadingControlledByRemoteController,
-
+    
     /**
      *  Aircraft's heading remains toward the coordinate it is following.
      */
@@ -54,7 +54,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 
 /**
  *  Returns the horizontal distance in meters between the aircraft and the coordinate the
- *  aircraft needs to follow.
+ *  aircraft must follow.
  */
 @property(nonatomic, readonly) float horizontalDistance;
 
@@ -65,7 +65,8 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /*********************************************************************************/
 
 /**
- *  The class represents a follow-me mission. User can use it to make the aircraft follow the GPS device, like remote controller with GPS signal or mobile device.
+ *  The class represents a follow me mission. In a follow me mission, the aircraft is programmed to track and maintain a constant distant relative to some object, such as a person or a moving vehicle.
+ *  You can use it to make the aircraft follow a GPS device, such as a remote controller with a GPS signal or a mobile device.
  *
  */
 @interface DJIFollowMeMission : DJIMission
@@ -80,7 +81,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 @property(nonatomic, assign) CLLocationCoordinate2D followMeCoordinate;
 
 /**
- *  User's initial altitude(above sea level). If not use altitude follow, set zero.
+ *  User's initial altitude (above sea level). If not using altitude follow, set this property to zero.
  */
 @property(nonatomic, assign) float followMeAltitude;
 
@@ -92,6 +93,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /*********************************************************************************/
 #pragma mark - Mission Updates
 /*********************************************************************************/
+
 /**
  *  Updates the coordinate that the aircraft will follow. Once the follow me mission is initialized,
  *  this method is used to continuously update the coordinate to follow. If the aircraft doesn't receive an update
@@ -99,7 +101,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
  *  This is the only property or method in this class that can communicate with the aircraft during a mission.
  *  All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.
  *
- *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of current location.
+ *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of the current location.
  *  @param completion Completion block.
  *
  */
@@ -108,7 +110,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /**
  *  Updates the coordinate that the aircraft will follow with a customized altitude.
  *
- *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of current location.
+ *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of the current location.
  *  @param altitude   The following altitude.
  *  @param completion Completion block.
  *

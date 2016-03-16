@@ -19,19 +19,47 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Aircraft's model names.
+ *  The Aircraft's model name is unknown.
  */
 extern NSString *const DJIAircraftModelNameUnknownAircraft;
+/**
+ *  The Aircraft's model name is Inspire 1.
+ */
 extern NSString *const DJIAircraftModelNameInspire1;
+/**
+ *  The Aircraft's model name is Inspire 1 Pro.
+ */
 extern NSString *const DJIAircraftModelNameInspire1Pro;
+/**
+ *  The Aircraft's model name is Inspire 1 Raw.
+ */
 extern NSString *const DJIAircraftModelNameInspire1RAW;
+/**
+ *  The Aircraft's model name is Phantom 3 Professional.
+ */
 extern NSString *const DJIAircraftModelNamePhantom3Professional;
+/**
+ *  The Aircraft's model name is Phantom 3 Advanced.
+ */
 extern NSString *const DJIAircraftModelNamePhantom3Advanced;
+/**
+ *  The Aircraft's model name is Phantom 3 Standard.
+ */
 extern NSString *const DJIAircraftModelNamePhantom3Standard;
+/**
+ *  The Aircraft's model name is Phantom 3 4K.
+ */
 extern NSString *const DJIAircraftModelNamePhantom34K;
+/**
+ *  The Aircraft's model name is Matrice 100.
+ */
 extern NSString *const DJIAircraftModelNameMatrice100;
 /**
- *
+ *  The Aircraft's model name is Phantom 4.
+ */
+extern NSString *const DJIAircraftModelNamePhantom4;
+
+/**
  *  This class contains the components of an aircraft.
  */
 @interface DJIAircraft : DJIBaseProduct

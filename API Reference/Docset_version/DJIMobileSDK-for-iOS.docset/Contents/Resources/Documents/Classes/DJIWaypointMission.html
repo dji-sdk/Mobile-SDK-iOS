@@ -1,1214 +1,1721 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>DJIWaypointMission Class Reference</title>
-		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
-		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 963)" />
-	</head>
-	<body>
-		<header id="top_header">
-			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">DJI iOS Mobile SDK </a></h1>
-				<a id="developerHome" href="../index.html">DJI</a>
-			</div>
-			
-			<div id="title" role="banner">
-				<h1 class="hideInXcode">DJIWaypointMission Class Reference</h1>
-			</div>
-			<ul id="headerButtons" role="toolbar">
-				<li id="toc_button">
-					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
-				</li>
-				<li id="jumpto_button" role="navigation">
-					<select id="jumpTo">
-	<option value="top">Jump To&#133;</option>
-	
-	<option value="overview">Overview</option>
-	
-	
-	
-	
-	<option value="tasks">Tasks</option>
-	
-	
-	
-	
-	
-	<option value="properties">Properties</option>
-	
-	<option value="//api/name/autoFlightSpeed">&nbsp;&nbsp;&nbsp;&nbsp;autoFlightSpeed</option>
-	
-	<option value="//api/name/exitMissionOnRCSignalLost">&nbsp;&nbsp;&nbsp;&nbsp;exitMissionOnRCSignalLost</option>
-	
-	<option value="//api/name/finishedAction">&nbsp;&nbsp;&nbsp;&nbsp;finishedAction</option>
-	
-	<option value="//api/name/flightPathMode">&nbsp;&nbsp;&nbsp;&nbsp;flightPathMode</option>
-	
-	<option value="//api/name/gotoFirstWaypointMode">&nbsp;&nbsp;&nbsp;&nbsp;gotoFirstWaypointMode</option>
-	
-	<option value="//api/name/headingMode">&nbsp;&nbsp;&nbsp;&nbsp;headingMode</option>
-	
-	<option value="//api/name/maxFlightSpeed">&nbsp;&nbsp;&nbsp;&nbsp;maxFlightSpeed</option>
-	
-	<option value="//api/name/pointOfInterest">&nbsp;&nbsp;&nbsp;&nbsp;pointOfInterest</option>
-	
-	<option value="//api/name/repeatTimes">&nbsp;&nbsp;&nbsp;&nbsp;repeatTimes</option>
-	
-	<option value="//api/name/rotateGimbalPitch">&nbsp;&nbsp;&nbsp;&nbsp;rotateGimbalPitch</option>
-	
-	<option value="//api/name/waypointCount">&nbsp;&nbsp;&nbsp;&nbsp;waypointCount</option>
-	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/setAutoFlightSpeed:withCompletion:">&nbsp;&nbsp;&nbsp;&nbsp;+ setAutoFlightSpeed:withCompletion:</option>
-	
-	
-	
-	
-	<option value="instance_methods">Instance Methods</option>
-	
-	<option value="//api/name/addWaypoint:">&nbsp;&nbsp;&nbsp;&nbsp;- addWaypoint:</option>
-	
-	<option value="//api/name/addWaypoints:">&nbsp;&nbsp;&nbsp;&nbsp;- addWaypoints:</option>
-	
-	<option value="//api/name/getWaypointAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- getWaypointAtIndex:</option>
-	
-	<option value="//api/name/removeAllWaypoints">&nbsp;&nbsp;&nbsp;&nbsp;- removeAllWaypoints</option>
-	
-	<option value="//api/name/removeWaypoint:">&nbsp;&nbsp;&nbsp;&nbsp;- removeWaypoint:</option>
-	
-	<option value="//api/name/removeWaypointAtIndex:">&nbsp;&nbsp;&nbsp;&nbsp;- removeWaypointAtIndex:</option>
-	
-	
-	
-</select>
-				</li>
-			</ul>
-		</header>
-		<nav id="tocContainer" class="isShowingTOC">
-			<ul id="toc" role="tree">
-				
-<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DJIWaypointMission Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
 
+    <a name="//apple_ref/objc/Class/DJIWaypointMission" class="dashAnchor"></a>
 
+    <a title="DJIWaypointMission Class Reference"></a>
 
+    <header class="header">
+ 
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/dji-sdk/Mobile-SDK-iOS">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
 
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">iOS SDK Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      DJIWaypointMission Class Reference
+    </p>
 
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(CameraPlayback).html">DJICamera(CameraPlayback)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(CameraSettings).html">DJICamera(CameraSettings)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(Media).html">DJICamera(Media)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(SDCardOperations).html">DJICamera(SDCardOperations)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(SSDOperations).html">DJICamera(SSDOperations)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICamera(ThermalCamera).html">DJICamera(ThermalCamera)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJICameraParameters(Listener).html">DJICameraParameters(Listener)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJIFlightController(DJIFlightOrientationMode).html">DJIFlightController(DJIFlightOrientationMode)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJIFlightController(VirtualStickControlMode).html">DJIFlightController(VirtualStickControlMode)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/DJISDKManager(DebugServer).html">DJISDKManager(DebugServer)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/NSError(DJISDK).html">NSError(DJISDK)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIActiveTrackMission.html">DJIActiveTrackMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIActiveTrackMissionStatus.html">DJIActiveTrackMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIAirLink.html">DJIAirLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIAircraft.html">DJIAircraft</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIAuxLink.html">DJIAuxLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBaseComponent.html">DJIBaseComponent</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBaseProduct.html">DJIBaseProduct</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBattery.html">DJIBattery</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBatteryCell.html">DJIBatteryCell</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBatteryState.html">DJIBatteryState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIBatteryWarningInformation.html">DJIBatteryWarningInformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICamera.html">DJICamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraExposureParameters.html">DJICameraExposureParameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraLensState.html">DJICameraLensState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraParameters.html">DJICameraParameters</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraPlaybackState.html">DJICameraPlaybackState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraSDCardState.html">DJICameraSDCardState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraSSDState.html">DJICameraSSDState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICameraSystemState.html">DJICameraSystemState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICompass.html">DJICompass</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICustomMission.html">DJICustomMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJICustomMissionStatus.html">DJICustomMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFlightController.html">DJIFlightController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFlightControllerCurrentState.html">DJIFlightControllerCurrentState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFlightLimitation.html">DJIFlightLimitation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFollowMeMission.html">DJIFollowMeMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFollowMeMissionStatus.html">DJIFollowMeMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIFollowMeStep.html">DJIFollowMeStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGimbal.html">DJIGimbal</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGimbalAttitudeStep.html">DJIGimbalAttitudeStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGimbalConfig.html">DJIGimbalConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGimbalConstraints.html">DJIGimbalConstraints</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGimbalState.html">DJIGimbalState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)DJIGoHomeStep">DJIGoHomeStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIGoToStep.html">DJIGoToStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIHandheld.html">DJIHandheld</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIHandheldController.html">DJIHandheldController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIHotPointMission.html">DJIHotPointMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIHotPointMissionStatus.html">DJIHotPointMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIHotpointStep.html">DJIHotpointStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIIMUState.html">DJIIMUState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIIntelligentFlightAssistant.html">DJIIntelligentFlightAssistant</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJILBAirLink.html">DJILBAirLink</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJILandingGear.html">DJILandingGear</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIMedia.html">DJIMedia</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIMediaManager.html">DJIMediaManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIMission.html">DJIMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIMissionManager.html">DJIMissionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIMissionProgressStatus.html">DJIMissionProgressStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)DJIMissionStep">DJIMissionStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIPanoramaMission.html">DJIPanoramaMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIPanoramaMissionStatus.html">DJIPanoramaMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIPlaybackManager.html">DJIPlaybackManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIRCInfo.html">DJIRCInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIRecordVideoStep.html">DJIRecordVideoStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIRemoteController.html">DJIRemoteController</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIRemoteLogger.html">DJIRemoteLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJISDKManager.html">DJISDKManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIShootPhotoStep.html">DJIShootPhotoStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJISignalInformation.html">DJISignalInformation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes.html#/c:objc(cs)DJITakeoffStep">DJITakeoffStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJITapFlyMission.html">DJITapFlyMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJITapFlyMissionStatus.html">DJITapFlyMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIVisionDetectionSector.html">DJIVisionDetectionSector</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIVisionDetectionState.html">DJIVisionDetectionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWaypoint.html">DJIWaypoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWaypointAction.html">DJIWaypointAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWaypointMission.html">DJIWaypointMission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWaypointMissionStatus.html">DJIWaypointMissionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWaypointStep.html">DJIWaypointStep</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DJIWiFiLink.html">DJIWiFiLink</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAirLinkComponentKey">DJIAirLinkComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNameInspire1">DJIAircraftModelNameInspire1</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNameInspire1Pro">DJIAircraftModelNameInspire1Pro</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNameInspire1RAW">DJIAircraftModelNameInspire1RAW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNameMatrice100">DJIAircraftModelNameMatrice100</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNamePhantom34K">DJIAircraftModelNamePhantom34K</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNamePhantom3Advanced">DJIAircraftModelNamePhantom3Advanced</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNamePhantom3Professional">DJIAircraftModelNamePhantom3Professional</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNamePhantom3Standard">DJIAircraftModelNamePhantom3Standard</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNamePhantom4">DJIAircraftModelNamePhantom4</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIAircraftModelNameUnknownAircraft">DJIAircraftModelNameUnknownAircraft</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIBatteryComponentKey">DJIBatteryComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraComponentKey">DJICameraComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNamePhantom34KCamera">DJICameraDisplayNamePhantom34KCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNamePhantom3AdvancedCamera">DJICameraDisplayNamePhantom3AdvancedCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNamePhantom3ProfessionalCamera">DJICameraDisplayNamePhantom3ProfessionalCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNamePhantom3StandardCamera">DJICameraDisplayNamePhantom3StandardCamera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNamePhantom4Camera">DJICameraDisplayNamePhantom4Camera</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNameX3">DJICameraDisplayNameX3</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNameX5">DJICameraDisplayNameX5</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNameX5R">DJICameraDisplayNameX5R</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraDisplayNameXT">DJICameraDisplayNameXT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraFocusAreaColumn">DJICameraFocusAreaColumn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraFocusAreaRow">DJICameraFocusAreaRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraSpotMeteringAreaColumn">DJICameraSpotMeteringAreaColumn</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJICameraSpotMeteringAreaRow">DJICameraSpotMeteringAreaRow</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIFlightControllerComponentKey">DJIFlightControllerComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIGimbalComponentKey">DJIGimbalComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIHandheldControllerComponentKey">DJIHandheldControllerComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIHandheldModelNameOsmo">DJIHandheldModelNameOsmo</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIHandheldModelNameUnknownHandheld">DJIHandheldModelNameUnknownHandheld</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIHotPointMaxRadius">DJIHotPointMaxRadius</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIHotPointMinRadius">DJIHotPointMinRadius</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIMaxActionCount">DJIMaxActionCount</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIMaxActionRepeatTimes">DJIMaxActionRepeatTimes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIRemoteControllerComponentKey">DJIRemoteControllerComponentKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKBatteryErrorDomain">DJISDKBatteryErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKCameraErrorDomain">DJISDKCameraErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKErrorDomain">DJISDKErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKFlightControllerErrorDomain">DJISDKFlightControllerErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKGimbalErrorDomain">DJISDKGimbalErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKMissionErrorDomain">DJISDKMissionErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKRegistrationErrorDomain">DJISDKRegistrationErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKRemoteControllerErrorDomain">DJISDKRemoteControllerErrorDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKVersionNumber">DJISDKVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISDKVersionString">DJISDKVersionString</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraApertureRange">DJISupportedCameraApertureRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraExposureCompensationRange">DJISupportedCameraExposureCompensationRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraExposureModeRange">DJISupportedCameraExposureModeRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraISORange">DJISupportedCameraISORange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraModeRange">DJISupportedCameraModeRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraShutterSpeedRange">DJISupportedCameraShutterSpeedRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJISupportedCameraVideoResolutionAndFrameRateRange">DJISupportedCameraVideoResolutionAndFrameRateRange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickRollPitchControlMaxAngle">DJIVirtualStickRollPitchControlMaxAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickRollPitchControlMaxVelocity">DJIVirtualStickRollPitchControlMaxVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickRollPitchControlMinAngle">DJIVirtualStickRollPitchControlMinAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickRollPitchControlMinVelocity">DJIVirtualStickRollPitchControlMinVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickVerticalControlMaxPosition">DJIVirtualStickVerticalControlMaxPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickVerticalControlMaxVelocity">DJIVirtualStickVerticalControlMaxVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickVerticalControlMinPosition">DJIVirtualStickVerticalControlMinPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickVerticalControlMinVelocity">DJIVirtualStickVerticalControlMinVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickYawControlMaxAngle">DJIVirtualStickYawControlMaxAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickYawControlMaxAngularVelocity">DJIVirtualStickYawControlMaxAngularVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickYawControlMinAngle">DJIVirtualStickYawControlMinAngle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIVirtualStickYawControlMinAngularVelocity">DJIVirtualStickYawControlMinAngularVelocity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIWaypointMissionMaximumWaypointCount">DJIWaypointMissionMaximumWaypointCount</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@DJIWaypointMissionMinimumWaypointCount">DJIWaypointMissionMinimumWaypointCount</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIActiveTrackMissionExecutionState.html">DJIActiveTrackMissionExecutionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIAircraftRemainingBatteryState.html">DJIAircraftRemainingBatteryState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIBypassDirection.html">DJIBypassDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraAntiFlicker.html">DJICameraAntiFlicker</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraAperture.html">DJICameraAperture</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraContrast.html">DJICameraContrast</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraCustomSettings.html">DJICameraCustomSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraDigitalFilter.html">DJICameraDigitalFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraExposureCompensation.html">DJICameraExposureCompensation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraExposureMode.html">DJICameraExposureMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraFileIndexMode.html">DJICameraFileIndexMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraISO.html">DJICameraISO</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraLensFocusMode.html">DJICameraLensFocusMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraLensFocusStatus.html">DJICameraLensFocusStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraMeteringMode.html">DJICameraMeteringMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraMode.html">DJICameraMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPhotoAspectRatio.html">DJICameraPhotoAspectRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPhotoBurstCount.html">DJICameraPhotoBurstCount</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPhotoFileFormat.html">DJICameraPhotoFileFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPhotoQuality.html">DJICameraPhotoQuality</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPhotoTimeLapseFileFormat.html">DJICameraPhotoTimeLapseFileFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPlaybackDeletionStatus.html">DJICameraPlaybackDeletionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPlaybackFileFormat.html">DJICameraPlaybackFileFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraPlaybackMode.html">DJICameraPlaybackMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraSSDCapacity.html">DJICameraSSDCapacity</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraSSDOperationState.html">DJICameraSSDOperationState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraSharpness.html">DJICameraSharpness</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraShootPhotoMode.html">DJICameraShootPhotoMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraShutterSpeed.html">DJICameraShutterSpeed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalDigitalZoomScale.html">DJICameraThermalDigitalZoomScale</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalFrameRateUpperBound.html">DJICameraThermalFrameRateUpperBound</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalGainMode.html">DJICameraThermalGainMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalIsothermUnit.html">DJICameraThermalIsothermUnit</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalLensModel.html">DJICameraThermalLensModel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalPalette.html">DJICameraThermalPalette</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalROI.html">DJICameraThermalROI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalResolution.html">DJICameraThermalResolution</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraThermalScene.html">DJICameraThermalScene</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraVideoFileFormat.html">DJICameraVideoFileFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraVideoFrameRate.html">DJICameraVideoFrameRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraVideoResolution.html">DJICameraVideoResolution</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraVideoStandard.html">DJICameraVideoStandard</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICameraWhiteBalance.html">DJICameraWhiteBalance</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJICompassCalibrationStatus.html">DJICompassCalibrationStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIDownloadFileType.html">DJIDownloadFileType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFlightControllerFlightMode.html">DJIFlightControllerFlightMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFlightControllerGoHomeExecutionStatus.html">DJIFlightControllerGoHomeExecutionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFlightControllerNoFlyStatus.html">DJIFlightControllerNoFlyStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFlightOrientationMode.html">DJIFlightOrientationMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFollowMeHeading.html">DJIFollowMeHeading</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIFollowMeMissionExecutionState.html">DJIFollowMeMissionExecutionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGPSSignalStatus.html">DJIGPSSignalStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalJoystickAxis.html">DJIGimbalJoystickAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalRotateAngleMode.html">DJIGimbalRotateAngleMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalRotateDirection.html">DJIGimbalRotateDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalSmoothTrackAxis.html">DJIGimbalSmoothTrackAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalUserConfigType.html">DJIGimbalUserConfigType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIGimbalWorkMode.html">DJIGimbalWorkMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIHandheldPowerMode.html">DJIHandheldPowerMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIHandheldWiFiFrequencyType.html">DJIHandheldWiFiFrequencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIHotPointHeading.html">DJIHotPointHeading</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIHotPointStartPoint.html">DJIHotPointStartPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIHotpointMissionExecutionState.html">DJIHotpointMissionExecutionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIIMUCalibrationStatus.html">DJIIMUCalibrationStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIIMUSensorStatus.html">DJIIMUSensorStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkChannelSelectionMode.html">DJILBAirLinkChannelSelectionMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkDataRate.html">DJILBAirLinkDataRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkFPVVideoQualityLatency.html">DJILBAirLinkFPVVideoQualityLatency</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkOSDUnits.html">DJILBAirLinkOSDUnits</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkPIPDisplayMode.html">DJILBAirLinkPIPDisplayMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkPIPPosition.html">DJILBAirLinkPIPPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkSecondaryVideoFormat.html">DJILBAirLinkSecondaryVideoFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILBAirLinkSecondaryVideoOutputPort.html">DJILBAirLinkSecondaryVideoOutputPort</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILandingGearMode.html">DJILandingGearMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILandingGearStatus.html">DJILandingGearStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILensType.html">DJILensType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJILogLevel.html">DJILogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIMediaType.html">DJIMediaType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIPanoramaMode.html">DJIPanoramaMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCControlChannelName.html">DJIRCControlChannelName</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCControlStyle.html">DJIRCControlStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCGimbalControlDirection.html">DJIRCGimbalControlDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCHardwareFlightModeSwitchState.html">DJIRCHardwareFlightModeSwitchState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCHardwareTransformationSwitchState.html">DJIRCHardwareTransformationSwitchState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCJoinMasterResult.html">DJIRCJoinMasterResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCRemoteFocusControlDirection.html">DJIRCRemoteFocusControlDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCRemoteFocusControlType.html">DJIRCRemoteFocusControlType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCRequestGimbalControlResult.html">DJIRCRequestGimbalControlResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRCToAircraftPairingState.html">DJIRCToAircraftPairingState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIRemoteControllerMode.html">DJIRemoteControllerMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJISDKCameraError.html">DJISDKCameraError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJISDKError.html">DJISDKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJISDKFlightControllerError.html">DJISDKFlightControllerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJISDKMissionError.html">DJISDKMissionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJISDKRegistrationError.html">DJISDKRegistrationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJITapFlyMissionExecutionState.html">DJITapFlyMissionExecutionState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVirtualStickFlightCoordinateSystem.html">DJIVirtualStickFlightCoordinateSystem</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVirtualStickRollPitchControlMode.html">DJIVirtualStickRollPitchControlMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVirtualStickVerticalControlMode.html">DJIVirtualStickVerticalControlMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVirtualStickYawControlMode.html">DJIVirtualStickYawControlMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVisionSectorWarning.html">DJIVisionSectorWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIVisionSystemWarning.html">DJIVisionSystemWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointActionType.html">DJIWaypointActionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointMissionExecuteState.html">DJIWaypointMissionExecuteState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointMissionFinishedAction.html">DJIWaypointMissionFinishedAction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointMissionFlightPathMode.html">DJIWaypointMissionFlightPathMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointMissionGotoWaypointMode.html">DJIWaypointMissionGotoWaypointMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointMissionHeadingMode.html">DJIWaypointMissionHeadingMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWaypointTurnMode.html">DJIWaypointTurnMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWiFiFrequencyBand.html">DJIWiFiFrequencyBand</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DJIWiFiSignalQuality.html">DJIWiFiSignalQuality</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIAuxLinkDelegate.html">DJIAuxLinkDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIBaseProductDelegate.html">DJIBaseProductDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIBatteryDelegate.html">DJIBatteryDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJICameraDelegate.html">DJICameraDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJICameraParametersListener.html">DJICameraParametersListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIComponentConnectivityDelegate.html">DJIComponentConnectivityDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIFlightControllerDelegate.html">DJIFlightControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIGimbalDelegate.html">DJIGimbalDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIHandheldControllerDelegate.html">DJIHandheldControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIIntelligentFlightAssistantDelegate.html">DJIIntelligentFlightAssistantDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJILBAirLinkDelegate.html">DJILBAirLinkDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIMissionManagerDelegate.html">DJIMissionManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIPlaybackDelegate.html">DJIPlaybackDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIRemoteControllerDelegate.html">DJIRemoteControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJISDKDebugServerDelegate.html">DJISDKDebugServerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJISDKManagerDelegate.html">DJISDKManagerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/DJIWiFiLinkDelegate.html">DJIWiFiLinkDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIBaseProduct.h@T@DJICompletionBlock">DJICompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIPlaybackManager.h@T@DJIFileDownloadCompletionBlock">DJIFileDownloadCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIPlaybackManager.h@T@DJIFileDownloadPreparingBlock">DJIFileDownloadPreparingBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIPlaybackManager.h@T@DJIFileDownloadingBlock">DJIFileDownloadingBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIMission.h@T@DJIMissionDownloadCompletionBlock">DJIMissionDownloadCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIMission.h@T@DJIMissionProgressHandler">DJIMissionProgressHandler</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIRemoteController.h@T@DJIRCID">DJIRCID</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIRemoteController.h@T@DJIRCSignalQualityOfConnectedRC">DJIRCSignalQualityOfConnectedRC</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type Definitions.html#/c:DJIGimbal.h@T@GimbalAttitudeResultBlock">GimbalAttitudeResultBlock</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIAttitude.html">DJIAttitude</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJICameraPhotoAEBParam.html">DJICameraPhotoAEBParam</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJICameraPhotoIntervalParam.html">DJICameraPhotoIntervalParam</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJICameraThermalProfile.html">DJICameraThermalProfile</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIFlightControllerSmartGoHomeStatus.html">DJIFlightControllerSmartGoHomeStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIGimbalAngleRotation.html">DJIGimbalAngleRotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIGimbalAttitude.html">DJIGimbalAttitude</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIGimbalSpeedRotation.html">DJIGimbalSpeedRotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJILBAirLinkAllChannelSignalStrengths.html">DJILBAirLinkAllChannelSignalStrengths</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJINoFlyZone.html">DJINoFlyZone</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCBatteryInfo.html">DJIRCBatteryInfo</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCControlChannel.html">DJIRCControlChannel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCControlMode.html">DJIRCControlMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCControlPermission.html">DJIRCControlPermission</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCGPSData.html">DJIRCGPSData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCGimbalControlSpeed.html">DJIRCGimbalControlSpeed</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCGpsTime.html">DJIRCGpsTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareButton.html">DJIRCHardwareButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareFlightModeSwitch.html">DJIRCHardwareFlightModeSwitch</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareJoystick.html">DJIRCHardwareJoystick</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareLeftWheel.html">DJIRCHardwareLeftWheel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareRightWheel.html">DJIRCHardwareRightWheel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareState.html">DJIRCHardwareState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCHardwareTransformationSwitch.html">DJIRCHardwareTransformationSwitch</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIRCRemoteFocusState.html">DJIRCRemoteFocusState</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIVector.html">DJIVector</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/DJIVirtualStickFlightControlData.html">DJIVirtualStickFlightControlData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
 
+        <section class="section">
+          <div class="section-content">
+            <h1>DJIWaypointMission</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="k">@interface</span> <span class="nc">DJIWaypointMission</span> <span class="p">:</span> <span class="nc">DJIMission</span></code></pre>
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/autoFlightSpeed">autoFlightSpeed</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/exitMissionOnRCSignalLost">exitMissionOnRCSignalLost</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/finishedAction">finishedAction</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flightPathMode">flightPathMode</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gotoFirstWaypointMode">gotoFirstWaypointMode</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/headingMode">headingMode</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxFlightSpeed">maxFlightSpeed</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pointOfInterest">pointOfInterest</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/repeatTimes">repeatTimes</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/rotateGimbalPitch">rotateGimbalPitch</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/waypointCount">waypointCount</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAutoFlightSpeed:withCompletion:">setAutoFlightSpeed:withCompletion:</a></span></li>
-	
-</ul></li>
-
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addWaypoint:">addWaypoint:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addWaypoints:">addWaypoints:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getWaypointAtIndex:">getWaypointAtIndex:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAllWaypoints">removeAllWaypoints</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeWaypoint:">removeWaypoint:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeWaypointAtIndex:">removeWaypointAtIndex:</a></span></li>
-	
-</ul></li>
-
-
-			</ul>
-		</nav>
-		<article>
-			<div id="contents" class="isShowingTOC" role="main">
-				<a title="DJIWaypointMission Class Reference" name="top"></a>
-				<div class="main-navigation navigation-top">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="header">
-					<div class="section-header">
-						<h1 class="title title-header">DJIWaypointMission Class Reference</h1>
-					</div>		
-				</div>
-				<div id="container">	
-					
-					<div class="section section-specification"><table cellspacing="0"><tbody>
-						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value"><a href="../Classes/DJIMission.html">DJIMission</a> : NSObject</td>
-</tr><tr>
-	<td class="specification-title">Declared in</td>
-	<td class="specification-value">DJIWaypointMission.h</td>
-</tr>
-						</tbody></table></div>
-					
-                    
-                    
-					
-					<div class="section section-overview">
-						<a title="Overview" name="overview"></a>
-						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>In the waypoint mission, the aircraft will travel between waypoints, execute actions at
-waypoints, and adjust heading and altitude between waypoints.</p>
+                </div>
+              </div>
+            <p>In the waypoint mission, the aircraft will travel between waypoints, execute actions at
+  waypoints, and adjust heading and altitude between waypoints. Waypoints are physical locations to which the aircraft will fly. Creating a series of waypoints, in effect, will program a flight route for the aircraft to follow. Actions can also be added to waypoints, which will be carried out when the aircraft reaches the waypoint.</p>
 
 <p>The aircraft travels between waypoints automatically at a base speed. However, the user can change the speed by
-using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
-will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
-travel back along the path it came. When the aircraft is travelling through waypoints in the reverse order, it will
-not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
-waypoints in the original order, and continue to execute waypoint actions (even if executed previously).</p>
+  using the pitch joystick. If the stick is pushed up, the speed will increase. If the stick is pushed down, the speed
+  will slow down. The stick can be pushed down to stop the aircraft and further pushed to start making the aircraft
+  travel back along the path it came. When the aircraft is traveling through waypoints in the reverse order, it will
+  not execute waypoint actions at each waypoint. If the stick is released, the aircraft will again travel through the
+  waypoints in the original order, and continue to execute waypoint actions (even if executed previously).</p>
 
 <p>If the aircraft is pulled back along the waypoint mission all the way to the first waypoint, then it will hover in place
-until the stick is released enough for it to again progress through the mission from start to finish.</p>
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						
-						
+  until the stick is released enough for it to again progress through the mission from start to finish.</p>
 
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/waypointCount">&nbsp;&nbsp;waypointCount</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/maxFlightSpeed">&nbsp;&nbsp;maxFlightSpeed</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/autoFlightSpeed">&nbsp;&nbsp;autoFlightSpeed</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/finishedAction">&nbsp;&nbsp;finishedAction</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/headingMode">&nbsp;&nbsp;headingMode</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/flightPathMode">&nbsp;&nbsp;flightPathMode</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/gotoFirstWaypointMode">&nbsp;&nbsp;gotoFirstWaypointMode</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/exitMissionOnRCSignalLost">&nbsp;&nbsp;exitMissionOnRCSignalLost</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/pointOfInterest">&nbsp;&nbsp;pointOfInterest</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/rotateGimbalPitch">&nbsp;&nbsp;rotateGimbalPitch</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/repeatTimes">&nbsp;&nbsp;repeatTimes</a></code>
-	</span>
-	<span class="task-item-suffix">property</span>
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addWaypoint:">&ndash;&nbsp;addWaypoint:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/addWaypoints:">&ndash;&nbsp;addWaypoints:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/removeWaypoint:">&ndash;&nbsp;removeWaypoint:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/removeWaypointAtIndex:">&ndash;&nbsp;removeWaypointAtIndex:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/removeAllWaypoints">&ndash;&nbsp;removeAllWaypoints</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getWaypointAtIndex:">&ndash;&nbsp;getWaypointAtIndex:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/setAutoFlightSpeed:withCompletion:">+&nbsp;setAutoFlightSpeed:withCompletion:</a></code>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
-					
-					
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Properties" name="properties"></a>
-						<h2 class="subtitle subtitle-methods">Properties</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/autoFlightSpeed" title="autoFlightSpeed"></a>
-	<h3 class="subsubtitle method-title">autoFlightSpeed</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</p>
-	</div>		
-	
-    
+          </div>
+        </section>
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float autoFlightSpeed</code></div>
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Mission%20Presets"></a>
+                <a name="//apple_ref/objc/Section/Mission Presets" class="dashAnchor"></a>
+                <a href="#/Mission%20Presets">
+                  <h3 class="section-name">Mission Presets</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)waypointCount"></a>
+                    <a name="//apple_ref/objc/Property/waypointCount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)waypointCount">waypointCount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Number of waypoints in the waypoint mission.</p>
 
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>The aircraft&rsquo;s actual speed is a combination of the base automatic speed, and the speed control
-given by the throttle joystick on the remote controller.</p>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">int</span> <span class="n">waypointCount</span><span class="p">;</span></code></pre>
 
-<p>If autoFlightSpeed >0: Actual speed is autoFlightSpeed + Joystick Speed (with combined max of <a href="#//api/name/maxFlightSpeed">maxFlightSpeed</a>)
-If autoFlightSpeed =0: Actual speed is controlled only by the remote controller joystick.
-If autoFlightSpeed &lt;0 and the aircraft is at the first waypoint, then the aircraft will hover in place until the speed is made positive by the remote controller joystick.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/exitMissionOnRCSignalLost" title="exitMissionOnRCSignalLost"></a>
-	<h3 class="subsubtitle method-title">exitMissionOnRCSignalLost</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Determines whether exit mission when RC signal lost. Default is NO.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL exitMissionOnRCSignalLost</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/finishedAction" title="finishedAction"></a>
-	<h3 class="subsubtitle method-title">finishedAction</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Action the aircraft will take when the waypoint mission is complete.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIWaypointMissionFinishedAction finishedAction</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/flightPathMode" title="flightPathMode"></a>
-	<h3 class="subsubtitle method-title">flightPathMode</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Flight path mode of the waypoint mission.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIWaypointMissionFlightPathMode flightPathMode</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/gotoFirstWaypointMode" title="gotoFirstWaypointMode"></a>
-	<h3 class="subsubtitle method-title">gotoFirstWaypointMode</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Determines the aricraft how to go to first waypoint frome current position. Default is DJIWaypointMissionGotoWaypointSafely.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/headingMode" title="headingMode"></a>
-	<h3 class="subsubtitle method-title">headingMode</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Heading of the aircraft as it moves between waypoints. Default is DJIWaypointMissionHeadingAuto.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) DJIWaypointMissionHeadingMode headingMode</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/maxFlightSpeed" title="maxFlightSpeed"></a>
-	<h3 class="subsubtitle method-title">maxFlightSpeed</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>While the aircraft is travelling between waypoints, you can offset its speed by using the throttle joystick on the
-remote controller. maxFlightSpeed is this offset when the joystick is pushed to maximum deflection. For example,
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)maxFlightSpeed"></a>
+                    <a name="//apple_ref/objc/Property/maxFlightSpeed" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)maxFlightSpeed">maxFlightSpeed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>While the aircraft is traveling between waypoints, you can offset its speed by using the throttle joystick on the
+remote controller. <code>maxFlightSpeed</code> is this offset when the joystick is pushed to maximum deflection. For example,
 If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed,
-while pushing down will subtrace 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
-deflection, then the offset speed will be interpolated between [0, maxFlightSpeed] with a resolution of 1000 steps.
+while pushing down will subtract 10 m/s from the aircraft speed. If the remote controller stick is not at maximum
+deflection, then the offset speed will be interpolated between <code>[0, maxFlightSpeed]</code> with a resolution of 1000 steps.
 If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first
 waypoint, it will then hover in place until a positive speed is applied.
-maxFlightSpeed has a range of [2,15] m/s.</p>
-	</div>		
-	
-    
+<code>maxFlightSpeed</code> has a range of [2,15] m/s.</p>
 
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float maxFlightSpeed</code></div>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">float</span> <span class="n">maxFlightSpeed</span><span class="p">;</span></code></pre>
 
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)autoFlightSpeed"></a>
+                    <a name="//apple_ref/objc/Property/autoFlightSpeed" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)autoFlightSpeed">autoFlightSpeed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s.</p>
+
+<p>The aircraft&rsquo;s actual speed is a combination of the base automatic speed, and the speed control
+  given by the throttle joystick on the remote controller.</p>
+
+<p>If <code>autoFlightSpeed &gt;0</code>: Actual speed is <code>autoFlightSpeed</code> + Joystick Speed (with combined max of <code><a href="../Classes/DJIWaypointMission.html#/c:objc(cs)DJIWaypointMission(py)maxFlightSpeed">maxFlightSpeed</a></code>)
+  If <code>autoFlightSpeed =0</code>: Actual speed is controlled only by the remote controller joystick.
+  If <code>autoFlightSpeed &lt;0</code> and the aircraft is at the first waypoint, the aircraft will hover in place until the speed is made positive by the remote controller joystick.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">float</span> <span class="n">autoFlightSpeed</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)finishedAction"></a>
+                    <a name="//apple_ref/objc/Property/finishedAction" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)finishedAction">finishedAction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Action the aircraft will take when the waypoint mission is complete.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">DJIWaypointMissionFinishedAction</span> <span class="n">finishedAction</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)headingMode"></a>
+                    <a name="//apple_ref/objc/Property/headingMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)headingMode">headingMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Heading of the aircraft as it moves between waypoints. Default is <code>DJIWaypointMissionHeadingAuto</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">DJIWaypointMissionHeadingMode</span> <span class="n">headingMode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)flightPathMode"></a>
+                    <a name="//apple_ref/objc/Property/flightPathMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)flightPathMode">flightPathMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flight path mode of the waypoint mission.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">DJIWaypointMissionFlightPathMode</span> <span class="n">flightPathMode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)gotoFirstWaypointMode"></a>
+                    <a name="//apple_ref/objc/Property/gotoFirstWaypointMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)gotoFirstWaypointMode">gotoFirstWaypointMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines the aricraft how to go to first waypoint frome current position. Default is <code>DJIWaypointMissionGotoWaypointSafely</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span>
+    <span class="n">DJIWaypointMissionGotoWaypointMode</span> <span class="n">gotoFirstWaypointMode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)exitMissionOnRCSignalLost"></a>
+                    <a name="//apple_ref/objc/Property/exitMissionOnRCSignalLost" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)exitMissionOnRCSignalLost">exitMissionOnRCSignalLost</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines whether exit mission when RC signal lost. Default is NO.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">exitMissionOnRCSignalLost</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)pointOfInterest"></a>
+                    <a name="//apple_ref/objc/Property/pointOfInterest" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)pointOfInterest">pointOfInterest</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Property is used when <code><a href="../Classes/DJIWaypointMission.html#/c:objc(cs)DJIWaypointMission(py)headingMode">headingMode</a></code> is <code>DJIWaypointMissionHeadingTowardPointOfInterest</code>. Aircraft will always be heading to
+point while executing mission. Default is <code>kCLLocationCoordinate2DInvalid</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CLLocationCoordinate2D</span> <span class="n">pointOfInterest</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)rotateGimbalPitch"></a>
+                    <a name="//apple_ref/objc/Property/rotateGimbalPitch" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)rotateGimbalPitch">rotateGimbalPitch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines whether the aircraft can rotate gimbal pitch when execute waypoint mission. If <code>YES</code>, the aircraft will control gimal pitch rotation between waypoints using the <code>gimbalPitch</code> of the <code><a href="../Classes/DJIWaypoint.html">DJIWaypoint</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">rotateGimbalPitch</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(py)repeatTimes"></a>
+                    <a name="//apple_ref/objc/Property/repeatTimes" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(py)repeatTimes">repeatTimes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Repeat times for mission execution. Default is 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="kt">int</span> <span class="n">repeatTimes</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)addWaypoint:"></a>
+                    <a name="//apple_ref/objc/Method/-addWaypoint:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)addWaypoint:">-addWaypoint:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add a waypoint to the waypoint mission. The number of waypoints should be in the range <code>[DJIWaypointMissionMinimumWaypointCount, DJIWaypointMissionMaximumWaypointCount]</code>. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addWaypoint</span><span class="p">:(</span><span class="n">DJIWaypoint</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">waypoint</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>Waypoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>to be added to the waypoint mission.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)addWaypoints:"></a>
+                    <a name="//apple_ref/objc/Method/-addWaypoints:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)addWaypoints:">-addWaypoints:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds an array of waypoints to the waypoint mission.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addWaypoints</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">waypoints</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>Array</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>of waypoints to be added to the waypoint mission.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)removeWaypoint:"></a>
+                    <a name="//apple_ref/objc/Method/-removeWaypoint:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)removeWaypoint:">-removeWaypoint:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes a specific waypoint that was previously added.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeWaypoint</span><span class="p">:(</span><span class="n">DJIWaypoint</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">waypoint</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>waypoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Waypoint object to be removed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)removeWaypointAtIndex:"></a>
+                    <a name="//apple_ref/objc/Method/-removeWaypointAtIndex:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)removeWaypointAtIndex:">-removeWaypointAtIndex:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the waypoint at an index.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeWaypointAtIndex</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">index</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index of the waypoint to be removed from the waypoint mission.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)removeAllWaypoints"></a>
+                    <a name="//apple_ref/objc/Method/-removeAllWaypoints" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)removeAllWaypoints">-removeAllWaypoints</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes all waypoints from the waypoint mission.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">removeAllWaypoints</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(im)getWaypointAtIndex:"></a>
+                    <a name="//apple_ref/objc/Method/-getWaypointAtIndex:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(im)getWaypointAtIndex:">-getWaypointAtIndex:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gets the waypoint at the specified index in the mission waypoint array.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">-</span> <span class="p">(</span><span class="n">DJIWaypoint</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nf">getWaypointAtIndex</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">index</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Index of the waypoint to be retrieved.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Waypoint of type <code><a href="../Classes/DJIWaypoint.html">DJIWaypoint</a></code>, if the index exists.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Mission%20Updates"></a>
+                <a name="//apple_ref/objc/Section/Mission Updates" class="dashAnchor"></a>
+                <a href="#/Mission%20Updates">
+                  <h3 class="section-name">Mission Updates</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)DJIWaypointMission(cm)setAutoFlightSpeed:withCompletion:"></a>
+                    <a name="//apple_ref/objc/Method/+setAutoFlightSpeed:withCompletion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)DJIWaypointMission(cm)setAutoFlightSpeed:withCompletion:">+setAutoFlightSpeed:withCompletion:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setAutoFlightSpeed</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">speed</span>
+            <span class="nf">withCompletion</span><span class="p">:(</span><span class="n">DJICompletionBlock</span><span class="p">)</span><span class="nv">completion</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>speed</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to the maxFlightSpeed. Its range is <code>[-maxFlightSpeed, maxFlightSpeed]</code> m/s.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Completion block.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2016 <a class="link" href="https://developer.dji.com" target="_blank" rel="external">DJISDK</a>. All rights reserved. (Last updated: 2016-03-14)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
 </div>
-						
-						<div class="section-method">
-	<a name="//api/name/pointOfInterest" title="pointOfInterest"></a>
-	<h3 class="subsubtitle method-title">pointOfInterest</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Property is used when &lsquo;headingMode&rsquo; is &lsquo;DJIWaypointMissionHeadingTowardPointOfInterest&rsquo;. Aircraft will always heading to
-point while executing mission. Default is kCLLocationCoordinate2DInvalid.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) CLLocationCoordinate2D pointOfInterest</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/repeatTimes" title="repeatTimes"></a>
-	<h3 class="subsubtitle method-title">repeatTimes</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Repeat times for mission execution. Default is 1.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int repeatTimes</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/rotateGimbalPitch" title="rotateGimbalPitch"></a>
-	<h3 class="subsubtitle method-title">rotateGimbalPitch</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Whether the aircraft can rotate gimbal pitch when execute waypoint mission. If &lsquo;YES&rsquo; then aircraft will control gimal pitch rotation between waypoints using &lsquo;gimbalPitch&rsquo; of <a href="../Classes/DJIWaypoint.html">DJIWaypoint</a>.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL rotateGimbalPitch</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/waypointCount" title="waypointCount"></a>
-	<h3 class="subsubtitle method-title">waypointCount</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Number of waypoints in the waypoint mission.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) int waypointCount</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/setAutoFlightSpeed:withCompletion:" title="setAutoFlightSpeed:withCompletion:"></a>
-	<h3 class="subsubtitle method-title">setAutoFlightSpeed:withCompletion:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Set the flight speed while the mission is executing automatically (without manual joystick speed input). This is the only property or method in this class that can communicate with the aircraft during a mission. All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (void)setAutoFlightSpeed:(float)<em>speed</em> withCompletion:(DJICompletionBlock)<em>completion</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>speed</em></dt>
-			<dd><p>Auto flight speed to be set. The absolute value of the auto flight speed should be less than or equal to the maxFlightSpeed. It&rsquo;s range is then [-maxFlightSpeed, maxFlightSpeed] m/s.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completion</em></dt>
-			<dd><p>Completion block.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-					
-					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/addWaypoint:" title="addWaypoint:"></a>
-	<h3 class="subsubtitle method-title">addWaypoint:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Add a waypoint to the waypoint mission. The number of waypoints should be in range [DJIWaypointMissionMinimumWaypointCount, DJIWaypointMissionMaximumWaypointCount]. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)addWaypoint:(DJIWaypoint *_Nonnull)<em>waypoint</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>Waypoint</em></dt>
-			<dd><p>to be added to the waypoint mission.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/addWaypoints:" title="addWaypoints:"></a>
-	<h3 class="subsubtitle method-title">addWaypoints:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Adds an array of waypoints to the waypoint mission.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)addWaypoints:(NSArray *_Nonnull)<em>waypoints</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>Array</em></dt>
-			<dd><p>of waypoints to be added to the waypoint mission.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getWaypointAtIndex:" title="getWaypointAtIndex:"></a>
-	<h3 class="subsubtitle method-title">getWaypointAtIndex:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Gets a waypoint at an index in the mission waypoint array.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (DJIWaypoint *_Nullable)getWaypointAtIndex:(int)<em>index</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>index</em></dt>
-			<dd><p>Index of the waypoint wanting to be retrieved from the array of waypoints in the
-waypoint mission.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Waypoint of type <a href="../Classes/DJIWaypoint.html">DJIWaypoint</a> if the index exists.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/removeAllWaypoints" title="removeAllWaypoints"></a>
-	<h3 class="subsubtitle method-title">removeAllWaypoints</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes all waypoints from the waypoint mission.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)removeAllWaypoints</code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/removeWaypoint:" title="removeWaypoint:"></a>
-	<h3 class="subsubtitle method-title">removeWaypoint:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes a specific waypoint previously added.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)removeWaypoint:(DJIWaypoint *_Nonnull)<em>waypoint</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>waypoint</em></dt>
-			<dd><p>Waypoint object to be removed.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/removeWaypointAtIndex:" title="removeWaypointAtIndex:"></a>
-	<h3 class="subsubtitle method-title">removeWaypointAtIndex:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Removes the waypoint at an index.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)removeWaypointAtIndex:(int)<em>index</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>index</em></dt>
-			<dd><p>Index of waypoint to be removed from the waypoint mission from
-the array of all waypoints.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">DJIWaypointMission.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
-					
-                    
-                    
-				</div>
-				<div class="main-navigation navigation-bottom">
-					<ul>
-	<li><a href="../index.html">Index</a></li>
-	<li><a href="../hierarchy.html">Hierarchy</a></li>
-</ul>
-				</div>
-				<div id="footer">
-					<hr />
-					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2016 DJI. All rights reserved. (Last updated: 2016-02-01)</span><br />
-						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
-						
-					</div>
-				</div>
-			</div>
-		</article>
-		<script type="text/javascript">
-			function jumpToChange()
-			{
-				window.location.hash = this.options[this.selectedIndex].value;
-			}
-			
-			function toggleTOC()
-			{
-				var contents = document.getElementById('contents');
-				var tocContainer = document.getElementById('tocContainer');
-				
-				if (this.getAttribute('class') == 'open')
-				{
-					this.setAttribute('class', '');
-					contents.setAttribute('class', '');
-					tocContainer.setAttribute('class', '');
-					
-					window.name = "hideTOC";
-				}
-				else
-				{
-					this.setAttribute('class', 'open');
-					contents.setAttribute('class', 'isShowingTOC');
-					tocContainer.setAttribute('class', 'isShowingTOC');
-					
-					window.name = "";
-				}
-				return false;
-			}
-			
-			function toggleTOCEntryChildren(e)
-			{
-				e.stopPropagation();
-				var currentClass = this.getAttribute('class');
-				if (currentClass == 'children') {
-					this.setAttribute('class', 'children open');
-				}
-				else if (currentClass == 'children open') {
-					this.setAttribute('class', 'children');
-				}
-				return false;
-			}
-			
-			function tocEntryClick(e)
-			{
-				e.stopPropagation();
-				return true;
-			}
-			
-			function init()
-			{
-				var selectElement = document.getElementById('jumpTo');
-				selectElement.addEventListener('change', jumpToChange, false);
-				
-				var tocButton = document.getElementById('table_of_contents');
-				tocButton.addEventListener('click', toggleTOC, false);
-				
-				var taskTreeItem = document.getElementById('task_treeitem');
-				if (taskTreeItem.getElementsByTagName('li').length > 0)
-				{
-					taskTreeItem.setAttribute('class', 'children');
-					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
-				}
-				
-				var tocList = document.getElementById('toc');
-				
-				var tocEntries = tocList.getElementsByTagName('li');
-				for (var i = 0; i < tocEntries.length; i++) {
-					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
-				}
-				
-				var tocLinks = tocList.getElementsByTagName('a');
-				for (var i = 0; i < tocLinks.length; i++) {
-					tocLinks[i].addEventListener('click', tocEntryClick, false);
-				}
-				
-				if (window.name == "hideTOC") {
-					toggleTOC.call(tocButton);
-				}
-			}
-			
-			window.onload = init;
-			
-			// If showing in Xcode, hide the TOC and Header
-			if (navigator.userAgent.match(/xcode/i)) {
-				document.getElementById("contents").className = "hideInXcode"
-				document.getElementById("tocContainer").className = "hideInXcode"
-				document.getElementById("top_header").className = "hideInXcode"
-			}
-			
-		</script>
-	</body>
 </html>

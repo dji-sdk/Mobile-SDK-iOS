@@ -12,7 +12,6 @@ import VideoPreviewer
 class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate {
 
     var recordingTime: Int32 = 0
-    var videoFeedView: UIView? = nil
     @IBOutlet weak var recordingTimeLabel: UILabel!
     @IBOutlet weak var startRecordButton: UIButton!
     @IBOutlet weak var stopRecordButton: UIButton!
@@ -140,21 +139,12 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
     }
 
     func setVideoPreview() {
-        self.videoFeedView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT))
-        self.view!.addSubview(self.videoFeedView!)
-        self.view!.sendSubviewToBack(self.videoFeedView!)
-        //    self.videoFeedView.backgroundColor = [UIColor grayColor];
         VideoPreviewer.instance().start()
-        VideoPreviewer.instance().setView(self.videoFeedView)
+        VideoPreviewer.instance().setView(self.view)
     }
 
     func cleanVideoPreview() {
         VideoPreviewer.instance().unSetView()
-        VideoPreviewer.removePreview()
-        if self.videoFeedView != nil {
-            self.videoFeedView!.removeFromSuperview()
-            self.videoFeedView = nil
-        }
     }
 
     func toggleRecordUI() {
@@ -174,7 +164,7 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
         memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().dataQueue.push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(pBuffer, length: Int32(size))
     }
 
     func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {

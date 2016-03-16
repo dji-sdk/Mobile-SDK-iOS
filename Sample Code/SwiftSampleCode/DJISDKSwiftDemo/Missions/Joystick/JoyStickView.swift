@@ -3,7 +3,7 @@
 //  SampleGame
 //
 //  Created by DJI on 13-4-26.
-//  Copyright (c) 2013 Myst. All rights reserved.
+//  Copyright (c) 2013. All rights reserved.
 //
 import UIKit
 

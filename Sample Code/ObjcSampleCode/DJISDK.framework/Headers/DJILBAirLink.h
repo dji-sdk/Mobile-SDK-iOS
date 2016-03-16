@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class DJISignalInformation;
 
 /**
- *  Define the air link max supported channel count
+ *  Define the air link maximum supported channel count.
  */
 #define DJI_LBAIRLINK_SUPPORTED_CHANNEL_COUNT (8)
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*********************************************************************************/
 
 /**
- *  Downlink channel selection mode (manual or automatic) for wireless link.
+ *  Downlink channel selection mode (manual or automatic) for the wireless link.
  */
 typedef NS_ENUM (uint8_t, DJILBAirLinkChannelSelectionMode) {
     /**
@@ -58,7 +58,7 @@ typedef NS_ENUM (uint8_t, DJILBAirLinkOSDUnits) {
 };
 
 /**
- *  Remote Controller port to output secondary video to (in addition to USB video sent to the Mobile Device).
+ *  Remote Controller port to which to send secondary video (in addition to USB video sent to the Mobile Device).
  */
 typedef NS_ENUM (uint8_t, DJILBAirLinkSecondaryVideoOutputPort) {
     /**
@@ -137,19 +137,19 @@ typedef NS_ENUM (uint8_t, DJILBAirLinkSecondaryVideoFormat) {
  */
 typedef NS_ENUM (uint8_t, DJILBAirLinkPIPPosition) {
     /**
-     *  PIP is in the screen's top left.
+     *  PIP is on the screen's top left.
      */
     DJILBAirLinkPIPPositionTopLeft,
     /**
-     *  PIP is in the screen's top right.
+     *  PIP is on the screen's top right.
      */
     DJILBAirLinkPIPPositionTopRight,
     /**
-     *  PIP is in the screen's bottom left.
+     *  PIP is on the screen's bottom left.
      */
     DJILBAirLinkPIPPositionBottomLeft,
     /**
-     *  PIP is in the screen's bottom right.
+     *  PIP is on the screen's bottom right.
      */
     DJILBAirLinkPIPPositionBottomRight,
     /**
@@ -159,7 +159,7 @@ typedef NS_ENUM (uint8_t, DJILBAirLinkPIPPosition) {
 };
 
 /**
- *  FPV Video can prioritize either quality or latency.
+ *  FPV(First-person view) Video can prioritize either quality or latency.
  */
 typedef NS_ENUM (uint8_t, DJILBAirLinkFPVVideoQualityLatency) {
     /**
@@ -253,17 +253,17 @@ typedef struct
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didUpdateAllChannelSignalStrengths:(DJILBAirLinkAllChannelSignalStrengths)signalStrength;
 
 /**
- *  Callback for when the FPV video bandwidth percentage has changed. Each Remote Controller can create a secondary video from the FPV and HD Gimbal video downlink information. For the slave Remote Controllers it's important to know if the percentage bandwidth has changed so the right PIP display mode (DJIPIPDisplayMode) can be selected. For example, if the FPV video bandwidth goes to 100%, then DJIALPIPModeLB should be used.
+ *  Callback for when the FPV video bandwidth percentage has changed. Each Remote Controller can create a secondary video from the FPV and HD Gimbal video downlink information. For the slave Remote Controllers, it is important to know if the percentage bandwidth has changed so the right PIP display mode (`DJIPIPDisplayMode`) can be selected. For example, if the FPV video bandwidth goes to 100%, `DJIALPIPModeLB` should be used.
  *
- *  @param lbAirLink        DJILBAirLink instance.
+ *  @param lbAirLink        `DJILBAirLink` instance.
  *  @param bandwidthPercent Output bandwidth percentage.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didFPVBandwidthPercentChanged:(float)bandwidthPercent;
 
 /**
- *  Tells the delegate that a updated Video data is received.
+ *  Tells the delegate that an updated Video data is received.
  *
- *  @param lbAirLink    DJILBAirLink Instance.
+ *  @param lbAirLink    `DJILBAirLink` Instance.
  *  @param data         The received video data.
  */
 - (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data;
@@ -280,12 +280,15 @@ typedef struct
  */
 @interface DJILBAirLink : NSObject
 
+/**
+ *  Returns the DJILBAirLink delegate.
+ */
 @property(nonatomic, weak) id<DJILBAirLinkDelegate> delegate;
 
 /**
- *  Sets downlink channel selection mode (automatic or manual).
+ *  Sets the downlink channel selection mode (automatic or manual).
  *
- *  @param mode       Channel selection mode for LBAirLink.
+ *  @param mode       Channel selection mode for `LBAirLink`.
  *  @param completion Completion block.
  */
 - (void)setChannelSelectionMode:(DJILBAirLinkChannelSelectionMode)mode withCompletion:(DJICompletionBlock)completion;
@@ -298,12 +301,12 @@ typedef struct
 - (void)getChannelSelectionModeWithCompletion:(void (^_Nullable)(DJILBAirLinkChannelSelectionMode mode, NSError *_Nullable error))completion;
 
 /**
- *  Sets fixed downlink channel. Channel selection mode should be set to DJILBAirLinkChannelSelectionModeManual.
- *  Channel can be between 1 and DJILBAirLinkSupportedChannelMax.
+ *  Sets fixed downlink channel. Channel selection mode should be set to `DJILBAirLinkChannelSelectionModeManual`.
+ *  Channel can be between 1 and `DJILBAirLinkSupportedChannelMax`.
  *
  *  @param channel    Specific channel for the air link.
  *  @param completion Completion block.
-
+ 
  */
 - (void)setChannel:(int)channel withCompletion:(DJICompletionBlock)completion;
 
@@ -379,7 +382,7 @@ typedef struct
 - (void)setSecondaryVideoOutputEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets whether secondary video output on Remote Controller is enabled. The Remote Controller outputs video to the Mobile Device by default, but a secondary video can be routed to its HDMI or SDI port. Use setSecondaryVideoOuputEnable to enable/disable and setSecondaryVideoOutputPort to choose the port.
+ *  Gets whether secondary video output on Remote Controller is enabled. The Remote Controller outputs video to the Mobile Device by default, but a secondary video can be routed to its HDMI or SDI port. Use `setSecondaryVideoOuputEnable` to enable or disable, and `setSecondaryVideoOutputPort` to choose the port.
  *
  *  @param completion Completion block.
  */
@@ -401,9 +404,9 @@ typedef struct
 - (void)getSecondaryVideoOutputPortWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoOutputPort port, NSError *_Nullable error))completion;
 
 /**
- *  Sets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The output video can then be a combination of the two video sources. Either a single video source can be displayed, or one can be displayed within the other (as a Picture in Picture, or PIP). If the mode is set incorrectly, then no output video will be displayed. For example, if only a FPV camera is connected, or the bandwidth for the 'LB' data (FPV) is set to 100 percent, then the only mode that will display data is the DJILBAirLinkPIPModeLB.
+ *  Sets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The output video can then be a combination of the two video sources. Either a single video source can be displayed, or one can be displayed within the other (as a Picture in Picture, or PIP). If the mode is set incorrectly, then no output video will be displayed. For example, if only a FPV camera is connected, or the bandwidth for the 'LB' data (FPV) is set to 100 percent, the only mode that will display data is the `DJILBAirLinkPIPModeLB`.
  *
- *  @param pipDisplay Picture in Picture display mode.
+ *  @param pipDisplay Picture in Picture (PIP) display mode.
  *  @param completion Completion block.
  *
  */
@@ -418,16 +421,16 @@ typedef struct
 - (void)getPIPDisplayWithCompletion:(void (^_Nullable)(DJILBAirLinkPIPDisplayMode pipDisplay, NSError *_Nullable error))completion;
 
 /**
- *  Enables and disables OSD overlay on the secondary video. OSD is flight data like altitude, attitude etc. and can be overlayed on the PIP video.
+ *  Enables and disables On Screen Display (OSD) overlay on the secondary video. OSD is flight data like altitude, attitude etc. and can be overlayed on the PIP video.
  *
- *  @param enabled Whether dispaly OSD on screen.
+ *  @param enabled Determines whether to display OSD on screen.
  *  @param completion Completion block.
  *
  */
 - (void)setDisplayOSDEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets whether OSD is overlayed on the video feed.
+ *  Determines whether On Screen Display (OSD) is overlayed on the video feed.
  *
  *  @param completion Completion block.
  *
@@ -435,16 +438,16 @@ typedef struct
 - (void)getDisplayOSDEnabledWithCompletion:(void (^_Nullable)(BOOL enabled, NSError *_Nullable error))completion;
 
 /**
- *  Sets OSD top margin in video pixels.
+ *  Sets the OSD top margin in video pixels.
  *
- *  @param margin     Top margin of OSD, should be in range [0, 50]
+ *  @param margin     Top margin of OSD. The range is [0, 50].
  *  @param completion Completion block.
  *
  */
 - (void)setOSDTopMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets OSD top margin in video pixels.
+ *  Gets the OSD top margin in video pixels.
  *
  *  @param completion Completion block.
  *
@@ -452,16 +455,16 @@ typedef struct
 - (void)getOSDTopMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
- *  Sets OSD left margin in video pixels.
+ *  Sets the OSD left margin in video pixels.
  *
- *  @param margin     Left margin of OSD, should be in range [0, 50]
+ *  @param margin     Left margin of OSD. The range is [0, 50].
  *  @param completion Completion block.
  *
  */
 - (void)setOSDLeftMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets OSD left margin in video pixels.
+ *  Gets the OSD left margin in video pixels.
  *
  *  @param completion Completion block.
  *
@@ -469,16 +472,16 @@ typedef struct
 - (void)getOSDLeftMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
- *  Sets OSD bottom margin in video pixels.
+ *  Sets the OSD bottom margin in video pixels.
  *
- *  @param margin     Bottom margin of OSD, should be in range [0, 50]
+ *  @param margin     Bottom margin of OSD. The range is [0, 50].
  *  @param completion Completion block.
  *
  */
 - (void)setOSDBottomMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets OSD bottom margin in video pixels.
+ *  Gets the OSD bottom margin in video pixels.
  *
  *  @param completion Completion block.
  *
@@ -486,16 +489,16 @@ typedef struct
 - (void)getOSDBottomMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
- *  Sets OSD right margin in video pixels.
+ *  Sets the OSD right margin in video pixels.
  *
- *  @param margin     Right margin of OSD, should be in range [0, 50]
+ *  @param margin     Right margin of OSD. The range is [0, 50].
  *  @param completion Completion block.
  *
  */
 - (void)setOSDRightMargin:(NSUInteger)margin withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets OSD right margin in video pixels.
+ *  Gets the OSD right margin in video pixels.
  *
  *  @param completion Completion block.
  *
@@ -503,16 +506,16 @@ typedef struct
 - (void)getOSDRightMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
- *  Sets OSD units to be metric or imperial.
+ *  Sets the OSD units to either metric or imperial.
  *
- *  @param units       OSD unit.
+ *  @param units       OSD units.
  *  @param completion Completion block.
  *
  */
 - (void)setOSDUnits:(DJILBAirLinkOSDUnits)units withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets OSD units as either metric or imperial.
+ *  Gets the OSD units (metric or imperial).
  *
  *  @param completion Completion block.
  *
@@ -520,16 +523,16 @@ typedef struct
 - (void)getOSDUnitsWithCompletion:(void (^_Nullable)(DJILBAirLinkOSDUnits units, NSError *_Nullable error))completion;
 
 /**
- *  Sets Remote Controller HDMI video port output video format.
+ *  Sets the Remote Controller HDMI video port output video format.
  *
- *  @param outputFormat Video output format for HDMI port.
+ *  @param outputFormat Video output format for the HDMI port.
  *  @param completion   Completion block.
  *
  */
 - (void)setHDMIOutputFormat:(DJILBAirLinkSecondaryVideoFormat)format withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets Remote Controller HDMI video port output video format.
+ *  Gets the Remote Controller HDMI video port output video format.
  *
  *  @param completion Completion block.
  *
@@ -537,7 +540,7 @@ typedef struct
 - (void)getHDMIOutputFormatWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
 
 /**
- *  Sets Remote Controller SDI video port output video format.
+ *  Sets the Remote Controller SDI video port output video format.
  *
  *  @param outputFormat Video output format for SDI port.
  *  @param completion   Completion block.
@@ -546,7 +549,7 @@ typedef struct
 - (void)setSDIOutputFormat:(DJILBAirLinkSecondaryVideoFormat)format withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets Remote Controller SDI video port output video format.
+ *  Gets the Remote Controller SDI video port output video format.
  *
  *  @param completion Completion block.
  *
@@ -554,17 +557,17 @@ typedef struct
 - (void)getSDIOutputFormatWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
 
 /**
- *  Sets PIP (Picture In Picture) position relative to top left corner of the main subject video feed.
+ *  Sets the PIP (Picture In Picture) position relative to the top left corner of the main subject video feed.
  *
  *
- *  @param position   Position of PIP on the screen.
+ *  @param position   Position of the PIP on the screen.
  *  @param completion Completion block.
  *
  */
 - (void)setPIPPosition:(DJILBAirLinkPIPPosition)position withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Gets PIP (Picture In Picture) position relative to top left corner of the main subject video feed.
+ *  Gets the PIP (Picture In Picture) position relative to the top left corner of the main subject video feed.
  *
  *  @param completion Completion block.
  *

@@ -11,45 +11,45 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Current state of the Landing Gear
+ *  Current state of the Landing Gear.
  */
 typedef NS_ENUM (uint8_t, DJILandingGearStatus){
     /**
-     *  Landing Gear is in unknown state
+     *  Landing Gear is in unknown state.
      */
     DJILandingGearStatusUnknown,
     /**
-     *  Landing Gear is fully deployed (ready for landing)
+     *  Landing Gear is fully deployed (ready for landing).
      */
     DJILandingGearStatusDeployed,
     /**
-     *  Landing Gear is fully retracted (ready for flying)
+     *  Landing Gear is fully retracted (ready for flying).
      */
     DJILandingGearStatusRetracted,
     /**
-     *  Landing Gear is deploying (getting ready for landing)
+     *  Landing Gear is deploying (getting ready for landing).
      */
     DJILandingGearStatusDeploying,
     /**
-     *  Landing Gear is retracting (getting ready for flying)
+     *  Landing Gear is retracting (getting ready for flying).
      */
     DJILandingGearStatusRetracting,
     /**
-     *  Landing Gear is stopped
+     *  Landing Gear is stopped.
      */
     DJILandingGearStatusStopped,
 };
 
 /**
- *  Current Mode of the Landing Gear
+ *  Current Mode of the Landing Gear.
  */
 typedef NS_ENUM (uint8_t, DJILandingGearMode){
     /**
-     *  Landing Gear can be deployed and retracted through function calls
+     *  Landing Gear can be deployed and retracted through function calls.
      */
     DJILandingGearModeNormal,
     /**
-     *  Landing Gear is in transport mode (either it is moving into, moving out of, or stopped in transport position)
+     *  Landing Gear is in transport mode (either it is moving into, moving out of, or stopped in transport position).
      */
     DJILandingGearModeTransport,
     /**
@@ -57,7 +57,7 @@ typedef NS_ENUM (uint8_t, DJILandingGearMode){
      */
     DJILandingGearModeAuto,
     /**
-     *  Landing Gear is in an unknown mode
+     *  Landing Gear is in an unknown mode.
      */
     DJILandingGearModeUnknown,
 };
@@ -74,7 +74,7 @@ typedef NS_ENUM (uint8_t, DJILandingGearMode){
 @property(nonatomic, readonly) DJILandingGearStatus status;
 
 /**
- *  The mode the landing gear is in.
+ *  The current landing gear mode.
  */
 @property(nonatomic, readonly) DJILandingGearMode mode;
 
@@ -84,7 +84,7 @@ typedef NS_ENUM (uint8_t, DJILandingGearMode){
 - (BOOL)isLandingGearMovable;
 
 /**
- *  Turns on the self-adaptive landing gear. If self-adaptive landing gear is turned on the landing Gear automatically
+ *  Turns on the self-adaptive landing gear. If self-adaptive landing gear is turned on, the landing gear automatically
  *  transitions between deployed and retracted depending on altitude. During take-off, the transition point is 1.2m above
  *  ground. After take-off (during flight or when landing), the transition point is 0.5m above ground.
  */
@@ -99,26 +99,27 @@ typedef NS_ENUM (uint8_t, DJILandingGearMode){
 - (void)turnOffAutoLandingGearWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Enters the transport mode. In transport mode, the landing gear will be in the same plane as the aircraft body, so that it can be easily transported.
+ *  Enters the transport mode. In transport mode, the landing gear will be in the same geometric plane as the aircraft body so it can be easily transported.
  *
- *  @attention If the gimbal is not removed or the ground is not flat, enter transport mode will fail.
+ *  @attention If the gimbal is not removed or the ground is not flat, the enter transport mode will fail.
  */
 - (void)enterTransportModeWithCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Exit transport mode.
  *
+ *  @attention If the ground is not flat, exit transport mode will fail.
  */
 - (void)exitTransportModeWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Retracts the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.
+ *  Retracts the landing gear. Should only be used when `setLandingGearMode` is `DJILandingGearModeNormal`.
  *
  */
 - (void)retractLandingGearWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Deploys the landing gear. Should only be used when setLandingGearMode is DJILandingGearModeNormal.
+ *  Deploys the landing gear. Should only be used when `setLandingGearMode` is `DJILandingGearModeNormal`.
  *
  */
 - (void)deployLandingGearWithCompletion:(DJICompletionBlock)completion;

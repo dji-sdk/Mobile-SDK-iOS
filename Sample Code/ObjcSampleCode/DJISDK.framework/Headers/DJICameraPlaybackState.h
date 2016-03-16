@@ -43,11 +43,11 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackMode){
      */
     DJICameraPlaybackModeSinglePhotoZoomMode,
     /**
-     *  Single video play start
+     *  Single video playback start
      */
     DJICameraPlaybackModeSingleVideoPlaybackStart,
     /**
-     *  Single video play pause
+     *  Single video playback pause
      */
     DJICameraPlaybackModeSingleVideoPlaybackPause,
     /**
@@ -87,23 +87,23 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackDeletionStatus){
 };
 
 /**
- *  This class provides the current state of the Playback manager, like numbers of thumbnail and media files, video duration, video play progress, file download state, etc.
+ *  This class provides the current state of the Playback manager, which includes the numbers of thumbnail and media files, video duration, video play progress, and file download state.
  */
 @interface DJICameraPlaybackState : NSObject
 
 /**
- *  The current mode of the Playback manager
+ *  The current mode of the Playback manager.
  */
 @property(nonatomic, readonly) DJICameraPlaybackMode playbackMode;
 
 /**
  *  The type of the current file.
- *  The value of this property is valid only when the playbackMode is DJICameraPlaybackModeSingleFilePreview, DJICameraPlaybackModeSingleVideoPlaybackStart nor DJICameraPlaybackModeSingleVideoPlaybackPause.
+ *  The value of this property is valid only when the `playbackMode` is `DJICameraPlaybackModeSingleFilePreview`, `DJICameraPlaybackModeSingleVideoPlaybackStart`, or `DJICameraPlaybackModeSingleVideoPlaybackPause`.
  */
 @property(nonatomic, readonly) DJICameraPlaybackFileFormat mediaFileType;
 
 /**
- *  The total number of thumbnails for both the photos and videos being viewed on the page. The value of the property is valid when the playbackMode is DJICameraPlaybackModeMultipleFilesPreview or DJICameraPlaybackModeMultipleFilesEdit.
+ *  The total number of thumbnails for both the photos and videos being viewed on the page. The value of the property is valid when the `playbackMode` is `DJICameraPlaybackModeMultipleFilesPreview` or `DJICameraPlaybackModeMultipleFilesEdit`.
  */
 @property(nonatomic, readonly) int numberOfThumbnails;
 
@@ -120,44 +120,44 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackDeletionStatus){
 @property(nonatomic, readonly) int currentSelectedFileIndex;
 
 /**
- *  The duration in second of the playing video. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ *  The duration in second of the playing video. The value of the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleVideoPlaybackStart` or `DJICameraPlaybackModeSingleVideoPlaybackPaused`.
  */
 @property(nonatomic, readonly) int videoDuration;
 
 /**
- *  The progress in percentage of the playing video. The valid range is [0, 100].
- *  The value the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ *  The progress, in percentage, of the playing video. The valid range is [0, 100].
+ *  The value the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleVideoPlaybackStart` or `DJICameraPlaybackModeSingleVideoPlaybackPaused`.
  */
 @property(nonatomic, readonly) int videoPlayProgress;
 
 /**
- *  The played duration in second of the playing video.
+ *  The played duration, in seconds, of the playing video.
  *
- *  The value the property is valid only when playbackMode is DJICameraPlaybackModeSingleVideoPlaybackStart or DJICameraPlaybackModeSingleVideoPlaybackPaused.
+ *  The value the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleVideoPlaybackStart` or `DJICameraPlaybackModeSingleVideoPlaybackPaused`.
  */
 @property(nonatomic, readonly) int videoPlayPosition;
 
 /**
  *  The total number of the selected files.
  *
- *  The value is valid while playbackMode is in DJICameraPlaybackModeMultipleFilesEdit.
+ *  The value is valid while `playbackMode` is in `DJICameraPlaybackModeMultipleFilesEdit`.
  */
 @property(nonatomic, readonly) int numberOfSelectedFiles;
 
 /**
- *  The total number of photos in the SD card.
+ *  The total number of photos on the SD card.
  *
  */
 @property(nonatomic, readonly) int numberOfPhotos;
 
 /**
- *  The total number of videos in the SD card.
+ *  The total number of videos on the SD card.
  *
  */
 @property(nonatomic, readonly) int numberOfVideos;
 
 /**
- *  The dimension of the previewing photo. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview and mediaFileType is DJICameraPlaybackFileFormatJPEG.
+ *  The dimension of the previewing photo. The value of the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleFilePreview` and `mediaFileType` is `DJICameraPlaybackFileFormatJPEG`.
  *
  */
 @property(nonatomic, readonly) CGSize photoSize;
@@ -175,13 +175,13 @@ typedef NS_ENUM (uint8_t, DJICameraPlaybackDeletionStatus){
 @property(nonatomic, readonly) BOOL isAllFilesInPageSelected;
 
 /**
- *  YES if the previewing file is a valid photo or video. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview.
+ *  YES if the previewing file is a valid photo or video. The value of the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleFilePreview`.
  *
  */
 @property(nonatomic, readonly) BOOL isSelectedFileValid;
 
 /**
- *  YES if the previewing file has been downloaded. The value of the property is valid only when playbackMode is DJICameraPlaybackModeSingleFilePreview.
+ *  YES if the previewing file has been downloaded. The value of the property is valid only when `playbackMode` is `DJICameraPlaybackModeSingleFilePreview`.
  *
  */
 @property(nonatomic, readonly) BOOL isFileDownloaded;

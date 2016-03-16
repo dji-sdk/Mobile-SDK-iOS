@@ -61,6 +61,8 @@
 		0271B3F81C3DF6900056DB2B /* FCLandingGearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0271B3E81C3DF6900056DB2B /* FCLandingGearViewController.swift */; };
 		0271B3F91C3DF6900056DB2B /* FCLandingGearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0271B3E91C3DF6900056DB2B /* FCLandingGearViewController.xib */; };
 		0271B3FB1C3DF6900056DB2B /* FCOrientationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0271B3EC1C3DF6900056DB2B /* FCOrientationViewController.xib */; };
+		02D044081C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */; };
+		02D044091C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */; };
 		02D8CC141C3B418500D2106D /* BatteryActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE51C3B418500D2106D /* BatteryActionsTableViewController.swift */; };
 		02D8CC151C3B418500D2106D /* BatterySelfDischargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE71C3B418500D2106D /* BatterySelfDischargeViewController.swift */; };
 		02D8CC161C3B418500D2106D /* CameraActionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D8CBE91C3B418500D2106D /* CameraActionsTableViewController.swift */; };
@@ -195,6 +197,8 @@
 		0271B3E81C3DF6900056DB2B /* FCLandingGearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLandingGearViewController.swift; sourceTree = "<group>"; };
 		0271B3E91C3DF6900056DB2B /* FCLandingGearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCLandingGearViewController.xib; sourceTree = "<group>"; };
 		0271B3EC1C3DF6900056DB2B /* FCOrientationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCOrientationViewController.xib; sourceTree = "<group>"; };
+		02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCIntelligentAssistantViewController.swift; path = IntelligentAssistant/FCIntelligentAssistantViewController.swift; sourceTree = "<group>"; };
+		02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FCIntelligentAssistantViewController.xib; path = IntelligentAssistant/FCIntelligentAssistantViewController.xib; sourceTree = "<group>"; };
 		02D8CBE51C3B418500D2106D /* BatteryActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryActionsTableViewController.swift; sourceTree = "<group>"; };
 		02D8CBE71C3B418500D2106D /* BatterySelfDischargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatterySelfDischargeViewController.swift; sourceTree = "<group>"; };
 		02D8CBE91C3B418500D2106D /* CameraActionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraActionsTableViewController.swift; sourceTree = "<group>"; };
@@ -254,7 +258,6 @@
 				0239F1D71C332D450008DEA4 /* CustomMission */,
 				0239F2591C3602AE0008DEA4 /* FollowMe */,
 				0239F25C1C3602AE0008DEA4 /* HotPoint */,
-				0239F2681C3602AE0008DEA4 /* Joystick */,
 				0239F26C1C3602AE0008DEA4 /* Panorama */,
 				0239F26F1C3602AE0008DEA4 /* Waypoint */,
 				0239F2471C333DA30008DEA4 /* DJIBaseViewController.swift */,
@@ -317,14 +320,6 @@
 			);
 			name = HotPoint;
 			path = Missions/HotPoint;
-			sourceTree = "<group>";
-		};
-		0239F2681C3602AE0008DEA4 /* Joystick */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Joystick;
-			path = Missions/Joystick;
 			sourceTree = "<group>";
 		};
 		0239F26C1C3602AE0008DEA4 /* Panorama */ = {
@@ -457,6 +452,7 @@
 		0271B3DF1C3DF6900056DB2B /* FlightController */ = {
 			isa = PBXGroup;
 			children = (
+				02D044011C9743DF007AD0C7 /* IntelligentAssistant */,
 				0271B3E31C3DF6900056DB2B /* FCActionsTableViewController.swift */,
 				0264D3FA1C403365002313FE /* General */,
 				0271B3E01C3DF6900056DB2B /* Compass */,
@@ -512,6 +508,15 @@
 				0239F26A1C3602AE0008DEA4 /* NavigationJoystickViewController.swift */,
 			);
 			path = VirtualStick;
+			sourceTree = "<group>";
+		};
+		02D044011C9743DF007AD0C7 /* IntelligentAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				02D044061C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift */,
+				02D044071C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib */,
+			);
+			name = IntelligentAssistant;
 			sourceTree = "<group>";
 		};
 		02D8CBE41C3B418500D2106D /* Battery */ = {
@@ -847,6 +852,7 @@
 				02D8CC1F1C3B418500D2106D /* CameraRecordVideoViewController.xib in Resources */,
 				0239F28E1C3602AE0008DEA4 /* NavigationWaypointMissionConfigView.xib in Resources */,
 				0239F28A1C3602AE0008DEA4 /* NavigationWaypointActionView.xib in Resources */,
+				02D044091C974F0E007AD0C7 /* FCIntelligentAssistantViewController.xib in Resources */,
 				0264D3FF1C403365002313FE /* FCGeneralControlViewController.xib in Resources */,
 				0239F1D41C332D400008DEA4 /* DJICollectionViewCell.xib in Resources */,
 				0239F27D1C3602AE0008DEA4 /* HotPointConfigView.xib in Resources */,
@@ -899,6 +905,7 @@
 				0239F1D31C332D400008DEA4 /* DJICollectionViewCell.swift in Sources */,
 				0264D3F81C402CC8002313FE /* RCParingViewController.swift in Sources */,
 				0239F2491C333DA30008DEA4 /* DJIBaseViewController.swift in Sources */,
+				02D044081C974F0E007AD0C7 /* FCIntelligentAssistantViewController.swift in Sources */,
 				0239F2851C3602AE0008DEA4 /* NavigationJoystickViewController.swift in Sources */,
 				386F685D1BF6BF27003A8ED0 /* StartupViewController.swift in Sources */,
 				0239F27C1C3602AE0008DEA4 /* HotPointConfigView.swift in Sources */,
@@ -1059,10 +1066,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VideoPreviewer",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../VideoPreviewer/VideoPreviewer\"/**",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/include",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1083,10 +1087,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VideoPreviewer",
 				);
-				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/../VideoPreviewer/VideoPreviewer\"/**",
-					"$(PROJECT_DIR)/VideoPreviewer/VideoPreviewer/ffmpeg/include",
-				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

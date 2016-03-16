@@ -10,6 +10,10 @@ import VideoPreviewer
 
 class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
     @IBOutlet weak var fpvView : UIView!
+    @IBOutlet weak var fpvTemView : UIView!
+    @IBOutlet weak var fpvTemEnableSwitch : UISwitch!
+    @IBOutlet weak var fpvTemperatureData : UILabel!
+    
     var isSettingMode:Bool = false 
     
     override func viewDidLoad() {
@@ -18,9 +22,29 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             camera!.delegate = self
+            updateThermalCameraUI()
         }
         self.isSettingMode = false
         VideoPreviewer.instance().start()
+    }
+    
+    func updateThermalCameraUI() {
+        let camera: DJICamera? = self.fetchCamera()
+        if (camera == nil) {
+            return
+        }
+        let state:Bool = camera!.isThermalImagingCamera()
+        fpvTemView.hidden = !state
+        if (state) {
+            camera?.getThermalTemperatureDataEnabledWithCompletion({ (
+                state:Bool, error:NSError?) -> Void in
+                if (error == nil) {
+                    self.fpvTemEnableSwitch.setOn(state, animated: true)
+                } else {
+                    self.showAlertResult("Failed to get the Thermal Temperature Data enabled status:\(error?.description)")
+                }
+            })
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,7 +78,7 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
         let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
         memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().dataQueue.push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(pBuffer, length: Int32(size))
     }
     
     func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {
@@ -68,5 +92,19 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
                 })
             }
         }
+    }
+    
+    func camera(camera: DJICamera, didUpdateTemperatureData temperature: Float) {
+        self.fpvTemperatureData.text = temperature.description
+    }
+    
+    @IBAction func onThermalTemperatureDataSwitchValueChanged(sender: UISwitch){
+        let camera: DJICamera? = self.fetchCamera()
+        camera?.setThermalTemperatureDataEnabled(sender.on, withCompletion: { (error:NSError?) -> Void in
+            if (error != nil) {
+                self.showAlertResult("Error to enable/disable ThermalTemperatureData:\(error?.description)")
+                sender.setOn(!sender.on, animated:false)
+            }
+        })
     }
 }

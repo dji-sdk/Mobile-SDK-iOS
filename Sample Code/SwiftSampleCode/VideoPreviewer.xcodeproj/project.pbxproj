@@ -7,11 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02532EA41C6477290056CB55 /* LB2AUDHackParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 02532EA21C6477290056CB55 /* LB2AUDHackParser.h */; };
+		02532EA41C6477290056CB55 /* LB2AUDHackParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 02532EA21C6477290056CB55 /* LB2AUDHackParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02532EA51C64772A0056CB55 /* LB2AUDHackParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 02532EA31C6477290056CB55 /* LB2AUDHackParser.m */; };
 		02532EA91C64795C0056CB55 /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02532EA81C64795C0056CB55 /* DJISDK.framework */; };
-		02EE4FDB1C3D9B55006783E5 /* DJILinkQueues.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EE4F5F1C3D9B55006783E5 /* DJILinkQueues.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		02EE4FDC1C3D9B55006783E5 /* DJILinkQueues.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EE4F601C3D9B55006783E5 /* DJILinkQueues.m */; };
 		02EE50431C3D9B5A006783E5 /* MovieGLView.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EE4FD31C3D9B55006783E5 /* MovieGLView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02EE50441C3D9B5B006783E5 /* MovieGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EE4FD41C3D9B55006783E5 /* MovieGLView.m */; };
 		02EE50451C3D9B5B006783E5 /* VideoFrameExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EE4FD51C3D9B55006783E5 /* VideoFrameExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -21,8 +19,13 @@
 		02EE504A1C3D9BC3006783E5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EE50491C3D9BC3006783E5 /* CoreMedia.framework */; };
 		02EE504C1C3D9F36006783E5 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EE504B1C3D9F36006783E5 /* VideoToolbox.framework */; };
 		02EE50651C3DA525006783E5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EE50641C3DA525006783E5 /* libz.tbd */; };
-		02EE51AE1C3DA766006783E5 /* DJIVTH264DecoderPublic.h in Headers */ = {isa = PBXBuildFile; fileRef = 02EE51AB1C3DA766006783E5 /* DJIVTH264DecoderPublic.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		02EE51AF1C3DA767006783E5 /* libDJIVTH264Decoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02EE51AD1C3DA766006783E5 /* libDJIVTH264Decoder.a */; };
+		B82893291C98674300CCBD3B /* DJIStreamCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = B82893271C98674300CCBD3B /* DJIStreamCommon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B828932A1C98674300CCBD3B /* H264VTDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = B82893281C98674300CCBD3B /* H264VTDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B828932F1C9867AB00CCBD3B /* SoftwareDecodeProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = B828932B1C9867AB00CCBD3B /* SoftwareDecodeProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B82893301C9867AB00CCBD3B /* SoftwareDecodeProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = B828932C1C9867AB00CCBD3B /* SoftwareDecodeProcessor.m */; };
+		B82893311C9867AB00CCBD3B /* VideoPreviewerQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B828932D1C9867AB00CCBD3B /* VideoPreviewerQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B82893321C9867AB00CCBD3B /* VideoPreviewerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B828932E1C9867AB00CCBD3B /* VideoPreviewerQueue.m */; };
 		B89750AF1C65945F00815416 /* libavcodec.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B89750AC1C65945F00815416 /* libavcodec.a */; };
 		B89750B01C65945F00815416 /* libavformat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B89750AD1C65945F00815416 /* libavformat.a */; };
 		B89750B11C65945F00815416 /* libavutil.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B89750AE1C65945F00815416 /* libavutil.a */; };
@@ -33,8 +36,6 @@
 		02532EA31C6477290056CB55 /* LB2AUDHackParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LB2AUDHackParser.m; path = VideoPreviewer/Lb2AUDHack/LB2AUDHackParser.m; sourceTree = "<group>"; };
 		02532EA81C64795C0056CB55 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DJISDK.framework; sourceTree = "<group>"; };
 		02A543FD1C3C51CB0083C11B /* VideoPreviewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideoPreviewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		02EE4F5F1C3D9B55006783E5 /* DJILinkQueues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DJILinkQueues.h; path = VideoPreviewer/DJILinkQueues.h; sourceTree = "<group>"; };
-		02EE4F601C3D9B55006783E5 /* DJILinkQueues.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DJILinkQueues.m; path = VideoPreviewer/DJILinkQueues.m; sourceTree = "<group>"; };
 		02EE4FD21C3D9B55006783E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VideoPreviewer/Info.plist; sourceTree = "<group>"; };
 		02EE4FD31C3D9B55006783E5 /* MovieGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieGLView.h; path = VideoPreviewer/MovieGLView.h; sourceTree = "<group>"; };
 		02EE4FD41C3D9B55006783E5 /* MovieGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieGLView.m; path = VideoPreviewer/MovieGLView.m; sourceTree = "<group>"; };
@@ -45,8 +46,13 @@
 		02EE50491C3D9BC3006783E5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		02EE504B1C3D9F36006783E5 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		02EE50641C3DA525006783E5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		02EE51AB1C3DA766006783E5 /* DJIVTH264DecoderPublic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIVTH264DecoderPublic.h; sourceTree = "<group>"; };
 		02EE51AD1C3DA766006783E5 /* libDJIVTH264Decoder.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDJIVTH264Decoder.a; sourceTree = "<group>"; };
+		B82893271C98674300CCBD3B /* DJIStreamCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIStreamCommon.h; sourceTree = "<group>"; };
+		B82893281C98674300CCBD3B /* H264VTDecode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264VTDecode.h; sourceTree = "<group>"; };
+		B828932B1C9867AB00CCBD3B /* SoftwareDecodeProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoftwareDecodeProcessor.h; path = VideoPreviewer/SoftwareDecodeProcessor.h; sourceTree = "<group>"; };
+		B828932C1C9867AB00CCBD3B /* SoftwareDecodeProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoftwareDecodeProcessor.m; path = VideoPreviewer/SoftwareDecodeProcessor.m; sourceTree = "<group>"; };
+		B828932D1C9867AB00CCBD3B /* VideoPreviewerQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPreviewerQueue.h; path = VideoPreviewer/VideoPreviewerQueue.h; sourceTree = "<group>"; };
+		B828932E1C9867AB00CCBD3B /* VideoPreviewerQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoPreviewerQueue.m; path = VideoPreviewer/VideoPreviewerQueue.m; sourceTree = "<group>"; };
 		B89750AC1C65945F00815416 /* libavcodec.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavcodec.a; path = VideoPreviewer/ffmpeg/lib/libavcodec.a; sourceTree = "<group>"; };
 		B89750AD1C65945F00815416 /* libavformat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavformat.a; path = VideoPreviewer/ffmpeg/lib/libavformat.a; sourceTree = "<group>"; };
 		B89750AE1C65945F00815416 /* libavutil.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libavutil.a; path = VideoPreviewer/ffmpeg/lib/libavutil.a; sourceTree = "<group>"; };
@@ -74,10 +80,12 @@
 		02A543F31C3C51CB0083C11B = {
 			isa = PBXGroup;
 			children = (
+				B828932B1C9867AB00CCBD3B /* SoftwareDecodeProcessor.h */,
+				B828932C1C9867AB00CCBD3B /* SoftwareDecodeProcessor.m */,
+				B828932D1C9867AB00CCBD3B /* VideoPreviewerQueue.h */,
+				B828932E1C9867AB00CCBD3B /* VideoPreviewerQueue.m */,
 				02532EA21C6477290056CB55 /* LB2AUDHackParser.h */,
 				02532EA31C6477290056CB55 /* LB2AUDHackParser.m */,
-				02EE4F5F1C3D9B55006783E5 /* DJILinkQueues.h */,
-				02EE4F601C3D9B55006783E5 /* DJILinkQueues.m */,
 				02EE4FD21C3D9B55006783E5 /* Info.plist */,
 				02EE4FD31C3D9B55006783E5 /* MovieGLView.h */,
 				02EE4FD41C3D9B55006783E5 /* MovieGLView.m */,
@@ -126,7 +134,8 @@
 		02EE51AA1C3DA766006783E5 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				02EE51AB1C3DA766006783E5 /* DJIVTH264DecoderPublic.h */,
+				B82893271C98674300CCBD3B /* DJIStreamCommon.h */,
+				B82893281C98674300CCBD3B /* H264VTDecode.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -146,12 +155,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82893311C9867AB00CCBD3B /* VideoPreviewerQueue.h in Headers */,
 				02EE50451C3D9B5B006783E5 /* VideoFrameExtractor.h in Headers */,
-				02EE50431C3D9B5A006783E5 /* MovieGLView.h in Headers */,
-				02EE4FDB1C3D9B55006783E5 /* DJILinkQueues.h in Headers */,
-				02EE50471C3D9B5B006783E5 /* VideoPreviewer.h in Headers */,
-				02EE51AE1C3DA766006783E5 /* DJIVTH264DecoderPublic.h in Headers */,
+				B828932F1C9867AB00CCBD3B /* SoftwareDecodeProcessor.h in Headers */,
 				02532EA41C6477290056CB55 /* LB2AUDHackParser.h in Headers */,
+				B82893291C98674300CCBD3B /* DJIStreamCommon.h in Headers */,
+				B828932A1C98674300CCBD3B /* H264VTDecode.h in Headers */,
+				02EE50431C3D9B5A006783E5 /* MovieGLView.h in Headers */,
+				02EE50471C3D9B5B006783E5 /* VideoPreviewer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,8 +234,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				02EE50461C3D9B5B006783E5 /* VideoFrameExtractor.m in Sources */,
+				B82893301C9867AB00CCBD3B /* SoftwareDecodeProcessor.m in Sources */,
 				02EE50441C3D9B5B006783E5 /* MovieGLView.m in Sources */,
-				02EE4FDC1C3D9B55006783E5 /* DJILinkQueues.m in Sources */,
+				B82893321C9867AB00CCBD3B /* VideoPreviewerQueue.m in Sources */,
 				02532EA51C64772A0056CB55 /* LB2AUDHackParser.m in Sources */,
 				02EE50481C3D9B5B006783E5 /* VideoPreviewer.m in Sources */,
 			);

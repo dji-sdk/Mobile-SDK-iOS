@@ -27,7 +27,7 @@ typedef NS_ENUM (uint8_t, DJIHandheldWiFiFrequencyType){
      *  The Handheld WiFi frequency is 5.8G
      */
     DJIHandheldWiFiFrequency5Dot8G,
-
+    
 };
 
 /**
@@ -36,24 +36,24 @@ typedef NS_ENUM (uint8_t, DJIHandheldWiFiFrequencyType){
 typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
     /**
      *  The Handheld Power Mode is awake.
-     *  For Osmo, when it is in this mode, all the components in DJIHandheld are accessible.
+     *  For Osmo, when it is in this mode, all the components in `DJIHandheld` are accessible.
      */
     DJIHandheldPowerModeAwake,
     /**
      *  The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
      *  to the Mobile device alive but most other components are off. The power consumption is low
      *  in this mode.
-     *  For Osmo, when it is in this mode, only the DJIHandheldController, DJIAirLink and DJIBattery
+     *  For Osmo, when it is in this mode, only the `DJIHandheldController`, `DJIAirLink`, and `DJIBattery`
      *  are accessible.
      */
     DJIHandheldPowerModeSleeping,
     /**
-     *  The Handheld Power Mode is power-off. Once this mode is set the delegate will receive this mode until the handheld device is
+     *  The Handheld Power Mode is powered off. Once this mode is set the delegate will receive this mode until the handheld device is
      *  shut down completely.
      */
     DJIHandheldPowerModePowerOff,
     /**
-     *  The Handheld Power Mode in unkown.
+     *  The Handheld Power Mode in unknown.
      */
     DJIHandheldPowerModeUnknown = 0xFF
 };
@@ -74,10 +74,10 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
 @optional
 
 /**
- *  Tells the delegate that a handheld controller's power mode is updated.
+ *  Tells the delegate that a handheld controller's power mode has been updated.
  *
- *  @param controller   the handheld controller that updates the power mode
- *  @param powerMode    handheld controller's current power mode
+ *  @param controller   The handheld controller that updates the power mode.
+ *  @param powerMode    The handheld controller's current power mode.
  *
  */
 - (void)handheldController:(DJIHandheldController *)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode;
@@ -87,6 +87,7 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
 /*********************************************************************************/
 #pragma mark - DJIHandheldController
 /*********************************************************************************/
+
 /**
  *
  *  This class contains interfaces to control a handheld device. You can make the handheld device enter sleep mode, awake from sleep mode or shut it down.
@@ -94,16 +95,16 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
 @interface DJIHandheldController : DJIBaseComponent
 
 /**
- *  Returns the DJIHandheldController delegate
+ *  Returns the `DJIHandheldController` delegate.
  */
 @property(nonatomic, weak) id <DJIHandheldControllerDelegate> delegate;
 
 /**
- *  Set the power mode for handheld.
+ *  Set the power mode for the handheld.
  *
  *  @param mode     The power mode to set.
- *                  CAUTION: when the mode is DJIHandheldPowerModePowerOff, the handheld device will be shut down and
- *                  the connection will be broken. User then needs to power on the device manually.
+ *                  CAUTION: When the mode is `DJIHandheldPowerModePowerOff`, the handheld device will be shut down and
+ *                  the connection will be broken. The user must then power on the device manually.
  *  @param block    Remote execution result callback block.
  */
 - (void)setHandheldPowerMode:(DJIHandheldPowerMode)mode withCompletion:(DJICompletionBlock)block;

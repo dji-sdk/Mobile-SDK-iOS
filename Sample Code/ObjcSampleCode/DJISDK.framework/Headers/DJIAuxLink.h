@@ -11,29 +11,30 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class DJIAuxLink;
 
-
 /**
- *  This protocol provides a delegate method to receive updated signal information of the remote controller link for the aircraft products that have WiFi video link. Eg. Phantom 3 Standard, 4K.
+ *  This protocol provides a delegate method to receive updated signal information for the remote controller link for aircraft products that have a WiFi video link, such as the Phantom 3 Standard and 4K products.
  */
 @protocol DJIAuxLinkDelegate <NSObject>
 
 @optional
 
 /**
- *  Signal quality and strength information for current control link on each Remote Controller antenna.
+ *  Signal quality and strength information for the current control link on each Remote Controller antenna.
  *
- *  @param link     DJIControlLink Instance.
- *  @param antennas DJISignalInformation object. The power property of DJISignalInformation is not used for DJIAuxLink,
- *                  so should be ignored.
+ *  @param link     `DJIControlLink` remote controller link instance.
+ *  @param antennas  `DJISignalInformation` object containing updated signal information for the remote controller link. The `power` property of `DJISignalInformation` is not used for `DJIAuxLink` and should be ignored.
  */
 - (void)auxLink:(DJIAuxLink *_Nonnull)link didUpdateRemoteControllerSignalInformation:(NSArray *_Nonnull)signalInfo;
 
 @end
 /**
- *  Phantom 3 Standard and 4K products have two wireless links between the remote controller and aircraft. A WiFi link for video and app data, and a control link for telemetry and remote controller button/stick commands. This control link is called the auxiliary control link to distinguish it from other products with only a WiFi link (like Osmo).
+ *  The Phantom 3 Standard and 4K products have two wireless links between the remote controller and aircraft. These include a WiFi link for video and app data, and a control link for telemetry and remote controller button/stick commands. This control link is called the auxiliary control link, which distinguishes it from other products having only a WiFi link (such as Osmo).
  */
 @interface DJIAuxLink : NSObject
 
+/**
+ *  Returns the DJIAuxLink delegate.
+ */
 @property(nonatomic, weak) id<DJIAuxLinkDelegate> delegate;
 
 @end

@@ -18,9 +18,13 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Handheld device model names.
+ *  Handheld device model name unknown.
  */
 extern NSString *const DJIHandheldModelNameUnknownHandheld;
+
+/**
+ *  Handheld device model name Osmo.
+ */
 extern NSString *const DJIHandheldModelNameOsmo;
 
 /**

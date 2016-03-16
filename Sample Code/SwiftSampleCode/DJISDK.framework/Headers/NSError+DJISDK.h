@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*********************************************************************************/
 #pragma mark - Error Domains
 /*********************************************************************************/
+
 /**
  *  SDK common error domain
  */
@@ -48,22 +49,25 @@ FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRegistrationErrorDomain;
 //-----------------------------------------------------------------
 #pragma mark DJISDKRegistrationError
 //-----------------------------------------------------------------
+/**
+ *  The Error of SDK Registration
+ */
 typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
     /**
      *  The application is not able to connect to the internet the first time it registers.
      */
     DJISDKRegistrationErrorCouldNotConnectToInternet = -1L,
-
+    
     /**
      *  The application key you provided is incorrect.
      */
     DJISDKRegistrationErrorInvalidAppKey = -2L,
-
+    
     /**
      *  The network you are trying to reach is busy, or the server is unreachable.
      */
     DJISDKRegistrationErrorHTTPTimeout = -3L,
-
+    
     /**
      *  The attempt to copy meta data from another registered device to the device that is
      *  currently connected is not allowed. For example, if a developer has two devices and
@@ -71,26 +75,26 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
      *  other device is plugged in and tries to register the application, this error will occur.
      */
     DJISDKRegistrationErrorDeviceDoesNotMatch = -4L,
-
+    
     /**
      *  The bundle identifier of your application does not match the bundle identifier you
      *  registered on the website when you applied to obtain an application key.
      */
     DJISDKRegistrationErrorBundleIdDoesNotMatch = -5L,
-
+    
     /**
      *  The application key is prohibited. This occurs when an application key that has already
      *  been released by DJI is revoked. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorAppKeyProhibited = -6L,
-
+    
     /**
      *  There is a maximum number of devices one application key can be used to activate. The
      *  maximum number of devices is given when an application is registered on the DJI developer
      *  website. This error will occur if the maximum number of activations has been reached.
      */
     DJISDKRegistrationErrorMaxActivationCountReached = -7L,
-
+    
     /**
      *  This error occurrs when an application key was given for a specific platform and is trying
      *  to be used to activate an application for another platform. For instance, if an application
@@ -98,46 +102,46 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
      *  error will occur.
      */
     DJISDKRegistrationErrorAppKeyInvalidPlatformError = -8L,
-
+    
     /**
      *  The application key does not exist. Please make sure the application key you are entering
      *  is correct.
      */
     DJISDKRegistrationErrorAppKeyDoesNotExist = -9L,
-
+    
     /**
      *  There are two levels for the SDK framework, level 1 and level 2. If an application key was
      *  given under one level and is trying to be used to active an application using another level
      *  SDK framework, this error will occur.
      */
     DJISDKRegistrationErrorAppKeyLevelNotPermitted = -10L,
-
+    
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerParseFailure = -11L,
-
+    
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerWriteError = -12L,
-
+    
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerDataAbnormal = -13L,
-
+    
     /**
      *  The activation data received from server
      *  valid. Please reconnect to the internet and try again.
      */
     DJISDKRegistrationErrorInvalidMetaData = -14L,
-
+    
     /**
      *  No application key was inputted.
      */
     DJISDKRegistrationErrorEmptyAppKey = -15L,
-
+    
     /**
      *  An unknown error occurred when the application was trying to register. Please contact DJI
      *  for assistance.
@@ -148,6 +152,9 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
 //-----------------------------------------------------------------
 #pragma mark DJISDKError
 //-----------------------------------------------------------------
+/**
+ *  DJI SDK Error
+ */
 typedef NS_ENUM (NSInteger, DJISDKError){
     /**
      *  Feature not supported error.
@@ -214,6 +221,14 @@ typedef NS_ENUM (NSInteger, DJISDKError){
      */
     DJISDKErrorNotSupportedByFirmware = -1015L,
     /**
+     *  The received data is invalid.
+     */
+    DJISDKErrorReceivedDataInvalid = -1016L,
+    /**
+     *  No data is received.
+     */
+    DJISDKErrorNoReceivedData = -1017L,
+    /**
      *  Not defined error.
      */
     DJISDKErrorNotDefined = -1999L,
@@ -222,6 +237,9 @@ typedef NS_ENUM (NSInteger, DJISDKError){
 //-----------------------------------------------------------------
 #pragma mark DJISDKCameraError
 //-----------------------------------------------------------------
+/**
+ *  DJI SDK Camera Error
+ */
 typedef NS_ENUM (NSInteger, DJISDKCameraError){
     /**
      *  Not supported command or command not support in this firmware.
@@ -292,6 +310,9 @@ typedef NS_ENUM (NSInteger, DJISDKCameraError){
 //-----------------------------------------------------------------
 #pragma mark DJISDKFlightControllerError
 //-----------------------------------------------------------------
+/**
+ *  DJI SDK Flight Controller Error
+ */
 typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
     /**
      *  Mode error
@@ -326,9 +347,9 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      */
     DJISDKFlightControllerErrorLowBattery = -4007L,
     /**
-     *  Aircraft not record home point.
+     *  Aircraft home point not recorded.
      */
-    DJISDKFlightControllerErrorHomePointNotRecord = -4008L,
+    DJISDKFlightControllerErrorHomePointNotRecorded = -4008L,
     /**
      *  Aircraft taking off
      */
@@ -350,11 +371,11 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      */
     DJISDKFlightControllerErrorInNoFlyZone = -4013L,
     /**
-     *  Compass calibration
+     *  Command can not be executed because the motors started.
      */
-    DJISDKFlightControllerErrorCompassCalibration = -4013L,
+    DJISDKFlightControllerErrorMotorsStarted = -4013L,
     /**
-     *  Gimbal not removed.
+     *  Aircraft could not enter transport mode, since the gimbal is still connected. 
      */
     DJISDKFlightControllerErrorGimbalNotRemoved = -4014L,
     /**
@@ -394,9 +415,12 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
 //-----------------------------------------------------------------
 #pragma mark DJISDKMissionError
 //-----------------------------------------------------------------
+/**
+ *  DJI SDK Mission Error
+ */
 typedef NS_ENUM (NSInteger, DJISDKMissionError){
     /**
-     *  Mode error. Remote controller's mode switch should be in 'F' mode.
+     *  Mode error. For products except Phantom 4, please make sure the remote controller's mode switch is in 'F' mode. For Phantom 4, please make sure the remote controller's mode switch is in 'P' mode.
      */
     DJISDKMissionErrorModeError = -5000L,
     /**
@@ -408,15 +432,15 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorAircraftLowBattery = -5002L,
     /**
-     *  Aircraft's not in the air.
+     *  The aircraft is not in the air.
      */
     DJISDKMissionErrorAircraftNotInTheAir = -5003L,
     /**
-     *  Aircraft's altitude too high.
+     *  The aircraft's altitude is too high.
      */
     DJISDKMissionErrorAircraftAltitudeTooHigh = -5004L,
     /**
-     *  Aircraft's altitude too low.
+     *  The aircraft's altitude is too low.
      */
     DJISDKMissionErrorAircraftAltitudeTooLow = -5005L,
     /**
@@ -436,47 +460,47 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorAircraftStartingEngine = -5009L,
     /**
-     *  Aircraft's home point not record.
+     *  Aircraft's home point is not recordeded.
      */
-    DJISDKMissionErrorAircraftHomePointNotRecord = -5010L,
+    DJISDKMissionErrorAircraftHomePointNotRecorded = -5010L,
     /**
      *  Aircraft lost the follow target.
      */
-    DJISDKMissionErrorAircraftLostFollowTarget = -5011L,
+    DJISDKMissionErrorAircraftLostFollowMeTarget = -5011L,
     /**
-     *  Aircraft is in novince mode.
+     *  Aircraft is in novice mode.
      */
     DJISDKMissionErrorAircraftInNoviceMode = -5012L,
     /**
-     *  Aircraft is in no fly zone.
+     *  Aircraft is in a no fly zone.
      */
     DJISDKMissionErrorAircraftInNoFlyZone = -5013L,
     /**
-     *  Aircraft flight limited.
+     *  The aircraft has reached the flight limitation. 
      */
-    DJISDKMissionErrorAircraftFlightLimited = -5014L,
+    DJISDKMissionErrorReachFlightLimitation = -5014L,
     /**
      *  Aircraft is running a mission.
      */
     DJISDKMissionErrorAircraftRunningMission = -5015L,
     /**
-     *  Aircraft no running mission.
+     *  Aircraft is not running a mission.
      */
     DJISDKMissionErrorAircraftNoRunningMission = -5016L,
     /**
-     *  Aircraft no mission.
+     *  No aircraft mission.
      */
     DJISDKMissionErrorAircraftNoMission = -5017L,
     /**
-     *  Aircraft is near to the home point.
+     *  Aircraft is near the home point.
      */
     DJISDKMissionErrorAircraftNearHomePoint = -5018L,
     /**
-     *  Aircraft is too far away to the mission.
+     *  Aircraft is too far away from the mission.
      */
     DJISDKMissionErrorAircraftFarAwayMission = -5019L,
     /**
-     *  Mission's parameters is invalid.
+     *  Mission's parameters are invalid.
      */
     DJISDKMissionErrorMissionParametersInvalid = -5020L,
     /**
@@ -484,7 +508,7 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorMissionTotalDistanceTooLarge = -5021L,
     /**
-     *  Mission need too much time to execute.
+     *  Mission needs too much time to execute.
      */
     DJISDKMissionErrorMissionNeedTooMuchTime = -5022L,
     /**
@@ -496,11 +520,11 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorCommandCanNotExecute = -5024L,
     /**
-     *  Aircraft already in command state. duplicate execute a same command will has this error.
+     *  Aircraft already in command state. Repeating the same command results in this error.
      */
     DJISDKMissionErrorAircraftAlreadyInCommandState = -5025L,
     /**
-     *  Mission not prepare
+     *  Mission not prepared.
      */
     DJISDKMissionErrorMissionNotReady = -5026L,
     /**
@@ -515,6 +539,123 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      *  Current mission step is initializing.
      */
     DJISDKMissionErrorCustomMissionStepInitializing = -5029L,
+    /**
+     *  The tracking target is lost.
+     */
+    DJISDKMissionErrorTrackingTargetLost = -5030L,
+    /**
+     *  No live video feed is captured for the ActiveTrack Mission.
+     */
+    DJISDKMissionErrorNoVideoFeed = -5031L,
+    /**
+     *  The frame rate of the live video feed is too low.
+     */
+    DJISDKMissionErrorVideoFrameRateTooLow = -5032L,
+    /**
+     *  The vision system cannot get the authorization to control the aircraft. 
+     */
+    DJISDKMissionErrorVisionSystemNotAuthorized = -5033L,
+    /**
+     *  The vision system encounters system error.
+     */
+    DJISDKMissionErrorVisionSystemError = -5034L,
+    /**
+     *  The aircraft cannot bypass the obstacle.
+     */
+    DJISDKMissionErrorCannotBypassObstacle = -5035L,
+    /**
+     *  Mission is stopped by the user.
+     */
+    DJISDKMissionErrorStoppedByUser = -5036L,
+    /**
+     *  The vision system requires calibration.
+     */
+    DJISDKMissionErrorVisionSystemNeedCalibration = -5037L,
+    /**
+     *  The vision sensors are overexposed. 
+     */
+    DJISDKMissionErrorVisionSensorOverexposed = -5038L,
+    /**
+     *  The vision sensors are underexposed.
+     */
+    DJISDKMissionErrorVisionSensorUnderexposed = -5039L,
+    /**
+     *  The data from the vision system is abnormal.
+     */
+    DJISDKMissionErrorVisionDataAbnormal = -5040L,
+    /**
+     *  The feature points found by both vision sensors cannot match.
+     */
+    DJISDKMissionErrorFeaturePointCannotMatch = -5041L,
+    /**
+     *  The tracking rectangle is too small.
+     */
+    DJISDKMissionErrorTrackingRectTooSmall = -5042L,
+    /**
+     *  The tracking rectangle is too large.
+     */
+    DJISDKMissionErrorTrackingRectTooLarge = -5043L,
+    /**
+     *  The tracking target doesn't have enough features to lock onto.
+     */
+    DJISDKMissionErrorTrackingTargetNotEnoughFeature = -5044L,
+    /**
+     *  The Tracking target is too close to the aircraft.
+     */
+    DJISDKMissionErrorTrackingTargetTooClose = -5045L,
+    /**
+     *  The tracking target is too far away from the aircraft.
+     */
+    DJISDKMissionErrorTrackingTargetTooFar = -5046L,
+    /**
+     *  The tracking target is too high.
+     */
+    DJISDKMissionErrorTrackingTargetTooHigh = -5047L,
+    /**
+     *  The tracking target is shaking too much.
+     */
+    DJISDKMissionErrorTrackingTargetShaking = -5048L,
+    /**
+     *  The ActiveTrack mission is too unsure the tracking object and confirmation is required.
+     */
+    DJISDKMissionErrorTrackingTargetLowConfidence = -5049L,
+    /**
+     *  Mission is paused by user.
+     */
+    DJISDKMissionErrorMissionPausedByUser = -5050L,
+    /**
+     *  Gimbal pitch is too low.
+     */
+    DJISDKMissionErrorGimbalPitchTooLow = -5051L,
+    /**
+     *  Gimbal pitch is too large.
+     */
+    DJISDKMissionErrorGimbalPitchTooLarge = -5052L,
+    /**
+     *  Encounter an obstacle.
+     */
+    DJISDKMissionErrorObstacleDetected = -5053L,
+    /**
+     *  TapFly direction invalid.
+     */
+    DJISDKMissionErrorTapFlyDirectionInvalid = -5054L,
+    /**
+     *  The front vision system is not available.
+     */
+    DJISDKMissionErrorVisionSystemNotAvailable = -5055L,
+    /**
+     *  The initialization of the mission failed.
+     */
+    DJISDKMissionErrorInitializationFailed = -5056L,
+    /**
+     *  Mission can not pause or resume.
+     */
+    DJISDKMissionErrorCannotPauseOrResume = -5057L,
+    /**
+     *  The aircraft reaches the altitude lower bound of the TapFly Mission.
+     */
+    DJISDKMissionErrorReachAltitudeLowerBound = -5058L,
+    
 };
 
 /**
@@ -526,44 +667,44 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
 /**
  *  Get DJISDKError
  *
- *  @param errorCode errorCode for DJISDKError
+ *  @param errorCode errorCode for `DJISDKError`.
  */
 + (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode;
 
 /**
  *  Get DJISDKCameraError
  *
- *  @param errorCode errorCode for DJISDKCameraError
+ *  @param errorCode errorCode for `DJISDKCameraError`.
  */
 + (_Nullable instancetype)DJISDKCameraErrorForCode:(NSInteger)errorCode;
 
 /**
  *  Get DJISDKFlightControllerError
  *
- *  @param errorCode errorCode for DJISDKFlightControllerError
+ *  @param errorCode errorCode for `DJISDKFlightControllerError`.
  */
 + (_Nullable instancetype)DJISDKFlightControllerErrorForCode:(NSInteger)errorCode;
 
 /**
  *  Get DJISDKMissionError
  *
- *  @param errorCode errorCode for DJISDKMissionError
+ *  @param errorCode errorCode for `DJISDKMissionError`.
  */
 + (_Nullable instancetype)DJISDKMissionErrorForCode:(NSInteger)errorCode;
 
 /**
  *  Get DJISDKRegistrationError
  *
- *  @param errorCode errorCode for DJISDKRegistrationError
+ *  @param errorCode errorCode for `DJISDKRegistrationError`.
  */
 + (_Nullable instancetype)DJISDKRegistrationErrorForCode:(DJISDKRegistrationError)errorCode;
 
 /**
  *  Get DJISDKError
  *
- *  @param errorCode errorCode for DJISDKError
- *  @param errorDomain domain for DJISDKError
- *  @param desc desc for DJISDKError
+ *  @param errorCode Error code for `DJISDKError`.
+ *  @param errorDomain Domain for `DJISDKError`.
+ *  @param desc Description for `DJISDKError`.
  */
 + (_Nullable instancetype)DJISDKErrorForCode:(NSInteger)errorCode domain:(NSString *_Nonnull)errorDomain desc:(const NSString *_Nonnull)desc;
 

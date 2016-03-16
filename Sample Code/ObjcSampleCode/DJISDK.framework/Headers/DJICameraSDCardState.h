@@ -18,7 +18,7 @@
 @interface DJICameraSDCardState : NSObject
 
 /**
- *  Yes if the SD card is initializing. Please note that if the SD card is initializing, the value for other properties in DJICameraSDCardState is undefined.
+ *  Yes if the SD card is initializing. Note that if the SD card is initializing, the value for other properties in `DJICameraSDCardState` is undefined.
  */
 @property(nonatomic, readonly) BOOL isInitializing;
 
@@ -28,7 +28,7 @@
 @property(nonatomic, readonly) BOOL hasError;
 
 /**
- *  YES if the SD card is read only.
+ *  YES if the SD card is read-only.
  */
 @property(nonatomic, readonly) BOOL isReadOnly;
 
@@ -52,13 +52,13 @@
 @property(nonatomic, readonly) BOOL isFull;
 
 /**
- *  YES if the SD card is verified genuine. The SD card will not be valid if it is fake,
+ *  YES if the SD card is verified as genuine. The SD card is not valid if it is fake,
  *  which can be a problem if the SD card was purchased by a non-reputable retailer.
  */
 @property(nonatomic, readonly) BOOL isVerified;
 
 /**
- *  YES if SD card is inserted in camera.
+ *  YES if the SD card is inserted in the camera.
  */
 @property(nonatomic, readonly) BOOL isInserted;
 
@@ -80,7 +80,7 @@
 
 /**
  *  Returns the number of seconds available for recording with the remaining space available
- *  in the SD card.
+ *  on the SD card.
  */
 @property(nonatomic, readonly) int availableRecordingTimeInSeconds;
 

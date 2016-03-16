@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param mission Waypoint mission.
  *
- *  @return Instance of DJIWaypointStep.
+ *  @return Instance of `DJIWaypointStep`.
  */
 - (instancetype _Nullable)initWithWaypointMission:(DJIWaypointMission *_Nonnull)mission;
 

@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Callback delegate method after the application attempts to register.
  *
- *  @param error nil if registration is successful. Otherwise it contains NSError object with error codes from DJISDKRegistrationError.
+ *  @param error nil if registration is successful. Otherwise it contains an `NSError` object with error codes from `DJISDKRegistrationError`.
  *
  */
 - (void)sdkManagerDidRegisterAppWithError:(NSError *_Nullable)error;
@@ -57,14 +57,14 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- *  This class contains methods to register the app, start or stop connection with the product, and use the DJI Bridge app and Remote Logger tools, etc. After the registration, user can access the connected product through DJISDKManager. Then user can start to control the components of the product.
+ *  This class contains methods to register the app, start or stop connections with the product, and use the DJI Bridge app and Remote Logger tools, etc. After registration, the user can access the connected product through `DJISDKManager`. Then the user can start to control the components of the product.
  */
 @interface DJISDKManager : NSObject
 
 /**
  *  Product connected to the mobile device. The product is accessible only after successful registration of the app.
  *
- *  @return available DJIBaseProduct object. nil if no product is available.
+ *  @return The available `DJIBaseProduct object`, or nil if no product is available.
  */
 + (__kindof DJIBaseProduct *_Nullable)product;
 
@@ -79,48 +79,48 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Queue in which completion blocks are called. If left unset, completion blocks are called in main queue.
  *
- *  @param completionBlockQueue dispatch queue.
+ *  @param completionBlockQueue Dispatch queue.
  */
 + (void)setCompletionBlockQueue:(dispatch_queue_t)completionBlockQueue;
 
 /**
- *  Start a connection to the DJI product. This method should be called after successful registration of the app. `sdkManagerProductDidChangeFrom:to:` delegate method will be called if the connection succeeded.
+ *  Start a connection to the DJI product. Call this method after successful registration of the app. `sdkManagerProductDidChangeFrom:to:` delegate method will be called if the connection succeeded.
  *
- *  @return YES if the connection is started successfully.
+ *  @return YES if the connection has started successfully.
  */
 + (BOOL)startConnectionToProduct;
 
 /**
- * Disconnect the existing connection to the DJI product
+ * Disconnect the existing connection to the DJI product.
  */
 + (void)stopConnectionToProduct;
 
 /**
- *  Set SDK to close the connection automatically when app enters the background and resume connection automatically when the app enters the foreground. Default is YES.
+ *  Set the SDK to close the connection automatically when the app enters the background, and resume connection automatically when the app enters the foreground. Default is YES.
  *
- *  @param isClose Close connection or not when app enter background.
+ *  @param isClose Determines whether to close the connection when the app enters the background.
  */
 + (void)closeConnectionWhenEnterBackground:(BOOL)isClose;
 
 /**
- *  Gets the DJI Mobile SDK Version
+ *  Gets the DJI Mobile SDK Version.
  *
  *  @return SDK version as a string.
  */
 + (NSString *)getSDKVersion;
 
 /**
- *  Enter debug mode with debug id.
+ *  Enter debug mode with debug ID.
  *
- *  @param debugId Debug id from the DJI Bridge App
+ *  @param debugId Debug ID from the DJI Bridge App.
  */
 + (void)enterDebugModeWithDebugId:(NSString *)debugId;
 
 /**
  *  Enter enable remote logging with log server URL.
  *
- *  @param deviceID Optional device id to uniquely identify logs from an installation.
- *  @param url URL of the remote log server
+ *  @param deviceID Optional device ID to uniquely identify logs from an installation.
+ *  @param url URL of the remote log server.
  */
 + (void)enableRemoteLoggingWithDeviceID:(NSString *_Nullable)deviceID logServerURLString:(NSString *)url;
 
@@ -131,13 +131,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*********************************************************************************/
 
 /**
- *  This class provides methods for you to start and stop SDK debug server. You can use them with DJI Bridge App for remote debugging.
+ *  This class provides methods for you to start and stop the SDK debug server. You can use them with the DJI Bridge App for remote debugging.
  */
 @interface DJISDKManager (DebugServer)
 /**
- *  Start debug sever.
+ *  Start the debug server.
  *
- *  @param completion block returns the IP address of the sever.
+ *  @param completion block returns the IP address of the server.
  */
 + (void)startSDKDebugServerWithCompletion:(void (^)(NSString *ipaddress))block;
 
