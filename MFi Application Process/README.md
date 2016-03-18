@@ -1,37 +1,41 @@
-# MFi Program Application Process
+# MFi Approval Process for iOS Apps using DJI Mobile SDK
 
-## Why Do I Need to Apply for the MFi Program?
+## Why to Apply for It
 
-The MFi Program encompasses third-party hardware accessories that use Apple's MFi licensed technology to connect electronically to iPhone, iPod and Apple Watch. Since the Phantom 3 Series and the Inspire 1 Series, we have been using the Lightning port to communicate with iOS devices. Therefore, all the iOS apps developed using DJI Mobile SDK need to go through the MFi Porgram Application Process before being released on the App Store.
+The [MFi Program](https://developer.apple.com/programs/mfi/) ("Made for iPhone/iPod/iPad") is a licensing program for developers of hardware and software peripherals that work with Apple's iPod, iPad and iPhone.
 
-## How to Apply for the MFi Program?
+In order to offer your app on the Apple iTunes App Store with DJI SDK, your app needs to be approved under DJI's MFi program before you submit it to the Apple iTunes App Store. Please follow the instructions below.
 
-![graph](./Images/MFiProcess.png) 
+## WorkFlow
 
-The  picture above shows the six steps for applying for the MFi Program.
+![graph](./Images/progress.png) 
 
-### 1. Developer Submits the MFi Program Application Form to DJI
+The above diagram shows the 6 steps for making your app approved by Apple MFi Program.
 
-Login to your account at <http://developer.dji.com>. Fill out the MFi Program Application Form in your User Center for the specific app that you want to release.
+### 1. Submit the MFi Program Application to DJI
 
-![graph](./Images/MFiApplicationForm.png)
+Send an email to the sdk@dji.com to get an application form. Fill in all the details and send it back to sdk@dji.com.
 
-### 2. DJI Submits App Information to Apple for Review
+### 2. DJI submits your App information to Apple
 
-After receiving your application form, DJI would record the app information and send to Applefor review.
+After receiving your application, DJI records it under our MFi program and sends to Apple for review.
 
-### 3. Apple Approves/Rejects the MFi Application
+### 3. Apple approves the MFi Program application and notifies DJI
 
-Normally it would take up to ten business days for Apple to finish the review process.   Once approved, a corresponding PPID code would be provided by Apple.
+Generally it would take 1 - 2 weeks for Apple to review. 
 
-### 4. DJI Provides PPID to Developer
+### 4. DJI provides PPID to developer
 
-Once approved, you will be given a corresponding PPID (Product Part Identiﬁcation) code through the status bar in your User enterThe PPID code indicates which hardware device your app communicates with which will be used in Step 5 when submitting your app to Apple for final review.
+After Apple notifies DJI that your App information has been approved, DJI will provide you an MFI Product Plan ID (PPID) number. 
 
-### 5. Developer Submits the App to Apple for Final Review
+### 4. Submit your App to iTunes App Store for App Review
 
-During the submission process, we need to put the PPID to the **Notes** in the App Review Information webpage with the picture as follows. 
+You can submit your App to the Apple iTunes App Store through iTunes Connect with the MFI PPID number in the "Review Notes (Optional)" section of the App Review Information. (e.g. MFI PPID *********-*******). The Review Notes of iTunes Connect looks like this:
 
-![graph](./Images/reviewNotes.png)
+![reviewNotes](./Images/reviewNotes.png)
 
-### 6. Apple Approves the App and Publishes It on the App Store
+In some cases, DJI might provide multiple PPIDs. Please ensure you enter all the PPIDs in the Review Notes section.
+
+### 6. Apple approves your App and publish it on iTunes App Store
+
+Apple (iTunes connect) will review your App and release it on the App Store. Approval may takes 1 - 2 weeks.
