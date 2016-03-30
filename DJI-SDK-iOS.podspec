@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.version      = "3.1.1"
   s.summary      = "DJI Mobile SDK for iOS"
   s.homepage     = "https://github.com/dji-sdk/Mobile-SDK-iOS"
-  s.license      = { :type => 'MIT', :file => 'LICENSE.txt'}
+  s.license      = { :type => 'EULA', :file => 'EULA-LICENSE.txt'}
   s.author       = { "DJI SDK" => "sdk@dji.com" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
