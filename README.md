@@ -100,6 +100,9 @@ This guide provides functionality to turn your mobile device into an intelligent
 - [**Creating a Panorama Application**](https://github.com/DJI-Mobile-SDK/iOS-PanoramaDemo):
 Learn how to build a cool panorama app. With the help of the powerful DJI SDK 3.0 and OpenCV libraries, it is actually easy. you will use the DJIWaypointMission feature of Intelligent Navigation and Virtual Stick to rotate the aircraft to take photos.
 
+- [**Creating a TapFly and ActiveTrack Missions Application**](https://github.com/DJI-Mobile-SDK/iOS-Phantom4Missions):
+Learn how to use the TapFly and ActiveTrack Missions of DJI SDK 3.1 to create a cool application for Phantom 4. You will also get familiar with DJIMissionManager and using the Simulator of DJI Assistant 2 for testing.
+
 ## Gitbook
 
 For an improved reading experience of DJI Mobile SDK Tutorials, please check our [**Gitbook**](https://dji-dev.gitbooks.io/mobile-sdk-tutorials/).
@@ -217,10 +220,13 @@ SDK的Sample Code中使用了[FFmpeg](http://ffmpeg.org)的代码，已获得 [L
 
 ## 示例教程 - 高级
 
-- [**创建照片和视频回放应用**](https://github.com/DJI-Mobile-SDK/iOS-PlaybackDemo): 你将会学到如何使用DJI Mobile SDK去访问飞机相机上的SD卡媒体资源。当你完成本教程后，你将开发出一款app，具备预览照片，播放视频，下载或者删除文件等功能. 该教材目前只针对**Phantom 3 Professional** 和 **Inspire 1**.
+- [**创建照片和视频回放App**](https://github.com/DJI-Mobile-SDK/iOS-PlaybackDemo): 你将会学到如何使用DJI Mobile SDK去访问飞机相机上的SD卡媒体资源。当你完成本教程后，你将开发出一款app，具备预览照片，播放视频，下载或者删除文件等功能. 该教材目前只针对**Phantom 3 Professional** 和 **Inspire 1**.
 
 - [**创建全景航拍App**](https://github.com/DJI-Mobile-SDK/iOS-PanoramaDemo):
 在本教程中，你将开发一款很酷的全景app.使用DJI SDK 3.0 和 OpenCV库进行开发，会变得很容易.你将使用地面站的航点任务和飞行控制，去旋转飞行器机身和相机镜头进行拍照。
+
+- [**创建指点飞行和视觉追踪任务App**](https://github.com/DJI-Mobile-SDK/iOS-Phantom4Missions):
+学习如何使用DJI SDK 3.1的指点飞行和视觉追踪任务, 开发一款针对Phantom4的酷炫app。同时，你将熟悉DJIMissionManager的使用方法，以及如何使用DJI Assistant 2 的模拟器做功能测试。
 
 ## Gitbook
 
