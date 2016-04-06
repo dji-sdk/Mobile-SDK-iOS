@@ -23,7 +23,7 @@ Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/
 
 Once you complete it, you may see the following App Key status:
 
-![createAppSuccess](./Images/createAppSuccess.png)
+![appKeyStatus](./Images/appKeyStatus_en.png)
 
 Please record the App Key you just created and we will use it in the following steps.
 
@@ -148,7 +148,7 @@ You can get support from DJI with the following methods:
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
-![createAppSuccess](./Images/createAppSuccessful_cn.png)
+![appKeyStatus](./Images/appKeyStatus_cn.png)
 
 请记下刚刚创建好的App Key，我们会在接下来的步骤中用到。
 
