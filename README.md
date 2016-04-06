@@ -97,6 +97,8 @@ This guide provides functionality to turn your mobile device into an intelligent
 
 - [**Creating a Photo and Video Playback Application**](https://github.com/DJI-Mobile-SDK/iOS-PlaybackDemo): A follow up to the FPV tutorial, this tutorial teaches you how to construct an application to view media files onboard a DJI drone's SD card, specifically for **Phantom 3 Professional** and **Inspire 1**.
 
+- [**Creating a MapView and Waypoint Application**](https://github.com/DJI-Mobile-SDK/iOS-GSDemo): Teaches you how to construct a DJIWaypoint Mission app, which allows you to plot a flight route for your drone by placing waypoints on a map.
+
 - [**Creating a Panorama Application**](https://github.com/DJI-Mobile-SDK/iOS-PanoramaDemo):
 Learn how to build a cool panorama app. With the help of the powerful DJI SDK 3.0 and OpenCV libraries, it is actually easy. you will use the DJIWaypointMission feature of Intelligent Navigation and Virtual Stick to rotate the aircraft to take photos.
 
@@ -224,6 +226,8 @@ SDK的Sample Code中使用了[FFmpeg](http://ffmpeg.org)的代码，已获得 [L
 
 - [**创建全景航拍App**](https://github.com/DJI-Mobile-SDK/iOS-PanoramaDemo):
 在本教程中，你将开发一款很酷的全景app.使用DJI SDK 3.0 和 OpenCV库进行开发，会变得很容易.你将使用地面站的航点任务和飞行控制，去旋转飞行器机身和相机镜头进行拍照。
+
+- [**创建智能飞行预设航点功能App**](https://github.com/DJI-Mobile-SDK/iOS-GSDemo): 你将学到智能飞行预设航点功能的基本使用流程, 如何升级你的 Inspire 1, Phantom 3 Professional 和 Phantom 3 Advanced的固件到最新版本, 以及如何使用DJI PC 模拟器去测试智能飞行的功能.
 
 - [**创建指点飞行和视觉追踪任务App**](https://github.com/DJI-Mobile-SDK/iOS-Phantom4Missions):
 学习如何使用DJI SDK 3.1的指点飞行和视觉追踪任务, 开发一款针对Phantom4的酷炫app。同时，你将熟悉DJIMissionManager的使用方法，以及如何使用DJI Assistant 2 的模拟器做功能测试。
