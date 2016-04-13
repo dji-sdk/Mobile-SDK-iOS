@@ -57,8 +57,8 @@ Please download or clone this Github Project repository and navigate to **Sample
 Please download or clone this Github Project repository and navigate to **Sample Code-> SwiftSampleCode**. Open the "DJISDKSwiftDemo.xcodeproj" project in Xcode, modify the **StartupViewController.swift** file by assigning the App Key string we just created to the **APP_KEY** object like this:
 
 ~~~swift
-let APP_KEY = ""//Please enter App Key Here
-    
+let APP_KEY = ""//TODO: Please enter App Key Here
+
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -207,7 +207,7 @@ You can get support from DJI with the following methods:
 请把Github project下载或者clone到本地，然后来到**Sample Code-> SwiftSampleCode**， 在Xcode中打开 "DJISDKSwiftDemo.xcodeproj" 工程, 修改 **StartupViewController.swift** 文件，将刚创建好的App Key字符串赋值给 **APP_KEY** 对象，如下所示:
 
 ~~~swift
-let APP_KEY = ""//Please enter App Key Here
+let APP_KEY = ""//TODO: Please enter App Key Here
     
 override func viewDidLoad() {
     super.viewDidLoad()

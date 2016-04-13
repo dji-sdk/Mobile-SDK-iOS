@@ -20,7 +20,7 @@ class StartupViewController: UIViewController {
     var connectedProduct:DJIBaseProduct?=nil
     var componentDictionary = Dictionary<String, Array<DJIBaseComponent>>()
     
-    let APP_KEY = ""//Please enter App Key Here
+    let APP_KEY = ""//TODO: Please enter App Key Here
     
     override func viewDidLoad() {
         super.viewDidLoad()
