@@ -17,9 +17,9 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 
 ### Registering an App Key
 
-Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps), select the "Mobile SDK" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
+Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps), select the "Apps" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
 
->Note: Please type in "com.dji.sdkdemo" in the `Identification Code` field, because the default bundle identifier in the sample Xcode project is "com.dji.sdkdemo".
+>Note: Please type in "com.dji.sdkdemo" in the `Bundle Identifier` field, because the default Bundle Identifier in the sample Xcode project is "com.dji.sdkdemo".
 
 Once you complete it, you may see the following App Key status:
 
@@ -29,23 +29,48 @@ Please record the App Key you just created and we will use it in the following s
 
 ### Running the Sample Xcode project
 
-Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **DJIRootViewController.m** file by assigning the App Key string we just created to the **appKey** object like this:
+#### Objective C Sample:
+
+Please download or clone this Github Project repository and navigate to **Sample Code-> ObjcSampleCode**. Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **DJIRootViewController.m** file by assigning the App Key string we just created to the **appKey** object like this:
 
 ~~~objc
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // disable the connect button by default
-    [self.connectButton setEnabled:NO];
-
-    //Register App with key
-    NSString* appKey = @"Please enter your App Key here";
-    [DJISDKManager registerApp:appKey withDelegate:self];
+    //Register App with App Key
+    NSString* appKey = @""; //TODO: Please enter your App Key here
     
-    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager getSDKVersion]];
+    if ([appKey length] == 0) {
+        ShowResult(@"Please enter your app key.");
+    }
+    else
+    {
+        [DJISDKManager registerApp:appKey withDelegate:self];
+    }
+    
+    [self initUI];
 }
+~~~
 
+#### Swift Sample:
+
+Please download or clone this Github Project repository and navigate to **Sample Code-> SwiftSampleCode**. Open the "DJISDKSwiftDemo.xcodeproj" project in Xcode, modify the **StartupViewController.swift** file by assigning the App Key string we just created to the **APP_KEY** object like this:
+
+~~~swift
+let APP_KEY = ""//Please enter App Key Here
+    
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if(APP_KEY.isEmpty){
+        showAlert("Please enter your app key.")
+    }else
+    {
+        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+    }
+    
+    initUI();
+}
 ~~~
 
 > Notes:
@@ -59,21 +84,21 @@ Open the "DJISdkDemo.xcodeproj" project in Xcode, modify the **DJIRootViewContro
 > - In order to prepare your app for App Store submission, create a new "Run Script Phase" in your app's target's "Build Phases" and paste the following snippet in the script text field(see below image): `bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework/strip-frameworks.sh"` This step is required to work around an App Store submission bug when archiving universal binaries.
 > ![runScript](./Images/runShellScript.png)
 
-Once you finish it, build and run the project and you can start to try different features in the sample project without any problems.
+Once you finish it, build and run the project on your iOS Device. Then connect the iOS device to the Remote Controller, turn on the Remote Controller and the aircraft or handheld device. You can start to try different features in the sample project without any problems.
 
 ## DJI Bridge App
 
 DJI Bridge App is a universal app supports both iPhone and iPad. You can use it to debug app for Phantom 4, Phantom 3 Professional, Phantom 3 Advanced, Inspire 1, M100 and other products using USB/MFI connection between RC and your app.
 
-For more details, please check the [**DJI Bridge App Tutorial**](./DJIBridgeAppDemo/README.md).
+For more details, please check the [**DJI Bridge App Tutorial**](https://github.com/DJI-Mobile-SDK/DJIBridgeAppDemo).
 
-You can download the DJI Bridge App source code from here: <https://github.com/dji-sdk/DJI-Bridge-App>.
+You can download the DJI Bridge App source code to build and run the app on your iOS device from here: <https://github.com/dji-sdk/DJI-Bridge-App>.
 
 ## DJI Remote Logger
 
 DJI Remote Logger is a tool to show the log messages in your source code on a webpage. It use Ruby log server to show log contents.
 
-For more details, please check the [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
+For more details, please check the [**DJI Remote Logger Tutorial**](https://github.com/DJI-Mobile-SDK/DJIRemoteLoggerDemo)
 
 ## FFmpeg Customization
 
@@ -142,9 +167,9 @@ You can get support from DJI with the following methods:
 
 ### 注册App Key
 
-首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "Mobile SDK" 选项，然后点击“创建App”按钮，并且选择“iOS”作为开发平台. 接着在弹出的对话框中输入信息.
+首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "应用" 选项，然后点击“创建App”按钮，并且选择“iOS”作为开发平台. 接着在弹出的对话框中输入信息.
 
->注意: 请在`标识码`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认bundle identifier就是 "com.dji.sdk".
+>注意: 请在`Bundle Identifier`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认Bundle Identifier就是 "com.dji.sdkdemo".
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
@@ -154,23 +179,48 @@ You can get support from DJI with the following methods:
 
 ### 运行Xcode示例代码
 
-在Xcode中打开 "DJISdkDemo.xcodeproj"工程, 修改 **DJIRootViewController.m** 文件，将刚创建好的App Key字符串赋值给 **appKey** 对象，如下所示:
+#### Objective C 示例代码
+
+请把Github project下载或者clone到本地，然后来到**Sample Code-> ObjcSampleCode**， 在Xcode中打开 "DJISdkDemo.xcodeproj"工程, 修改 **DJIRootViewController.m** 文件，将刚创建好的App Key字符串赋值给 **appKey** 对象，如下所示:
 
 ~~~objc
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // disable the connect button by default
-    [self.connectButton setEnabled:NO];
-
-    //Register App with key
-    NSString* appKey = @"Please enter your App Key here";
-    [DJISDKManager registerApp:appKey withDelegate:self];
+    //Register App with App Key
+    NSString* appKey = @""; //TODO: Please enter your App Key here
     
-    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager getSDKVersion]];
+    if ([appKey length] == 0) {
+        ShowResult(@"Please enter your app key.");
+    }
+    else
+    {
+        [DJISDKManager registerApp:appKey withDelegate:self];
+    }
+    
+    [self initUI];
 }
+~~~
 
+#### Swift 示例代码
+
+请把Github project下载或者clone到本地，然后来到**Sample Code-> SwiftSampleCode**， 在Xcode中打开 "DJISDKSwiftDemo.xcodeproj" 工程, 修改 **StartupViewController.swift** 文件，将刚创建好的App Key字符串赋值给 **APP_KEY** 对象，如下所示:
+
+~~~swift
+let APP_KEY = ""//Please enter App Key Here
+    
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if(APP_KEY.isEmpty){
+        showAlert("Please enter your app key.")
+    }else
+    {
+        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+    }
+    
+    initUI();
+}
 ~~~
 
 >注意:
@@ -184,21 +234,21 @@ You can get support from DJI with the following methods:
 > - 准备提交app到App Store审核时, 请在你的app target的"Build Phases" 里面新建一个"Run Script Phase", 然后粘贴以下脚本内容: `bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/DJISDK.framework/strip-frameworks.sh"` 这一步是必须的，可以帮你解决在归档通用二进制文件时，提交App Store审核的bug.
 > ![runScript](./Images/runShellScript.png)
 
-最后编译运行该工程，你就可以开始流畅地体验实例代码中的不同功能了。
+最后编译运行该工程，安装到你的iOS设备上。然后连接iOS设备到遥控器，启动遥控器和飞机。你就可以开始流畅地体验实例代码中的不同功能了。
 
 ## DJI Bridge App
 
 DJI Bridge App 是一个同时支持iPhone和iPad的通用应用程序。你可以使用它来为Phantom 4, Phantom 3 Professional, Phantom 3 Advanced， Inspire 1, M100 和其它产品进行应用程序调试操作。它使用了USB 或者MFI，将遥控器和你的应用程序连接起来.
 
-想了解更多信息，请查看: [**DJI Bridge App 教程**](./DJIBridgeAppDemo/README.md).
+想了解更多信息，请查看: [**DJI Bridge App 教程**](https://github.com/DJI-Mobile-SDK/DJIBridgeAppDemo).
 
-你可以从这里下载到 DJI Bridge App 的源代码: <https://github.com/dji-sdk/DJI-Bridge-App>.
+你可以从这里下载到 DJI Bridge App 的源代码, 编译运行到你的iOS设备上使用: <https://github.com/dji-sdk/DJI-Bridge-App>.
 
 ## DJI Remote Logger
 
 DJI Remote Logger 是一个可以将源代码中的日志信息展示到网页上的工具。它使用了Ruby 服务器脚本进行日志展示。
 
-想了解更多信息，请查看: [**DJI Remote Logger Tutorial**](./DJIRemoteLoggerDemo/README.md)
+想了解更多信息，请查看: [**DJI Remote Logger Tutorial**](https://github.com/DJI-Mobile-SDK/DJIRemoteLoggerDemo)
 
 ## 自定义FFmpeg库
 

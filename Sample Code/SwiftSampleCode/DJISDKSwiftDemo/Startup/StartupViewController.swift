@@ -20,22 +20,39 @@ class StartupViewController: UIViewController {
     var connectedProduct:DJIBaseProduct?=nil
     var componentDictionary = Dictionary<String, Array<DJIBaseComponent>>()
     
-    let APP_KEY = "Please enter App Key Here"
+    let APP_KEY = ""//Please enter App Key Here
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+        if(APP_KEY.isEmpty){
+            showAlert("Please enter your app key.")
+        }else
+        {
+            DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+        }
         
-        openComponents.enabled = false;
-
-        sdkVersionLabel.text = "DJI SDK Version: \(DJISDKManager.getSDKVersion())"
-        
+        initUI();
+    }
+    
+    func initUI() {
         self.title = "DJI iOS SDK Sample"
+        sdkVersionLabel.text = "DJI SDK Version: \(DJISDKManager.getSDKVersion())"
+        openComponents.enabled = false;
         productModel.hidden = true
         productFirmwarePackageVersion.hidden = true
     }
+    
+    func showAlert(msg: String?) {
+        // create the alert
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        // show the alert
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
+
 
 extension StartupViewController : DJISDKManagerDelegate
 {
