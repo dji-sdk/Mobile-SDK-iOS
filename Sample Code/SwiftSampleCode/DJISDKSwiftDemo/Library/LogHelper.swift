@@ -46,7 +46,7 @@ func convertToString<T>(objectOpt: T?) -> String
             if !localizedDesc.isEmpty { return "\(error.domain) : \(error.code) : \(localizedDesc)" }
             return "<<\(error.localizedDescription)>> --- ORIGINAL ERROR: \(error)"
         case let nsobject as NSObject:
-            if nsobject.respondsToSelector(Selector("debugDescription")) {
+            if nsobject.respondsToSelector(#selector(NSObject.debugDescription as () -> String)) {
                 return nsobject.debugDescription
             }
             else

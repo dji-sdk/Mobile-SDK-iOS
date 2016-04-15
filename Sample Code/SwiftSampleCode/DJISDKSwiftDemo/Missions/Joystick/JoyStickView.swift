@@ -164,7 +164,7 @@ class JoyStickView: UIView {
 
     func startUpdateTimer() {
         if mUpdateTimer == nil {
-            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: "onUpdateTimerTicked:", userInfo: nil, repeats: true)
+            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(JoyStickView.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
             mUpdateTimer!.fire()
         }
     }

@@ -55,7 +55,7 @@ class NavigationWaypointConfigView: UIView, UITextFieldDelegate {
             else {
                 if self.actionView == nil {
                     self.actionView = NavigationWaypointActionView()
-                    self.actionView!.okButton.addTarget(self, action: "onActionViewOkButtonClicked:", forControlEvents: .TouchUpInside)
+                    self.actionView!.okButton.addTarget(self, action: #selector(NavigationWaypointConfigView.onActionViewOkButtonClicked(_:)), forControlEvents: .TouchUpInside)
                     self.actionView!.alpha = 0
                     var frame = self.actionView!.frame
                     frame.size.width = (self.superview?.frame.width)!

@@ -169,11 +169,11 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.isEditEnable = false
         self.waypointConfigView.alpha = 0
         self.waypointConfigView.delegate = self
-        self.waypointConfigView.okButton.addTarget(self, action: "onWaypointConfigOKButtonClicked:", forControlEvents: .TouchUpInside)
+        self.waypointConfigView.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onWaypointConfigOKButtonClicked(_:)), forControlEvents: .TouchUpInside)
         self.view!.addSubview(self.waypointConfigView)
         self.waypointMissionConfigView = NavigationWaypointMissionConfigView()
         self.waypointMissionConfigView!.alpha = 0
-        self.waypointMissionConfigView!.okButton.addTarget(self, action: "onMissionConfigOKButtonClicked:", forControlEvents: .TouchUpInside)
+        self.waypointMissionConfigView!.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onMissionConfigOKButtonClicked(_:)), forControlEvents: .TouchUpInside)
         self.view!.addSubview(self.waypointMissionConfigView!)
         self.tipsLabel.layer.cornerRadius = 5.0
         self.tipsLabel.layer.backgroundColor = UIColor.blackColor().CGColor
@@ -334,7 +334,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     @IBAction func onEditButtonClicked(sender: UIButton) {
         self.isEditEnable = !self.isEditEnable
         if self.isEditEnable {
-            self.tapGesture = UITapGestureRecognizer(target: self, action: "onMapViewTap:")
+            self.tapGesture = UITapGestureRecognizer(target: self, action: #selector(NavigationWaypointViewController.onMapViewTap(_:)))
             self.view!.addGestureRecognizer(self.tapGesture!)
             sender.setTitle("Finished", forState: .Normal)
         }
