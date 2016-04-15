@@ -24,7 +24,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
             aircraft!.flightController?.delegate = self
 
         }
-        for var i = 100; i < 105; i++ {
+        for i in 100 ..< 105 {
             let btn: UIButton? = self.view!.viewWithTag(i) as? UIButton
             if btn != nil {
                 btn!.layer.cornerRadius = btn!.frame.size.width * 0.5

@@ -231,7 +231,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     }
 
     func calcCornerRadius() {
-        for var i :Int32 = 0; i < Int32(self.waypointMission.waypointCount); i++ {
+        for i :Int32 in 0 ..< Int32(self.waypointMission.waypointCount) {
             let wp: DJIWaypoint = self.waypointMission.getWaypointAtIndex(i)!
             var prevWaypoint: DJIWaypoint? = nil
             var nextWaypoint: DJIWaypoint? = nil
@@ -378,7 +378,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
             let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[index] as! DJIWaypointAnnotation
             self.waypointAnnotations.removeAtIndex(index)
             self.mapView.removeAnnotation(wpAnno)
-            for var i = 0; i < self.waypointAnnotations.count; i++ {
+            for i in 0 ..< self.waypointAnnotations.count {
                 let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[i] as! DJIWaypointAnnotation
                 wpAnno.text = "\(i + 1)"
                 let annoView: DJIWaypointAnnotationView = self.mapView.viewForAnnotation(wpAnno) as! DJIWaypointAnnotationView
@@ -388,7 +388,7 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
     }
 
     func configViewDidDeleteAllWaypoints() {
-        for var i = 0; i < self.waypointAnnotations.count; i++ {
+        for i in 0 ..< self.waypointAnnotations.count {
             let wpAnno: DJIWaypointAnnotation = self.waypointAnnotations[i] as! DJIWaypointAnnotation
             self.mapView.removeAnnotation(wpAnno)
         }
