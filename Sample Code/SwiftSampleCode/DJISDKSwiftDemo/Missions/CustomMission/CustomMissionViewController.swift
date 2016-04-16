@@ -191,9 +191,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     }
 
     func updateWaypointMissionOnUIView(waypointMission: DJIWaypointMission) {
-        let count:Int32 = waypointMission.waypointCount
-        var i:Int32
-        for (i = 0; i < count; i++) {
+        for i:Int32 in 0 ..< Int32(waypointMission.waypointCount) {
             self.waypointOnMapView(waypointMission.getWaypointAtIndex(i)!.coordinate)
         }
     }
@@ -322,7 +320,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     }
 
     func updateCells() {
-        for var i = 0; i < stepIndex; i++ {
+        for i in 0 ..< stepIndex {
             let cell: DJICollectionViewCell = self.allCells[i]
             cell.showProgress(false)
             cell.setBorderColor(UIColor.greenColor())

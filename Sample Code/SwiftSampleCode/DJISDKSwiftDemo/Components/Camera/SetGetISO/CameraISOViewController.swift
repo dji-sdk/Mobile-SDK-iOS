@@ -10,7 +10,7 @@ extension NSArray {
     func horizontalDescription() -> String {
         let string: NSMutableString = NSMutableString()
         string.appendString("(")
-        for var i = 0; i < self.count; i++ {
+        for i in 0 ..< self.count {
             if i != 0 {
                 string.appendString(",")
             }

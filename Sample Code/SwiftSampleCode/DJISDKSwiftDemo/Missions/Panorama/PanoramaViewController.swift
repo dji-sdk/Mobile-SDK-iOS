@@ -177,7 +177,7 @@ class PanoramaViewController: DJIBaseViewController, DJIMissionManagerDelegate{
                 let view: UIImageView? = self?.imageViews[currentIndex]
                 view?.image = self?.mediaList![currentIndex].thumbnail
             }
-            self?.currentIndex++
+            self?.currentIndex += 1
             self?.fetchSingleThumbnail()
         })
     }
