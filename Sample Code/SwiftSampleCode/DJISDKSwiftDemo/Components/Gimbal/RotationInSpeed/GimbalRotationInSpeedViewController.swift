@@ -40,7 +40,7 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
              *  frequency. The suggested time interval is 40ms.
              */
         if self.gimbalSpeedTimer == nil {
-            self.gimbalSpeedTimer = NSTimer.scheduledTimerWithTimeInterval(0.04, target: self, selector: "onUpdateGimbalSpeedTick:", userInfo: nil, repeats: true)
+            self.gimbalSpeedTimer = NSTimer.scheduledTimerWithTimeInterval(0.04, target: self, selector: #selector(GimbalRotationInSpeedViewController.onUpdateGimbalSpeedTick(_:)), userInfo: nil, repeats: true)
         }
     }
 

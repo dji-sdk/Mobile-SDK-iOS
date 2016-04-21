@@ -200,7 +200,7 @@ class CameraFetchMediaViewController: DJIBaseViewController {
     func showPhotoWithImage(image: UIImage) {
         let bkgndView: UIView = UIView(frame: self.view.bounds)
         bkgndView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onImageViewTap:")
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CameraFetchMediaViewController.onImageViewTap(_:)))
         bkgndView.addGestureRecognizer(tapGesture)
         var width: CGFloat = image.size.width
         var height: CGFloat = image.size.height

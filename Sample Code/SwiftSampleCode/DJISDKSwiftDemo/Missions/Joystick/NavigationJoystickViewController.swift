@@ -88,7 +88,7 @@ class NavigationJoystickViewController: DJIBaseViewController, DJICameraDelegate
         // Do any additional setup after loading the view, typically from a nib.
         //    playerOrigin = player.frame.origin;
         let notificationCenter: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "onStickChanged:", name: "StickChanged", object: nil)
+        notificationCenter.addObserver(self, selector: #selector(NavigationJoystickViewController.onStickChanged(_:)), name: "StickChanged", object: nil)
       
         if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil) {
             self.aircraft = ConnectedProductManager.sharedInstance.fetchAircraft()
