@@ -20,6 +20,10 @@ This guide shows you how to setup APP Key and run our DJI Mobile SDK sample proj
 Firstly, please go to your DJI Account's [User Center](http://developer.dji.com/en/user/apps), select the "Apps" tab on the left, press the "Create App" button and select "iOS" as your operating system. Then type in the info in the pop up dialog.
 
 >Note: Please type in "com.dji.sdkdemo" in the `Bundle Identifier` field, because the default Bundle Identifier in the sample Xcode project is "com.dji.sdkdemo".
+>
+>If you cannot build and run the Sample app on your iOS device and see the following error, please change the `Bundle Identifier` to what you prefer and apply for an DJI App Key again.
+>
+>![bundleIdConfict](./Images/bundleIdConflict.png)
 
 Once you complete it, you may see the following App Key status:
 
@@ -170,6 +174,10 @@ You can get support from DJI with the following methods:
 首先, 请来到你的DJI 账号的[用户中心](http://developer.dji.com/cn/user/apps/), 选择左侧的 "应用" 选项，然后点击“创建App”按钮，并且选择“iOS”作为开发平台. 接着在弹出的对话框中输入信息.
 
 >注意: 请在`Bundle Identifier`栏中输入"com.dji.sdkdemo", 因为示例代码中的默认Bundle Identifier就是 "com.dji.sdkdemo".
+>
+>如果你在编译运行示例代码到你的iOS设备上遇到以下错误，请修改`Bundle Identifier`为其它值，并且重新申请一个DJI App Key.
+>
+>![bundleIdConfict](./Images/bundleIdConflict.png)
 
 一旦你完成了注册，你将看到以下App Key的状态截图:
 
