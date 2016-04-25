@@ -25,7 +25,6 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
             updateThermalCameraUI()
         }
         self.isSettingMode = false
-        VideoPreviewer.instance().start()
     }
     
     func updateThermalCameraUI() {
@@ -54,6 +53,7 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        VideoPreviewer.instance().start()
         VideoPreviewer.instance().setView(self.fpvView)
     }
     

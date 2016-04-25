@@ -181,7 +181,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
             
         }
         if ((newComponent is DJICamera) == true && (self is DJIPlaybackDelegate) == true) {
-            (newComponent as! DJICamera).playbackManager.delegate = self as? DJIPlaybackDelegate
+            (newComponent as! DJICamera).playbackManager?.delegate = self as? DJIPlaybackDelegate
         }
         
         if ((newComponent is DJIFlightController) == true && (self is DJIFlightControllerDelegate) == true) {

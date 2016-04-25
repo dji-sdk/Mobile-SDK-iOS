@@ -14,9 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Data Structs and Enums
 /*********************************************************************************/
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIAttitude
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Aircraft attitude. The attitude of the aircraft is made up of the pitch, roll, and yaw.
  */
@@ -36,9 +37,10 @@ typedef struct
     double yaw;
 } DJIAttitude;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIFlightControllerFlightMode
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Flight controller flight modes. For more information, see http://wiki.dji.com/en/index.php/Phantom_3_Professional-Aircraft.
  *
@@ -150,9 +152,10 @@ typedef NS_ENUM (NSUInteger, DJIFlightControllerFlightMode){
     DJIFlightControllerFlightModeUnknown = 0xFF,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIFlightControllerGoHomeExecutionStatus
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  A class used to identify the different stages of the go-home command.
  */
@@ -218,9 +221,10 @@ typedef NS_ENUM (uint8_t, DJIFlightOrientationMode){
     DJIFlightOrientationModeDefaultAircraftHeading,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIFlightControllerNoFlyStatus
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  No fly status. See http://wiki.dji.com/en/index.php/Phantom_3_Professional-_Flight_Limits_and_No-Fly_Zones for more information on no fly zones.
  */
@@ -265,9 +269,10 @@ typedef NS_ENUM (NSUInteger, DJIFlightControllerNoFlyStatus){
     DJIFlightControllerNoFlyStatusUnknownStatus,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIGPSSignalStatus
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  GPS signal levels, which are used to measure the signal quality.
  */
@@ -305,9 +310,10 @@ typedef NS_ENUM (uint8_t, DJIGPSSignalStatus){
     DJIGPSSignalStatusNone,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIFlightControllerSmartGoHomeStatus
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  The Flight Controller Smart Go Home Status
  */
@@ -318,33 +324,33 @@ typedef struct
      *  This time includes landing the aircraft.
      */
     NSUInteger remainingFlightTime;
-    
+
     /**
      *  The estimated time, in seconds, needed for the aircraft to go home from its
      *  current location.
      */
     NSUInteger timeNeededToGoHome;
-    
+
     /**
      *  The estimated time, in seconds, needed for the aircraft to land from its current
      *  height. The time calculated will be for the aircraft to land, moving
      *  straight down, from its current height.
      */
     NSUInteger timeNeededToLandFromCurrentHeight;
-    
+
     /**
      *  The estimated battery percentage, in the range of [0 - 100], needed for the aircraft
      *  to go home and have 10% battery remaining. This includes landing of the aircraft.
      */
     NSUInteger batteryPercentageNeededToGoHome;
-    
+
     /**
      *  The battery percentage, in the range of [0 - 100], needed for the aircraft
      *  to land from its current height. The battery percentage needed will be for
      *  the aircraft to land, moving straight down, from its current height.
      */
     NSUInteger batteryPercentageNeededToLandFromCurrentHeight;
-    
+
     /**
      *  The maximum radius, in meters, an aircraft can fly from its home location
      *  and still make it all the way back home based on certain factors including
@@ -352,7 +358,7 @@ typedef struct
      *  max radius, it will fly as far back home as it can and land.
      */
     float maxRadiusAircraftCanFlyAndGoHome;
-    
+
     /**
      *  Returns whether the aircraft is requesting to go home. If the value of
      *  `aircraftShouldGoHome` is YES and the user does not respond after 10 seconds,
@@ -370,9 +376,10 @@ typedef struct
     BOOL aircraftShouldGoHome;
 } DJIFlightControllerSmartGoHomeStatus;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIAircraftPowerLevel
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remaining battery life state. This state describes the recommended action based on remaining battery life.
  */
@@ -531,7 +538,7 @@ typedef NS_ENUM (uint8_t, DJIAircraftRemainingBatteryState){
 /**
  *  Returns the flight mode as a string. For example, "P-GPS" or "P-Atti".
  */
-@property(nonatomic, readonly) NSString *flightModeString;
+@property(nonatomic, readonly) NSString *_Nonnull flightModeString;
 
 @end
 

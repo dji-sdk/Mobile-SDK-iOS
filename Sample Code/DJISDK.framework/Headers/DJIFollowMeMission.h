@@ -17,7 +17,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeHeading){
      *  Aircraft's heading will be controlled by the remote controller.
      */
     DJIFollowMeHeadingControlledByRemoteController,
-    
+
     /**
      *  Aircraft's heading remains toward the coordinate it is following.
      */
@@ -67,7 +67,7 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /**
  *  The class represents a follow me mission. In a follow me mission, the aircraft is programmed to track and maintain a constant distant relative to some object, such as a person or a moving vehicle.
  *  You can use it to make the aircraft follow a GPS device, such as a remote controller with a GPS signal or a mobile device.
- *
+ *  It is not supported by Matrice 600.
  */
 @interface DJIFollowMeMission : DJIMission
 

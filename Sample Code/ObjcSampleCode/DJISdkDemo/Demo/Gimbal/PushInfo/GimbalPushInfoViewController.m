@@ -40,7 +40,7 @@
 
 #pragma mark - DJIGimbalDelegate
 // Override method in DJIGimbalDelegate to receive the pushed data
--(void)gimbalController:(DJIGimbal *)controller didUpdateGimbalState:(DJIGimbalState *)gimbalState {
+-(void)gimbal:(DJIGimbal *)gimbal didUpdateGimbalState:(DJIGimbalState *)gimbalState {
     NSMutableString* gimbalInfoString = [[NSMutableString alloc] init];
     [gimbalInfoString appendFormat:@"Gimbal attitude in degree: (%f, %f, %f)\n", gimbalState.attitudeInDegrees.pitch,
      gimbalState.attitudeInDegrees.roll,

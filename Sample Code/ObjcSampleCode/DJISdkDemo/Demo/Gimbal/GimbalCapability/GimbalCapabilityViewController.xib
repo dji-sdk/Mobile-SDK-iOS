@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GimbalCapabilityViewController">
+            <connections>
+                <outlet property="pitchMaxButton" destination="wAE-An-Nm0" id="cbk-Bb-WgK"/>
+                <outlet property="pitchMinButton" destination="LGh-TO-IRO" id="1Si-Ky-cLc"/>
+                <outlet property="rollMaxButton" destination="7rn-ij-2uf" id="bKo-iJ-pLJ"/>
+                <outlet property="rollMinButton" destination="9Cf-qM-HF5" id="soY-au-nHS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="yawMaxButton" destination="qpO-Or-UAJ" id="Dfl-jW-3ej"/>
+                <outlet property="yawMinButton" destination="x1M-iN-ew7" id="cwN-IP-EIh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGh-TO-IRO" userLabel="PitchMin">
+                    <rect key="frame" x="183" y="193" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="TKN-sb-xcM"/>
+                        <constraint firstAttribute="width" constant="83" id="a3s-m8-KpM"/>
+                    </constraints>
+                    <state key="normal" title="Min" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMin:" destination="-1" eventType="touchUpInside" id="she-LL-7WW"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAE-An-Nm0" userLabel="PitchMax">
+                    <rect key="frame" x="335" y="193" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="Xxj-aN-4ml"/>
+                        <constraint firstAttribute="width" constant="83" id="puC-9D-xuy"/>
+                    </constraints>
+                    <state key="normal" title="Max" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMax:" destination="-1" eventType="touchUpInside" id="igL-Ip-XWr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate Gimbal's Pitch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thl-Eb-Esb">
+                    <rect key="frame" x="219" y="168" width="163.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate Gimbal's Yaw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSi-Ki-mHN">
+                    <rect key="frame" x="223" y="244" width="155.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1M-iN-ew7" userLabel="YawMin">
+                    <rect key="frame" x="183" y="269" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="cKT-DH-NPj"/>
+                        <constraint firstAttribute="height" constant="34" id="yBF-tk-M2c"/>
+                    </constraints>
+                    <state key="normal" title="Min" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMin:" destination="-1" eventType="touchUpInside" id="YgE-5d-IXD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpO-Or-UAJ" userLabel="YawMax">
+                    <rect key="frame" x="335" y="269" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="65Q-8y-dPL"/>
+                        <constraint firstAttribute="width" constant="83" id="mWz-mb-zOF"/>
+                    </constraints>
+                    <state key="normal" title="Max" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMax:" destination="-1" eventType="touchUpInside" id="H2Y-mV-MRr"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate Gimbal's Roll" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSy-6Z-hV7">
+                    <rect key="frame" x="224.5" y="320.5" width="152.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cf-qM-HF5" userLabel="RollMin">
+                    <rect key="frame" x="183" y="346" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="1Ee-LI-zGV"/>
+                        <constraint firstAttribute="width" constant="83" id="Bga-XG-iF7"/>
+                    </constraints>
+                    <state key="normal" title="Min" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMin:" destination="-1" eventType="touchUpInside" id="uQF-qa-p4g"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rn-ij-2uf" userLabel="RollMax">
+                    <rect key="frame" x="335" y="346" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="e0C-Gf-fY7"/>
+                        <constraint firstAttribute="height" constant="34" id="ow1-ft-tEO"/>
+                    </constraints>
+                    <state key="normal" title="Max" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="rotateGimbalToMax:" destination="-1" eventType="touchUpInside" id="Zde-LN-asJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-AN-NwX">
+                    <rect key="frame" x="259" y="388" width="83" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="SVE-4N-NVh"/>
+                        <constraint firstAttribute="height" constant="34" id="oeD-LR-bQ5"/>
+                    </constraints>
+                    <state key="normal" title="Reset" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="resetGimbal:" destination="-1" eventType="touchUpInside" id="W4A-OI-o2O"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qpO-Or-UAJ" firstAttribute="top" secondItem="HSi-Ki-mHN" secondAttribute="bottom" constant="4.5" id="1hN-UJ-VgP"/>
+                <constraint firstItem="Thl-Eb-Esb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="77C-D6-Sc8"/>
+                <constraint firstItem="Thl-Eb-Esb" firstAttribute="leading" secondItem="LGh-TO-IRO" secondAttribute="trailing" constant="-47" id="87W-RQ-Efk"/>
+                <constraint firstItem="wtL-AN-NwX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BXu-Hk-VuV"/>
+                <constraint firstItem="x1M-iN-ew7" firstAttribute="leading" secondItem="LGh-TO-IRO" secondAttribute="leading" id="Ew3-ev-Yz2"/>
+                <constraint firstItem="wtL-AN-NwX" firstAttribute="top" secondItem="9Cf-qM-HF5" secondAttribute="bottom" constant="8" id="G2X-bl-UWI"/>
+                <constraint firstItem="HSi-Ki-mHN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GXp-eC-9ob"/>
+                <constraint firstItem="9Cf-qM-HF5" firstAttribute="top" secondItem="ZSy-6Z-hV7" secondAttribute="bottom" constant="5" id="Imt-XK-N8W"/>
+                <constraint firstItem="LGh-TO-IRO" firstAttribute="top" secondItem="Thl-Eb-Esb" secondAttribute="bottom" constant="5" id="KNt-n3-gFI"/>
+                <constraint firstItem="HSi-Ki-mHN" firstAttribute="top" secondItem="Thl-Eb-Esb" secondAttribute="bottom" constant="56" id="KgD-vz-Xzr"/>
+                <constraint firstItem="x1M-iN-ew7" firstAttribute="top" secondItem="HSi-Ki-mHN" secondAttribute="bottom" constant="4.5" id="NH9-JV-e9R"/>
+                <constraint firstItem="qpO-Or-UAJ" firstAttribute="trailing" secondItem="wAE-An-Nm0" secondAttribute="trailing" id="NY8-4p-eJl"/>
+                <constraint firstItem="7rn-ij-2uf" firstAttribute="trailing" secondItem="qpO-Or-UAJ" secondAttribute="trailing" id="VfY-Hr-hc5"/>
+                <constraint firstItem="9Cf-qM-HF5" firstAttribute="leading" secondItem="x1M-iN-ew7" secondAttribute="leading" id="gu2-gS-yT0"/>
+                <constraint firstItem="7rn-ij-2uf" firstAttribute="top" secondItem="ZSy-6Z-hV7" secondAttribute="bottom" constant="5" id="kDU-B7-2lQ"/>
+                <constraint firstItem="wAE-An-Nm0" firstAttribute="leading" secondItem="Thl-Eb-Esb" secondAttribute="trailing" constant="-47.5" id="nFp-hd-uXd"/>
+                <constraint firstItem="Thl-Eb-Esb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-122" id="osn-4a-Ycc"/>
+                <constraint firstItem="ZSy-6Z-hV7" firstAttribute="top" secondItem="HSi-Ki-mHN" secondAttribute="bottom" constant="56" id="trh-b5-uqA"/>
+                <constraint firstItem="wAE-An-Nm0" firstAttribute="top" secondItem="Thl-Eb-Esb" secondAttribute="bottom" constant="5" id="vcp-z5-GJD"/>
+                <constraint firstItem="ZSy-6Z-hV7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wvR-KD-3Pf"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn" width="17" height="34"/>
+    </resources>
+</document>

@@ -71,7 +71,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         // set delegate to render camera's video feed into the view
         camera!.delegate = self
         // set playback manager delegate to check playback state
-        camera!.playbackManager.delegate = self
+        camera!.playbackManager?.delegate = self
         // start to check the pre-condition
         self.getCameraMode()
     }
@@ -83,8 +83,8 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         if camera != nil && camera!.delegate === self {
             camera!.delegate = nil
         }
-        if camera != nil  && camera!.playbackManager.delegate === self {
-            camera!.playbackManager.delegate = nil
+        if camera != nil  && camera!.playbackManager?.delegate === self {
+            camera!.playbackManager?.delegate = nil
         }
         self.cleanVideoPreview()
     }
@@ -129,14 +129,14 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     @IBAction func onSelectFirstClicked(sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager.toggleFileSelectionAtIndex(0)
+            camera?.playbackManager?.toggleFileSelectionAtIndex(0)
         }
     }
 
     @IBAction func onSelectSecondClicked(sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager.toggleFileSelectionAtIndex(1)
+            camera?.playbackManager?.toggleFileSelectionAtIndex(1)
         }
     }
 
@@ -148,7 +148,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
             var currentFileRecievedSize: UInt = 0
             var currentFileName: String? = nil
             
-            camera?.playbackManager.downloadSelectedFilesWithPreparation({[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
+            camera?.playbackManager?.downloadSelectedFilesWithPreparation({[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
                 
                 currentFileName = fileName
                 self?.statusLabel.text = "Start to download file: \(fileName)"

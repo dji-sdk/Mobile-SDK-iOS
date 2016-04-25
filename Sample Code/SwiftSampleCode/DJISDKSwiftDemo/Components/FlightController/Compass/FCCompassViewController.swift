@@ -33,7 +33,7 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
             if sender.tag == STOP_TAG {
-                fc?.compass.stopCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
+                fc?.compass?.stopCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Stop Calibration:\(error?.localizedDescription)")
                     }
@@ -44,7 +44,7 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
                 })
             }
             else {
-                fc?.compass.startCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
+                fc?.compass?.startCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Start Calibration:\(error?.localizedDescription)")
                     }
@@ -60,10 +60,15 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         }
     }
     
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
-        self.headingLabel.text = String(format: "%0.1f", fc.compass.heading)
-        self.calibratingLabel.text = fc.compass.isCalibrating ? "YES" : "NO"
-        self.statusLabel.text = self.stringWithCalibrationStatus(fc.compass.calibrationStatus)
+    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState)
+    {
+        if (fc.compass == nil) {
+            return;
+        }
+        
+        self.headingLabel.text = String(format: "%0.1f", fc.compass!.heading)
+        self.calibratingLabel.text = fc.compass!.isCalibrating ? "YES" : "NO"
+        self.statusLabel.text = self.stringWithCalibrationStatus(fc.compass!.calibrationStatus)
     }
     
     func stringWithCalibrationStatus(status: DJICompassCalibrationStatus) -> String {

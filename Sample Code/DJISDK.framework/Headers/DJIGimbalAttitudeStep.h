@@ -10,7 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  Subclass of `DJIMission`. You can control the gimbal attitude using this mission step.
+ *  Subclass of `DJIMissionStep`. You can control the gimbal attitude using this mission step.
  *
  */
 @interface DJIGimbalAttitudeStep : DJIMissionStep

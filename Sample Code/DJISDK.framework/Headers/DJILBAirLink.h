@@ -216,6 +216,58 @@ typedef struct
     int8_t rssi[DJI_LBAIRLINK_SUPPORTED_CHANNEL_COUNT];
 } DJILBAirLinkAllChannelSignalStrengths;
 
+/**
+ *  The video source for the delegate method `- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data` in `DJILBAirLinkDelegate` and `DJICameraDelegate`.
+ */
+typedef NS_ENUM (uint8_t, DJIVideoDataChannel) {
+    /**
+     *  Video from AV or HDMI is received by the delegate method. 
+     *  It can only be set when the encode mode is `DJILBAirLinkEncodeModeSingle` and the FPV video bandwidth percent is non-zero. 
+     *  When the encode mode is `DJILBAirLinkEncodeModeSingle` and the FPV video bandwidth percent is 100%, the video data channel will be set to `DJIVideoDataChannelFPVCamera` automatically.
+     */
+    DJIVideoDataChannelFPVCamera,
+    /**
+     *  Video from HD Gimbal is received by the delegate method.
+     *  It can only be set when the encode mode is `DJILBAirLinkEncodeModeSingle` and the FPV video bandwidth percent is not 100%. 
+     *  When the encode mode is `DJILBAirLinkEncodeModeSingle` and the FPV video bandwidth percent is 0%, the video data channel will be set to `DJIVideoDataChannelHDGimbal` automatically.
+     */
+    DJIVideoDataChannelHDGimbal,
+    /**
+     *  Video from HDMI is received by the delegate method.
+     *  It can only be set when the encode mode is `DJILBAirLinkEncodeModeDual` and the dual encode mode percent is not 0%.
+     *  When the encode mode is `DJILBAirLinkEncodeModeDual` and the dual encode mode percent is 100%, the video data channel will be set to `DJIVideoDataChannelHDMI` automatically.
+     */
+    DJIVideoDataChannelHDMI,
+    /**
+     *  Video from AV is received by the delegate method.
+     *  It can only be set when the encode mode is `DJILBAirLinkEncodeModeDual` and the dual encode mode percent is not 100%.
+     *  When the encode mode is `DJILBAirLinkEncodeModeDual` and the dual encode mode percent is 0%, the video data channel will be set to `DJIVideoDataChannelAV` automatically.
+     */
+    DJIVideoDataChannelAV,
+    /**
+     *  Unknown
+     */
+    DJIVideoDataChannelUnknown = 0xFF
+};
+
+/**
+ *  Lightbridge 2 encode mode.
+ */
+typedef NS_ENUM (uint8_t, DJILBAirLinkEncodeMode) {
+    /**
+     *  Single encode mode. Lightbridge 2 will only encode the video input from either the AV port or the HDMI port.
+     */
+    DJILBAirLinkEncodeModeSingle,
+    /**
+     *  Dual encode mode. Lightbridge 2 will encode the video input from both the AV port and the HDMI port.
+     */
+    DJILBAirLinkEncodeModeDual,
+    /**
+     *  Unknown
+     */
+    DJILBAirLinkEncodeModeUnknown = 0xFF
+};
+
 /*********************************************************************************/
 #pragma mark - DJILBAirLinkDelegate
 /*********************************************************************************/
@@ -286,6 +338,21 @@ typedef struct
 @property(nonatomic, weak) id<DJILBAirLinkDelegate> delegate;
 
 /**
+ *  Selects the video data which will be received by the video data `- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data` in `DJILBAirLinkDelegate` and `DJICameraDelegate`.
+ *
+ *  @param videoDataChannel The video source that streams data to the delegate method. 
+ *  @param completion       Completion block that receives the execution result.
+ */
+-(void)setVideoDataChannel:(DJIVideoDataChannel)videoDataChannel withCompletion:(DJICompletionBlock)completion;
+
+/**
+ *  Gets the selected video data which will be received by the video data `- (void)lbAirLink:(DJILBAirLink *_Nonnull)lbAirLink didReceiveVideoData:(NSData *)data` in `DJILBAirLinkDelegate` and `DJICameraDelegate`.
+ *
+ *  @param completion   Completion block that receives the execution result.
+ */
+-(void)getVideoDataChannelWithCompletion:(void(^_Nonnull)(DJIVideoDataChannel videoChannel, NSError *_Nullable error))completion;
+
+/**
  *  Sets the downlink channel selection mode (automatic or manual).
  *
  *  @param mode       Channel selection mode for `LBAirLink`.
@@ -298,7 +365,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getChannelSelectionModeWithCompletion:(void (^_Nullable)(DJILBAirLinkChannelSelectionMode mode, NSError *_Nullable error))completion;
+- (void)getChannelSelectionModeWithCompletion:(void (^_Nonnull)(DJILBAirLinkChannelSelectionMode mode, NSError *_Nullable error))completion;
 
 /**
  *  Sets fixed downlink channel. Channel selection mode should be set to `DJILBAirLinkChannelSelectionModeManual`.
@@ -315,7 +382,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getChannelWithCompletion:(void (^_Nullable)(int channel, NSError *_Nullable error))completion;
+- (void)getChannelWithCompletion:(void (^_Nonnull)(int channel, NSError *_Nullable error))completion;
 
 /**
  *  Sets the downlink data rate (throughput). Higher data rates increase the quality of video transmission, but can only be used at shorter ranges.
@@ -330,7 +397,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getDataRateWithCompletion:(void (^_Nullable)(DJILBAirLinkDataRate rate, NSError *_Nullable error))completion;
+- (void)getDataRateWithCompletion:(void (^_Nonnull)(DJILBAirLinkDataRate rate, NSError *_Nullable error))completion;
 
 /**
  *  Sets FPV video quality vs latency preference. This mode only effects the FPV camera and not the camera on the HD Gimbal.
@@ -345,7 +412,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getFPVQualityLatencyWithCompletion:(void (^_Nullable)(DJILBAirLinkFPVVideoQualityLatency qualityLatency, NSError *_Nullable error))completion;
+- (void)getFPVQualityLatencyWithCompletion:(void (^_Nonnull)(DJILBAirLinkFPVVideoQualityLatency qualityLatency, NSError *_Nullable error))completion;
 
 /**
  *  Sets the percentage downlink video bandwidth dedicated to the FPV camera. The remaining percentage is dedicated to the camera on the HD Gimbal. Setting 100% dedicates all the video bandwidth to FPV.
@@ -359,7 +426,7 @@ typedef struct
  *  Gets the percentage downlink video bandwidth dedicated to the FPV camera. The remaining percentage is dedicated to the camera on the HD Gimbal. Setting 100% dedicates all the video bandwidth to FPV.
  *
  */
-- (void)getFPVVideoBandwidthPercentWithCompletion:(void (^_Nullable)(float percent, NSError *_Nullable error))completion;
+- (void)getFPVVideoBandwidthPercentWithCompletion:(void (^_Nonnull)(float percent, NSError *_Nullable error))completion;
 
 
 /*********************************************************************************/
@@ -386,7 +453,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getSecondaryVideoOutputEnabledWithCompletion:(void (^_Nullable)(BOOL enabled, NSError *_Nullable error))completion;
+- (void)getSecondaryVideoOutputEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))completion;
 
 /**
  *  Sets secondary video output port on Remote Controller. HDMI or SDI are possible. Only one port can be active at once.
@@ -401,7 +468,7 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getSecondaryVideoOutputPortWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoOutputPort port, NSError *_Nullable error))completion;
+- (void)getSecondaryVideoOutputPortWithCompletion:(void (^_Nonnull)(DJILBAirLinkSecondaryVideoOutputPort port, NSError *_Nullable error))completion;
 
 /**
  *  Sets the secondary video output Picture in Picture (PIP) display mode. The air link module can connect to both an FPV camera (through the HDMI and AV ports) and a camera mounted on the HD Gimbal (through the Gimbal port). The output video can then be a combination of the two video sources. Either a single video source can be displayed, or one can be displayed within the other (as a Picture in Picture, or PIP). If the mode is set incorrectly, then no output video will be displayed. For example, if only a FPV camera is connected, or the bandwidth for the 'LB' data (FPV) is set to 100 percent, the only mode that will display data is the `DJILBAirLinkPIPModeLB`.
@@ -418,7 +485,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getPIPDisplayWithCompletion:(void (^_Nullable)(DJILBAirLinkPIPDisplayMode pipDisplay, NSError *_Nullable error))completion;
+- (void)getPIPDisplayWithCompletion:(void (^_Nonnull)(DJILBAirLinkPIPDisplayMode pipDisplay, NSError *_Nullable error))completion;
 
 /**
  *  Enables and disables On Screen Display (OSD) overlay on the secondary video. OSD is flight data like altitude, attitude etc. and can be overlayed on the PIP video.
@@ -435,7 +502,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getDisplayOSDEnabledWithCompletion:(void (^_Nullable)(BOOL enabled, NSError *_Nullable error))completion;
+- (void)getDisplayOSDEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))completion;
 
 /**
  *  Sets the OSD top margin in video pixels.
@@ -452,7 +519,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getOSDTopMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
+- (void)getOSDTopMarginWithCompletion:(void (^_Nonnull)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
  *  Sets the OSD left margin in video pixels.
@@ -469,7 +536,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getOSDLeftMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
+- (void)getOSDLeftMarginWithCompletion:(void (^_Nonnull)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
  *  Sets the OSD bottom margin in video pixels.
@@ -486,7 +553,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getOSDBottomMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
+- (void)getOSDBottomMarginWithCompletion:(void (^_Nonnull)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
  *  Sets the OSD right margin in video pixels.
@@ -503,7 +570,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getOSDRightMarginWithCompletion:(void (^_Nullable)(NSUInteger margin, NSError *_Nullable error))completion;
+- (void)getOSDRightMarginWithCompletion:(void (^_Nonnull)(NSUInteger margin, NSError *_Nullable error))completion;
 
 /**
  *  Sets the OSD units to either metric or imperial.
@@ -520,7 +587,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getOSDUnitsWithCompletion:(void (^_Nullable)(DJILBAirLinkOSDUnits units, NSError *_Nullable error))completion;
+- (void)getOSDUnitsWithCompletion:(void (^_Nonnull)(DJILBAirLinkOSDUnits units, NSError *_Nullable error))completion;
 
 /**
  *  Sets the Remote Controller HDMI video port output video format.
@@ -537,7 +604,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getHDMIOutputFormatWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
+- (void)getHDMIOutputFormatWithCompletion:(void (^_Nonnull)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
 
 /**
  *  Sets the Remote Controller SDI video port output video format.
@@ -554,7 +621,7 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getSDIOutputFormatWithCompletion:(void (^_Nullable)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
+- (void)getSDIOutputFormatWithCompletion:(void (^_Nonnull)(DJILBAirLinkSecondaryVideoFormat format, NSError *_Nullable error))completion;
 
 /**
  *  Sets the PIP (Picture In Picture) position relative to the top left corner of the main subject video feed.
@@ -572,7 +639,48 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)getPIPPositionWithCompletion:(void (^_Nullable)(DJILBAirLinkPIPPosition position, NSError *_Nullable error))completion;
+- (void)getPIPPositionWithCompletion:(void (^_Nonnull)(DJILBAirLinkPIPPosition position, NSError *_Nullable error))completion;
+
+/**
+ *  `YES` if Lightbridge 2 device supports dual encode mode. Dual encode mode allows the Lightbridge module to encode and transmit both it's AV and HDMI inputs simultaneously.
+ */
+-(BOOL) isDualEncodeModeSupported;
+
+/**
+ *  Sets Lightbridge 2 encode mode. It is only available when `isDualEncodeModeSupported` returns `YES`. For Lightbridge 2 modules that don't support dual encode mode, the encode mode is always single.
+ *
+ *  @param mode         The encode mode to set.
+ *  @param completion   Completion block.
+ *  
+ *  @see `DJILBAirLinkEncodeMode`
+ */
+- (void)setEncodeMode:(DJILBAirLinkEncodeMode)mode withCompletion:(DJICompletionBlock)completion;
+/**
+ *  Gets Lightbridge 2 encode mode. It is only available when `isDualEncodeModeSupported` returns `YES`. For Lightbridge 2 modules that don't support dual encode mode, the encode mode is always single.
+ *
+ *  @param completion   Completion block.
+ *
+ *  @see `DJILBAirLinkEncodeMode`
+ */
+- (void)getEncodeModeWithCompletion:(void (^_Nonnull)(DJILBAirLinkEncodeMode mode, NSError *_Nullable error))completion;
+/**
+ *  Sets the computational power and bandwidth balance between AV and HMDI inputs on the Lightbridge 2 module when dual encode mode is enabled. Balance is in percent [0.0,  1.0]. It is only available when `isDualEncodeModeSupported` returns `YES`.
+ *  When `percent` is 0.0, all resources are allocated for video data from AV port.
+ *  When `percent` is 1.0, all resources are allocated for video data from HDMI port.
+ *
+ *  @param percent      Percentage resources dedicated to HDMI encoding and transmission.
+ *  @param completion   Completion block.
+ */
+- (void)setDualEncodeModePercent:(float)percent withCompletion:(DJICompletionBlock)completion;
+/**
+ *  Gets the computational power and bandwidth balance between AV and HMDI inputs on the Lightbridge 2 module when dual encode mode is enabled.
+ *  It is only available when `isDualEncodeModeSupported` returns `YES`.
+ *  When `percent` is 0.0, all resources are allocated for video data from AV port.
+ *  When `percent` is 1.0, all resources are allocated for video data from HDMI port.
+ *
+ *  @param completion   Completion block.
+ */
+- (void)getDualEncodeModePercentWithCompletion:(void (^_Nonnull)(float percent, NSError *_Nullable error))completion;
 
 @end
 

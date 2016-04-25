@@ -10,6 +10,7 @@
 #import "GimbalActionsTableViewController.h"
 #import "GimbalPushInfoViewController.h"
 #import "GimbalRotationInSpeedViewController.h"
+#import "GimbalCapabilityViewController.h"
 
 @interface GimbalActionsTableViewController ()
 
@@ -21,7 +22,10 @@
     [super viewDidLoad];
     
     self.sectionNames = [NSMutableArray arrayWithArray:@[@"General"]];
-    [self.items addObject:@[[DemoSettingItem itemWithName:@"Push Data" andClass:[GimbalPushInfoViewController class]],[DemoSettingItem itemWithName:@"Rotation with speed" andClass:[GimbalRotationInSpeedViewController class]]]];
+    [self.items addObject:@[[DemoSettingItem itemWithName:@"Push Data" andClass:[GimbalPushInfoViewController class]],
+                            [DemoSettingItem itemWithName:@"Rotation with speed" andClass:[GimbalRotationInSpeedViewController class]],
+                            [DemoSettingItem itemWithName:@"Gimbal Capability" andClass:[GimbalCapabilityViewController class]],
+                            ]];
     
 }
 

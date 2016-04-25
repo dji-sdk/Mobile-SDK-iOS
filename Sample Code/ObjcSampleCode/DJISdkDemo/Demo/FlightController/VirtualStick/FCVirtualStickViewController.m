@@ -5,12 +5,16 @@
 //  Copyright © 2015 DJI. All rights reserved.
 //
 /**
- *  This file demonstrates how to use the advanced set of methods in DJIFlightController to control the aircraft. Through DJIFlightController,
- *  user can make the aircraft enter the virtual stick mode. In this mode, SDK gives the flexibility for user to control the aircraft just 
- *  like controlling it using the joystick. There are different combinations to control the aircraft in the virtual stick mode. In this 
- *  sample, we will control the horizontal movement by velocity. 
+ *  This file demonstrates how to use the advanced set of methods in DJIFlightController to control the aircraft and how to start the 
+ *  simulator. 
  *
- *  For more information about the virtual stick, please refer to the Get Started page on http://developer.dji.com.
+ *  Through DJIFlightController,user can make the aircraft enter the virtual stick mode. In this mode, SDK gives the flexibility for user to control the aircraft just like controlling it using the joystick. There are different combinations to control the aircraft in the
+ *  virtual stick mode. In this sample, we will control the horizontal movement by velocity. For more information about the virtual stick, 
+ *  please refer to the Get Started page on http://developer.dji.com.
+ *
+ *  Through the simulator object in DJIFlightController, user can test the flight controller interfaces and Mission Manager without PC. In
+ *  this sample, we will start/stop the simulator and display the aircraft's state during the simulation.
+ *
  */
 #import "FCVirtualStickViewController.h"
 #import "FCVirtualStickView.h"
@@ -24,10 +28,15 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *enableVirtualStickButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *simulatorButton;
+@property (weak, nonatomic) IBOutlet UILabel *simulatorStateLabel;
+@property (assign, nonatomic) BOOL isSimulatorOn;
+
 -(IBAction) onEnterVirtualStickControlButtonClicked:(id)sender;
 -(IBAction) onExitVirtualStickControlButtonClicked:(id)sender;
 -(IBAction) onTakeoffButtonClicked:(id)sender;
 -(IBAction) onCoordinateSysButtonClicked:(id)sender;
+- (IBAction)onSimulatorButtonClicked:(id)sender;
 
 @end
 
@@ -53,8 +62,28 @@
     
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        fc.delegate = self;
         fc.rollPitchControlMode = DJIVirtualStickFlightCoordinateSystemGround;
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
+    if (fc && fc.simulator) {
+        self.isSimulatorOn = fc.simulator.isSimulatorStarted;
+        [self updateSimulatorUI];
+        
+        [fc.simulator addObserver:self forKeyPath:@"isSimulatorStarted" options:NSKeyValueObservingOptionNew context:nil];
+        [fc.simulator setDelegate:self];
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
+    if (fc && fc.simulator) {
+        [fc.simulator removeObserver:self forKeyPath:@"isSimulatorStarted"];
+        [fc.simulator setDelegate:nil];
     }
 }
 
@@ -66,7 +95,7 @@
             if (error){
                 ShowResult(@"Exit Virtual Stick Mode: %@", error.debugDescription);
             } else{
-                ShowResult(@"Success. ");
+                ShowResult(@"Exit Virtual Stick Mode:Succeeded");
             }
         }];
     }
@@ -107,7 +136,7 @@
             if (error) {
                 ShowResult(@"Takeoff:%@", error.description);
             } else {
-                ShowResult(@"Success. ");
+                ShowResult(@"Takeoff Success. ");
             }
         }];
     }
@@ -134,6 +163,32 @@
     else
     {
         ShowResult(@"Component not exist.");
+    }
+}
+
+- (IBAction)onSimulatorButtonClicked:(id)sender {
+    DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
+    if (fc && fc.simulator) {
+        if (!self.isSimulatorOn) {
+            // The initial aircraft's position in the simulator.
+            CLLocationCoordinate2D location = CLLocationCoordinate2DMake(22, 113);
+            [fc.simulator startSimulatorWithLocation:location updateFrequency:20 GPSSatellitesNumber:10 withCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"Start simulator error:%@", error.description);
+                } else {
+                    ShowResult(@"Start simulator succeeded.");
+                }
+            }];
+        }
+        else {
+            [fc.simulator stopSimulatorWithCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"Stop simulator error:%@", error.description);
+                } else {
+                    ShowResult(@"Stop simulator succeeded.");
+                }
+            }];
+        }
     }
 }
 
@@ -189,10 +244,28 @@
     }
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"isSimulatorStarted"]) {
+        self.isSimulatorOn = [[change objectForKey:NSKeyValueChangeNewKey] boolValue];
+        [self updateSimulatorUI];
+    }
+}
+
+-(void) updateSimulatorUI {
+    if (!self.isSimulatorOn) {
+        [self.simulatorButton setTitle:@"Start Simulator" forState:UIControlStateNormal];
+        [self.simulatorStateLabel setHidden:YES];
+    }
+    else {
+        [self.simulatorButton setTitle:@"Stop Simulator" forState:UIControlStateNormal];
+    }
+}
+
 #pragma mark - Delegate
 
--(void) flightController:(DJIFlightController*)fc didUpdateSystemState:(DJIFlightControllerCurrentState*)state
-{
-
+-(void)simulator:(DJISimulator *)simulator updateSimulatorState:(DJISimulatorState *)state {
+    [self.simulatorStateLabel setHidden:NO];
+    self.simulatorStateLabel.text = [NSString stringWithFormat:@"Yaw: %f\nX: %f Y: %f Z: %f", state.yaw, state.positionX, state.positionY, state.positionZ];
 }
+
 @end

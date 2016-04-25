@@ -46,9 +46,10 @@ FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRemoteControllerErrorDomain;
  */
 FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRegistrationErrorDomain;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJISDKRegistrationError
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  The Error of SDK Registration
  */
@@ -57,17 +58,17 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
      *  The application is not able to connect to the internet the first time it registers.
      */
     DJISDKRegistrationErrorCouldNotConnectToInternet = -1L,
-    
+
     /**
      *  The application key you provided is incorrect.
      */
     DJISDKRegistrationErrorInvalidAppKey = -2L,
-    
+
     /**
      *  The network you are trying to reach is busy, or the server is unreachable.
      */
     DJISDKRegistrationErrorHTTPTimeout = -3L,
-    
+
     /**
      *  The attempt to copy meta data from another registered device to the device that is
      *  currently connected is not allowed. For example, if a developer has two devices and
@@ -75,26 +76,26 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
      *  other device is plugged in and tries to register the application, this error will occur.
      */
     DJISDKRegistrationErrorDeviceDoesNotMatch = -4L,
-    
+
     /**
      *  The bundle identifier of your application does not match the bundle identifier you
      *  registered on the website when you applied to obtain an application key.
      */
     DJISDKRegistrationErrorBundleIdDoesNotMatch = -5L,
-    
+
     /**
      *  The application key is prohibited. This occurs when an application key that has already
      *  been released by DJI is revoked. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorAppKeyProhibited = -6L,
-    
+
     /**
      *  There is a maximum number of devices one application key can be used to activate. The
      *  maximum number of devices is given when an application is registered on the DJI developer
      *  website. This error will occur if the maximum number of activations has been reached.
      */
     DJISDKRegistrationErrorMaxActivationCountReached = -7L,
-    
+
     /**
      *  This error occurrs when an application key was given for a specific platform and is trying
      *  to be used to activate an application for another platform. For instance, if an application
@@ -102,46 +103,46 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
      *  error will occur.
      */
     DJISDKRegistrationErrorAppKeyInvalidPlatformError = -8L,
-    
+
     /**
      *  The application key does not exist. Please make sure the application key you are entering
      *  is correct.
      */
     DJISDKRegistrationErrorAppKeyDoesNotExist = -9L,
-    
+
     /**
      *  There are two levels for the SDK framework, level 1 and level 2. If an application key was
      *  given under one level and is trying to be used to active an application using another level
      *  SDK framework, this error will occur.
      */
     DJISDKRegistrationErrorAppKeyLevelNotPermitted = -10L,
-    
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerParseFailure = -11L,
-    
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerWriteError = -12L,
-    
+
     /**
      *  There is a server error. Please contact DJI for assistance.
      */
     DJISDKRegistrationErrorServerDataAbnormal = -13L,
-    
+
     /**
      *  The activation data received from server
      *  valid. Please reconnect to the internet and try again.
      */
     DJISDKRegistrationErrorInvalidMetaData = -14L,
-    
+
     /**
      *  No application key was inputted.
      */
     DJISDKRegistrationErrorEmptyAppKey = -15L,
-    
+
     /**
      *  An unknown error occurred when the application was trying to register. Please contact DJI
      *  for assistance.
@@ -149,9 +150,10 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
     DJISDKRegistrationErrorUnknown = -999L
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJISDKError
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  DJI SDK Error
  */
@@ -234,9 +236,10 @@ typedef NS_ENUM (NSInteger, DJISDKError){
     DJISDKErrorNotDefined = -1999L,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJISDKCameraError
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  DJI SDK Camera Error
  */
@@ -302,14 +305,19 @@ typedef NS_ENUM (NSInteger, DJISDKCameraError){
      */
     DJISDKCameraErrorNoPermission = -3014L,
     /**
-     *  The download process of DJIPlaybackManager is interrupted unexpectly.
+     *  The download process of DJIPlaybackManager is interrupted.
      */
-    DJISDKCameraErrorPlaybackDownloadInterruption = -3015L
+    DJISDKCameraErrorPlaybackDownloadInterruption = -3015L,
+    /**
+     *  There is no downloading files to stop.
+     */
+    DJISDKCameraErrorPlaybackNoDownloadingFiles = -3016L,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJISDKFlightControllerError
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  DJI SDK Flight Controller Error
  */
@@ -375,7 +383,7 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      */
     DJISDKFlightControllerErrorMotorsStarted = -4013L,
     /**
-     *  Aircraft could not enter transport mode, since the gimbal is still connected. 
+     *  Aircraft could not enter transport mode, since the gimbal is still connected.
      */
     DJISDKFlightControllerErrorGimbalNotRemoved = -4014L,
     /**
@@ -410,11 +418,28 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      *  The aircraft is not at go home state.
      */
     DJISDKFlightControllerErrorAircraftNotGoingHome = -4022L,
+    /**
+     *  RTK cannot start properly. Please reboot.
+     */
+    DJISDKFlightControllerErrorRTKStartError = -4023L,
+    /**
+     *  Connection between base station and mobile station is broken.
+     */
+    DJISDKFlightControllerErrorRTKConnectionBroken = -4024L,
+    /**
+     *  RTK base station antenna error. Check if the antenna is connected to the correct port.
+     */
+    DJISDKFlightControllerErrorRTKBSAntennaError = -4025L,
+    /**
+     *  RTK base station's coordinate resets.
+     */
+    DJISDKFlightControllerErrorRTKBSCoordinatesReset = -4026L,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJISDKMissionError
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  DJI SDK Mission Error
  */
@@ -476,7 +501,7 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorAircraftInNoFlyZone = -5013L,
     /**
-     *  The aircraft has reached the flight limitation. 
+     *  The aircraft has reached the flight limitation.
      */
     DJISDKMissionErrorReachFlightLimitation = -5014L,
     /**
@@ -552,7 +577,7 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorVideoFrameRateTooLow = -5032L,
     /**
-     *  The vision system cannot get the authorization to control the aircraft. 
+     *  The vision system cannot get the authorization to control the aircraft.
      */
     DJISDKMissionErrorVisionSystemNotAuthorized = -5033L,
     /**
@@ -572,7 +597,7 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      */
     DJISDKMissionErrorVisionSystemNeedCalibration = -5037L,
     /**
-     *  The vision sensors are overexposed. 
+     *  The vision sensors are overexposed.
      */
     DJISDKMissionErrorVisionSensorOverexposed = -5038L,
     /**
@@ -655,7 +680,7 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
      *  The aircraft reaches the altitude lower bound of the TapFly Mission.
      */
     DJISDKMissionErrorReachAltitudeLowerBound = -5058L,
-    
+
 };
 
 /**

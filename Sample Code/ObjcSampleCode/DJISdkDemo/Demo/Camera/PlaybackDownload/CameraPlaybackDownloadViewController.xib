@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -11,6 +11,7 @@
                 <outlet property="selectFirstButton" destination="jqN-jY-kQG" id="zmn-NO-SzH"/>
                 <outlet property="selectSecondButton" destination="xWz-X3-53v" id="x4H-iA-WLC"/>
                 <outlet property="statusLabel" destination="RbB-WR-oR7" id="qCE-S4-AOb"/>
+                <outlet property="videoFeedView" destination="iEy-C7-Ul5" id="XNu-RK-LBa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqN-jY-kQG">
-                    <rect key="frame" x="168" y="139" width="76" height="34"/>
+                    <rect key="frame" x="168" y="154" width="76" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="20S-t3-FWS"/>
                         <constraint firstAttribute="height" constant="34" id="qtY-2z-DLC"/>
@@ -34,7 +35,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWz-X3-53v">
-                    <rect key="frame" x="262" y="139" width="76" height="34"/>
+                    <rect key="frame" x="262" y="154" width="76" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="ABs-4d-gL8"/>
                         <constraint firstAttribute="width" constant="76" id="aVd-AD-2yy"/>
@@ -48,7 +49,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-RB-4xs">
-                    <rect key="frame" x="357" y="139" width="76" height="34"/>
+                    <rect key="frame" x="357" y="154" width="76" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="6Vl-Gm-sdK"/>
                         <constraint firstAttribute="width" constant="76" id="LX0-qQ-TS0"/>
@@ -62,7 +63,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbB-WR-oR7">
-                    <rect key="frame" x="115" y="443" width="370" height="21"/>
+                    <rect key="frame" x="115" y="97" width="370" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="370" id="I4W-NJ-2aV"/>
                         <constraint firstAttribute="height" constant="21" id="p2a-fq-O49"/>
@@ -71,19 +72,49 @@
                     <color key="textColor" red="1" green="0.0" blue="0.084040851152848539" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iEy-C7-Ul5">
+                    <rect key="frame" x="26" y="261" width="547" height="275"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="547" id="QGV-1F-bsi">
+                            <variation key="widthClass=compact" constant="370"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="275" id="tuC-wD-p5D">
+                            <variation key="heightClass=compact" constant="209"/>
+                            <variation key="widthClass=compact" constant="187"/>
+                        </constraint>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="RbB-WR-oR7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="153.5" id="0kT-5C-1hN"/>
+                <constraint firstItem="RbB-WR-oR7" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-192.5" id="0kT-5C-1hN">
+                    <variation key="heightClass=compact" constant="-152.5"/>
+                    <variation key="widthClass=compact" constant="-170.5"/>
+                </constraint>
                 <constraint firstItem="RbB-WR-oR7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Cz3-SY-K0R"/>
                 <constraint firstItem="jqN-jY-kQG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-94" id="MsA-5W-yWh"/>
+                <constraint firstItem="iEy-C7-Ul5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QYW-bN-ktE"/>
                 <constraint firstItem="xWz-X3-53v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RWx-fa-hXQ"/>
-                <constraint firstItem="jXz-RB-4xs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="kfM-HT-ahO"/>
+                <constraint firstItem="iEy-C7-Ul5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="98.5" id="jfA-Je-M5H">
+                    <variation key="heightClass=compact" constant="65.5"/>
+                    <variation key="widthClass=compact" constant="80.5"/>
+                </constraint>
+                <constraint firstItem="jXz-RB-4xs" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-129" id="kfM-HT-ahO">
+                    <variation key="heightClass=compact" constant="-89"/>
+                    <variation key="widthClass=compact" constant="-107"/>
+                </constraint>
                 <constraint firstItem="jXz-RB-4xs" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="95" id="mtS-Zi-FCJ"/>
-                <constraint firstItem="jqN-jY-kQG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="uVN-a9-xf6"/>
-                <constraint firstItem="xWz-X3-53v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-144" id="xeL-eY-YTN"/>
+                <constraint firstItem="jqN-jY-kQG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-129" id="uVN-a9-xf6">
+                    <variation key="heightClass=compact" constant="-89"/>
+                    <variation key="widthClass=compact" constant="-107"/>
+                </constraint>
+                <constraint firstItem="xWz-X3-53v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-129" id="xeL-eY-YTN">
+                    <variation key="heightClass=compact" constant="-89"/>
+                    <variation key="widthClass=compact" constant="-107"/>
+                </constraint>
             </constraints>
-            <point key="canvasLocation" x="362" y="509"/>
+            <point key="canvasLocation" x="447" y="590"/>
         </view>
     </objects>
     <resources>

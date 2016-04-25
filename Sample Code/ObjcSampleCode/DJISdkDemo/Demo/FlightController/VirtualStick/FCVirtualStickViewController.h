@@ -10,6 +10,6 @@
 #import <DJISDK/DJISDK.h>
 #import "FCVirtualStickView.h"
 
-@interface FCVirtualStickViewController : UIViewController<DJIFlightControllerDelegate>
+@interface FCVirtualStickViewController : UIViewController<DJISimulatorDelegate>
 
 @end

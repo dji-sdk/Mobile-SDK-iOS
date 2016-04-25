@@ -336,7 +336,7 @@
 		02A544061C3C51CB0083C11B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -361,7 +361,6 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-read_only_relocs",
 					suppress,
 				);
@@ -374,7 +373,7 @@
 		02A544071C3C51CB0083C11B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -398,7 +397,6 @@
 					"$(PROJECT_DIR)/VideoPreviewer/ffmpeg/lib",
 				);
 				OTHER_LDFLAGS = (
-					"$(inherited)",
 					"-read_only_relocs",
 					suppress,
 				);

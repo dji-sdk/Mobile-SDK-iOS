@@ -38,8 +38,8 @@ typedef NS_ENUM (uint8_t, DJIIMUCalibrationStatus){
 /**
  *  DJI IMU Sensor State
  */
-typedef NS_ENUM(NSUInteger, DJIIMUSensorStatus) {
-    
+typedef NS_ENUM (NSUInteger, DJIIMUSensorStatus) {
+
     /**
      *  The IMU Sensor disconnected with the flight controller.
      */
@@ -81,11 +81,10 @@ typedef NS_ENUM(NSUInteger, DJIIMUSensorStatus) {
      *  The IMU Sensor status is unknown.
      */
     DJIIMUSensorStatusUnknown = 0xFF,
-    
+
 };
 
-/**************************************************************************
- *******/
+/*********************************************************************************/
 #pragma mark - DJIInertialMeasurementUnitState
 /*********************************************************************************/
 
@@ -97,7 +96,7 @@ typedef NS_ENUM(NSUInteger, DJIIMUSensorStatus) {
 @interface DJIIMUState : NSObject
 
 /**
- *  The ID of IMU.
+ *  The ID of IMU. It is started from 0.
  */
 @property(nonatomic, readonly) NSUInteger imuID;
 

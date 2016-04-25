@@ -17,7 +17,7 @@ class CameraPlaybackPushInfoViewController: DemoPushInfoViewController, DJIPlayb
                 self.pushInfoLabel.text = "The camera does not support Playback Mode. "
             }
             else {
-                camera!.playbackManager.delegate = self
+                camera!.playbackManager?.delegate = self
             }
         }
     }
@@ -26,8 +26,8 @@ class CameraPlaybackPushInfoViewController: DemoPushInfoViewController, DJIPlayb
         super.viewWillDisappear(animated)
         // Clean camera's delegate before exiting the view
         let camera: DJICamera? = self.fetchCamera()
-        if camera != nil && camera!.isPlaybackSupported() && camera!.playbackManager.delegate === self {
-            camera!.playbackManager.delegate = nil
+        if camera != nil && camera!.isPlaybackSupported() && camera!.playbackManager?.delegate === self {
+            camera!.playbackManager?.delegate = nil
         }
     }
 

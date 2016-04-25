@@ -15,7 +15,9 @@
 @class DJIFlightLimitation;
 @class DJILandingGear;
 @class DJICompass;
+@class DJIRTK;
 @class DJIIntelligentFlightAssistant;
+@class DJISimulator;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,27 +36,29 @@ NS_ASSUME_NONNULL_BEGIN
  *  aircraft enters a no fly zone, it will stop and hover
  *  at the border.
  */
-//-----------------------------------------------------------------
+
+/*********************************************************************************/
 #pragma mark DJINoFlyZone
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Defines the No Fly Zone Data structure.
  */
 typedef struct
 {
     /**
-     *  Radius of No Fly Zone in meters.
+     *  Radius of the No Fly Zone in meters.
      */
     float zoneRadius;
     /**
-     *  Center Coordinate of No Fly Zone.
+     *  Center Coordinate of the No Fly Zone.
      */
     CLLocationCoordinate2D zoneCenterCoordinate;
 } DJINoFlyZone;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIFlightControl
-//-----------------------------------------------------------------
+/*********************************************************************************/
 
 /**
  *  Flight control coordinate system.
@@ -189,7 +193,30 @@ typedef NS_ENUM (uint8_t, DJIVirtualStickYawControlMode){
 };
 
 /**
- * Contains all the virtual stick control data needed to move the aircraft in all directions
+ *  Defines aircraft failsafe action when signal between the remote controller and the aircraft is lost.
+ */
+typedef NS_ENUM (uint8_t, DJIFlightFailsafeOperation){
+    /**
+     *  Hover
+     */
+    DJIFlightFailsafeOperationHover,
+    /**
+     *  Landing
+     */
+    DJIFlightFailsafeOperationLanding,
+    /**
+     *  Return-to-Home
+     */
+    DJIFlightFailsafeOperationGoHome,
+    /**
+     *  Unknown
+     */
+    DJIFlightFailsafeOperationUnknown = 0xFF
+};
+
+
+/**
+ *  Contains all the virtual stick control data needed to move the aircraft in all directions
  */
 typedef struct
 {
@@ -237,7 +264,7 @@ typedef struct
  *  @param fc    Instance of the flight controller for which the data will be updated.
  *  @param state Current state of the flight controller.
  */
-- (void)flightController:(DJIFlightController *)fc didUpdateSystemState:(DJIFlightControllerCurrentState *)state;
+- (void)flightController:(DJIFlightController *_Nonnull)fc didUpdateSystemState:(DJIFlightControllerCurrentState *_Nonnull)state;
 
 /**
  *  Callback function that updates the data received from an external device (e.g. the onboard device).
@@ -247,7 +274,7 @@ typedef struct
  *  @param data  Data received from an external device. The size of the data will not be larger
  *  than 100 bytes.
  */
-- (void)flightController:(DJIFlightController *)fc didReceiveDataFromExternalDevice:(NSData *)data;
+- (void)flightController:(DJIFlightController *_Nonnull)fc didReceiveDataFromExternalDevice:(NSData *_Nonnull)data;
 
 /**
  *  Update IMU State.
@@ -256,7 +283,7 @@ typedef struct
  *  @param imuState DJIIMUState object.
  *
  */
-- (void)flightController:(DJIFlightController *)fc didUpdateIMUState:(DJIIMUState *)imuState;
+- (void)flightController:(DJIFlightController *_Nonnull)fc didUpdateIMUState:(DJIIMUState *_Nonnull)imuState;
 
 @end
 
@@ -278,22 +305,33 @@ typedef struct
  *  Flight limitation object. This object sets, gets and tracks the state of the maximum flight height
  *  and radius allowed.
  */
-@property(nonatomic, readonly) DJIFlightLimitation *flightLimitation;
+@property(nonatomic, readonly) DJIFlightLimitation *_Nullable flightLimitation;
 
 /**
  *  Landing Gear object. For products with moveable landing gear only.
+ *  It is supported by Inspire 1 and Matrice 600.
  */
-@property(nonatomic, readonly) DJILandingGear *landingGear;
+@property(nonatomic, readonly) DJILandingGear *_Nullable landingGear;
 
 /**
  *  Compass object.
  */
-@property(nonatomic, readonly) DJICompass *compass;
+@property(nonatomic, readonly) DJICompass *_Nullable compass;
+
+/**
+ *  RTK positioning object.
+ */
+@property(nonatomic, readonly) DJIRTK *_Nullable rtk;
 
 /**
  *  Intelligent flight assistant.
  */
-@property(nonatomic, readonly) DJIIntelligentFlightAssistant* intelligentFlightAssistant;
+@property(nonatomic, readonly) DJIIntelligentFlightAssistant *_Nullable intelligentFlightAssistant;
+
+/**
+ *  Simulator object.
+ */
+@property(nonatomic, readonly) DJISimulator *_Nullable simulator;
 
 /**
  *  The number of IMU module in the flight controller.
@@ -318,10 +356,24 @@ typedef struct
  *  Roll/Pitch control coordinate system.
  */
 @property(nonatomic, assign) DJIVirtualStickFlightCoordinateSystem rollPitchCoordinateSystem;
+/**
+ *  `YES` if Virtual Stick advanced mode is enabled. By default, it is `NO`.
+ *  When advanced mode is enabled, the aircraft will compensate for wind when hovering and the GPS signal is good.
+ *  For the Phantom 4, collision avoidance can be enabled for virtual stick control if advanced mode is on, and collision avoidance is enabled in `DJIIntelligentFlightAssistant`.
+ *
+ *  It is only supported by flight controller firmware versions 3.1.x.x or above.
+ */
+@property(nonatomic, assign) BOOL virtualStickAdvancedModeEnabled;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark Methods
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
+/**
+ *  YES if the landing gear is supported for the connected aircraft.
+ */
+- (BOOL)isLandingGearMovable;
+
 /**
  *  Starts aircraft takeoff. Takeoff is considered complete when the aircraft is hovering 1.2 meters (4 feet)
  *  above the ground. Completion block is called when aircraft crosses 0.5 meters (1.6 feet).
@@ -383,11 +435,11 @@ typedef struct
  *  signal to the aircraft is lost or when the battery is below the lowBatteryWarning
  *  threashold. The user should be careful where they set a new home point location as in
  *  some scenarios the product will not be under user control when going to this location.
- *  A home location is valid if it is within 30m of initial take-off location, current aircraft's 
- *  location, current mobile location with at least kCLLocationAccuracyNearestTenMeters accuracy 
+ *  A home location is valid if it is within 30m of initial take-off location, current aircraft's
+ *  location, current mobile location with at least kCLLocationAccuracyNearestTenMeters accuracy
  *  level, or current remote controller's location as shown by RC GPS.
  *
- *  Note: If setting home point around mobile location, before calling this method, 
+ *  Note: If setting home point around mobile location, before calling this method,
  *  the locationServicesEnabled must be true in CLLocationManager, the
  *  NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription key needs to be
  *  specified in the applications Info.plist and the requestWhenInUseAuthorization or requestAlwaysAuthorization
@@ -409,7 +461,7 @@ typedef struct
  *  Gets the home point of the aircraft.
  *
  */
-- (void)getHomeLocationWithCompletion:(void (^)(CLLocationCoordinate2D homePoint, NSError *_Nullable error))completion;
+- (void)getHomeLocationWithCompletion:(void (^_Nonnull)(CLLocationCoordinate2D homePoint, NSError *_Nullable error))completion;
 
 /**
  *  Sets the minimum altitude, relative to where the aircraft took off, at which the the aircraft must be before going
@@ -427,8 +479,20 @@ typedef struct
  *
  *  @param completion Completion block.
  */
-- (void)getGoHomeAltitudeWithCompletion:(void (^)(float altitude, NSError *_Nullable error))completion;
+- (void)getGoHomeAltitudeWithCompletion:(void (^_Nonnull)(float altitude, NSError *_Nullable error))completion;
 
+/**
+ *  Sets the FailSafe action for when the connection between remote controller and aircraft is lost.
+ *
+ *  @param operation    The Failsafe action.
+ *  @param completion   Completion block.
+ */
+- (void)setFlightFailsafeOperation:(DJIFlightFailsafeOperation)operation withCompletion:(DJICompletionBlock)completion;
+
+/**
+ * Gets the FailSafe action for when the connection between remote controller and aircraft is lost.
+ */
+- (void)getFlightFailsafeOperationWithCompletion:(void (^_Nonnull)(DJIFlightFailsafeOperation operation, NSError *_Nullable error))completion;
 /**
  *  Check if the onboard SDK device is available.
  */
@@ -441,12 +505,12 @@ typedef struct
  *  @param completion Completion block.
  *
  */
-- (void)sendDataToOnboardSDKDevice:(NSData *)data withCompletion:(DJICompletionBlock)completion;
+- (void)sendDataToOnboardSDKDevice:(NSData *_Nonnull)data withCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Sets the low battery go home percentage threshold. The percentage must be in the range [25, 50].
  *
- *  @param percent Go home battery percentage.
+ *  @param percent Low battery warning percentage.
  *  @param completion   Completion block.
  */
 - (void)setGoHomeBatteryThreshold:(uint8_t)percent withCompletion:(DJICompletionBlock)completion;
@@ -456,13 +520,13 @@ typedef struct
  *  in the range [25, 50].
  *
  */
-- (void)getGoHomeBatteryThresholdWithCompletion:(void (^)(uint8_t percent, NSError *_Nullable error))completion;
+- (void)getGoHomeBatteryThresholdWithCompletion:(void (^_Nonnull)(uint8_t percent, NSError *_Nullable error))completion;
 
 /**
  *  Sets the serious battery land immediately percentage threshold. The percentage must be in the
  *  range [10, 25].
  *
- *  @param percent Land immediately battery percentage.
+ *  @param percent Serious low battery warning percentage.
  *  @param completion   Completion block.
  */
 - (void)setLandImmediatelyBatteryThreshold:(uint8_t)percent withCompletion:(DJICompletionBlock)completion;
@@ -472,15 +536,40 @@ typedef struct
  *  be in the range [10, 25].
  *
  */
-- (void)getLandImmediatelyBatteryThresholdWithCompletion:(void (^)(uint8_t percent, NSError *_Nullable error))completion;
+- (void)getLandImmediatelyBatteryThresholdWithCompletion:(void (^_Nonnull)(uint8_t percent, NSError *_Nullable error))completion;
 
 /**
- *  Start the calibration for IMU. For Phantom 4, this method will start the calibration for two IMUs. Please keep stationary and horizontal during calibration. The calibration will take 5 ~ 10 minutes. The completion block will be called once the calibration is started. Please use the [flightController:didUpdateIMUState:] method in 'DJIFlightControllerDelegate' to check the execution status of the IMU calibration.
+ *  Start the calibration for IMU. For aircrafts with multiple IMUs, this method will start the calibration for all IMUs. Please keep stationary and horizontal during calibration. The calibration will take 5 ~ 10 minutes. The completion block will be called once the calibration is started. Please use the [flightController:didUpdateIMUState:] method in 'DJIFlightControllerDelegate' to check the execution status of the IMU calibration.
  *
- *  @param completion Completion block.
- *
+ *  @param completion Completion block to check if the calibration starts successfully.
  */
 - (void)startIMUCalibrationWithCompletion:(DJICompletionBlock)completion;
+
+/**
+ *  Start the calibration for IMU with a specific ID. Please keep stationary and horizontal during calibration. The calibration will take 5 ~ 10 minutes. The completion block will be called once the calibration is started. Use the [flightController:didUpdateIMUState:] method in `DJIFlightControllerDelegate` to check the execution status of the IMU calibration.
+ *  Only supported by Matrice 600.
+ *
+ *  @param imuID        The IMU with the specific ID to calibrate.
+ *  @param completion   Completion block to check if the calibration starts successfully.
+ */
+- (void)startIMUCalibrationForID:(NSUInteger)imuID withCompletion:(DJICompletionBlock)completion;
+
+/**
+ *  Turns on/off the LEDs in the front. The LEDs are used to indicate the status of the aircraft. By default, it is on.
+ *  It is only supported by Phantom 3 series and Phantom 4.
+ *
+ *  @param enabled      `YES` to turn on the front LEDs, `NO` to trun off.
+ *  @param completion   Completion block that receives the getter execution result.
+ */
+- (void)setLEDsEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion;
+
+/**
+ *  Gets if the LEDs in the front is enabled or not.
+ *  It is only supported by Phantom 3 series and Phantom 4.
+ *
+ *  @param completion Completion block that receives the getter execution result.
+ */
+- (void)getLEDsEnabled:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))completion;
 
 @end
 

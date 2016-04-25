@@ -28,6 +28,11 @@ extern NSString *const DJIHandheldModelNameUnknownHandheld;
 extern NSString *const DJIHandheldModelNameOsmo;
 
 /**
+ *  Handheld device model name Osmo Pro.
+ */
+extern NSString *const DJIHandheldModelNameOsmoPro;
+
+/**
  *
  *  This class contains the components of a handheld device.
  */

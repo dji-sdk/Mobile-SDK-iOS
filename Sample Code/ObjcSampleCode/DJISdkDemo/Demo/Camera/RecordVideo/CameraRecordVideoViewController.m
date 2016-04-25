@@ -23,7 +23,8 @@
 @property (nonatomic) BOOL isRecordingVideo;
 @property (nonatomic) int recordingTime;
 
-@property (strong, nonatomic) UIView *videoFeedView;
+@property (weak, nonatomic) IBOutlet UIView *videoFeedView;
+
 @property (weak, nonatomic) IBOutlet UILabel *recordingTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startRecordButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopRecordButton;
@@ -150,9 +151,6 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-    self.videoFeedView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    [self.view addSubview:self.videoFeedView];
-    [self.view sendSubviewToBack:self.videoFeedView];
     //    self.videoFeedView.backgroundColor = [UIColor grayColor];
     
     [[VideoPreviewer instance] start];
@@ -161,11 +159,6 @@
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
-    
-    if (self.videoFeedView != nil) {
-        [self.videoFeedView removeFromSuperview];
-        self.videoFeedView = nil;
-    }
 }
 
 -(void) setIsInRecordVideoMode:(BOOL)isInRecordVideoMode {

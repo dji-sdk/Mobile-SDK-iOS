@@ -12,9 +12,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIHandheldWiFiFrequency Type
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Handheld WiFi Frequency Type.
  */
@@ -80,7 +81,7 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
  *  @param powerMode    The handheld controller's current power mode.
  *
  */
-- (void)handheldController:(DJIHandheldController *)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode;
+- (void)handheldController:(DJIHandheldController *_Nonnull)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode;
 
 @end
 

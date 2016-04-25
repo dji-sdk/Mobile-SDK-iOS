@@ -17,17 +17,17 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Block invoked when preparing a file for download.
  */
-typedef void (^DJIFileDownloadPreparingBlock)(NSString *_Nullable fileName, DJIDownloadFileType fileType, NSUInteger fileSize, BOOL *skip);
+typedef void (^_Nullable DJIFileDownloadPreparingBlock)(NSString *_Nullable fileName, DJIDownloadFileType fileType, NSUInteger fileSize, BOOL *skip);
 
 /**
  *  Block invoked when a file is downloading.
  */
-typedef void (^DJIFileDownloadingBlock)(NSData *_Nullable data, NSError *_Nullable error);
+typedef void (^_Nullable DJIFileDownloadingBlock)(NSData *_Nullable data, NSError *_Nullable error);
 
 /**
  *  Block invoked after a file has been downloaded.
  */
-typedef void (^DJIFileDownloadCompletionBlock)();
+typedef void (^_Nullable DJIFileDownloadCompletionBlock)();
 
 /*********************************************************************************/
 #pragma mark - DJIPlaybackDelegate
@@ -45,7 +45,7 @@ typedef void (^DJIFileDownloadCompletionBlock)();
  *
  *  @param playbackState The camera's playback state.
  */
-- (void)playbackManager:(DJIPlaybackManager *)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState;
+- (void)playbackManager:(DJIPlaybackManager *_Nonnull)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *_Nonnull)playbackState;
 
 @end
 
@@ -116,6 +116,14 @@ typedef void (^DJIFileDownloadCompletionBlock)();
  *  @param finishBlock          Callback after the downloading is finished.
  */
 - (void)downloadSelectedFilesWithPreparation:(DJIFileDownloadPreparingBlock)prepareBlock process:(DJIFileDownloadingBlock)dataBlock fileCompletion:(DJIFileDownloadCompletionBlock)fileCompletionBlock overallCompletion:(DJICompletionBlock)overallCompletionBlock;
+
+/**
+ * Cancel current file download.
+ *
+ * @param block Callback after the operation finished.
+ */
+
+- (void)stopDownloadingFilesWithCompletion:(DJICompletionBlock)block;
 
 /**
  *  Enables the user to preview multiple files when the camera is in Playback mode.

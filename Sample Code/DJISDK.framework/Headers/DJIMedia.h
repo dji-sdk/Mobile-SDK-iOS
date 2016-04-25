@@ -65,7 +65,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
 /**
  *  Returns the name of the media file.
  */
-@property(nonatomic, readonly) NSString *fileName;
+@property(nonatomic, readonly) NSString *_Nonnull fileName;
 
 /**
  *  Returns the size, in bytes, of the media file.
@@ -76,7 +76,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
  *  Returns the time when the media file was created as a string in
  *  the format "yyyy-MM-dd HH:mm:ss".
  */
-@property(nonatomic, readonly) NSString *timeCreated;
+@property(nonatomic, readonly) NSString *_Nonnull timeCreated;
 
 /**
  *  If the media file is a video, this property returns the duration
@@ -114,7 +114,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
  *  @param block Data callback will be invoked when media data has been received
  *  from the SD card or an error has occurred.
  */
-- (void)fetchMediaDataWithCompletion:(void (^)(NSData *_Nullable data, BOOL *_Nullable stop, NSError *_Nullable error))block;
+- (void)fetchMediaDataWithCompletion:(void (^_Nonnull)(NSData *_Nullable data, BOOL *_Nullable stop, NSError *_Nullable error))block;
 
 /**
  *  Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of a still picture or
@@ -123,7 +123,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
  *
  *  @param block Remote execute result callback.
  */
-- (void)fetchPreviewImageWithCompletion:(void (^)(UIImage *image, NSError *_Nullable error))block;
+- (void)fetchPreviewImageWithCompletion:(void (^_Nonnull)(UIImage *image, NSError *_Nullable error))block;
 
 
 /**
@@ -133,7 +133,7 @@ typedef NS_ENUM (NSUInteger, DJIMediaType){
  *
  *  @param block Remote execute result callback.
  */
-- (void)fetchSubMediaFileListWithCompletion:(void (^)(NSArray<DJIMedia *> *_Nullable mediaList, NSError *_Nullable error))block;
+- (void)fetchSubMediaFileListWithCompletion:(void (^_Nonnull)(NSArray<DJIMedia *> *_Nullable mediaList, NSError *_Nullable error))block;
 
 @end
 

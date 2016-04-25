@@ -18,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma pack(1)
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRemoteControllerMode
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller mode of operation can be normal (single RC connected to aircraft), master,
  *  slave, or unknown.
@@ -44,26 +45,29 @@ typedef NS_ENUM (uint8_t, DJIRemoteControllerMode){
     DJIRemoteControllerModeUnknown,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCID
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's unique identification number. This is given to each Remote
  *  Controller during manufacturing and cannot be changed.
  */
 typedef uint32_t DJIRCID;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCSignalQualityOfConnectedRC
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Signal quality of a connected master or slave Remote Controller in percent [0, 100].
  */
 typedef uint8_t DJIRCSignalQualityOfConnectedRC;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCControlStyle
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's control style.
  */
@@ -103,9 +107,10 @@ typedef NS_OPTIONS (uint8_t, DJIRCControlStyle){
     RCControlStyleUnknown,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCControlChannelName
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller control channels. These will be used in RC Custom Control Style. See
  *  `RCControlStyleCustom` and `RCSlaveControlStyleCustom` for more information.
@@ -130,9 +135,10 @@ typedef NS_ENUM (uint8_t, DJIRCControlChannelName){
     DJIRCControlChannelNameYaw,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCControlChannel
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's control channel.
  */
@@ -154,9 +160,10 @@ typedef struct
     BOOL reverse;
 } DJIRCControlChannel;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCControlMode
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's control mode.
  */
@@ -172,9 +179,10 @@ typedef struct
     DJIRCControlChannel controlChannel[DJI_RC_CONTROL_CHANNEL_SIZE];
 } DJIRCControlMode;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCRequestGimbalControlResult
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Result when a slave Remote Controller requests permission to control the gimbal.
  */
@@ -203,9 +211,10 @@ typedef NS_OPTIONS (uint8_t, DJIRCRequestGimbalControlResult){
     RCRequestGimbalControlResultUnknown,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCControlPermission
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's control permission.
  */
@@ -243,9 +252,10 @@ typedef struct
     bool hasCaptureControlPermission;
 } DJIRCControlPermission;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCGimbalControlSpeed
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's gimbal control speed.
  */
@@ -265,9 +275,10 @@ typedef struct
     uint8_t yawSpeed;
 } DJIRCGimbalControlSpeed;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCToAircraftPairingState
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller pairing state.
  */
@@ -290,9 +301,10 @@ typedef NS_ENUM (uint8_t, DJIRCToAircraftPairingState){
     DJIRCToAircraftPairingStateUnknown,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCJoinMasterResult
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Result when a slave Remote Controller tries to join
  *  a master Remote Controller.
@@ -335,9 +347,10 @@ typedef NS_ENUM (uint8_t, DJIRCJoinMasterResult){
     DJIRCJoinMasterResultUnknown
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCBatteryInfo
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's battery info.
  */
@@ -355,9 +368,10 @@ typedef struct
     uint8_t remainingEnergyInPercent;
 } DJIRCBatteryInfo;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCGpsTime
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's GPS time.
  */
@@ -389,9 +403,10 @@ typedef struct
     uint8_t day;
 } DJIRCGpsTime;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCGPSData
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's GPS data. Only Inspire and M100 Remote Controllers have GPS.
  */
@@ -436,9 +451,10 @@ typedef struct
     BOOL isValid;
 } DJIRCGPSData;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCGimbalControlDirection
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Defines what the Gimbal Dial (upper left wheel on the Remote Controller) will control.
  */
@@ -457,9 +473,10 @@ typedef NS_ENUM (uint8_t, DJIRCGimbalControlDirection){
     DJIRCGimbalControlDirectionYaw,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareRightWheel
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Current state of the Camera Settings Dial (upper right wheel on the Remote Controller).
  */
@@ -487,9 +504,10 @@ typedef struct
     uint8_t value;
 } DJIRCHardwareRightWheel;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareLeftWheel
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's left wheel.
  */
@@ -501,9 +519,10 @@ typedef struct
     int value;
 } DJIRCHardwareLeftWheel;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareTransformationSwitchState
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Transformation Switch position states.
  */
@@ -518,9 +537,10 @@ typedef NS_ENUM (uint8_t, DJIRCHardwareTransformationSwitchState){
     DJIRCHardwareTransformationSwitchStateDeploy
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareTransformSwitch
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Transformation Switch position. The Transformation Switch is around the Return To Home Button on Inspire, Inspire 1 and M100 Remote Controllers, and controls the state of the aircraft's landing gear.
  */
@@ -534,12 +554,13 @@ typedef struct
      *  Current transformation switch state.
      */
     DJIRCHardwareTransformationSwitchState transformationSwitchState;
-    
+
 } DJIRCHardwareTransformationSwitch;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareFlightModeSwitchState
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller Flight Mode Switch State
  */
@@ -568,16 +589,17 @@ typedef NS_ENUM (uint8_t, DJIRCHardwareFlightModeSwitchState){
     DJIRCHardwareFlightModeSwitchStateP,
     /**
      *  The Remote Controller's flight mode switch is set to the S (Sport) mode. Sport mode can use both GPS and the vision system (when available) to hover. Sport mode is only supported when using the Phantom 4.
-     The Phantom 4 remote controller flight mode switch is labelled A, S, P from left to right.
-     The Phantom 3, Inspire 1 and M100 remote controller flight mode switch is labelled F, A, P from left to right.
-     Independent of label, any remote controller (P3, P4, Inspire 1, M100) used with the Phantom 4 will report S mode as selected if the switch is set to the middle position.
+       The Phantom 4 remote controller flight mode switch is labelled A, S, P from left to right.
+       The Phantom 3, Inspire 1 and M100 remote controller flight mode switch is labelled F, A, P from left to right.
+       Independent of label, any remote controller (P3, P4, Inspire 1, M100) used with the Phantom 4 will report S mode as selected if the switch is set to the middle position.
      */
     DJIRCHardwareFlightModeSwitchStateS
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareFlightModeSwitch
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  The value of the Remote Controller's flight mode switch.
  */
@@ -589,9 +611,10 @@ typedef struct
     DJIRCHardwareFlightModeSwitchState mode;
 } DJIRCHardwareFlightModeSwitch;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareButton
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller has numerous momentary push buttons, which will use this state.
  */
@@ -607,9 +630,10 @@ typedef struct
     BOOL buttonDown;
 } DJIRCHardwareButton;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareJoystick
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's joystick
  */
@@ -622,9 +646,10 @@ typedef struct
     int value;
 } DJIRCHardwareJoystick;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCHardwareState
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Controller's current state.
  */
@@ -692,9 +717,10 @@ typedef struct
     DJIRCHardwareButton customButton2;
 } DJIRCHardwareState;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCRemoteFocusControlType
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Focus Control Type
  */
@@ -709,9 +735,10 @@ typedef NS_ENUM (uint8_t, DJIRCRemoteFocusControlType){
     DJIRCRemoteFocusControlTypeFocalLength,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCRemoteFocusControlDirection
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Remote Focus Control Direction
  */
@@ -726,38 +753,39 @@ typedef NS_ENUM (uint8_t, DJIRCRemoteFocusControlDirection){
     DJIRCRemoteFocusControlDirectionCounterClockwise,
 };
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark DJIRCRemoteFocusState
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
- Remote Controller's Remote Focus State
- 
- The focus product has one dial (focus control) that controls two separate parts
- of the camera: focal length and aperture. However it can only control one of
- these at any one time and is an aboslute dial, meaning that a specific rotational
- position of the dial corresponds to a specific focal length or aperture.
- 
- This means that whenever the dial control mode is changed, the dial first has to be
- reset to the new mode's previous dial position before the dial can be used to adjust
- the setting of the new mode.
- 
- Example workflow:<br/><ol>
- <li>Use dial to set an Aperture of f2.2</li>
- <li>Change dial control mode to focal length (set `DJIRCRemoteFocusControlType`)</li>
- <li>Use the dial to change the focal length</li>
- <li>Change dial control mode back to aperture<ul>
- <li>set `DJIRCRemoteFocusControlType`</li>
- <li>`isFocusControlWorks` will now be NO</li>
- </ul>
- </li>
- <li>Adjust dial back to f2.2<ul>
- <li>`DJIRCRemoteFocusControlDirection` is the direction the dial should be rotated</li>
- <li>`isFocusControlWorks` will become YES when set back to f2.2</li>
- </ul>
- </li>
- <li>Now the dial can be used to adjust the aperture.
- </ol>
- 
+   Remote Controller's Remote Focus State
+
+   The focus product has one dial (focus control) that controls two separate parts
+   of the camera: focal length and aperture. However it can only control one of
+   these at any one time and is an aboslute dial, meaning that a specific rotational
+   position of the dial corresponds to a specific focal length or aperture.
+
+   This means that whenever the dial control mode is changed, the dial first has to be
+   reset to the new mode's previous dial position before the dial can be used to adjust
+   the setting of the new mode.
+
+   Example workflow:<br/><ol>
+   <li>Use dial to set an Aperture of f2.2</li>
+   <li>Change dial control mode to focal length (set `DJIRCRemoteFocusControlType`)</li>
+   <li>Use the dial to change the focal length</li>
+   <li>Change dial control mode back to aperture<ul>
+   <li>set `DJIRCRemoteFocusControlType`</li>
+   <li>`isFocusControlWorks` will now be NO</li>
+   </ul>
+   </li>
+   <li>Adjust dial back to f2.2<ul>
+   <li>`DJIRCRemoteFocusControlDirection` is the direction the dial should be rotated</li>
+   <li>`isFocusControlWorks` will become YES when set back to f2.2</li>
+   </ul>
+   </li>
+   <li>Now the dial can be used to adjust the aperture.
+   </ol>
+
  */
 typedef struct
 {
@@ -776,7 +804,7 @@ typedef struct
      *  Remote Focus Control Direction. Use this with the `isFocusControlWorks` value. It will give you the correct rotation direction when `isFocusControlWorks` is NO.
      */
     DJIRCRemoteFocusControlDirection direction;
-    
+
 } DJIRCRemoteFocusState;
 
 #pragma pack()
@@ -820,7 +848,7 @@ typedef struct
  *
  *  @return Remote Controller's identifier as a string.
  */
-- (NSString *)RCIdentifier;
+- (NSString *_Nullable)RCIdentifier;
 
 @end
 
@@ -845,7 +873,7 @@ typedef struct
  *  @param rc    Instance of the Remote Controller for which the hardware state will be updated.
  *  @param state Current state of the Remote Controller's hardware state.
  */
-- (void)remoteController:(DJIRemoteController *)rc didUpdateHardwareState:(DJIRCHardwareState)state;
+- (void)remoteController:(DJIRemoteController *_Nonnull)rc didUpdateHardwareState:(DJIRCHardwareState)state;
 
 /**
  *  Callback function that updates the Remote Controller's current GPS data.
@@ -853,7 +881,7 @@ typedef struct
  *  @param rc    Instance of the Remote Controller for which the GPS data will be updated.
  *  @param state Current state of the Remote Controller's GPS data.
  */
-- (void)remoteController:(DJIRemoteController *)rc didUpdateGpsData:(DJIRCGPSData)gpsData;
+- (void)remoteController:(DJIRemoteController *_Nonnull)rc didUpdateGpsData:(DJIRCGPSData)gpsData;
 
 /**
  *  Callback function that updates the Remote Controller's current battery state.
@@ -861,7 +889,7 @@ typedef struct
  *  @param rc    Instance of the Remote Controller for which the battery state will be updated.
  *  @param state Current state of the Remote Controller's battery state.
  */
-- (void)remoteController:(DJIRemoteController *)rc didUpdateBatteryState:(DJIRCBatteryInfo)batteryInfo;
+- (void)remoteController:(DJIRemoteController *_Nonnull)rc didUpdateBatteryState:(DJIRCBatteryInfo)batteryInfo;
 
 /**
  *  Callback function that gets called when a slave Remote Controller makes a request to a master
@@ -870,7 +898,7 @@ typedef struct
  *  @param rc    Instance of the Remote Controller.
  *  @param state Information of the slave making the request to the master Remote Controller.
  */
-- (void)remoteController:(DJIRemoteController *)rc didReceiveGimbalControlRequestFromSlave:(DJIRCInfo *)slave;
+- (void)remoteController:(DJIRemoteController *_Nonnull)rc didReceiveGimbalControlRequestFromSlave:(DJIRCInfo *_Nonnull)slave;
 
 /**
  *  Callback function that updates the Remote Focus State, only support Focus product. If the isRCRemoteFocusCheckingSupported is YES, this delegate method will be called.
@@ -878,7 +906,7 @@ typedef struct
  *  @param rc    Instance of the Remote Controller for which the battery state will be updated.
  *  @param state Current state of the Remote Focus state.
  */
-- (void)remoteController:(DJIRemoteController *)rc didUpdateRemoteFocusState:(DJIRCRemoteFocusState)remoteFocusState;
+- (void)remoteController:(DJIRemoteController *_Nonnull)rc didUpdateRemoteFocusState:(DJIRCRemoteFocusState)remoteFocusState;
 
 @end
 
@@ -889,9 +917,9 @@ typedef struct
 @class DJIWiFiLink;
 
 /**
- This class represents the remote controller of the aircraft. It provides mothods to change the settings of the physical remote controller. For some products (e.g. Inspire 1 and Matric 100), the class provides methods to manager the slave/master mode of the remote controllers.
- 
- A remote controller is a device that can have a GPS, battery, radio, buttons, sticks, wheels, and output ports for video. The mobile device is connected to the remote controller, which is always sending out information about what everything is doing. The normal remote controller is called the master. A slave wirelessly connects to the master remote controller at 5 GHz, and the aircraft can also download information to the slave. The slave can send gimbal control commands to the master. This configuration allows one person to fly the aircraft while another person controls the gimbal.
+   This class represents the remote controller of the aircraft. It provides mothods to change the settings of the physical remote controller. For some products (e.g. Inspire 1 and Matric 100), the class provides methods to manager the slave/master mode of the remote controllers.
+
+   A remote controller is a device that can have a GPS, battery, radio, buttons, sticks, wheels, and output ports for video. The mobile device is connected to the remote controller, which is always sending out information about what everything is doing. The normal remote controller is called the master. A slave wirelessly connects to the master remote controller at 5 GHz, and the aircraft can also download information to the slave. The slave can send gimbal control commands to the master. This configuration allows one person to fly the aircraft while another person controls the gimbal.
  */
 @interface DJIRemoteController : DJIBaseComponent
 
@@ -917,7 +945,7 @@ typedef struct
  *  Gets the Remote Controller's name.
  *
  */
-- (void)getRCNameWithCompletion:(void (^)(NSString *_Nullable name, NSError *_Nullable error))completion;
+- (void)getRCNameWithCompletion:(void (^_Nonnull)(NSString *_Nullable name, NSError *_Nullable error))completion;
 
 /**
  *  Sets the Remote Controller's password.
@@ -931,7 +959,7 @@ typedef struct
  *  Gets the Remote Controller's password.
  *
  */
-- (void)getRCPasswordWithCompletion:(void (^)(NSString *_Nullable password, NSError *_Nullable error))completion;
+- (void)getRCPasswordWithCompletion:(void (^_Nonnull)(NSString *_Nullable password, NSError *_Nullable error))completion;
 
 /**
  *  Sets the Remote Controller's control mode.
@@ -945,11 +973,12 @@ typedef struct
  *  Gets the master Remote Controller's control mode.
  *
  */
-- (void)getRCControlModeWithCompletion:(void (^)(DJIRCControlMode mode, NSError *_Nullable error))completion;
+- (void)getRCControlModeWithCompletion:(void (^_Nonnull)(DJIRCControlMode mode, NSError *_Nullable error))completion;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC pairing
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Enters pairing mode, in which the Remote Controller starts pairing with the aircraft.
  *  This method is used when the Remote Controller no longer recognizes which aircraft
@@ -967,11 +996,12 @@ typedef struct
  *  Gets the pairing status as the Remote Controller is pairing with the aircraft.
  *
  */
-- (void)getRCToAircraftPairingStateWithCompletion:(void (^)(DJIRCToAircraftPairingState state, NSError *_Nullable error))completion;
+- (void)getRCToAircraftPairingStateWithCompletion:(void (^_Nonnull)(DJIRCToAircraftPairingState state, NSError *_Nullable error))completion;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC gimbal control
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Sets the gimbal's pitch speed for the Remote Controller's upper left wheel (Gimbal Dial).
  *
@@ -985,7 +1015,7 @@ typedef struct
  *  Gets the gimbal's pitch speed for the Remote Controller's upper left wheel (Gimbal Dial).
  *
  */
-- (void)getRCWheelGimbalSpeedWithCompletion:(void (^)(uint8_t speed, NSError *_Nullable error))completion;
+- (void)getRCWheelGimbalSpeedWithCompletion:(void (^_Nonnull)(uint8_t speed, NSError *_Nullable error))completion;
 
 /**
  *  Sets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control. The
@@ -1002,11 +1032,12 @@ typedef struct
  *  Gets which of the gimbal directions the top left wheel (Gimbal Dial) on the Remote Controller will control.
  *
  */
-- (void)getRCControlGimbalDirectionWithCompletion:(void (^)(DJIRCGimbalControlDirection direction, NSError *_Nullable error))completion;
+- (void)getRCControlGimbalDirectionWithCompletion:(void (^_Nonnull)(DJIRCGimbalControlDirection direction, NSError *_Nullable error))completion;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC custom buttons
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Sets custom button's (Back Button's) tags, which can be used by the user to record user settings for a particular Remote Controller. Unlike all other buttons, switches and sticks on the Remote Controller, the custom buttons only send state to the Mobile Device and not the aircraft.
  *
@@ -1020,27 +1051,27 @@ typedef struct
  *  Gets the custom button's (Back Button's) tags.
  *
  */
-- (void)getRCCustomButtonTagWithCompletion:(void (^)(uint8_t tag1, uint8_t tag2, NSError *_Nullable error))completion;
+- (void)getRCCustomButtonTagWithCompletion:(void (^_Nonnull)(uint8_t tag1, uint8_t tag2, NSError *_Nullable error))completion;
 
 /**
  *  Set C1 button enable binding DJI GO app state. If it's enable, when user presses the C1 button, an alertView will pop up and ask if you want to open the DJI GO app. This feature only supports MFI certificated Remote Controller.
- 
+
  *  @attention This feature will affect the user of DJI GO app, we suggest you to call this interface to enable the C1 binding feature when your application enter background. Otherwise the C1 button will be unbound with DJI GO app forever.
  *
  *  @param enable Enable C1 button bind DJI GO app.
  *  @param completion Completion block.
  */
-- (void) setRCC1ButtonBindingEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
+- (void)setRCC1ButtonBindingEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Gets the C1 button enable binding DJI Go app state. This feature only supports MFI certificated Remote Controller.
  *
  */
-- (void) getRCC1ButtonBindingEnabledWithCompletion:(void(^_Nullable)(BOOL enable, NSError * _Nullable error))completion;
+- (void)getRCC1ButtonBindingEnabledWithCompletion:(void (^_Nonnull)(BOOL enable, NSError *_Nullable error))completion;
 
-//----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC master and slave mode
-//-----------------------------------------------------------------
+/*********************************************************************************/
 
 /**
  *  Query method to check if the Remote Controller supports master/slave mode.
@@ -1060,11 +1091,11 @@ typedef struct
  *  Gets the Remote Controller's mode.
  *
  */
-- (void)getRemoteControllerModeWithCompletion:(void (^)(DJIRemoteControllerMode mode, BOOL isConnected, NSError *_Nullable error))completion;
+- (void)getRemoteControllerModeWithCompletion:(void (^_Nonnull)(DJIRemoteControllerMode mode, BOOL isConnected, NSError *_Nullable error))completion;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC master and slave mode - Slave RC methods
-//-----------------------------------------------------------------
+/*********************************************************************************/
 
 /**
  *  Used by a slave Remote Controller to join a master Remote Controller. If the master Remote Controller accepts the request, the master Remote Controller will control the aircraft, and the slave Remote Controller will control the gimbal and/or be able to view the downlink video.
@@ -1074,13 +1105,13 @@ typedef struct
  *  @param password Master's password.
  *  @param block    Remote execution result callback block.
  */
-- (void)joinMasterWithID:(DJIRCID)masterId masterName:(NSString *_Nonnull)masterName masterPassword:(NSString *_Nonnull)masterPassword withCompletion:(void (^)(DJIRCJoinMasterResult result, NSError *_Nullable error))completion;
+- (void)joinMasterWithID:(DJIRCID)masterId masterName:(NSString *_Nonnull)masterName masterPassword:(NSString *_Nonnull)masterPassword withCompletion:(void (^_Nonnull)(DJIRCJoinMasterResult result, NSError *_Nullable error))completion;
 
 /**
  *  Returns the master Remote Controller's information, which includes the unique identifier, name, and password.
  *
  */
-- (void)getJoinedMasterNameAndPassword:(void (^)(DJIRCID masterId, NSString *_Nullable masterName, NSString *_Nullable masterPassword, NSError *_Nullable error))completion;
+- (void)getJoinedMasterNameAndPassword:(void (^_Nonnull)(DJIRCID masterId, NSString *_Nullable masterName, NSString *_Nullable masterPassword, NSError *_Nullable error))completion;
 
 /**
  *  Starts a search by slave Remote Controller for nearby master Remote Controllers. To get the list of master Remote Controllers, first call `getAvailableMastersWithCallbackBlock`, then call `stopMasterRCSearchWithCompletion` to end the search.
@@ -1092,7 +1123,7 @@ typedef struct
  *  Returns all available master Remote Controllers that are located nearby. Before this method can be used, call `startMasterRCSearchWithCompletion` to start the search for master Remote Controllers. Once the list of masters is received, call `stopMasterRCSearchWithCompletion` to end the search.
  *
  */
-- (void)getAvailableMastersWithCompletion:(void (^)(NSArray<DJIRCInfo *> *masters, NSError *_Nullable error))completion;
+- (void)getAvailableMastersWithCompletion:(void (^_Nonnull)(NSArray<DJIRCInfo *> *_Nullable masters, NSError *_Nullable error))completion;
 
 /**
  *  Used by a slave Remote Controller to stop the search for nearby master Remote Controllers.
@@ -1104,7 +1135,7 @@ typedef struct
  *  Returns the state of the master Remote Controller search. The search is initiated by the Mobile Device, but performed by the Remote Controller. Therefore, if the Mobile Device's application crashes while a search is ongoing, this method can be used to let the new instance of the application understand the Remote Controller state.
  *
  */
-- (void)getMasterRCSearchStateWithCompletion:(void (^)(BOOL isStarted, NSError *_Nullable error))completion;
+- (void)getMasterRCSearchStateWithCompletion:(void (^_Nonnull)(BOOL isStarted, NSError *_Nullable error))completion;
 
 /**
  *  Removes a master Remote Controller from the current slave Remote Controller.
@@ -1118,7 +1149,7 @@ typedef struct
  *  Called by the slave Remote Controller to request gimbal control from the master Remote Controller.
  * s
  */
-- (void)requestGimbalControlRightWithCompletion:(void (^)(DJIRCRequestGimbalControlResult result, NSError *_Nullable error))completion;
+- (void)requestGimbalControlRightWithCompletion:(void (^_Nonnull)(DJIRCRequestGimbalControlResult result, NSError *_Nullable error))completion;
 
 /**
  *  Sets the Remote Contoller's slave control mode.
@@ -1132,7 +1163,7 @@ typedef struct
  *  Gets the Remote Controller's slave control mode.
  *
  */
-- (void)getSlaveControlModeWithCompletion:(void (^)(DJIRCControlMode mode, NSError *_Nullable error))completion;
+- (void)getSlaveControlModeWithCompletion:(void (^_Nonnull)(DJIRCControlMode mode, NSError *_Nullable error))completion;
 
 /**
  *  Called by the slave Remote Controller to set the gimbal's pitch, roll, and yaw speed with a range of [0, 100].
@@ -1146,12 +1177,11 @@ typedef struct
  *  Gets the current slave's gimbal's pitch, roll, and yaw speed with a range of [0, 100].
  *
  */
-- (void)getSlaveJoystickControlGimbalSpeedWithCompletion:(void (^)(DJIRCGimbalControlSpeed speed, NSError *_Nullable error))completion;
+- (void)getSlaveJoystickControlGimbalSpeedWithCompletion:(void (^_Nonnull)(DJIRCGimbalControlSpeed speed, NSError *_Nullable error))completion;
 
-
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark RC master and slave mode - Master RC methods
-//-----------------------------------------------------------------
+/*********************************************************************************/
 
 /**
  *  Used by the current master Remote Controller to get all the slaves connected to it.
@@ -1159,7 +1189,7 @@ typedef struct
  *  @param block Remote execution result callback block. The arrray of slaves contains objects
  *  of type `DJIRCInfo`.
  */
-- (void)getSlaveListWithCompletion:(void (^)(NSArray<DJIRCInfo *> *slaveList, NSError *_Nullable error))block;
+- (void)getSlaveListWithCompletion:(void (^_Nonnull)(NSArray<DJIRCInfo *> *_Nullable slaveList, NSError *_Nullable error))block;
 
 /**
  *  Removes a slave Remote Controller from the current master Remote Controller.

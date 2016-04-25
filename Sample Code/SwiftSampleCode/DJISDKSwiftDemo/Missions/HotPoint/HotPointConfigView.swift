@@ -111,9 +111,7 @@ class HotPointConfigView: UIView {
 
     @IBAction func onOkButtonClicked(sender: AnyObject) {
       
-        if ((self.delegate != nil) && (self.delegate!.respondsToSelector("configViewWillDisappear"))) {
-            self.delegate!.configViewWillDisappear()
-        }
+        self.delegate?.configViewWillDisappear()
         UIView.animateWithDuration(0.2, animations: {() -> Void in
             self.alpha = 0.0
         })

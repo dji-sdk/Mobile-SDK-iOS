@@ -107,9 +107,9 @@ class CameraFetchMediaViewController: DJIBaseViewController {
 
     func startFetchMedia() {
         let camera: DJICamera? = self.fetchCamera()
-        if camera != nil {
+        if camera != nil && camera?.mediaManager != nil {
             
-            camera!.mediaManager.fetchMediaListWithCompletion( {[weak self](mediaList:[DJIMedia]?, error: NSError?) -> Void in
+            camera!.mediaManager!.fetchMediaListWithCompletion( {[weak self](mediaList:[DJIMedia]?, error: NSError?) -> Void in
                 
                 if error != nil {
                     self?.showAlertResult("ERROR: fetchMediaListWithCompletion:\(error!.description)")

@@ -56,6 +56,7 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 
 @class DJIBaseComponent;
 @class DJIBaseProduct;
+@class DJIDiagnostics;
 
 /**
  *
@@ -77,6 +78,12 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
  *
  */
 - (void)product:(DJIBaseProduct *)product connectivityChanged:(BOOL)isConnected;
+
+/**
+ *  Callback function that updates the product's current diagnostics information.
+ *
+ */
+- (void)product:(DJIBaseProduct *_Nonnull)product didUpdateDiagnosticsInformation:(NSArray *_Nonnull)info;
 
 @end
 
@@ -104,9 +111,9 @@ typedef void (^_Nullable DJICompletionBlock)(NSError *_Nullable error);
 @property (nonatomic, readonly) NSDictionary<NSString *, NSArray<DJIBaseComponent *> *> *_Nullable components;
 
 /**
- *  Get the product's firmware package version. For Products except Phantom 4, Internet connection is required and the execution time for this method highly depends on the Internet status. 
+ *  Get the product's firmware package version. For Products except Phantom 4, Internet connection is required and the execution time for this method highly depends on the Internet status.
  *
- *  @param block Completion block to receive the result. 
+ *  @param block Completion block to receive the result.
  *
  */
 - (void)getFirmwarePackageVersionWithCompletion:(void (^)(NSString *_Nullable version, NSError *_Nullable error))block;

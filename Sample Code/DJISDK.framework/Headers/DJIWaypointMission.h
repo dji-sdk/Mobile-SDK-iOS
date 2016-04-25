@@ -63,7 +63,11 @@ typedef NS_ENUM (uint8_t, DJIWaypointMissionExecuteState){
     /**
      *  Aircraft has returned to the first waypoint. This happens when the `finishedAction` is set to `JIWaypointMissionFinishedGoFirstWaypoint`.
      */
-    DJIWaypointMissionExecuteStateReturnToFirstWaypoint
+    DJIWaypointMissionExecuteStateReturnToFirstWaypoint,
+    /**
+     *  The mission is currently paused by the user.
+     */
+    DJIWaypointMissionExecuteStatePaused,
 };
 
 /**
@@ -195,6 +199,7 @@ typedef NS_ENUM (NSInteger, DJIWaypointMissionGotoWaypointMode) {
  */
 
 @interface DJIWaypointMission : DJIMission
+
 /*********************************************************************************/
 #pragma mark - Mission Presets
 /*********************************************************************************/

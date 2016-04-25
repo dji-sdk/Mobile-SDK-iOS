@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraShootSinglePhotoViewController">
             <connections>
                 <outlet property="shootPhotoButton" destination="yeB-YQ-wYa" id="R5A-ZW-LWy"/>
+                <outlet property="videoFeedView" destination="CXJ-g5-3hd" id="Bkf-QR-pEN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-YQ-wYa">
-                    <rect key="frame" x="244" y="283" width="113" height="34"/>
+                    <rect key="frame" x="244" y="159" width="113" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="V9d-WS-RQa"/>
                         <constraint firstAttribute="height" constant="34" id="ZYC-Qk-ZGP"/>
@@ -30,11 +31,28 @@
                         <action selector="onShootPhotoButtonClicked:" destination="-1" eventType="touchUpInside" id="Fdy-R3-1I5"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXJ-g5-3hd">
+                    <rect key="frame" x="50" y="276" width="500" height="219"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="219" id="AZ7-Hr-eZ9">
+                            <variation key="widthClass=compact" constant="181"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="500" id="dQy-uH-bAJ">
+                            <variation key="widthClass=compact" constant="384"/>
+                        </constraint>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5mf-lf-8gb"/>
+                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-124" id="5mf-lf-8gb"/>
                 <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PNb-9R-E4d"/>
+                <constraint firstItem="CXJ-g5-3hd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kAE-Qe-WmT"/>
+                <constraint firstItem="CXJ-g5-3hd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="85.5" id="nQb-Wf-TIC">
+                    <variation key="heightClass=compact" constant="56.5"/>
+                    <variation key="widthClass=compact" constant="66.5"/>
+                </constraint>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
         </view>

@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  In a custom mission, you can create multiple kinds of mission steps to control the aircraft to execute a series of complex tasks. Mission steps will be stored in a queue to execute, there is no limit to the number of mission steps in each custom mission. By using Custom Mission, you can achieve your desired functionality easier and more efficiently.
- 
+
  *  The `DJICustomMission` class is a subclass of `DJIMission`. You can use it to create a custom mission that
  *  is made up of a sequence of mission steps. A <i>custom mission</i> is a mechanism designed by the Mobile SDK to
  *  simplify the development process. Missions (e.g. a waypoint mission) and operations of components are

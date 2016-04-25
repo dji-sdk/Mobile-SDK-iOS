@@ -30,8 +30,8 @@ class RebootWiFiViewController: DJIBaseViewController {
     
     @IBAction func onRebootWiFiClicked(sender: AnyObject) {
         let airLink: DJIAirLink? = self.fetchAirLink()
-        if airLink != nil {
-            airLink!.wifiLink.rebootWiFiWithCompletion({[weak self](error: NSError?) -> Void in
+        if airLink != nil && airLink!.wifiLink != nil {
+            airLink!.wifiLink!.rebootWiFiWithCompletion({[weak self](error: NSError?) -> Void in
                 if error != nil {
                     self?.showAlertResult("ERROR: rebootWiFi: \(error!.description)")
                 }

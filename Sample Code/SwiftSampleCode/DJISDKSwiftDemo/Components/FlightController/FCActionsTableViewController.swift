@@ -36,10 +36,9 @@ class FCActionsTableViewController: DemoTableViewController {
         
         let fc: DJIFlightController? = self.connectedComponent as? DJIFlightController
         
-        let landingGear = fc?.landingGear
-        if (fc != nil && landingGear != nil) {
+        if (fc != nil) {
             
-            let  movable:Bool = landingGear!.isLandingGearMovable()
+            let  movable:Bool = fc!.isLandingGearMovable()
             
             if (movable == true) {
                 let item3: DemoSettingItem = DemoSettingItem(name: "Landing Gear", andClass: FCLandingGearViewController.self)

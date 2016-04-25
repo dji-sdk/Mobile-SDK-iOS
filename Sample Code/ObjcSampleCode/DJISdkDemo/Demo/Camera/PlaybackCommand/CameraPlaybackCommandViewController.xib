@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraPlaybackCommandViewController">
@@ -11,6 +11,7 @@
                 <outlet property="nextButton" destination="XnK-wu-PhA" id="BSJ-8O-zTl"/>
                 <outlet property="previousButton" destination="yeB-YQ-wYa" id="ODc-Z2-6Pg"/>
                 <outlet property="singleButton" destination="HSw-Ef-sak" id="zzk-Yk-pOi"/>
+                <outlet property="videoFeedView" destination="TXu-co-dPT" id="Pzw-Gw-RUi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,12 +21,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeB-YQ-wYa">
-                    <rect key="frame" x="154" y="53" width="76" height="34"/>
+                    <rect key="frame" x="216" y="74" width="110" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="3NW-hA-NWY"/>
-                        <constraint firstAttribute="width" constant="76" id="ReY-ku-WAh"/>
+                        <constraint firstAttribute="width" constant="110" id="ReY-ku-WAh"/>
                     </constraints>
-                    <state key="normal" title="Previous" backgroundImage="btn">
+                    <state key="normal" title="Previous Page" backgroundImage="btn">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -34,12 +35,12 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnK-wu-PhA">
-                    <rect key="frame" x="247" y="53" width="76" height="34"/>
+                    <rect key="frame" x="343" y="74" width="100" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="Yo9-Ll-LA9"/>
-                        <constraint firstAttribute="width" constant="76" id="tjZ-g4-W7j"/>
+                        <constraint firstAttribute="width" constant="100" id="tjZ-g4-W7j"/>
                     </constraints>
-                    <state key="normal" title="Next" backgroundImage="btn">
+                    <state key="normal" title="Next Page" backgroundImage="btn">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -48,7 +49,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fA5-5K-KAI">
-                    <rect key="frame" x="343" y="53" width="76" height="34"/>
+                    <rect key="frame" x="233" y="32" width="76" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="9qD-eX-w3F"/>
                         <constraint firstAttribute="width" constant="76" id="Djo-f1-TWW"/>
@@ -61,8 +62,20 @@
                         <action selector="onMultipleButtonClicked:" destination="-1" eventType="touchUpInside" id="TEO-sZ-dSA"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXu-co-dPT">
+                    <rect key="frame" x="18" y="107" width="632" height="246"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="246" id="eao-D1-Pjb">
+                            <variation key="widthClass=compact" constant="198"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="632" id="pg9-yo-wT3">
+                            <variation key="widthClass=compact" constant="359"/>
+                        </constraint>
+                    </constraints>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSw-Ef-sak">
-                    <rect key="frame" x="438" y="53" width="76" height="34"/>
+                    <rect key="frame" x="355" y="32" width="76" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="VIU-3k-ObU"/>
                         <constraint firstAttribute="height" constant="34" id="lSg-9W-vW1"/>
@@ -78,14 +91,28 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="fA5-5K-KAI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-117.5" id="0t6-r8-Sff"/>
-                <constraint firstItem="XnK-wu-PhA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-49" id="3cv-Hi-EkD"/>
-                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-117.5" id="EyJ-DC-Um8"/>
-                <constraint firstItem="fA5-5K-KAI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="47" id="Fwe-AH-5sL"/>
-                <constraint firstItem="HSw-Ef-sak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="142" id="LI9-0S-GYy"/>
-                <constraint firstItem="XnK-wu-PhA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-117.5" id="LJJ-N2-Ebd"/>
-                <constraint firstItem="HSw-Ef-sak" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-117.5" id="UnK-ac-Xcp"/>
-                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-142" id="W8q-yV-noL"/>
+                <constraint firstItem="fA5-5K-KAI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-138.5" id="0t6-r8-Sff">
+                    <variation key="widthClass=compact" constant="-123.5"/>
+                </constraint>
+                <constraint firstItem="TXu-co-dPT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="42.5" id="1hm-gG-4dD">
+                    <variation key="widthClass=compact" constant="73.5"/>
+                </constraint>
+                <constraint firstItem="XnK-wu-PhA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="59.5" id="3cv-Hi-EkD"/>
+                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" priority="750" constant="-96.5" id="EyJ-DC-Um8">
+                    <variation key="widthClass=compact" constant="-123.5"/>
+                </constraint>
+                <constraint firstItem="fA5-5K-KAI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-62.5" id="Fwe-AH-5sL"/>
+                <constraint firstItem="HSw-Ef-sak" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="59.5" id="LI9-0S-GYy"/>
+                <constraint firstItem="XnK-wu-PhA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" priority="750" constant="-96.5" id="LJJ-N2-Ebd">
+                    <variation key="widthClass=compact" constant="-123.5"/>
+                </constraint>
+                <constraint firstItem="XnK-wu-PhA" firstAttribute="top" secondItem="HSw-Ef-sak" secondAttribute="bottom" constant="8" id="PtW-jf-C2v"/>
+                <constraint firstItem="HSw-Ef-sak" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-138.5" id="UnK-ac-Xcp">
+                    <variation key="widthClass=compact" constant="-123.5"/>
+                </constraint>
+                <constraint firstItem="yeB-YQ-wYa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-62.5" id="W8q-yV-noL"/>
+                <constraint firstItem="yeB-YQ-wYa" firstAttribute="top" secondItem="fA5-5K-KAI" secondAttribute="bottom" constant="8" id="gfn-6l-O9Z"/>
+                <constraint firstItem="TXu-co-dPT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hiq-sJ-d3W"/>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

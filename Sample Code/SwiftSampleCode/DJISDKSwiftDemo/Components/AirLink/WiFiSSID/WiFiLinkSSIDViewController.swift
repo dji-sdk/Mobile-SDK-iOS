@@ -35,7 +35,7 @@ class WiFiLinkSSIDViewController: DemoGetSetViewController {
             let wifiLink: DJIWiFiLink? = airLink!.wifiLink
             if wifiLink != nil {
               
-                wifiLink!.getWiFiSSIDWithCompletion({[weak self](ssid: String, error: NSError?) -> Void in
+                wifiLink!.getWiFiSSIDWithCompletion({[weak self](ssid: String?, error: NSError?) -> Void in
                     if error != nil {
                         self?.showAlertResult("ERROR: getWiFiSSID \(error!.description)")
                     }

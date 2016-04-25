@@ -14,7 +14,7 @@
 
 /**
  *
- *  The class contains different wireless links between the aircraft, the remote controller and the mobile device. A product may only support some of the wireless links within DJIAirLink. Check the query method (e.g. isWiFiLinkSupported) before accessing a wireless link.
+ *  The class contains different wireless links between the aircraft, the remote controller and the mobile device. To determine whether the current device supports WiFi and Lightbridge features, call `isWifiLinkSupported` or `isLBAirLinkSupported`.
  *
  *   With the Osmo the mobile device communicates directly via wifi.
  */
@@ -43,17 +43,17 @@
  *  Returns the WiFi Air Link if it is available.
  *
  */
-@property (nonatomic, strong) DJIWiFiLink *wifiLink;
+@property (nonatomic, strong) DJIWiFiLink *_Nullable wifiLink;
 
 /**
  *  Returns the Lightbridge Air Link if it is available.
  *
  */
-@property (nonatomic, strong) DJILBAirLink *lbAirLink;
+@property (nonatomic, strong) DJILBAirLink *_Nullable lbAirLink;
 
 /**
  *  Returns the Auxiliary Control Air Link if it is available.
  */
-@property (nonatomic, strong) DJIAuxLink *auxLink;
+@property (nonatomic, strong) DJIAuxLink *_Nullable auxLink;
 
 @end

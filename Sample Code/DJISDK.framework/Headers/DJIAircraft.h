@@ -14,7 +14,6 @@
 @class DJIRemoteController;
 @class DJICamera;
 @class DJIAirLink;
-@protocol DJIAircraftDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -58,6 +57,10 @@ extern NSString *const DJIAircraftModelNameMatrice100;
  *  The Aircraft's model name is Phantom 4.
  */
 extern NSString *const DJIAircraftModelNamePhantom4;
+/**
+ *  The Aircraft's model name is Matrice 600.
+ */
+extern NSString *const DJIAircraftModelNameMatrice600;
 
 /**
  *  This class contains the components of an aircraft.
@@ -91,6 +94,14 @@ extern NSString *const DJIAircraftModelNamePhantom4;
  *  @see DJIBattery
  */
 @property(nonatomic, readonly) DJIBattery *_Nullable battery;
+
+/**
+ *  Returns an array of aircraft's batteries.
+ *  It is used when the aircraft has multiple batteries, e.g. Matrice 600.
+ *
+ *  @see DJIBattery
+ */
+@property(nonatomic, readonly) NSArray<DJIBattery *> *_Nullable batteries;
 
 /**
  *  Returns an instance of the aircraft's remote controller.

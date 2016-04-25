@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Current ActiveTrack Mission execution state.
  */
-typedef NS_ENUM(NSInteger, DJIActiveTrackMissionExecutionState)
-{
+typedef NS_ENUM (NSInteger, DJIActiveTrackMissionExecutionState){
     /**
      *  The ActiveTrack Mission is tracking a target.
      */
@@ -50,10 +49,10 @@ typedef NS_ENUM(NSInteger, DJIActiveTrackMissionExecutionState)
  *  ActiveTrack Mission execution state.
  */
 @property(nonatomic, readonly) DJIActiveTrackMissionExecutionState executionState;
-    
+
 /**
  *  A rectangle in the live video view image that represents the target being tracked. It is only valid when executionState is
- *  `DJIActiveTrackMissionExecutionStateTracking`, `DJIActiveTrackMissionExecutionStateTrackingWithLowConfidence`, 
+ *  `DJIActiveTrackMissionExecutionStateTracking`, `DJIActiveTrackMissionExecutionStateTrackingWithLowConfidence`,
  *  `DJIActiveTrackMissionExecutionStateWaitingForConfirmation` or `DJIActiveTrackMissionExecutionStateCannotContinue`.
  *  The rectangle is normalized to [0,1] where (0,0) is the top left of the video preview and (1,1) is the bottom right.
  */
@@ -78,14 +77,14 @@ typedef NS_ENUM(NSInteger, DJIActiveTrackMissionExecutionState)
  *      - Mission can be canceled with stopMission at any time, or with rejectConfirmationWithCompletion if confirmation of tracking rectangle is being asked.
  *      - The main camera is used to track the target, so gimbal cannot be adjusted during an ActiveTrack mission.
  *      - During the mission the aircraft can be manually flown with pitch, roll and throttle. Yaw and gimbal are automatically controlled to continue tracking the target.
- *      - If the mission is executing, and after confirmation of the tracking rectangle has been sent, the aircraft can be manually controlled horizontally similar to a DJIFlightOrientationModeHomeLock where the `home` is the tracked target. If aircraft is manually controlled upward, the aircraft will lift and retreat, and if it is controlled downward, it will go down and get closer to the target. 
+ *      - If the mission is executing, and after confirmation of the tracking rectangle has been sent, the aircraft can be manually controlled horizontally similar to a DJIFlightOrientationModeHomeLock where the `home` is the tracked target. If aircraft is manually controlled upward, the aircraft will lift and retreat, and if it is controlled downward, it will go down and get closer to the target.
  */
 @interface DJIActiveTrackMission : DJIMission
 
 /**
  *  A bounding box for the target. The rectangle is normalized to [0,1] where (0,0) is the top left of the video preview and (1,1) is the bottom right.
  *  The `size` parameter of `CGRect` can be set to 0 to initialize the mission with a point instead of a rectangle. If the mission is initialized with a point, the vision system will try to recognize object around the point and return the representative rect in the status delegate.
-*/
+ */
 @property(nonatomic, assign) CGRect rect;
 
 /**
@@ -99,7 +98,7 @@ typedef NS_ENUM(NSInteger, DJIActiveTrackMissionExecutionState)
  *  @see `rejectConfirmationWithCompletion:`.
  *
  */
-+(void) acceptConfirmationWithCompletion:(DJICompletionBlock)completion;
++ (void)acceptConfirmationWithCompletion:(DJICompletionBlock)completion;
 
 /**
  * When the vision system is not sure the tracking rectangle is around the user's desired target, it will need confirmation before starting to fly relative to the target. The vision system will need confirmation whenever the ActiveTrack mission execution state is DJIActiveTrackMissionExecutionStateWaitingForConfirmation. The trackingRect property of DJIMissionProgressStatus can be used to show the user the rectangle the vision system is using. If the user does not agree the rectangle represents the target they want tracked, this method can be used to stop the Mission.
@@ -107,13 +106,13 @@ typedef NS_ENUM(NSInteger, DJIActiveTrackMissionExecutionState)
  *  @see `acceptConfirmationWithCompletion:`.
  *
  */
-+(void) rejectConfirmationWithCompletion:(DJICompletionBlock)completion;
++ (void)rejectConfirmationWithCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Sets the recommended camera and gimbal configuration that optimizes performance for the ActiveTrack Mission in most environments.
  */
-+(void) setRecommendedConfigurationWithCompletion:(DJICompletionBlock)completion;
-    
++ (void)setRecommendedConfigurationWithCompletion:(DJICompletionBlock)completion;
+
 
 @end
 

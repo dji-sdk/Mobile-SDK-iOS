@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Gets the maximum flight height limitation from the aircraft.
  *
  */
-- (void)getMaxFlightHeightWithCompletion:(void (^)(float height, NSError *_Nullable error))completion;
+- (void)getMaxFlightHeightWithCompletion:(void (^_Nonnull)(float height, NSError *_Nullable error))completion;
 
 /**
  *  Sets the maximum flight radius limitation for the aircraft. The radius is calculated from the home point. The `maxRadius` value must be in the range [15, 500] m.
@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Gets the maximum flight radius limitation from the aircraft.
  *
  */
-- (void)getMaxFlightRadiusWithCompletion:(void (^)(float radius, NSError *_Nullable error))completion;
+- (void)getMaxFlightRadiusWithCompletion:(void (^_Nonnull)(float radius, NSError *_Nullable error))completion;
 
 /**
  *  Sets whether the maximum flight radius limitation is enabled. If `enabled` is `NO`, there is no maximum flight radius limitation.
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  Determines whether the maximum flight radius limitation is enabled.
  *
  */
-- (void)getMaxFlightRadiusLimitationEnabledWithCompletion:(void (^)(BOOL enabled, NSError *_Nullable error))completion;
+- (void)getMaxFlightRadiusLimitationEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))completion;
 
 @end
 

@@ -10,6 +10,7 @@
                 <outlet property="recordingTimeLabel" destination="Myn-n0-WSI" id="6TW-Jq-8a3"/>
                 <outlet property="startRecordButton" destination="BSU-1Z-G6v" id="WuK-0l-vtu"/>
                 <outlet property="stopRecordButton" destination="7HN-Kr-bqn" id="SLe-pr-jvK"/>
+                <outlet property="videoFeedView" destination="W7M-T3-MP0" id="sTY-XH-ctx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSU-1Z-G6v">
-                    <rect key="frame" x="170" y="283" width="113" height="34"/>
+                    <rect key="frame" x="170" y="123" width="113" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="6IC-nt-JfJ"/>
                         <constraint firstAttribute="width" constant="113" id="wKT-nG-A8z"/>
@@ -33,7 +34,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HN-Kr-bqn">
-                    <rect key="frame" x="317" y="283" width="113" height="34"/>
+                    <rect key="frame" x="317" y="123" width="113" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="113" id="Ckf-tV-rhz"/>
                         <constraint firstAttribute="height" constant="34" id="mTb-RL-KOJ"/>
@@ -47,24 +48,48 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Myn-n0-WSI">
-                    <rect key="frame" x="235" y="241" width="130" height="21"/>
+                    <rect key="frame" x="235" y="81" width="130" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="130" id="L2V-YD-ot7"/>
                         <constraint firstAttribute="height" constant="21" id="k59-up-bxq"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7M-T3-MP0">
+                    <rect key="frame" x="8" y="266" width="584" height="269"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="269" id="Jp0-Sq-rz4">
+                            <variation key="heightClass=compact" constant="196"/>
+                            <variation key="widthClass=compact" constant="175"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="584" id="upc-UZ-yY6">
+                            <variation key="heightClass=compact" constant="518"/>
+                            <variation key="widthClass=compact" constant="384"/>
+                        </constraint>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="BSU-1Z-G6v" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-73.5" id="1k4-pm-tYc"/>
+                <constraint firstItem="W7M-T3-MP0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100.5" id="3Zw-jP-Cg3">
+                    <variation key="heightClass=compact" constant="67"/>
+                    <variation key="widthClass=compact" constant="81.5"/>
+                </constraint>
+                <constraint firstItem="W7M-T3-MP0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Bk-3u-XF1"/>
                 <constraint firstItem="7HN-Kr-bqn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="73.5" id="4Sk-8o-aPy"/>
                 <constraint firstItem="Myn-n0-WSI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7dg-Gi-fc2"/>
-                <constraint firstItem="Myn-n0-WSI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-48.5" id="UAX-To-zgv"/>
-                <constraint firstItem="BSU-1Z-G6v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jh8-Sh-wzU"/>
-                <constraint firstItem="7HN-Kr-bqn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="yS2-Ib-OiN"/>
+                <constraint firstItem="Myn-n0-WSI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-208.5" id="UAX-To-zgv">
+                    <variation key="heightClass=compact" constant="-158.5"/>
+                </constraint>
+                <constraint firstItem="BSU-1Z-G6v" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-160" id="jh8-Sh-wzU">
+                    <variation key="heightClass=compact" constant="-110"/>
+                </constraint>
+                <constraint firstItem="7HN-Kr-bqn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-160" id="yS2-Ib-OiN">
+                    <variation key="heightClass=compact" constant="-110"/>
+                </constraint>
             </constraints>
         </view>
     </objects>

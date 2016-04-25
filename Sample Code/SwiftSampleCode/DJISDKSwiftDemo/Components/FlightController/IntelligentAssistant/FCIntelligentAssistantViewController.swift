@@ -29,7 +29,7 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         // Do any additional setup after loading the view from its nib.
         let fc: DJIFlightController? = self.fetchFlightController()
         if (fc != nil && fc?.intelligentFlightAssistant != nil) {
-            fc?.intelligentFlightAssistant.delegate = self
+            fc?.intelligentFlightAssistant?.delegate = self
             updateSwitchState(fc?.intelligentFlightAssistant);
         }
     }

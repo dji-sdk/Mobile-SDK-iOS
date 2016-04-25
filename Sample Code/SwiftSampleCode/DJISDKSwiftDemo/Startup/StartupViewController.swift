@@ -9,7 +9,7 @@
 import UIKit
 import DJISDK
 
-class StartupViewController: UIViewController {
+class StartupViewController: DJIBaseViewController {
     
     @IBOutlet weak var productConnectionStatus: UILabel!
     @IBOutlet weak var productModel: UILabel!
@@ -20,7 +20,7 @@ class StartupViewController: UIViewController {
     var connectedProduct:DJIBaseProduct?=nil
     var componentDictionary = Dictionary<String, Array<DJIBaseComponent>>()
     
-    let APP_KEY = ""//TODO: Please enter App Key Here
+    let APP_KEY = ""//Please enter App Key Here
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,22 +51,22 @@ class StartupViewController: UIViewController {
         // show the alert
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
 }
-
 
 extension StartupViewController : DJISDKManagerDelegate
 {
     func sdkManagerDidRegisterAppWithError(error: NSError?) {
         
         guard error == nil  else {
-            logError("Error:\(error!.localizedDescription)")
+             self.showAlertResult("Error:\(error!.localizedDescription)")
             return
         }
         
         logDebug("Registered!")
         #if arch(i386) || arch(x86_64)
             //Simulator
-            DJISDKManager.enterDebugModeWithDebugId("10.10.2.72")
+            DJISDKManager.enterDebugModeWithDebugId("10.128.129.59")
         #else
             //Device
             DJISDKManager.startConnectionToProduct()
@@ -108,11 +108,8 @@ extension StartupViewController : DJISDKManagerDelegate
         logDebug("Product Connected")
 
     }
-}
-
-extension StartupViewController : DJIBaseProductDelegate {
-
-    func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
+    
+    override func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
         if(isConnected) {
             productConnectionStatus.text = "Status: Product Connected"
             logDebug("Product Connected")
@@ -121,8 +118,10 @@ extension StartupViewController : DJIBaseProductDelegate {
             logDebug("Product Disconnected")
         }
     }
+
     
 }
+
 
 
 

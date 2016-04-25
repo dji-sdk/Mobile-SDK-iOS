@@ -164,7 +164,120 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param battery      Battery having an updated state.
  *  @param batteryState The battery's state.
  */
-- (void)battery:(DJIBattery *)battery didUpdateState:(DJIBatteryState *)batteryState;
+- (void)battery:(DJIBattery *_Nonnull)battery didUpdateState:(DJIBatteryState *_Nonnull)batteryState;
+
+@end
+
+/*********************************************************************************/
+#pragma mark - DJIBatteryOverview
+/*********************************************************************************/
+
+/**
+ *  Provides an overview of a battery - used when multiple batteries are deployed on one product.
+ */
+@interface DJIBatteryOverview : NSObject
+
+/**
+ *  Index of the battery. Index starts from 0.
+ *  For Matrice 600, the number 1 battery compartment relates to index 0.
+ */
+@property(nonatomic, readonly) NSUInteger index;
+/**
+ *  `YES` if the battery is currently connected to the aircraft.
+ */
+@property(nonatomic, readonly) BOOL isConnected;
+/**
+ *  The remaining percentage energy of the battery with range [0,100].
+ */
+@property(nonatomic, readonly) NSInteger energyRemainingPercent;
+
+@end
+
+/*********************************************************************************/
+#pragma mark - DJIBatteryAggregationState
+/*********************************************************************************/
+
+/**
+ *  Provides a real time summary of the aggregated battery system.
+ *  Only supported by M600.
+ */
+@interface DJIBatteryAggregationState : NSObject
+
+/**
+ *  The number of currently connected batteries.
+ */
+@property(nonatomic, readonly) NSUInteger numberOfConnectedBatteries;
+
+/**
+ *  Returns the overview of batteries in the battery group. When a battery is not connected, the `isConnected` property is `NO` and the `energyRemainingPercent` is zero.
+ *  For Matrice 600, there are 6 elements in `batteryOverviews`.
+ */
+@property(nonatomic, readonly) NSArray<DJIBatteryOverview *> *_Nullable batteryOverviews;
+/**
+ *  Returns the current voltage (mV) provided by the battery group.
+ */
+@property(nonatomic, readonly) NSInteger currentVoltage;
+/**
+ *  Returns the real time current draw through the batteries. A negative value means the batteries are being discharged.
+ */
+@property(nonatomic, readonly) NSInteger currentCurrent;
+/**
+ *  Returns the the total amount of energy, in mAh (milliamp hours), stored in the batteries when the batteries are fully charged.
+ */
+@property(nonatomic, readonly) NSInteger fullChargeEnergy;
+/**
+ *  Returns the remaining energy stored in the batteries in mAh (milliamp hours).
+ */
+@property(nonatomic, readonly) NSInteger currentEnergy;
+/**
+ *  Returns the percentage of energy left in the battery group with range [0 - 100].
+ */
+@property(nonatomic, readonly) NSInteger energyRemainingPercent;
+/**
+ *  Returns the highest temperature (in Centigrade) among the batteries in the group, with a range [-128 to 127].
+ */
+@property(nonatomic, readonly) NSInteger highestBatteryTemperature;
+/**
+ *  `YES` if one of the batteries in the group is disconnected. When it is `YES`, the aircraft is not allowed to take off.
+ */
+@property(nonatomic, readonly) BOOL batteryDisconnected;
+/**
+ *  `YES` if there is significant difference between the voltage (above 1.5V) of two batteries. When it is `YES`, the aircraft is not allowed to take off.
+ */
+@property(nonatomic, readonly) BOOL voltageDifferenceDetected;
+/**
+ *  `YES` if one of the batteries in the group has cells with low voltage. When it is `YES`, the aircraft is not allow to take off.
+ */
+@property(nonatomic, readonly) BOOL lowCellVoltageDetected;
+/**
+ *  `YES` if one of the batteries in the group has damaged cells. When it is `YES`, the aircraft is not allow to take off.
+ */
+@property(nonatomic, readonly) BOOL hasDamagedCell;
+/**
+ *  `YES` if one of the batteries in the group has a firmware version different from the others. When it is `YES`, the aircraft is not allow to take off.
+ */
+@property(nonatomic, readonly) BOOL firmwareDifferenceDetected;
+
+@end
+
+/*********************************************************************************/
+#pragma mark - DJIBatteryAggregationDelegate
+/*********************************************************************************/
+
+/**
+ *  This protocol provides a delegate method for you to update the battery's current state.
+ */
+@protocol DJIBatteryAggregationDelegate <NSObject>
+
+@optional
+
+/**
+ *  Updates the aggregate information of the batteries.
+ *  Only supported by M600.
+ *
+ *  @param batteryState The battery's state.
+ */
+- (void)batteriesDidUpdateState:(DJIBatteryAggregationState *_Nonnull)batteryState;
 
 @end
 
@@ -176,6 +289,27 @@ NS_ASSUME_NONNULL_BEGIN
  *  This class manages the battery's information and real-time status of the connected product.
  */
 @interface DJIBattery : DJIBaseComponent
+
+/**
+ *  Sets the delegate to receive the battery aggregation information.
+ *  Only supported by Matrice 600.
+ *
+ *  @param delegate The delegate that will receive the aggregation information.
+ */
++ (void)setAggregationDelegate:(id<DJIBatteryAggregationDelegate>_Nullable)delegate;
+/**
+ *  Gets the delegate that receives the battery aggregation state. It is only useful when the aircraft has multiple batteries.
+ *  Only supported by Matrice 600.
+ *
+ *  @return the delegate receives the battery aggregation state.
+ */
++ (id<DJIBatteryAggregationDelegate>_Nullable)aggregationDelegate;
+
+/**
+ *  Returns the index of the battery. It is useful when the aircraft has multiple batteries. Index starts from 0. For products with only one battery, the index is 0.
+ *  For Matrice 600, there are printed numbers on the battery boxes. DJIBattery instance with index 0 corresponds to battery compartment number 1.
+ */
+@property(nonatomic, readonly) NSUInteger index;
 
 /**
  *  Returns the number of battery cells.
@@ -192,9 +326,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)isSmartBattery;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark Get battery properties and status
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Gets the battery's history. The DJI battery keeps the history for
  *  the past 30 days. The `history` variable in the block stores objects of type
@@ -204,7 +339,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param block Remote execution result callback block.
  */
-- (void)getWarningInformationRecordsWithCompletion:(void (^)(NSArray<DJIBatteryWarningInformation *> *history, NSError *_Nullable error))block;
+- (void)getWarningInformationRecordsWithCompletion:(void (^_Nonnull)(NSArray<DJIBatteryWarningInformation *> *_Nullable history, NSError *_Nullable error))block;
 
 /**
  *  Gets the battery's current state, which is one of seven battery states that
@@ -213,7 +348,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param block Remote execution result callback block.
  */
-- (void)getCurrentWarningInformationWithCompletion:(void (^)(DJIBatteryWarningInformation *state, NSError *_Nullable error))block;
+- (void)getCurrentWarningInformationWithCompletion:(void (^_Nonnull)(DJIBatteryWarningInformation *_Nullable state, NSError *_Nullable error))block;
 
 /**
  *  Gets the battery's cell voltages. The `cellArray` variable stores `DJIBatteryCell` objects. Since the Inspire 1 battery has 6 cells, `cellArray`
@@ -221,11 +356,12 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param block Remote execution result callback block.
  */
-- (void)getCellVoltagesWithCompletion:(void (^)(NSArray<DJIBatteryCell *> *cellArray, NSError *_Nullable error))block;
+- (void)getCellVoltagesWithCompletion:(void (^_Nonnull)(NSArray<DJIBatteryCell *> *_Nullable cellArray, NSError *_Nullable error))block;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark Battery self discharge
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Sets the battery's custom self-discharge configuration in the range of [1, 10] days.
  *  For example, if the value for `day` is `10`, the battery will discharge over
@@ -243,7 +379,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @param result Remote execution result error block.
  */
-- (void)getSelfDischargeDayWithCompletion:(void (^)(uint8_t day, NSError *_Nullable error))block;
+- (void)getSelfDischargeDayWithCompletion:(void (^_Nonnull)(uint8_t day, NSError *_Nullable error))block;
 
 @end
 

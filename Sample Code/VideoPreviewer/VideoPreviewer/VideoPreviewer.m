@@ -134,10 +134,10 @@
 +(VideoPreviewer*) instance
 {
     static VideoPreviewer* previewer = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if(previewer == nil)
+    {
         previewer = [[VideoPreviewer alloc] init];
-    });
+    }
     return previewer;
 }
 

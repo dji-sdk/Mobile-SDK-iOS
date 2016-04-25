@@ -14,8 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Distance warning returned by each sector of the front vision system. Warning Level 4 is the most serious level.
  */
-typedef NS_ENUM(NSInteger, DJIVisionSectorWarning)
-{
+typedef NS_ENUM (NSInteger, DJIVisionSectorWarning){
     /**
      *  The warning level is invalid. The sector cannot determine depth of the scene in front of it.
      */
@@ -45,8 +44,7 @@ typedef NS_ENUM(NSInteger, DJIVisionSectorWarning)
 /**
  *  Distance warning returned by the front vision system. Warning Level 4 is the most serious level.
  */
-typedef NS_ENUM(NSInteger, DJIVisionSystemWarning)
-{
+typedef NS_ENUM (NSInteger, DJIVisionSystemWarning){
     /**
      *  The warning is invalid. The front vision system cannot determine depth of the scene in front of it.
      */
@@ -105,7 +103,7 @@ typedef NS_ENUM(NSInteger, DJIVisionSystemWarning)
 /**
  *  The vision system can see infront of the aircraft with a 70 degree horizontal field of view (FOV) and 55 degree veritcal FOV for the Phantom 4. The horizontal FOV is split into four equal sectors and this array contains the distance and warning information for each sector. For Phantom 4, the horizontal FOV is separated into 4 sectors.
  */
-@property(nonatomic, readonly) NSArray* detectionSectors;
+@property(nonatomic, readonly) NSArray *_Nonnull detectionSectors;
 
 @end
 
@@ -121,7 +119,7 @@ typedef NS_ENUM(NSInteger, DJIVisionSystemWarning)
 /**
  *  Callback function that updates the vision detection state. The frequency of this method is 10Hz.
  */
--(void) intelligentFlightAssistant:(DJIIntelligentFlightAssistant*)assistant didUpdateVisionDetectionState:(DJIVisionDetectionState*)state;
+- (void)intelligentFlightAssistant:(DJIIntelligentFlightAssistant *_Nonnull)assistant didUpdateVisionDetectionState:(DJIVisionDetectionState *_Nonnull)state;
 
 @end
 
@@ -138,22 +136,22 @@ typedef NS_ENUM(NSInteger, DJIVisionSystemWarning)
 /**
  *  Set collision avoidance enabled. When collision avoidance is enabled, the aircraft will stop and try to go around an obstacle when detected.
  */
--(void) setCollisionAvoidanceEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
+- (void)setCollisionAvoidanceEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Get collision avoidance enabled.
  */
--(void) getCollisionAvoidanceEnabledWithCompletion:(void(^)(BOOL enable, NSError* _Nullable error))completion;
+- (void)getCollisionAvoidanceEnabledWithCompletion:(void (^_Nonnull)(BOOL enable, NSError *_Nullable error))completion;
 
 /**
  *  Set vision positioning enabled. Vision positioning is used to augment GPS to improve location accuracy when hovering and improve velocity calculation when flying.
  */
--(void) setVisionPositioningEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
+- (void)setVisionPositioningEnabled:(BOOL)enable withCompletion:(DJICompletionBlock)completion;
 
 /**
  *  Get vision position enable.
  */
--(void) getVisionPositioningEnabledWithCompletion:(void(^)(BOOL enable, NSError* _Nullable error))completion;
+- (void)getVisionPositioningEnabledWithCompletion:(void (^_Nonnull)(BOOL enable, NSError *_Nullable error))completion;
 
 @end
 

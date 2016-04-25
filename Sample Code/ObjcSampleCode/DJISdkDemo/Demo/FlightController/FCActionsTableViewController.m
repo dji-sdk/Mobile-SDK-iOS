@@ -36,7 +36,7 @@
     DemoSettingItem* item3 = [DemoSettingItem itemWithName:@"Landing Gear" andClass:[FCLandingGearViewController class]];
     DemoSettingItem* item4 = [DemoSettingItem itemWithName:@"Intelligent Flight Assistant" andClass:[FCIntelligentAssistantViewController class]];
     NSMutableArray* array = [[NSMutableArray alloc] initWithArray:@[item0, item1, item2]];
-    if (fc && fc.landingGear.isLandingGearMovable) {
+    if (fc && fc.isLandingGearMovable) {
         [array addObject:item3];
     }
     if (fc && fc.intelligentFlightAssistant) {

@@ -18,5 +18,6 @@ class GimbalActionsTableTableViewController: DemoTableViewController {
         
         self.items.append(DemoSettingItem(name: "Push Data", andClass: GimbalPushInfoViewController.self))
         self.items.append(DemoSettingItem(name: "Rotation with speed", andClass: GimbalRotationInSpeedViewController.self))
+        self.items.append(DemoSettingItem(name: "Gimbal Capability", andClass: GimbalCapabilityViewController.self))
     }
 }

@@ -29,6 +29,18 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 /*********************************************************************************/
 #import <DJISDK/DJIAircraft.h>
 #import <DJISDK/DJIHandheld.h>
+#import <DJISDK/DJIBaseProduct.h>
+
+/*********************************************************************************/
+#pragma mark - Diagnostics
+/*********************************************************************************/
+#import <DJISDK/DJIDiagnostics.h>
+
+/*********************************************************************************/
+#pragma mark - Utility
+/*********************************************************************************/
+#import <DJISDK/DJIParamCapability.h>
+#import <DJISDK/DJIParamCapabilityMinMax.h>
 
 /*********************************************************************************/
 #pragma mark - Components
@@ -43,6 +55,8 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJICompass.h>
 #import <DJISDK/DJIIntelligentFlightAssistant.h>
 #import <DJISDK/DJIIMUState.h>
+#import <DJISDK/DJIRTK.h>
+#import <DJISDK/DJISimulator.h>
 
 //-----------------------------------------------------------------
 #pragma mark RemoteController
@@ -118,6 +132,7 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIRecordVideoStep.h>
 #import <DJISDK/DJIShootPhotoStep.h>
 #import <DJISDK/DJIGimbalAttitudeStep.h>
+#import <DJISDK/DJIAircraftYawStep.h>
 
 /*********************************************************************************/
 #pragma mark - Categories

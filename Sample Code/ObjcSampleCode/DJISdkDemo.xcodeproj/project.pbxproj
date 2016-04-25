@@ -47,6 +47,9 @@
 		3BF0597B1BB255BD00F21C88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0597A1BB255BD00F21C88 /* LaunchScreen.xib */; };
 		B809D82E1C3BBE75004EBBA7 /* AirLinkActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B809D82D1C3BBE75004EBBA7 /* AirLinkActionsTableViewController.m */; };
 		B809D8321C3BC6AB004EBBA7 /* WiFiLinkSSIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B809D8311C3BC6AB004EBBA7 /* WiFiLinkSSIDViewController.m */; };
+		B80CF57E1CC5C40C004358FC /* GimbalCapabilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80CF57C1CC5C40C004358FC /* GimbalCapabilityViewController.m */; };
+		B80CF57F1CC5C40C004358FC /* GimbalCapabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80CF57D1CC5C40C004358FC /* GimbalCapabilityViewController.xib */; };
+		B80CF5821CC5E71E004358FC /* DJIGimbal+CapabilityCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B80CF5811CC5E71E004358FC /* DJIGimbal+CapabilityCheck.m */; };
 		B814FF8D1C98102C000D32AC /* FCIntelligentAssistantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B814FF8C1C98102C000D32AC /* FCIntelligentAssistantViewController.xib */; };
 		B814FF901C9810A2000D32AC /* FCIntelligentAssistantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B814FF8F1C9810A2000D32AC /* FCIntelligentAssistantViewController.m */; };
 		B8202B7E1C3253EA0080C329 /* CameraPlaybackDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8202B7C1C3253EA0080C329 /* CameraPlaybackDownloadViewController.m */; };
@@ -195,6 +198,11 @@
 		B809D82D1C3BBE75004EBBA7 /* AirLinkActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AirLinkActionsTableViewController.m; path = AirLink/AirLinkActionsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B809D8301C3BC6AB004EBBA7 /* WiFiLinkSSIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WiFiLinkSSIDViewController.h; path = AirLink/WiFiSSID/WiFiLinkSSIDViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B809D8311C3BC6AB004EBBA7 /* WiFiLinkSSIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = WiFiLinkSSIDViewController.m; path = AirLink/WiFiSSID/WiFiLinkSSIDViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B80CF57B1CC5C40C004358FC /* GimbalCapabilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GimbalCapabilityViewController.h; path = Gimbal/GimbalCapability/GimbalCapabilityViewController.h; sourceTree = "<group>"; };
+		B80CF57C1CC5C40C004358FC /* GimbalCapabilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GimbalCapabilityViewController.m; path = Gimbal/GimbalCapability/GimbalCapabilityViewController.m; sourceTree = "<group>"; };
+		B80CF57D1CC5C40C004358FC /* GimbalCapabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GimbalCapabilityViewController.xib; path = Gimbal/GimbalCapability/GimbalCapabilityViewController.xib; sourceTree = "<group>"; };
+		B80CF5801CC5E71E004358FC /* DJIGimbal+CapabilityCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "DJIGimbal+CapabilityCheck.h"; path = "Gimbal/GimbalCapability/DJIGimbal+CapabilityCheck.h"; sourceTree = "<group>"; };
+		B80CF5811CC5E71E004358FC /* DJIGimbal+CapabilityCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "DJIGimbal+CapabilityCheck.m"; path = "Gimbal/GimbalCapability/DJIGimbal+CapabilityCheck.m"; sourceTree = "<group>"; };
 		B814FF8C1C98102C000D32AC /* FCIntelligentAssistantViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FCIntelligentAssistantViewController.xib; sourceTree = "<group>"; };
 		B814FF8E1C9810A2000D32AC /* FCIntelligentAssistantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCIntelligentAssistantViewController.h; sourceTree = "<group>"; };
 		B814FF8F1C9810A2000D32AC /* FCIntelligentAssistantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCIntelligentAssistantViewController.m; sourceTree = "<group>"; };
@@ -559,6 +567,18 @@
 			name = WiFiSSID;
 			sourceTree = "<group>";
 		};
+		B80CF57A1CC5C189004358FC /* GimbalCapability */ = {
+			isa = PBXGroup;
+			children = (
+				B80CF57B1CC5C40C004358FC /* GimbalCapabilityViewController.h */,
+				B80CF57C1CC5C40C004358FC /* GimbalCapabilityViewController.m */,
+				B80CF57D1CC5C40C004358FC /* GimbalCapabilityViewController.xib */,
+				B80CF5801CC5E71E004358FC /* DJIGimbal+CapabilityCheck.h */,
+				B80CF5811CC5E71E004358FC /* DJIGimbal+CapabilityCheck.m */,
+			);
+			name = GimbalCapability;
+			sourceTree = "<group>";
+		};
 		B814FF8B1C98102C000D32AC /* IntelligentAssistant */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +739,7 @@
 		B850B2921C22DF3F00DBEB48 /* Gimbal */ = {
 			isa = PBXGroup;
 			children = (
+				B80CF57A1CC5C189004358FC /* GimbalCapability */,
 				B821D4131C316A050014ADBD /* RotationInSpeed */,
 				B821D40D1C31699F0014ADBD /* PushInfo */,
 				B850B2931C22DF8300DBEB48 /* GimbalActionsTableViewController.h */,
@@ -887,6 +908,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B80CF57F1CC5C40C004358FC /* GimbalCapabilityViewController.xib in Resources */,
 				3B61CB601B44D9890091196F /* waypoint@2x.png in Resources */,
 				B8202B861C328C990080C329 /* CameraFetchMediaViewController.xib in Resources */,
 				3B2CDD861C3CC21D00DB096B /* FCCompassViewController.xib in Resources */,
@@ -980,10 +1002,12 @@
 				B821D3DF1C313CFE0014ADBD /* CameraRecordVideoViewController.m in Sources */,
 				B821D3D91C311D8F0014ADBD /* CameraShootSinglePhotoViewController.m in Sources */,
 				B821D3E41C31641C0014ADBD /* DemoComponentHelper.m in Sources */,
+				B80CF57E1CC5C40C004358FC /* GimbalCapabilityViewController.m in Sources */,
 				3B2CDD981C3DA20A00DB096B /* RCActionsTableViewController.m in Sources */,
 				B8450C6F1C3798AF00921E19 /* MissionBaseViewController.m in Sources */,
 				B8C6CA651C3F95B900CAC10B /* HandheldControllerActionsTableViewController.m in Sources */,
 				B821D3FD1C3166810014ADBD /* DemoUtilityMethod.m in Sources */,
+				B80CF5821CC5E71E004358FC /* DJIGimbal+CapabilityCheck.m in Sources */,
 				B821D40B1C3169920014ADBD /* GimbalPushInfoViewController.m in Sources */,
 				B821D3FA1C31643D0014ADBD /* MBProgressHUD.m in Sources */,
 				B8202B7E1C3253EA0080C329 /* CameraPlaybackDownloadViewController.m in Sources */,

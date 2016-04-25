@@ -18,15 +18,15 @@ NS_ASSUME_NONNULL_BEGIN
 typedef struct
 {
     /**
-     *  x value of the cartesian vector.
+     *  X-value of the cartesian vector.
      */
     double x;
     /**
-     *  y value of the cartesian vector.
+     *  Y-value of the cartesian vector.
      */
     double y;
     /**
-     *  z value of the cartesian vector.
+     *  Z-value of the cartesian vector.
      */
     double z;
 } DJIVector;
@@ -34,8 +34,7 @@ typedef struct
 /**
  *  Direction aircraft is moving around or bypassing and obstacle.
  */
-typedef NS_ENUM(NSInteger, DJIBypassDirection)
-{
+typedef NS_ENUM (NSInteger, DJIBypassDirection){
     /**
      *  Flying normally, no obstacle to be avoided.
      */
@@ -61,8 +60,7 @@ typedef NS_ENUM(NSInteger, DJIBypassDirection)
 /**
  *  TapFly Mission execution state.
  */
-typedef NS_ENUM(NSInteger, DJITapFlyMissionExecutionState)
-{
+typedef NS_ENUM (NSInteger, DJITapFlyMissionExecutionState){
     /**
      *  The TapFly Mission cannot execute. The 'error' property will show the reason why.
      */
@@ -116,7 +114,7 @@ typedef NS_ENUM(NSInteger, DJITapFlyMissionExecutionState)
 @property(nonatomic, assign) float autoFlightSpeed;
 
 /**
- *  `YES` allows aircraft to bypass or move around an obstacle by going to the left or right of the obstacle. If it is not enabled, the aircraft will only go over an obstacle to avoid it. 
+ *  `YES` allows aircraft to bypass or move around an obstacle by going to the left or right of the obstacle. If it is not enabled, the aircraft will only go over an obstacle to avoid it.
  */
 @property(nonatomic, assign) BOOL isHorizontalObstacleAvoidanceEnabled;
 

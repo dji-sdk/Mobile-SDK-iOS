@@ -36,15 +36,15 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
     /**
      *  WiFi Signal Quality is good.
      */
-    DJIWiFiSignalQualityGood = 0,
+    DJIWiFiSignalQualityGood,
     /**
      *  WiFi Signal Quality is medium. At this level, the video quality will be degraded compared to when the signal quality is good.
      */
-    DJIWiFiSignalQualityMedium = 1,
+    DJIWiFiSignalQualityMedium,
     /**
      *  WiFi Signal Quality is bad. At this level, the video quality will be degraded compared to when the signal quality is medium.
      */
-    DJIWiFiSignalQualityBad = 2,
+    DJIWiFiSignalQualityBad,
     /**
      *  WiFi Signal Quality is Unknown.
      */
@@ -72,9 +72,9 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
 - (void)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdatesWiFiSignalQuality:(DJIWiFiSignalQuality)quality;
 @end
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark WiFi Component
-//-----------------------------------------------------------------
+/*********************************************************************************/
 
 /**
  *  This class provides methods to change the setting of the product's WiFi. You can also reboot the WiFi adapter inside product in order to make the new setting take effect.
@@ -93,15 +93,16 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
  */
 - (void)rebootWiFiWithCompletion:(DJICompletionBlock)block;
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark SSID and Password
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  Gets the WiFi SSID.
  *
  *  @param block Remote execution result error block.
  */
-- (void)getWiFiSSIDWithCompletion:(void (^)(NSString *ssid, NSError *_Nullable error))block;
+- (void)getWiFiSSIDWithCompletion:(void (^_Nonnull)(NSString *_Nullable ssid, NSError *_Nullable error))block;
 
 /**
  *  Sets the `WiFi SSID.
@@ -110,14 +111,14 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
  *  @param block Remote execution result error block.
  *
  */
-- (void)setWiFiSSID:(NSString *)ssid withCompletion:(DJICompletionBlock)block;
+- (void)setWiFiSSID:(NSString *_Nonnull)ssid withCompletion:(DJICompletionBlock)block;
 
 /**
  *  Gets the WiFi Password.
  *
  *  @param block Remote execution result error block.
  */
-- (void)getWiFiPasswordWithCompletion:(void (^)(NSString *password, NSError *_Nullable error))block;
+- (void)getWiFiPasswordWithCompletion:(void (^_Nonnull)(NSString *_Nullable password, NSError *_Nullable error))block;
 
 /**
  *  Sets the WiFi Password.
@@ -125,12 +126,13 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
  *  @param password The new WiFi password. It must be at least 8 characters and can only includes alphabetic characters and numbers.
  *  @param block Remote execution result error block.
  */
-- (void)setWiFiPassword:(NSString *)password withCompletion:(DJICompletionBlock)block;
+- (void)setWiFiPassword:(NSString *_Nullable)password withCompletion:(DJICompletionBlock)block;
 
 
-//-----------------------------------------------------------------
+/*********************************************************************************/
 #pragma mark Frequency Band Selection
-//-----------------------------------------------------------------
+/*********************************************************************************/
+
 /**
  *  YES if the product allows the user to change WiFi frequency bands.
  *  Only Osmo supports this feature.
@@ -152,7 +154,7 @@ typedef NS_ENUM (uint8_t, DJIWiFiSignalQuality) {
  *
  *  @param block Remote execution result error block.
  */
-- (void)getWiFiFrequencyBandWithCompletion:(void (^)(DJIWiFiFrequencyBand frequencyBand, NSError *_Nullable error))block;
+- (void)getWiFiFrequencyBandWithCompletion:(void (^_Nonnull)(DJIWiFiFrequencyBand frequencyBand, NSError *_Nullable error))block;
 
 
 @end

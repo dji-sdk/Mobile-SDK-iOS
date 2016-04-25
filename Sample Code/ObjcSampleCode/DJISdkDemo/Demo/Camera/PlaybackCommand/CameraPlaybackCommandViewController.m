@@ -22,7 +22,7 @@
 @property (nonatomic) BOOL isInPlaybackMode;
 @property (nonatomic) BOOL isInMultipleMode;
 
-@property (strong, nonatomic) UIView *videoFeedView;
+@property (weak, nonatomic) IBOutlet UIView *videoFeedView;
 
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -165,9 +165,7 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-    self.videoFeedView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    [self.view addSubview:self.videoFeedView];
-    [self.view sendSubviewToBack:self.videoFeedView];
+
     //    self.videoFeedView.backgroundColor = [UIColor grayColor];
     
     [[VideoPreviewer instance] start];
@@ -176,11 +174,6 @@
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
-    
-    if (self.videoFeedView != nil) {
-        [self.videoFeedView removeFromSuperview];
-        self.videoFeedView = nil;
-    }
 }
 
 -(void) setIsInMultipleMode:(BOOL)isInMultipleMode {
