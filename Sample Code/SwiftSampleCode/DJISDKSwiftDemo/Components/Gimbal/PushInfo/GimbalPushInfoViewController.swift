@@ -14,7 +14,7 @@ class GimbalPushInfoViewController: DemoPushInfoViewController, DJIGimbalDelegat
         // Set the delegate to receive the push data from gimbal
         let gimbal: DJIGimbal? = self.fetchGimbal()
         if gimbal != nil {
-            gimbal?.delegate = self
+            gimbal!.delegate = self
         }
     }
 
@@ -22,8 +22,8 @@ class GimbalPushInfoViewController: DemoPushInfoViewController, DJIGimbalDelegat
         super.viewWillDisappear(animated)
         // Clean gimbal's delegate before exiting the view
         let gimbal: DJIGimbal? = self.fetchGimbal()
-        if gimbal != nil && gimbal?.delegate === self {
-            gimbal?.delegate = nil
+        if gimbal != nil && gimbal!.delegate === self {
+            gimbal!.delegate = nil
         }
     }
     // Override method in DJIGimbalDelegate to receive the pushed data
@@ -55,5 +55,12 @@ class GimbalPushInfoViewController: DemoPushInfoViewController, DJIGimbalDelegat
         gimbalInfoString.appendString("Is yaw at stop: ")
         gimbalInfoString.appendString(gimbalState.isCalibrating ? "YES\n" : "NO\n")
         self.pushInfoLabel.text = gimbalInfoString as String
+    }
+    
+    /**
+     *  Updates the gimbal's current state.
+     */
+    func gimbal(gimbal: DJIGimbal, didUpdateGimbalState gimbalState: DJIGimbalState){
+        self.gimbalController(gimbal, didUpdateGimbalState: gimbalState);
     }
 }

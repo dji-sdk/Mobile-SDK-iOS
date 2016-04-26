@@ -145,7 +145,6 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         else {
             NSLog("Product disconnected. ")
             if (ConnectedProductManager.sharedInstance.connectedProduct != nil) {
-                ConnectedProductManager.sharedInstance.setDelegate(nil)
                 ConnectedProductManager.sharedInstance.connectedProduct = nil
             }
         }

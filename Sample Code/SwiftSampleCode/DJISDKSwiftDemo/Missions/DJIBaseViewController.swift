@@ -169,7 +169,6 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         }
         else {
             NSLog("Product disconnected. ")
-            ConnectedProductManager.sharedInstance.setDelegate(nil)
             ConnectedProductManager.sharedInstance.connectedProduct = nil
         }
     }
