@@ -120,6 +120,8 @@ This guide provides functionality to turn your mobile device into an intelligent
 
 ## Sample Projects - Basic
 
+- [**Importing and Activating DJI SDK in Xcode Project**](https://github.com/DJI-Mobile-SDK/iOS-ImportAndActivateSDKInXcode): This tutorial teaches you how to import and activate DJI SDK in your Xcode project.
+
 - [**Creating a Camera Application**](https://github.com/DJI-Mobile-SDK/iOS-FPVDemo): Our introductory tutorial, which guides you through connecting to your drone's camera to display a live video feed in your app, through which you can take photos and videos.
 
 ## Sample Projects - Advanced
@@ -277,6 +279,8 @@ SDK的Sample Code中使用了[FFmpeg](http://ffmpeg.org)的代码，已获得 [L
 ## 示例教程 - 基础
 
 - [**创建航拍相机App**](https://github.com/DJI-Mobile-SDK/iOS-FPVDemo): 这是我们的入门教程, 该教材会指导你如何连接飞行器的相机，在app上显示实时画面，以及如何进行拍摄和录像操作。
+
+- [**在Xcode工程中导入并激活DJI SDK**](https://github.com/DJI-Mobile-SDK/iOS-ImportAndActivateSDKInXcode): 通过该教材，你将学会如何在Xcode工程项目中导入并激活SDK。
 
 ## 示例教程 - 高级
 
