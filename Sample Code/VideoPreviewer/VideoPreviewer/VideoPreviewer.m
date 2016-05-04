@@ -390,13 +390,16 @@
     
     // Otherwise, the decoder depends on the camera
     DJICamera* camera = nil;
+    BOOL isHandheld = NO;
     if ([product isKindOfClass:[DJIAircraft class]]) {
         DJIAircraft* aircraft = (DJIAircraft*)product;
         camera = aircraft.camera;
+        isHandheld = NO;
     }
     else if ([product isKindOfClass:[DJIHandheld class]]) {
         DJIHandheld* handheld = (DJIHandheld*)product;
         camera = handheld.camera;
+        isHandheld = YES;
     }
     
     if (camera == nil) {
@@ -411,21 +414,33 @@
         return YES;
     }
     
-    H264EncoderType dataSource = [VideoPreviewer getDataSourceWithCameraName:camera.displayName];
+    H264EncoderType dataSource = [VideoPreviewer getDataSourceWithCamera:camera andIsHandheld:isHandheld];
     if (dataSource == H264EncoderType_unknown) { // The product does not support hardware decoding
         return NO;
     }
     
     self.enableHardwareDecode = YES;
+    self.encoderType = dataSource; 
     [self.hw_decoder setEncoderType:(H264EncoderType)dataSource];
     
     return YES;
 }
 
-+ (H264EncoderType) getDataSourceWithCameraName:(NSString*)name {
-    if ([name isEqualToString:DJICameraDisplayNameX3] ||
-        [name isEqualToString:DJICameraDisplayNameX5] ||
-        [name isEqualToString:DJICameraDisplayNameX5R]) {
++ (H264EncoderType) getDataSourceWithCamera:(DJICamera*)camera andIsHandheld:(BOOL)isHandheld {
+    NSString* name = camera.displayName;
+    if ([name isEqualToString:DJICameraDisplayNameX3]) {
+        // use `isDigitalZoomScaleSupported` to determine if Osmo with X3 is new firmware version
+        // `isDigitalZoomScaleSupported` has bug in SDK 3.2. Old firmware version doesn't support
+        // digital zoom, but `isDigitalZoomScaleSupported` still returns `YES`.
+        if (isHandheld && [camera isDigitalZoomScaleSupported]) {
+            return H264EncoderType_A9_OSMO_NO_368;
+        }
+        else {
+            return H264EncoderType_DM368_inspire;
+        }
+    }
+    else if ([name isEqualToString:DJICameraDisplayNameX5] ||
+             [name isEqualToString:DJICameraDisplayNameX5R]) {
         return H264EncoderType_DM368_inspire;
     }
     else if ([name isEqualToString:DJICameraDisplayNamePhantom3ProfessionalCamera]) {
@@ -436,6 +451,9 @@
     }
     else if ([name isEqualToString:DJICameraDisplayNamePhantom3StandardCamera]) {
         return H264EncoderType_A9_phantom3c;
+    }
+    else if ([name isEqualToString:DJICameraDisplayNamePhantom4Camera]) {
+        return H264EncoderType_1860_phantom4x;
     }
     
     return H264EncoderType_unknown;
