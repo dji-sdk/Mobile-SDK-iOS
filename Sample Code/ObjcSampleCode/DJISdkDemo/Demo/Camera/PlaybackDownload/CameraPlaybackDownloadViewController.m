@@ -221,10 +221,8 @@
 
 #pragma mark - DJICameraDelegate
 -(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    uint8_t* pBuffer = (uint8_t*)malloc(size);
-    memcpy(pBuffer, videoBuffer, size);
     if(![[[VideoPreviewer instance] dataQueue] isFull]){
-        [[VideoPreviewer instance] push:pBuffer length:(int)size];
+        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
     }
 }
 

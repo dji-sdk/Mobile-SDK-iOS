@@ -156,9 +156,7 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
 
 
     func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
-        let pBuffer = UnsafeMutablePointer<UInt8>.alloc(size)
-        memcpy(pBuffer, videoBuffer, size)
-        VideoPreviewer.instance().push(pBuffer, length: Int32(size))
+        VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
 
