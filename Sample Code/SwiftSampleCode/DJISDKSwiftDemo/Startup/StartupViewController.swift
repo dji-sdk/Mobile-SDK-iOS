@@ -24,15 +24,14 @@ class StartupViewController: DJIBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(APP_KEY.isEmpty){
+        initUI();
+
+        guard !APP_KEY.isEmpty else {
             showAlert("Please enter your app key.")
-        }else
-        {
-            DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+            return
         }
         
-        initUI();
+        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
     }
     
     func initUI() {
@@ -77,7 +76,7 @@ extension StartupViewController : DJISDKManagerDelegate
      
     func sdkManagerProductDidChangeFrom(oldProduct: DJIBaseProduct?, to newProduct: DJIBaseProduct?) {
         
-        guard newProduct != nil else
+        guard let newProduct = newProduct else
         {
             productConnectionStatus.text = "Status: No Product Connected"
             openComponents.enabled = false;
@@ -87,17 +86,17 @@ extension StartupViewController : DJISDKManagerDelegate
         }
         
         //Updates the product's model
-        productModel.text = "Model: \((newProduct?.model)!)"
+        productModel.text = "Model: \((newProduct.model)!)"
         productModel.hidden = false
-        if (oldProduct != nil) {
-            logDebug("Product changed from: \(oldProduct?.model) to \((newProduct?.model)!)")
+        if let oldProduct = oldProduct {
+            logDebug("Product changed from: \(oldProduct.model) to \((newProduct.model)!)")
         }
         //Updates the product's firmware version - COMING SOON
-        newProduct?.getFirmwarePackageVersionWithCompletion({ (version:String?, error:NSError?) -> Void in
+        newProduct.getFirmwarePackageVersionWithCompletion{ (version:String?, error:NSError?) -> Void in
             self.productFirmwarePackageVersion.text = "Firmware Package Version: \(version ?? "Unknown")"
             self.productFirmwarePackageVersion.hidden = false
             logDebug("Firmware package version is: \(version ?? "Unknown")")
-        })
+        }
         
         //Updates the product's connection status
         productConnectionStatus.text = "Status: Product Connected"
@@ -110,7 +109,7 @@ extension StartupViewController : DJISDKManagerDelegate
     }
     
     override func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
-        if(isConnected) {
+        if isConnected {
             productConnectionStatus.text = "Status: Product Connected"
             logDebug("Product Connected")
         } else {
