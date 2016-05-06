@@ -37,16 +37,15 @@ class ComponentsViewController: DemoTableViewController {
    func initializeComponentSection() {
         var components: [AnyObject] = [AnyObject]()
     
-        if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
+        if let _ = ConnectedProductManager.sharedInstance.fetchAircraft() {
             components.append(DemoSettingItem(name:"Flight Controller", andClass:nil))
         }
     
-        if (ConnectedProductManager.sharedInstance.connectedProduct != nil) {
-            for name: String in (ConnectedProductManager.sharedInstance.connectedProduct!.components?.keys)! {
-                let componentObjectType:AnyObject.Type? = componentsDict[name]
-                if (componentObjectType != nil) {
-                    components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentObjectType as? UIViewController.Type))
-                }
+        if let connectedProduct = ConnectedProductManager.sharedInstance.connectedProduct,
+           let componentsInConnectedProduct = connectedProduct.components
+        {
+            for name: String in componentsInConnectedProduct.keys {
+                components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentsDict[name] as? UIViewController.Type))
             }
         }
         self.items.append(components)
@@ -55,11 +54,11 @@ class ComponentsViewController: DemoTableViewController {
     func initializeMissionSection() {
         var components: [AnyObject] = [AnyObject]()
         
-        if (ConnectedProductManager.sharedInstance.fetchHandheldController() != nil) {
+        if let _ = ConnectedProductManager.sharedInstance.fetchHandheldController() {
             components.append(DemoSettingItem(name:"Panorama Mission", andClass:nil))
-        }else {
+        } else {
             let missions = ["Custom Mission", "Followme Mission", "Waypoint Mission", "Hotpoint Mission"]
-            for identifier: String in missions {
+            for identifier in missions {
                 // Identifier is the view controller in the storyboard
                 components.append(DemoSettingItem(name: identifier, andClass:nil))
             }
@@ -69,8 +68,7 @@ class ComponentsViewController: DemoTableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier != "Flight Controller") {
-            let vc = segue.destinationViewController as! DJIBaseViewController
+        if let vc = segue.destinationViewController as? DJIBaseViewController where segue.identifier != "Flight Controller" {
             vc.moduleTitle = segue.identifier?.capitalizedString
         }
     }
@@ -78,9 +76,7 @@ class ComponentsViewController: DemoTableViewController {
     func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
         if oldComponent == nil && newComponent != nil {
             // a new component is connected
-            let anyObjectType = componentsDict[key] as? UIViewController.Type
-            
-            if (anyObjectType != nil) {
+            if let anyObjectType = componentsDict[key] as? UIViewController.Type {
                 self.items.append(DemoSettingItem(name:key, andClass:anyObjectType))
             }
             
