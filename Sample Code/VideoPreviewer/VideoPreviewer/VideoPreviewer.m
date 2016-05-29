@@ -134,10 +134,10 @@
 +(VideoPreviewer*) instance
 {
     static VideoPreviewer* previewer = nil;
-    if(previewer == nil)
-    {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         previewer = [[VideoPreviewer alloc] init];
-    }
+    });
     return previewer;
 }
 
@@ -568,13 +568,14 @@
     
     while(_status.isRunning)
     {
-        @autoreleasepool {
+        @autoreleasepool
+        {
             VideoFrameH264Raw* frameRaw = nil;
             int inputDataSize = 0;
             uint8_t *inputData = nil;
             
             int queueNodeSize;
-            frameRaw = (VideoFrameH264Raw*)[_dataQueue pull:&queueNodeSize];
+            frameRaw = (VideoFrameH264Raw*)[_dataQueue pull:&queueNodeSize]; //now we have got h264 raw format data in frameRaw
             if (frameRaw && frameRaw->frame_size + sizeof(VideoFrameH264Raw) == queueNodeSize) {
                 inputData = frameRaw->frame_data;
                 inputDataSize = frameRaw->frame_size;
@@ -660,10 +661,11 @@
                     
                     DJIVideoStreamProcessorType processor_type = [processor streamProcessorType];
                     
-                    if (processor_type == DJIVideoStreamProcessorType_Decoder) {
+                    if (processor_type == DJIVideoStreamProcessorType_Decoder)
+                    {
                         if(!_status.isBackground){ // do nothing when it is in background
                             long long beforeDecode = [self getTickCount];
-                            if ([processor streamProcessorHandleFrameRaw:frameRaw]) {
+                            if ([processor streamProcessorHandleFrameRaw:frameRaw]) {  //start decode here 
                                 videoDecoderCanReset = YES;
                             }else{
                                 [self videoProcessFailedFrame];
@@ -674,7 +676,6 @@
                     else if(processor_type == DJIVideoStreamProcessorType_Modify
                              || processor_type == DJIVideoStreamProcessorType_Passthrough){
                         [processor streamProcessorHandleFrameRaw:frameRaw];
-                        //[processor streamProcessorHandleFrame:inputData size:inputDataSize];
                     }
                     else if (processor_type == DJIVideoStreamProcessorType_Consume){
                         if(processor != _stream_processor_list.lastObject) {
@@ -688,8 +689,8 @@
                             frameRaw = NULL; // the frame is not released
                         }
                     }
-                }
-            }
+                } //for
+            }//if
             
             if(safe_resume_skip_count){
                 safe_resume_skip_count--;
@@ -733,6 +734,10 @@
     pthread_mutex_unlock(&_processor_mutex);
     
     for (id<VideoFrameProcessor> processor in frameProcessorCopyList) {
+        if (processor == self) {
+            continue;
+        }
+        
         if ([processor conformsToProtocol:@protocol(VideoFrameProcessor)]) {
             
             if (![processor videoProcessorEnabled]) {

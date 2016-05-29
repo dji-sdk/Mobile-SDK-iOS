@@ -40,10 +40,6 @@
     }
 }
 
--(BOOL) streamProcessorHandleFrame:(uint8_t *)data size:(int)size{
-    return NO;
-}
-
 -(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw *)frame{
     __block BOOL decodeSuccess = YES;
     __weak SoftwareDecodeProcessor* weakself = self;

@@ -96,7 +96,7 @@ typedef struct{
 #pragma pack()
 
 typedef struct {
-    CGSize frameSize; //暂留未用
+    CGSize frameSize;
     int frameRate;
     int encoderType;
 } DJIVideoStreamBasicInfo;
@@ -134,10 +134,10 @@ typedef NS_ENUM(NSUInteger, H264EncoderType){
 
 -(DJIVideoStreamProcessorType) streamProcessorType;
 
--(BOOL) streamProcessorHandleFrame:(uint8_t*)data size:(int)size;
 -(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame;
-@optional
 
+@optional
+-(BOOL) streamProcessorHandleFrame:(uint8_t*)data size:(int)size __attribute__((deprecated("VideoPreview will ignore this method. ")));
 -(void) streamProcessorInfoChanged:(DJIVideoStreamBasicInfo*)info;
 -(void) streamProcessorPause;
 -(void) streamProcessorReset;
