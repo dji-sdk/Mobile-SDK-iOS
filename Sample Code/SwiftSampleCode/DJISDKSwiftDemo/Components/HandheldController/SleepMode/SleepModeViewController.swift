@@ -1,5 +1,5 @@
 //
-//  SleepModeViewController.m
+//  SleepModeViewController.swift
 //  DJISdkDemo
 //
 //  Copyright © 2015 DJI. All rights reserved.
@@ -13,54 +13,47 @@ class SleepModeViewController: DJIBaseViewController, DJIHandheldControllerDeleg
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld != nil {
-            handheld!.delegate = self
-        }
-        else {
+        guard let handheld = self.fetchHandheldController() else {
             self.showAlertResult("There is no handheld controller. ")
             self.sleepButton.enabled = false
             self.awakeButton.enabled = false
             self.shutdownButton.enabled = false
+            return
         }
+        handheld.delegate = self
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld?.delegate === self {
-            handheld!.delegate = nil
+        if let handheld = self.fetchHandheldController() where handheld.delegate === self {
+            handheld.delegate = nil
         }
     }
     
     @IBAction func onSleepButtonClicked(sender: AnyObject) {
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld != nil {
+        if let _ = self.fetchHandheldController() {
             self.sleepButton.enabled = false
             self.sendPowerMode(DJIHandheldPowerMode.Sleeping)
         }
     }
     
     @IBAction func onAwakeButtonClicked(sender: AnyObject) {
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld != nil {
+        if let _ = self.fetchHandheldController() {
             self.awakeButton.enabled = false
             self.sendPowerMode(DJIHandheldPowerMode.Awake)
         }
     }
     
     @IBAction func onShutdownButtonClicked(sender: AnyObject) {
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld != nil {
+        if let _ = self.fetchHandheldController() {
             self.shutdownButton.enabled = false
             self.sendPowerMode(DJIHandheldPowerMode.PowerOff)
         }
     }
     
     func sendPowerMode(mode: DJIHandheldPowerMode) {
-        let handheld: DJIHandheldController? = self.fetchHandheldController()
-        if handheld != nil {
-            handheld!.setHandheldPowerMode(mode, withCompletion: {[weak self](error: NSError?) -> Void in
+        if let handheld = self.fetchHandheldController() {
+            handheld.setHandheldPowerMode(mode, withCompletion: {[weak self](error: NSError?) -> Void in
                 if error != nil {
                     self?.showAlertResult("ERROR: setHandheldPowerMode failed: \(error!.description)")
                 }
@@ -73,15 +66,15 @@ class SleepModeViewController: DJIBaseViewController, DJIHandheldControllerDeleg
     
     func handheldController(controller: DJIHandheldController, didUpdatePowerMode powerMode: DJIHandheldPowerMode) {
         switch powerMode {
-        case DJIHandheldPowerMode.Sleeping:
+        case .Sleeping:
             self.sleepButton.enabled = false
             self.awakeButton.enabled = true
             self.shutdownButton.enabled = true
-        case DJIHandheldPowerMode.Awake:
+        case .Awake:
             self.sleepButton.enabled = true
             self.awakeButton.enabled = false
             self.shutdownButton.enabled = true
-        case DJIHandheldPowerMode.PowerOff:
+        case .PowerOff:
             self.sleepButton.enabled = false
             self.awakeButton.enabled = false
             self.shutdownButton.enabled = false

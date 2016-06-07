@@ -1,5 +1,5 @@
 //
-//  RCActionsTableViewController.m
+//  RCActionsTableViewController.swift
 //  DJISdkDemo
 //
 //  Created by DJI on 16/1/6.
@@ -22,8 +22,4 @@ class RCActionsTableViewController: DemoTableViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
