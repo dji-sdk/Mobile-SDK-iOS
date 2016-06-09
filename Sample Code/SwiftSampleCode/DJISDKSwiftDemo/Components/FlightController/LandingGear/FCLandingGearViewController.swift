@@ -1,5 +1,5 @@
 //
-//  FCLandingGearViewController.m
+//  FCLandingGearViewController.swift
 //  DJISdkDemo
 //
 //  Created by DJI on 16/1/5.
@@ -18,146 +18,97 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
         self.landingGearMode = DJILandingGearMode.Unknown
         self.landingGearStatus = DJILandingGearStatus.Unknown
-        let fc: DJIFlightController? = self.fetchFlightController()
-        if fc != nil {
-            fc?.delegate = self
+        if let fc = self.fetchFlightController() {
+            fc.delegate = self
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func onTurnOnButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        
-        if (fc != nil) {
-            let landingGear: DJILandingGear? = fc!.landingGear
-            if landingGear != nil {
-                landingGear?.turnOnAutoLandingGearWithCompletion({[weak self](error: NSError?) -> Void in
-                    if error != nil {
-                        self?.showAlertResult("Turn on:\(error?.localizedDescription)")
-                    }
-                })
-            }
-            else {
+        if let fc = self.fetchFlightController() {
+            guard let landingGear = fc.landingGear else {
                 self.showAlertResult("Component Not Exist.")
+                return
+            }
+            landingGear.turnOnAutoLandingGearWithCompletion { [weak self] (error: NSError?) -> Void in
+                guard let error = error else { return }
+                self?.showAlertResult("Turn on:\(error.localizedDescription)")
             }
         }
     }
     
     @IBAction func onTurnOffButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        
-        if (fc != nil) {
-            let landingGear: DJILandingGear? = fc!.landingGear
-            if landingGear != nil {
-                landingGear!.turnOffAutoLandingGearWithCompletion({[weak self](error: NSError?) -> Void in
-                    if error != nil {
-                        self?.showAlertResult("Turn Off:\(error?.localizedDescription)")
-                    }
-                })
-            }
-            else {
+        if let fc = self.fetchFlightController() {
+            guard let landingGear = fc.landingGear else {
                 self.showAlertResult("Component Not Exist.")
+                return
+            }
+            landingGear.turnOffAutoLandingGearWithCompletion { [weak self] (error: NSError?) -> Void in
+                guard let error = error else { return }
+                self?.showAlertResult("Turn Off:\(error.localizedDescription)")
             }
         }
     }
     
     @IBAction func onEnterTransportButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
+        guard let fc = self.fetchFlightController() else { return }
         
-        if (fc == nil) {
+        guard let landingGear = fc.landingGear else {
+            self.showAlertResult("Component Not Exist.")
             return
         }
         
-        let landingGear: DJILandingGear? = fc!.landingGear
-        if landingGear != nil {
-            landingGear!.enterTransportModeWithCompletion({[weak self](error: NSError?) -> Void in
-                if error != nil {
-                    self?.showAlertResult("Enter Transport: \(error?.localizedDescription)")
-                }
-            })
-        }
-        else {
-            self.showAlertResult("Component Not Exist.")
+        landingGear.enterTransportModeWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else { return }
+            self?.showAlertResult("Enter Transport: \(error.localizedDescription)")
         }
     }
     
     @IBAction func onExitTransportButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        if (fc == nil) {
+        guard let fc = self.fetchFlightController() else { return }
+        
+        guard let landingGear = fc.landingGear else {
+            self.showAlertResult("Component Not Exist.")
             return
         }
-        
-        let landingGear: DJILandingGear? = fc?.landingGear
-        if landingGear != nil {
-            landingGear!.exitTransportModeWithCompletion({[weak self](error: NSError?) -> Void in
-                if error != nil {
-                    self?.showAlertResult("Exit Transport:\(error?.localizedDescription)")
-                }
-            })
-        }
-        else {
-            self.showAlertResult("Component Not Exist.")
+        landingGear.exitTransportModeWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else { return }
+            self?.showAlertResult("Exit Transport:\(error.localizedDescription)")
         }
     }
     
     func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
-        let landingGear: DJILandingGear? = fc.landingGear
+        guard let landingGear = fc.landingGear else { return }
         
-        if (landingGear != nil) {
-            if landingGear!.mode != landingGearMode {
-                self.landingGearMode = landingGear!.mode
-                self.modeLabel.text = self.stringWithLandingGearMode(landingGearMode)
-            }
-            if landingGear!.status != landingGearStatus {
-                self.landingGearStatus = landingGear!.status
-                self.statusLabel.text = self.stringWithLandingGearStatus(landingGearStatus)
-            }
+        if landingGear.mode != landingGearMode {
+            self.landingGearMode = landingGear.mode
+            self.modeLabel.text = self.stringWithLandingGearMode(landingGearMode)
+        }
+        if landingGear.status != landingGearStatus {
+            self.landingGearStatus = landingGear.status
+            self.statusLabel.text = self.stringWithLandingGearStatus(landingGearStatus)
         }
     }
     
     func stringWithLandingGearMode(mode: DJILandingGearMode) -> String {
-        if mode == DJILandingGearMode.Auto {
-            return "Auto"
+        switch mode {
+            case .Auto:         return "Auto"
+            case .Normal:       return "Normal"
+            case .Transport:    return "Transport"
+            default:            return "N/A"
         }
-        else if mode == DJILandingGearMode.Normal {
-            return "Normal"
-        }
-        else if mode == DJILandingGearMode.Transport {
-            return "Transport"
-        }
-        else {
-            return "N/A"
-        }
-        
     }
     
     func stringWithLandingGearStatus(status: DJILandingGearStatus) -> String {
-        if status == DJILandingGearStatus.Deployed {
-            return "Deployed"
+        switch status {
+            case .Deployed:     return "Deployed"
+            case .Deploying:    return "Deploying"
+            case .Retracted:    return "Retracted"
+            case .Retracting:   return "Retracting"
+            case .Stopped:      return "Stopped"
+            default:            return "N/A"
         }
-        else if status == DJILandingGearStatus.Deploying {
-            return "Deploying"
-        }
-        else if status == DJILandingGearStatus.Retracted {
-            return "Retracted"
-        }
-        else if status == DJILandingGearStatus.Retracting {
-            return "Retracting"
-        }
-        else if status == DJILandingGearStatus.Stopped {
-            return "Stoped"
-        }
-        else {
-            return "N/A"
-        }
-        
     }
 
 }
