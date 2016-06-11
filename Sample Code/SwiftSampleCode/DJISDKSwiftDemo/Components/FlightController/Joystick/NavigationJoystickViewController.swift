@@ -1,6 +1,6 @@
 //
-//  JoystickTestViewController.h
-//  DJISdkDemo
+//  NavigationJoystickViewController.swift
+//  DJISDSwiftDemo
 //
 //  Created by DJI on 14-10-27.
 //  Copyright (c) 2014 DJI. All rights reserved.
@@ -24,154 +24,117 @@ class NavigationJoystickViewController: DJIBaseViewController, DJICameraDelegate
     @IBOutlet weak var simulatorStateLabel: UILabel!
     
     weak var aircraft: DJIAircraft? = nil
-    
 
     @IBAction func onEnterVirtualStickControlButtonClicked(sender: AnyObject) {
-        if (self.aircraft != nil) {
-            self.aircraft!.flightController?.enableVirtualStickControlModeWithCompletion({[weak self] (error: NSError?) in
-                if error != nil {
-                    self?.showAlertResult("Enter Virtual Stick Mode:\(error!.description)")
-                } else {
+        if let aircraft = aircraft {
+            aircraft.flightController?.enableVirtualStickControlModeWithCompletion {[weak self] (error: NSError?) in
+                guard let error = error else {
                     self?.showAlertResult("Enter Virtual Stick Mode: Success.")
+                    return
                 }
-                })
-            self.aircraft!.flightController?.yawControlMode = DJIVirtualStickYawControlMode.AngularVelocity
-            self.aircraft!.flightController?.rollPitchControlMode = DJIVirtualStickRollPitchControlMode.Velocity
+                self?.showAlertResult("Enter Virtual Stick Mode:\(error.description)")
+            }
+            aircraft.flightController?.yawControlMode = DJIVirtualStickYawControlMode.AngularVelocity
+            aircraft.flightController?.rollPitchControlMode = DJIVirtualStickRollPitchControlMode.Velocity
         }
     }
 
     @IBAction func onExitVirtualStickControlButtonClicked(sender: AnyObject) {
-        if (self.aircraft == nil) {
-            return
-        }
-        
-        self.aircraft!.flightController?.disableVirtualStickControlModeWithCompletion({ [weak self] (error: NSError?) -> Void in
-            if error != nil {
-                self?.showAlertResult("Exit Virtual Stick Mode: \(error!.debugDescription)")
-            }
-            else {
+        guard let aircraft = aircraft else { return }
+        aircraft.flightController?.disableVirtualStickControlModeWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else {
                 self?.showAlertResult("Exit Virtual Stick Mode: Success.")
+                return
             }
-        })
+            self?.showAlertResult("Exit Virtual Stick Mode: \(error.debugDescription)")
+        }
     }
 
     @IBAction func onTakeoffButtonClicked(sender: AnyObject) {
-        if (self.aircraft == nil) {
-            return
-        }
-        
-        self.aircraft!.flightController?.takeoffWithCompletion({[weak self] (error: NSError?) -> Void in
-            if error != nil {
-                self?.showAlertResult("Takeoff: \(error!.description)")
-            }
-            else {
+        guard let aircraft = aircraft else { return }
+        aircraft.flightController?.takeoffWithCompletion {[weak self] (error: NSError?) -> Void in
+            guard let error = error else {
                 self?.showAlertResult("Takeoff: Success.")
+                return
             }
-        })
+            self?.showAlertResult("Takeoff: \(error.description)")
+        }
     }
 
     @IBAction func onCoordinateSysButtonClicked(sender: AnyObject) {
-        if (self.aircraft == nil) {
-            return
-        }
-        
-        if self.aircraft!.flightController?.rollPitchCoordinateSystem == DJIVirtualStickFlightCoordinateSystem.Ground {
-            self.aircraft!.flightController?.rollPitchCoordinateSystem = DJIVirtualStickFlightCoordinateSystem.Body
+        guard let aircraft = aircraft else { return }
+        if aircraft.flightController?.rollPitchCoordinateSystem == .Ground {
+            aircraft.flightController?.rollPitchCoordinateSystem = .Body
             coordinateSys.setTitle("CoordinateSys:Body", forState: .Normal)
         }
         else {
-            self.aircraft!.flightController?.rollPitchCoordinateSystem = DJIVirtualStickFlightCoordinateSystem.Ground
+            aircraft.flightController?.rollPitchCoordinateSystem = .Ground
             coordinateSys.setTitle("CoordinateSys:Ground", forState: .Normal)
         }
     }
     
     @IBAction func onSimulatorButtonClicked(sender:UIButton) {
-        let fc  = self.aircraft?.flightController
-        if (fc != nil && fc!.simulator != nil) {
-            if (fc!.simulator!.isSimulatorStarted == false ) {
-                // The initial aircraft's position in the simulator.
-                let location = CLLocationCoordinate2DMake(22, 113)
-                fc!.simulator!.startSimulatorWithLocation(location, updateFrequency: 20, GPSSatellitesNumber: 10, withCompletion: { (error: NSError?) -> Void in
-                    
-                    self.simulatorStateLabel.hidden = true;
-
-                    if (error != nil) {
-                        self.showAlertResult("Start simulator error:\(error!.description)")
-                    } else {
-                        self.showAlertResult("Start simulator succeeded.");
-                    }
-
-                })
+        if let fc  = self.aircraft?.flightController, let sim = fc.simulator where !sim.isSimulatorStarted {
+            // The initial aircraft's position in the simulator.
+            let location = CLLocationCoordinate2DMake(22, 113)
+            sim.startSimulatorWithLocation(location, updateFrequency: 20, GPSSatellitesNumber: 10) { (error: NSError?) -> Void in
+                self.simulatorStateLabel.hidden = true;
+                guard let error = error else {
+                    self.showAlertResult("Start simulator succeeded.");
+                    return
+                }
+                self.showAlertResult("Start simulator error:\(error.description)")
             }
         }
     }
 
     @IBAction func onStopSimulatorButtonClicked(sender: AnyObject) {
-        
-        let fc  = self.aircraft?.flightController
-        if (fc != nil && fc!.simulator != nil) {
-            if (fc!.simulator!.isSimulatorStarted == true ) {
-                
-                fc!.simulator!.stopSimulatorWithCompletion({ (error: NSError?) -> Void in
-                  
-                    self.simulatorStateLabel.hidden = false;
-                    if (error != nil) {
-                        self.showAlertResult("Stop simulator error:\(error!.description)")
-                    } else {
-                        self.showAlertResult("Stop simulator succeeded.");
-                    }
-
-                })
+        if let fc  = self.aircraft?.flightController, sim = fc.simulator where sim.isSimulatorStarted {
+            sim.stopSimulatorWithCompletion { (error: NSError?) -> Void in
+                self.simulatorStateLabel.hidden = false;
+                guard let error = error else {
+                    self.showAlertResult("Stop simulator succeeded.");
+                    return
+                }
+                self.showAlertResult("Stop simulator error:\(error.description)")
             }
         }
-
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         //    playerOrigin = player.frame.origin;
-        let notificationCenter: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        let notificationCenter = NSNotificationCenter.defaultCenter()
         notificationCenter.addObserver(self, selector: #selector(NavigationJoystickViewController.onStickChanged(_:)), name: "StickChanged", object: nil)
       
-        if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil) {
-            self.aircraft = self.fetchAircraft()
-        
-            if (self.aircraft == nil) {
-                return
-            }
-            
+        if let _ = ConnectedProductManager.sharedInstance.fetchAircraft() {
+            guard let aircraft = self.fetchAircraft() else { return }
+            self.aircraft = aircraft
             // To be consistent with UI part, set the coordinate to Ground
-            if self.aircraft!.flightController != nil {
-                self.aircraft!.flightController!.rollPitchControlMode = DJIVirtualStickRollPitchControlMode.Angle
+            if let fc = aircraft.flightController {
+                fc.rollPitchControlMode = .Angle
             }
-        
         }
-        
     }
 
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         // flight controller should be ready
-        self.aircraft = self.fetchAircraft()
-        
-        if (self.aircraft != nil) {
-            self.aircraft?.flightController?.delegate = self
-            self.aircraft?.flightController?.simulator?.delegate = self
-        }
-        
+        guard let aircraft = self.fetchAircraft() else { return }
+        aircraft.flightController?.delegate = self
+        aircraft.flightController?.simulator?.delegate = self
+        self.aircraft = aircraft
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        let fc = self.fetchFlightController()
-        if ( fc != nil) {
-            if fc!.delegate === self {
-                fc!.delegate = nil
+        if let fc = self.fetchFlightController() {
+            if fc.delegate === self {
+                fc.delegate = nil
             }
-            if fc!.simulator?.delegate === self {
-                fc!.simulator?.delegate = nil
+            if fc.simulator?.delegate === self {
+                fc.simulator?.delegate = nil
             }
         }
     }
@@ -180,8 +143,7 @@ class NavigationJoystickViewController: DJIBaseViewController, DJICameraDelegate
         var dict: [NSObject : AnyObject] = notification.userInfo!
         let vdir: NSValue = dict["dir"] as! NSValue
         let dir: CGPoint = vdir.CGPointValue()
-        let joystick: JoyStickView? = notification.object as? JoyStickView
-        if joystick != nil {
+        if let joystick = notification.object as? JoyStickView {
             if joystick == self.joystickLeft {
                 self.setThrottle(dir.y, andYaw: dir.x)
             }
@@ -209,15 +171,14 @@ class NavigationJoystickViewController: DJIBaseViewController, DJICameraDelegate
         ctrlData.roll = Float(mRoll)
         ctrlData.yaw = Float(mYaw)
         ctrlData.verticalThrottle = Float(mThrottle)
-        if ((self.aircraft != nil && self.aircraft!.flightController != nil) && (self.aircraft!.flightController!.isVirtualStickControlModeAvailable())) {
+        if let aircraft = self.aircraft, let fc = aircraft.flightController where fc.isVirtualStickControlModeAvailable() {
             NSLog("mThrottle: %f, mYaw: %f", mThrottle, mYaw)
-            self.aircraft!.flightController!.sendVirtualStickFlightControlData(ctrlData, withCompletion: nil)
+            fc.sendVirtualStickFlightControlData(ctrlData, withCompletion: nil)
         }
     }
 
     func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
     }
-
 
     func simulator(simulator: DJISimulator, updateSimulatorState state: DJISimulatorState) {
         self.simulatorStateLabel.hidden = false
