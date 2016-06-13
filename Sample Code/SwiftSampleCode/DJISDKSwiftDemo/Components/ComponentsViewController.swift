@@ -45,7 +45,11 @@ class ComponentsViewController: DemoTableViewController {
            let componentsInConnectedProduct = connectedProduct.components
         {
             for name: String in componentsInConnectedProduct.keys {
-                components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentsDict[name] as? UIViewController.Type))
+                let componentObjectType:AnyObject.Type? = componentsDict[name]
+                if (componentObjectType != nil) {
+                    components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentObjectType as? UIViewController.Type))
+                }
+
             }
         }
         self.items.append(components)
