@@ -1,5 +1,5 @@
 //
-//  FCGeneralControlViewController.m
+//  FCGeneralControlViewController.swift
 //  DJISdkDemo
 //
 //  Created by DJI on 16/1/6.
@@ -9,64 +9,45 @@
 import DJISDK
 class FCGeneralControlViewController: DJIBaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func onTakeoffButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        if fc != nil {
-            fc!.takeoffWithCompletion({[weak self](error: NSError?) -> Void in
-                if error != nil {
-                    self?.showAlertResult("Takeoff Error: \(error!.localizedDescription)")
-                }
-                else {
-                    self?.showAlertResult("Takeoff Succeeded.")
-                }
-            })
-        }
-        else {
+        guard let fc = self.fetchFlightController() else {
             self.showAlertResult("Component Not Exist")
+            return
+        }
+        fc.takeoffWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else {
+                self?.showAlertResult("Takeoff Succeeded.")
+                return
+            }
+            self?.showAlertResult("Takeoff Error: \(error.localizedDescription)")
         }
     }
     
     @IBAction func onGoHomeButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        if fc != nil {
-            fc!.goHomeWithCompletion({[weak self](error: NSError?) -> Void in
-                if error != nil {
-                    self?.showAlertResult("GoHome Error: \(error!.localizedDescription)")
-                }
-                else {
-                    self?.showAlertResult("GoHome Succeeded.")
-                }
-            })
-        }
-        else {
+        guard let fc = self.fetchFlightController() else {
             self.showAlertResult("Component Not Exist")
+            return
+        }
+        fc.goHomeWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else {
+                self?.showAlertResult("GoHome Succeeded.")
+                return
+            }
+            self?.showAlertResult("GoHome Error: \(error.localizedDescription)")
         }
     }
     
     @IBAction func onLandButtonClicked(sender: AnyObject) {
-        let fc: DJIFlightController? = self.fetchFlightController()
-        if fc != nil {
-            fc!.autoLandingWithCompletion({[weak self](error: NSError?) -> Void in
-                if error != nil {
-                    self?.showAlertResult("Land Error:\(error!.localizedDescription)")
-                }
-                else {
-                    self?.showAlertResult("Land Succeeded.")
-                }
-            })
-        }
-        else {
+        guard let fc = self.fetchFlightController() else {
             self.showAlertResult("Component Not Exist")
+            return
+        }
+        fc.autoLandingWithCompletion { [weak self] (error: NSError?) -> Void in
+            guard let error = error else {
+                self?.showAlertResult("Land Succeeded.")
+                return
+            }
+            self?.showAlertResult("Land Error:\(error.localizedDescription)")
         }
     }
 }

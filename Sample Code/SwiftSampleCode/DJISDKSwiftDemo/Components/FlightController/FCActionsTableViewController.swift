@@ -1,5 +1,5 @@
 //
-//  FCActionsTableViewController.m
+//  FCActionsTableViewController.swift
 //  DJISdkDemo
 //
 //  Created by DJI on 16/1/4.
@@ -19,48 +19,34 @@ class FCActionsTableViewController: DemoTableViewController {
         self.configeItems()
     }
     
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func configeItems () {
     
         self.sectionNames = ["General", "Orientation Mode", "Virtural Stick", "Intelligent Assistant"]
+
         //General
-        let item0:DemoSettingItem = DemoSettingItem(name: "General Control", andClass: FCGeneralControlViewController.self)
-        let item1:DemoSettingItem = DemoSettingItem(name: "Compass", andClass: FCCompassViewController.self)
-        let item2:DemoSettingItem = DemoSettingItem(name: "Flight Limitation", andClass: FCFlightLimitationViewController.self)
-        
-        let fc: DJIFlightController? = self.connectedComponent as? DJIFlightController
-        
-        if (fc != nil) {
-            
-            let  movable:Bool = fc!.isLandingGearMovable()
-            
-            if (movable == true) {
-                let item3: DemoSettingItem = DemoSettingItem(name: "Landing Gear", andClass: FCLandingGearViewController.self)
-                self.items.append([item0, item1, item2, item3])
-            }else{
-                self.items.append([item0, item1, item2])
-            }
+        var general = [ DemoSettingItem(name: "General Control", andClass: FCGeneralControlViewController.self),
+                        DemoSettingItem(name: "Compass", andClass: FCCompassViewController.self),
+                        DemoSettingItem(name: "Flight Limitation", andClass: FCFlightLimitationViewController.self) ]
+        if let fc = self.connectedComponent as? DJIFlightController where fc.isLandingGearMovable() {
+            general.append(DemoSettingItem(name: "Landing Gear", andClass: FCLandingGearViewController.self))
         }
+        self.items.append(general)
+
         // Orientation Mode in storyboard
         self.items.append([DemoSettingItem(name:"Intelligent Orientation", andClass:nil)])
+
         // Virtual Stick in storyboard
         self.items.append([DemoSettingItem(name:"Virtual Stick", andClass:nil)])
-        // Intelligent Assistent in storyboard
-        if (fc != nil && fc?.intelligentFlightAssistant != nil){
+
+        // Intelligent Assistant in storyboard
+        if let fc = self.connectedComponent as? DJIFlightController, _ = fc.intelligentFlightAssistant {
             self.items.append([DemoSettingItem(name:"Intelligent Assistant", andClass:FCIntelligentAssistantViewController.self)])
         }
     }
     
     //Passes an instance of the current component selected to IndividualComponentViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier != "openComponentInfo") {
-            let vc = segue.destinationViewController as! DJIBaseViewController
+        if let vc = segue.destinationViewController as? DJIBaseViewController where segue.identifier != "openComponentInfo" {
             vc.moduleTitle = segue.identifier
         }
     }
