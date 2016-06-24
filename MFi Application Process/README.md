@@ -1,3 +1,5 @@
+#### This document is now deprecated, please refer to the [deploy](https://developer.dji.com/mobile-sdk/documentation/application-development-workflow/workflow-deploy.html#MFI-Authorization) section in DJI Developer Website Documentation.
+
 # MFi Program Application Process
 
 ## Why Do I Need to Apply for the MFi Program?
