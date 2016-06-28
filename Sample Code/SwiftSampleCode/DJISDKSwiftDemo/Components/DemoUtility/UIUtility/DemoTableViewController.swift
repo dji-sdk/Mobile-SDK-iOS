@@ -1,6 +1,6 @@
 //
-//  DemoTableViewController.h
-//  DJISdkDemo
+//  DemoTableViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 12/17/15.
 //  Copyright © 2015 DJI. All rights reserved.
@@ -11,7 +11,7 @@ import DJISDK
 let HeaderHeight:CGFloat = 30
 
 class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
-    var sectionNames:[AnyObject] = []
+    var sectionNames:[String] = []
     var items:[AnyObject] = []
     var connectedComponent:DJIBaseComponent? = nil
     
@@ -19,14 +19,6 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     var version:String? = nil
     var serialNumber:String? = nil
     var versionSerialLabel:UILabel = UILabel(frame: CGRectZero)
-
-     init() {
-        super.init(style: .Grouped)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if (self.sectionNames.count <= 1) {
@@ -51,7 +43,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionNames.count > section ? self.sectionNames[section] as? String : nil
+        return self.sectionNames.count > section ? self.sectionNames[section] : nil
         
     }
     
