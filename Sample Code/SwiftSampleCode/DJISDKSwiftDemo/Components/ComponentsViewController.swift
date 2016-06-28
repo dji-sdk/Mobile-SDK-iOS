@@ -56,19 +56,16 @@ class ComponentsViewController: DemoTableViewController {
     }
 
     func initializeMissionSection() {
-        var components: [AnyObject] = [AnyObject]()
-        
+        var identifiers: [String] // Identifier is the view controller in the storyboard
+
         if let _ = ConnectedProductManager.sharedInstance.fetchHandheldController() {
-            components.append(DemoSettingItem(name:"Panorama Mission", andClass:nil))
+            identifiers = ["Panorama Mission"]
         } else {
-            let missions = ["Custom Mission", "Followme Mission", "Waypoint Mission", "Hotpoint Mission"]
-            for identifier in missions {
-                // Identifier is the view controller in the storyboard
-                components.append(DemoSettingItem(name: identifier, andClass:nil))
-            }
+            identifiers = ["Custom Mission", "Followme Mission", "Waypoint Mission", "Hotpoint Mission"]
         }
 
-        self.items.append(components)
+        let components = identifiers.map { DemoSettingItem(name: $0, andClass:nil) }
+        self.items.append( components )
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
