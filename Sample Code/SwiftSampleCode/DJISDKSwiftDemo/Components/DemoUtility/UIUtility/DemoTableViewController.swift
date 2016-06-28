@@ -184,6 +184,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         ConnectedProductManager.sharedInstance.setDelegate(self)
         
