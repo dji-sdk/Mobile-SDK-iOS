@@ -5,7 +5,8 @@
 //  Copyright © 2015, DJI. All rights reserved.
 //
 
-#import <DJISDK/DJISDK.h>
+#import <DJISDK/DJIMissionStep.h>
+#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,11 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Go to the specified coordinate from the current aircraft position.
  *
- *  @param coorinate Target coordinate.
+ *  @param coordinate Target coordinate.
  *
  *  @return Instance of `DJIGoToStep`.
  */
-- (instancetype _Nullable)initWithCoordinate:(CLLocationCoordinate2D)coorinate;
+- (instancetype _Nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
  *  Go to the specified altitude from the current aircraft position.
@@ -41,12 +42,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Go to the specified coordinate and altitude (in meters) from the current aircraft position.
  *
- *  @param coorinate Target coordinate.
+ *  @param coordinate Target coordinate.
  *  @param altitude  Target altitude in meters.
  *
  *  @return Instance of `DJIGoToStep`.
  */
-- (instancetype _Nullable)initWithCoordinate:(CLLocationCoordinate2D)coorinate altitude:(float)altitude;
+- (instancetype _Nullable)initWithCoordinate:(CLLocationCoordinate2D)coordinate altitude:(float)altitude;
 
 @end
 

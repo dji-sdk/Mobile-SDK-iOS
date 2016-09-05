@@ -17,13 +17,11 @@ FOUNDATION_EXPORT double DJISDKVersionNumber;
  */
 FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 
-// In this header, import all the public headers of your framework using statements like #import <DJISDK/PublicHeader.h>
-
 /*********************************************************************************/
 #pragma mark - SDK Manager
 /*********************************************************************************/
 #import <DJISDK/DJISDKManager.h>
-
+#import <DJISDK/DJIBluetoothProductConnector.h>
 /*********************************************************************************/
 #pragma mark - Products
 /*********************************************************************************/
@@ -49,30 +47,43 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #pragma mark FlightController
 //-----------------------------------------------------------------
 #import <DJISDK/DJIFlightController.h>
+#import <DJISDK/DJIFlightControllerKeys.h>
 #import <DJISDK/DJIFlightControllerCurrentState.h>
 #import <DJISDK/DJIFlightLimitation.h>
 #import <DJISDK/DJILandingGear.h>
 #import <DJISDK/DJICompass.h>
 #import <DJISDK/DJIIntelligentFlightAssistant.h>
+#import <DJISDK/DJIVisionDetectionState.h>
 #import <DJISDK/DJIIMUState.h>
 #import <DJISDK/DJIRTK.h>
 #import <DJISDK/DJISimulator.h>
+#import <DJISDK/DJICompassCalibrationStatus.h>
+#import <DJISDK/DJILandingGearStructs.h>
+#import <DJISDK/DJIFlightOrientationMode.h>
+#import <DJISDK/DJIFlightControllerBaseTypes.h>
+#import <DJISDK/DJISimulatorState.h>
+#import <DJISDK/DJIGoHomeStatus.h>
+
 
 //-----------------------------------------------------------------
 #pragma mark RemoteController
 //-----------------------------------------------------------------
+#import <DJISDK/DJIRemoteControllerBaseTypes.h>
 #import <DJISDK/DJIRemoteController.h>
+#import <DJISDK/DJIRemoteControllerKeys.h>
 
 //-----------------------------------------------------------------
 #pragma mark Camera
 //-----------------------------------------------------------------
 #import <DJISDK/DJICamera.h>
+#import <DJISDK/DJICameraKeys.h>
 #import <DJISDK/DJICameraSettingsDef.h>
 #import <DJISDK/DJICameraPlaybackState.h>
 #import <DJISDK/DJICameraSystemState.h>
 #import <DJISDK/DJICameraLensState.h>
 #import <DJISDK/DJICameraSDCardState.h>
 #import <DJISDK/DJICameraSSDState.h>
+#import <DJISDK/DJICameraDisplayNames.h>
 #import <DJISDK/DJICameraParameters.h>
 #import <DJISDK/DJIMediaManager.h>
 #import <DJISDK/DJIMedia.h>
@@ -81,26 +92,35 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 //-----------------------------------------------------------------
 #pragma mark Gimbal
 //-----------------------------------------------------------------
+#import <DJISDK/DJIGimbalBaseTypes.h>
 #import <DJISDK/DJIGimbal.h>
+#import <DJISDK/DJIGimbalKeys.h>
+#import <DJISDK/DJIGimbalState.h>
+#import <DJISDK/DJIGimbalAdvancedSettingsState.h>
 
 //-----------------------------------------------------------------
 #pragma mark Battery
 //-----------------------------------------------------------------
 #import <DJISDK/DJIBattery.h>
-
+#import <DJISDK/DJIBatteryKeys.h>
+#import <DJISDK/DJIBatteryState.h>
 //-----------------------------------------------------------------
 #pragma mark AirLink
 //-----------------------------------------------------------------
 #import <DJISDK/DJIAirLink.h>
+#import <DJISDK/DJIAirLinkKeys.h>
 #import <DJISDK/DJILBAirLink.h>
 #import <DJISDK/DJIWiFiLink.h>
 #import <DJISDK/DJIAuxLink.h>
 #import <DJISDK/DJISignalInformation.h>
+#import <DJISDK/DJIAirLinkBaseTypes.h>
 
 //-----------------------------------------------------------------
 #pragma mark Handheld Controller
 //-----------------------------------------------------------------
+#import <DJISDK/DJIHandheldControllerBaseTypes.h>
 #import <DJISDK/DJIHandheldController.h>
+#import <DJISDK/DJIHandheldControllerKeys.h>
 
 /*********************************************************************************/
 #pragma mark - Abstract Classes
@@ -134,6 +154,11 @@ FOUNDATION_EXPORT const unsigned char DJISDKVersionString[];
 #import <DJISDK/DJIGimbalAttitudeStep.h>
 #import <DJISDK/DJIAircraftYawStep.h>
 
+/*********************************************************************************/
+#pragma mark - GEO
+/*********************************************************************************/
+#import <DJISDK/DJIFlyZoneInformation.h>
+#import <DJISDK/DJIFlyZoneManager.h>
 /*********************************************************************************/
 #pragma mark - Categories
 /*********************************************************************************/

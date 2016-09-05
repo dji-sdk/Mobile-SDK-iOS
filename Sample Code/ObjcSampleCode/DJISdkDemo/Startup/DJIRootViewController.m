@@ -7,6 +7,7 @@
 
 #import "DJIRootViewController.h"
 #import "ComponentSelectionViewController.h"
+#import "BluetoothConnectorViewController.h"
 #import "DemoAlertView.h"
 #import "DemoUtilityMacro.h"
 
@@ -64,6 +65,11 @@
         ComponentSelectionViewController* inspireVC = [[ComponentSelectionViewController alloc] init];
         [self.navigationController pushViewController:inspireVC animated:YES];
     }
+}
+
+- (IBAction)onBluetoothButtonClicked:(id)sender {
+    BluetoothConnectorViewController* vc = [[BluetoothConnectorViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -

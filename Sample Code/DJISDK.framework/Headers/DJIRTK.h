@@ -5,7 +5,9 @@
 //  Copyright © 2016 DJI. All rights reserved.
 //
 
-#import <DJISDK/DJISDK.h>
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <DJISDK/DJIBaseProduct.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

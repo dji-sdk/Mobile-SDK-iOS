@@ -2,8 +2,7 @@
 //  DJIIMUState.h
 //  DJISDK
 //
-//  Created by OliverOu on 2/3/16.
-//  Copyright © 2016 DJI. All rights reserved.
+//  Copyright © 2016, DJI. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

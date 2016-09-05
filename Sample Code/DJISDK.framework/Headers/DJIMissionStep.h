@@ -6,11 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DJIBaseProduct.h"
-#import "DJIAircraft.h"
-#import "DJIMission.h"
-#import "DJIFlightControllerCurrentState.h"
-#import "DJICameraSettingsDef.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

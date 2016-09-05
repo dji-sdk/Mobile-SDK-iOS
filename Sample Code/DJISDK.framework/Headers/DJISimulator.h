@@ -7,66 +7,9 @@
 
 #import <DJISDK/DJIBaseProduct.h>
 #import <CoreLocation/CLLocation.h>
+#import <DJISDK/DJISimulatorState.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
-/**
- *  Aircraft's state during the simulation.
- */
-@interface DJISimulatorState : NSObject
-
-/**
- *  `YES` if motors are on in simulator.
- */
-@property(nonatomic, readonly) BOOL areMotorsOn;
-
-/**
- *  `YES` if aircraft is flying in simulator.
- */
-@property(nonatomic, readonly) BOOL isFlying;
-
-/**
- *  Simulated latitude of the aircraft.
- */
-@property(nonatomic, readonly) double latitude;
-
-/**
- *  Simulated longitude of the aircraft.
- */
-@property(nonatomic, readonly) double longitude;
-
-/**
- *  Simulated aircraft pitch with range [-30, 30].
- */
-@property(nonatomic, readonly) float pitch;
-
-/**
- *  Simulated aircraft roll with range [-30, 30].
- */
-@property(nonatomic, readonly) float roll;
-
-/**
- *  Simulated aircraft yaw with range [-180, 180].
- */
-@property(nonatomic, readonly) float yaw;
-
-/**
- *  Simulated aircraft X (East-West) distance from initial simulator location where East is positive and North-East-Down coordinate system is used.
- */
-@property(nonatomic, readonly) float positionX;
-
-/**
- *  Simulated aircraft Y (North-South) distance from initial simulator location where North is positive and North-East-Down coordinate system is used.
- */
-@property(nonatomic, readonly) float positionY;
-
-/**
- *  Simulated aircraft Z (Vertical direction). The value should be negative if the height of aircraft is higher
- *  than initial home point's height.
- */
-@property(nonatomic, readonly) float positionZ;
-
-@end
 
 @class DJISimulator;
 
@@ -102,11 +45,16 @@ NS_ASSUME_NONNULL_BEGIN
  *  Start simulator. Will result in error if simulation is already started.
  *
  *  @param location     Simulator coordinate latitude and longitude in degrees.
- *  @param frequency    Aircraft simulator state push frequency in Hz with range [2, 150]. A setting of 10 Hz will result in delegate method being called, 10 times per second.
+ *  @param frequency    Aircraft simulator state push frequency in Hz with range
+ *                      [2, 150]. A setting of 10 Hz will result in delegate
+ *                      method being called, 10 times per second.
  *  @param number       The initial number of GPS satellites with range [0, 20].
- *  @param block        The Completion block.
+ *  @param block        The completion block.
  */
-- (void)startSimulatorWithLocation:(CLLocationCoordinate2D)location updateFrequency:(NSUInteger)frequency GPSSatellitesNumber:(NSUInteger)number withCompletion:(DJICompletionBlock)block;
+- (void)startSimulatorWithLocation:(CLLocationCoordinate2D)location
+                   updateFrequency:(NSUInteger)frequency
+               GPSSatellitesNumber:(NSUInteger)number
+                    withCompletion:(DJICompletionBlock)block;
 
 /**
  *  Stop the simulator.
@@ -114,6 +62,24 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param block The Completion block.
  */
 - (void)stopSimulatorWithCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Enable/disable the fly zone system in the simulator. 
+ *  By default, fly zone is disabled in the simulator. Rebooting the aircraft is
+ *  required to make the setting take effect.
+ *
+ *  @param enabled  `YES` to enable the fly zone in the simulator.
+ *  @param block    The execution block with the returned execution result.
+ */
+- (void)setFlyZoneEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Gets if the fly zone system is enabled in the simulator. By default, fly
+ *  zone is disabled in the simulator.
+ *
+ *  @param block    The execution callback with the returned value.
+ */
+- (void)getFlyZoneEnabledWithCompletion:(void(^)(BOOL enabled, NSError *_Nullable error))block;
 
 @end
 

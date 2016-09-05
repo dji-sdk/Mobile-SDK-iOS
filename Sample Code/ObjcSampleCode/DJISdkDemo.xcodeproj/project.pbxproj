@@ -83,6 +83,8 @@
 		B82542001C98E8E80021CDDF /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82541FF1C98E8500021CDDF /* VideoPreviewer.framework */; };
 		B82542011C98E8E80021CDDF /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B82541FF1C98E8500021CDDF /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B82542051C98E8F00021CDDF /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B82541F81C98E8450021CDDF /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B84049461D780C26001DA2D7 /* BluetoothConnectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84049441D780C26001DA2D7 /* BluetoothConnectorViewController.m */; };
+		B84049471D780C26001DA2D7 /* BluetoothConnectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B84049451D780C26001DA2D7 /* BluetoothConnectorViewController.xib */; };
 		B8450C6F1C3798AF00921E19 /* MissionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8450C6E1C3798AF00921E19 /* MissionBaseViewController.m */; };
 		B8450C721C3798CC00921E19 /* MissionBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8450C711C3798CC00921E19 /* MissionBaseViewController.xib */; };
 		B8450C7A1C37E60B00921E19 /* FollowMeMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8450C791C37E60B00921E19 /* FollowMeMissionViewController.m */; };
@@ -256,6 +258,9 @@
 		B821D41E1C316BF20014ADBD /* CameraPlaybackPushInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = CameraPlaybackPushInfoViewController.m; path = Camera/PlaybackPushInfo/CameraPlaybackPushInfoViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B82541F81C98E8450021CDDF /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../DJISDK.framework; sourceTree = "<group>"; };
 		B82541FA1C98E8500021CDDF /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		B84049431D780C26001DA2D7 /* BluetoothConnectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothConnectorViewController.h; sourceTree = "<group>"; };
+		B84049441D780C26001DA2D7 /* BluetoothConnectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluetoothConnectorViewController.m; sourceTree = "<group>"; };
+		B84049451D780C26001DA2D7 /* BluetoothConnectorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BluetoothConnectorViewController.xib; sourceTree = "<group>"; };
 		B8450C6D1C3798AF00921E19 /* MissionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MissionBaseViewController.h; path = MissionManager/MissionBaseViewController.h; sourceTree = "<group>"; };
 		B8450C6E1C3798AF00921E19 /* MissionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MissionBaseViewController.m; path = MissionManager/MissionBaseViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B8450C711C3798CC00921E19 /* MissionBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MissionBaseViewController.xib; path = MissionManager/MissionBaseViewController.xib; sourceTree = "<group>"; };
@@ -391,6 +396,7 @@
 			children = (
 				F47C29BB1BDA2304001E6A75 /* ComponentSelectionViewController.h */,
 				F47C29BC1BDA2304001E6A75 /* ComponentSelectionViewController.m */,
+				B84049421D780C26001DA2D7 /* Bluetooth */,
 				3B2CDD951C3DA1CF00DB096B /* RemoteController */,
 				3B2CDD6B1C3CC21D00DB096B /* FlightController */,
 				B809D82F1C3BBE79004EBBA7 /* AirLink */,
@@ -692,6 +698,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B84049421D780C26001DA2D7 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				B84049431D780C26001DA2D7 /* BluetoothConnectorViewController.h */,
+				B84049441D780C26001DA2D7 /* BluetoothConnectorViewController.m */,
+				B84049451D780C26001DA2D7 /* BluetoothConnectorViewController.xib */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		B8450C701C3798B400921E19 /* Missions */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +945,7 @@
 				3BA7667B19FE38130077CA52 /* stick_hold.png in Resources */,
 				3BA7667C19FE38130077CA52 /* stick_normal.png in Resources */,
 				3B16A8F619D12167008C1818 /* InfoPlist.strings in Resources */,
+				B84049471D780C26001DA2D7 /* BluetoothConnectorViewController.xib in Resources */,
 				B8450C721C3798CC00921E19 /* MissionBaseViewController.xib in Resources */,
 				B8C6CA6E1C3F9AD000CAC10B /* SleepModeViewController.xib in Resources */,
 				3B5E78FF1C3DDD0A00A097B8 /* FCGeneralControlViewController.xib in Resources */,
@@ -982,6 +999,7 @@
 				B821D4161C316A650014ADBD /* BatterySelfDischargeViewController.m in Sources */,
 				B8C6CA6D1C3F9AD000CAC10B /* SleepModeViewController.m in Sources */,
 				B850B2801C229A1600DBEB48 /* BatteryActionsTableViewController.m in Sources */,
+				B84049461D780C26001DA2D7 /* BluetoothConnectorViewController.m in Sources */,
 				3B16A8FC19D12167008C1818 /* AppDelegate.m in Sources */,
 				B821D3F31C31643D0014ADBD /* DemoAlertView.m in Sources */,
 				B8450C831C37EDF100921E19 /* CustomMissionViewController.m in Sources */,

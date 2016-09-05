@@ -9,8 +9,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <DJISDK/DJIBaseComponent.h>
-#import <DJISDK/DJICameraSettingsDef.h>
 #import <DJISDK/DJICameraSSDState.h>
+#import <DJISDK/DJICameraSettingsDef.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -28,88 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  Define the upper bound for thermal brightness setting
  */
 #define DJI_THERMAL_BRIGHTNESS_UPPER_BOUND (16383)
-
-/*********************************************************************************/
-#pragma mark - Strings for cameras' type
-/*********************************************************************************/
-
-/**
- *  The display name for Phantom 3 Standard camera.
- */
-
-extern NSString *const DJICameraDisplayNamePhantom3StandardCamera;
-
-/**
- *  The display name for Phantom 3 Advanced camera.
- */
-extern NSString *const DJICameraDisplayNamePhantom3AdvancedCamera;
-
-/**
- *  The display name for Phantom 3 Professional camera.
- */
-extern NSString *const DJICameraDisplayNamePhantom3ProfessionalCamera;
-
-/**
- *  The display name for Phantom 3 4K camera.
- */
-extern NSString *const DJICameraDisplayNamePhantom34KCamera;
-
-/**
- *  The display name for X3 camera.
- */
-extern NSString *const DJICameraDisplayNameX3;
-
-/**
- *  The display name for X5 camera.
- */
-extern NSString *const DJICameraDisplayNameX5;
-
-/**
- *  The display name for X5R camera.
- */
-extern NSString *const DJICameraDisplayNameX5R;
-
-/**
- *  The display name for Phantom 4 camera.
- */
-extern NSString *const DJICameraDisplayNamePhantom4Camera;
-
-/**
- *  The display name for XT camera
- */
-extern NSString *const DJICameraDisplayNameXT;
-
-/*********************************************************************************/
-#pragma mark - DJICameraExposureParameters
-/*********************************************************************************/
-
-/**
- *  This class contains current values for some camera parameters related to exposure, which determines how sensitive the picture is to light and depends on the balance of the ISO value, the shutter speed, and the aperture value. When the camera is in different exposure modes, different parameters are automatically changed by the camera to either get the correct exposure (in Program, Shutter Priority and Aperture Priority modes), or report back the current exposure (in Manual mode). The current values of these parameters used by the camera are contained in this class.
- */
-
-@interface DJICameraExposureParameters : NSObject
-
-/**
- *  Camera aperture value. A larger aperture results in a higher exposure and shallower depth of field.
- */
-@property(nonatomic, readonly) DJICameraAperture aperture;
-
-/**
- *  Camera shutter speed. A slower shutter speed results in a higher exposure, but more blurring in areas of the scene that are moving.
- */
-@property(nonatomic, readonly) DJICameraShutterSpeed shutterSpeed;
-
-/**
- * Camera ISO. A higher ISO results in a higher exposure, and more noise in the resulting image.
- */
-@property(nonatomic, readonly) NSUInteger iso;
-
-/**
- *  Returns the camera's current exposure compensation. In Program, Aperture Priority and Shutter Priority modes, the exposure compensation value changes the exposure target the camera is using to calculate correct exposure and is set by the user. For example, Aperature Priority mode indicates that the priority is to maintain the aperature setting and adjusting the exposure by varying the ISO and shutter speed. In Manual mode, this value is reported from the camera and reports how much the exposure needs to be compensated for to get to what the camera thinks is the correct exposure. The range of exposure compensation reported by the camera is -2.0 EV to 2.0 EV.
- */
-@property(nonatomic, readonly) DJICameraExposureCompensation exposureCompensation;
-
-@end
 
 /*********************************************************************************/
 #pragma mark - DJICameraDelegate
@@ -188,17 +106,46 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)camera:(DJICamera *_Nonnull)camera didUpdateSSDState:(DJICameraSSDState *_Nonnull)ssdState;
 
 /**
- *  Called whenever the camera parameters change. In automatic exposure modes (Program, Shutter Priority and Aperture Priority) the camera may be automatically changing aperture, shutter speed and ISO (depending on the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is automatically updated to let the user know how much compensation the exposure needs to get to an exposure the camera calculates as correct.
+ *  Called when there are new min, max, and average values available for the set spot metering area. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param camera                  Camera that sends out the aggregate temperature values
+ *  @param temperatureAggregations The updated aggregate temperature values
+ */
+- (void)camera:(DJICamera *_Nonnull)camera didUpdateAreaTemperatureAggregations:(DJICameraThermalAreaTemperatureAggregations)temperatureAggregations;
+
+/**
+ *  Called when updated external scene settings are available. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param camera                Camera that sends out the external scene setting values
+ *  @param externalSceneSettings The updated external scene settings values
+ */
+- (void)camera:(DJICamera *_Nonnull)camera didUpdateExternalSceneSettings:(DJICameraThermalExternalSceneSettings)externalSceneSettings;
+
+/**
+ *  Called whenever the camera parameters change. In automatic exposure modes
+ *  (Program, Shutter Priority and Aperture Priority) the camera may be
+ *  automatically changing aperture, shutter speed and ISO (depending on the
+ *  mode and camera) when lighting conditions change. In Manual mode, the
+ *  exposure compensation is automatically updated to let the user know how much
+ *  compensation the exposure needs to get to an exposure the camera calculates
+ *  as correct.
  *
  *  @param camera   Camera that sends out the video data.
- *  @param values   The updated real values for parameters.
+ *  @param params   The updated real values for parameters.
  *
  *  @see DJICameraExposureParameters
  */
-- (void)camera:(DJICamera *_Nonnull)camera didUpdateCurrentExposureValues:(DJICameraExposureParameters *_Nonnull)values;
+- (void)camera:(DJICamera *_Nonnull)camera didUpdateCurrentExposureParameters:(DJICameraExposureParameters)params;
 
 /**
- *  Received temperature in degrees Celsius of image. For the XT, the temperature measurement data is the average of the center four pixels of the image. The thermal imaging camera will only update the temperature if the temperature data is enabled.
+ *  Received temperature in degrees Celsius of image. The thermal imaging camera
+ *  will only update the temperature if the temperature data is enabled.
+ *  For the XT Standard version, the temperature measurement data is the average
+ *  of the center four pixels of the image.
+ *  For the XT Advanced Radiometry version, the temperature measurement point
+ *  can be set using `setThermalSpotMeteringTargetPoint:withCompletion`.
  *
  *  @param camera   Camera that sends out the updated center temperature.
  *  @param temperature The camera's temperature data in degrees Celsius.
@@ -213,7 +160,9 @@ extern NSString *const DJICameraDisplayNameXT;
 /*********************************************************************************/
 
 /**
- *  This class contains the media manager and playback manager to manage the Camera's media content. It provides methods to change camera settings and perform camera actions.
+ *  This class contains the media manager and playback manager to manage the
+ *  Camera's media content. It provides methods to change camera settings and
+ *  perform camera actions.
  *
  */
 @interface DJICamera : DJIBaseComponent
@@ -245,7 +194,11 @@ extern NSString *const DJICameraDisplayNameXT;
 /*********************************************************************************/
 
 /**
- *  Sets the camera's work mode to taking pictures, video, playback or download (see [DJICameraMode](../Enums/DJICameraMode.html)) for details on camera work modes. Note that you cannot change the mode when a certain task is executing, such as taking photo(s), recording video, or downloading and saving files.
+ *  Sets the camera's work mode to taking pictures, video, playback or download
+ *  (see [DJICameraMode](../Enums/DJICameraMode.html)) for details on camera
+ *  work modes. Note that you cannot change the mode when a certain task is
+ *  executing, such as taking photo(s), recording video, or downloading and
+ *  saving files.
  *  Also supported by thermal imaging camera.
  *
  *  @param mode  Camera work mode.
@@ -272,21 +225,24 @@ extern NSString *const DJICameraDisplayNameXT;
 - (BOOL)isTimeLapseSupported;
 
 /**
- *  Camera starts to take photo with one of the camera capture modes (shoot photo modes).
+ *  Camera starts to take photo with one of the camera capture modes (shoot
+ *  photo modes).
  *
  *  Preconditions:
  *
  *  1. Camera must be in ShootPhoto mode.
- *  2. The SD card state should be checked before this method is used to
- *  ensure sufficient space exists.
+ *  2. The SD card state should be checked before this method is used to ensure
+ *     sufficient space exists.
  *
  *
- *  Note that if the capture mode is Interval or Time-lapse, calling `stopShootPhoto` may be required for the camera to stop taking photos.
+ *  Note that if the capture mode is Interval or Time-lapse, calling
+ *  `stopShootPhoto` may be required for the camera to stop taking photos.
  *  Also supported by thermal imaging camera.
  *
- *  @param shootMode  Shoot photo mode with which the camera can start taking photos. See [CameraShootPhotoMode](../Enums/CameraShootPhotoMode.html)
- *  to view all possible camera shoot modes.
- *  @param block  The execution callback with the returned execution result.
+ *  @param shootMode  Shoot photo mode with which the camera can start taking
+ *                    photos. See [CameraShootPhotoMode](../Enums/CameraShootPhotoMode.html)
+ *                    to view all possible camera shoot modes.
+ *  @param block      The execution callback with the returned execution result.
  */
 - (void)startShootPhoto:(DJICameraShootPhotoMode)shootMode withCompletion:(DJICompletionBlock)block;
 
@@ -295,7 +251,8 @@ extern NSString *const DJICameraDisplayNameXT;
  *
  *  Preconditions:
  *
- *  1. `startShootPhoto:withCompletion:` has been invoked and the shoot mode is either Interval or Time-lapse.
+ *  1. `startShootPhoto:withCompletion:` has been invoked and the shoot mode is
+ *     either Interval or Time-lapse.
  *  2. The shoot photo operation is still executing.
  *
  *
@@ -311,18 +268,24 @@ extern NSString *const DJICameraDisplayNameXT;
 
 /**
  *  `YES` if current device supports Slow Motion video recording.
- *  Currently Slow Motion is supported only by the Osmo camera and the Phantom 4 camera. There are two ways to enter Slow Motion mode:
+ *  Currently Slow Motion is supported only by the Osmo camera and the Phantom 4
+ *  camera. There are two ways to enter Slow Motion mode:
  *
  *  1. Call `setVideoSlowMotionEnabled:withCompletion:` with YES.
- *  2. Call `setVideoResolution:andFrameRate:withCompletion:` with `DJICameraVideoResolution1920x1080` and `DJICameraVideoFrameRate120fps`.
+ *  2. Call `setVideoResolution:andFrameRate:withCompletion:` with
+ *     `DJICameraVideoResolution1920x1080` and `DJICameraVideoFrameRate120fps`.
  *
  */
 - (BOOL)isSlowMotionSupported;
 
 /**
  *  Enables/Disables Slow Motion video recording.
- *  When it is enabled, the resolution and frame rate will change to 1920x1080 120fps.
- *  When it is disabled, the resolution and frame rate will revert to the previous setting for Osmo, while for the Phantom 4 camera, the resolution will remain at `DJICameraVideoResolution1920x1080` and the frame rate will change to `DJICameraVideoFrameRate48fps`.
+ *  When it is enabled, the resolution and frame rate will change to 1920x1080
+ *  120fps.
+ *  When it is disabled, the resolution and frame rate will revert to the
+ *  previous setting for Osmo, while for the Phantom 4 camera, the resolution
+ *  will remain at `DJICameraVideoResolution1920x1080` and the frame rate will
+ *  change to `DJICameraVideoFrameRate48fps`.
  *
  *  @param enabled  Enable or disable Slow Motion video.
  *  @param block    The execution callback with the returned execution result.
@@ -338,7 +301,8 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)getVideoSlowMotionEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))block;
 
 /**
- *  Starts recording video. The camera must be in `DJICameraModeRecordVideo` work mode.
+ *  Starts recording video. The camera must be in `DJICameraModeRecordVideo`
+ *  work mode.
  *  Also supported by thermal imaging camera.
  */
 - (void)startRecordVideoWithCompletion:(DJICompletionBlock)block;
@@ -362,7 +326,8 @@ extern NSString *const DJICameraDisplayNameXT;
 /*********************************************************************************/
 
 /**
- *  Sets the camera's file index mode for the SD card. The default value of `DJICameraFileIndexMode` is set to `DJICameraFileIndexModeReset`.
+ *  Sets the camera's file index mode for the SD card. The default value of
+ *  `DJICameraFileIndexMode` is set to `DJICameraFileIndexModeReset`.
  *
  *  @param fileIndex File index mode to be set for the camera's SD card.
  *  @param block     Remote execution result error block.
@@ -382,7 +347,8 @@ extern NSString *const DJICameraDisplayNameXT;
 
 /**
  *  Sets the camera's video resolution and frame rate.
- *  @warning The supported resolutions and frame rates for the two different analog television standards PAL and NSTC are below:<br/><br/>
+ *  @warning The supported resolutions and frame rates for the two different
+ *  analog television standards PAL and NSTC are below:<br/><br/>
  *       <b>NTSC:</b><br/> Resolution_4096x2160, FrameRate_24fps<br/>
  *             Resolution_3840x2160, FrameRate_30fps<br/>
  *             Resolution_3840x2160, FrameRate_24fps<br/>
@@ -442,7 +408,9 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)getVideoFileFormatWithCompletion:(void (^_Nonnull)(DJICameraVideoFileFormat format, NSError *_Nullable error))block;
 
 /**
- *  Sets the camera's analog video standard. Setting the video standard to PAL or NTSC will limit the available resolutions and frame rates to those compatible with the chosen video standard.
+ *  Sets the camera's analog video standard. Setting the video standard to PAL
+ *  or NTSC will limit the available resolutions and frame rates to those
+ *  compatible with the chosen video standard.
  *  Also supported by thermal imaging camera.
  *
  *  @param videoStandard    Video standard value to be set for the camera.
@@ -565,7 +533,7 @@ extern NSString *const DJICameraDisplayNameXT;
  *                  interval until `stopShootPhotoWithCompletion` is called.
  *
  *  @param interval The time interval during which two photos are taken.
- *                  The range for this parameter depends the photo file format (`DJICameraPhotoFileFormat`).
+ *                  The range for this parameter depends on the photo file format (`DJICameraPhotoFileFormat`).
  *                  For X5 and X5R, the range is [5, 2^16 - 1] seconds for all formats.
  *                  For XT, the range is [1, 60] seconds for all formats.
  *                  For other products, when the file format is JPEG, the range is [2, 2^16 - 1] seconds; when the file format is RAW or RAW+JPEG, the range is [10, 2^16 - 1] seconds.
@@ -856,7 +824,9 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)getDigitalFilterWithCompletion:(void (^_Nonnull)(DJICameraDigitalFilter filter, NSError *_Nullable error))block;
 
 /**
- *  Determines whether the device supports quick view. Quick view is the period of time a photo is shown as a preview after it is taken and before the camera returns  to the live camera view.
+ *  Determines whether the device supports the quick view. Quick view is the
+ *  period of time a photo is shown as a preview after it is taken and before
+ *  the camera returns  to the live camera view.
  */
 - (BOOL)isPhotoQuickViewSupported;
 
@@ -899,6 +869,58 @@ extern NSString *const DJICameraDisplayNameXT;
  * @see [- (void)setDigitalZoomScale:(float)scale withCompletion:(DJICompletionBlock)block;].
  */
 - (void)getDigitalZoomScaleWithCompletion:(void (^_Nonnull)(float scale, NSError *_Nullable error))block;
+
+/**
+ *  Check if camera supports optical zoom.
+ *  It is only supported by X5 and X5R camera with the Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ lens.
+ *
+ *  @return `YES` if camera supports optical zoom.
+ */
+-(BOOL)isOpticalZoomSupported;
+
+/**
+ *  Gets the specification of the zoom lens.
+ *  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.
+ *
+ * @param block Completion block that receives the getter result. When an error occurs, the error is returned and the result is undefined.
+ */
+-(void)getOpticalZoomSpecWithCompletion:(void(^_Nonnull)(DJICameraOpticalZoomSpec spec, NSError *_Nullable error))block;
+
+/**
+ *  Sets focal length of the zoom lens.
+ *  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.
+ *
+ *  @param focalLength  Focal length of zoom lens. Valid range is [`DJICameraOpticalZoomspec.minFocalLength`, `DJICameraOpticalZoomspec.maxFocalLength`] and must be a multiple of `DJICameraOpticalZoomspec.focalLengthStep`.
+ *  @param block        The completion block with returned execution result.
+ */
+-(void)setOpticalZoomFocalLength:(NSUInteger)focalLength withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Gets zoom lens focal length in units of 0.1mm.
+ *  It is only supported by X5 and X5R camera with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.
+ *
+ * @param block Completion block that receives the getter result. When an error occurs, the error is returned and the result is undefined.
+ */
+-(void)getOpticalZoomFocalLengthWithCompletion:(void (^_Nonnull)(NSUInteger focalLength, NSError *_Nullable error))block;
+
+/**
+ * Start changing the focal length of the lens in specified direction with specified speed. Focal length change (zooming) will halt when maximum or minimum focal lengths are reached, or `stopContinuousOpticalZoomWithCompletion` is called.
+ *  It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.
+ *
+ *  @param direction    Direction to zoom. 
+ *  @param speed        Zoom speed.
+ *  @param block        The execution callback with the returned execution result.
+ */
+-(void)startContinuousOpticalZoomInDirection:(DJICameraOpticalZoomDirection)direction withSpeed:(DJICameraOpticalZoomSpeed)speed withCompletion:(DJICompletionBlock)block;
+
+
+/**
+ *  Called to stop focal length changing, when it currently is from calling `startContinuousOpticalZoomInDirection:withSpeed:withCompletion`.
+ *  It is only supported by X5 and X5R camera on Osmo with lens Olympus M.Zuiko ED 14-42mm f/3.5-5.6 EZ.
+ *
+ *  @param block        The execution callback with the returned execution result.
+ */
+-(void)stopContinuousOpticalZoomWithCompletion:(DJICompletionBlock)block;
 
 /*********************************************************************************/
 #pragma mark Audio Settings
@@ -1009,7 +1031,7 @@ extern NSString *const DJICameraDisplayNameXT;
 
 /**
  *  Determines whether the camera supports an adjustable focal point.
- *  Currently, adjustable focal point is supported only by the X5 and X5R cameras.
+ *  Currently, the adjustable focal point is supported only by the X5 and X5R cameras.
  */
 - (BOOL)isAdjustableFocalPointSupported;
 
@@ -1441,9 +1463,16 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)getThermalContrastWithCompletion:(void (^_Nonnull)(NSUInteger Contrast, NSError *_Nullable error))block;
 
 /**
- *  Enable or disable Isotherms. Isotherms can be used to highlight specific temperature ranges:
- *  When disabled, all 256 values (8-bits) are dedicated to the temperature histogram of the scene.
- *  When enabled, only 128 values (0-127) are mapped linearly to temperature. Then three bands 128-175, 176-223 and 224-255 can be mapped to user defined temperatures to highlight them to the user. Using some of the false colour palettes (like RainbowIso) results in a thermal image that is grey scale except for three specific bands highlighted by either reds, blues or greens.
+ *  Enable or disable Isotherms. Isotherms can be used to highlight specific
+ *  temperature ranges:
+ *  When disabled, all 256 values (8-bits) are dedicated to the temperature
+ *  histogram of the scene.
+ *  When enabled, only 128 values (0-127) are mapped linearly to temperature.
+ *  Then three bands 128-175, 176-223 and 224-255 can be mapped to the user
+ *  defined temperatures to highlight them to the user. Using some of the false
+ *  color palettes (like RainbowIso) results in a thermal image that is grey
+ *  scale except for three specific bands highlighted by either reds, blues or
+ *  greens.
  *  Supported only by thermal imaging cameras.
  *
  * @param enabled YES if isotherms are enabled.
@@ -1472,13 +1501,14 @@ extern NSString *const DJICameraDisplayNameXT;
  *  Gets the units for Isotherm ranges.
  *  Supported only by thermal imaging cameras.
  *
- *  @param block Completion block that receives the getter result. When an error occurs, the error is returned and the result is undefined.
+ *  @param block Completion block that receives the getter result. When an error
+ *               occurs, the error is returned and the result is undefined.
  *  @see [- (void)setThermalIsothermUnit:(DJICameraThermalIsothermUnit)unit withCompletion:(DJICompletionBlock)block].
  */
 - (void)getThermalIsothermUnitWithCompletion:(void (^_Nonnull)(DJICameraThermalIsothermUnit unit, NSError *_Nullable error))block;
 
 /**
- *  Sets the upper threshold value for Isotherm. All temperature values above this will use colors 224-255 from the palatte.
+ *  Sets the upper threshold value for Isotherm. All temperature values above this will use colors 224-255 from the palette.
  *  Supported only by thermal imaging cameras.
  *
  *  @param value If the unit is percentage, the allowed range is [0,100].
@@ -1556,22 +1586,54 @@ extern NSString *const DJICameraDisplayNameXT;
 - (void)getThermalGainModeWithCompletion:(void (^_Nonnull)(DJICameraThermalGainMode mode, NSError *_Nullable error))block;
 
 /**
- *  Enable or disable the temperature measurement data delegate method `[camera:didUpdateTemperatureData:]` in `DJICameraDelegate`. For the XT, the measurement data is at the center of the image.
+ *  Enable or disable the temperature measurement data delegate method
+ *  `[camera:didUpdateTemperatureData:]` in `DJICameraDelegate`. For the XT, the
+ *  measurement data is at the center of the image.
  *  Supported only by thermal imaging cameras.
  *
  *  @param enabled `YES` to start `[camera:didUpdateTemperatureData:]`, NO to stop.
  *  @param block Completion block that receives the getter execution result.
+ *  @deprecated Call `setThermalMeasurementMode:withCompletion:` instead.
  */
-- (void)setThermalTemperatureDataEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block;
+- (void)setThermalTemperatureDataEnabled:(BOOL)enabled
+                          withCompletion:(DJICompletionBlock)block
+DJI_API_DEPRECATED("Use setThermalMeasurementMode:withCompletion:. ");
 
 /**
  *  Gets if `[camera:didUpdateTemperatureData:]` in `DJICameraDelegate` is enabled or not.
  *  Supported only by thermal imaging cameras.
  *
- *  @param block Completion block that receives the getter result. When an error occurs, the error is returned and the result is undefined.
+ *  @param block Completion block that receives the getter result. When an error
+ *               occurs, the error is returned and the result is undefined.
  *  @see [- (void)setThermalTemperatureDataEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)block].
+ *  @deprecated Call `getThermalMeasurementModeWithCompletion:` instead.
  */
-- (void)getThermalTemperatureDataEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError *_Nullable error))block;
+- (void)getThermalTemperatureDataEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled,
+                                                                         NSError *_Nullable error))block
+DJI_API_DEPRECATED("Use getThermalMeasurementModeWithCompletion:. ");
+
+/**
+ *  Sets the mode for thermal measurement.
+ *  Use delegate method `camera:didUpdateTemperatureData:` or 
+ *  `camera:didUpdateAreaTemperatureAggregations` in `DJICameraDelegate` to
+ *  receive the measurement result.
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param mode  The desired measurement mode.
+ *  @param block Completion block that receives the getter execution result.
+ */
+- (void)setThermalMeasurementMode:(DJICameraThermalMeasurementMode)mode
+                   withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Gets the mode for thermal measurement.
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param block Completion block that receives the getter result. When an error
+ *               occurs, the error is returned and the result is undefined.
+ */
+- (void)getThermalMeasurementModeWithCompletion:(void (^_Nonnull)(DJICameraThermalMeasurementMode mode,
+                                                                  NSError *_Nullable error))block;
 
 /**
  *  Adjusts the digital zoom.
@@ -1598,6 +1660,177 @@ extern NSString *const DJICameraDisplayNameXT;
  *  @param block Completion block that receives the getter result. When an error occurs, the error is returned and the result is undefined.
  */
 - (void)getThermalProfileWithCompletion:(void (^_Nonnull)(DJICameraThermalProfile profile, NSError *_Nullable error))block;
+
+/**
+ *  Gets the spot metering target point if one is set, if not then returns CGPointZero. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param block Completion block that receives the getter execution result.
+ */
+- (void)getThermalSpotMeteringTargetPointWithCompletion:(void (^_Nonnull)(CGPoint targetPoint, NSError *_Nullable error))block;
+
+/**
+ *  Sets the spot metering target point which then changes the camera:didUpdateTemperatureData: delegate call to return 
+ *  the temperature at a specific coordinate in the scene.
+ *
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param targetPoint The desired target point
+ *  @param block       Completion block that receives the setter execution result.
+ */
+- (void)setThermalSpotMeteringTargetPoint:(CGPoint)targetPoint withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Get a rect representing the currently set metering area for the thermal scene. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param block Completion block that receives the getter execution result.
+ */
+- (void)getThermalMeteringAreaWithCompletion:(void (^_Nonnull)(CGRect area, NSError *_Nullable error))block;
+
+/**
+ *  Set the metering area for a rectangle inside the thermal image scene, which
+ *  allows the camera to transmit aggregate temperature computations via the
+ *  `camera:didUpdateAreaTemperatureAggregations:` delegate method.
+ *  See `DJICameraThermalAreaTemperatureAggregations` for the statistical values
+ *  that are available.
+ *  This method requires a relative rect that is proportional to the rect of the
+ *  thermal scene, the x, y, width, and height values must all be between 0 and 1.0.
+ *
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param The desired thermal metering area.
+ *  @param block Completion block that receives the setter execution result.
+ */
+- (void)setThermalMeteringArea:(CGRect)area withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Get the currently set flat-field correction (FFC) mode. 
+ *
+ *  Supported only by thermal imaging cameras with installed firmware version of 1.15.1.60 or higher.
+ *
+ *  @param block Completion block that receives the getter execution result.
+ */
+- (void)getThermalFFCModeWithCompletion:(void (^_Nonnull)(DJICameraThermalFFCMode mode, NSError *_Nullable error))block;
+
+/**
+ *  Set the flat-field correction (FFC) mode. 
+ *
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param mode  The desired FFC mode.
+ *  @param block Completion block that receives the setter execution result.
+ */
+- (void)setThermalFFCMode:(DJICameraThermalFFCMode)mode withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Trigger flat-field correction. 
+ *
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param Completion block that receives the execution result of the trigger action.
+ */
+- (void)triggerThermalFFCModeWithCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Get the currently set custom user profile. This profile represents user-set
+ *  external scene parameters for the thermal scene.
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param block Completion block that receives the getter execution result.
+ */
+- (void)getThermalCustomExternalSceneSettingsProfileWithCompletion:(void (^_Nonnull)(DJICameraThermalCustomExternalSceneSettings profile, NSError *_Nullable error))block;
+
+/**
+ *  Set the custom user profile. This profile represents user-set external scene
+ *  parameters for the thermal scene.
+ *  Supported only by thermal imaging cameras.
+ *
+ *  @param profile The desired user profile setting.
+ *  @param block   Completion block that receives the setter execution result.
+ */
+- (void)setThermalCustomExternalSceneSettingsProfile:(DJICameraThermalCustomExternalSceneSettings)profile withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the temperature of the atmosphere between the scene and the camera. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param temperature  The assumed temperature of the atmosphere between the
+ *                      camera and the scene, can be between -50 and 327.67
+ *                      degrees Celsius.
+ *  @param block        Completion block that receives the setter execution result.
+ */
+- (void)setThermalAtmosphericTemperature:(float)temperature withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the transmission coefficient of the atmosphere between the scene and the
+ *  camera.
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param coefficient The desired atmospheric temperature, can be between 50 and 100.
+ *  @param block       Completion block that receives the setter execution result.
+ */
+- (void)setThermalAtmosphericTransmissionCoefficient:(float)coefficient withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the assumed temperature reflected by the background of the scene, can be
+ *  between -50 and 327.67 degrees Celsius.
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param temperature  The desired background reflected temperature.
+ *  @param block        Completion block that receives the setter execution result.
+ */
+- (void)setThermalBackgroundTemperature:(float)temperature withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the emissivity of the thermal scene, can be between 50 and 100. 
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param emissivity The desired scene emissivity.
+ *  @param block      Completion block that receives the setter execution result.
+ */
+- (void)setThermalSceneEmissivity:(float)emissivity withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set assumed window reflection coefficient, can be between 0 and X where X is
+ *  the window transmission coefficient parameter.
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param reflection The desired window reflection coefficient.
+ *  @param block      Completion block that receives the setter execution result.
+ */
+- (void)setThermalWindowReflection:(float)reflection withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the temperature reflected in the window, can be between -50 and 327.67
+ *  degrees Celsius.
+ *
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param temperature  The desired window reflected temperature.
+ *  @param block        Completion block that receives the setter execution result.
+ */
+- (void)setThermalWindowReflectedTemperature:(float)temperature withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the window temperature, can be between -50 and 327.67 degrees Celsius. 
+ *
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param temperature  The desired window temperature.
+ *  @param block        Completion block that receives the setter execution result.
+ */
+- (void)setThermalWindowTemperature:(float)temperature withCompletion:(DJICompletionBlock)block;
+
+/**
+ *  Set the window transmission coefficient, can be between 50 and 100-X where X
+ *  is the window reflection.
+ *  Supported only by Zenmuse XT containing Advanced Radiometry capabilities.
+ *
+ *  @param coefficient The desired window transmission coefficient.
+ *  @param block       Completion block that receives the setter execution result.
+ */
+- (void)setThermalWindowTransmissionCoefficient:(float)coefficient withCompletion:(DJICompletionBlock)block;
 
 @end
 

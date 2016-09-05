@@ -378,7 +378,11 @@
         // determine if it is Lightbridge 2
         if ([product isKindOfClass:[DJIAircraft class]]) {
             DJIAircraft* aircraft = (DJIAircraft*)product;
-            if (aircraft.camera == nil && aircraft.airLink && aircraft.airLink.lbAirLink && [aircraft.airLink.lbAirLink isSecondaryVideoOutputSupported]) {
+            if (aircraft.airLink &&
+                aircraft.airLink.lbAirLink &&
+                ([aircraft.model isEqual:DJIAircraftModelNameA3] ||
+                 [aircraft.model isEqual:DJIAircraftModelNameMatrice600] ||
+                 [aircraft.model isEqual:DJIAircraftModelNameUnknownAircraft])) {
                 self.enableHardwareDecode = NO;
                 self.encoderType = H264EncoderType_LightBridge2;
                 return YES;
@@ -428,7 +432,8 @@
 
 + (H264EncoderType) getDataSourceWithCamera:(DJICamera*)camera andIsHandheld:(BOOL)isHandheld {
     NSString* name = camera.displayName;
-    if ([name isEqualToString:DJICameraDisplayNameX3]) {
+    if ([name isEqualToString:DJICameraDisplayNameX3] ||
+        [name isEqualToString:DJICameraDisplayNameZ3]) {
         // use `isDigitalZoomScaleSupported` to determine if Osmo with X3 is new firmware version
         // `isDigitalZoomScaleSupported` has bug in SDK 3.2. Old firmware version doesn't support
         // digital zoom, but `isDigitalZoomScaleSupported` still returns `YES`.

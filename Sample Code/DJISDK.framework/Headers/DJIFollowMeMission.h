@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import "DJIMission.h"
+#import "DJISDKFoundation.h"
 
 /**
  *  Aircraft's heading during a follow me mission.
@@ -37,7 +38,9 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
      */
     DJIFollowMeMissionExecutionStateMoving,
     /**
-     *  The mission is currently waiting to continue. This will happen if the follow me coordinate is not updated in 6 seconds, or the GPS signal quality is poor or broken.
+     *  The mission is currently waiting to continue. This will happen if the
+     *  follow me coordinate is not updated in 6 seconds, or the GPS signal
+     *  quality is poor or broken.
      */
     DJIFollowMeMissionExecuteStateWaiting,
 };
@@ -53,8 +56,8 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 @property(nonatomic, readonly) DJIFollowMeMissionExecutionState executionState;
 
 /**
- *  Returns the horizontal distance in meters between the aircraft and the coordinate the
- *  aircraft must follow.
+ *  Returns the horizontal distance in meters between the aircraft and the
+ *  coordinate the aircraft must follow.
  */
 @property(nonatomic, readonly) float horizontalDistance;
 
@@ -65,9 +68,11 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /*********************************************************************************/
 
 /**
- *  The class represents a follow me mission. In a follow me mission, the aircraft is programmed to track and maintain a constant distant relative to some object, such as a person or a moving vehicle.
- *  You can use it to make the aircraft follow a GPS device, such as a remote controller with a GPS signal or a mobile device.
- *  It is not supported by Matrice 600.
+ *  The class represents a follow me mission. In a follow me mission, the
+ *  aircraft is programmed to track and maintain a constant distant relative to
+ *  some object, such as a person or a moving vehicle.
+ *  You can use it to make the aircraft follow a GPS device, such as a remote
+ *  controller with a GPS signal or a mobile device.
  */
 @interface DJIFollowMeMission : DJIMission
 
@@ -95,26 +100,35 @@ typedef NS_ENUM (uint8_t, DJIFollowMeMissionExecutionState){
 /*********************************************************************************/
 
 /**
- *  Updates the coordinate that the aircraft will follow. Once the follow me mission is initialized,
- *  this method is used to continuously update the coordinate to follow. If the aircraft doesn't receive an update
- *  within 6 seconds, it will hover in position until the next update arrives.
- *  This is the only property or method in this class that can communicate with the aircraft during a mission.
- *  All other properties and methods are used offline to prepare the mission which is then uploaded to the aircraft.
+ *  Updates the coordinate that the aircraft will follow. Once the follow me
+ *  mission is initialized, this method is used to continuously update the
+ *  coordinate to follow. If the aircraft doesn't receive an update within 6
+ *  seconds, it will hover in position until the next update arrives.
+ *  This is the only property or method in this class that can communicate with
+ *  the aircraft during a mission.
+ *  All other properties and methods are used offline to prepare the mission
+ *  which is then uploaded to the aircraft.
  *
- *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of the current location.
+ *  @param coordinate Coordinate the aircraft will follow. Should be within 200m
+ *                    horizontal distance of the current location.
  *  @param completion Completion block.
  *
  */
-+ (void)updateFollowMeCoordinate:(CLLocationCoordinate2D)coordinate withCompletion:(DJICompletionBlock)completion;
++ (void)updateFollowMeCoordinate:(CLLocationCoordinate2D)coordinate
+                  withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Updates the coordinate that the aircraft will follow with a customized altitude.
+ *  Updates the coordinate that the aircraft will follow with a customized
+ *  altitude.
  *
- *  @param coordinate Coordinate the aricraft will follow. Should be within 200m horizontal distance of the current location.
+ *  @param coordinate Coordinate the aircraft will follow. Should be within 200m
+ *                    horizontal distance of the current location.
  *  @param altitude   The following altitude.
  *  @param completion Completion block.
  *
  */
-+ (void)updateFollowMeCoordinate:(CLLocationCoordinate2D)coordinate altitude:(float)altitude withCompletion:(DJICompletionBlock)completion;
++ (void)updateFollowMeCoordinate:(CLLocationCoordinate2D)coordinate
+                        altitude:(float)altitude
+                  withCompletion:(DJICompletionBlock)completion;
 
 @end

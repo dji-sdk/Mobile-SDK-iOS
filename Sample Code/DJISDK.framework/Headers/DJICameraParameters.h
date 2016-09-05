@@ -1,5 +1,5 @@
 //
-//  DJICameraParameter.h
+//  DJICameraParameters.h
 //  DJISDK
 //
 //  Copyright © 2015 DJI. All rights reserved.
@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Range Key of the change dictionary.
 /**
- *  CameraVideoResolutionAndFrameRateRange key
+ *  CameraVideoResolutionAndFrameRateRange key.
  */
 extern NSString *const DJISupportedCameraVideoResolutionAndFrameRateRange;
 
@@ -42,9 +42,10 @@ extern NSString *const DJISupportedCameraShutterSpeedRange;
 extern NSString *const DJISupportedCameraExposureCompensationRange;
 
 /**
- *  CameraApertureRange key
+ *  DJISupportedCameraApertureRange key
  */
 extern NSString *const DJISupportedCameraApertureRange;
+
 
 @class DJICameraParameters;
 

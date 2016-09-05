@@ -78,9 +78,10 @@
 - (IBAction)onThermalTemperatureDataSwitchValueChanged:(id)sender {
     DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
-        [camera setThermalTemperatureDataEnabled:((UISwitch*)sender).on withCompletion:^(NSError * _Nullable error) {
+        DJICameraThermalMeasurementMode mode = ((UISwitch*)sender).on ? DJICameraThermalMeasurementModeSpotMetering : DJICameraThermalMeasurementModeDisabled;
+        [camera setThermalMeasurementMode:mode withCompletion:^(NSError * _Nullable error) {
             if (error) {
-                ShowResult(@"Failed to set the thermal temperature data enabled: %@", error.description);
+                ShowResult(@"Failed to set the measurement mode: %@", error.description);
             }
         }];
     }
@@ -91,12 +92,13 @@
     if (camera && [camera isThermalImagingCamera]) {
         [self.fpvTemView setHidden:NO];
         WeakRef(target);
-        [camera getThermalTemperatureDataEnabledWithCompletion:^(BOOL enabled, NSError * _Nullable error) {
+        [camera getThermalMeasurementModeWithCompletion:^(DJICameraThermalMeasurementMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"Failed to get the Thermal Temperature Data enable status: %@", error.description);
+                ShowResult(@"Failed to get the measurement mode status: %@", error.description);
             }
             else {
+                BOOL enabled = mode != DJICameraThermalMeasurementModeDisabled ? YES : NO;
                 [target.fpvTemEnableSwitch setOn:enabled];
             }
         }];

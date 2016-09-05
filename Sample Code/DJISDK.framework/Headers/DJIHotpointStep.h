@@ -5,7 +5,7 @@
 //  Copyright © 2015, DJI. All rights reserved.
 //
 
-#import <DJISDK/DJISDK.h>
+#import <DJISDK/DJIMissionStep.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DJIHotpointStep : DJIMissionStep
 
 /**
- *  Surrounding angle in degrees. The surrounding angle should be consistant with the hotpoint mission's
+ *  Surrounding angle in degrees. The surrounding angle should be consistent with the hotpoint mission's
  *  direction (`isClockwise`). The default is 360 degrees if `isClockwise` is YES, and -360 degrees if `isClockwise` is NO.
  */
 @property(nonatomic, assign) double surroundingAngle;

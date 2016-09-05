@@ -1,5 +1,5 @@
 //
-//  HandheldControllerActionsTableViewController.swift
+//  HandheldControllerActionsTableViewController.m
 //  DJISdkDemo
 //
 //  Copyright © 2015 DJI. All rights reserved.

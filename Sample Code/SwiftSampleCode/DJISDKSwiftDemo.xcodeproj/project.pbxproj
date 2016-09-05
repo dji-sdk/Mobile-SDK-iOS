@@ -92,6 +92,7 @@
 		02E214D81CC6FD0B00B53188 /* GimbalCapabilityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02E214D51CC6FD0B00B53188 /* GimbalCapabilityViewController.xib */; };
 		02E214E01CC7055500B53188 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DE1CC7055500B53188 /* JoyStickView.swift */; };
 		02E214E11CC7055500B53188 /* NavigationJoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */; };
+		22D1FC8C1D781663001772C2 /* BluetoothConnectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1FC8B1D781663001772C2 /* BluetoothConnectorViewController.swift */; };
 		386F683B1BF68B41003A8ED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F68391BF68B41003A8ED0 /* Main.storyboard */; };
 		386F683D1BF68B41003A8ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386F683C1BF68B41003A8ED0 /* Assets.xcassets */; };
 		386F68401BF68B41003A8ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F683E1BF68B41003A8ED0 /* LaunchScreen.storyboard */; };
@@ -224,6 +225,7 @@
 		02E214D51CC6FD0B00B53188 /* GimbalCapabilityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GimbalCapabilityViewController.xib; sourceTree = "<group>"; };
 		02E214DE1CC7055500B53188 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoyStickView.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/JoyStickView.swift; sourceTree = SOURCE_ROOT; };
 		02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationJoystickViewController.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/NavigationJoystickViewController.swift; sourceTree = SOURCE_ROOT; };
+		22D1FC8B1D781663001772C2 /* BluetoothConnectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothConnectorViewController.swift; path = Components/Bluetooth/BluetoothConnectorViewController.swift; sourceTree = "<group>"; };
 		386F68321BF68B41003A8ED0 /* DJISDKSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJISDKSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		386F683A1BF68B41003A8ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		386F683C1BF68B41003A8ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -676,6 +678,14 @@
 			path = GimbalCapability;
 			sourceTree = "<group>";
 		};
+		22D1FC881D781569001772C2 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				22D1FC8B1D781663001772C2 /* BluetoothConnectorViewController.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		386F68291BF68B41003A8ED0 = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +765,7 @@
 			isa = PBXGroup;
 			children = (
 				38F395FE1C408A9B00EB7E52 /* ComponentsViewController.swift */,
+				22D1FC881D781569001772C2 /* Bluetooth */,
 				0264D4021C40666D002313FE /* HandheldController */,
 				0264D3EA1C402CC8002313FE /* RemoteController */,
 				0271B3DB1C3DF6900056DB2B /* AirLink */,
@@ -883,6 +894,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38F395FF1C408A9B00EB7E52 /* ComponentsViewController.swift in Sources */,
+				22D1FC8C1D781663001772C2 /* BluetoothConnectorViewController.swift in Sources */,
 				02D8CC311C3B418500D2106D /* GimbalPushInfoViewController.swift in Sources */,
 				0239F2501C338C660008DEA4 /* DJIWaypointAnnotation.swift in Sources */,
 				02D8CC171C3B418500D2106D /* CameraFetchMediaViewController.swift in Sources */,

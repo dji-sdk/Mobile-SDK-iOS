@@ -18,12 +18,12 @@ class ComponentsViewController: DemoTableViewController {
     var currentComponentSelected : DJIBaseComponent?
   
     // Flight controller is handled specially just because its view controller is in storyboard
-    let componentsDict:Dictionary<String, AnyObject.Type> = [DJIBatteryComponentKey: BatteryActionsTableViewController.self,
-                                                        DJIGimbalComponentKey:GimbalActionsTableTableViewController.self,
-                                                        DJICameraComponentKey:CameraActionsTableViewController.self,
-                                                        DJIAirLinkComponentKey:AirLinkActionsTableViewController.self,
-                                                        DJIRemoteControllerComponentKey:RCActionsTableViewController.self,
-                                                        DJIHandheldControllerComponentKey:HandheldControllerActionsTableViewController.self]
+    let componentsDict:Dictionary<String, AnyObject.Type> = [DJIBatteryComponent: BatteryActionsTableViewController.self,
+                                                        DJIGimbalComponent:GimbalActionsTableTableViewController.self,
+                                                        DJICameraComponent:CameraActionsTableViewController.self,
+                                                        DJIAirLinkComponent:AirLinkActionsTableViewController.self,
+                                                        DJIRemoteControllerComponent:RCActionsTableViewController.self,
+                                                        DJIHandheldControllerComponent:HandheldControllerActionsTableViewController.self]
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +37,16 @@ class ComponentsViewController: DemoTableViewController {
    func initializeComponentSection() {
         var components: [AnyObject] = [AnyObject]()
     
-        if let _ = ConnectedProductManager.sharedInstance.fetchAircraft() {
+        if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
             components.append(DemoSettingItem(name:"Flight Controller", andClass:nil))
         }
     
-        if let connectedProduct = ConnectedProductManager.sharedInstance.connectedProduct,
-           let componentsInConnectedProduct = connectedProduct.components
-        {
-            for name: String in componentsInConnectedProduct.keys {
+        if (ConnectedProductManager.sharedInstance.connectedProduct != nil) {
+            for name: String in (ConnectedProductManager.sharedInstance.connectedProduct!.components?.keys)! {
                 let componentObjectType:AnyObject.Type? = componentsDict[name]
                 if (componentObjectType != nil) {
                     components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentObjectType as? UIViewController.Type))
                 }
-
             }
         }
         self.items.append(components)
@@ -58,11 +55,11 @@ class ComponentsViewController: DemoTableViewController {
     func initializeMissionSection() {
         var components: [AnyObject] = [AnyObject]()
         
-        if let _ = ConnectedProductManager.sharedInstance.fetchHandheldController() {
+        if (ConnectedProductManager.sharedInstance.fetchHandheldController() != nil) {
             components.append(DemoSettingItem(name:"Panorama Mission", andClass:nil))
-        } else {
+        }else {
             let missions = ["Custom Mission", "Followme Mission", "Waypoint Mission", "Hotpoint Mission"]
-            for identifier in missions {
+            for identifier: String in missions {
                 // Identifier is the view controller in the storyboard
                 components.append(DemoSettingItem(name: identifier, andClass:nil))
             }
@@ -72,7 +69,8 @@ class ComponentsViewController: DemoTableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let vc = segue.destinationViewController as? DJIBaseViewController where segue.identifier != "Flight Controller" {
+        if (segue.identifier != "Flight Controller") {
+            let vc = segue.destinationViewController as! DJIBaseViewController
             vc.moduleTitle = segue.identifier?.capitalizedString
         }
     }
@@ -80,7 +78,9 @@ class ComponentsViewController: DemoTableViewController {
     func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
         if oldComponent == nil && newComponent != nil {
             // a new component is connected
-            if let anyObjectType = componentsDict[key] as? UIViewController.Type {
+            let anyObjectType = componentsDict[key] as? UIViewController.Type
+            
+            if (anyObjectType != nil) {
                 self.items.append(DemoSettingItem(name:key, andClass:anyObjectType))
             }
             

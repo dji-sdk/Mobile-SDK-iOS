@@ -45,6 +45,10 @@ FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRemoteControllerErrorDomain;
  *  SDK registration error domain
  */
 FOUNDATION_EXPORT NSString *_Nonnull const DJISDKRegistrationErrorDomain;
+/**
+ *  SDK GEO error domain
+ */
+FOUNDATION_EXPORT NSString *_Nonnull const DJISDKGEOErrorDomain;
 
 /*********************************************************************************/
 #pragma mark DJISDKRegistrationError
@@ -133,8 +137,8 @@ typedef NS_ENUM (NSInteger, DJISDKRegistrationError){
     DJISDKRegistrationErrorServerDataAbnormal = -13L,
 
     /**
-     *  The activation data received from server
-     *  valid. Please reconnect to the internet and try again.
+     *  The activation data received from server is invalid. Please reconnect to
+     *  the internet and try again.
      */
     DJISDKRegistrationErrorInvalidMetaData = -14L,
 
@@ -230,6 +234,10 @@ typedef NS_ENUM (NSInteger, DJISDKError){
      *  No data is received.
      */
     DJISDKErrorNoReceivedData = -1017L,
+    /**
+     *  The Bluetooth is off. Turn it on in iOS settings menu.
+     */
+    DJISDKErrorBluetoothOff = -1018L,
     /**
      *  Not defined error.
      */
@@ -434,6 +442,10 @@ typedef NS_ENUM (NSInteger, DJISDKFlightControllerError) {
      *  RTK base station's coordinate resets.
      */
     DJISDKFlightControllerErrorRTKBSCoordinatesReset = -4026L,
+    /**
+     *  Illegal battery.
+     */
+    DJISDKFlightControllerErrorIllegalBattery = -4027L,
 };
 
 /*********************************************************************************/
@@ -682,6 +694,60 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
     DJISDKMissionErrorReachAltitudeLowerBound = -5058L,
 
 };
+/*********************************************************************************/
+#pragma mark GEO Error
+/*********************************************************************************/
+
+/**
+ *  DJI SDK GEO Error
+ */
+typedef NS_ENUM(NSInteger, DJISDKGEOError){
+    /**
+     *  User is not logged in.
+     */
+    DJISDKGEOErrorNotLoggedIn = -6001L,
+    /**
+     *  The operation is cancelled.
+     */
+    DJISDKGEOErrorOperationCancelled = -6002L,
+    /**
+     *  Aircraft's location is not available.
+     */
+    DJISDKGEOErrorAircraftLocationNotAvailable = -6003L,
+    /**
+     *  Aircraft's serial number is not available.
+     */
+    DJISDKGEOErrorAircraftSerialNumberNotAvailable = -6004L,
+    /**
+     *  The token is invalid.
+     */
+    DJISDKGEOErrorInvalidToken = -6005L,
+    /**
+     *  User is not authorized.
+     */
+    DJISDKGEOErrorNotAuthorized = -6006L,
+    /**
+     *  Data returned by server is invalid. 
+     */
+    DJISDKGEOErrorInvalidServerData = -6007L,
+    /**
+     *  The system is still initializing.
+     */
+    DJISDKGEOErrorInitializationNotFinished = -6008L,
+    /**
+     *  Aircraft's location does not support GEO.
+     */
+    DJISDKGEOErrorNotSupportGEO = -6009L,
+    /**
+     *  This area is not eligible for unlocking.
+     */
+    DJISDKGEOErrorAreaNotEligibleUnlock = -6010L,
+    /**
+     *  The simulated aircraft location is not valid.
+     *  During the simulation, a location is valid if it is within 50km of (37.460484, -122.115312).
+     */
+    DJISDKGEOErrorInvalidSimulatedLocation = -6011L,
+};
 
 /**
  *  NSError's DJISDK category. It contains methods to create custom NSErrors.
@@ -723,6 +789,13 @@ typedef NS_ENUM (NSInteger, DJISDKMissionError){
  *  @param errorCode errorCode for `DJISDKRegistrationError`.
  */
 + (_Nullable instancetype)DJISDKRegistrationErrorForCode:(DJISDKRegistrationError)errorCode;
+
+/**
+ *  Get DJISDKGEOError
+ *
+ *  @param errorCode errorCode for `DJISDKGEOError`
+ */
++ (_Nullable instancetype)DJISDKGEOErrorForCode:(DJISDKGEOError)errorCode;
 
 /**
  *  Get DJISDKError

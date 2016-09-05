@@ -35,12 +35,12 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
         let state:Bool = camera!.isThermalImagingCamera()
         fpvTemView.hidden = !state
         if (state) {
-            camera?.getThermalTemperatureDataEnabledWithCompletion({ (
-                state:Bool, error:NSError?) -> Void in
+            camera?.getThermalMeasurementModeWithCompletion({ (
+                mode:DJICameraThermalMeasurementMode, error:NSError?) -> Void in
                 if (error == nil) {
-                    self.fpvTemEnableSwitch.setOn(state, animated: true)
+                    self.fpvTemEnableSwitch.setOn(mode != DJICameraThermalMeasurementMode.Disabled, animated: true)
                 } else {
-                    self.showAlertResult("Failed to get the Thermal Temperature Data enabled status:\(error?.description)")
+                    self.showAlertResult("Failed to get the Thermal measurement mode status:\(error?.description)")
                 }
             })
         }
@@ -98,9 +98,11 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
     
     @IBAction func onThermalTemperatureDataSwitchValueChanged(sender: UISwitch){
         let camera: DJICamera? = self.fetchCamera()
-        camera?.setThermalTemperatureDataEnabled(sender.on, withCompletion: { (error:NSError?) -> Void in
+        camera?.setThermalMeasurementMode(
+            sender.on ? DJICameraThermalMeasurementMode.SpotMetering : DJICameraThermalMeasurementMode.Disabled,
+            withCompletion: { (error:NSError?) -> Void in
             if (error != nil) {
-                self.showAlertResult("Error to enable/disable ThermalTemperatureData:\(error?.description)")
+                self.showAlertResult("Error to change ThermalMeasurementMode:\(error?.description)")
                 sender.setOn(!sender.on, animated:false)
             }
         })

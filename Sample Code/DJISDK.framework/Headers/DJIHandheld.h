@@ -33,6 +33,21 @@ extern NSString *const DJIHandheldModelNameOsmo;
 extern NSString *const DJIHandheldModelNameOsmoPro;
 
 /**
+ *  Handheld device model name Osmo RAW.
+ */
+extern NSString *const DJIHandheldModelNameOsmoRAW;
+
+/**
+ *  Handheld device model name Osmo Mobile.
+ */
+extern NSString *const DJIHandheldModelNameOsmoMobile;
+
+/**
+ *  Handheld device model name Osmo+.
+ */
+extern NSString *const DJIHandheldModelNameOsmoPlus;
+
+/**
  *
  *  This class contains the components of a handheld device.
  */
@@ -62,6 +77,24 @@ extern NSString *const DJIHandheldModelNameOsmoPro;
  *  Returns an instance of the handheld's airLink.
  */
 @property(nonatomic, readonly) DJIAirLink *_Nullable airLink;
+
+/**
+ *  Sets the handheld device's name (also the Bluetooth name). The name cannot
+ *  be more than 20 characters.
+ *  It is only supported by Osmo Mobile.
+ *
+ *  @param name         Name to be set to the device.
+ *  @param completion   Completion block.
+ */
+- (void)setHandheldName:(NSString *)name withCompletion:(DJICompletionBlock)completion;
+
+/**
+ *  Returns the handheld device's name.
+ *  It is only supported by Osmo Mobile.
+ *
+ *  @param completion Completion block that returns the getter result.
+ */
+- (void)getHandheldNameWithCompletion:(void (^)(NSString *name, NSError *_Nullable error))completion;
 
 @end
 

@@ -5,7 +5,7 @@
 //  Copyright © 2015, DJI. All rights reserved.
 //
 
-#import <DJISDK/DJISDK.h>
+#import <DJISDK/DJIMission.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

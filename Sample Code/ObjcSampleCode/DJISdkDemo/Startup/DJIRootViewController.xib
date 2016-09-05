@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DJIRootViewController">
@@ -20,20 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAn-Va-gIb">
-                    <rect key="frame" x="217" y="234" width="235" height="48"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="7C8-CT-gup"/>
-                        <constraint firstAttribute="width" constant="235" id="UkD-Kp-NEr"/>
-                    </constraints>
-                    <state key="normal" title="Open" backgroundImage="btn">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="onConnectButtonClicked:" destination="-1" eventType="touchUpInside" id="EuV-oU-X0M"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Trying to connect..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-4S-0aB">
                     <rect key="frame" x="154" y="-37" width="362" height="21"/>
                     <constraints>
@@ -64,8 +50,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DJI SDK Version: 3.0 (beta2)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMC-hP-kHn">
-                    <rect key="frame" x="248" y="458" width="173" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DJI SDK Version: 3.0 (beta2)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMC-hP-kHn">
+                    <rect key="frame" x="247" y="351" width="173" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="25R-sg-eKt"/>
                         <constraint firstAttribute="width" constant="173" id="hth-Ly-0aR"/>
@@ -74,6 +60,34 @@
                     <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lja-dC-YIU">
+                    <rect key="frame" x="216" y="276" width="235" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="235" id="JOk-te-Emc"/>
+                        <constraint firstAttribute="height" constant="48" id="KGx-8v-R6e"/>
+                    </constraints>
+                    <state key="normal" title="Bluetooth" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onBluetoothButtonClicked:" destination="-1" eventType="touchUpInside" id="7YM-Oh-Zlu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAn-Va-gIb">
+                    <rect key="frame" x="216" y="220" width="235" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="7C8-CT-gup"/>
+                        <constraint firstAttribute="width" constant="235" id="UkD-Kp-NEr"/>
+                    </constraints>
+                    <state key="normal" title="Open" backgroundImage="btn">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onConnectButtonClicked:" destination="-1" eventType="touchUpInside" id="EuV-oU-X0M"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -81,23 +95,31 @@
                     <variation key="widthClass=compact" constant="2"/>
                 </constraint>
                 <constraint firstItem="Gkz-4X-7cj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Km-ST-gRX"/>
-                <constraint firstItem="MAn-Va-gIb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="70" id="AWA-68-VeF"/>
+                <constraint firstItem="MAn-Va-gIb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="56.5" id="AWA-68-VeF"/>
                 <constraint firstItem="PI2-Yc-rWq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FqY-bI-gS4"/>
                 <constraint firstItem="Bak-4S-0aB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-213.5" id="Kru-y0-nhK">
                     <variation key="heightClass=compact" constant="-134"/>
                 </constraint>
                 <constraint firstItem="Bak-4S-0aB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="1" id="OC7-QQ-kBE"/>
                 <constraint firstItem="PI2-Yc-rWq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-91.5" id="j6C-cM-5Ec"/>
-                <constraint firstItem="oMC-hP-kHn" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="278" id="lyz-G5-ecU">
+                <constraint firstItem="oMC-hP-kHn" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="lyz-G5-ecU">
                     <variation key="heightClass=compact" constant="162.5"/>
                 </constraint>
                 <constraint firstItem="Gkz-4X-7cj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-59.5" id="nir-fO-xnF"/>
+                <constraint firstItem="lja-dC-YIU" firstAttribute="centerX" secondItem="MAn-Va-gIb" secondAttribute="centerX" id="oUy-yx-38o"/>
+                <constraint firstItem="lja-dC-YIU" firstAttribute="top" secondItem="MAn-Va-gIb" secondAttribute="bottom" constant="8" id="rEZ-sG-hBR"/>
+                <constraint firstItem="oMC-hP-kHn" firstAttribute="top" secondItem="lja-dC-YIU" secondAttribute="bottom" constant="27" id="uyh-zB-dww"/>
                 <constraint firstItem="oMC-hP-kHn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xMC-NS-Huf">
                     <variation key="widthClass=compact" constant="2"/>
                 </constraint>
             </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="lyz-G5-ecU"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="485.5" y="684.5"/>
         </view>
     </objects>

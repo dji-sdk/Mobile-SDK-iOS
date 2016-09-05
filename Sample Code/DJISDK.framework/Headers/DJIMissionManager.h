@@ -5,8 +5,9 @@
 //  Copyright © 2015, DJI. All rights reserved.
 //
 
-#import "DJIBaseProduct.h"
+#import "DJISDKFoundation.h"
 #import "DJIMission.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,8 +32,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Mission execution state update callback.
- *  Returns the current mission and status.  For the waypoint mission, it will include the mission state,
- *  target waypoint index, waypoint execution state, and error if one occurred.
+ *  Returns the current mission and status.  For the waypoint mission, it will
+ *  include the mission state, target waypoint index, waypoint execution state,
+ *  and error if one occurred.
  *
  *  @param manager Mission object.
  *  @param missionProgress Mission progress object.
@@ -42,7 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 /**
- *  This class manages the execution cycle for a mission. To execute a mission, you must normally first invoke `prepareMission:withProgress:withCompletion` to prepare the mission. Then call `startMissionExecutionWithCompletion:` to start the prepared mission. You can also pause, resume or stop an executing mission if the mission supports the operation.
+ *  This class manages the execution cycle for a mission. To execute a mission,
+ *  you must normally first invoke `prepareMission:withProgress:withCompletion`
+ *  to prepare the mission. Then call `startMissionExecutionWithCompletion:` to
+ *  start the prepared mission. You can also pause, resume or stop an executing
+ *  mission if the mission supports the operation.
  *
  */
 @interface DJIMissionManager : NSObject
@@ -53,7 +59,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) id<DJIMissionManagerDelegate> delegate;
 
 /**
- *  YES if the mission is ready to be executed.  It is ready when the `prepareMission` method completes successfully.
+ *  YES if the mission is ready to be executed. It is ready when the
+ *  `prepareMission` method completes successfully.
  */
 @property(nonatomic, readonly) BOOL isMissionReadyToExecute DJI_API_DEPRECATED("This property will be removed in the future version.");
 
@@ -63,44 +70,57 @@ NS_ASSUME_NONNULL_BEGIN
 + (DJIMissionManager *_Nullable)sharedInstance;
 
 /**
- *  Prepares the mission for execution. For the waypoint mission, data must be uploaded to the aircraft (product), and the
- *  `DJIMissionProgressHandler` can be used to monitor upload progress. The follow-me, panorama, hotpoint and custom missions
- *  require much less time for the preparation phase. `PrepareMission` fails if a mission is currently executing.
+ *  Prepares the mission for execution. For the waypoint mission, data must be
+ *  uploaded to the aircraft (product), and the `DJIMissionProgressHandler` can
+ *  be used to monitor upload progress. The follow-me, panorama, hotpoint and
+ *  custom missions require much less time for the preparation phase.
+ *  `PrepareMission` fails if a mission is currently executing.
  *
  *  @param mission Mission object
  *  @param preparationProgress Progress handler callback method to monitor preparation progress
  *  @param completion Completion block.
  */
-- (void)prepareMission:(DJIMission *_Nonnull)mission withProgress:(DJIMissionProgressHandler)preparationProgress withCompletion:(DJICompletionBlock)completion;
+- (void)prepareMission:(DJIMission *_Nonnull)mission
+          withProgress:(DJIMissionProgressHandler)preparationProgress
+        withCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Downloads the current mission configuration data from aircraft. This method should only be called after a mission has been prepared. Only waypoint missions and hot point missions can be downloaded from the aircraft.
- *
+ *  Downloads the current mission configuration data from aircraft. This method
+ *  should only be called after a mission has been prepared. Only waypoint
+ *  missions and hot point missions can be downloaded from the aircraft.
  *
  *  @param downloadProgress Progress handler callback method to monitor download progress.
  *  @param completion Completion block.
  */
-- (void)downloadMissionWithProgress:(DJIMissionProgressHandler)downladProgress withCompletion:(DJIMissionDownloadCompletionBlock)completion;
+- (void)downloadMissionWithProgress:(DJIMissionProgressHandler)downladProgress
+                     withCompletion:(DJIMissionDownloadCompletionBlock)completion;
 
 /**
- *  Starts mission execution. This method should only be called after `prepareMission` was successfully called.
- *  For a waypoint mission, if the aircraft is not flying, it will automatically take off and execute the mission. For a hot point or follow me mission, the aircraft must be flying before the mission is started. For a custom mission, the behaviour depends on the first mission step.
+ *  Starts mission execution. This method should only be called after
+ *  `prepareMission` was successfully called.
+ *  For a waypoint mission, if the aircraft is not flying, it will automatically
+ *  take off and execute the mission. For a hot point or follow me mission, the
+ *  aircraft must be flying before the mission is started. For a custom mission,
+ *  the behavior depends on the first mission step.
  *
  *  @param completion Completion block.
  */
 - (void)startMissionExecutionWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Pauses the current mission being executed. The aircraft will hover in its current location. The current state
- *  will be saved until `resumeMissionExecutionWithCompletion` is called.
- *  Returns a system busy error if the `MissionManager` is uploading or downloading the mission.
+ *  Pauses the current mission being executed. The aircraft will hover in its
+ *  current location. The current state will be saved until
+ *  `resumeMissionExecutionWithCompletion` is called.
+ *  Returns a system busy error if the `MissionManager` is uploading or
+ *  downloading the mission.
  *
  *  @param completion Completion block.
  */
 - (void)pauseMissionExecutionWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Resumes the currently paused mission.  Returns a system busy error if the `MissionManager` is uploading or downloading the mission.
+ *  Resumes the currently paused mission.  Returns a system busy error if the
+ *  `MissionManager` is uploading or downloading the mission.
  *
  *  @param completion Completion block.
  */
@@ -108,14 +128,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  Stops the current mission. The aircraft will hover in its current location.
- *  Returns a system busy error if the `MissionManager` is uploading or downloading the mission.
+ *  Returns a system busy error if the `MissionManager` is uploading or
+ *  downloading the mission.
  *
  *  @param completion Completion block.
  */
 - (void)stopMissionExecutionWithCompletion:(DJICompletionBlock)completion;
 
 /**
- *  Returns the current executing mission.  This method should only be called after the mission has started execution.
+ *  Returns the current executing mission. This method should only be called
+ *  after the mission has started execution.
  *
  *  @param Mission object for the current mission.
  */

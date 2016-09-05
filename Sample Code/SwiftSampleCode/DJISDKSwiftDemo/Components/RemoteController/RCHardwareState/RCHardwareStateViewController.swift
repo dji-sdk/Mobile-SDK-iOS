@@ -1,5 +1,5 @@
 //
-//  RCHardwareStateViewController.swift
+//  RCHardwareStateViewController.m
 //  DJISdkDemo
 //
 //  Created by DJI on 16/1/6.
@@ -29,8 +29,9 @@ class RCHardwareStateViewController:DJIBaseViewController, DJIRemoteControllerDe
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
         self.initUI()
-        if let rc = self.fetchRemoteController() {
-            rc.delegate = self
+        let rc: DJIRemoteController? = self.fetchRemoteController()
+        if rc != nil {
+            rc!.delegate = self
         }
     }
     
@@ -79,6 +80,11 @@ class RCHardwareStateViewController:DJIBaseViewController, DJIRemoteControllerDe
         self.customButton2.layer.borderColor = UIColor.blackColor().CGColor
         self.customButton2.layer.borderWidth = 1.2
         self.customButton2.layer.masksToBounds = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func remoteController(rc: DJIRemoteController, didUpdateHardwareState state: DJIRCHardwareState) {

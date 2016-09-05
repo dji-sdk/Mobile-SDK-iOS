@@ -6,8 +6,7 @@
 //
 
 #import <DJISDK/DJIMission.h>
-#import <DJISDK/DJIGimbal.h>
-#import <DJISDK/DJIBaseProduct.h>
+#import <DJISDK/DJISDKFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
 NS_ASSUME_NONNULL_BEGIN

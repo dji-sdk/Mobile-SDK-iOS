@@ -11,7 +11,7 @@
  *  2. For products that support pitch range extension, the program will enable this feature. 
  *  3. When a button is pressed, this demo will get the min or max valid value and rotate the gimbal to the value. 
  *
- *  A feature is represented by a key with DJIGimbalKey prefix. The value in the gimbalCapability dictionary is an istance of
+ *  A feature is represented by a key with DJIGimbalParam prefix. The value in the gimbalCapability dictionary is an istance of
  *  DJIParamCapability or its subclass. A category, capabilityCheck, of DJIGimbal is provided in this demo.
  */
 #import <DJISDK/DJISDK.h>
@@ -53,19 +53,19 @@
 
 -(void) setupButtons {
     DJIGimbal* gimbal = [DemoComponentHelper fetchGimbal];
-    [self.pitchMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustPitch]];
-    [self.pitchMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustPitch]];
-    [self.yawMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustYaw]];
-    [self.yawMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustYaw]];
-    [self.rollMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustRoll]];
-    [self.rollMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalKeyAdjustRoll]];
+    [self.pitchMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustPitch]];
+    [self.pitchMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustPitch]];
+    [self.yawMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustYaw]];
+    [self.yawMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustYaw]];
+    [self.rollMinButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustRoll]];
+    [self.rollMaxButton setEnabled:[gimbal isFeatureSupported:DJIGimbalParamAdjustRoll]];
 }
 
 -(void) setupRotationStructs {
     DJIGimbal* gimbal = [DemoComponentHelper fetchGimbal];
-    _pitchRotation.enabled = [gimbal isFeatureSupported:DJIGimbalKeyAdjustPitch];
-    _yawRotation.enabled = [gimbal isFeatureSupported:DJIGimbalKeyAdjustYaw];
-    _rollRotation.enabled = [gimbal isFeatureSupported:DJIGimbalKeyAdjustRoll];
+    _pitchRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustPitch];
+    _yawRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustYaw];
+    _rollRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustRoll];
 }
 
 -(void) enablePitchExtensionIfPossible {
@@ -73,7 +73,7 @@
     if (gimbal == nil) {
         return;
     }
-    BOOL isPossible = [gimbal isFeatureSupported:DJIGimbalKeyPitchRangeExtension];
+    BOOL isPossible = [gimbal isFeatureSupported:DJIGimbalParamPitchRangeExtensionEnabled];
     if (isPossible) {
         [gimbal setPitchRangeExtensionEnabled:YES withCompletion:nil];
     }
@@ -89,15 +89,15 @@
     NSString *key = [self getCorrespondingKeyWithButton:(UIButton *)sender];
     NSInteger min = -[[gimbal getParamMin:key] integerValue];
     
-    if ([key isEqualToString:DJIGimbalKeyAdjustPitch]) {
+    if ([key isEqualToString:DJIGimbalParamAdjustPitch]) {
         _pitchRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
         _pitchRotation.angle = (float)min;
     }
-    else if ([key isEqualToString:DJIGimbalKeyAdjustYaw]) {
+    else if ([key isEqualToString:DJIGimbalParamAdjustYaw]) {
         _yawRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
         _yawRotation.angle = (float)min;
     }
-    else if ([key isEqualToString:DJIGimbalKeyAdjustRoll]) {
+    else if ([key isEqualToString:DJIGimbalParamAdjustRoll]) {
         _rollRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
         _rollRotation.angle = (float)min;
     }
@@ -114,15 +114,15 @@
     NSString *key = [self getCorrespondingKeyWithButton:(UIButton *)sender];
     NSInteger max = [[gimbal getParamMax:key] integerValue];
     
-    if ([key isEqualToString:DJIGimbalKeyAdjustPitch]) {
+    if ([key isEqualToString:DJIGimbalParamAdjustPitch]) {
         _pitchRotation.direction = DJIGimbalRotateDirectionClockwise;
         _pitchRotation.angle = (float)max;
     }
-    else if ([key isEqualToString:DJIGimbalKeyAdjustYaw]) {
+    else if ([key isEqualToString:DJIGimbalParamAdjustYaw]) {
         _yawRotation.direction = DJIGimbalRotateDirectionClockwise;
         _yawRotation.angle = (float)max;
     }
-    else if ([key isEqualToString:DJIGimbalKeyAdjustRoll]) {
+    else if ([key isEqualToString:DJIGimbalParamAdjustRoll]) {
         _rollRotation.direction = DJIGimbalRotateDirectionClockwise;
         _rollRotation.angle = (float)max;
     }
@@ -153,13 +153,13 @@
 
 -(NSString *) getCorrespondingKeyWithButton:(UIButton *)button {
     if (button == self.pitchMinButton || button == self.pitchMaxButton) {
-        return DJIGimbalKeyAdjustPitch;
+        return DJIGimbalParamAdjustPitch;
     }
     else if (button == self.yawMinButton || button == self.yawMaxButton) {
-        return DJIGimbalKeyAdjustYaw;
+        return DJIGimbalParamAdjustYaw;
     }
     else if (button == self.rollMinButton || button == self.rollMaxButton) {
-        return DJIGimbalKeyAdjustRoll;
+        return DJIGimbalParamAdjustRoll;
     }
     return nil;
 }

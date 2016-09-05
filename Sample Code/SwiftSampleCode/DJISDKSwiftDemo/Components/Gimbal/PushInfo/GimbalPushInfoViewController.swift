@@ -53,7 +53,7 @@ class GimbalPushInfoViewController: DemoPushInfoViewController, DJIGimbalDelegat
         gimbalInfoString.appendString("Is roll at stop: ")
         gimbalInfoString.appendString(gimbalState.isRollAtStop ? "YES\n" : "NO\n")
         gimbalInfoString.appendString("Is yaw at stop: ")
-        gimbalInfoString.appendString(gimbalState.isCalibrating ? "YES\n" : "NO\n")
+        gimbalInfoString.appendString(gimbalState.isYawAtStop ? "YES\n" : "NO\n")
         self.pushInfoLabel.text = gimbalInfoString as String
     }
     

@@ -1,5 +1,5 @@
 //
-//  WiFiLinkSSIDViewController.swift
+//  WiFiLinkSSIDViewController.m
 //  DJISdkDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
@@ -16,7 +16,8 @@ class WiFiLinkSSIDViewController: DemoGetSetViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let airLink = self.fetchAirLink() where airLink.isWifiLinkSupported {
+        let airLink:DJIAirLink? = self.fetchAirLink()
+        if airLink != nil && airLink!.isWifiLinkSupported {
             self.getValueButton.enabled = true
             self.setValueButton.enabled = true
         }
@@ -29,28 +30,37 @@ class WiFiLinkSSIDViewController: DemoGetSetViewController {
     
     @IBAction override func onGetButtonClicked(sender: AnyObject) {
         
-        if let airLink = self.fetchAirLink(), wifiLink = airLink.wifiLink {
-            wifiLink.getWiFiSSIDWithCompletion{ [weak self] (ssid: String?, error: NSError?) -> Void in
-                if let error = error {
-                    self?.showAlertResult("ERROR: getWiFiSSID \(error.description)")
-                }
-                else {
-                    self?.getValueTextField.text = ssid
-                }
+        let airLink: DJIAirLink? = self.fetchAirLink()
+        if (airLink != nil) {
+            let wifiLink: DJIWiFiLink? = airLink!.wifiLink
+            if wifiLink != nil {
+              
+                wifiLink!.getWiFiSSIDWithCompletion({[weak self](ssid: String?, error: NSError?) -> Void in
+                    if error != nil {
+                        self?.showAlertResult("ERROR: getWiFiSSID \(error!.description)")
+                    }
+                    else {
+                        self?.getValueTextField.text = ssid
+                    }
+                })
             }
         }
     }
     
     @IBAction override func onSetButtonClicked(sender: AnyObject) {
-        if let airLink = self.fetchAirLink(), wifiLink = airLink.wifiLink {
-            wifiLink.setWiFiSSID(self.setValueTextField.text!) { [weak self] (error: NSError?) -> Void in
-                if let error = error {
-                    self?.showAlertResult("ERROR: setWiFiSSID \(error.description)")
+        let airLink: DJIAirLink? = self.fetchAirLink()
+        if (airLink != nil) {
+        let wifiLink: DJIWiFiLink? = airLink!.wifiLink
+        if wifiLink != nil {
+            wifiLink!.setWiFiSSID(self.setValueTextField.text!, withCompletion: {[weak self](error: NSError?) -> Void in
+                if error != nil {
+                    self?.showAlertResult("ERROR: setWiFiSSID \(error!.description)")
                 }
                 else {
                     self?.showAlertResult("Success. ")
                 }
-            }
+            })
+        }
         }
     }
 }

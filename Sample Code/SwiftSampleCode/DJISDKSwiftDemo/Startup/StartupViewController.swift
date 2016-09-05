@@ -15,6 +15,7 @@ class StartupViewController: DJIBaseViewController {
     @IBOutlet weak var productModel: UILabel!
     @IBOutlet weak var productFirmwarePackageVersion: UILabel!
     @IBOutlet weak var openComponents: UIButton!
+    @IBOutlet weak var bluetoothConnectorButton: UIButton!
     @IBOutlet weak var sdkVersionLabel: UILabel!
     
     var connectedProduct:DJIBaseProduct?=nil
@@ -38,8 +39,10 @@ class StartupViewController: DJIBaseViewController {
         self.title = "DJI iOS SDK Sample"
         sdkVersionLabel.text = "DJI SDK Version: \(DJISDKManager.getSDKVersion())"
         openComponents.enabled = false;
+        bluetoothConnectorButton.enabled = true;
         productModel.hidden = true
         productFirmwarePackageVersion.hidden = true
+        
     }
     
     func showAlert(msg: String?) {
@@ -49,6 +52,10 @@ class StartupViewController: DJIBaseViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         // show the alert
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func onBluetoothConnectorButtonClicked(sender: AnyObject) {
+
     }
     
 }
@@ -79,6 +86,7 @@ extension StartupViewController : DJISDKManagerDelegate
         guard let newProduct = newProduct else
         {
             productConnectionStatus.text = "Status: No Product Connected"
+            ConnectedProductManager.sharedInstance.connectedProduct = nil
             openComponents.enabled = false;
             openComponents.alpha = 0.8;
             logDebug("Product Disconnected")
@@ -93,8 +101,15 @@ extension StartupViewController : DJISDKManagerDelegate
         }
         //Updates the product's firmware version - COMING SOON
         newProduct.getFirmwarePackageVersionWithCompletion{ (version:String?, error:NSError?) -> Void in
+            
             self.productFirmwarePackageVersion.text = "Firmware Package Version: \(version ?? "Unknown")"
-            self.productFirmwarePackageVersion.hidden = false
+            
+            if let _ = error {
+                self.productFirmwarePackageVersion.hidden = true
+            }else{
+                self.productFirmwarePackageVersion.hidden = false
+            }
+            
             logDebug("Firmware package version is: \(version ?? "Unknown")")
         }
         

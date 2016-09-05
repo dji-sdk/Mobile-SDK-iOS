@@ -7,57 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJIBaseComponent.h>
+#import <DJISDK/DJIHandheldControllerBaseTypes.h>
 
 @class DJIWiFiLink;
 
 NS_ASSUME_NONNULL_BEGIN
-
-/*********************************************************************************/
-#pragma mark DJIHandheldWiFiFrequency Type
-/*********************************************************************************/
-
-/**
- *  Handheld WiFi Frequency Type.
- */
-typedef NS_ENUM (uint8_t, DJIHandheldWiFiFrequencyType){
-    /**
-     *  The Handheld WiFi frequency is 2.4G
-     */
-    DJIHandheldWiFiFrequency2Dot4G,
-    /**
-     *  The Handheld WiFi frequency is 5.8G
-     */
-    DJIHandheldWiFiFrequency5Dot8G,
-    
-};
-
-/**
- *  Handheld Power Mode
- */
-typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
-    /**
-     *  The Handheld Power Mode is awake.
-     *  For Osmo, when it is in this mode, all the components in `DJIHandheld` are accessible.
-     */
-    DJIHandheldPowerModeAwake,
-    /**
-     *  The Handheld Power Mode is sleeping. The handheld controller keeps the WiFi connection
-     *  to the Mobile device alive but most other components are off. The power consumption is low
-     *  in this mode.
-     *  For Osmo, when it is in this mode, only the `DJIHandheldController`, `DJIAirLink`, and `DJIBattery`
-     *  are accessible.
-     */
-    DJIHandheldPowerModeSleeping,
-    /**
-     *  The Handheld Power Mode is powered off. Once this mode is set the delegate will receive this mode until the handheld device is
-     *  shut down completely.
-     */
-    DJIHandheldPowerModePowerOff,
-    /**
-     *  The Handheld Power Mode in unknown.
-     */
-    DJIHandheldPowerModeUnknown = 0xFF
-};
 
 @class DJIHandheldController;
 
@@ -83,7 +37,19 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
  */
 - (void)handheldController:(DJIHandheldController *_Nonnull)controller didUpdatePowerMode:(DJIHandheldPowerMode)powerMode;
 
+/**
+ *  Delegate for the handheld controller's current hardware state (e.g. the
+ *  state of the physical buttons and joysticks).
+ *  Supported only by Osmo Mobile. 
+ *
+ *  @param controller   The handheld controller that updates the hardware state.
+ *  @param powerMode    The handheld controller's current hardware state.
+ *
+ */
+- (void)handheldController:(DJIHandheldController *_Nonnull)controller didUpdateHardwareState:(DJIHandheldControllerHardwareState *)state;
+
 @end
+
 
 /*********************************************************************************/
 #pragma mark - DJIHandheldController
@@ -111,4 +77,5 @@ typedef NS_ENUM (uint8_t, DJIHandheldPowerMode){
 - (void)setHandheldPowerMode:(DJIHandheldPowerMode)mode withCompletion:(DJICompletionBlock)block;
 
 @end
+
 NS_ASSUME_NONNULL_END

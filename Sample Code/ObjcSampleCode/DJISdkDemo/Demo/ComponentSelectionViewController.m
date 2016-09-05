@@ -66,13 +66,13 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        componentsDict = @{DJIBatteryComponentKey : [BatteryActionsTableViewController class],
-                           DJIGimbalComponentKey : [GimbalActionsTableViewController class],
-                           DJICameraComponentKey : [CameraActionsTableViewController class],
-                           DJIAirLinkComponentKey : [AirLinkActionsTableViewController class],
-                           DJIFlightControllerComponentKey : [FCActionsTableViewController class],
-                           DJIRemoteControllerComponentKey : [RCActionsTableViewController class],
-                           DJIHandheldControllerComponentKey : [HandheldControllerActionsTableViewController class]
+        componentsDict = @{DJIBatteryComponent : [BatteryActionsTableViewController class],
+                           DJIGimbalComponent : [GimbalActionsTableViewController class],
+                           DJICameraComponent : [CameraActionsTableViewController class],
+                           DJIAirLinkComponent : [AirLinkActionsTableViewController class],
+                           DJIFlightControllerComponent : [FCActionsTableViewController class],
+                           DJIRemoteControllerComponent : [RCActionsTableViewController class],
+                           DJIHandheldControllerComponent : [HandheldControllerActionsTableViewController class]
                            };
         
     });

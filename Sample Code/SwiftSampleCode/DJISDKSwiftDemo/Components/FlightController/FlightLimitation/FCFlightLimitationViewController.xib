@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -54,7 +54,7 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Radius Limit:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7I-50-ZTc">
-                    <rect key="frame" x="242.5" y="260" width="115.5" height="21"/>
+                    <rect key="frame" x="242" y="260" width="115.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="115.5" id="BlX-kV-CdQ"/>
                         <constraint firstAttribute="height" constant="21" id="DKn-Ec-62j"/>
@@ -63,18 +63,8 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-WB-eOa">
-                    <rect key="frame" x="275" y="284" width="51" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="JFt-2O-Bwb"/>
-                        <constraint firstAttribute="width" constant="49" id="dGh-gR-Mt5"/>
-                    </constraints>
-                    <connections>
-                        <action selector="onLimitSwitchValueChanged:" destination="-1" eventType="valueChanged" id="hPE-4M-Lhh"/>
-                    </connections>
-                </switch>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Flight Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXE-f0-iK7">
-                    <rect key="frame" x="245" y="337" width="111" height="21"/>
+                    <rect key="frame" x="244" y="337" width="111" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="111" id="bpA-3Q-uAD"/>
                         <constraint firstAttribute="height" constant="21" id="ryF-h3-Omr"/>
@@ -83,22 +73,48 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-WB-eOa">
+                    <rect key="frame" x="275" y="289" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="JFt-2O-Bwb"/>
+                        <constraint firstAttribute="width" constant="49" id="dGh-gR-Mt5"/>
+                    </constraints>
+                    <connections>
+                        <action selector="onLimitSwitchValueChanged:" destination="-1" eventType="valueChanged" id="hPE-4M-Lhh"/>
+                    </connections>
+                </switch>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="8ym-O6-Q4n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1G3-hD-GKs"/>
+                <constraint firstItem="8ym-O6-Q4n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1G3-hD-GKs">
+                    <variation key="heightClass=compact-widthClass=regular" constant="-1"/>
+                </constraint>
                 <constraint firstItem="bXE-f0-iK7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2GK-ZU-zro"/>
                 <constraint firstItem="b7I-50-ZTc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9p4-DX-KOa"/>
                 <constraint firstItem="cqi-WB-eOa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JQH-d2-OFW"/>
-                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="top" secondItem="RiE-e5-DjD" secondAttribute="bottom" constant="3" id="JaH-eb-43n"/>
-                <constraint firstItem="cqi-WB-eOa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Tqk-fS-I7E"/>
+                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="top" secondItem="RiE-e5-DjD" secondAttribute="bottom" constant="3" id="JaH-eb-43n">
+                    <variation key="heightClass=compact" constant="8"/>
+                </constraint>
+                <constraint firstItem="cqi-WB-eOa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="4.5" id="Tqk-fS-I7E">
+                    <variation key="heightClass=compact" constant="11"/>
+                </constraint>
                 <constraint firstItem="RiE-e5-DjD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dHA-zX-x9D"/>
-                <constraint firstItem="8ym-O6-Q4n" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.25" id="foY-Tm-V31"/>
+                <constraint firstItem="8ym-O6-Q4n" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="1.25" id="foY-Tm-V31">
+                    <variation key="heightClass=compact" constant="34.625"/>
+                </constraint>
                 <constraint firstItem="8ym-O6-Q4n" firstAttribute="top" secondItem="b7I-50-ZTc" secondAttribute="bottom" constant="3" id="hs4-Hw-Pgv"/>
-                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hvl-wj-QCv"/>
-                <constraint firstItem="cqi-WB-eOa" firstAttribute="top" secondItem="b7I-50-ZTc" secondAttribute="bottom" constant="3" id="mdv-i3-IYh"/>
-                <constraint firstItem="8ym-O6-Q4n" firstAttribute="top" secondItem="bXE-f0-iK7" secondAttribute="bottom" constant="2" id="rdJ-7b-Ee4"/>
-                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.75" id="t9b-rA-lVQ"/>
+                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hvl-wj-QCv">
+                    <variation key="heightClass=compact-widthClass=regular" constant="-1"/>
+                </constraint>
+                <constraint firstItem="cqi-WB-eOa" firstAttribute="top" secondItem="b7I-50-ZTc" secondAttribute="bottom" constant="8" id="mdv-i3-IYh">
+                    <variation key="heightClass=compact" constant="6"/>
+                </constraint>
+                <constraint firstItem="8ym-O6-Q4n" firstAttribute="top" secondItem="bXE-f0-iK7" secondAttribute="bottom" constant="2" id="rdJ-7b-Ee4">
+                    <variation key="heightClass=compact" constant="7"/>
+                </constraint>
+                <constraint firstItem="lI0-Wy-sHQ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" multiplier="0.75" id="t9b-rA-lVQ">
+                    <variation key="heightClass=compact" constant="-10.625"/>
+                </constraint>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
