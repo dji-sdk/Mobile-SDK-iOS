@@ -6,21 +6,14 @@
 //  Copyright © 2015 DJI. All rights reserved.
 //
 import Foundation
-import DJISDK
+import UIKit
 
-class DemoSettingItem: NSObject {
+struct DemoSettingItem {
     var itemName: String = ""
     var viewControllerClass:UIViewController.Type? = nil
     
     init(name: String, andClass viewControllerClass: UIViewController.Type?) {
         self.itemName = name
         self.viewControllerClass = viewControllerClass
-        super.init()
-    }
-    
-    
-
-    class func initSettingItem(name: String, andClass viewControllerClass: UIViewController.Type) -> DemoSettingItem {
-        return DemoSettingItem(name: name, andClass: viewControllerClass)
     }
 }
