@@ -1,5 +1,6 @@
 //
-//  DJIAnnotationView.h
+//  DJIAnnotationView.swift
+//  DJISDKSwiftDemo
 //
 import MapKit
 //#define DJIAnnotationViewLongPressToDelete

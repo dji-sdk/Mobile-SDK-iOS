@@ -1,6 +1,6 @@
 //
-//  DJIBaseViewController.h
-//  DJISdkDemo
+//  DJIBaseViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/9/9.
 //  Copyright © 2015 DJI. All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  InspireHotPointConfigView.h
-//  DJISdkDemo
+//  HotPointConfigView.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/6/3.
 //  Copyright (c) 2015 DJI. All rights reserved.

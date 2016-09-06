@@ -1,6 +1,6 @@
 //
-//  NavigationWaypointConfigView.h
-//  DJISdkDemo
+//  NavigationWaypointConfigView.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/8/4.
 //  Copyright (c) 2015 DJI. All rights reserved.

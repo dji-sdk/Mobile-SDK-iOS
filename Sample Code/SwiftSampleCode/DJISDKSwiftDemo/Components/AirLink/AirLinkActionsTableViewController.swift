@@ -1,6 +1,6 @@
 //
-//  AirLinkActionsTableViewController.m
-//  DJISdkDemo
+//  AirLinkActionsTableViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
 import DJISDK

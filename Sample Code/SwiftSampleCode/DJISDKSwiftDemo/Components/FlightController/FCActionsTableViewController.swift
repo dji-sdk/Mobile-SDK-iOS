@@ -1,6 +1,6 @@
 //
-//  FCActionsTableViewController.m
-//  DJISdkDemo
+//  FCActionsTableViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 16/1/4.
 //  Copyright © 2016 DJI. All rights reserved.

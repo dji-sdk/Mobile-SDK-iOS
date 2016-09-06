@@ -1,6 +1,6 @@
 //
-//  FCLandingGearViewController.m
-//  DJISdkDemo
+//  FCLandingGearViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 16/1/5.
 //  Copyright © 2016 DJI. All rights reserved.

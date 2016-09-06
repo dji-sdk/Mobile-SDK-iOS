@@ -1,6 +1,6 @@
 //
-//  DJIPOIAnnotationView.h
-//  Phantom3
+//  DJIPOIAnnotationView.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/7/30.
 //  Copyright (c) 2015 DJIDevelopers.com. All rights reserved.

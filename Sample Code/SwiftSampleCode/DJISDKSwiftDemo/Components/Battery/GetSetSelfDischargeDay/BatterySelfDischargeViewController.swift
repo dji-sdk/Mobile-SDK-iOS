@@ -1,6 +1,6 @@
 //
-//  BatterySelfDischargeViewController.h
-//  DJISdkDemo
+//  BatterySelfDischargeViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 12/17/15.
 //  Copyright © 2015 DJI. All rights reserved.

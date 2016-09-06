@@ -1,6 +1,6 @@
 //
-//  CameraFetchMediaViewController.h
-//  DJISdkDemo
+//  CameraFetchMediaViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 12/29/15.
 //  Copyright © 2015 DJI. All rights reserved.

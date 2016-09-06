@@ -1,5 +1,6 @@
 //
-//  DJIMapView.h
+//  DJIMapView.swift
+//  DJISDKSwiftDemo
 //
 import UIKit
 import MapKit

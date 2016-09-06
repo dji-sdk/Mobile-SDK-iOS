@@ -1,6 +1,6 @@
 //
-//  GroundStationTestViewController.h
-//  DJISdkDemo
+//  NavigationWaypointViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 14-7-16.
 //  Copyright (c) 2014 DJI. All rights reserved.

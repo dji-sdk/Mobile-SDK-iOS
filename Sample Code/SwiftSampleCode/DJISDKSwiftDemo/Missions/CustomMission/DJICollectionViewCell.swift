@@ -1,6 +1,6 @@
 //
-//  DJICollectionViewCell.h
-//  DJISdkDemo
+//  DJICollectionViewCell.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/12/18.
 //  Copyright © 2015 DJI. All rights reserved.

@@ -1,5 +1,6 @@
 //
-//  DJIAnnotation.h
+//  DJIAnnotation.swift
+//  DJISDKSwiftDemo
 //
 import Foundation
 import MapKit

@@ -1,6 +1,6 @@
 //
-//  JoystickTestViewController.h
-//  DJISdkDemo
+//  NavigationJoystickViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 14-10-27.
 //  Copyright (c) 2014 DJI. All rights reserved.
