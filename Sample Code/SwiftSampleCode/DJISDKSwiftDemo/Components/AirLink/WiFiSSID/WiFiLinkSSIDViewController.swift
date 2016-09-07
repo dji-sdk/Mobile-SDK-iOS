@@ -1,6 +1,6 @@
 //
-//  WiFiLinkSSIDViewController.m
-//  DJISdkDemo
+//  WiFiLinkSSIDViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //

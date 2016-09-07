@@ -1,6 +1,6 @@
 //
-//  DJIGimbal+CapabilityCheck
-//  DJISdkDemo
+//  DJIGimbal+CapabilityCheck.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //

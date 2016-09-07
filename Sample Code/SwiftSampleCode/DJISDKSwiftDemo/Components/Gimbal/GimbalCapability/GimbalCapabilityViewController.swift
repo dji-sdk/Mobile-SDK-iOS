@@ -1,6 +1,6 @@
 //
-//  GimbalCapabilityViewController
-//  DJISdkDemo
+//  GimbalCapabilityViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //

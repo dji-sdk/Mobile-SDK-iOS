@@ -1,7 +1,6 @@
-
 //
-//  RebootWiFiViewController.m
-//  DJISdkDemo
+//  RebootWiFiViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 1/7/16.
 //  Copyright © 2016 DJI. All rights reserved.

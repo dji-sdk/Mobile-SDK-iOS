@@ -1,6 +1,6 @@
 //
-//  CameraPlaybackDownloadViewController.m
-//  DJISdkDemo
+//  CameraPlaybackDownloadViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2015 DJI. All rights reserved.
 //

@@ -1,6 +1,6 @@
 //
-//  DJIWaypointAnnotationView.h
-//  DJISdkDemo
+//  DJIWaypointAnnotationView.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/7/2.
 //  Copyright (c) 2015 DJI. All rights reserved.
@@ -43,7 +43,7 @@ class DJIWaypointAnnotationView: MKAnnotationView {
 }
 //
 //  DJIWaypointAnnotationView.m
-//  DJISdkDemo
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/7/2.
 //  Copyright (c) 2015 DJI. All rights reserved.

@@ -1,6 +1,6 @@
 //
-//  VisualStickView.h
-//  SampleGame
+//  JoyStickView.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 13-4-26.
 //  Copyright (c) 2013. All rights reserved.

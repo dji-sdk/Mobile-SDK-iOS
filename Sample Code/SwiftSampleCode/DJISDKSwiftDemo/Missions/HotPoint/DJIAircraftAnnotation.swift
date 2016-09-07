@@ -1,5 +1,6 @@
 //
-//  DJIAircraftAnnotation.h
+//  DJIAircraftAnnotation.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 14-8-21.
 //

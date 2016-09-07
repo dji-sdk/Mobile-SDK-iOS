@@ -1,6 +1,6 @@
 //
-//  SetGetChannelViewController.m
-//  DJISdkDemo
+//  SetGetChannelViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2016 DJI. All rights reserved.
 //

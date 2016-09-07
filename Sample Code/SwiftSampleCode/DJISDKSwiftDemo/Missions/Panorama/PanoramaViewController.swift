@@ -1,6 +1,6 @@
 //
-//  InspireFollowMeViewController.h
-//  DJISdkDemo
+//  PanoramaViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/3/5.
 //  Copyright (c) 2015 DJI. All rights reserved.

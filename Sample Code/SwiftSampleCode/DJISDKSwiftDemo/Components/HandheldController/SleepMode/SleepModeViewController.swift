@@ -1,6 +1,6 @@
 //
-//  SleepModeViewController.m
-//  DJISdkDemo
+//  SleepModeViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Copyright © 2015 DJI. All rights reserved.
 //

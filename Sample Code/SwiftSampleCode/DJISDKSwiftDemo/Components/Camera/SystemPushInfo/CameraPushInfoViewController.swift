@@ -1,6 +1,6 @@
 //
-//  CameraPushInfoViewController.h
-//  DJISdkDemo
+//  CameraPushInfoViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 12/18/15.
 //  Copyright © 2015 DJI. All rights reserved.

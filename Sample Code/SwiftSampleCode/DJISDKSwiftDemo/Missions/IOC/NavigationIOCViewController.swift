@@ -1,6 +1,6 @@
 //
-//  DJIIOCViewController.h
-//  DJISdkDemo
+//  NavigationIOCViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 15/7/1.
 //  Copyright (c) 2015 DJI. All rights reserved.

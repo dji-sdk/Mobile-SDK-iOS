@@ -1,6 +1,6 @@
 //
-//  RCParingViewController.m
-//  DJISdkDemo
+//  RCParingViewController.swift
+//  DJISDKSwiftDemo
 //
 //  Created by DJI on 16/1/6.
 //  Copyright © 2016 DJI. All rights reserved.
