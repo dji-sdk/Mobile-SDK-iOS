@@ -286,6 +286,7 @@ ss += ll; \
         if (callback) {
             callback(NO);
         }
+        return;
     }
     
     @synchronized (self)
@@ -469,8 +470,9 @@ ss += ll; \
         if(_pFrame == NULL)
         {
             [self setupExtractor];
-            NSLog(@"Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
-
+            if (_pCodecCtx) {
+                NSLog(@"Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
+            }
         }
     }
 }
