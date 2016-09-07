@@ -381,9 +381,18 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
             destinationPixelType = kCVPixelFormatType_420YpCbCr8PlanarFullRange;
         }
         
-        CFDictionarySetValue(destinationPixelBufferAttributes,kCVPixelBufferPixelFormatTypeKey, CFNumberCreate(NULL, kCFNumberSInt32Type, &destinationPixelType));
-        CFDictionarySetValue(destinationPixelBufferAttributes,kCVPixelBufferWidthKey, CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.width));
-        CFDictionarySetValue(destinationPixelBufferAttributes, kCVPixelBufferHeightKey, CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.height));
+        CFNumberRef pixelType = CFNumberCreate(NULL, kCFNumberSInt32Type, &destinationPixelType);
+        CFDictionarySetValue(destinationPixelBufferAttributes,kCVPixelBufferPixelFormatTypeKey, pixelType);
+        CFRelease(pixelType);
+
+        CFNumberRef width = CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.width);
+        CFDictionarySetValue(destinationPixelBufferAttributes,kCVPixelBufferWidthKey, width);
+        CFRelease(width);
+        
+        CFNumberRef height = CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.height);
+        CFDictionarySetValue(destinationPixelBufferAttributes, kCVPixelBufferHeightKey, height);
+        CFRelease(height);
+        
         CFDictionarySetValue(destinationPixelBufferAttributes, kCVPixelBufferOpenGLCompatibilityKey, kCFBooleanTrue);
 //        CFDictionarySetValue(destinationPixelBufferAttributes, kCVPixelBufferIOSurfacePropertiesKey, kCFBooleanFalse);
         
