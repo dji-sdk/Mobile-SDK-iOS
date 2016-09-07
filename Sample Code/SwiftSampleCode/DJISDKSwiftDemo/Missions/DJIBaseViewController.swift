@@ -155,11 +155,6 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
         if isConnected {
             NSLog("\(product.model) connected. ")

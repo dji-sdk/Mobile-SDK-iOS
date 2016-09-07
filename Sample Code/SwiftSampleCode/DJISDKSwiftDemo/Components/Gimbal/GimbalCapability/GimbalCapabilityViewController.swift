@@ -37,10 +37,6 @@ class GimbalCapabilityViewController: DJIBaseViewController{
         self.enablePitchExtensionIfPossible()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     func setupButtons() {
         let gimbal : DJIGimbal? = self.fetchGimbal()
         if (gimbal == nil) {

@@ -15,11 +15,6 @@ class BatterySelfDischargeViewController: DemoGetSetViewController {
         self.rangeLabel.text = "The input should be an integer. The range is [1, 10]. "
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction override func onGetButtonClicked(sender: AnyObject) {
         self.updateSelfDischargeDay()
     }

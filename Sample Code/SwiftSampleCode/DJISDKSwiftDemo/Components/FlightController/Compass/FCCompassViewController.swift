@@ -22,11 +22,6 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func onCompassCalibrationButtonClicked(sender: UIButton) {
         let STOP_TAG: Int = 100
         let START_TAG: Int = 101

@@ -66,11 +66,6 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
     
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func onLimitSwitchValueChanged(sender: UISwitch) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {

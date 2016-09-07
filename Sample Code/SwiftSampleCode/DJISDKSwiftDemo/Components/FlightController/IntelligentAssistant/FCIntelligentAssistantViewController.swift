@@ -34,11 +34,6 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func updateSwitchState(fa:DJIIntelligentFlightAssistant?){
         if (fa != nil) {
             fa?.getCollisionAvoidanceEnabledWithCompletion({ (state:Bool, error: NSError?) -> Void in

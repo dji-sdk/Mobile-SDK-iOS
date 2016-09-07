@@ -9,16 +9,6 @@
 import DJISDK
 class FCGeneralControlViewController: DJIBaseViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func onTakeoffButtonClicked(sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {

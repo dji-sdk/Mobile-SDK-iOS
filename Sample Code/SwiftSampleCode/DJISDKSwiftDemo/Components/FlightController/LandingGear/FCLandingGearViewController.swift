@@ -27,11 +27,6 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func onTurnOnButtonClicked(sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         

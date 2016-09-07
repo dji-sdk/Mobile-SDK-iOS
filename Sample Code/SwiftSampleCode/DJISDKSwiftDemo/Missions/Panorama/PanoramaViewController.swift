@@ -22,10 +22,6 @@ class PanoramaViewController: DJIBaseViewController, DJIMissionManagerDelegate{
     var isRunning: Bool = false
     
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.getThumbnailButton.enabled = false

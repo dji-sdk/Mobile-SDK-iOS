@@ -205,11 +205,6 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.missionManager.delegate = nil
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func getCornerRadius(pointA: DJIWaypoint?, middleWaypoint pointB: DJIWaypoint?, nextWaypoint pointC: DJIWaypoint?) -> CGFloat {
         if pointA == nil || pointB == nil || pointC == nil {
             return 2.0

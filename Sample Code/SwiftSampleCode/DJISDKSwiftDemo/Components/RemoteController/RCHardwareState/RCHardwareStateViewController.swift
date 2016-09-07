@@ -82,11 +82,6 @@ class RCHardwareStateViewController:DJIBaseViewController, DJIRemoteControllerDe
         self.customButton2.layer.masksToBounds = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func remoteController(rc: DJIRemoteController, didUpdateHardwareState state: DJIRCHardwareState) {
         self.rightHorizontal.text =  "\(state.rightHorizontal.value)"
         self.rightVertical.text = "\(state.rightVertical.value)"

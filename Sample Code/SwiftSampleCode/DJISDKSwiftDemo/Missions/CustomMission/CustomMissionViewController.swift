@@ -97,11 +97,6 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         self.missionManager!.delegate = nil
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func onPauseMissionButtonClicked(sender: AnyObject) {
         self.missionManager!.pauseMissionExecutionWithCompletion({[weak self] (error: NSError?) in
             if (error != nil) {
