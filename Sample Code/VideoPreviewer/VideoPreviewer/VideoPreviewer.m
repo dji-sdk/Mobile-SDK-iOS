@@ -683,7 +683,7 @@
                         [processor streamProcessorHandleFrameRaw:frameRaw];
                     }
                     else if (processor_type == DJIVideoStreamProcessorType_Consume){
-                        if(processor != _stream_processor_list.lastObject) {
+                        if(processor != _stream_processor_list.lastObject && frameRaw) {
                             VideoFrameH264Raw* data_copy = (VideoFrameH264Raw*)malloc(queueNodeSize);
                             memcpy(data_copy, frameRaw, queueNodeSize);
                             if (![processor streamProcessorHandleFrameRaw:data_copy]) {
