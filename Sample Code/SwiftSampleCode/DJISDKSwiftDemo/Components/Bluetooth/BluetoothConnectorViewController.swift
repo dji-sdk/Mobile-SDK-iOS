@@ -18,21 +18,19 @@ class BluetoothConnectorViewController: DJIBaseViewController, UITableViewDelega
     var bluetoothProducts: [CBPeripheral]?
     var selectedIndex: NSIndexPath!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bluetoothProducts = []
         self.updateConnectButtonState()
-        bluetoothConnector().delegate = self
+        bluetoothConnector()?.delegate = self
     }
     
-    func bluetoothConnector() -> DJIBluetoothProductConnector {
-        return DJISDKManager.bluetoothConnector()!
+    func bluetoothConnector() -> DJIBluetoothProductConnector? {
+        return DJISDKManager.bluetoothConnector()
     }
     
     @IBAction func onBluetoothSearchButtonClicked(sender: AnyObject) {
-        self.bluetoothConnector().searchBluetoothProductsWithCompletion { [weak self](error:NSError?) in
+        self.bluetoothConnector()?.searchBluetoothProductsWithCompletion { [weak self](error:NSError?) in
             if let _ = error {
                 self!.showAlertResult("Search Bluetooth product failed:\(error!.description)")
             }
@@ -74,7 +72,7 @@ class BluetoothConnectorViewController: DJIBaseViewController, UITableViewDelega
         
         let curSelectedPer = self.bluetoothProducts?[self.selectedIndex.row]
         
-        self.bluetoothConnector().connectProduct(curSelectedPer) { [weak self](error:NSError?) in
+        self.bluetoothConnector()?.connectProduct(curSelectedPer) { [weak self](error:NSError?) in
             if let _ = error {
                 self!.showAlertResult("Connect Bluetooth product failed:\(error!.description)")
             } else {
@@ -86,7 +84,7 @@ class BluetoothConnectorViewController: DJIBaseViewController, UITableViewDelega
     }
     
     func disconnectBluetooth() -> Void {
-        self.bluetoothConnector().disconnectProductWithCompletion { [weak self](error:NSError?) in
+        self.bluetoothConnector()?.disconnectProductWithCompletion { [weak self](error:NSError?) in
             if let _ = error {
                 self!.showAlertResult("Disconnect Bluetooth product failed:\(error!.description)")
             } else {
