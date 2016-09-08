@@ -25,99 +25,67 @@ class ConnectedProductManager: DJIProductObjectProtocol {
     var connectedProduct:DJIBaseProduct? = nil
     
     func fetchAircraft() -> DJIAircraft? {
-        if (self.connectedProduct == nil) {
-            return nil
-        }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft)
-        }
-        return nil
+        guard let connectedProduct = self.connectedProduct as? DJIAircraft else { return nil }
+        return connectedProduct
     }
     
     func fetchCamera() -> DJICamera? {
-        if (self.connectedProduct == nil) {
-            return nil
+        guard let connectedProduct = self.connectedProduct else { return nil }
+        if let aircraft = connectedProduct as? DJIAircraft {
+            return aircraft.camera
         }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).camera
+        if let handheld = connectedProduct as? DJIHandheld {
+            return handheld.camera
         }
-        else if (self.connectedProduct is DJIHandheld) {
-            return (self.connectedProduct as! DJIHandheld).camera
-        }
-        
         return nil
     }
     
     func fetchGimbal() -> DJIGimbal? {
-        if (self.connectedProduct == nil) {
-            return nil
+        guard let connectedProduct = self.connectedProduct else { return nil }
+        if let aircraft = connectedProduct as? DJIAircraft {
+            return aircraft.gimbal
         }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).gimbal
+        if let handheld = connectedProduct as? DJIHandheld {
+            return handheld.gimbal
         }
-        else if (self.connectedProduct is DJIHandheld) {
-            return (self.connectedProduct as! DJIHandheld).gimbal
-        }
-        
         return nil
     }
     
     func fetchFlightController() -> DJIFlightController? {
-        if (self.connectedProduct == nil) {
-            return nil
-        }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).flightController
-        }
-        return nil
+        guard let connectedProduct = self.connectedProduct as? DJIAircraft else { return nil }
+        return connectedProduct.flightController
     }
     
     func fetchRemoteController() -> DJIRemoteController? {
-        if (self.connectedProduct == nil) {
-            return nil
-        }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).remoteController
-        }
-        return nil
+        guard let connectedProduct = self.connectedProduct as? DJIAircraft else { return nil }
+        return connectedProduct.remoteController
     }
     
     func fetchBattery() -> DJIBattery? {
-        if (self.connectedProduct == nil) {
-            return nil
+        guard let connectedProduct = self.connectedProduct else { return nil }
+        if let aircraft = connectedProduct as? DJIAircraft {
+            return aircraft.battery
         }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).battery
+        if let handheld = connectedProduct as? DJIHandheld {
+            return handheld.battery
         }
-        else if (self.connectedProduct is DJIHandheld) {
-            return (self.connectedProduct as! DJIHandheld).battery
-        }
-        
         return nil
     }
     
     func fetchAirLink() -> DJIAirLink? {
-        if (self.connectedProduct == nil) {
-            return nil
+        guard let connectedProduct = self.connectedProduct else { return nil }
+        if let aircraft = connectedProduct as? DJIAircraft {
+            return aircraft.airLink
         }
-        if (self.connectedProduct is DJIAircraft) {
-            return (self.connectedProduct as! DJIAircraft).airLink
+        if let handheld = connectedProduct as? DJIHandheld {
+            return handheld.airLink
         }
-        else if (self.connectedProduct is DJIHandheld) {
-            return (self.connectedProduct as! DJIHandheld).airLink
-        }
-        
         return nil
     }
     
     func fetchHandheldController() -> DJIHandheldController? {
-        if (self.connectedProduct == nil) {
-            return nil
-        }
-        if (self.connectedProduct is DJIHandheld) {
-            return (self.connectedProduct as! DJIHandheld).handheldController
-        }
-        return nil
+        guard let connectedProduct = self.connectedProduct as? DJIHandheld else { return nil }
+        return connectedProduct.handheldController
     }
     
     func setDelegate(delegate:DJIBaseProductDelegate?) {
@@ -128,29 +96,24 @@ class ConnectedProductManager: DJIProductObjectProtocol {
 
 class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProductObjectProtocol {
     
-    //var connectedProduct:DJIBaseProduct?=nil
-    var moduleTitle:String?=nil
+    var moduleTitle:String? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (moduleTitle != nil) {
-            self.title = moduleTitle
-        }
-        // Do any additional setup after loading the view.
+        self.title = moduleTitle
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        if (ConnectedProductManager.sharedInstance.connectedProduct != nil) {
+        if ConnectedProductManager.sharedInstance.connectedProduct != nil {
             ConnectedProductManager.sharedInstance.setDelegate(self)
         }
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        if (ConnectedProductManager.sharedInstance.connectedProduct != nil &&
-            ConnectedProductManager.sharedInstance.connectedProduct?.delegate === self) {
+        if let connectedProduct = ConnectedProductManager.sharedInstance.connectedProduct where connectedProduct.delegate === self {
             ConnectedProductManager.sharedInstance.setDelegate(nil)
         }
     }
@@ -174,31 +137,30 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
     }
 
     func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
-       //     (newComponent as? DJICamera)?.delegate = self
-        if ((newComponent is DJICamera) == true && (self is DJICameraDelegate) == true) {
-            (newComponent as! DJICamera).delegate = self as? DJICameraDelegate
-            
+        if let camera = newComponent as? DJICamera, cameraDelegate = self as? DJICameraDelegate {
+            camera.delegate = cameraDelegate
         }
-        if ((newComponent is DJICamera) == true && (self is DJIPlaybackDelegate) == true) {
-            (newComponent as! DJICamera).playbackManager?.delegate = self as? DJIPlaybackDelegate
-        }
-        
-        if ((newComponent is DJIFlightController) == true && (self is DJIFlightControllerDelegate) == true) {
-            (newComponent as! DJIFlightController).delegate = self as? DJIFlightControllerDelegate
+
+        if let camera = newComponent as? DJICamera, playbackDelegate = self as? DJIPlaybackDelegate {
+            camera.playbackManager?.delegate = playbackDelegate
         }
         
-        if ((newComponent is DJIBattery) == true && (self is DJIBatteryDelegate) == true) {
-            (newComponent as! DJIBattery).delegate = self as? DJIBatteryDelegate
+        if let controller = newComponent as? DJIFlightController, controllerDelegate = self as? DJIFlightControllerDelegate {
+            controller.delegate = controllerDelegate
         }
         
-        if ((newComponent is DJIGimbal) == true && (self is DJIGimbalDelegate) == true) {
-            (newComponent as! DJIGimbal).delegate = self as? DJIGimbalDelegate
+        if let battery = newComponent as? DJIBattery, batteryDelegate = self as? DJIBatteryDelegate {
+            battery.delegate = batteryDelegate
         }
         
-        if ((newComponent is DJIRemoteController) == true && (self is DJIRemoteControllerDelegate) == true) {
-            (newComponent as! DJIRemoteController).delegate = self as? DJIRemoteControllerDelegate
+        if let gimbal = newComponent as? DJIGimbal, gimbalDelegate = self as? DJIGimbalDelegate {
+            gimbal.delegate = gimbalDelegate
         }
+
         
+        if let remote = newComponent as? DJIRemoteController, remoteDelegate = self as? DJIRemoteControllerDelegate {
+            remote.delegate = remoteDelegate
+        }        
     }
     
     
@@ -241,9 +203,11 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
     func fetchBattery() -> DJIBattery? {
         return ConnectedProductManager.sharedInstance.fetchBattery()
     }
+    
     func fetchAirLink() -> DJIAirLink? {
         return ConnectedProductManager.sharedInstance.fetchAirLink()
     }
+    
     func fetchHandheldController() -> DJIHandheldController?{
         return ConnectedProductManager.sharedInstance.fetchHandheldController()
     }
