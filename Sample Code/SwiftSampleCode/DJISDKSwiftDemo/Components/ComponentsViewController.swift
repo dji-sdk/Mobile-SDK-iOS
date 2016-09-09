@@ -35,7 +35,7 @@ class ComponentsViewController: DemoTableViewController {
     
 
    func initializeComponentSection() {
-        var components = [DemoSettingItem]()
+        var components: [AnyObject] = [AnyObject]()
     
         if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
             components.append(DemoSettingItem(name:"Flight Controller", andClass:nil))
@@ -53,7 +53,7 @@ class ComponentsViewController: DemoTableViewController {
     }
 
     func initializeMissionSection() {
-        var components = [DemoSettingItem]()
+        var components: [AnyObject] = [AnyObject]()
         
         if (ConnectedProductManager.sharedInstance.fetchHandheldController() != nil) {
             components.append(DemoSettingItem(name:"Panorama Mission", andClass:nil))
