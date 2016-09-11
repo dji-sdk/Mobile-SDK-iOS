@@ -9,38 +9,53 @@ import UIKit
 import DJISDK
 
 enum Items {
-    case plain([DemoSettingItem])
+    case plain([DemoSettingItem]?)
     case groupped([[DemoSettingItem]])
 
     init() {
-        self = .plain([])
+        self = .plain(nil)
     }
 
     func numberOfRowsInSection(section: Int) -> Int {
         switch self {
-        case .plain(let itms):      return itms.count
+        case .plain(let itms):      return itms?.count ?? 0
         case .groupped(let itms):   return itms[section].count
         }
     }
 
     func item(indexPath: NSIndexPath) -> DemoSettingItem {
         switch self {
-        case .plain(let itms):      return itms[indexPath.row]
+        case .plain(let itms):      return itms![indexPath.row]
         case .groupped(let itms):   return itms[indexPath.section][indexPath.row]
         }
     }
 
-    func append(item: DemoSettingItem) {
+    mutating func append(item: DemoSettingItem) {
         switch self {
-        case .plain(var itms):  itms.append(item)
-        case .groupped:         print("not supposed to be called for groupped")
+        case .plain(var itms):
+            if itms != nil {
+                itms!.append(item)
+            } else {
+                itms = [item]
+            }
+        case .groupped:
+            print("not supposed to be called for groupped")
         }
     }
 
-    func append(item: [DemoSettingItem]) {
+    mutating func append(item: [DemoSettingItem]) {
         switch self {
-        case .plain:                print("not supposed to be called for plain")
-        case .groupped(var itms):   itms.append(item)
+        case .plain(let itms):
+            if itms != nil {
+                var items = [itms!]
+                items.append(item)
+                self = .groupped(items)
+            } else {
+                self = .groupped([item])
+            }
+        case .groupped(var itms):
+            itms.append(item)
+            self = .groupped(itms)
         }
     }
 }
