@@ -63,7 +63,7 @@ enum Items {
 let HeaderHeight:CGFloat = 30
 
 class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
-    var sectionNames:[AnyObject] = []
+    var sectionNames:[String] = []
     var items:Items = Items()
     var connectedComponent:DJIBaseComponent? = nil
     
@@ -93,7 +93,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionNames.count > section ? self.sectionNames[section] as? String : nil
+        return self.sectionNames.count > section ? self.sectionNames[section] : nil
         
     }
     
