@@ -196,6 +196,7 @@
 		3BA7667819FE38130077CA52 /* stick_hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_hold.png; sourceTree = "<group>"; };
 		3BA7667919FE38130077CA52 /* stick_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_normal.png; sourceTree = "<group>"; };
 		3BF0597A1BB255BD00F21C88 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		A4CF8C371D9E296500B87042 /* DJISdkDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJISdkDemo.entitlements; sourceTree = "<group>"; };
 		B809D82C1C3BBE75004EBBA7 /* AirLinkActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = AirLinkActionsTableViewController.h; path = AirLink/AirLinkActionsTableViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		B809D82D1C3BBE75004EBBA7 /* AirLinkActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = AirLinkActionsTableViewController.m; path = AirLink/AirLinkActionsTableViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B809D8301C3BC6AB004EBBA7 /* WiFiLinkSSIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = WiFiLinkSSIDViewController.h; path = AirLink/WiFiSSID/WiFiLinkSSIDViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -369,6 +370,7 @@
 		3B16A8F119D12167008C1818 /* DJISdkDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A4CF8C371D9E296500B87042 /* DJISdkDemo.entitlements */,
 				3B16A8FA19D12167008C1818 /* AppDelegate.h */,
 				3B16A8FB19D12167008C1818 /* AppDelegate.m */,
 				3836D72F1C1104150075180B /* Startup */,
@@ -885,6 +887,15 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = DJI;
+				TargetAttributes = {
+					3B16A8E719D12167008C1818 = {
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = 3B16A8E319D12166008C1818 /* Build configuration list for PBXProject "DJISdkDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1141,8 +1152,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DJISdkDemo/DJISdkDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1160,7 +1173,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdksample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1175,8 +1188,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DJISdkDemo/DJISdkDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1194,7 +1209,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdkdemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.sdksample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
