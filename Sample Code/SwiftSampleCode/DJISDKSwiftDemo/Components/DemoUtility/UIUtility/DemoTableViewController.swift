@@ -8,11 +8,63 @@
 import UIKit
 import DJISDK
 
+enum Items {
+    case plain([DemoSettingItem]?)
+    case groupped([[DemoSettingItem]])
+
+    init() {
+        self = .plain(nil)
+    }
+
+    func numberOfRowsInSection(section: Int) -> Int {
+        switch self {
+        case .plain(let itms):      return itms?.count ?? 0
+        case .groupped(let itms):   return itms[section].count
+        }
+    }
+
+    func item(indexPath: NSIndexPath) -> DemoSettingItem {
+        switch self {
+        case .plain(let itms):      return itms![indexPath.row]
+        case .groupped(let itms):   return itms[indexPath.section][indexPath.row]
+        }
+    }
+
+    mutating func append(item: DemoSettingItem) {
+        switch self {
+        case .plain(var itms):
+            if itms != nil {
+                itms!.append(item)
+            } else {
+                itms = [item]
+            }
+        case .groupped:
+            print("not supposed to be called for groupped")
+        }
+    }
+
+    mutating func append(item: [DemoSettingItem]) {
+        switch self {
+        case .plain(let itms):
+            if itms != nil {
+                var items = [itms!]
+                items.append(item)
+                self = .groupped(items)
+            } else {
+                self = .groupped([item])
+            }
+        case .groupped(var itms):
+            itms.append(item)
+            self = .groupped(itms)
+        }
+    }
+}
+
 let HeaderHeight:CGFloat = 30
 
 class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
-    var sectionNames:[AnyObject] = []
-    var items:[AnyObject] = []
+    var sectionNames:[String] = []
+    var items:Items = Items()
     var connectedComponent:DJIBaseComponent? = nil
     
     var showComponentVersionSn:Bool = false
@@ -20,7 +72,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     var serialNumber:String? = nil
     var versionSerialLabel:UILabel = UILabel(frame: CGRectZero)
 
-     init() {
+    init() {
         super.init(style: .Grouped)
     }
     
@@ -37,21 +89,11 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.sectionNames.count <= 1 {
-            return self.items.count
-        }
-        else if (section < self.items.count) {
-            let items:[AnyObject]? = self.items[section] as? [AnyObject]
-            if (items != nil) {
-                return items!.count
-            }
-        }
-        
-        return 0;
+        return items.numberOfRowsInSection(section)
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionNames.count > section ? self.sectionNames[section] as? String : nil
+        return self.sectionNames.count > section ? self.sectionNames[section] : nil
         
     }
     
@@ -65,25 +107,8 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: CellIdentifier)
         }
-        let section: Int = indexPath.section
-        let row: Int = indexPath.row
-        var item: DemoSettingItem? = nil
-        if self.sectionNames.count <= 1 {
-            item = self.items[row] as? DemoSettingItem
-            if (item == nil) {
-                let sectionItems = self.items[0] as? [DemoSettingItem]
-                if (sectionItems?.count > row) {
-                    item = sectionItems![row]
-                }
-            }
-        }
-        else {
-            let sectionItems = self.items[section] as? [DemoSettingItem]
-            if (sectionItems?.count > row) {
-                item = sectionItems![row]
-            }
-        }
-        cell?.textLabel!.text = item?.itemName
+        let item = items.item(indexPath)
+        cell?.textLabel!.text = item.itemName
         cell?.textLabel?.font = UIFont(name:"Helvetica Neue Light", size:18)
         cell?.accessoryType = .DisclosureIndicator
         return cell!
@@ -101,34 +126,10 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // Navigation logic may go here. Create and push another view controller.
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let section: Int = indexPath.section
-        let row: Int = indexPath.row
-        var item: DemoSettingItem? = nil
-        if self.sectionNames.count <= 1 {
-            item = self.items[row] as? DemoSettingItem
-            if (item == nil) {
-                let sectionItems = self.items[0] as? [DemoSettingItem]
-                if (sectionItems?.count > row) {
-                    item = sectionItems![row]
-                }
-            }
-        }
-        else {
-            let sectionItems = self.items[section] as? [DemoSettingItem]
-            if (sectionItems?.count > row) {
-                item = sectionItems![row]
-            }
-        }
-        
-        if (item != nil) {
-            // If the view controller exists in stroy board, excuting the segue first
-            if (self.canPerformSegueWithIdentifier(item!.itemName)) {
-                self.performSegueWithIdentifier(item!.itemName, sender: self)
-            } else if (item!.viewControllerClass != nil) {
-                let controllerObject = item!.viewControllerClass!.init()
-                controllerObject.title = item?.itemName
-                self.navigationController!.pushViewController(controllerObject, animated: true)
-            }
+        let item = items.item(indexPath)
+        // If the view controller exists in stroy board, excuting the segue first
+        if (self.canPerformSegueWithIdentifier(item.itemName)) {
+            self.performSegueWithIdentifier(item.itemName, sender: self)
         }
     }
     
