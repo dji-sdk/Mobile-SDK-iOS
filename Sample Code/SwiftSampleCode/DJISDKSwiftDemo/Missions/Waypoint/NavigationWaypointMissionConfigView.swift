@@ -16,11 +16,6 @@ class NavigationWaypointMissionConfigView: UIView, UITextFieldDelegate {
     @IBOutlet var finishActionScroll:UIScrollView!
     @IBOutlet var finishActionSeg:UISegmentedControl!
 
-    init(){
-        super.init(frame: CGRectZero)
-        self.initWithNib()
-    }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -31,7 +26,7 @@ class NavigationWaypointMissionConfigView: UIView, UITextFieldDelegate {
     
     func initWithNib() -> NavigationWaypointMissionConfigView {
      
-        var objs: [AnyObject] = NSBundle.mainBundle().loadNibNamed("NavigationWaypointMissionConfigView", owner: self, options: nil)
+        var objs: [AnyObject] = Bundle.main.loadNibNamed("NavigationWaypointMissionConfigView", owner: self, options: nil) as! [AnyObject]
         let mainView: UIView = objs[0] as! UIView
         self.frame = mainView.bounds
         mainView.layer.cornerRadius = 5.0
@@ -41,8 +36,8 @@ class NavigationWaypointMissionConfigView: UIView, UITextFieldDelegate {
        return self
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField.isFirstResponder() {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.isFirstResponder {
             textField.resignFirstResponder()
         }
         return true

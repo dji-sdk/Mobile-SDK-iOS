@@ -20,7 +20,7 @@ class DemoSettingItem: NSObject {
     
     
 
-    class func initSettingItem(name: String, andClass viewControllerClass: UIViewController.Type) -> DemoSettingItem {
+    class func initSettingItem(_ name: String, andClass viewControllerClass: UIViewController.Type) -> DemoSettingItem {
         return DemoSettingItem(name: name, andClass: viewControllerClass)
     }
 }

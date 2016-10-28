@@ -32,29 +32,29 @@ class StartupViewController: DJIBaseViewController {
             return
         }
         
-        DJISDKManager.registerApp(APP_KEY, withDelegate: self)
+        DJISDKManager.registerApp(APP_KEY, with: self)
     }
     
     func initUI() {
         self.title = "DJI iOS SDK Sample"
         sdkVersionLabel.text = "DJI SDK Version: \(DJISDKManager.getSDKVersion())"
-        openComponents.enabled = false;
-        bluetoothConnectorButton.enabled = true;
-        productModel.hidden = true
-        productFirmwarePackageVersion.hidden = true
+        openComponents.isEnabled = false;
+        bluetoothConnectorButton.isEnabled = true;
+        productModel.isHidden = true
+        productFirmwarePackageVersion.isHidden = true
         
     }
     
-    func showAlert(msg: String?) {
+    func showAlert(_ msg: String?) {
         // create the alert
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         // show the alert
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func onBluetoothConnectorButtonClicked(sender: AnyObject) {
+    @IBAction func onBluetoothConnectorButtonClicked(_ sender: AnyObject) {
 
     }
     
@@ -62,7 +62,7 @@ class StartupViewController: DJIBaseViewController {
 
 extension StartupViewController : DJISDKManagerDelegate
 {
-    func sdkManagerDidRegisterAppWithError(error: NSError?) {
+    func sdkManagerDidRegisterAppWithError(_ error: Error?) {
         
         guard error == nil  else {
              self.showAlertResult("Error:\(error!.localizedDescription)")
@@ -72,7 +72,7 @@ extension StartupViewController : DJISDKManagerDelegate
         logDebug("Registered!")
         #if arch(i386) || arch(x86_64)
             //Simulator
-            DJISDKManager.enterDebugModeWithDebugId("10.128.129.59")
+            DJISDKManager.enterDebugMode(withDebugId: "10.128.129.28")
         #else
             //Device
             DJISDKManager.startConnectionToProduct()
@@ -81,13 +81,13 @@ extension StartupViewController : DJISDKManagerDelegate
        
     }
      
-    func sdkManagerProductDidChangeFrom(oldProduct: DJIBaseProduct?, to newProduct: DJIBaseProduct?) {
+    func sdkManagerProductDidChange(from oldProduct: DJIBaseProduct?, to newProduct: DJIBaseProduct?) {
         
         guard let newProduct = newProduct else
         {
             productConnectionStatus.text = "Status: No Product Connected"
             ConnectedProductManager.sharedInstance.connectedProduct = nil
-            openComponents.enabled = false;
+            openComponents.isEnabled = false;
             openComponents.alpha = 0.8;
             logDebug("Product Disconnected")
             return
@@ -95,35 +95,35 @@ extension StartupViewController : DJISDKManagerDelegate
         
         //Updates the product's model
         productModel.text = "Model: \((newProduct.model)!)"
-        productModel.hidden = false
+        productModel.isHidden = false
         if let oldProduct = oldProduct {
             logDebug("Product changed from: \(oldProduct.model) to \((newProduct.model)!)")
         }
         //Updates the product's firmware version - COMING SOON
-        newProduct.getFirmwarePackageVersionWithCompletion{ (version:String?, error:NSError?) -> Void in
+        newProduct.getFirmwarePackageVersion{ (version:String?, error:Error?) -> Void in
             
             self.productFirmwarePackageVersion.text = "Firmware Package Version: \(version ?? "Unknown")"
             
             if let _ = error {
-                self.productFirmwarePackageVersion.hidden = true
+                self.productFirmwarePackageVersion.isHidden = true
             }else{
-                self.productFirmwarePackageVersion.hidden = false
+                self.productFirmwarePackageVersion.isHidden = false
             }
             
             logDebug("Firmware package version is: \(version ?? "Unknown")")
-        }
+        } 
         
         //Updates the product's connection status
         productConnectionStatus.text = "Status: Product Connected"
         
         ConnectedProductManager.sharedInstance.connectedProduct = newProduct
-        openComponents.enabled = true;
+        openComponents.isEnabled = true;
         openComponents.alpha = 1.0;
         logDebug("Product Connected")
 
     }
     
-    override func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
+    override func product(_ product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
         if isConnected {
             productConnectionStatus.text = "Status: Product Connected"
             logDebug("Product Connected")

@@ -7,9 +7,8 @@
 #import <UIKit/UIKit.h>
 #import "H264VTDecode.h"
 #import "DJIVideoHelper.h"
-#import "DJIVTH264DecoderIFrameData.h"
 
-#define INFO(fmt, ...) NSLog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
+#define INFO(fmt, ...)  NSLog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
 #define ERROR(fmt, ...) NSLog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
 
 #define DEFAULT_STREAM_FPS (30)
@@ -34,17 +33,6 @@ uint8_t nalStartTag3Byte[] = {0, 0, 1};
 }
 @property (nonatomic, assign) VideoFrameH264Raw* frameInfoList;
 @property (nonatomic, assign) int frameInfoListCount;
-//YES if decoder is ready
-@property (nonatomic, assign) BOOL decoderInited;
-//need push a dummy iframe before decode
-@property (nonatomic, assign) BOOL dummyIPushed;
-//count decode error
-@property (nonatomic, assign) int decodeErrorCount;
-//frame stream rate
-@property (nonatomic, assign) NSInteger fps;
-
-@property (assign, nonatomic) CGSize videoSize;
-
 @end
 
 #pragma mark - VideoToolBox Decompress Frame CallBack
@@ -57,24 +45,18 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     if(!decoder || !decoder.decoderInited)
         return;
     
-    if (!status && imageBuffer)
-    {
+    if (!status && imageBuffer) {
         decoder.decodeErrorCount = 0;
-        if (decoder.delegate)
-        {
-            if ([decoder.delegate respondsToSelector:@selector(decompressedFrame:frameInfo:)])
-            {
-                VideoFrameH264Raw* rawFrame = nil;
-                int frame_index = (int)sourceFrameRefCon;
-                if (frame_index >=0 && (frame_index < decoder.frameInfoListCount)) {
-                    rawFrame = &decoder.frameInfoList[frame_index];
-                }
-                [decoder.delegate decompressedFrame:imageBuffer frameInfo:rawFrame];
+        if ([decoder.delegate respondsToSelector:@selector(decompressedFrame:frameInfo:)]) {
+            
+            VideoFrameH264Raw* rawFrame = nil;
+            int frame_index = (int)sourceFrameRefCon;
+            if (frame_index >=0 && (frame_index < decoder.frameInfoListCount)) {
+                rawFrame = &decoder.frameInfoList[frame_index];
             }
+            [decoder.delegate decompressedFrame:imageBuffer frameInfo:rawFrame];
         }
-    }
-    else
-    {
+    }else{
         INFO(@"decode callback status:%d, count:%d", (int)status, decoder.decodeErrorCount);
         decoder.decodeErrorCount ++;
         if (decoder.decodeErrorCount > 1) {
@@ -87,115 +69,15 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
 
 @implementation H264VTDecode
 
-//convert argb cvimagebuffer into uiimage
--(UIImage *) convertFromCVImageBuffer:(CVImageBufferRef)imageBuffer savePath:(NSString*)path{
-    
-    int pixel_type = CVPixelBufferGetPixelFormatType(imageBuffer);
-    if (pixel_type == kCVPixelFormatType_32BGRA) {
-        
-        CVPixelBufferLockBaseAddress(imageBuffer, 0);
-        void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
-        size_t width = CVPixelBufferGetWidth(imageBuffer);
-        size_t height = CVPixelBufferGetHeight(imageBuffer);
-        size_t bufferSize = CVPixelBufferGetDataSize(imageBuffer);
-        size_t bytesPerRow = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
-        
-        if(!bytesPerRow){
-            bytesPerRow = width*4;
-        }
-        
-        CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, baseAddress, bufferSize, NULL);
-        
-        CGImageRef cgImage = CGImageCreate(width, height, 8, 32, bytesPerRow, rgbColorSpace, kCGImageAlphaNoneSkipFirst|kCGBitmapByteOrder32Little, provider, NULL, true, kCGRenderingIntentDefault);
-        
-        UIImage *image = [UIImage imageWithCGImage:cgImage];
-        
-        CGImageRelease(cgImage);
-        CGDataProviderRelease(provider);
-        CGColorSpaceRelease(rgbColorSpace);
-        if(path){
-            NSData* imageData = UIImagePNGRepresentation(image);
-            [imageData writeToFile:path atomically:YES];
-        }
-        CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-    }
-    else if (pixel_type == kCVPixelFormatType_420YpCbCr8Planar)
-    {
-        CVPixelBufferLockBaseAddress(imageBuffer, 0);
-        
-        size_t width = CVPixelBufferGetWidth(imageBuffer);
-        size_t height = CVPixelBufferGetHeight(imageBuffer);
-        size_t bufferSize = width*height*4;
-        size_t bytesPerRow = width*4;
-        
-        uint8_t* channel_y = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0);
-        uint8_t* channel_cb = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 2);
-        uint8_t* channel_cr = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 1);
-        
-        size_t y_pitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 0);
-        size_t cb_pitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 1);
-        size_t cr_pitch = CVPixelBufferGetBytesPerRowOfPlane(imageBuffer, 2);
-        
-        uint8_t* baseAddress = malloc(bufferSize);
-        for (int h=0; h<height; h++) {
-            for (int w=0; w<width; w++) {
-                size_t pixel_offset = w+ h*width;
-                
-                uint8_t y = channel_y[w+y_pitch*h];
-                uint8_t cr = channel_cr[w/2+cr_pitch*(h/2)];
-                uint8_t cb = channel_cb[w/2+cb_pitch*(h/2)];
-                
-#define CLAMP(a, min, max) MIN(MAX(a,min),max)
-                
-                uint8_t r = CLAMP((float)y + 1.402*((float)cr - 127.0), 0, 255);
-                uint8_t g = CLAMP((float)y - 0.344*((float)cb - 127.0) - 0.714*((float)cr-127.0),0,255);
-                uint8_t b = CLAMP((float)y + 1.772*((float)cb - 127.0),0,255);
-#undef CLAMP
-                
-                size_t rgb_pixel = 4*pixel_offset;
-                baseAddress[rgb_pixel+0] = r;
-                baseAddress[rgb_pixel+1] = g;
-                baseAddress[rgb_pixel+2] = b;
-                baseAddress[rgb_pixel+3] = 0xff;
-            }
-        }
-        
-        CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
-        CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, baseAddress, bufferSize, NULL);
-        
-        CGImageRef cgImage = CGImageCreate(width, height, 8, 32, bytesPerRow, rgbColorSpace, kCGImageAlphaNoneSkipFirst|kCGBitmapByteOrder32Little, provider, NULL, true, kCGRenderingIntentDefault);
-        
-        UIImage *image = [UIImage imageWithCGImage:cgImage];
-        
-        if(path){
-            NSData* imageData = UIImagePNGRepresentation(image);
-            [imageData writeToFile:path atomically:YES];
-        }
-        
-        CGImageRelease(cgImage);
-        CGDataProviderRelease(provider);
-        CGColorSpaceRelease(rgbColorSpace);
-        free(baseAddress);
-        CVPixelBufferUnlockBaseAddress(imageBuffer, 0);
-    }
-    
-    return nil;
-}
-
 -(id) init{
     self = [super init];
     if (self) {
-        
-        if (g_loadPrebuildIframeOverrideFunc == NULL) {
-            g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
-        }
         
         self.decoderInited = NO;
         self.dummyIPushed = NO;
         self.enabled = YES;
         
-        _hardware_unavailable = NO;
+        _hardwareUnavailable = NO;
         _income_frame_count = 0;
         _decoder_create_count = 0;
         _pic_slice_count = 0;
@@ -305,7 +187,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         uint8_t nal_unit_header = data[4];
         uint8_t nal_header_forbiden_bit = 0x80&nal_unit_header;
         if (nal_header_forbiden_bit) {
-            //Detect forbiden bit
+            //Detect forbidden bit
             return 0;
         }
         
@@ -333,7 +215,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         [self safeReleaseDecodeSession];
         INFO(@"old session released\n");
         
-        //analyze sps，for check later slice header
+        // Analyze sps and save information for the verification of slice header.
         if (-1 == h264_decode_seq_parameter_set_out(sps_buffer, sps_size, &_sps_w, &_sps_h, &_sps_fps, &_currentSPS)
             || _sps_w > 4000
             || _sps_h > 3000
@@ -377,8 +259,17 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
                                                                                             &kCFTypeDictionaryValueCallBacks);
 
         SInt32 destinationPixelType = kCVPixelFormatType_420YpCbCr8Planar;
-        if (_currentSPS.full_range) {
-            destinationPixelType = kCVPixelFormatType_420YpCbCr8PlanarFullRange;
+        if (_enableFastUpload) {
+            destinationPixelType = kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange;
+            if (_currentSPS.full_range) {
+                destinationPixelType = kCVPixelFormatType_420YpCbCr8BiPlanarFullRange;
+            }
+        }
+        else{
+            destinationPixelType = kCVPixelFormatType_420YpCbCr8Planar;
+            if (_currentSPS.full_range) {
+                destinationPixelType = kCVPixelFormatType_420YpCbCr8PlanarFullRange;
+            }
         }
         
         CFNumberRef pixelType = CFNumberCreate(NULL, kCFNumberSInt32Type, &destinationPixelType);
@@ -388,7 +279,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         CFNumberRef width = CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.width);
         CFDictionarySetValue(destinationPixelBufferAttributes,kCVPixelBufferWidthKey, width);
         CFRelease(width);
-        
+
         CFNumberRef height = CFNumberCreate(NULL, kCFNumberSInt32Type, &dimension.height);
         CFDictionarySetValue(destinationPixelBufferAttributes, kCVPixelBufferHeightKey, height);
         CFRelease(height);
@@ -405,8 +296,8 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         NSDate* startCreateSession = [NSDate date];
         OSStatus session_ret = VTDecompressionSessionCreate(kCFAllocatorDefault, _formatDesc, NULL, destinationPixelBufferAttributes, &callBackRecord, &_sessionRef);
         double duration = -[startCreateSession timeIntervalSinceNow];
-
         
+        //In some case on iOS 8.x, create hardware decoder may always return failed until restart the device, it may cost more than 10 seconds to get the failed result.
         if (destinationPixelBufferAttributes) {
             CFRelease(destinationPixelBufferAttributes);
             destinationPixelBufferAttributes = nil;
@@ -419,13 +310,14 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
             hw_decoder_create_fail_count++;
             ERROR(@"create decode session failed:%d c:%d", (int)session_ret, hw_decoder_create_fail_count);
             
+            //if create hardware decoder failed too many times, we should fallback to software decoder
             if(hw_decoder_create_fail_count >= 5 || duration > 1){//too much error, use soft decoder
                 if([self.delegate respondsToSelector:@selector(hardwareDecoderUnavailable)]){
                     ERROR(@"use software decode because failed count:%d duration:%.1f",
                           hw_decoder_create_fail_count, duration);
                     [self.delegate hardwareDecoderUnavailable];
                 }
-                _hardware_unavailable = YES;
+                _hardwareUnavailable = YES;
                 hw_decoder_create_fail_count = 0;
             }
             
@@ -462,6 +354,9 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
 }
 
 -(int) loadDummyIframe{
+    //load dummy_i frame
+    
+    //if we dont know the encoder type, do not use prebuild IDR frame
     if (_encoderType == H264EncoderType_unknown) {
         return 0;
     }
@@ -481,7 +376,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     if (prebuildFrameSize <= 0) {
         ERROR(@"prebuild iframe not found:%d %dx%d p%d" ,
               info.encoder_type, info.frame_width, info.frame_height, info.fps);
-        _hardware_unavailable = YES;
+        _hardwareUnavailable = YES;
         return -1;
     }
     
@@ -529,16 +424,16 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     
     //create memory block
     OSStatus block_status = CMBlockBufferCreateWithMemoryBlock(
-                                                               kCFAllocatorDefault, // CFAllocatorRef structureAllocator
-                                                               block_data,          // void *memoryBlock
-                                                               in_block_size,       // size_t blockLengt
-                                                               kCFAllocatorNull,    // CFAllocatorRef blockAllocator
-                                                               NULL,                // const CMBlockBufferCustomBlockSource *customBlockSource
-                                                               0,                   // size_t offsetToData
-                                                               in_block_size,       // size_t dataLength
-                                                               0,                   // CMBlockBufferFlags flags
-                                                               &newBBufOut);        // CMBlockBufferRef *newBBufOut
-    if (block_status != kCMBlockBufferNoErr || !newBBufOut) {
+                               kCFAllocatorDefault, // CFAllocatorRef structureAllocator
+                               block_data,          // void *memoryBlock
+                               in_block_size,       // size_t blockLengt
+                               kCFAllocatorNull,    // CFAllocatorRef blockAllocator
+                               NULL,                // const CMBlockBufferCustomBlockSource *customBlockSource
+                               0,                   // size_t offsetToData
+                               in_block_size,       // size_t dataLength
+                               0,                   // CMBlockBufferFlags flags
+                               &newBBufOut);        // CMBlockBufferRef *newBBufOut
+    if (block_status || !newBBufOut) {
         return -1;
     }
     
@@ -561,7 +456,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
                sample_count,        // CMItemCount numSampleSizeEntries
                sample_size_array,   // const size_t *sampleSizeArray
                &sampleBuffer);      // CMSampleBufferRef *sBufOut
-    
+
     if (sample_status || !sampleBuffer) {
         CFRelease(newBBufOut);
         return -1;
@@ -581,13 +476,14 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     //pass uuid as a pointer
     OSStatus decode_status = VTDecompressionSessionDecodeFrame(_sessionRef, sampleBuffer, flags, (void*)(long)frame_index, &flagOut);
     
-    if(noErr != decode_status){
+    if(0 != decode_status){
         ERROR(@"decode status:%d, flagout:%d", (int)decode_status, (unsigned int)flagOut);
     }
     else{
         //INFO(@"decode!");
     }
-    
+
+    //release block and sample
     if(sampleBuffer)
         CFRelease(sampleBuffer);
     if(newBBufOut)
@@ -597,17 +493,17 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
 }
 
 // Expect a complete nal with 0 0 0 1 start code as input.
--(int)decodeWork:(uint8_t*)data Size:(int)size
-{
-    if (size <= 4 || (self.decoderInited != YES))
-    {
+-(int)decodeWork:(uint8_t*)data Size:(int)size{
+    
+    if (size <= 4 || (self.decoderInited != YES)
+        ) {
         return -1;
     }
     
     uint8_t nal_unit_header = data[4];
     uint8_t nal_header_forbiden_bit = 0x80&nal_unit_header;
     if (nal_header_forbiden_bit) {
-        //Detect forbiden bit
+        //Detect forbidden bit
         return -1;
     }
 
@@ -622,6 +518,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
             break;
         default:
             return 0;
+            break;
     }
     
     if (nal_unit_type > 12) {
@@ -631,16 +528,20 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     
     //fill size in nal head
     size_t in_block_size = size;
-    
+    uint32_t nal_size = (int)in_block_size-4;
+    uint8_t* nal_size_ptr = (uint8_t*)&nal_size;
+
     //save nal into au buffer
-    if (au_size + size <= AU_MAX_SIZE)
-    {
+    if (au_size + size <= AU_MAX_SIZE) {
+        
         //conver the size to big-endian mode
-        uint32_t dataLength32 = htonl (in_block_size - 4);
-        memcpy (au_buf + au_size , &dataLength32, sizeof (uint32_t));
+        uint8_t* nal_start_code = au_buf + au_size;
+        nal_start_code[0] = nal_size_ptr[3];
+        nal_start_code[1] = nal_size_ptr[2];
+        nal_start_code[2] = nal_size_ptr[1];
+        nal_start_code[3] = nal_size_ptr[0];
         
-        
-        memcpy(au_buf + au_size +4, data+4, size-4); // concatenate the P frames
+        memcpy(au_buf + au_size +4, data+4, size-4);
         au_size += size;
         au_nal_count++;
         
@@ -654,12 +555,16 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     return 0;
 }
 
+/***
+ in: a complete h264 frame from ffmpeg av_parser_parse2
+ out: decode frame image
+ ***/
 -(BOOL) decodeCompleteFrame:(VideoFrameH264Raw*)frame frameData:(uint8_t*)frameData{
     uint8_t* data = frameData;
     int size = frame->frame_size;
     
-    if(!data || _hardware_unavailable){
-        ERROR(@"data:%p ua:%d", data, _hardware_unavailable);
+    if(!data || _hardwareUnavailable){
+        ERROR(@"data:%p ua:%d", data, _hardwareUnavailable);
         return NO;
     }
     
@@ -667,12 +572,13 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     _income_frame_count++;
     [self clear264VerifyContext];
     
+    
     int remain_size = size;
     uint8_t* buffer = (uint8_t*)data;
     
     while (remain_size > 0) {
         
-        if(_hardware_unavailable)
+        if(_hardwareUnavailable)
             return NO;
         
         //find a nal start code
@@ -696,7 +602,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         
         //get nal payload, add 00 00 00 01 start code in front of rbsp
         uint8_t* process_nal = nil;
-        if ((buffer + start_code_offset) - buffer >= 4) { //do not copy if have enough head space
+        if ((buffer + start_code_offset) - data >= 4) { //do not copy if have enough head space
             process_nal = buffer + start_code_offset - 4;
         }else{
             memcpy((uint8_t*)nalu_buf + 4, buffer+start_code_offset, nal_payload_size);
@@ -735,38 +641,35 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
             }
         }
         
-        if (self.dummyIPushed)
-        {
+        if (self.dummyIPushed) {
+            //decode
             int frameIndex = -1;
-            if ([self verifyCurrentFrame:&frameIndex])
-            {
+            if ([self verifyCurrentFrame:&frameIndex]) {
                 
-                if (skip_current_frame)
-                {
+                if (skip_current_frame) {
+                    //use prebuild IDR frame to replace the frame that FrameNum is 0
                     if (frameIndex == 0) {
                         skip_current_frame = NO;
                         last_decode_frame_index = 0;
                     }
                     decode_ret = 0;
-                }
-                else
-                {
+                }else{
                     //decode
                     frame->frame_info.frame_index = frameIndex;
-                    decode_ret = [self pushSampleBuffer:au_buf Size:au_size frameInfo:frame];  // start decoding
+                    decode_ret = [self pushSampleBuffer:au_buf Size:au_size frameInfo:frame];
                     last_decode_frame_index = frameIndex;
                     if (decode_ret !=0) {
                         ERROR(@"decode out imm:%d", decode_ret);
                     }
                 }
             }else{
-                //frame error.
+                //frame error, but decoder should continue
                 decode_ret = 0;
             }
         }
     }else{
         //ERROR(@"no au found");
-        //no data and no exception.
+        //no data can put into decoder in this frame, this is not a exception
         decode_ret = 0;
     }
     
@@ -791,9 +694,9 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     }
 }
 
--(void) safeReleaseDecodeSession{
+-(void) safeReleaseDecodeSession{    
     if(_sessionRef){
-        //make sure the session isn't under work state before release,otherwise the device might blue screen.
+        //make sure the session isn't decoding when release, otherwise may cause the device blue screen (display driver exception) on iOS8.x
         [self dequeueAllFrames];
         //disable session before release,otherwise the device might blue screen
         VTDecompressionSessionInvalidate(_sessionRef);
@@ -814,7 +717,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     }
     
     _fps = fps;
-    _hardware_unavailable = NO;
+    _hardwareUnavailable = NO;
     [self resetLater];
 }
 
@@ -824,21 +727,21 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
     }
     
     _videoSize = videoSize;
-    _hardware_unavailable = NO;
+    _hardwareUnavailable = NO;
     [self resetLater];
 }
 
--(void)setEncoderType:(NSInteger)encoderType {
+-(void) setEncoderType:(NSInteger)encoderType{
     if (_encoderType == encoderType) {
         return;
     }
     
     _encoderType = encoderType;
-    _hardware_unavailable = NO;
+    _hardwareUnavailable = NO;
     [self resetLater];
 }
 
-#pragma mark - 264 Verify
+#pragma mark - h264 stream simple verification
 -(void) clear264VerifyContext{
     //clear on every frame
     _pic_slice_count = 0;
@@ -887,7 +790,7 @@ enum AVPictureType {
 
 //try verify frame complete.
 -(BOOL) verifyCurrentFrame:(int*)currentFrameIndex{
-    //at least have one slice
+    //at least has one slice
     if (_pic_slice_count <= 0 || _pic_slice_count == FRAME_MAX_SLICE_COUNT) {
         //ERROR(@"error 0");
         return NO;
@@ -899,7 +802,6 @@ enum AVPictureType {
     }
     
     int current_frame_index = _pic_slices[0].frame_num;
-//    int pic_mb_count = _currentSPS.mb_width* _currentSPS.mb_height;
     int last_slice_first_mb = 0;
     *currentFrameIndex = current_frame_index;
     
@@ -931,18 +833,20 @@ enum AVPictureType {
     return DJIVideoStreamProcessorType_Decoder;
 }
 
-
+/**
+ *  @return Treatment success / failure
+ */
 -(BOOL) streamProcessorHandleFrame:(uint8_t*)data size:(int)size{
     return YES;
 }
 
--(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame
-{
+-(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw *)frame{
     return [self decodeCompleteFrame:frame frameData:frame->frame_data];
 }
 
-
-
+/**
+ *  Stream basic information is changed, the decoder ... etc need to reconfigure the interior
+ */
 -(void) streamProcessorInfoChanged:(DJIVideoStreamBasicInfo*)info{
     self.fps = info->frameRate;
     self.encoderType = info->encoderType;

@@ -19,10 +19,10 @@ class FCGeneralControlViewController: DJIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onTakeoffButtonClicked(sender: AnyObject) {
+    @IBAction func onTakeoffButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc!.takeoffWithCompletion({[weak self](error: NSError?) -> Void in
+            fc!.takeoff(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Takeoff Error: \(error!.localizedDescription)")
                 }
@@ -36,10 +36,10 @@ class FCGeneralControlViewController: DJIBaseViewController {
         }
     }
     
-    @IBAction func onGoHomeButtonClicked(sender: AnyObject) {
+    @IBAction func onGoHomeButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc!.goHomeWithCompletion({[weak self](error: NSError?) -> Void in
+            fc!.goHome(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("GoHome Error: \(error!.localizedDescription)")
                 }
@@ -53,10 +53,10 @@ class FCGeneralControlViewController: DJIBaseViewController {
         }
     }
     
-    @IBAction func onLandButtonClicked(sender: AnyObject) {
+    @IBAction func onLandButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc!.autoLandingWithCompletion({[weak self](error: NSError?) -> Void in
+            fc!.autoLanding(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Land Error:\(error!.localizedDescription)")
                 }

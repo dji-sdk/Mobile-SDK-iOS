@@ -30,33 +30,33 @@ class GimbalCapabilityViewController: DJIBaseViewController{
     var rollRotation : DJIGimbalAngleRotation! = DJIGimbalAngleRotation()
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupButtons()
         self.setupRotationStructs()
         self.enablePitchExtensionIfPossible()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
     
     func setupButtons() {
         let gimbal : DJIGimbal? = self.fetchGimbal()
         if (gimbal == nil) {
-            self.pitchMinButton.enabled = false
-            self.pitchMaxButton.enabled = false
-            self.yawMinButton.enabled = false
-            self.yawMaxButton.enabled = false
-            self.rollMinButton.enabled = false
-            self.rollMaxButton.enabled = false
+            self.pitchMinButton.isEnabled = false
+            self.pitchMaxButton.isEnabled = false
+            self.yawMinButton.isEnabled = false
+            self.yawMaxButton.isEnabled = false
+            self.rollMinButton.isEnabled = false
+            self.rollMaxButton.isEnabled = false
         }else {
-            self.pitchMinButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustPitch)
-            self.pitchMaxButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustPitch)
-            self.yawMinButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustYaw)
-            self.yawMaxButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustYaw)
-            self.rollMinButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustRoll)
-            self.rollMaxButton.enabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustRoll)
+            self.pitchMinButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustPitch)
+            self.pitchMaxButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustPitch)
+            self.yawMinButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustYaw)
+            self.yawMaxButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustYaw)
+            self.rollMinButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustRoll)
+            self.rollMaxButton.isEnabled = gimbal!.isFeatureSupported(DJIGimbalParamAdjustRoll)
         }
     }
     
@@ -84,7 +84,7 @@ class GimbalCapabilityViewController: DJIBaseViewController{
         }
     }
     
-    @IBAction func rotateGimbalToMin(sender: AnyObject) {
+    @IBAction func rotateGimbalToMin(_ sender: AnyObject) {
         let gimbal: DJIGimbal? = self.fetchGimbal()
         if gimbal == nil {
             return
@@ -92,22 +92,22 @@ class GimbalCapabilityViewController: DJIBaseViewController{
         let key: String = self.getCorrespondingKeyWithButton((sender as! UIButton))!
         let min: Int? = gimbal!.getParamMin(key)
         if (key == DJIGimbalParamAdjustPitch && min != nil) {
-            self.pitchRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.pitchRotation.direction = DJIGimbalRotateDirection.clockwise
             self.pitchRotation.angle = Float(min!)
         }
         else if (key == DJIGimbalParamAdjustYaw && min != nil) {
-            self.yawRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.yawRotation.direction = DJIGimbalRotateDirection.clockwise
             self.yawRotation.angle = Float(min!)
         }
         else if (key == DJIGimbalParamAdjustRoll && min != nil) {
-            self.rollRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.rollRotation.direction = DJIGimbalRotateDirection.clockwise
             self.rollRotation.angle = Float(min!)
         }
         
         self.sendRotateGimbalCommand()
     }
     
-    @IBAction func rotateGimbalToMax(sender: AnyObject) {
+    @IBAction func rotateGimbalToMax(_ sender: AnyObject) {
         let gimbal: DJIGimbal? = self.fetchGimbal()
         if gimbal == nil {
             return
@@ -115,22 +115,22 @@ class GimbalCapabilityViewController: DJIBaseViewController{
         let key: String = self.getCorrespondingKeyWithButton((sender as! UIButton))!
         let max: Int? = gimbal!.getParamMax(key)
         if (key == DJIGimbalParamAdjustPitch && max != nil) {
-            self.pitchRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.pitchRotation.direction = DJIGimbalRotateDirection.clockwise
             self.pitchRotation.angle = Float(max!)
         }
         else if (key == DJIGimbalParamAdjustYaw && max != nil) {
-            self.yawRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.yawRotation.direction = DJIGimbalRotateDirection.clockwise
             self.yawRotation.angle = Float(max!)
         }
         else if (key == DJIGimbalParamAdjustRoll && max != nil) {
-            self.rollRotation.direction = DJIGimbalRotateDirection.Clockwise
+            self.rollRotation.direction = DJIGimbalRotateDirection.clockwise
             self.rollRotation.angle = Float(max!)
         }
         
         self.sendRotateGimbalCommand()
     }
     
-    @IBAction func resetGimbal(sender: AnyObject) {
+    @IBAction func resetGimbal(_ sender: AnyObject) {
         self.pitchRotation.angle = 0
         self.yawRotation.angle = 0
         self.rollRotation.angle = 0
@@ -142,14 +142,14 @@ class GimbalCapabilityViewController: DJIBaseViewController{
         if gimbal == nil {
             return
         }
-        gimbal!.rotateGimbalWithAngleMode(DJIGimbalRotateAngleMode.AngleModeAbsoluteAngle, pitch: self.pitchRotation, roll: self.rollRotation, yaw: self.yawRotation, withCompletion: {(error: NSError?) -> Void in
+        gimbal!.rotateGimbal(with: DJIGimbalRotateAngleMode.angleModeAbsoluteAngle, pitch: self.pitchRotation, roll: self.rollRotation, yaw: self.yawRotation, withCompletion: {(error: Error?) -> Void in
             if error != nil {
-                self.showAlertResult("rotateGimbalWithAngleMode failed: \(error!.description)")
+                self.showAlertResult("rotateGimbalWithAngleMode failed: \(error!)")
             }
         })
     }
     
-    func getCorrespondingKeyWithButton(button: UIButton) -> String? {
+    func getCorrespondingKeyWithButton(_ button: UIButton) -> String? {
         if button == self.pitchMinButton || button == self.pitchMaxButton {
             return DJIGimbalParamAdjustPitch
         }

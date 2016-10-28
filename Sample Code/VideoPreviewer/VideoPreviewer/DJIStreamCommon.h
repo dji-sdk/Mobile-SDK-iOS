@@ -4,34 +4,52 @@
 //  Copyright (c) 2015 DJI. All rights reserved.
 //
 
-#ifndef DJI_STREAM_COMMON_H
-#define DJI_STREAM_COMMON_H
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 #define H264_FRAME_INVALIED_UUID (0)
 
+/**
+ *  Color encoding format used by VideoPreviewer.
+ */
 typedef enum : NSUInteger {
     VPFrameTypeYUV420Planer = 0,
     VPFrameTypeYUV420SemiPlaner = 1,
     VPFrameTypeRGBA = 2,
 } VPFrameType;
 
+/**
+ *  Rotation of the video tream. VideoPreviewer is adaptive to the rotation of
+ *  the stream.
+ */
+typedef NS_ENUM(NSUInteger, VideoStreamRotationType){
+    VideoStreamRotationDefault,
+    /**
+     *  The live stream is rotated 90 degrees cw. VideoPreviewer will rotate 90
+     *  degrees ccw when render it to screen.
+     */
+    VideoStreamRotationCW90,
+    VideoStreamRotationCW180,
+    VideoStreamRotationCW270,
+};
+
+
 typedef struct{
     uint16_t width;
     uint16_t height;
     
     uint16_t fps;
-    uint16_t reserved;
+    uint8_t  rotate; //0 - default, 1 - 90, 2 - 180, 3 - 270, VideoStreamRotationType
+    uint8_t  reserved;
     
     uint16_t frame_index;
     uint16_t max_frame_index_plus_one;
     
     union{
         struct{
-            int has_sps :1;
-            int has_pps :1;
-            int has_idr :1;
+            int has_sps :1; //has sps info
+            int has_pps :1; //has pps info
+            int has_idr :1; //has idr frame
         } frame_flag;
         uint32_t value;
     };
@@ -50,6 +68,16 @@ typedef struct{
 
 typedef struct
 {
+    /**
+     *  The following three ptrs has different meanings when the encoding format
+     *  is different.
+     *  - YUV Planer: Y in `luma`, U in `chromaB` and V in `chromaR`
+     *  - YUV Semi-Planer: y in `luma` and CrCb in `chromaB`
+     *  - RGB: RGB value is stored in `luma`
+     *
+     *  When fastupload is enabled, `luma`, `chromaB` and `chromaR` may be nil
+     *  and the pixel information can be accessed in `cv_pixelbuffer_fastupload`.
+     */
     uint8_t *luma;
     uint8_t *chromaB;
     uint8_t *chromaR;
@@ -58,11 +86,12 @@ typedef struct
     
     int width, height;
     
+    //slice data，`0` indicates the default value.
     int lumaSlice, chromaBSlice, chromaRSlice;
     
     pthread_rwlock_t mutex;
+    // It is only valid when fastupload is enabled.
     void* cv_pixelbuffer_fastupload;
-    
 
     uint32_t frame_uuid; //frame id from decoder
     VideoFrameH264BasicInfo frame_info;
@@ -80,7 +109,7 @@ typedef struct{
     uint32_t type_tag:8;//TYPE_TAG_VideoFrameH264Raw
     uint32_t frame_size:24;
     uint32_t frame_uuid;
-    uint64_t time_tag; //videoPool 内部相对时间
+    uint64_t time_tag; //videoPool Internal relative time
     VideoFrameH264BasicInfo frame_info;
     
     uint8_t frame_data[0]; //followd by frame data;
@@ -96,7 +125,7 @@ typedef struct{
 #pragma pack()
 
 typedef struct {
-    CGSize frameSize;
+    CGSize frameSize; //Persistence unused
     int frameRate;
     int encoderType;
 } DJIVideoStreamBasicInfo;
@@ -109,17 +138,11 @@ typedef enum{
     DJIVideoStreamProcessorType_Modify, //modify data
 } DJIVideoStreamProcessorType;
 
-typedef NS_ENUM(NSUInteger, H264EncoderType){
-    H264EncoderType_unknown = 0,
-    H264EncoderType_DM368_inspire = 1,
-    H264EncoderType_DM368_longan = 2,
-    H264EncoderType_A9_phantom3c = 4,
-    H264EncoderType_A9_phantom3s = 4,
-    H264EncoderType_DM365_phamtom3x = 5,
-    H264EncoderType_1860_phantom4x = 6,
-    H264EncoderType_LightBridge2 = 7,
-    H264EncoderType_A9_P3_W = 8,
-    H264EncoderType_A9_OSMO_NO_368 = 9,
+// content fill mode
+typedef NS_ENUM(NSUInteger, VideoPresentContentMode){
+    VideoPresentContentModeAspectFit,
+    VideoPresentContentModeAspectFill,
+    VideoPresentContentModeNone,
 };
 
 /**
@@ -128,16 +151,21 @@ typedef NS_ENUM(NSUInteger, H264EncoderType){
 @protocol VideoStreamProcessor <NSObject>
 @required
 /**
- *  Enables the stream processor.
+ * Enables the stream processor.
  */
 -(BOOL) streamProcessorEnabled;
 
 -(DJIVideoStreamProcessorType) streamProcessorType;
-
--(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame;
-
-@optional
+/**
+ *  @return Treatment success / failure
+ */
 -(BOOL) streamProcessorHandleFrame:(uint8_t*)data size:(int)size __attribute__((deprecated("VideoPreview will ignore this method. ")));
+;
+-(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame;
+@optional
+/**
+ *  Stream basic information is changed (e.g. parameters of processor is re-configured)
+ */
 -(void) streamProcessorInfoChanged:(DJIVideoStreamBasicInfo*)info;
 -(void) streamProcessorPause;
 -(void) streamProcessorReset;
@@ -148,10 +176,10 @@ typedef NS_ENUM(NSUInteger, H264EncoderType){
  */
 @protocol VideoFrameProcessor <NSObject>
 @required
-
+/**
+ * Enables the frame processor
+ */
 -(BOOL) videoProcessorEnabled;
 -(void) videoProcessFrame:(VideoFrameYUV*)frame;
 -(void) videoProcessFailedFrame;
 @end
-
-#endif /* DJIVTH264DecoderPublic_h */

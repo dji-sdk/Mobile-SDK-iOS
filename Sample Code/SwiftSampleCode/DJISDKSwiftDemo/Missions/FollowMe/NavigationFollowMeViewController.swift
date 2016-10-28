@@ -13,7 +13,7 @@ let SIMULATOR_DEBUG = 1
 
 class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManagerDelegate, DJIFlightControllerDelegate, DJICameraDelegate, DJIMissionManagerDelegate {
     var mLocationManager: CLLocationManager? = nil
-    var mUpdateTimer: NSTimer? = nil
+    var mUpdateTimer: Timer? = nil
 
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var accuracyLabel: UILabel!
@@ -28,7 +28,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
     var followMeMission: DJIFollowMeMission? = nil
     var missionManager:DJIMissionManager = DJIMissionManager.sharedInstance()!
 
-    @IBAction func onFollowMeStart(sender: AnyObject) {
+    @IBAction func onFollowMeStart(_ sender: AnyObject) {
         if !CLLocationCoordinate2DIsValid(self.userLocation) {
             self.showAlertResult("Could not locating my location")
             return
@@ -43,13 +43,13 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         self.followMeMission!.followMeCoordinate = self.userLocation
         self.followMeMission!.heading = DJIFollowMeHeading(rawValue: UInt8(self.headingControl.selectedSegmentIndex))!
         
-        self.missionManager.prepareMission(self.followMeMission!, withProgress: nil, withCompletion: {[weak self] (error: NSError?) -> Void in
+        self.missionManager.prepare(self.followMeMission!, withProgress: nil, withCompletion: {[weak self] (error: Error?) -> Void in
             if error != nil{
-                self?.showAlertResult("Upload mission failed: \(error!.description)")
+                self?.showAlertResult("Upload mission failed: \(error!)")
             }
             else {
-                self?.missionManager.startMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-                    self?.showAlertResult("Start FollowMe Mission:\(error?.description)")
+                self?.missionManager.startMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+                    self?.showAlertResult("Start FollowMe Mission:\(error)")
                     if error == nil {
                         self?.followMeStarted = true
                         self?.startUpdateTimer()
@@ -59,9 +59,9 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         })
     }
 
-    @IBAction func onFollowMeStop(sender: AnyObject) {
-        self.missionManager.stopMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-            self?.showAlertResult("Stop FollowMe Mission:\(error?.description)")
+    @IBAction func onFollowMeStop(_ sender: AnyObject) {
+        self.missionManager.stopMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+            self?.showAlertResult("Stop FollowMe Mission:\(error)")
             if error == nil {
                 self?.followMeStarted = false
                 self?.stopUpdateTimer()
@@ -69,32 +69,32 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         })
     }
 
-    @IBAction func onFollowMePause(sender: AnyObject) {
-        self.missionManager.pauseMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-            self?.showAlertResult("Start FollowMe Mission:\(error?.description)")
+    @IBAction func onFollowMePause(_ sender: AnyObject) {
+        self.missionManager.pauseMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+            self?.showAlertResult("Start FollowMe Mission:\(error)")
         })
     }
 
-    @IBAction func onFollowMeResume(sender: AnyObject) {
-        self.missionManager.resumeMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-            self?.showAlertResult("Start FollowMe Mission:\(error?.description)")
+    @IBAction func onFollowMeResume(_ sender: AnyObject) {
+        self.missionManager.resumeMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+            self?.showAlertResult("Start FollowMe Mission:\(error)")
         })
     }
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationLabel.backgroundColor = UIColor.lightGrayColor()
+        self.locationLabel.backgroundColor = UIColor.lightGray
         self.locationLabel.layer.cornerRadius = 5.0
         self.locationLabel.layer.masksToBounds = true
         self.locationLabel.text = "N/A"
-        self.locationLabel.textAlignment = .Center
+        self.locationLabel.textAlignment = .center
 
-        self.accuracyLabel.backgroundColor = UIColor.lightGrayColor()
+        self.accuracyLabel.backgroundColor = UIColor.lightGray
         self.accuracyLabel.layer.cornerRadius = 5.0
         self.accuracyLabel.layer.masksToBounds = true
         self.accuracyLabel.text = "N/A"
-        self.accuracyLabel.textAlignment = .Center
+        self.accuracyLabel.textAlignment = .center
         self.followMeStarted = false
         self.droneLocation = kCLLocationCoordinate2DInvalid
         self.userLocation = kCLLocationCoordinate2DInvalid
@@ -105,7 +105,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // flight controller should be ready
         if (self.aircraft != nil) {
@@ -116,7 +116,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         self.missionManager.delegate = self
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // clean the delegate
         if self.missionManager.delegate === self {
@@ -143,7 +143,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
                 mLocationManager!.delegate = self
                 mLocationManager!.desiredAccuracy = kCLLocationAccuracyBestForNavigation
                 mLocationManager!.distanceFilter = 0.1
-                if mLocationManager!.respondsToSelector(#selector(CLLocationManager.requestAlwaysAuthorization)) {
+                if mLocationManager!.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization)) {
                     mLocationManager!.requestAlwaysAuthorization()
                 }
                 mLocationManager!.startUpdatingLocation()
@@ -164,9 +164,9 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
     }
 
     func startUpdateTimer() {
-        NSThread.detachNewThreadSelector(#selector(NavigationFollowMeViewController.followMeTest), toTarget: self, withObject: nil)
+        Thread.detachNewThreadSelector(#selector(NavigationFollowMeViewController.followMeTest), toTarget: self, with: nil)
         if mUpdateTimer == nil {
-            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(NavigationFollowMeViewController.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
+            mUpdateTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(NavigationFollowMeViewController.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
             mUpdateTimer!.fire()
         }
     }
@@ -178,7 +178,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
     }
 
-    func onUpdateTimerTicked(sender: AnyObject) {
+    func onUpdateTimerTicked(_ sender: AnyObject) {
         if CLLocationCoordinate2DIsValid(self.userLocation) {
             var currentLocation: CLLocation
             currentLocation = CLLocation(latitude: self.userLocation.latitude, longitude: self.userLocation.longitude)
@@ -186,7 +186,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
             if CLLocationCoordinate2DIsValid(self.droneLocation) {
                 var droneLocation: CLLocation
                 droneLocation = CLLocation(latitude: self.droneLocation.latitude, longitude: self.droneLocation.longitude)
-                distance = currentLocation.distanceFromLocation(droneLocation)
+                distance = currentLocation.distance(from: droneLocation)
             }
             self.locationLabel.text = String(format: "Loc:{%0.7f, %0.7f}  \nDrone:{%0.7f, %0.7f} D:%0.2fM", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude, self.droneLocation.latitude, self.droneLocation.longitude, distance)
             if self.followMeStarted {
@@ -195,7 +195,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
     }
 
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
         if !CLLocationCoordinate2DIsValid(self.userLocation) {
             self.userLocation = CLLocationCoordinate2DMake(state.aircraftLocation.latitude + 0.000004, state.aircraftLocation.longitude + 0.000002)
             //state.droneLocation;
@@ -212,7 +212,7 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
 
 //  #pragma mark - MKLocationManagerDelegate
 
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         let currentLocation:CLLocation? = locations.last
         
         if currentLocation != nil  && currentLocation!.horizontalAccuracy > 0 {
@@ -221,10 +221,10 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
         }
     }
 
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-            case .NotDetermined:
-                 if mLocationManager!.respondsToSelector(#selector(CLLocationManager.requestAlwaysAuthorization)) {
+            case .notDetermined:
+                 if mLocationManager!.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization)) {
                     mLocationManager!.requestWhenInUseAuthorization()
                 }
 
@@ -258,8 +258,8 @@ class NavigationFollowMeViewController: DJIBaseViewController, CLLocationManager
             tar_pos_lat = Double(init_lati + (tgt_pos_x/Double(radius)))
             tar_pos_lon = Double(init_lont + (tgt_pos_y/Double(radius)) / cos(init_lati))
             DJIFollowMeMission.updateFollowMeCoordinate(CLLocationCoordinate2DMake((tar_pos_lat)*180.0/M_PI, (tar_pos_lon)*180.0/M_PI), withCompletion: nil)
-            clock++
-            NSThread.sleepForTimeInterval(0.1)
+            clock += 1
+            Thread.sleep(forTimeInterval: 0.1)
         }
     }
     

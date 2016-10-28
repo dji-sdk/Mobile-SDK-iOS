@@ -7,7 +7,7 @@
 
 import DJISDK
 extension DJIGimbal {
-    func getCapabilityWithKey(key: String) -> DJIParamCapability? {
+    func getCapabilityWithKey(_ key: String) -> DJIParamCapability? {
         if (self.gimbalCapability[key] != nil) {
             let capability: DJIParamCapability = (self.gimbalCapability[key] as! DJIParamCapability)
             return capability
@@ -15,28 +15,28 @@ extension DJIGimbal {
         return nil
     }
     
-    func isFeatureSupported(key: String) -> Bool {
+    func isFeatureSupported(_ key: String) -> Bool {
         let capability: DJIParamCapability = self.getCapabilityWithKey(key)!
         return capability.isSupported
     }
     
-    func getParamMin(key: String) -> Int? {
+    func getParamMin(_ key: String) -> Int? {
         if self.isFeatureSupported(key) {
             let capability: DJIParamCapability = self.getCapabilityWithKey(key)!
             if (capability is DJIParamCapabilityMinMax) {
                 let capabilityMinMax: DJIParamCapabilityMinMax = (capability as! DJIParamCapabilityMinMax)
-                return capabilityMinMax.min.integerValue
+                return capabilityMinMax.min.intValue
             }
         }
         return nil
     }
     
-    func getParamMax(key: String) -> Int? {
+    func getParamMax(_ key: String) -> Int? {
         if self.isFeatureSupported(key) {
             let capability: DJIParamCapability = self.getCapabilityWithKey(key)!
             if (capability is DJIParamCapabilityMinMax) {
                 let capabilityMinMax: DJIParamCapabilityMinMax = (capability as! DJIParamCapabilityMinMax)
-                return capabilityMinMax.max.integerValue
+                return capabilityMinMax.max.intValue
             }
         }
         return nil

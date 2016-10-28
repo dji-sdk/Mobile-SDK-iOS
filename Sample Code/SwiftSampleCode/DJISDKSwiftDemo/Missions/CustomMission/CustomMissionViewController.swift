@@ -41,12 +41,12 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     var allCells:[DJICollectionViewCell] = []
     var stepIndex: Int = 0
     
-    func stepsCollectionView(view: DJIStepsCollectionView, didSelectType type: DJICollectionViewCellType){
+    func stepsCollectionView(_ view: DJIStepsCollectionView, didSelectType type: DJICollectionViewCellType){
             let step: DJIMissionStep = self.missionStepFromType(type)!
             self.allSteps.append(step)
             let cell: DJICollectionViewCell = DJICollectionViewCell.collectionViewCell()!
             cell.cellType = type
-            cell.setBorderColor(UIColor.blackColor())
+            cell.setBorderColor(UIColor.black)
             cell.attachedObject = step
             self.allCells.append(cell)
             self.updateScrollView()
@@ -54,14 +54,14 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
 
     
 
-    @IBAction func onStartMissionButtonClicked(sender: AnyObject) {
+    @IBAction func onStartMissionButtonClicked(_ sender: AnyObject) {
         self.startCustomMission()
     }
 
-    @IBAction func onStopMissionButtonClicked(sender: AnyObject) {
-        self.missionManager!.stopMissionExecutionWithCompletion({[weak self] (error: NSError?) in
+    @IBAction func onStopMissionButtonClicked(_ sender: AnyObject) {
+        self.missionManager!.stopMissionExecution(completion: {[weak self] (error: Error?) in
             if (error != nil) {
-                self?.showAlertResult(error!.description)
+                self?.showAlertResult(error! as! String)
             }
         })
     }
@@ -85,7 +85,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         self.stepIndex = -1
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController!.title = ""
         let aircraft: DJIAircraft? = self.fetchAircraft()
@@ -102,23 +102,23 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func onPauseMissionButtonClicked(sender: AnyObject) {
-        self.missionManager!.pauseMissionExecutionWithCompletion({[weak self] (error: NSError?) in
+    @IBAction func onPauseMissionButtonClicked(_ sender: AnyObject) {
+        self.missionManager!.pauseMissionExecution(completion: {[weak self] (error: Error?) in
             if (error != nil) {
-                self?.showAlertResult("Pause Mission:\(error!.localizedDescription)")
+                self?.showAlertResult("Pause Mission:\(error!)")
             }
         })
     }
 
-    @IBAction func onResumeMissionButtonClicked(sender: AnyObject) {
-        self.missionManager!.resumeMissionExecutionWithCompletion({[weak self] (error: NSError?)->Void in
+    @IBAction func onResumeMissionButtonClicked(_ sender: AnyObject) {
+        self.missionManager!.resumeMissionExecution(completion: {[weak self] (error: Error?)->Void in
             if (error != nil) {
-                self?.showAlertResult("Resume Mission\(error!.localizedDescription)")
+                self?.showAlertResult("Resume Mission\(error!)")
             }
         })
     }
 
-    @IBAction func onAddMissionButtonClicked(sender: AnyObject) {
+    @IBAction func onAddMissionButtonClicked(_ sender: AnyObject) {
         if self.stepsCollectionView == nil {
             self.stepsCollectionView = DJIStepsCollectionView()
             self.stepsCollectionView!.center = self.view.center
@@ -126,12 +126,12 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
             self.stepsCollectionView!.alpha = 0.0
             self.view!.addSubview(self.stepsCollectionView!)
         }
-        UIView.animateWithDuration(0.2, animations: {() -> Void in
+        UIView.animate(withDuration: 0.2, animations: {() -> Void in
             self.stepsCollectionView!.alpha = 1.0
         })
     }
 
-    func waypointOnMapView(touchedCoordinate: CLLocationCoordinate2D) {
+    func waypointOnMapView(_ touchedCoordinate: CLLocationCoordinate2D) {
         let waypoint: DJIWaypoint = DJIWaypoint(coordinate: touchedCoordinate)
         self.waypointList.append(waypoint)
         let wpAnnotation: DJIWaypointAnnotation = DJIWaypointAnnotation()
@@ -143,9 +143,9 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
 
 // DJIMissionManagerDelegate
     
-    func missionManager(manager: DJIMissionManager, didFinishMissionExecution error: NSError?) {
+    func missionManager(_ manager: DJIMissionManager, didFinishMissionExecution error: Error?) {
         if (error != nil) {
-            self.showAlertResult("Mission Finished with error:\(error!.localizedDescription)")
+            self.showAlertResult("Mission Finished with error:\(error!)")
         } else {
             self.stepIndex = Int(self.allCells.count)
             self.updateCells()
@@ -153,11 +153,11 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
 
-    func missionManager(manager: DJIMissionManager, missionProgressStatus missionProgress: DJIMissionProgressStatus) {
+    func missionManager(_ manager: DJIMissionManager, missionProgressStatus missionProgress: DJIMissionProgressStatus) {
         if (missionProgress is DJICustomMissionStatus) {
             let customMissionStatus: DJICustomMissionStatus = missionProgress as! DJICustomMissionStatus
             let currentExecStep: DJIMissionStep = customMissionStatus.currentExecutingStep!
-            let index: Int = self.allSteps.indexOf(currentExecStep)!
+            let index: Int = self.allSteps.index(of: currentExecStep)!
             if index != NSNotFound {
                 if self.stepIndex != index {
                     self.stepIndex = Int(index)
@@ -168,7 +168,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     }
 
 // DJIFlightControllerDelegate
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
         self.currentState = state
         self.aircraftLocation = state.aircraftLocation
         if CLLocationCoordinate2DIsValid(state.aircraftLocation) {
@@ -181,22 +181,22 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     }
 
     func stopTask() {
-        self.missionManager!.stopMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
+        self.missionManager!.stopMissionExecution(completion: {[weak self] (error: Error?) -> Void in
             if (error != nil ) {
-                self?.showAlertResult("Custom mission stop error: \(error!.description)")
+                self?.showAlertResult("Custom mission stop error: \(error!)")
             } else {
                 self?.showAlertResult("Custom mission is stopped!")
             }
         })
     }
 
-    func updateWaypointMissionOnUIView(waypointMission: DJIWaypointMission) {
+    func updateWaypointMissionOnUIView(_ waypointMission: DJIWaypointMission) {
         for i:Int32 in 0 ..< Int32(waypointMission.waypointCount) {
-            self.waypointOnMapView(waypointMission.getWaypointAtIndex(i)!.coordinate)
+            self.waypointOnMapView(waypointMission.getWaypointAt(i)!.coordinate)
         }
     }
 
-    func updateHotpointMissionOnUIView(hotpointMission: DJIHotPointMission) {
+    func updateHotpointMissionOnUIView(_ hotpointMission: DJIHotPointMission) {
         if CLLocationCoordinate2DIsValid(hotpointMission.hotPoint) {
             if self.hotPointAnnotation == nil {
                 self.hotPointAnnotation = MKPointAnnotation()
@@ -210,16 +210,16 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
     func startCustomMission() {
         
         self.customMission = DJICustomMission(steps: allSteps)
-        self.missionManager!.prepareMission(customMission!, withProgress: nil, withCompletion: {[weak self] (error: NSError?) -> Void in
+        self.missionManager!.prepare(customMission!, withProgress: nil, withCompletion: {[weak self] (error: Error?) -> Void in
             if error == nil {
-                self?.missionManager!.startMissionExecutionWithCompletion({ [weak self] (error: NSError?) -> Void in
+                self?.missionManager!.startMissionExecution(completion: { [weak self] (error: Error?) -> Void in
                     if error != nil {
-                        self?.showAlertResult("Custom Mission Start Failed:\(error!.localizedDescription)")
+                        self?.showAlertResult("Custom Mission Start Failed:\(error!)")
                     }
                 })
             }
             else {
-                self?.showAlertResult("Custom Mission Failed:\(error!.localizedDescription)")
+                self?.showAlertResult("Custom Mission Failed:\(error!)")
             }
         })
     }
@@ -228,9 +228,9 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         let mission: DJIWaypointMission = DJIWaypointMission()
         mission.maxFlightSpeed = 15
         mission.autoFlightSpeed = 10
-        mission.finishedAction = DJIWaypointMissionFinishedAction.NoAction
-        mission.headingMode = DJIWaypointMissionHeadingMode.Auto
-        mission.flightPathMode = DJIWaypointMissionFlightPathMode.Normal
+        mission.finishedAction = DJIWaypointMissionFinishedAction.noAction
+        mission.headingMode = DJIWaypointMissionHeadingMode.auto
+        mission.flightPathMode = DJIWaypointMissionFlightPathMode.normal
         
         // If the aircraftLocation is nil, the waypoint location will be an invalid value
         var droneLocation: CLLocationCoordinate2D = CLLocationCoordinate2DMake(0, 0)
@@ -244,7 +244,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         waypoint1.actionRepeatTimes = 1
         waypoint1.actionTimeoutInSeconds = 60
         waypoint1.cornerRadiusInMeters = 5
-        waypoint1.turnMode = DJIWaypointTurnMode.Clockwise
+        waypoint1.turnMode = DJIWaypointTurnMode.clockwise
         let loc2: CLLocationCoordinate2D = CLLocationCoordinate2DMake(droneLocation.latitude + POINT_OFFSET * 2, droneLocation.longitude - POINT_OFFSET * 2)
         let waypoint2: DJIWaypoint = DJIWaypoint(coordinate: loc2)
         waypoint2.altitude = 20
@@ -252,14 +252,14 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         waypoint2.actionRepeatTimes = 1
         waypoint2.actionTimeoutInSeconds = 60
         waypoint2.cornerRadiusInMeters = 5
-        waypoint2.turnMode = DJIWaypointTurnMode.Clockwise
+        waypoint2.turnMode = DJIWaypointTurnMode.clockwise
         let loc3: CLLocationCoordinate2D = CLLocationCoordinate2DMake(droneLocation.latitude + POINT_OFFSET * 2, droneLocation.longitude + POINT_OFFSET * 2)
         let waypoint3: DJIWaypoint = DJIWaypoint(coordinate: loc3)
         waypoint3.altitude = 25
         waypoint3.heading = 0
         waypoint3.actionRepeatTimes = 1
         waypoint3.actionTimeoutInSeconds = 60
-        waypoint3.turnMode = DJIWaypointTurnMode.Clockwise
+        waypoint3.turnMode = DJIWaypointTurnMode.clockwise
         
         let waypoint4: DJIWaypoint = DJIWaypoint(coordinate: loc1)
         waypoint4.altitude = 15
@@ -267,16 +267,16 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         waypoint4.actionRepeatTimes = 1
         waypoint4.actionTimeoutInSeconds = 60
         waypoint4.cornerRadiusInMeters = 5
-        waypoint4.turnMode = DJIWaypointTurnMode.Clockwise
+        waypoint4.turnMode = DJIWaypointTurnMode.clockwise
         
-        mission.addWaypoint(waypoint1)
-        mission.addWaypoint(waypoint2)
-        mission.addWaypoint(waypoint3)
-        mission.addWaypoint(waypoint4)
+        mission.add(waypoint1)
+        mission.add(waypoint2)
+        mission.add(waypoint3)
+        mission.add(waypoint4)
         return mission
     }
 
-    func createHotpointMissionWith(location: CLLocationCoordinate2D) -> DJIHotPointMission {
+    func createHotpointMissionWith(_ location: CLLocationCoordinate2D) -> DJIHotPointMission {
         let mission: DJIHotPointMission = DJIHotPointMission()
         var droneLocation: CLLocationCoordinate2D = location
         if ((self.currentState != nil) && CLLocationCoordinate2DIsValid(self.currentState!.aircraftLocation)) {
@@ -286,13 +286,13 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         mission.altitude = 15
         mission.radius = 15
         mission.isClockwise = false
-        mission.angularVelocity = DJIHotPointMission.maxAngularVelocityForRadius(30)
-        mission.startPoint = DJIHotPointStartPoint.Nearest
-        mission.heading = DJIHotPointHeading.AlongCircleLookingForward
+        mission.angularVelocity = DJIHotPointMission.maxAngularVelocity(forRadius: 30)
+        mission.startPoint = DJIHotPointStartPoint.nearest
+        mission.heading = DJIHotPointHeading.alongCircleLookingForward
         return mission
     }
 
-    func stepsCollectionViewDidDeleteLast(view: DJIStepsCollectionView) {
+    func stepsCollectionViewDidDeleteLast(_ view: DJIStepsCollectionView) {
         if self.allCells.count > 0 {
             let cell = self.allCells.last
             if (cell != nil) {
@@ -301,7 +301,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
                 self.allSteps.removeLast()
                 if self.allCells.count > 0 {
                     let count = self.allCells.count
-                    self.scrollView.contentSize = CGSizeMake(CGFloat(count * 50), 50)
+                    self.scrollView.contentSize = CGSize(width: CGFloat(count * 50), height: 50)
                 }
             }
         }
@@ -309,7 +309,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
 
     func updateScrollView() {
         let count: Int = Int(self.allCells.count)
-        self.scrollView.contentSize = CGSizeMake(CGFloat(count * 50), 50)
+        self.scrollView.contentSize = CGSize(width: CGFloat(count * 50), height: 50)
         let cell = self.allCells.last
         if (cell != nil){
             var frame: CGRect = cell!.frame
@@ -323,24 +323,24 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
         for i in 0 ..< stepIndex {
             let cell: DJICollectionViewCell = self.allCells[i]
             cell.showProgress(false)
-            cell.setBorderColor(UIColor.greenColor())
+            cell.setBorderColor(UIColor.green)
         }
         if stepIndex < self.allCells.count {
             let cell: DJICollectionViewCell = self.allCells[stepIndex]
             cell.showProgress(true)
-            cell.setBorderColor(UIColor.redColor())
+            cell.setBorderColor(UIColor.red)
         }
     }
 
-    func missionStepFromType(type: DJICollectionViewCellType) -> DJIMissionStep?{
+    func missionStepFromType(_ type: DJICollectionViewCellType) -> DJIMissionStep?{
         switch type {
-            case .Takeoff:
+            case .takeoff:
                                 return DJITakeoffStep()
 
-            case .Gohome:
+            case .gohome:
                                 return DJIGoHomeStep()
 
-            case .Goto:
+            case .goto:
                 // Pay attention here, if aircraftLocation is nil, 
                 // the goto location will be an invalid value
                 var latitude:Double = 0.0
@@ -355,7 +355,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
                 waypointOnMapView(coord)
                 return DJIGoToStep(coordinate: coord)!
 
-            case .GimbalAttitude:
+            case .gimbalAttitude:
                 var atti: DJIGimbalAttitude = DJIGimbalAttitude()
                 atti.pitch = -45
                 atti.roll = 0
@@ -365,27 +365,27 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
                 step.completionTime = 3.0
                 return step
 
-            case .SingleShootPhoto:
+            case .singleShootPhoto:
                                 return DJIShootPhotoStep(singleShootPhoto:())!
 
-            case .ContinousShootPhoto:
+            case .continousShootPhoto:
                                 return DJIShootPhotoStep(photoCount: 3, timeInterval: 3)!
 
-            case .RecordVideoDruation:
+            case .recordVideoDruation:
                                 return DJIRecordVideoStep(duration: 10)!
 
-            case .RecordVideoStart:
+            case .recordVideoStart:
                                 return DJIRecordVideoStep(startRecordVideo:())!
 
-            case .RecordVideoStop:
+            case .recordVideoStop:
                                 return DJIRecordVideoStep(stopRecordVideo:())!
 
-            case .WaypointMission:
+            case .waypointMission:
                                 let wpMission: DJIWaypointMission = self.createWaypointMission()
                                 updateWaypointMissionOnUIView(wpMission)
                                 return DJIWaypointStep(waypointMission: wpMission)!
 
-            case .HotpointMission:
+            case .hotpointMission:
                                 var location = CLLocationCoordinate2DMake(0, 0)
                                 if (aircraftLocation != nil) {
                                     location = aircraftLocation!
@@ -394,7 +394,7 @@ class CustomMissionViewController: DJIBaseViewController, DJIFlightControllerDel
                                 updateHotpointMissionOnUIView(hpMission)
                                 return DJIHotpointStep(hotpointMission: hpMission)!
 
-            case .FollowmeMission:
+            case .followmeMission:
                                 let fmMission: DJIFollowMeMission = DJIFollowMeMission()
                 return DJIFollowMeStep(followMeMission: fmMission, duration: 10)!
 

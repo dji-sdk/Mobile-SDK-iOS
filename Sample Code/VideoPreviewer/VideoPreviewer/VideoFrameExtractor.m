@@ -7,14 +7,15 @@
 //
 
 #import "VideoFrameExtractor.h"
+#import "DJIVideoHelper.h"
 #import <sys/time.h>
 
 #include "libavformat/avformat.h"
 #include "libswscale/swscale.h"
 
 @interface VideoFrameExtractor (){
-    AVCodecContext *_pCodecCtx;
-    AVFrame *_pFrame;
+    AVCodecContext *_pCodecCtx; //decode
+    AVFrame *_pFrame;   //frame
     AVCodecParserContext *_pCodecPaser;
     
     uint32_t s_frameUuidCounter;
@@ -47,7 +48,15 @@ ss += ll; \
 {
     @synchronized (self) {
         if(!_pFrame) return ;
-        if(yuv->luma != NULL && ((yuv->width != _pCodecCtx->width) || (yuv->height != (_pCodecCtx->height))))
+        
+        //get info from current avframe
+        int input_width = _pFrame->width, input_height = _pFrame->height;
+        int line_size[3] = {0};
+        line_size[0] = _pFrame->linesize[0];
+        line_size[1] = _pFrame->linesize[1];
+        line_size[2] = _pFrame->linesize[2];
+        
+        if(yuv->luma != NULL && ((yuv->width != input_width) || (yuv->height != (input_height))))
         {
             free(yuv->luma);
             free(yuv->chromaB);
@@ -60,18 +69,18 @@ ss += ll; \
         
         if(yuv->luma == NULL)
         {
-            yuv->luma = (uint8_t*) malloc(_pCodecCtx->width * _pCodecCtx->height);
-            yuv->chromaB = (uint8_t*) malloc(_pCodecCtx->width * _pCodecCtx->height/4);
-            yuv->chromaR = (uint8_t*) malloc(_pCodecCtx->width * _pCodecCtx->height/4);
+            yuv->luma = (uint8_t*) malloc(input_width * input_height);
+            yuv->chromaB = (uint8_t*) malloc(input_width * input_height/4);
+            yuv->chromaR = (uint8_t*) malloc(input_width * input_height/4);
         }
         
-        _CP_YUV_FRAME_(yuv->luma, _pFrame->data[0], _pFrame->linesize[0], _pCodecCtx->width, _pCodecCtx->height);
+        _CP_YUV_FRAME_(yuv->luma, _pFrame->data[0], _pFrame->linesize[0], input_width, input_height);
         
-        _CP_YUV_FRAME_(yuv->chromaB, _pFrame->data[1], _pFrame->linesize[1], _pCodecCtx->width/2, _pCodecCtx->height/2);
-        _CP_YUV_FRAME_(yuv->chromaR, _pFrame->data[2], _pFrame->linesize[2], _pCodecCtx->width/2, _pCodecCtx->height/2);
+        _CP_YUV_FRAME_(yuv->chromaB, _pFrame->data[1], _pFrame->linesize[1], input_width/2, input_height/2);
+        _CP_YUV_FRAME_(yuv->chromaR, _pFrame->data[2], _pFrame->linesize[2], input_width/2, input_height/2);
         
-        yuv->width = _pCodecCtx->width;
-        yuv->height = _pCodecCtx->height;
+        yuv->width = input_width;
+        yuv->height = input_height;
         yuv->frame_uuid = H264_FRAME_INVALIED_UUID;
         memset(&yuv->frame_info, 0, sizeof(VideoFrameH264BasicInfo));
         
@@ -191,7 +200,10 @@ ss += ll; \
             
             int rate = 0;
             if (_pCodecPaser->frame_rate_den) {
-                rate = (int)(0.5+_pCodecPaser->frame_rate_num/(2.0*_pCodecPaser->frame_rate_den));
+                // If the stream is encoded by DJI's encoder, the frame rate
+                // should be double of the value from the parser.
+                double scale = _usingDJIAircraftEncoder?2.0:1.0;
+                rate = (int)(0.5+_pCodecPaser->frame_rate_num/(scale*_pCodecPaser->frame_rate_den));
                 _frameRate = rate;
             }
             
@@ -266,15 +278,14 @@ ss += ll; \
             outputFrame->frame_info.height = _pCodecPaser->height_in_pixel;
             
             if (_pCodecPaser->frame_rate_den) {
-                outputFrame->frame_info.fps = ceil(_pCodecPaser->frame_rate_num/(2.0*_pCodecPaser->frame_rate_den));
+                // If the stream is encoded by DJI's encoder, the frame rate
+                // should be double of the value from the parser. 
+                double scale = _usingDJIAircraftEncoder?2.0:1.0;
+                outputFrame->frame_info.fps = ceil(_pCodecPaser->frame_rate_num/(scale*_pCodecPaser->frame_rate_den));
             }
             outputFrame->frame_info.frame_flag.has_sps = _pCodecPaser->frame_has_sps;
             outputFrame->frame_info.frame_flag.has_pps = _pCodecPaser->frame_has_pps;
             outputFrame->frame_info.frame_flag.has_idr = (_pCodecPaser->key_frame ==1)?1:0;
-            
-//            if (outputFrame->frame_info.frame_flag.has_sps) {
-//                NSLog(@"%d %d has sps", outputFrame->frame_uuid, outputFrame->frame_info.frame_index);
-//            }
         }
         
         block(outputFrame);
@@ -286,6 +297,8 @@ ss += ll; \
         if (callback) {
             callback(NO);
         }
+        
+        return;
     }
     
     @synchronized (self)
@@ -309,7 +322,7 @@ ss += ll; \
         if (callback) {
             callback(got_picture);
         }
-        
+
         av_free_packet(&packet);
     }
 }
@@ -374,18 +387,11 @@ ss += ll; \
             _outputHeight = _pCodecCtx->height;
             
             
-            if(_pFrame->decode_error_flags){
-                NSLog(@"Encounter error during decoding");
-            }
-            if(!got_picture)
-            {
-                NSLog(@"No image. ");
-            }
-            else
+            if(got_picture)
             {
                 callback(YES);
             }
-        }
+        }        
     }
     return  YES;
 }
@@ -394,6 +400,7 @@ ss += ll; \
 -(id)initExtractor
 {
     @synchronized (self) {
+        _usingDJIAircraftEncoder = YES;
         [self setupExtractor];
     }
     return self;
@@ -407,12 +414,7 @@ ss += ll; \
     {
         av_register_all();
         
-        av_log_set_level(AV_LOG_QUIET);
-        
         pCodec = avcodec_find_decoder(AV_CODEC_ID_H264);
-        if (pCodec == NULL) {
-            return;
-        }
         _pCodecCtx = avcodec_alloc_context3(pCodec);
         _pFrame = av_frame_alloc();
         _pCodecPaser = av_parser_init(AV_CODEC_ID_H264);
@@ -425,11 +427,13 @@ ss += ll; \
         _pCodecCtx->thread_type = FF_THREAD_FRAME;
         
         if(pCodec->capabilities&CODEC_FLAG_LOW_DELAY){
+            //                NSLog(@"capabilities: %X,flags: %X",pCodec->capabilities,pCodecCtx->flags);
             _pCodecCtx->flags|=CODEC_FLAG_LOW_DELAY;
         }
         
         if (avcodec_open2(_pCodecCtx, pCodec, NULL)) {
             // NSLog(@"Could not open codec");
+            //Could not open codec
         }
         
         _frameInfoListCount = 0;
@@ -469,7 +473,7 @@ ss += ll; \
         if(_pFrame == NULL)
         {
             [self setupExtractor];
-            NSLog(@"Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
+            NSLog(@"Frame Extractor Init param:%d %d %d %d %d",_pCodecCtx->ticks_per_frame,_pCodecCtx->delay,_pCodecCtx->thread_count,_pCodecCtx->thread_type,_pCodecCtx->active_thread_type);
 
         }
     }

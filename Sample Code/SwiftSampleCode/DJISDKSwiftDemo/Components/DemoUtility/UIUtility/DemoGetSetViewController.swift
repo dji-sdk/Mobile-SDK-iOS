@@ -13,14 +13,14 @@ class DemoGetSetViewController: DJIBaseViewController {
     @IBOutlet weak var setValueButton: UIButton!
     @IBOutlet weak var rangeLabel: UILabel!
 
-    @IBAction func onGetButtonClicked(sender: AnyObject) {
+    @IBAction func onGetButtonClicked(_ sender: AnyObject) {
     }
 
-    @IBAction func onSetButtonClicked(sender: AnyObject) {
+    @IBAction func onSetButtonClicked(_ sender: AnyObject) {
     }
 
     init() {
-        super.init(nibName: "DemoGetSetViewController", bundle: NSBundle.mainBundle())
+        super.init(nibName: "DemoGetSetViewController", bundle: Bundle.main)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,6 +30,6 @@ class DemoGetSetViewController: DJIBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        self.getValueTextField.userInteractionEnabled = false
+        self.getValueTextField.isUserInteractionEnabled = false
     }
 }

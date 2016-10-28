@@ -29,7 +29,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
             if btn != nil {
                 btn!.layer.cornerRadius = btn!.frame.size.width * 0.5
                 btn!.layer.borderWidth = 1.2
-                btn!.layer.borderColor = UIColor.redColor().CGColor
+                btn!.layer.borderColor = UIColor.red.cgColor
                 btn!.layer.masksToBounds = true
             }
         }
@@ -42,11 +42,11 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
@@ -54,7 +54,7 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
@@ -68,65 +68,65 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
 
-    @IBAction func onStartIOCButtonClicked(sender: AnyObject) {
+    @IBAction func onStartIOCButtonClicked(_ sender: AnyObject) {
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
             
         let type: DJIFlightOrientationMode = DJIFlightOrientationMode(rawValue: UInt8(self.iocTypeSegmentCtrl.selectedSegmentIndex))!
-        aircraft!.flightController?.setFlightOrientationMode(type, withCompletion: {[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.setFlightOrientationMode(type, withCompletion: {[weak self] (error: Error?) -> Void in
             if (error != nil){
-                self?.showAlertResult("Start IOC: \(error!.description)")
+                self?.showAlertResult("Start IOC: \(error!)")
             }
         })
         }
     }
 
-    @IBAction func onStopIOCButtonClicked(sender: AnyObject) {
+    @IBAction func onStopIOCButtonClicked(_ sender: AnyObject) {
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
         
         
-        aircraft!.flightController?.setFlightOrientationMode(DJIFlightOrientationMode.DefaultAircraftHeading, withCompletion: {[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.setFlightOrientationMode(DJIFlightOrientationMode.defaultAircraftHeading, withCompletion: {[weak self] (error: Error?) -> Void in
             if (error != nil) {
-                self?.showAlertResult("Stop IOC: \(error!.description)")
+                self?.showAlertResult("Stop IOC: \(error!)")
             }
         })
         }
     }
 
-    @IBAction func onRecordButtonClicked(sender: AnyObject) {
+    @IBAction func onRecordButtonClicked(_ sender: AnyObject) {
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft == nil {
             return
         }
         if self.isRecording {
-            aircraft!.camera!.stopRecordVideoWithCompletion({[weak self] (error: NSError?) -> Void in
+            aircraft!.camera!.stopRecordVideo(completion: {[weak self] (error: Error?) -> Void in
                 if (error != nil ) {
-                    self?.showAlertResult("Stop Record: \(error!.description)")
+                    self?.showAlertResult("Stop Record: \(error!)")
                 } else {
                     self?.showAlertResult("Stop Record:Success")
                 }
             })
         }
         else {
-            aircraft!.camera!.startRecordVideoWithCompletion({[weak self] (error: NSError?) -> Void in
+            aircraft!.camera!.startRecordVideo(completion: {[weak self] (error: Error?) -> Void in
                 if (error != nil ) {
-                    self?.showAlertResult("Start Record: \(error!.description)")
+                    self?.showAlertResult("Start Record: \(error!)")
                 } else {
                     self?.showAlertResult("Start Record:Success")
                 }            })
         }
     }
 
-    @IBAction func onLockCourseButtonClicked(sender: AnyObject) {
+    @IBAction func onLockCourseButtonClicked(_ sender: AnyObject) {
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft == nil {
             return
         }
-        aircraft!.flightController?.lockCourseUsingCurrentDirectionWithCompletion({[weak self] (error: NSError?) -> Void in
+        aircraft!.flightController?.lockCourseUsingCurrentDirection(completion: {[weak self] (error: Error?) -> Void in
             
             if (error != nil ) {
-                self?.showAlertResult("Lock Course: \(error!.description)")
+                self?.showAlertResult("Lock Course: \(error!)")
             } else {
                 self?.showAlertResult("Lock Course: Success")
             }
@@ -134,24 +134,24 @@ class NavigationIOCViewController: DJIBaseViewController, DJIFlightControllerDel
     }
 
   
-    func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {
+    func camera(_ camera: DJICamera, didUpdate systemState: DJICameraSystemState) {
         let aircraft: DJIAircraft? = self.fetchAircraft()
         if aircraft == nil {
             return
         }
-        if systemState.mode != DJICameraMode.RecordVideo {
-            aircraft!.camera!.setCameraMode(DJICameraMode.RecordVideo, withCompletion: nil)
+        if systemState.mode != DJICameraMode.recordVideo {
+            aircraft!.camera!.setCameraMode(DJICameraMode.recordVideo, withCompletion: nil)
         }
         if self.isRecording != systemState.isRecording {
             let recBtn: UIButton? = self.view!.viewWithTag(103) as? UIButton
             if recBtn != nil {
-                recBtn!.setTitleColor((systemState.isRecording ? UIColor.redColor() : UIColor.blackColor()), forState: .Normal)
+                recBtn!.setTitleColor((systemState.isRecording ? UIColor.red : UIColor.black), for: UIControlState())
             }
             self.isRecording = systemState.isRecording
         }
     }
 
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
         if CLLocationCoordinate2DIsValid(state.aircraftLocation) {
             let heading: Double = state.attitude.yaw*M_PI/180.0
             djiMapView!.updateAircraftLocation(state.aircraftLocation, withHeading: heading)

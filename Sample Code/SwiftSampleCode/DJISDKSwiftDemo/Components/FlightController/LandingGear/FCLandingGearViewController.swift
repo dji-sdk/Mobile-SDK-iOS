@@ -10,8 +10,8 @@ import DJISDK
 class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDelegate {
     
     
-    var landingGearMode: DJILandingGearMode = .Unknown
-    var landingGearStatus: DJILandingGearStatus = .Unknown
+    var landingGearMode: DJILandingGearMode = .unknown
+    var landingGearStatus: DJILandingGearStatus = .unknown
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var modeLabel: UILabel!
     
@@ -19,8 +19,8 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
-        self.landingGearMode = DJILandingGearMode.Unknown
-        self.landingGearStatus = DJILandingGearStatus.Unknown
+        self.landingGearMode = DJILandingGearMode.unknown
+        self.landingGearStatus = DJILandingGearStatus.unknown
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
             fc?.delegate = self
@@ -32,13 +32,13 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func onTurnOnButtonClicked(sender: AnyObject) {
+    @IBAction func onTurnOnButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         
         if (fc != nil) {
             let landingGear: DJILandingGear? = fc!.landingGear
             if landingGear != nil {
-                landingGear?.turnOnAutoLandingGearWithCompletion({[weak self](error: NSError?) -> Void in
+                landingGear?.turnOnAutoLandingGear(completion: {[weak self](error: Error?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Turn on:\(error?.localizedDescription)")
                     }
@@ -50,13 +50,13 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    @IBAction func onTurnOffButtonClicked(sender: AnyObject) {
+    @IBAction func onTurnOffButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         
         if (fc != nil) {
             let landingGear: DJILandingGear? = fc!.landingGear
             if landingGear != nil {
-                landingGear!.turnOffAutoLandingGearWithCompletion({[weak self](error: NSError?) -> Void in
+                landingGear!.turnOffAutoLandingGear(completion: {[weak self](error: Error?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Turn Off:\(error?.localizedDescription)")
                     }
@@ -68,7 +68,7 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    @IBAction func onEnterTransportButtonClicked(sender: AnyObject) {
+    @IBAction func onEnterTransportButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         
         if (fc == nil) {
@@ -77,7 +77,7 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         
         let landingGear: DJILandingGear? = fc!.landingGear
         if landingGear != nil {
-            landingGear!.enterTransportModeWithCompletion({[weak self](error: NSError?) -> Void in
+            landingGear!.enterTransportMode(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Enter Transport: \(error?.localizedDescription)")
                 }
@@ -88,7 +88,7 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    @IBAction func onExitTransportButtonClicked(sender: AnyObject) {
+    @IBAction func onExitTransportButtonClicked(_ sender: AnyObject) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if (fc == nil) {
             return
@@ -96,7 +96,7 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         
         let landingGear: DJILandingGear? = fc?.landingGear
         if landingGear != nil {
-            landingGear!.exitTransportModeWithCompletion({[weak self](error: NSError?) -> Void in
+            landingGear!.exitTransportMode(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Exit Transport:\(error?.localizedDescription)")
                 }
@@ -107,7 +107,7 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
         let landingGear: DJILandingGear? = fc.landingGear
         
         if (landingGear != nil) {
@@ -122,14 +122,14 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         }
     }
     
-    func stringWithLandingGearMode(mode: DJILandingGearMode) -> String {
-        if mode == DJILandingGearMode.Auto {
+    func stringWithLandingGearMode(_ mode: DJILandingGearMode) -> String {
+        if mode == DJILandingGearMode.auto {
             return "Auto"
         }
-        else if mode == DJILandingGearMode.Normal {
+        else if mode == DJILandingGearMode.normal {
             return "Normal"
         }
-        else if mode == DJILandingGearMode.Transport {
+        else if mode == DJILandingGearMode.transport {
             return "Transport"
         }
         else {
@@ -138,20 +138,20 @@ class FCLandingGearViewController: DJIBaseViewController, DJIFlightControllerDel
         
     }
     
-    func stringWithLandingGearStatus(status: DJILandingGearStatus) -> String {
-        if status == DJILandingGearStatus.Deployed {
+    func stringWithLandingGearStatus(_ status: DJILandingGearStatus) -> String {
+        if status == DJILandingGearStatus.deployed {
             return "Deployed"
         }
-        else if status == DJILandingGearStatus.Deploying {
+        else if status == DJILandingGearStatus.deploying {
             return "Deploying"
         }
-        else if status == DJILandingGearStatus.Retracted {
+        else if status == DJILandingGearStatus.retracted {
             return "Retracted"
         }
-        else if status == DJILandingGearStatus.Retracting {
+        else if status == DJILandingGearStatus.retracting {
             return "Retracting"
         }
-        else if status == DJILandingGearStatus.Stopped {
+        else if status == DJILandingGearStatus.stopped {
             return "Stoped"
         }
         else {

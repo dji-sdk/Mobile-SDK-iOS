@@ -9,22 +9,22 @@ import DJISDK
 extension NSArray {
     func horizontalDescription() -> String {
         let string: NSMutableString = NSMutableString()
-        string.appendString("(")
+        string.append("(")
         for i in 0 ..< self.count {
             if i != 0 {
-                string.appendString(",")
+                string.append(",")
             }
             if (self[i] is [AnyObject]) {
-                string.appendFormat("\((self[i] as! NSArray).horizontalDescription())")
+                string.appendFormat("\((self[i] as! NSArray).horizontalDescription())" as NSString)
             }
             else {
-                string.appendFormat("\(self[i])")
+                string.appendFormat("\(self[i])" as NSString)
             }
         }
         if self.count == 0 {
-            string.appendString("Not supported")
+            string.append("Not supported")
         }
-        string.appendString(")")
+        string.append(")")
         return string as String
     }
 }
@@ -43,11 +43,11 @@ class CameraISOViewController: DemoGetSetViewController {
         self.rangeLabel.text = ""
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // disable the set/get button first.
-        self.getValueButton.enabled = false
-        self.setValueButton.enabled = false
+        self.getValueButton.isEnabled = false
+        self.setValueButton.isEnabled = false
         self.getCameraMode()
     }
     /**
@@ -61,12 +61,12 @@ class CameraISOViewController: DemoGetSetViewController {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera!.getCameraModeWithCompletion({[weak self](mode: DJICameraMode, error: NSError?) -> Void in
+            camera!.getModeWithCompletion({[weak self](mode: DJICameraMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.rangeLabel.text = "ERROR: getCameraModeWithCompletion:. \(error!.description)"
+                    self?.rangeLabel.text = "ERROR: getCameraModeWithCompletion:. \(error!)"
                 }
-                else if mode == DJICameraMode.ShootPhoto || mode == DJICameraMode.RecordVideo {
+                else if mode == DJICameraMode.shootPhoto || mode == DJICameraMode.recordVideo {
                     // the first pre-condition is satisfied. Check the second one.
                     self?.getExposureMode()
                 }
@@ -87,15 +87,15 @@ class CameraISOViewController: DemoGetSetViewController {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.setCameraMode(DJICameraMode.ShootPhoto, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setCameraMode(DJICameraMode.shootPhoto, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.rangeLabel.text = "ERROR: setCameraMode:withCompletion:. \(error!.description)"
+                    self?.rangeLabel.text = "ERROR: setCameraMode:withCompletion:. \(error!)"
                 }
                 else {
                     // Normally, once an operation is finished, the camera still needs some time to finish up
                     // all the work. It is safe to delay the next operation after an operation is finished.
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {() -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {() -> Void in
                         
                         self?.getExposureMode()
                     })
@@ -115,12 +115,12 @@ class CameraISOViewController: DemoGetSetViewController {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.getExposureModeWithCompletion({[weak self](expMode: DJICameraExposureMode, error: NSError?) -> Void in
+            camera?.getExposureMode(completion: {[weak self](expMode: DJICameraExposureMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.rangeLabel.text = "ERROR: getExposureModeWithCompletion:. \(error!.description)"
+                    self?.rangeLabel.text = "ERROR: getExposureModeWithCompletion:. \(error!)"
                 }
-                else if expMode == DJICameraExposureMode.Manual {
+                else if expMode == DJICameraExposureMode.manual {
                     self?.enableGetSetISO()
                 }
                 else {
@@ -140,14 +140,14 @@ class CameraISOViewController: DemoGetSetViewController {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.setExposureMode(DJICameraExposureMode.Manual, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setExposureMode(DJICameraExposureMode.manual, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.rangeLabel.text = "ERROR: setExposureMode:withCompletion:. \(error!.description)"
+                    self?.rangeLabel.text = "ERROR: setExposureMode:withCompletion:. \(error!)"
                 }
                 else {
                     // all the pre-conditions are satisfied.
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {() -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {() -> Void in
                         self?.enableGetSetISO()
                     })
                 }
@@ -156,8 +156,8 @@ class CameraISOViewController: DemoGetSetViewController {
     }
 
     func enableGetSetISO() {
-        self.getValueButton.enabled = true
-        self.setValueButton.enabled = true
+        self.getValueButton.isEnabled = true
+        self.setValueButton.isEnabled = true
         self.updateValidISORange()
     }
     /**
@@ -166,16 +166,16 @@ class CameraISOViewController: DemoGetSetViewController {
 
     func updateValidISORange() {
         let str: NSMutableString = NSMutableString(string: STATE_WAIT_FOR_INPUT)
-        str.appendString("\n the valid range: \n")
-        let range:NSArray? = DJICameraParameters.sharedInstance().supportedCameraISORange()
+        str.append("\n the valid range: \n")
+        let range:NSArray? = DJICameraParameters.sharedInstance().supportedCameraISORange() as NSArray?
         
         if (range != nil) {
-            str.appendString(range!.horizontalDescription())
+            str.append(range!.horizontalDescription())
         }
         self.rangeLabel.text = str as String
     }
 
-    @IBAction override func onGetButtonClicked(sender: AnyObject) {
+    @IBAction override func onGetButtonClicked(_ sender: AnyObject) {
         self.updateISO()
     }
 
@@ -183,10 +183,10 @@ class CameraISOViewController: DemoGetSetViewController {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.getISOWithCompletion({[weak self](iso: DJICameraISO, error: NSError?) -> Void in
+            camera?.getISOWithCompletion({[weak self](iso: DJICameraISO, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getISO:\(error!.description)")
+                    self?.showAlertResult("ERROR: getISO:\(error!)")
                 }
                 else {
                     self?.getValueTextField.text = "\(iso.rawValue)"
@@ -195,13 +195,13 @@ class CameraISOViewController: DemoGetSetViewController {
         }
     }
 
-    @IBAction override func onSetButtonClicked(sender: AnyObject) {
+    @IBAction override func onSetButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             let iso: DJICameraISO = DJICameraISO(rawValue: UInt((self.setValueTextField.text! as NSString).intValue))!
-            camera?.setISO(iso, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setISO(iso, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: setISO:\(error!.description)")
+                    self?.showAlertResult("ERROR: setISO:\(error!)")
                 }
                 else {
                     self?.showAlertResult("Success. ")

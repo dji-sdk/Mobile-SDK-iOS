@@ -20,10 +20,10 @@ class RCParingViewController: DJIBaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onStartParingButtonClicked(sender: AnyObject) {
+    @IBAction func onStartParingButtonClicked(_ sender: AnyObject) {
         let rc: DJIRemoteController? = self.fetchRemoteController()
         if rc != nil {
-            rc!.enterRCToAircraftPairingModeWithCompletion({[weak self](error: NSError?) -> Void in
+            rc!.enterRCToAircraftPairingMode(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Start Failed: \(error!.localizedDescription)")
                 }
@@ -37,10 +37,10 @@ class RCParingViewController: DJIBaseViewController {
         }
     }
     
-    @IBAction func onStopParingButtonClicked(sender: AnyObject) {
+    @IBAction func onStopParingButtonClicked(_ sender: AnyObject) {
         let rc: DJIRemoteController? = self.fetchRemoteController()
         if rc != nil {
-            rc!.exitRCToAircraftPairingModeWithCompletion({[weak self](error: NSError?) -> Void in
+            rc!.exitRCToAircraftPairingMode(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Stop Failed: \(error!.localizedDescription)")
                 }

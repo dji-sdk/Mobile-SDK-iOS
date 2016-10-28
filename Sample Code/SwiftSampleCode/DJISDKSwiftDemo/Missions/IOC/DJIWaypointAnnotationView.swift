@@ -23,12 +23,12 @@ class DJIWaypointAnnotationView: MKAnnotationView {
         lblFrame.size.width = wpImage.size.width
         lblFrame.size.height = wpImage.size.height * 0.7
         titleLabel = UILabel(frame: lblFrame)
-        titleLabel!.font = UIFont.boldSystemFontOfSize(13)
-        titleLabel!.textAlignment = .Center
+        titleLabel!.font = UIFont.boldSystemFont(ofSize: 13)
+        titleLabel!.textAlignment = .center
         imgView.addSubview(self.titleLabel!)
     
-        self.enabled = false
-        self.draggable = false
+        self.isEnabled = false
+        self.isDraggable = false
         self.addSubview(imgView)
     }
 
@@ -36,15 +36,4 @@ class DJIWaypointAnnotationView: MKAnnotationView {
         super.init(coder: aDecoder)!
     }
     
-    required override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
 }
-//
-//  DJIWaypointAnnotationView.m
-//  DJISDKSwiftDemo
-//
-//  Created by DJI on 15/7/2.
-//  Copyright (c) 2015 DJI. All rights reserved.
-//

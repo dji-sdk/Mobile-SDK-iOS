@@ -74,17 +74,12 @@ class HotPointConfigView: UIView {
 
     var clockwise: Bool {
         get {
-            return self.clockwiseSwitch.on
+            return self.clockwiseSwitch.isOn
         }
         
         set (clockwise) {
-            self.clockwiseSwitch.on = clockwise
+            self.clockwiseSwitch.isOn = clockwise
         }
-    }
-
-    init() {
-        super.init(frame: CGRectZero)
-        self.initWithNib()
     }
     
     override init(frame: CGRect) {
@@ -96,35 +91,35 @@ class HotPointConfigView: UIView {
     }
 
     func initWithNib() -> HotPointConfigView {
-        let mainView: UIView = NSBundle.mainBundle().loadNibNamed("HotPointConfigView", owner: self, options: nil)[0] as! UIView
+        let mainView: UIView = Bundle.main.loadNibNamed("HotPointConfigView", owner: self, options: nil)![0] as! UIView
         self.frame = mainView.bounds
         self.addSubview(mainView)
         self.altitude = 50.0
         self.radius = 20.0
         self.speed = 20
         self.clockwise = true
-        self.startPoint = DJIHotPointStartPoint.North
-        self.heading = DJIHotPointHeading.AlongCircleLookingForward
+        self.startPoint = DJIHotPointStartPoint.north
+        self.heading = DJIHotPointHeading.alongCircleLookingForward
         return self
     }
 
 
-    @IBAction func onOkButtonClicked(sender: AnyObject) {
+    @IBAction func onOkButtonClicked(_ sender: AnyObject) {
       
         self.delegate?.configViewWillDisappear()
-        UIView.animateWithDuration(0.2, animations: {() -> Void in
+        UIView.animate(withDuration: 0.2, animations: {() -> Void in
             self.alpha = 0.0
         })
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if self.altitudeInputBox.isFirstResponder() {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if self.altitudeInputBox.isFirstResponder {
             self.altitudeInputBox.resignFirstResponder()
         }
-        if self.radiusInputBox.isFirstResponder() {
+        if self.radiusInputBox.isFirstResponder {
             self.radiusInputBox.resignFirstResponder()
         }
-        if self.speedInputBox.isFirstResponder() {
+        if self.speedInputBox.isFirstResponder {
             self.speedInputBox.resignFirstResponder()
         }
         return true

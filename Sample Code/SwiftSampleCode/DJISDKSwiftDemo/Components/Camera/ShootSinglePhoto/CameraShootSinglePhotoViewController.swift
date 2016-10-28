@@ -31,7 +31,7 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
     
     @IBOutlet weak var shootPhotoButton: UIButton!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setVideoPreview()
         // set delegate to render camera's video feed into the view
@@ -40,12 +40,12 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
             camera?.delegate = self
         }
         // disable the shoot photo button by default
-        self.shootPhotoButton.enabled = false
+        self.shootPhotoButton.isEnabled = false
         // start to check the pre-condition
         self.getCameraMode()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // clean the delegate
         let camera: DJICamera? = self.fetchCamera()
@@ -64,12 +64,12 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.getCameraModeWithCompletion({[weak self](mode: DJICameraMode, error: NSError?) -> Void in
+            camera?.getModeWithCompletion({[weak self](mode: DJICameraMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!)")
                 }
-                else if mode == DJICameraMode.ShootPhoto {
+                else if mode == DJICameraMode.shootPhoto {
                     self?.isInShootPhotoMode = true
                 }
                 else {
@@ -88,15 +88,15 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.setCameraMode(DJICameraMode.ShootPhoto, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setCameraMode(DJICameraMode.shootPhoto, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: setCameraMode:withCompletion:\(error!.description)")
+                    self?.showAlertResult("ERROR: setCameraMode:withCompletion:\(error!)")
                 }
                 else {
                     // Normally, once an operation is finished, the camera still needs some time to finish up
                     // all the work. It is safe to delay the next operation after an operation is finished.
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {() -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {() -> Void in
                         
                         self?.isInShootPhotoMode = true
                     })
@@ -109,13 +109,13 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
      *  a photo now.
      */
 
-    @IBAction func onShootPhotoButtonClicked(sender: AnyObject) {
+    @IBAction func onShootPhotoButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            self.shootPhotoButton.enabled = false
-            camera?.startShootPhoto(DJICameraShootPhotoMode.Single, withCompletion: {[weak self](error: NSError?) -> Void in
+            self.shootPhotoButton.isEnabled = false
+            camera?.startShootPhoto(DJICameraShootPhotoMode.single, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: startShootPhoto:withCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: startShootPhoto:withCompletion::\(error!)")
                 }
             })
         }
@@ -131,14 +131,14 @@ class CameraShootSinglePhotoViewController: DJIBaseViewController, DJICameraDele
     }
 
     func toggleShootPhotoButton() {
-        self.shootPhotoButton.enabled = (self.isInShootPhotoMode && !self.isShootingPhoto && !self.isStoringPhoto)
+        self.shootPhotoButton.isEnabled = (self.isInShootPhotoMode && !self.isShootingPhoto && !self.isStoringPhoto)
     }
 
-    func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
+    func camera(_ camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
-    func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {
+    func camera(_ camera: DJICamera, didUpdate systemState: DJICameraSystemState) {
         self.isShootingPhoto = systemState.isShootingSinglePhoto || systemState.isShootingIntervalPhoto || systemState.isShootingBurstPhoto
         self.isStoringPhoto = systemState.isStoringPhoto
     }

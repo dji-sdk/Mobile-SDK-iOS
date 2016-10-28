@@ -52,7 +52,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.isFinished = false
         self.isInMultipleEditMode = false
@@ -76,7 +76,7 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         self.getCameraMode()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // clean the delegate
         let camera: DJICamera? = self.fetchCamera()
@@ -97,12 +97,12 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera!.getCameraModeWithCompletion({[weak self](mode: DJICameraMode, error: NSError?) -> Void in
+            camera!.getModeWithCompletion({[weak self](mode: DJICameraMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!)")
                 }
-                else if mode != DJICameraMode.Playback {
+                else if mode != DJICameraMode.playback {
                     self?.setCameraMode()
                 }
 
@@ -117,30 +117,30 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.setCameraMode(DJICameraMode.Playback, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setCameraMode(DJICameraMode.playback, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!)")
                 }
             })
         }
     }
 
-    @IBAction func onSelectFirstClicked(sender: AnyObject) {
+    @IBAction func onSelectFirstClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager?.toggleFileSelectionAtIndex(0)
+            camera?.playbackManager?.toggleFileSelection(at: 0)
         }
     }
 
-    @IBAction func onSelectSecondClicked(sender: AnyObject) {
+    @IBAction func onSelectSecondClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera?.playbackManager?.toggleFileSelectionAtIndex(1)
+            camera?.playbackManager?.toggleFileSelection(at: 1)
         }
     }
 
-    @IBAction func onDownloadClicked(sender: AnyObject) {
+    @IBAction func onDownloadClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             self.isFinished = true
@@ -148,31 +148,31 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
             var currentFileRecievedSize: UInt = 0
             var currentFileName: String? = nil
             
-            camera?.playbackManager?.downloadSelectedFilesWithPreparation({[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
+            camera?.playbackManager?.downloadSelectedFiles(preparation: {[weak self](fileName: String?, fileType: DJIDownloadFileType, fileSize: UInt, skip: UnsafeMutablePointer<ObjCBool>) -> Void in
                 
                 currentFileName = fileName
                 self?.statusLabel.text = "Start to download file: \(fileName)"
                 currentFileTotalSize = fileSize
                 currentFileRecievedSize = 0
-            }, process: {[weak self](data: NSData?, error: NSError?) -> Void in
+            }, process: {[weak self](data: Data?, error: Error?) -> Void in
                 
-                dispatch_async(dispatch_get_main_queue(), {() -> Void in
+                DispatchQueue.main.async(execute: {() -> Void in
                     
                     if error != nil {
                         self?.showAlertResult("ERROR occurs while downloading file: \(currentFileName)")
                     }
                     else {
-                        currentFileRecievedSize += UInt(data!.length)
+                        currentFileRecievedSize += UInt(data!.count)
                         self?.statusLabel.text = "Downloaded: \(Int(CGFloat(currentFileRecievedSize) * 100.0 / CGFloat(currentFileTotalSize)))%"
                     }
                 })
             }, fileCompletion: {() -> Void in
                 
                 self.statusLabel.text = "A file is downloaded"
-            }, overallCompletion: {[weak self](error: NSError?) -> Void in
+            }, overallCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: downloadSelectedFiles:\(error!.description)")
+                    self?.showAlertResult("ERROR: downloadSelectedFiles:\(error!)")
                 }
                 else {
                     self?.showAlertResult("All files are downloaded. ")
@@ -193,32 +193,32 @@ class CameraPlaybackDownloadViewController: DJIBaseViewController, DJIPlaybackDe
 
     func updateButtons() {
         if self.isFinished || !self.isInMultipleEditMode {
-            self.selectFirstButton.enabled = false
-            self.selectSecondButton.enabled = false
-            self.downloadButton.enabled = false
+            self.selectFirstButton.isEnabled = false
+            self.selectSecondButton.isEnabled = false
+            self.downloadButton.isEnabled = false
             return
         }
-        self.selectFirstButton.enabled = true
-        self.selectSecondButton.enabled = true
-        self.downloadButton.enabled = self.isSelectedFilesEnough
+        self.selectFirstButton.isEnabled = true
+        self.selectSecondButton.isEnabled = true
+        self.downloadButton.isEnabled = self.isSelectedFilesEnough
     }
 
-    func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
+    func camera(_ camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
-    func playbackManager(playbackManager: DJIPlaybackManager, didUpdatePlaybackState playbackState: DJICameraPlaybackState) {
+    func playbackManager(_ playbackManager: DJIPlaybackManager, didUpdate playbackState: DJICameraPlaybackState) {
         if self.isFinished {
             return
         }
         self.isSelectedFilesEnough = playbackState.numberOfSelectedFiles  > 0
         switch playbackState.playbackMode {
-            case DJICameraPlaybackMode.MultipleFilesEdit:
+            case DJICameraPlaybackMode.multipleFilesEdit:
             // already in multiple edit. Then select files.
                 self.isInMultipleEditMode = true
-            case DJICameraPlaybackMode.MultipleFilesPreview:
+            case DJICameraPlaybackMode.multipleFilesPreview:
                 playbackManager.enterMultipleEditMode()
-            case DJICameraPlaybackMode.Download:
+            case DJICameraPlaybackMode.download:
                 break
             default:
                 playbackManager.enterMultiplePreviewMode()

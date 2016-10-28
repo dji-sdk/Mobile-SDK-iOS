@@ -16,6 +16,7 @@
 #import "DemoUtility.h"
 #import <VideoPreviewer/VideoPreviewer.h>
 #import "CameraRecordVideoViewController.h"
+#import "VideoPreviewerSDKAdapter.h"
 
 @interface CameraRecordVideoViewController () <DJICameraDelegate>
 
@@ -28,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *recordingTimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *startRecordButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopRecordButton;
+
+@property (nonatomic) VideoPreviewerSDKAdapter *previewerAdapter; 
 
 @end
 
@@ -151,14 +154,16 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-    //    self.videoFeedView.backgroundColor = [UIColor grayColor];
-    
     [[VideoPreviewer instance] start];
     [[VideoPreviewer instance] setView:self.videoFeedView];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    [self.previewerAdapter start];
 }
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
+    [self.previewerAdapter stop];
+    self.previewerAdapter = nil;
 }
 
 -(void) setIsInRecordVideoMode:(BOOL)isInRecordVideoMode {
@@ -187,9 +192,7 @@
 
 #pragma mark - DJICameraDelegate
 -(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    if(![[[VideoPreviewer instance] dataQueue] isFull]){
-        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
-    }
+    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
 }
 
 -(void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState {

@@ -9,8 +9,8 @@ import MapKit
 class DJIAircraftAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?){
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        self.enabled = false
-        self.draggable = false
+        self.isEnabled = false
+        self.isDraggable = false
         self.image = UIImage(named: "aircraft.png")
     }
 
@@ -18,11 +18,8 @@ class DJIAircraftAnnotationView: MKAnnotationView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    required override init(frame: CGRect) {
-        super.init(frame: frame);
-    }
-    func updateHeading(heading: Double) {
-        self.transform = CGAffineTransformIdentity
-        self.transform = CGAffineTransformMakeRotation(CGFloat(heading))
+    func updateHeading(_ heading: Double) {
+        self.transform = CGAffineTransform.identity
+        self.transform = CGAffineTransform(rotationAngle: CGFloat(heading))
     }
 }

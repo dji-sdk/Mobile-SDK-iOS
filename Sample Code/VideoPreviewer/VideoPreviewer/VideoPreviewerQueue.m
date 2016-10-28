@@ -101,7 +101,7 @@ typedef struct{
         
         struct timespec ts;
         ts.tv_sec = tv.tv_sec + 2;
-        ts.tv_nsec = tv.tv_usec;
+        ts.tv_nsec = tv.tv_usec*1000;
         pthread_cond_timedwait(&_cond, &_mutex, &ts);
         if(_count == 0)
         {

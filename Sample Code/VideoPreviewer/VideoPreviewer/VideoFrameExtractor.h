@@ -38,7 +38,7 @@
 
 /**
  *  Please init extractor before using it.
- *  
+ *
  */
 @interface VideoFrameExtractor : NSObject {
     
@@ -51,6 +51,12 @@
 }
 
 @property (weak) id<VideoDataProcessDelegate> delegate;
+
+/**
+ *  If the stream is encoded by DJI's encoder. It is used to workaround an issue
+ *  in DJI's encoder.
+ */
+@property (nonatomic, assign) BOOL usingDJIAircraftEncoder;
 
 @property(nonatomic, readonly) int frameRate;
 @property(nonatomic, readonly) int outputWidth;
@@ -76,6 +82,10 @@
 -(void) setShouldVerifyVideoStream:(BOOL)shouldVerify;
 
 -(void) parseVideo:(uint8_t*)buf length:(int)length withOutputBlock:(void (^)(uint8_t* frame, int size))block;
+
+/**
+ *  the frame in block should be released by user
+ */
 -(void) parseVideo:(uint8_t*)buf length:(int)length withFrame:(void (^)(VideoFrameH264Raw* frame))block;
 
 -(void) decodeVideo:(uint8_t*)buf length:(int)length callback:(void(^)(BOOL b))callback;
@@ -92,6 +102,7 @@
  */
 -(int) __attribute__((deprecated)) decode:(uint8_t*)buf length:(int)length callback:(void(^)(BOOL b))callback;
 
+
 /**
  *  Get yuv Frame
  *
@@ -99,6 +110,9 @@
  */
 -(void)getYuvFrame:(VideoFrameYUV *)yuv;
 
+/**
+ *
+ */
 -(CVPixelBufferRef) __attribute__((deprecated)) getCVImage;
 
 /**
@@ -113,7 +127,7 @@
  *
  *  @param buffer pointer to the video data
  *  @param bufferSize length of the data in byte
- *  @return the index of the I frame. NULL when no I frame is found. 
+ *  @return the index of the I frame. NULL when no I frame is found.
  */
 -(uint8_t*) getIFrameFromBuffer:(uint8_t*)buffer length:(int)bufferSize;
 

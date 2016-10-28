@@ -1,9 +1,14 @@
+//
+//  LB2AUDHackParser.m
+//
+//  Copyright (c) 2013 DJI. All rights reserved.
+//
+
 /**
  *  A workaround for Lightbridge 2's video feed.
  */
-#import "LB2AUDHackParser.h"
 
-#define REMOVE_ALL_AUD (1) //remove all AUD
+#import "LB2AUDHackParser.h"
 
 typedef enum : NSUInteger {
     LB2AUDHackParserStatus_SeekNAL, //searching nal
@@ -11,9 +16,9 @@ typedef enum : NSUInteger {
     LB2AUDHackParserStatus_SeekFilter, //searching filter
 } LB2AUDHackParserStatus;
 
-#define DATA_BUFFER_SIZE (4096)
+#define DATA_BUFFER_SIZE (1024*1024)
 static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
-/*static const uint8_t g_LB2AUDHackParser_filter[] = {0x00, 0x00, 0x00, 0x01, 0x0c};*/
+//static const uint8_t g_LB2AUDHackParser_filter[] = {0x00, 0x00, 0x00, 0x01, 0x0c};
 
 @interface LB2AUDHackParser (){
     uint8_t* dataBuffer;
@@ -23,7 +28,6 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
 @property (nonatomic, assign) LB2AUDHackParserStatus status;
 @property (nonatomic, assign) int seekNALZeroCount; //counter for searching nal. init value is 0.
 @property (nonatomic, assign) int seekAUDPos; //search aud's current position (in byte)
-@property (nonatomic, assign) int seekFilterPos; //search filter's current position (in byte)
 @end
 
 @implementation LB2AUDHackParser
@@ -47,7 +51,6 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     bufferSize = 0;
     _seekAUDPos = 0;
     _seekNALZeroCount = 0;
-    _seekFilterPos = 0;
 }
 
 -(void) parse:(void *)data_in inSize:(int)in_size{
@@ -55,15 +58,15 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
         [self flushBufferWithAppendData:nil size:0];
         return;
     }
-    
+
     // if the end of aud is not 000000010c, then remove the aud
     int workOffset = 0;
-    
+
     uint8_t* outputBuf = (uint8_t*)data_in;
-    
+
     while (workOffset < in_size) {
         uint8_t current_byte = *((uint8_t*)data_in + workOffset);
-        
+
         if (_status == LB2AUDHackParserStatus_SeekNAL) {
             // search nalu's head
             if (current_byte == 0) {
@@ -85,8 +88,8 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
                 // it is aud
                 _seekAUDPos++;
                 if (_seekAUDPos == sizeof(g_LB2AUDHackParser_aud)) {
-                 // the aud is complete
-                self.status = LB2AUDHackParserStatus_SeekFilter;
+                    // the aud is complete
+                    self.status = LB2AUDHackParserStatus_SeekFilter;
                 }
             }else{
                 // not aud, continue to search
@@ -94,71 +97,32 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
             }
         }
         else if(_status == LB2AUDHackParserStatus_SeekFilter){
-            //search filter
-            if ((!REMOVE_ALL_AUD) /*&& current_byte == g_LB2AUDHackParser_filter[_seekFilterPos]*/) {
-               /* _seekFilterPos++;
-                if (_seekFilterPos == sizeof(g_LB2AUDHackParser_filter)) {
-                    // filter found. Keep the aud found before.
-                    self.status = LB2AUDHackParserStatus_SeekNAL;
-                }*/
+            //It is not a filer. Remove the aud found before
+            if (workOffset > 6) {
+                //aud is in the same pack. For this case, skipping it is enough.
+                int outputSize = (workOffset - (int)(outputBuf - (uint8_t*)data_in)) - 6;
+                [self flushBufferWithAppendData:outputBuf size:outputSize];
+
+                //skip aud
+                outputBuf = (uint8_t*)data_in + workOffset;
             }else{
-                //It is not a filer. Remove the aud found before
-                if (workOffset > _seekFilterPos + 6) {
-                    //aud is in the same pack. For this case, skipping it is enough.
-                    int outputSize = (workOffset - (int)(outputBuf - (uint8_t*)data_in)) -_seekFilterPos - 6;
-                    [self flushBufferWithAppendData:outputBuf size:outputSize];
-                    
-                    //skip aud
-                    outputBuf = (uint8_t*)data_in + (workOffset - _seekFilterPos);
-                }else{
-                    
-#if REMOVE_ALL_AUD
-                    int bufferSub = 6 - workOffset;
-                    bufferSize -= bufferSub;
-                    if (bufferSize < 0) {
-                        bufferSize = 0;
-                    }
-                    
-                    // Move the pointer
-                    outputBuf = ((uint8_t*)data_in + workOffset);
-                    //flush buffer
-                    [self flushBufferWithAppendData:nil size:0];
-                    self.status = LB2AUDHackParserStatus_SeekNAL;
-#else
-                    // Sometimes, aud might be already inside the buffer.Then we need to shift the buffer first.
-                    int bufferSub = _seekFilterPos + 6 - workOffset;
-                    if (bufferSize > bufferSub) {
-                        
-                        //It is possible that the end of the buffer aligns with the end of aud.
-                        uint8_t bufferTail[32];
-                        int tailSize = bufferSub - 6;
-                        if (tailSize > 0) {
-                            if (tailSize > 32) {
-                                tailSize = 0; //error
-                            }else{
-                                memcpy(bufferTail, dataBuffer + bufferSize - tailSize, tailSize);
-                            }
-                        }
-                        bufferSize -= bufferSub;
-                        
-                        [self flushBufferWithAppendData:nil size:0];
-                        //flush data in tail
-                        if (tailSize>0) {
-                            [self flushBufferWithAppendData:bufferTail size:tailSize];
-                        }
-                    }
-                    
-                    [self flushBufferWithAppendData:nil size:0];
-                    
-                    outputBuf = MAX((uint8_t*)data_in + workOffset - _seekFilterPos, (uint8_t*)data_in);
-#endif
+
+                int bufferSub = 6 - workOffset;
+                bufferSize -= bufferSub;
+                if (bufferSize < 0) {
+                    bufferSize = 0;
                 }
-                
-                workOffset -= MIN(_seekFilterPos, workOffset)+1;
-                self.status = LB2AUDHackParserStatus_SeekNAL;
+
+                // Move the pointer
+                outputBuf = ((uint8_t*)data_in + workOffset);
+                //flush buffer
+                [self flushBufferWithAppendData:nil size:0];
             }
+
+            workOffset--;
+            self.status = LB2AUDHackParserStatus_SeekNAL;
         }
-        
+
         workOffset++; // work on the next byte
     }
     
@@ -182,7 +146,6 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     // reset the variable whenever the status changes
     _seekNALZeroCount = 0;
     _seekAUDPos = 0;
-    _seekFilterPos = 0;
 }
 
 -(void) pushBuffer:(uint8_t*)data size:(int)size{
@@ -190,10 +153,12 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
         return;
     }
     
+    // Cache data
     if (bufferSize + size > DATA_BUFFER_SIZE) { // overflow, flush the buffer
         [self flushBufferWithAppendData:nil size:0];
     }
     
+    // If size is larger than the buffer size, discard the exceeding part. 
     int writeSize = MIN(size, DATA_BUFFER_SIZE);
     memcpy(dataBuffer+bufferSize, data, writeSize);
     bufferSize += writeSize;

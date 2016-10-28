@@ -15,24 +15,24 @@ class RebootWiFiViewController: DJIBaseViewController {
         self.title = "Reboot WiFi"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil && airLink!.isWifiLinkSupported {
-            self.rebootWiFiButton.enabled = true
+            self.rebootWiFiButton.isEnabled = true
         }
         else {
-            self.rebootWiFiButton.enabled = false
+            self.rebootWiFiButton.isEnabled = false
             self.showAlertResult("The product doesn't support WiFi. ")
         }
     }
     
-    @IBAction func onRebootWiFiClicked(sender: AnyObject) {
+    @IBAction func onRebootWiFiClicked(_ sender: AnyObject) {
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil && airLink!.wifiLink != nil {
-            airLink!.wifiLink!.rebootWiFiWithCompletion({[weak self](error: NSError?) -> Void in
+            airLink!.wifiLink!.rebootWiFi(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: rebootWiFi: \(error!.description)")
+                    self?.showAlertResult("ERROR: rebootWiFi: \(error!)")
                 }
                 else {
                     self?.showAlertResult("SUCCESS: rebootWiFi. ")

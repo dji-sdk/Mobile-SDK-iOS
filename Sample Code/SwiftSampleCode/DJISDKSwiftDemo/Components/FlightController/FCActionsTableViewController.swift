@@ -58,9 +58,9 @@ class FCActionsTableViewController: DemoTableViewController {
     }
     
     //Passes an instance of the current component selected to IndividualComponentViewController
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier != "openComponentInfo") {
-            let vc = segue.destinationViewController as! DJIBaseViewController
+            let vc = segue.destination as! DJIBaseViewController
             vc.moduleTitle = segue.identifier
         }
     }

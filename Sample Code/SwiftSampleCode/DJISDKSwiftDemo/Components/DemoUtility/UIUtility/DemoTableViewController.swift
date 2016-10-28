@@ -7,28 +7,48 @@
 //
 import UIKit
 import DJISDK
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 let HeaderHeight:CGFloat = 30
 
 class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
-    var sectionNames:[AnyObject] = []
-    var items:[AnyObject] = []
+    var sectionNames:[String] = []
+    var items:[[DemoSettingItem]] = []
     var connectedComponent:DJIBaseComponent? = nil
     
     var showComponentVersionSn:Bool = false
     var version:String? = nil
     var serialNumber:String? = nil
-    var versionSerialLabel:UILabel = UILabel(frame: CGRectZero)
+    var versionSerialLabel:UILabel = UILabel(frame: CGRect.zero)
 
      init() {
-        super.init(style: .Grouped)
+        super.init(style: .grouped)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         if (self.sectionNames.count <= 1) {
             return 1
         } else {
@@ -36,12 +56,12 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         }
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.sectionNames.count <= 1 {
             return self.items.count
         }
         else if (section < self.items.count) {
-            let items:[AnyObject]? = self.items[section] as? [AnyObject]
+            let items:[DemoSettingItem]? = self.items[section]
             if (items != nil) {
                 return items!.count
             }
@@ -50,80 +70,68 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         return 0;
     }
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionNames.count > section ? self.sectionNames[section] as? String : nil
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sectionNames.count > section ? self.sectionNames[section] : nil
         
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return HeaderHeight
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let CellIdentifier: String = "Cell"
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(CellIdentifier)
+        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: CellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: CellIdentifier)
+            cell = UITableViewCell(style: .default, reuseIdentifier: CellIdentifier)
         }
-        let section: Int = indexPath.section
-        let row: Int = indexPath.row
+        let section: Int = (indexPath as NSIndexPath).section
+        let row: Int = (indexPath as NSIndexPath).row
         var item: DemoSettingItem? = nil
         if self.sectionNames.count <= 1 {
-            item = self.items[row] as? DemoSettingItem
-            if (item == nil) {
-                let sectionItems = self.items[0] as? [DemoSettingItem]
-                if (sectionItems?.count > row) {
-                    item = sectionItems![row]
-                }
-            }
+            item = self.items[row].first
         }
         else {
-            let sectionItems = self.items[section] as? [DemoSettingItem]
-            if (sectionItems?.count > row) {
-                item = sectionItems![row]
+            let sectionItems = self.items[section]
+            if (sectionItems.count > row) {
+                item = sectionItems[row]
             }
         }
         cell?.textLabel!.text = item?.itemName
         cell?.textLabel?.font = UIFont(name:"Helvetica Neue Light", size:18)
-        cell?.accessoryType = .DisclosureIndicator
+        cell?.accessoryType = .disclosureIndicator
         return cell!
     }
 
-    func canPerformSegueWithIdentifier(identifier: NSString) -> Bool {
-        let templates:NSArray? = self.valueForKey("storyboardSegueTemplates") as? NSArray
+    func canPerformSegueWithIdentifier(_ identifier: NSString) -> Bool {
+        let templates:NSArray? = self.value(forKey: "storyboardSegueTemplates") as? NSArray
     
         let predicate:NSPredicate = NSPredicate(format: "identifier=%@", identifier)
         
-        let filteredtemplates = templates?.filteredArrayUsingPredicate(predicate)
+        let filteredtemplates = templates?.filtered(using: predicate)
         return (filteredtemplates?.count>0)
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Navigation logic may go here. Create and push another view controller.
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let section: Int = indexPath.section
-        let row: Int = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
+        let section: Int = (indexPath as NSIndexPath).section
+        let row: Int = (indexPath as NSIndexPath).row
         var item: DemoSettingItem? = nil
         if self.sectionNames.count <= 1 {
-            item = self.items[row] as? DemoSettingItem
-            if (item == nil) {
-                let sectionItems = self.items[0] as? [DemoSettingItem]
-                if (sectionItems?.count > row) {
-                    item = sectionItems![row]
-                }
-            }
+            item = self.items[row].first
         }
         else {
-            let sectionItems = self.items[section] as? [DemoSettingItem]
-            if (sectionItems?.count > row) {
-                item = sectionItems![row]
+            let sectionItems = self.items[section]
+            if (sectionItems.count > row) {
+                item = sectionItems[row]
             }
         }
         
         if (item != nil) {
             // If the view controller exists in stroy board, excuting the segue first
-            if (self.canPerformSegueWithIdentifier(item!.itemName)) {
-                self.performSegueWithIdentifier(item!.itemName, sender: self)
+            if (self.canPerformSegueWithIdentifier(item!.itemName as NSString)) {
+                self.performSegue(withIdentifier: item!.itemName, sender: self)
             } else if (item!.viewControllerClass != nil) {
                 let controllerObject = item!.viewControllerClass!.init()
                 controllerObject.title = item?.itemName
@@ -132,11 +140,11 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         }
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 1.0
     }
     
-    func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
+    func product(_ product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
         if isConnected {
             NSLog("\(product.model) connected. ")
             ConnectedProductManager.sharedInstance.connectedProduct = product
@@ -152,7 +160,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     
     func updateSerialNumber() {
         if (connectedComponent != nil) {
-            connectedComponent!.getSerialNumberWithCompletion { (serialNumber, error) -> Void in
+            connectedComponent!.getSerialNumber { (serialNumber, error) -> Void in
                 self.serialNumber = serialNumber
                 self.updateVersionSerialNumber()
             }
@@ -161,7 +169,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
     
     func updateFirmwareVersion() {
         if (connectedComponent != nil) {
-            connectedComponent!.getFirmwareVersionWithCompletion { (version, error) -> Void in
+            connectedComponent!.getFirmwareVersion { (version, error) -> Void in
                 self.version = version
                 self.updateVersionSerialNumber()
             }
@@ -179,18 +187,18 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         {
             array.append("Serial Number: \(serialNumber!)")
         }
-        versionSerialLabel.text = (array as NSArray).componentsJoinedByString("   ")
+        versionSerialLabel.text = (array as NSArray).componentsJoined(by: "   ")
        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         ConnectedProductManager.sharedInstance.setDelegate(self)
         
         if (self.showComponentVersionSn) {
-            versionSerialLabel.frame = CGRectMake(0, 0, tableView.bounds.width, 30)
-            versionSerialLabel.textAlignment = NSTextAlignment.Center
-            versionSerialLabel.font = UIFont.italicSystemFontOfSize(10)
+            versionSerialLabel.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30)
+            versionSerialLabel.textAlignment = NSTextAlignment.center
+            versionSerialLabel.font = UIFont.italicSystemFont(ofSize: 10)
             versionSerialLabel.textColor = UIColor(white: 0.5, alpha: 1.0)
             tableView.tableFooterView = versionSerialLabel
             //Updates the component's serial number
@@ -201,7 +209,7 @@ class DemoTableViewController: UITableViewController, DJIBaseProductDelegate {
         }
     }
     
-    func component(component: DJIBaseComponent, connectivityChanged isConnected: Bool) {
+    func component(_ component: DJIBaseComponent, connectivityChanged isConnected: Bool) {
         if(isConnected) {
             
             //Updates the component's serial number

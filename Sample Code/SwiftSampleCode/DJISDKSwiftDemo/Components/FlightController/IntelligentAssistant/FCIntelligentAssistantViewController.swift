@@ -39,18 +39,18 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         // Dispose of any resources that can be recreated.
     }
     
-    func updateSwitchState(fa:DJIIntelligentFlightAssistant?){
+    func updateSwitchState(_ fa:DJIIntelligentFlightAssistant?){
         if (fa != nil) {
-            fa?.getCollisionAvoidanceEnabledWithCompletion({ (state:Bool, error: NSError?) -> Void in
+            fa?.getCollisionAvoidanceEnabled(completion: { (state:Bool, error: Error?) -> Void in
                 if (error != nil) {
-                    self.showAlertResult("Error to get collision avoidance:\(error?.description)")
+                    self.showAlertResult("Error to get collision avoidance:\(error?.localizedDescription)")
                 }else {
                     self.collisionAvoidanceEnable.setOn(state, animated:false)
                 }
                 
-                fa?.getVisionPositioningEnabledWithCompletion({ (state:Bool, error:NSError?) -> Void in
+                fa?.getVisionPositioningEnabled(completion: { (state:Bool, error:Error?) -> Void in
                     if (error != nil) {
-                        self.showAlertResult("Error to get vision positioning:\(error?.description)")
+                        self.showAlertResult("Error to get vision positioning:\(error?.localizedDescription)")
                     }else {
                         self.visionPositioningEnable.setOn(state, animated:false)
                     }
@@ -59,10 +59,10 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         }
     }
     
-    func intelligentFlightAssistant(assistant: DJIIntelligentFlightAssistant, didUpdateVisionDetectionState state: DJIVisionDetectionState) {
+    func intelligentFlightAssistant(_ assistant: DJIIntelligentFlightAssistant, didUpdate state: DJIVisionDetectionState) {
         
-        self.isSensorWorking.text = state.isSensorWorking.description ?? "None"
-        self.isBraking.text = state.isBraking.description ?? "None"
+        self.isSensorWorking.text = state.isSensorWorking.description
+        self.isBraking.text = state.isBraking.description
         self.systemWarning.text = stringWithSystemWarnings(state.systemWarning)
         
         let firstSector : DJIVisionDetectionSector? = state.detectionSectors[0] as? DJIVisionDetectionSector
@@ -79,17 +79,17 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         self.r2WarningLevel.text = (state.detectionSectors[3] as? DJIVisionDetectionSector)?.warningLevel.rawValue.description
     }
     
-    func stringWithSystemWarnings(status: DJIVisionSystemWarning) -> String {
-        if status == DJIVisionSystemWarning.Unknown {
+    func stringWithSystemWarnings(_ status: DJIVisionSystemWarning) -> String {
+        if status == DJIVisionSystemWarning.unknown {
             return "Unknown"
         }
-        else if status == DJIVisionSystemWarning.Invalid {
+        else if status == DJIVisionSystemWarning.invalid {
             return "Invalid"
         }
-        else if status == DJIVisionSystemWarning.Safe {
+        else if status == DJIVisionSystemWarning.safe {
             return "Safe"
         }
-        else if status == DJIVisionSystemWarning.Dangerous {
+        else if status == DJIVisionSystemWarning.dangerous {
             return "Dangerous"
         }
         
@@ -97,27 +97,27 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
         
     }
     
-    @IBAction func onCollisionAvoidanceSwitchValueChanged(sender: UISwitch){
+    @IBAction func onCollisionAvoidanceSwitchValueChanged(_ sender: UISwitch){
         let fc: DJIFlightController? = self.fetchFlightController()
         let fa = fc?.intelligentFlightAssistant
         if (fa != nil) {
-          fa?.setCollisionAvoidanceEnabled(sender.on, withCompletion: { (error:NSError?) -> Void in
+          fa?.setCollisionAvoidanceEnabled(sender.isOn, withCompletion: { (error:Error?) -> Void in
             if (error != nil) {
-                self.showAlertResult("Error to enable/disable CollisionAvoidance:\(error?.description)")
-                sender.setOn(!sender.on, animated:false)
+                self.showAlertResult("Error to enable/disable CollisionAvoidance:\(error)")
+                sender.setOn(!sender.isOn, animated:false)
             }
           })
         }
     }
     
-    @IBAction func onVisionPositioningSwitchValueChanged(sender: UISwitch){
+    @IBAction func onVisionPositioningSwitchValueChanged(_ sender: UISwitch){
         let fc: DJIFlightController? = self.fetchFlightController()
         let fa = fc?.intelligentFlightAssistant
         if (fa != nil) {
-            fa?.setVisionPositioningEnabled(sender.on, withCompletion: { (error:NSError?) -> Void in
+            fa?.setVisionPositioningEnabled(sender.isOn, withCompletion: { (error:Error?) -> Void in
                 if (error != nil) {
-                    self.showAlertResult("Error to enable/disable VisionPositioning:\(error?.description)")
-                    sender.setOn(!sender.on, animated:false)
+                    self.showAlertResult("Error to enable/disable VisionPositioning:\(error)")
+                    sender.setOn(!sender.isOn, animated:false)
                 }
             })
         }

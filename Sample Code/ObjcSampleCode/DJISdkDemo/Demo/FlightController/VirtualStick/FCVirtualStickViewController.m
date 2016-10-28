@@ -1,5 +1,5 @@
 //
-//  JoystickTestViewController.m
+//  FCVirtualStickViewController.m
 //  DJISdkDemo
 //
 //  Copyright © 2015 DJI. All rights reserved.
@@ -17,13 +17,13 @@
  *
  */
 #import "FCVirtualStickViewController.h"
-#import "FCVirtualStickView.h"
+#import "DemoVirtualStickView.h"
 #import "DemoUtility.h"
 
 @interface FCVirtualStickViewController ()
 
-@property(nonatomic, weak) IBOutlet FCVirtualStickView* joystickLeft;
-@property(nonatomic, weak) IBOutlet FCVirtualStickView* joystickRight;
+@property(nonatomic, weak) IBOutlet DemoVirtualStickView* joystickLeft;
+@property(nonatomic, weak) IBOutlet DemoVirtualStickView* joystickRight;
 @property(nonatomic, weak) IBOutlet UIButton* coordinateSys;
 
 @property (weak, nonatomic) IBOutlet UIButton *enableVirtualStickButton;
@@ -198,7 +198,7 @@
     NSValue *vdir = [dict valueForKey:@"dir"];
     CGPoint dir = [vdir CGPointValue];
     
-    FCVirtualStickView* joystick = (FCVirtualStickView*)notification.object;
+    DemoVirtualStickView* joystick = (DemoVirtualStickView*)notification.object;
     if (joystick) {
         if (joystick == self.joystickLeft) {
             [self setThrottle:dir.y andYaw:dir.x];

@@ -120,7 +120,7 @@ class ConnectedProductManager: DJIProductObjectProtocol {
         return nil
     }
     
-    func setDelegate(delegate:DJIBaseProductDelegate?) {
+    func setDelegate(_ delegate:DJIBaseProductDelegate?) {
         self.connectedProduct?.delegate = delegate
     }
 
@@ -139,7 +139,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         if (ConnectedProductManager.sharedInstance.connectedProduct != nil) {
@@ -147,7 +147,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if (ConnectedProductManager.sharedInstance.connectedProduct != nil &&
             ConnectedProductManager.sharedInstance.connectedProduct?.delegate === self) {
@@ -160,7 +160,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         // Dispose of any resources that can be recreated.
     }
 
-    func product(product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
+    func product(_ product: DJIBaseProduct, connectivityChanged isConnected: Bool) {
         if isConnected {
             NSLog("\(product.model) connected. ")
             ConnectedProductManager.sharedInstance.connectedProduct = product
@@ -173,7 +173,7 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
         }
     }
 
-    func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
+    func component(withKey key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
        //     (newComponent as? DJICamera)?.delegate = self
         if ((newComponent is DJICamera) == true && (self is DJICameraDelegate) == true) {
             (newComponent as! DJICamera).delegate = self as? DJICameraDelegate
@@ -202,19 +202,19 @@ class DJIBaseViewController: UIViewController, DJIBaseProductDelegate, DJIProduc
     }
     
     
-    func showAlertResult(info:String) {
+    func showAlertResult(_ info:String) {
         // create the alert
         var message:String? = info
         
         if info.hasSuffix(":nil") {
-            message = info.stringByReplacingOccurrencesOfString(":nil", withString: " success")
+            message = info.replacingOccurrences(of: ":nil", with: " success")
         }
         
-        let alert = UIAlertController(title: "Message", message: "\(message ?? "")", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Message", message: "\(message ?? "")", preferredStyle: UIAlertControllerStyle.alert)
         // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         // show the alert
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
 
     

@@ -4,6 +4,7 @@
 //  Copyright (c) 2015 DJI. All rights reserved.
 //
 
+
 #import "SoftwareDecodeProcessor.h"
 #define RENDER_FRAME_NUMBER (2)
 
@@ -40,16 +41,22 @@
     }
 }
 
+-(BOOL) streamProcessorHandleFrame:(uint8_t *)data size:(int)size{
+    return NO;
+}
+
 -(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw *)frame{
     __block BOOL decodeSuccess = YES;
     __weak SoftwareDecodeProcessor* weakself = self;
-        
+    
+    //decode
     [_extractor decodeRawFrame:frame callback:^(BOOL hasPicture) {
         if (!weakself) {
             return;
         }
         
         if (hasPicture) {
+            //render
             [weakself.extractor getYuvFrame:_renderYUVFrame[_decodeFrameIndex]];
             [weakself.frameProcessor videoProcessFrame:_renderYUVFrame[_decodeFrameIndex]];
             
@@ -64,6 +71,7 @@
 }
 
 -(void) streamProcessorInfoChanged:(DJIVideoStreamBasicInfo *)info{
+    //do nothing
 }
 
 -(DJIVideoStreamProcessorType) streamProcessorType{

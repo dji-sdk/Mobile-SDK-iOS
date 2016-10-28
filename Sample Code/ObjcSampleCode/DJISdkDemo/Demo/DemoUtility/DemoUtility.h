@@ -19,5 +19,6 @@
 #import "DemoSettingItem.h"
 #import "DemoTableViewController.h"
 #import "MBProgressHUD.h"
+#import "DemoScrollView.h"
 
 #endif /* DemoUtility_h */

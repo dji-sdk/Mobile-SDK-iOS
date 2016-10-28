@@ -1,9 +1,11 @@
 //
 //  LB2AUDHackParser.h
 //
+//  Copyright (c) 2013 DJI. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+
 /*
  Some version of LB2 will prefix each slice with AUD. VideoPreviewer need to parse the stream before the stream is parsed by avparser.
  E.g.
@@ -19,7 +21,7 @@
  000000010c
  
  Also we found that there is an isssue in the stream sent by Lightbridge 2. Whenever there are two adjacent AUDs, the decoder may fail. This workaround will detect this scenario and remove the AUDs.
-*/
+ */
 
 @protocol LB2AUDHackParserDelegate <NSObject>
 -(void) lb2AUDHackParser:(id)parser didParsedData:(void*)data size:(int)size;

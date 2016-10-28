@@ -17,6 +17,7 @@
 #import "CameraPlaybackDownloadViewController.h"
 #import "CameraFetchMediaViewController.h"
 #import "CameraFPVViewController.h"
+#import "CameraMediaPlaybackViewController.h"
 
 @interface CameraActionsTableViewController ()
 
@@ -47,12 +48,44 @@
                             [DemoSettingItem itemWithName:@"Playback Download" andClass:[CameraPlaybackDownloadViewController class]]]];
 
     // Media Download
-    [self.items addObject:@[[DemoSettingItem itemWithName:@"Fetch media" andClass:[CameraFetchMediaViewController class]]]];
+    [self.items addObject:@[[DemoSettingItem itemWithName:@"Fetch media" andClass:[CameraFetchMediaViewController class]],
+                            [DemoSettingItem itemWithName:@"Media playback" andClass:[CameraMediaPlaybackViewController class]]]];
     
 }
 
 -(DJIBaseComponent *)getComponent {
     return [DemoComponentHelper fetchCamera];
+}
+
+// Override parent's delegate to handle the special case for CameraMediaPlaybackViewController.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = [indexPath section];
+    NSInteger row = [indexPath row];
+
+    DemoSettingItem* item = nil;
+    if (self.sectionNames.count == 0) {
+        item = [self.items objectAtIndex:row];
+    }
+    else {
+        item = [[self.items objectAtIndex:section] objectAtIndex:row];
+    }
+
+    UIViewController * vc = [[item.viewControllerClass alloc] init];
+    vc.title = item.itemName;
+    if ([vc.title isEqual:@"Media playback"]) {
+        // Media Playback view controller only supports landscape orientation.
+        // Use presentViewController: instead of navigationController. 
+        UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+        while (topController.presentedViewController != nil) {
+            topController = topController.presentedViewController;
+        }
+        if (topController != vc) {
+            [topController presentViewController:vc animated:YES completion:nil];
+        }
+    }
+    else {
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end

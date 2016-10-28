@@ -26,7 +26,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
         if fc != nil {
             fc?.delegate = self
             
-            fc?.flightLimitation?.getMaxFlightHeightWithCompletion({[weak self](height: Float, error: NSError?) -> Void in
+            fc?.flightLimitation?.getMaxFlightHeight(completion: {[weak self](height: Float, error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("Get Max Flight Height:\(error?.localizedDescription)")
                 }
@@ -35,16 +35,16 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
                 }
             })
             
-            fc?.flightLimitation?.getMaxFlightRadiusLimitationEnabledWithCompletion({[weak self](enabled: Bool, error: NSError?) -> Void in
+            fc?.flightLimitation?.getMaxFlightRadiusLimitationEnabled(completion: {[weak self](enabled: Bool, error: Error?) -> Void in
                 
                 if error != nil {
                     self?.showAlertResult("Get RadiusLimitationEnable:\(error?.localizedDescription)")
                 }
                 else {
-                    self?.radiusLimitSwitch.on = enabled
+                    self?.radiusLimitSwitch.isOn = enabled
                     if enabled != false {
-                        self?.radiusLimitTextField.enabled = true
-                        fc?.flightLimitation?.getMaxFlightRadiusWithCompletion({[weak self](radius: Float, error: NSError?) -> Void in
+                        self?.radiusLimitTextField.isEnabled = true
+                        fc?.flightLimitation?.getMaxFlightRadius(completion: {[weak self](radius: Float, error: Error?) -> Void in
                             
                             if error != nil {
                                 self?.showAlertResult("Get MaxFlightRadius:\(error?.localizedDescription)")
@@ -56,7 +56,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
                             })
                     }
                     else {
-                        self?.radiusLimitTextField.enabled = false
+                        self?.radiusLimitTextField.isEnabled = false
                         self?.radiusLimitTextField.text = "0"
                     }
                 }
@@ -71,18 +71,18 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onLimitSwitchValueChanged(sender: UISwitch) {
+    @IBAction func onLimitSwitchValueChanged(_ sender: UISwitch) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc?.flightLimitation?.setMaxFlightRadiusLimitationEnabled(sender.on, withCompletion: {[weak self](error: NSError?) -> Void in
+            fc?.flightLimitation?.setMaxFlightRadiusLimitationEnabled(sender.isOn, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
                     self?.showAlertResult("setMaxFlightRadiusLimitationEnabled:\(error?.localizedDescription)")
-                    sender.setOn(!sender.on, animated: true)
+                    sender.setOn(!sender.isOn, animated: true)
                 }
                 else {
-                        if sender.on {
-                            self?.radiusLimitTextField.enabled = true
-                            fc?.flightLimitation?.getMaxFlightRadiusWithCompletion({[weak self](radius: Float, error: NSError?) -> Void in
+                        if sender.isOn {
+                            self?.radiusLimitTextField.isEnabled = true
+                            fc?.flightLimitation?.getMaxFlightRadius(completion: {[weak self](radius: Float, error: Error?) -> Void in
                                 if error != nil {
                                     self?.showAlertResult("\(error?.localizedDescription)")
                                 }
@@ -90,7 +90,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
                                         self?.radiusLimitTextField.text = String(format: "%0.1f", radius)
                                 }
                                 
-                                fc?.flightLimitation?.getMaxFlightHeightWithCompletion({[weak self](height: Float, error: NSError?) -> Void in
+                                fc?.flightLimitation?.getMaxFlightHeight(completion: {[weak self](height: Float, error: Error?) -> Void in
                                     if error != nil {
                                         self?.showAlertResult("Get Max Flight Height:\(error?.localizedDescription)")
                                     }
@@ -102,7 +102,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
                             
                         }
                         else {
-                            self?.radiusLimitTextField.enabled = false
+                            self?.radiusLimitTextField.isEnabled = false
                             self?.radiusLimitTextField.text = "0"
                         }
                 }
@@ -110,10 +110,10 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
         }
     }
     
-    func setMaxFlightHeight(height: Float) {
+    func setMaxFlightHeight(_ height: Float) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc?.flightLimitation?.setMaxFlightHeight(height, withCompletion: {[weak self](error: NSError?) -> Void in
+            fc?.flightLimitation?.setMaxFlightHeight(height, withCompletion: {[weak self](error: Error?) -> Void in
                 //if error != nil {
                     self?.showAlertResult("setMaxFlightHeight:\(error?.localizedDescription)")
                 //}
@@ -121,10 +121,10 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
         }
     }
     
-    func setMaxFlightRadius(radius: Float) {
+    func setMaxFlightRadius(_ radius: Float) {
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
-            fc?.flightLimitation?.setMaxFlightRadius(radius, withCompletion: {[weak self](error: NSError?) -> Void in
+            fc?.flightLimitation?.setMaxFlightRadius(radius, withCompletion: {[weak self](error: Error?) -> Void in
                 //if error != nil {
                     self?.showAlertResult("setMaxFlightRadius:\(error?.localizedDescription)")
                 //}
@@ -132,7 +132,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.isEqual(self.heightLimitTextField) {
             let value: Float = CFloat(textField.text!)!
             self.setMaxFlightHeight(value)
@@ -141,7 +141,7 @@ class FCFlightLimitationViewController: DJIBaseViewController, DJIFlightControll
             let value: Float = CFloat(textField.text!)!
             self.setMaxFlightRadius(value)
         }
-        if textField.isFirstResponder() as Bool == true {
+        if textField.isFirstResponder as Bool == true {
             textField.resignFirstResponder()
         }
         return true

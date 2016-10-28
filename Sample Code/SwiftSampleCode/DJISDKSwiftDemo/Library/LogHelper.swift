@@ -10,32 +10,32 @@ import Foundation
 import DJISDK
 
 
-public func logDebug<T>(object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+public func logDebug<T>(_ object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     let logText = convertToString(object)
-    DJIRemoteLogger.logWithLevel(.Debug, file: file.stringValue, function: function.stringValue, line: line, string: logText)
+    DJIRemoteLogger.log(with: .debug, file: String(describing: file), function: String(describing: function), line: line, string: logText)
 }
 
-public func logInfo<T>(object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+public func logInfo<T>(_ object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     let logText = convertToString(object)
-    DJIRemoteLogger.logWithLevel(.Info, file: file.stringValue, function: function.stringValue, line: line, string: logText)
+    DJIRemoteLogger.log(with: .info, file: String(describing: file), function: String(describing: function), line: line, string: logText)
 }
 
-public func logWarn<T>(object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+public func logWarn<T>(_ object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     let logText = convertToString(object)
-    DJIRemoteLogger.logWithLevel(.Warn, file: file.stringValue, function: function.stringValue, line: line, string: logText)
+    DJIRemoteLogger.log(with: .warn, file: String(describing: file), function: String(describing: function), line: line, string: logText)
 }
 
-public func logVerbose<T>(object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+public func logVerbose<T>(_ object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     let logText = convertToString(object)
-    DJIRemoteLogger.logWithLevel(.Verbose, file: file.stringValue, function: function.stringValue, line: line, string: logText)
+    DJIRemoteLogger.log(with: .verbose, file: String(describing: file), function: String(describing: function), line: line, string: logText)
 }
 
-public  func logError<T>(object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
+public  func logError<T>(_ object: T?, file: StaticString = #file, function: StaticString = #function, line: UInt = #line) {
     let logText = convertToString(object)
-    DJIRemoteLogger.logWithLevel(.Error, file: file.stringValue, function: function.stringValue, line: line, string: logText)
+    DJIRemoteLogger.log(with: .error, file: String(describing: file), function: String(describing: function), line: line, string: logText)
 }
 
-func convertToString<T>(objectOpt: T?) -> String
+func convertToString<T>(_ objectOpt: T?) -> String
 {
     if let object = objectOpt
     {
@@ -46,7 +46,7 @@ func convertToString<T>(objectOpt: T?) -> String
             if !localizedDesc.isEmpty { return "\(error.domain) : \(error.code) : \(localizedDesc)" }
             return "<<\(error.localizedDescription)>> --- ORIGINAL ERROR: \(error)"
         case let nsobject as NSObject:
-            if nsobject.respondsToSelector(#selector(NSObject.debugDescription as () -> String)) {
+            if nsobject.responds(to: #selector(NSObject.debugDescription as () -> String)) {
                 return nsobject.debugDescription
             }
             else

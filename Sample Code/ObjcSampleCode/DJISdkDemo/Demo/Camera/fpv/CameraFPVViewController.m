@@ -9,6 +9,7 @@
  */
 #import "CameraFPVViewController.h"
 #import "DemoUtility.h"
+#import "VideoPreviewerSDKAdapter.h"
 #import <VideoPreviewer/VideoPreviewer.h>
 #import <DJISDK/DJISDK.h>
 
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *fpvTemperatureData;
 
 @property(nonatomic, assign) BOOL needToSetMode;
+
+@property(nonatomic) VideoPreviewerSDKAdapter *previewerAdapter;
 
 @end
 
@@ -34,9 +37,10 @@
     }
 
     self.needToSetMode = YES;
-    
+
     [[VideoPreviewer instance] start];
-    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    [self.previewerAdapter start];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -54,6 +58,8 @@
     
     // Call unSetView during exiting to release the memory.
     [[VideoPreviewer instance] unSetView];
+    [self.previewerAdapter stop];
+    self.previewerAdapter = nil;
 }
 
 
@@ -63,16 +69,7 @@
  */
 -(IBAction) onSegmentControlValueChanged:(UISegmentedControl*)sender
 {
-    if (sender.selectedSegmentIndex == 0) {
-    [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeSoftwareDecoder];
-    }
-    else
-    {
-        BOOL result = [[VideoPreviewer instance] setDecoderWithProduct:[DemoComponentHelper fetchProduct] andDecoderType:VideoPreviewerDecoderTypeHardwareDecoder];
-        if (!result) {
-            NSLog(@"Not suitable hardware decoder for the current product. "); 
-        }
-    }
+    [VideoPreviewer instance].enableHardwareDecode = sender.selectedSegmentIndex == 1;
 }
 
 - (IBAction)onThermalTemperatureDataSwitchValueChanged:(id)sender {
@@ -114,9 +111,7 @@
  */
 - (void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size
 {
-    if(![[[VideoPreviewer instance] dataQueue] isFull]){
-        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
-    }
+    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
 }
 
 /**

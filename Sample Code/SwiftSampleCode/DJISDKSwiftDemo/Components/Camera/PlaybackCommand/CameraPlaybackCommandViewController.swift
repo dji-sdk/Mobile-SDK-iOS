@@ -13,8 +13,8 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
     var isInPlaybackMode: Bool = false
     var isInMultipleMode: Bool = false {
         didSet{
-            self.multipleButton.enabled = !isInMultipleMode
-            self.singleButton.enabled = isInMultipleMode
+            self.multipleButton.isEnabled = !isInMultipleMode
+            self.singleButton.isEnabled = isInMultipleMode
         }
     }
     
@@ -24,7 +24,7 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
     @IBOutlet weak var singleButton: UIButton!
 
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setVideoPreview()
         let camera: DJICamera? = self.fetchCamera()
@@ -45,7 +45,7 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         self.getCameraMode()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // clean the delegate
         let camera: DJICamera? = self.fetchCamera()
@@ -66,12 +66,12 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera!.getCameraModeWithCompletion({[weak self](mode: DJICameraMode, error: NSError?) -> Void in
+            camera!.getModeWithCompletion({[weak self](mode: DJICameraMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getCameraModeWithCompletion:\(error!.description)")
+                    self?.showAlertResult("ERROR: getCameraModeWithCompletion:\(error!)")
                 }
-                else if mode == DJICameraMode.Playback {
+                else if mode == DJICameraMode.playback {
                     self?.isInPlaybackMode = true
                 }
                 else {
@@ -89,15 +89,15 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera!.setCameraMode(DJICameraMode.Playback, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera!.setCameraMode(DJICameraMode.playback, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!)")
                 }
                 else {
                     // Normally, once an operation is finished, the camera still needs some time to finish up
                     // all the work. It is safe to delay the next operation after an operation is finished.
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {() -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {() -> Void in
                         
                         self?.isInPlaybackMode = true
                     })
@@ -106,7 +106,7 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         }
     }
 
-    @IBAction func onPreviousButtonClicked(sender: AnyObject) {
+    @IBAction func onPreviousButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             if self.isInMultipleMode {
@@ -118,7 +118,7 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         }
     }
 
-    @IBAction func onNextButtonClicked(sender: AnyObject) {
+    @IBAction func onNextButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             if self.isInMultipleMode {
@@ -130,17 +130,17 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
         }
     }
 
-    @IBAction func onMultipleButtonClicked(sender: AnyObject) {
+    @IBAction func onMultipleButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             camera!.playbackManager?.enterMultiplePreviewMode()
         }
     }
 
-    @IBAction func onSingleButtonClicked(sender: AnyObject) {
+    @IBAction func onSingleButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            camera!.playbackManager?.enterSinglePreviewModeWithIndex(0)
+            camera!.playbackManager?.enterSinglePreviewMode(with: 0)
         }
     }
 
@@ -155,13 +155,13 @@ class CameraPlaybackCommandViewController: DJIBaseViewController, DJICameraDeleg
 
 
 
-    func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
+    func camera(_ camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
         VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
 
-    func playbackManager(playbackManager: DJIPlaybackManager, didUpdatePlaybackState playbackState: DJICameraPlaybackState) {
-        self.isInMultipleMode = playbackState.playbackMode == DJICameraPlaybackMode.MultipleFilesPreview || playbackState.playbackMode == DJICameraPlaybackMode.MultipleFilesEdit
+    func playbackManager(_ playbackManager: DJIPlaybackManager, didUpdate playbackState: DJICameraPlaybackState) {
+        self.isInMultipleMode = playbackState.playbackMode == DJICameraPlaybackMode.multipleFilesPreview || playbackState.playbackMode == DJICameraPlaybackMode.multipleFilesEdit
     }
 
   }

@@ -8,21 +8,21 @@
 import UIKit
 
 enum DJICollectionViewCellType : Int {
-    case Takeoff
-    case Gohome
-    case Goto
-    case GimbalAttitude
-    case SingleShootPhoto
-    case ContinousShootPhoto
-    case RecordVideoDruation
-    case RecordVideoStart
-    case RecordVideoStop
-    case WaypointMission
-    case HotpointMission
-    case FollowmeMission
+    case takeoff
+    case gohome
+    case goto
+    case gimbalAttitude
+    case singleShootPhoto
+    case continousShootPhoto
+    case recordVideoDruation
+    case recordVideoStart
+    case recordVideoStop
+    case waypointMission
+    case hotpointMission
+    case followmeMission
     
-    static let allValues = [Takeoff, Gohome, Goto, GimbalAttitude, SingleShootPhoto, ContinousShootPhoto,
-        RecordVideoDruation, RecordVideoStart, RecordVideoStop, WaypointMission, HotpointMission, FollowmeMission]
+    static let allValues = [takeoff, gohome, goto, gimbalAttitude, singleShootPhoto, continousShootPhoto,
+        recordVideoDruation, recordVideoStart, recordVideoStop, waypointMission, hotpointMission, followmeMission]
 }
 
 class DJICollectionViewCell: UICollectionViewCell {
@@ -30,7 +30,7 @@ class DJICollectionViewCell: UICollectionViewCell {
     var indicatorView: UIActivityIndicatorView?
     var attachedObject: NSObject? = nil
     var isShow: Bool? = false
-    var _cellType:DJICollectionViewCellType? = .Takeoff
+    var _cellType:DJICollectionViewCellType? = .takeoff
     var cellType: DJICollectionViewCellType{
         get {
             return _cellType!
@@ -43,7 +43,7 @@ class DJICollectionViewCell: UICollectionViewCell {
     }
     
     class func collectionViewCell() -> DJICollectionViewCell? {
-        var objs: [AnyObject] = NSBundle.mainBundle().loadNibNamed("DJICollectionViewCell", owner: self, options: nil)
+        var objs: [AnyObject] = Bundle.main.loadNibNamed("DJICollectionViewCell", owner: self, options: nil) as! [AnyObject]
         if (objs.count > 0) {
             let mainView: UIView = objs[0] as! UIView
             return mainView as? DJICollectionViewCell
@@ -55,13 +55,13 @@ class DJICollectionViewCell: UICollectionViewCell {
 
 
 
-    func showProgress(show: Bool) {
+    func showProgress(_ show: Bool) {
         if isShow == show {
             return
         }
         self.isShow = show
         if show {
-            self.indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+            self.indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
             self.indicatorView!.center = self.titleLabel.center
             self.indicatorView!.startAnimating()
             self.addSubview(self.indicatorView!)
@@ -73,8 +73,8 @@ class DJICollectionViewCell: UICollectionViewCell {
         }
     }
 
-    func setBorderColor(color: UIColor) {
-        self.layer.borderColor = color.CGColor
+    func setBorderColor(_ color: UIColor) {
+        self.layer.borderColor = color.cgColor
         self.setNeedsDisplay()
     }
 
@@ -83,53 +83,53 @@ class DJICollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 25
         self.layer.masksToBounds = true
         self.layer.borderWidth = 1.4
-        self.layer.borderColor = UIColor.redColor().CGColor
+        self.layer.borderColor = UIColor.red.cgColor
         let title: String? = self.titleForCellType(cellType)
         self.titleLabel.text = title
     }
 
-    func titleForCellType(type: DJICollectionViewCellType) -> String? {
+    func titleForCellType(_ type: DJICollectionViewCellType) -> String? {
         switch type {
-            case .Takeoff:
+            case .takeoff:
                                 return "Takeoff"
 
-            case .Gohome:
+            case .gohome:
                                 return "GoHome"
 
-            case .Goto:
+            case .goto:
                                 return "GoTo"
 
-            case .GimbalAttitude:
+            case .gimbalAttitude:
                                 return "G-Atti"
 
-            case .SingleShootPhoto:
+            case .singleShootPhoto:
                                 return "Shoot1"
 
-            case .ContinousShootPhoto:
+            case .continousShootPhoto:
                                 return "ShootN"
 
-            case .RecordVideoDruation:
+            case .recordVideoDruation:
                                 return "REC."
 
-            case .RecordVideoStart:
+            case .recordVideoStart:
                                 return "REC.S"
 
-            case .RecordVideoStop:
+            case .recordVideoStop:
                                 return "REC.E"
 
-            case .WaypointMission:
+            case .waypointMission:
                                 return "WP"
 
-            case .HotpointMission:
+            case .hotpointMission:
                                 return "HP"
 
-            case .FollowmeMission:
+            case .followmeMission:
                                 return "FM"
 
         }
     }
 
-    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
         super.setValue(value, forUndefinedKey: key)
     }
     

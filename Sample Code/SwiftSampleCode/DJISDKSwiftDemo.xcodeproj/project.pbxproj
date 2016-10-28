@@ -93,6 +93,7 @@
 		02E214E01CC7055500B53188 /* JoyStickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DE1CC7055500B53188 /* JoyStickView.swift */; };
 		02E214E11CC7055500B53188 /* NavigationJoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */; };
 		22D1FC8C1D781663001772C2 /* BluetoothConnectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1FC8B1D781663001772C2 /* BluetoothConnectorViewController.swift */; };
+		3817BD8F1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3817BD8E1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.m */; };
 		386F683B1BF68B41003A8ED0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F68391BF68B41003A8ED0 /* Main.storyboard */; };
 		386F683D1BF68B41003A8ED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 386F683C1BF68B41003A8ED0 /* Assets.xcassets */; };
 		386F68401BF68B41003A8ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 386F683E1BF68B41003A8ED0 /* LaunchScreen.storyboard */; };
@@ -226,6 +227,9 @@
 		02E214DE1CC7055500B53188 /* JoyStickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoyStickView.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/JoyStickView.swift; sourceTree = SOURCE_ROOT; };
 		02E214DF1CC7055500B53188 /* NavigationJoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationJoystickViewController.swift; path = DJISDKSwiftDemo/Components/FlightController/Joystick/NavigationJoystickViewController.swift; sourceTree = SOURCE_ROOT; };
 		22D1FC8B1D781663001772C2 /* BluetoothConnectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BluetoothConnectorViewController.swift; path = Components/Bluetooth/BluetoothConnectorViewController.swift; sourceTree = "<group>"; };
+		3817BD8D1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPreviewerSDKAdapter.h; sourceTree = "<group>"; };
+		3817BD8E1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPreviewerSDKAdapter.m; sourceTree = "<group>"; };
+		382758BD1DC2AD31003BC50E /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		386F68321BF68B41003A8ED0 /* DJISDKSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJISDKSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		386F683A1BF68B41003A8ED0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		386F683C1BF68B41003A8ED0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,8 +240,9 @@
 		386F685C1BF6BF27003A8ED0 /* StartupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupViewController.swift; sourceTree = "<group>"; };
 		38CE48291C000D3E00AA190D /* LogHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHelper.swift; sourceTree = "<group>"; };
 		38F395FE1C408A9B00EB7E52 /* ComponentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComponentsViewController.swift; path = Components/ComponentsViewController.swift; sourceTree = "<group>"; };
+		A428BE691DC361AD00FF416B /* DJISDKSwiftDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJISDKSwiftDemo.entitlements; sourceTree = "<group>"; };
 		B82541DF1C98E6700021CDDF /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
-		B82541E51C98E69E0021CDDF /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../DJISDK.framework; sourceTree = "<group>"; };
+		B82541E51C98E69E0021CDDF /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../../Framework/DJISDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -686,6 +691,15 @@
 			name = Bluetooth;
 			sourceTree = "<group>";
 		};
+		3817BD8C1DC2A27F00E00300 /* VideoPreviewerAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				3817BD8D1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.h */,
+				3817BD8E1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.m */,
+			);
+			path = VideoPreviewerAdapter;
+			sourceTree = "<group>";
+		};
 		386F68291BF68B41003A8ED0 = {
 			isa = PBXGroup;
 			children = (
@@ -706,12 +720,14 @@
 		386F68341BF68B41003A8ED0 /* DJISDKSwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A428BE691DC361AD00FF416B /* DJISDKSwiftDemo.entitlements */,
 				386F68391BF68B41003A8ED0 /* Main.storyboard */,
 				386F68571BF6BED7003A8ED0 /* Startup */,
 				E274FCE31C0CC43E00E0E205 /* Components */,
 				0239F1CA1C3321220008DEA4 /* Missions */,
 				386F68541BF6BAA4003A8ED0 /* Library */,
 				386F684B1BF68C38003A8ED0 /* Support */,
+				3817BD8C1DC2A27F00E00300 /* VideoPreviewerAdapter */,
 			);
 			path = DJISDKSwiftDemo;
 			sourceTree = "<group>";
@@ -722,6 +738,7 @@
 				386F683C1BF68B41003A8ED0 /* Assets.xcassets */,
 				386F683E1BF68B41003A8ED0 /* LaunchScreen.storyboard */,
 				386F68411BF68B41003A8ED0 /* Info.plist */,
+				382758BD1DC2AD31003BC50E /* Bridging-Header.h */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -807,11 +824,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = DJI;
 				TargetAttributes = {
 					386F68311BF68B41003A8ED0 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 7UL3LRJL93;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -939,6 +963,7 @@
 				0264D4091C40666D002313FE /* HandheldControllerActionsTableViewController.swift in Sources */,
 				02D8CC1E1C3B418500D2106D /* CameraRecordVideoViewController.swift in Sources */,
 				0239F2891C3602AE0008DEA4 /* NavigationWaypointActionView.swift in Sources */,
+				3817BD8F1DC2A27F00E00300 /* VideoPreviewerSDKAdapter.m in Sources */,
 				0239F2401C3336500008DEA4 /* DJIAnnotation.swift in Sources */,
 				02D8CC291C3B418500D2106D /* DemoGetSetViewController.swift in Sources */,
 				0239F2871C3602AE0008DEA4 /* PanoramaViewController.swift in Sources */,
@@ -1004,8 +1029,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1049,8 +1076,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1069,6 +1098,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1079,19 +1109,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DJISDKSwiftDemo/DJISDKSwiftDemo.entitlements;
+				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../../Framework",
 					"$(PROJECT_DIR)/../VideoPreviewer",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSampleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DJISDKSwiftDemo/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1100,19 +1134,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = DJISDKSwiftDemo/DJISDKSwiftDemo.entitlements;
+				DEVELOPMENT_TEAM = 7UL3LRJL93;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/..",
+					"$(PROJECT_DIR)/../../Framework",
 					"$(PROJECT_DIR)/../VideoPreviewer",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = DJISDKSwiftDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dji.swiftSampleDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DJISDKSwiftDemo/Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

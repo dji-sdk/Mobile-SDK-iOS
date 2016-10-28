@@ -17,8 +17,8 @@ class RCActionsTableViewController: DemoTableViewController {
         self.sectionNames = ["General"]
         let item1: DemoSettingItem = DemoSettingItem(name: "RCHardwareState", andClass: RCHardwareStateViewController.self)
         let item2: DemoSettingItem = DemoSettingItem(name: "RCParing", andClass: RCParingViewController.self)
-        self.items.append(item1)
-        self.items.append(item2)
+        self.items.append([item1])
+        self.items.append([item2])
         
     }
     

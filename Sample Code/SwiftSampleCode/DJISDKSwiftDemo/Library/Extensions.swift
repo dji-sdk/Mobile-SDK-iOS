@@ -17,11 +17,11 @@ extension UIColor {
         var alpha: CGFloat = 1.0
         
         if rgba.hasPrefix("#") {
-            let index   = rgba.startIndex.advancedBy(1)
-            let hex     = rgba.substringFromIndex(index)
-            let scanner = NSScanner(string: hex)
+            let index   = rgba.characters.index(rgba.startIndex, offsetBy: 1)
+            let hex     = rgba.substring(from: index)
+            let scanner = Scanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
-            if scanner.scanHexLongLong(&hexValue) {
+            if scanner.scanHexInt64(&hexValue) {
                 switch hex.characters.count {
                 case 3:
                     red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
@@ -59,24 +59,23 @@ extension UIColor {
     }
 }
 
-func delay(secs : NSTimeInterval, block: ()->())
+func delay(_ secs : TimeInterval, block: @escaping ()->())
 {
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW,
-        Int64(secs * Double(NSEC_PER_SEC)))
-    dispatch_after(delayTime, dispatch_get_main_queue()) {
+    let delayTime = DispatchTime.now() + Double(Int64(secs * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: delayTime) {
         block()
     }
 }
 
 class blockRepeater : NSObject {
-    let localQueue = dispatch_queue_create("repeaterQueue\(srand(1000))", DISPATCH_QUEUE_SERIAL)
+    let localQueue = DispatchQueue(label: "repeaterQueue\(arc4random() % 1000)", attributes: [])
     var repetitions : Int?
-    var delay : NSTimeInterval
-    var performQueue : dispatch_queue_t?
+    var delay : TimeInterval
+    var performQueue : DispatchQueue?
     var performBlock : ()->()
     var isCancelled = false
     
-    init(repetitions : Int?, delay : NSTimeInterval, queue : dispatch_queue_t?, block: ()->())
+    init(repetitions : Int?, delay : TimeInterval, queue : DispatchQueue?, block: @escaping ()->())
     {
         self.repetitions = repetitions
         self.delay = delay
@@ -87,7 +86,7 @@ class blockRepeater : NSObject {
     
     func repeatBlock()
     {
-        dispatch_async(localQueue) { [weak self] in
+        localQueue.async { [weak self] in
             func checkReps() -> Bool
             {
                 if let localReps = self?.repetitions
@@ -109,8 +108,8 @@ class blockRepeater : NSObject {
             {
                 if let localSelf = self
                 {
-                    dispatch_async(localSelf.performQueue ?? dispatch_get_main_queue(), localSelf.performBlock)
-                    NSThread.sleepForTimeInterval(localSelf.delay)
+                    (localSelf.performQueue ?? DispatchQueue.main).async(execute: localSelf.performBlock)
+                    Thread.sleep(forTimeInterval: localSelf.delay)
                 }
             }
         }
@@ -124,5 +123,5 @@ class blockRepeater : NSObject {
 
 func appDelegate() -> AppDelegate
 {
-    return UIApplication.sharedApplication().delegate as! AppDelegate
+    return UIApplication.shared.delegate as! AppDelegate
 }

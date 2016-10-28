@@ -15,6 +15,6 @@ class BatteryActionsTableViewController: DemoTableViewController {
         self.connectedComponent = ConnectedProductManager.sharedInstance.fetchBattery()
         self.showComponentVersionSn = true
         self.sectionNames=["Battery"]
-        self.items.append(DemoSettingItem(name: "Set/Get Self-discharge Day", andClass:BatterySelfDischargeViewController.self))
+        self.items.append([DemoSettingItem(name: "Set/Get Self-discharge Day", andClass:BatterySelfDischargeViewController.self)])
     }    
 }

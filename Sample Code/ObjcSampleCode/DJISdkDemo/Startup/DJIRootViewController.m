@@ -81,7 +81,7 @@
     else {
         
 #if ENTER_DEBUG_MODE
-        [DJISDKManager enterDebugModeWithDebugId:@"Enter Debug ID Here"];
+        [DJISDKManager enterDebugModeWithDebugId:@"10.128.129.78"];
 #else
         [DJISDKManager startConnectionToProduct];
 #endif
@@ -100,10 +100,18 @@
         
     } else {
         NSString* message = [NSString stringWithFormat:@"Connection lost. Back to root. "];
-        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Back", nil];
+
+        WeakRef(target);
+        [DemoAlertView showAlertViewWithMessage:message titles:@[@"Cancel", @"Back"] action:^(NSUInteger buttonIndex) {
+            WeakReturn(target);
+            if (buttonIndex == 1) {
+                if (![target.navigationController.topViewController isKindOfClass:[DJIRootViewController class]]) {
+                    [target.navigationController popToRootViewControllerAnimated:NO];
+                }
+            }
+        }];
         [self.connectButton setEnabled:NO];
         
-        [alertView show];
         self.product = nil;
     }
     
@@ -111,15 +119,6 @@
 }
 
 #pragma mark -
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        if (![self.navigationController.topViewController isKindOfClass:[DJIRootViewController class]]) {
-            [self.navigationController popToRootViewControllerAnimated:NO];
-        }
-    }
-}
 
 -(void) updateFirmwareVersion:(NSString*) version {
     if (nil != version) {

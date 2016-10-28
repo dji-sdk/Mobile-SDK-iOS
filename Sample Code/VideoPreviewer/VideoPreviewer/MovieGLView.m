@@ -9,22 +9,21 @@
 //  this file is part of KxMovie
 //  KxMovie is licenced under the LGPL v3, see lgpl-3.0.txt
 
+#import "MovieGLView.h"
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/EAGLDrawable.h>
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-#include <pthread.h>
-#import "MovieGLView.h"
+#import "DJIVideoPresentViewAdjustHelper.h"
 
-#define INFO(fmt, ...) NSLog(@"[GLView]"fmt, ##__VA_ARGS__)
-#define ERROR(fmt, ...) NSLog(@"[GLView]"fmt, ##__VA_ARGS__)
+#include <pthread.h>
+
+#define INFO(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
+#define ERROR(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
 //////////////////////////////////////////////////////////
 
 #pragma mark - shaders
-
-//#define INPUT_W (1280)
-//#define INPUT_H (720)
 
 #define STRINGIZE(x) #x
 #define STRINGIZE2(x) STRINGIZE(x)
@@ -56,11 +55,33 @@ enum {
    	ATTRIBUTE_TEXCOORD,
 };
 
-static const GLfloat g_quadTexCoords[] = {
+static const GLfloat g_yuvQuadTexCoordsNormal[] = {
     0.0f, 1.0f,
     1.0f, 1.0f,
     0.0f, 0.0f,
     1.0f, 0.0f,
+};
+
+static const GLfloat g_yuvQuadTexCoords90CW[] = {
+    0.0f, 0.0f,
+    0.0f, 1.0f,
+    1.0f, 0.0f,
+    1.0f, 1.0f,
+};
+
+static const GLfloat g_yuvQuadTexCoords180CW[] = {
+    1.0f, 0.0f,
+    0.0f, 0.0f,
+    1.0f, 1.0f,
+    0.0f, 1.0f,
+};
+
+static const GLfloat g_yuvQuadTexCoords270CW[] = {
+    1.0f, 1.0f,
+    1.0f, 0.0f,
+    0.0f, 1.0f,
+    0.0f, 0.0f,
+    
 };
 
 static const GLfloat g_postQuadTexCoords[] = {
@@ -149,7 +170,7 @@ NSString *const renderToScreenFS = SHADER_STRING
      highp vec4 over_exposed_tex_color = vec4(texture2D(s_texture_overexp, v_overexp_texcoord.xy).a);
 //     highp float luminance = luminanceVec*rgb_color;
      highp float lumaince = rgb_color.a;
-     
+     //alpha is 1.0
      highp float blend_factor = clamp(lumaince*64.0 - v_overexp_texcoord.w, 0.0 ,1.0)*v_overexp_texcoord.z;
      //blend_factor = clamp(y_channel*6.4 - 5.4, 0.0 ,1.0)*v_overexp_texcoord.w;
      //blend_factor = 1.0;
@@ -184,7 +205,7 @@ NSString *const yuvConvertFS = SHADER_STRING
  }
 );
 
-//用于转换y - crcb
+//For convertingy - crcb
 NSString *const yuvBiConvertFS = SHADER_STRING
 (
  varying highp vec2 v_texcoord;
@@ -209,7 +230,7 @@ NSString *const yuvBiConvertFS = SHADER_STRING
  }
  );
 
-//用于RGB形式的输入
+//For RGB input form
 NSString *const rgbaFS = SHADER_STRING
 (
  varying highp vec2 v_texcoord;
@@ -252,7 +273,6 @@ highp vec4 sample(highp float dx, highp float dy)
     highp vec4 min_range = step(vec4(range.xz, texcord), vec4(texcord, range.yw));
     texcord = v_texcoord.st + min_range.x*min_range.y*min_range.z*min_range.w*dif;
     
-//    texcord = clamp(texcord, range.xz, range.yw);
     return texture2D(s_texture, texcord);
 }
  
@@ -348,36 +368,6 @@ static GLuint compileShader(GLenum type, NSString *shaderString)
 }
 
 #pragma mark - ogl helper methods
-
-//static void mat4f_LoadOrtho(float left, float right, float bottom, float top, float near, float far, float* mout)
-//{
-//	float r_l = right - left;
-//	float t_b = top - bottom;
-//	float f_n = far - near;
-//	float tx = - (right + left) / (right - left);
-//	float ty = - (top + bottom) / (top - bottom);
-//	float tz = - (far + near) / (far - near);
-//    
-//	mout[0] = 2.0f / r_l;
-//	mout[1] = 0.0f;
-//	mout[2] = 0.0f;
-//	mout[3] = 0.0f;
-//	
-//	mout[4] = 0.0f;
-//	mout[5] = 2.0f / t_b;
-//	mout[6] = 0.0f;
-//	mout[7] = 0.0f;
-//	
-//	mout[8] = 0.0f;
-//	mout[9] = 0.0f;
-//	mout[10] = -2.0f / f_n;
-//	mout[11] = 0.0f;
-//	
-//	mout[12] = tx;
-//	mout[13] = ty;
-//	mout[14] = tz;
-//	mout[15] = 1.0f;
-//}
 
 void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
 {
@@ -482,14 +472,16 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
     GLint       _backingWidth;
     GLint       _backingHeight;
 //    //current view
-    GLint       _viewPointWidth; //view在屏幕上的尺寸对应的逻辑宽度
-    GLint       _viewPointHeight; //view像在屏幕上的逻辑高度
+    GLint       _viewPointWidth; //View on the screen size of the corresponding logical width
+    GLint       _viewPointHeight; //View on the screen size of the corresponding logical height
     
     //4. thumbnail
     //buffers for down scale
     GLuint _downsacle_renderbuffer;
     GLuint _downscale_framebuffer;
     GLfloat _downscale_quadTexCoords[8];
+    
+    DJIVideoPresentViewAdjustHelper* _adjustHelper;
 }
 
 #pragma mark - for UIKit
@@ -503,10 +495,23 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _inputWidth   = frame.size.width;
-        _inputHeight  = frame.size.height;
+        
+        _adjustHelper = [[DJIVideoPresentViewAdjustHelper alloc] init];
+        
+        //use a default input size
+        _inputWidth   = 1280;
+        _inputHeight  = 720;
+        
         [self setBackgroundColor:[UIColor clearColor]];
-        _type = MovieGLViewTypeAutoAdjust;
+        _type = VideoPresentContentModeAspectFit;
+        self.contentClipRect = CGRectMake(0, 0, 1, 1);
+        
+        _adjustHelper.lastFrame = frame;
+        _adjustHelper.videoSize = CGSizeMake(_inputWidth, _inputHeight);
+        _adjustHelper.contentMode = VideoPresentContentModeAspectFit;
+        _adjustHelper.rotation = VideoStreamRotationDefault;
+        _adjustHelper.boundingFrame = self.bounds;
+        _adjustHelper.contentClipRect = self.contentClipRect;
         
         CAEAGLLayer *eaglLayer = (CAEAGLLayer*) self.layer;
         eaglLayer.opaque = YES;
@@ -563,47 +568,28 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
 }
 
 - (BOOL)adjustSize{
+    //May enter from the non-threaded rendering, here do not call any GL codes
+    
     if(self.superview==nil)return NO;
-    CGRect adjustFrame = self.frame;
-    CGSize superSize = self.superview.frame.size;
-    CGSize contentSize = CGSizeMake(_inputWidth, _inputHeight);
-    if (_inputHeight == 0 || _inputWidth == 0) {
-        contentSize = superSize;
-    }
-
-    if(_type == MovieGLViewTypeAutoAdjust){
-        if(superSize.width * contentSize.height != superSize.height * contentSize.width){
-            if(superSize.width* contentSize.height < superSize.height * contentSize.width){
-                
-                adjustFrame = CGRectMake(0, (superSize.height-superSize.width*contentSize.height/contentSize.width)*0.5, superSize.width, superSize.width*contentSize.height/contentSize.width);
-            }
-            else{
-                adjustFrame = CGRectMake((superSize.width-superSize.height*contentSize.width/contentSize.height)*0.5, 0, superSize.height*contentSize.width/contentSize.height, superSize.height);
-            }
-        }
-        else{
-            adjustFrame = CGRectMake(0, 0, superSize.width, superSize.height);
-        }
-    }
-    else if(_type == MovieGLViewTypeFullWindow){
-        if(superSize.width*contentSize.height!=superSize.height*contentSize.width){
-            if(superSize.width*contentSize.height < superSize.height*contentSize.width){
-                adjustFrame = CGRectMake((superSize.width - superSize.height/contentSize.height*contentSize.width)*0.5, 0, superSize.height/contentSize.height*contentSize.width, superSize.height);
-            }
-            else{
-                adjustFrame = CGRectMake(0, (superSize.height - superSize.width/contentSize.width*contentSize.height)*0.5, superSize.width, superSize.width/contentSize.width*contentSize.height);
-            }
-        }
-        else{
-            adjustFrame = CGRectMake(0, 0, superSize.width, superSize.height);
-        }
-    }
+    
+    _adjustHelper.videoSize = CGSizeMake(_inputWidth, _inputHeight);
+    _adjustHelper.contentMode = self.type;
+    _adjustHelper.rotation = self.rotation;
+    _adjustHelper.boundingFrame = self.superview.bounds;
+    _adjustHelper.contentClipRect = self.contentClipRect;
+    
+    //adjust frame is the final target frame
+    CGRect adjustFrame = [_adjustHelper getFinalFrame];
+    _adjustHelper.lastFrame = adjustFrame;
+    
+    
     if(CGRectEqualToRect(adjustFrame, _targetLayerFrame)){
         return NO;
     }else{
         _targetLayerFrame = adjustFrame;
         if([NSThread isMainThread]){
             [self setFrame:adjustFrame];
+            [self notifyFrameChange];
         }
         else{
             
@@ -612,7 +598,7 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 [self setFrame:adjustFrame];
-                
+                [self notifyFrameChange];
                 dispatch_semaphore_signal(semaphore);
             });
             
@@ -621,6 +607,20 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
         }
         return YES;
     }
+}
+
+-(void) notifyFrameChange{
+    if ([_delegate respondsToSelector:@selector(movieGlView:didChangedFrame:)]) {
+        [_delegate movieGlView:self didChangedFrame:self.frame];
+    }
+}
+
+-(void) setFrame:(CGRect)frame{
+    //Non-GL thread protection, do not call any GL codes
+    [super setFrame:frame];
+    _targetLayerFrame = frame;
+    //After the view frame changes in the need to re-bind buffer, or size may be abnormal
+    //However, we should do this thing in the render thread inside
 }
 
 - (void)dealloc
@@ -659,7 +659,7 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
         //update frame
         if (frame){
             if(frame->width > 2000 || frame->height > 2000){
-                ERROR(@"size error %d %d", frame->width, frame->height);
+                ERROR(@"size error %f %f", frame->width, frame->height);
                 return;
             }
             
@@ -683,7 +683,27 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
         glViewport(0, 0, _rgbOutputWidth, _rgbOutputHeight);
         [self renderYUV:frame];
         
+        //snapshot full
+        if (_snapshotCallback) {
+            __block UIImage* image = [self snapshotUImageFull];
+            __block snapshotBlock _block_copy = self.snapshotCallback;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _block_copy(image);
+            });
+            _snapshotCallback = nil;
+        }
+
         GLuint texture_to_screen = _rgbRenderBuffer;
+        if (_useSobelProcess) {
+            [self loadShadersSobel];
+            [self configureOutputSobel];
+            glBindFramebuffer(GL_FRAMEBUFFER, _sobelFrameBuffer);
+            glViewport(0, 0, _sobelOutputWidth, _sobelOutputHeight);
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, texture_to_screen);
+            [self renderToSobel];
+            texture_to_screen = _sobelRenderBuffer;
+        }
         
         //3. screen present
         [self loadShadersPresent];
@@ -694,6 +714,16 @@ void glGenTextureFromFramebuffer(GLuint *t, GLuint *f, GLsizei w, GLsizei h)
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture_to_screen);
         [self renderToScreen];
+        
+        //snapshot thumbnail
+        if (_snapshotThumbnailCallback) {
+            __block UIImage* image = [self snapshotThumbnail];
+            __block snapshotBlock _block_copy = self.snapshotThumbnailCallback;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _block_copy(image);
+            });
+            _snapshotThumbnailCallback = nil;
+        }
         
         glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
         [_context presentRenderbuffer:GL_RENDERBUFFER];
@@ -950,14 +980,14 @@ exit:
         }
         
         if ([MovieGLView supportsFastTextureUpload] && frame->cv_pixelbuffer_fastupload) {
-            //目前支持 yuv semiplaner
+            //support yuv semiplaner now
             [self loadFrameFastUpload:frame];
         }else{
             _fastupload_textureYUV[0] = 0;
             _fastupload_textureYUV[1] = 0;
             _fastupload_textureYUV[2] = 0;
             
-            //目前支持rgb，yuvplaner
+            //support rgb，yuvplaner
             [self loadFrame:frame];
         }
     }
@@ -1030,9 +1060,30 @@ exit:
         
     glVertexAttribPointer(ATTRIBUTE_VERTEX, 2, GL_FLOAT, 0, 0, _vertices);
     glEnableVertexAttribArray(ATTRIBUTE_VERTEX);
-    glVertexAttribPointer(ATTRIBUTE_TEXCOORD, 2, GL_FLOAT, 0, 0, g_quadTexCoords);
+    glVertexAttribPointer(ATTRIBUTE_TEXCOORD, 2, GL_FLOAT, 0, 0, [self currentYUVCoord]);
     glEnableVertexAttribArray(ATTRIBUTE_TEXCOORD);
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+}
+
+-(const GLfloat*) currentYUVCoord{
+    switch (_rotation) {
+        case VideoStreamRotationDefault:
+            return g_yuvQuadTexCoordsNormal;
+            break;
+        case VideoStreamRotationCW90:
+            return g_yuvQuadTexCoords270CW;
+            break;
+        case VideoStreamRotationCW180:
+            return g_yuvQuadTexCoords180CW;
+            break;
+        case VideoStreamRotationCW270:
+            return g_yuvQuadTexCoords90CW;
+            break;
+        default:
+            break;
+    }
+    
+    return g_yuvQuadTexCoordsNormal;
 }
 
 -(void) releaseYUV{
@@ -1552,7 +1603,7 @@ exit:
     return diff;
 }
 
-// called when output changes
+//called when output changes
 -(void) rebindFrameBuffer{
     [EAGLContext setCurrentContext:_context];
     
@@ -1564,7 +1615,7 @@ exit:
         glDeleteRenderbuffers(1, &_renderbuffer);
     }
     
-    //re-generate the rendering frame whenever the screen size changes
+    //When the screen size changes, we need to re-create a rendering surface
     glGenFramebuffers(1, &_framebuffer);
     glGenRenderbuffers(1, &_renderbuffer);
 
@@ -1584,7 +1635,33 @@ exit:
     _viewPointHeight = self.frame.size.height;
 }
 
-// Update thumbnail's texture according to the frame size
+#pragma mark - snapshot and thumbnail rending
+
+- (void) setSnapshotCallback:(snapshotBlock)snapshotCallback{
+    if (snapshotCallback == _snapshotCallback) {
+        return;
+    }
+    
+    if (_snapshotCallback) {
+        _snapshotCallback(nil);
+    }
+    
+    _snapshotCallback = snapshotCallback;
+}
+
+-(void) setSnapshotThumbnailCallback:(snapshotBlock)snapshotThumbnailCallback{
+    if (snapshotThumbnailCallback == _snapshotThumbnailCallback) {
+        return;
+    }
+    
+    if (_snapshotThumbnailCallback) {
+        _snapshotThumbnailCallback(nil);
+    }
+    
+    _snapshotThumbnailCallback = snapshotThumbnailCallback;
+}
+
+//The image size of the thumbnail to adjust the texture coordinates, geometric filling
 -(void) updateThumbnailTexcoord{
 //    0.0f, 1.0f,
 //    1.0f, 1.0f,
@@ -1614,6 +1691,142 @@ exit:
     
     _downscale_quadTexCoords[6] = x_max;
     _downscale_quadTexCoords[7] = y_min;
+}
+
+-(UIImage*) snapshotThumbnail{
+    if (!THUMBNAIL_IMAGE_HIGHT || !THUMBNAIL_IMAGE_WIDTH
+        || !_inputWidth || !_inputHeight) {
+        return nil;
+    }
+    
+    [self configureThumbnail];
+    glBindFramebuffer(GL_FRAMEBUFFER, _downscale_framebuffer);
+    glViewport(0, 0, THUMBNAIL_IMAGE_WIDTH, THUMBNAIL_IMAGE_HIGHT);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    //TODO: Use a simpler sharder thumbnails to improve performance
+    BOOL temp_grapScale = _grayScale;
+    float temp_overExp = _overExposedMark;
+    float temp_luminance = _luminanceScale;
+    
+    _grayScale = NO;
+    _overExposedMark = 0;
+    _luminanceScale = 1.0;
+    
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, _rgbRenderBuffer);
+    [self renderToScreen];
+    
+    UIImage* image = [self snapshotWithTextureW:THUMBNAIL_IMAGE_WIDTH h:THUMBNAIL_IMAGE_HIGHT ];
+    
+    _grayScale = temp_grapScale;
+    _overExposedMark = temp_overExp;
+    _luminanceScale = temp_luminance;
+    
+    return image;
+}
+
+- (UIImage*)snapshotWithTextureW:(int)w h:(int)h{
+    
+    if (!w || !h) {
+        return nil;
+    }
+    
+    int x = 0, y = 0, width = w, height = h;
+    int dataLength = width * height * 4;
+    GLubyte *data = (GLubyte*)malloc(dataLength * sizeof(GLubyte));
+    
+    // Read pixel data from the framebuffer
+    glPixelStorei(GL_PACK_ALIGNMENT, 4);
+    glReadPixels(x, y, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    
+    CGDataProviderRef ref = CGDataProviderCreateWithData(NULL, data, dataLength, NULL);
+    
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef iref = CGImageCreate(width, height, 8, 32, width * 4, colorspace, kCGBitmapByteOrder32Big | kCGImageAlphaPremultipliedLast,
+                                    ref, NULL, true, kCGRenderingIntentDefault);
+    
+
+    NSInteger widthInPoints, heightInPoints;
+    if (NULL != &UIGraphicsBeginImageContextWithOptions) {
+        CGFloat scale = self.contentScaleFactor;
+        widthInPoints = width / scale;
+        heightInPoints = height / scale;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(widthInPoints, heightInPoints), NO, scale);
+        
+    }
+    
+    CGContextRef cgcontext = UIGraphicsGetCurrentContext();
+    CGContextSetBlendMode(cgcontext, kCGBlendModeCopy);
+    CGContextDrawImage(cgcontext, CGRectMake(0.0, 0.0, widthInPoints, heightInPoints), iref);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    // Clean up
+    free(data);
+    CFRelease(ref);
+    CFRelease(colorspace);
+    CGImageRelease(iref);
+    return image;
+}
+
+- (UIImage*) snapshotUImageFull{
+    
+    int x = 0, y = 0, width = _rgbOutputWidth, height = _rgbOutputHeight;
+    int dataLength = width * height * 4;
+    GLubyte *data = (GLubyte*)malloc(dataLength * sizeof(GLubyte));
+    
+    // Read pixel data from the framebuffer
+    glPixelStorei(GL_PACK_ALIGNMENT, 4);
+    glReadPixels(x, y, width, height, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    
+    
+    // Create a CGImage with the pixel data
+    // If your OpenGL ES content is opaque, use kCGImageAlphaNoneSkipLast to ignore the alpha channel
+    // otherwise, use kCGImageAlphaPremultipliedLast
+    CGDataProviderRef ref = CGDataProviderCreateWithData(NULL, data, dataLength, NULL);
+    
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef iref = CGImageCreate(width, height, 8, 32, width * 4, colorspace, kCGBitmapByteOrder32Big | kCGImageAlphaNone,
+                                    ref, NULL, true, kCGRenderingIntentDefault);
+    
+    // OpenGL ES measures data in PIXELS
+    // Create a graphics context with the target size measured in POINTS
+    NSInteger widthInPoints, heightInPoints;
+
+    if (NULL != &UIGraphicsBeginImageContextWithOptions) {
+        // On iOS 4 and later, use UIGraphicsBeginImageContextWithOptions to take the scale into consideration
+        // Set the scale parameter to your OpenGL ES view's contentScaleFactor
+        // so that you get a high-resolution snapshot when its value is greater than 1.0
+        CGFloat scale = self.contentScaleFactor;
+        widthInPoints = _inputWidth / scale;
+        heightInPoints = _inputHeight / scale;
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(widthInPoints, heightInPoints), NO, scale);
+
+    }
+    
+    CGContextRef cgcontext = UIGraphicsGetCurrentContext();
+
+    // UIKit coordinate system is upside down to GL/Quartz coordinate system
+    // Flip the CGImage by rendering it to the flipped bitmap context
+    // The size of the destination area is measured in POINTS
+    CGContextSetBlendMode(cgcontext, kCGBlendModeCopy);
+    CGContextDrawImage(cgcontext, CGRectMake(0.0, 0.0, widthInPoints, heightInPoints), iref);
+
+
+
+    // Retrieve the UIImage from the current context
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    // Clean up
+    free(data);
+    CFRelease(ref);
+    CFRelease(colorspace);
+    CGImageRelease(iref);
+
+    return image;
 }
 
 -(void) configureThumbnail{

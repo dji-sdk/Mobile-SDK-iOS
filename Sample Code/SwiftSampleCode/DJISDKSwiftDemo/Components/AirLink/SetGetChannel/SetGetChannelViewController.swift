@@ -14,11 +14,11 @@ class SetGetChannelViewController: DemoGetSetViewController {
         self.rangeLabel.text = "The input should be an integer. The valid range is [0, 7]. "
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // disable the set/get button first.
-        self.getValueButton.enabled = false
-        self.setValueButton.enabled = false
+        self.getValueButton.isEnabled = false
+        self.setValueButton.isEnabled = false
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil && airLink!.isLBAirLinkSupported {
             self.getLBChannelMode()
@@ -32,11 +32,11 @@ class SetGetChannelViewController: DemoGetSetViewController {
      *  Therefore, we set the mode back to Auto while exiting the view.
      */
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil && airLink!.isLBAirLinkSupported {
-            airLink!.lbAirLink?.setChannelSelectionMode(DJILBAirLinkChannelSelectionMode.Auto, withCompletion: nil)
+            airLink!.lbAirLink?.setChannelSelectionMode(DJILBAirLinkChannelSelectionMode.auto, withCompletion: nil)
         }
     }
     /**
@@ -48,14 +48,14 @@ class SetGetChannelViewController: DemoGetSetViewController {
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil {
             
-            airLink!.lbAirLink?.getChannelSelectionModeWithCompletion({[weak self](mode: DJILBAirLinkChannelSelectionMode, error: NSError?) -> Void in
+            airLink!.lbAirLink?.getChannelSelectionMode(completion: {[weak self](mode: DJILBAirLinkChannelSelectionMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getChannelSelectionMode: \(error!.description)")
+                    self?.showAlertResult("ERROR: getChannelSelectionMode: \(error!)")
                 }
-                else if mode == DJILBAirLinkChannelSelectionMode.Manual {
-                    self?.getValueButton.enabled = true
-                    self?.setValueButton.enabled = true
+                else if mode == DJILBAirLinkChannelSelectionMode.manual {
+                    self?.getValueButton.isEnabled = true
+                    self?.setValueButton.isEnabled = true
                 }
                 else {
                     self?.setLBChannelMode()
@@ -69,27 +69,27 @@ class SetGetChannelViewController: DemoGetSetViewController {
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil {
             
-            airLink!.lbAirLink?.setChannelSelectionMode(DJILBAirLinkChannelSelectionMode.Manual, withCompletion: {[weak self](error: NSError?) -> Void in
+            airLink!.lbAirLink?.setChannelSelectionMode(DJILBAirLinkChannelSelectionMode.manual, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: setChannelSelectionMode: \(error!.description)")
+                    self?.showAlertResult("ERROR: setChannelSelectionMode: \(error!)")
                 }
                 else {
-                    self?.getValueButton.enabled = true
-                    self?.setValueButton.enabled = true
+                    self?.getValueButton.isEnabled = true
+                    self?.setValueButton.isEnabled = true
                 }
             })
         }
     }
     
-    @IBAction override func onGetButtonClicked(sender: AnyObject) {
+    @IBAction override func onGetButtonClicked(_ sender: AnyObject) {
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil {
             
-            airLink!.lbAirLink?.getChannelWithCompletion({[weak self](channel: Int32, error: NSError?) -> Void in
+            airLink!.lbAirLink?.getChannelWithCompletion({[weak self](channel: Int32, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getChannel: \(error!.description)")
+                    self?.showAlertResult("ERROR: getChannel: \(error!)")
                 }
                 else {
                     let getTextString: String = "\(UInt(channel))"
@@ -99,13 +99,13 @@ class SetGetChannelViewController: DemoGetSetViewController {
         }
     }
     
-    @IBAction override func onSetButtonClicked(sender: AnyObject) {
+    @IBAction override func onSetButtonClicked(_ sender: AnyObject) {
         let airLink: DJIAirLink? = self.fetchAirLink()
         if airLink != nil && self.setValueTextField.text != ""{
             let channelIndex: Int32 = Int32(self.setValueTextField.text!)!
-            airLink!.lbAirLink?.setChannel(channelIndex, withCompletion: {[weak self](error: NSError?) -> Void in
+            airLink!.lbAirLink?.setChannel(channelIndex, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: setChannel: \(error!.description)")
+                    self?.showAlertResult("ERROR: setChannel: \(error!)")
                 }
                 else {
                     self?.showAlertResult("SUCCESS. ")

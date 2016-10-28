@@ -5,9 +5,30 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DJIStreamCommon.h"
 
-//For acquiring pre-construction I frame struct
+#ifndef OUT
+#define OUT
+#endif
+
+#ifndef IN
+#define IN
+#endif
+
+//H265 Encoder Type
+typedef NS_ENUM(NSUInteger, H264EncoderType){
+    H264EncoderType_unknown = 0, //unknown type，no needprebuild idr
+    H264EncoderType_DM368_inspire = 1, //inspire support DM368 coding
+    H264EncoderType_DM368_longan = 2, //Osmo is same with inspire
+    H264EncoderType_A9_phantom3c = 4, //phantom3c'A9 Camera
+    H264EncoderType_A9_phantom3s = 4, //phantom3s stream
+    H264EncoderType_DM365_phamtom3x = 5, //phantom3x
+    H264EncoderType_1860_phantom4x = 6, //phantom4x & wm220 wifi
+    H264EncoderType_LightBridge2 = 7, //lb2 dm368
+    H264EncoderType_A9_P3_W = 8, //p3w wifi
+    H264EncoderType_A9_OSMO_NO_368 = 9, //without DM368 osmo+A9+X3 camera
+};
+
+////For acquiring pre-construction I frame struct
 typedef struct _DummyIframeInfo{
     int frame_width;
     int frame_height;
@@ -33,7 +54,7 @@ extern loadPrebuildIframeOverridePtr g_loadPrebuildIframeOverrideFunc;
 #define SLICE_B_TAG (0x03)
 #define SLICE_C_TAG (0x04)
 
-//sps
+//sps from ffmpeg
 typedef struct SPS {
     unsigned int sps_id;
     int profile_idc;
@@ -108,55 +129,67 @@ typedef struct{
  *  Decode seq data.
  *
  *  @param buf In sps buffer.
- *  @param nLen Buffer size.
- *  @param Width mb width.
- *  @param Height mb hegiht.
- *  @param framerate The frame rate.
- *  @param decodeedSps Out sps data.
+ *  @param nLen In Buffer size.
+ *  @param out_width Out mb width.
+ *  @param out_height Out mb hegiht.
+ *  @param framerate Out The frame rate.
+ *  @param out_sps Out sps data.
  *
  *  @return `0` if it is set successfully.
  */
-int	h264_decode_seq_parameter_set_out(unsigned char * buf,unsigned int nLen,int *Width,int *Height, int *framerate, SPS* decodeedSps);
+int	h264_decode_seq_parameter_set_out(IN unsigned char * buf,IN unsigned int nLen,OUT int * out_width,OUT int * out_height,OUT int *framerate,OUT SPS* out_sps);
 
 /**
  *  Decode a slice header.
  *
  *  @param buf In sps buffer.
- *  @param nLen Buffer size.
- *  @param sps Sps data.
- *  @param info Out the slice header info.
+ *  @param nLen In Buffer size.
+ *  @param out_sps Out Sps data.
+ *  @param out_info Out the slice header info.
  *
  *  @return `0` if it is decode successfully.
  */
-int h264_decode_slice_header(unsigned char * buf, unsigned int nLen, SPS* sps, H264SliceHeaderSimpleInfo* info);
+int h264_decode_slice_header(IN unsigned char * buf,IN unsigned int nLen,OUT SPS* out_sps,OUT H264SliceHeaderSimpleInfo* out_info);
 
 /**
  *  Search the end position of nalu header.
- *  
- *  @param buffer Frame data.
- *  @param nLen Frame size.
+ *
+ *  @param buf In Frame data.
+ *  @param nLen IN Frame size.
  *
  *  @return The search position.
  */
-int findNextNALStartCodeEndPos(uint8_t* buffer, int size);
+int findNextNALStartCodeEndPos(IN uint8_t* buf, IN int size);
 
 /**
  *  Search the start position of nalu header.
  *
- *  @param buffer Frame data.
- *  @param nLen Frame size.
+ *  @param buf In Frame data.
+ *  @param nLen In Frame size.
  *
  *  @return The search position.
  */
-int findNextNALStartCodePos(uint8_t* buffer, int size);
+int findNextNALStartCodePos(IN uint8_t* buf, IN int size);
+
+/**
+ *  Find the sps and pps frame.
+ *
+ *  @param  buf In buffer data.
+ *  @param  size In buffer size.
+ *  @param  out_SPS Out sps result.
+ *  @param  out_SPSLen Out sps size.
+ *  @param  out_PPS Out pps result.
+ *  @param  out_PPSLen Out pps size.
+ */
+int find_SPS_PPS(IN uint8_t* buf,IN int size,OUT uint8_t* out_SPS,OUT int* out_SPSLen,OUT uint8_t* out_PPS,OUT int* out_PPSLen);
 
 /**
  *  Attempts to load pre-constructed i frame from disk
- *  
- *  @param buffer Out the i frame data.
- *  @param in_buffer_size In buffer size.
+ *
+ *  @param buf Out the i frame data.
+ *  @param size In In buffer size.
  *  @param info In the i frame info.
  *
  *  @return If less than `0` mean the buffer have no enough size, '0' No correspond i frame, more than `0` the size of get.
  */
-int loadPrebuildIframe(uint8_t* buffer, int in_buffer_size, PrebuildIframeInfo info);
+int loadPrebuildIframe(OUT uint8_t* buf,IN int size,IN PrebuildIframeInfo info);

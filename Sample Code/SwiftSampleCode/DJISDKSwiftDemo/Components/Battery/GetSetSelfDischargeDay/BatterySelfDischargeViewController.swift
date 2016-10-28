@@ -20,7 +20,7 @@ class BatterySelfDischargeViewController: DemoGetSetViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction override func onGetButtonClicked(sender: AnyObject) {
+    @IBAction override func onGetButtonClicked(_ sender: AnyObject) {
         self.updateSelfDischargeDay()
     }
 
@@ -28,10 +28,10 @@ class BatterySelfDischargeViewController: DemoGetSetViewController {
         let battery: DJIBattery? = self.fetchBattery()
         if battery != nil {
             
-            battery!.getSelfDischargeDayWithCompletion({[weak self](day: UInt8, error: NSError?) -> Void in
+            battery!.getSelfDischargeDay(completion: {[weak self](day: UInt8, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getBatterySelfDischargeDay \(error!.description)")
+                    self?.showAlertResult("ERROR: getBatterySelfDischargeDay \(error!)")
                 }
                 else {
                     let getTextString: String = "\(day)"
@@ -41,13 +41,13 @@ class BatterySelfDischargeViewController: DemoGetSetViewController {
         }
     }
 
-    @IBAction override func onSetButtonClicked(sender: AnyObject) {
+    @IBAction override func onSetButtonClicked(_ sender: AnyObject) {
         let battery: DJIBattery? = self.fetchBattery()
         if (battery != nil && self.setValueTextField.text != "") {
             let selDischargeDay: UInt8 = UInt8(self.setValueTextField.text!)!
-            battery!.setSelfDischargeDay(selDischargeDay, withCompletion: {[weak self](error: NSError?) -> Void in
+            battery!.setSelfDischargeDay(selDischargeDay, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: setBatterySelfDischargeDay:\(error!.description)")
+                    self?.showAlertResult("ERROR: setBatterySelfDischargeDay:\(error!)")
                 }
                 else {
                     self?.showAlertResult("Success. ")

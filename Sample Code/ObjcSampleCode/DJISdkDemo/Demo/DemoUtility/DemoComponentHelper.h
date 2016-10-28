@@ -17,6 +17,7 @@
 @class DJIBattery;
 @class DJIAirLink;
 @class DJIHandheldController;
+@class DJIMobileRemoteController;
 
 @interface DemoComponentHelper : NSObject
 
@@ -30,5 +31,7 @@
 +(DJIBattery*) fetchBattery;
 +(DJIAirLink*) fetchAirLink;
 +(DJIHandheldController*) fetchHandheldController;
++(DJIMobileRemoteController*) fetchMobileRemoteController;
+
 
 @end

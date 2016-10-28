@@ -13,10 +13,10 @@ let kDJIMapViewUpdateFlightLimitZoneDistance = (1000.0)
 //#define RADIAN(x) ((x)*M_PI/180.0)
 let kNFZQueryScope = (50000)
 extension CLLocation {
-    class func distanceFrom(coordinate: CLLocationCoordinate2D, to anotherCoordinate: CLLocationCoordinate2D) -> Double {
+    class func distanceFrom(_ coordinate: CLLocationCoordinate2D, to anotherCoordinate: CLLocationCoordinate2D) -> Double {
         let location: CLLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let otherLocation: CLLocation = CLLocation(latitude: anotherCoordinate.latitude, longitude: anotherCoordinate.longitude)
-        return location.distanceFromLocation(otherLocation)
+        return location.distance(from: otherLocation)
     }
 }
 //#define UIColorFromRGBA(rgbValue, a) \
@@ -30,7 +30,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
     var isRegionChanging: Bool?=false
     var limitCircle: MKCircle? = nil
     //this is the cirle of limit radius
-    var updateFlightZoneQueue: NSOperationQueue?=nil
+    var updateFlightZoneQueue: OperationQueue?=nil
     //it's used to update flight zones
     var preMapCenter: CLLocationCoordinate2D?=nil
     var flightLimitZones: [AnyObject]?=nil
@@ -58,9 +58,9 @@ class DJIMapView: UIView, MKMapViewDelegate {
      *  @param radius
      */
 
-    func addPOICoordinate(coordinate: CLLocationCoordinate2D, radius: CGFloat) {
+    func addPOICoordinate(_ coordinate: CLLocationCoordinate2D, radius: CGFloat) {
         if (poiCircle != nil) {
-            _mapView!.removeOverlay(poiCircle!)
+            _mapView!.remove(poiCircle!)
         }
         if (hotPointAnnotation != nil) {
             _mapView!.removeAnnotation(hotPointAnnotation!)
@@ -70,10 +70,10 @@ class DJIMapView: UIView, MKMapViewDelegate {
         }
         // coordinate = [GISCoordinateConverter gcjFromWGS84:coordinate];
     
-        poiCircle = MKCircle.init(centerCoordinate: coordinate,radius:Double(radius))
+        poiCircle = MKCircle.init(center: coordinate,radius:Double(radius))
         
         hotPointAnnotation!.coordinate = coordinate
-        _mapView!.addOverlay(poiCircle!)
+        _mapView!.add(poiCircle!)
         _mapView!.addAnnotation(hotPointAnnotation!)
         hotPointAnnotation!.title = String(format: "{%0.6f, %0.6f}", coordinate.latitude, coordinate.longitude)
     }
@@ -84,7 +84,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
      *  @param heading    Aircraft heading
      */
 
-    func updateAircraftLocation(coordinate: CLLocationCoordinate2D, withHeading heading: Double) {
+    func updateAircraftLocation(_ coordinate: CLLocationCoordinate2D, withHeading heading: Double) {
         // coordinate = [GISCoordinateConverter gcjFromWGS84:coordinate];
         if CLLocationCoordinate2DIsValid(coordinate) {
             if aircraftAnnotation == nil {
@@ -97,7 +97,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
             else {
                 aircraftAnnotation!.setCoordinate(coordinate, animation:true)
                 var annotationView: DJIAircraftAnnotationView? = nil
-                annotationView = _mapView!.viewForAnnotation(aircraftAnnotation!) as? DJIAircraftAnnotationView
+                annotationView = _mapView!.view(for: aircraftAnnotation!) as? DJIAircraftAnnotationView
                 if (annotationView != nil) {
                     annotationView!.updateHeading(heading)
                 }
@@ -105,7 +105,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
         }
     }
 
-    func updateHomeLocation(homecoordinate: CLLocationCoordinate2D) {
+    func updateHomeLocation(_ homecoordinate: CLLocationCoordinate2D) {
         if CLLocationCoordinate2DIsValid(homecoordinate) {
             _mapView!.showsUserLocation = false
             if (homeAnnotation == nil) {
@@ -128,16 +128,16 @@ class DJIMapView: UIView, MKMapViewDelegate {
      *  Update the no fly zone with the given coordinate
      **/
 
-    func updateLimitFlyZoneWithCoordinate(flyspaceUpdateCenterCoordinate: CLLocationCoordinate2D) {
+    func updateLimitFlyZoneWithCoordinate(_ flyspaceUpdateCenterCoordinate: CLLocationCoordinate2D) {
     }
 
     func forceRefreshLimitSpaces() {
     }
 
-    func addFlightLimitSpaces(spaces: [AnyObject]) {
+    func addFlightLimitSpaces(_ spaces: [AnyObject]) {
     }
 
-    func setMapType(mapType: MKMapType) {
+    func setMapType(_ mapType: MKMapType) {
     }
 
     convenience required init(coder aDecoder: NSCoder) {
@@ -154,21 +154,21 @@ class DJIMapView: UIView, MKMapViewDelegate {
     func setupDefaults() {
         self.flyspaceUpdateCenterCoordinate = kCLLocationCoordinate2DInvalid
         _mapView!.delegate = self
-        self.updateFlightZoneQueue = NSOperationQueue()
+        self.updateFlightZoneQueue = OperationQueue()
         self.updateFlightZoneQueue!.maxConcurrentOperationCount = 1
         self.flightLimitZones = [AnyObject]()
     }
  
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         // Hotpoint
         if (annotation is MKUserLocation) {
             return nil
         }
         else if (annotation.isEqual(hotPointAnnotation)) {
-            var annotationView: DJIPOIAnnotationView? = _mapView!.dequeueReusableAnnotationViewWithIdentifier("HotPointAnnotation") as? DJIPOIAnnotationView
+            var annotationView: DJIPOIAnnotationView? = _mapView!.dequeueReusableAnnotationView(withIdentifier: "HotPointAnnotation") as? DJIPOIAnnotationView
             if (annotationView == nil) {
                 annotationView = DJIPOIAnnotationView(annotation: annotation, reuseIdentifier: "HotPointAnnotation")
-                annotationView!.draggable = false
+                annotationView!.isDraggable = false
             }
             else {
                 annotationView!.annotation = annotation
@@ -177,7 +177,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
         }
         else if (annotation is DJIAircraftAnnotation) {
             let aircraftReuseIdentifier: String = "DJI_AIRCRAFT_ANNOTATION_VIEW"
-            var aircraftAnno: DJIAircraftAnnotationView? = _mapView!.dequeueReusableAnnotationViewWithIdentifier(aircraftReuseIdentifier) as? DJIAircraftAnnotationView
+            var aircraftAnno: DJIAircraftAnnotationView? = _mapView!.dequeueReusableAnnotationView(withIdentifier: aircraftReuseIdentifier) as? DJIAircraftAnnotationView
             if aircraftAnno == nil {
                 aircraftAnno = DJIAircraftAnnotationView(annotation: annotation, reuseIdentifier: aircraftReuseIdentifier)
             }
@@ -191,7 +191,7 @@ class DJIMapView: UIView, MKMapViewDelegate {
                 reuseIdentifier = homepointReuseIdentifier
             }
             let wpAnnotation: DJIWaypointAnnotation = annotation as! DJIWaypointAnnotation
-            var annoView: DJIWaypointAnnotationView? = _mapView!.dequeueReusableAnnotationViewWithIdentifier(reuseIdentifier) as? DJIWaypointAnnotationView
+            var annoView: DJIWaypointAnnotationView? = _mapView!.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? DJIWaypointAnnotationView
             if annoView == nil {
                 annoView = DJIWaypointAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             }

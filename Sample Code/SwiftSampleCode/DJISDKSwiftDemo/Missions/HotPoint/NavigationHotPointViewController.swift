@@ -48,14 +48,14 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         self.djiMapView = DJIMapView(mapView: self.mapView)
     }
 
-    func decorateView(theView: UIView) {
+    func decorateView(_ theView: UIView) {
         theView.layer.cornerRadius = theView.frame.size.width * 0.5
         theView.layer.borderWidth = 1.2
-        theView.layer.borderColor = UIColor.blueColor().CGColor
+        theView.layer.borderColor = UIColor.blue.cgColor
         theView.layer.masksToBounds = true
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // flight controller should be ready
         var aircraft: DJIAircraft? = nil
@@ -68,7 +68,7 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         self.missionManager!.delegate = self
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let aircraft:DJIAircraft? = self.fetchAircraft()
         if aircraft != nil {
@@ -96,24 +96,24 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
             self.configView.altitude = CGFloat(self.systemState!.altitude)
         }
         self.configView.center = self.view.center
-        UIView.animateWithDuration(0.25, animations: {() -> Void in
+        UIView.animate(withDuration: 0.25, animations: {() -> Void in
             self.configView.alpha = 1.0
         })
     }
 
     func downloadHotPointMission() {
         
-        self.missionManager!.downloadMissionWithProgress(nil, withCompletion: {[weak self](mission: DJIMission?, error: NSError?) -> Void in
+        self.missionManager!.downloadMission(progress: nil, withCompletion: {[weak self](mission: DJIMission?, error: Error?) -> Void in
             if error == nil {
                 self?.resumeMissionScene(mission!)
             }
             else {
-                self?.showAlertResult("Download Mission Falied: \(error!.description)")
+                self?.showAlertResult("Download Mission Falied: \(error!)")
             }
         })
     }
 
-    func resumeMissionScene(mission: DJIMission) {
+    func resumeMissionScene(_ mission: DJIMission) {
         if mission is DJIHotPointMission {
             self.hotpointMission = mission as? DJIHotPointMission
             mCurrentHotpointCoordinate = self.hotpointMission!.hotPoint
@@ -125,12 +125,12 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
                 region.span.longitudeDelta = 0.001
                 self.mapView.setRegion(region, animated: true)
                 mIsMissionStarted = true
-                self.startStopButton.setTitle("Stop", forState: .Normal)
+                self.startStopButton.setTitle("Stop", for: UIControlState())
             }
         }
     }
 
-    func missionManager(manager: DJIMissionManager, missionProgressStatus missionProgress: DJIMissionProgressStatus) {
+    func missionManager(_ manager: DJIMissionManager, missionProgressStatus missionProgress: DJIMissionProgressStatus) {
         if (missionProgress is DJIHotPointMissionStatus) {
             let hotPointMissionStatus: DJIHotPointMissionStatus = missionProgress as! DJIHotPointMissionStatus
             
@@ -139,12 +139,12 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
                 self.downloadHotPointMission()
             }
             if (hotPointMissionStatus.error != nil) {
-                self.showAlertResult("Mission Error: \(hotPointMissionStatus.error!.description)")
+                self.showAlertResult("Mission Error: \(hotPointMissionStatus.error!)")
             }
         }
     }
 
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState) {
        // var speed: Float = sqrtf(state.velocityX * state.velocityX + state.velocityY * state.velocityY)
         let titleMessage: String = "H:{%0.6f, %0.6f}, D:{%0.6f, %0.6f}, GPS:\(state.homeLocation.latitude), H.S:%0.1f m/s V.S:%0.1f m/s"
         self.navigationController!.title = titleMessage
@@ -177,27 +177,27 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         //        self?.showAlertResult(@"Mission surround radius too large");
         //        return;
         //    }
-        let maxSpeed:Float = DJIHotPointMission.maxAngularVelocityForRadius(mission.radius)
+        let maxSpeed:Float = DJIHotPointMission.maxAngularVelocity(forRadius: mission.radius)
         if mission.angularVelocity > maxSpeed {
             self.showAlertResult("Speed should not larger then:\(maxSpeed)")
             return
         }
         
-        self.missionManager!.prepareMission(self.hotpointMission!, withProgress: nil, withCompletion: {[weak self] (error: NSError?) -> Void in
-            self?.missionManager!.startMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
+        self.missionManager!.prepare(self.hotpointMission!, withProgress: nil, withCompletion: {[weak self] (error: Error?) -> Void in
+            self?.missionManager!.startMissionExecution(completion: {[weak self] (error: Error?) -> Void in
                 if (error != nil ){
-                    self?.showAlertResult("Start Hotpoint Mission:\(error!.description)")
+                    self?.showAlertResult("Start Hotpoint Mission:\(error!)")
                 }
                 else {
                     self?.djiMapView!.addPOICoordinate(self!.hotpointMission!.hotPoint, radius: CGFloat(self!.hotpointMission!.radius))
                     self?.mIsMissionStarted = true
-                    self?.startStopButton.setTitle("Stop", forState: .Normal)
+                    self?.startStopButton.setTitle("Stop", for: UIControlState())
                 }
             })
         })
     }
 
-    @IBAction func onSetHotPointButtonClikced(sender: AnyObject) {
+    @IBAction func onSetHotPointButtonClikced(_ sender: AnyObject) {
         if mIsMissionStarted {
             self.showAlertResult("There is a mission in executing...")
             return
@@ -217,13 +217,13 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         }
     }
 
-    @IBAction func onStartStopButtonClicked(sender: UIButton) {
+    @IBAction func onStartStopButtonClicked(_ sender: UIButton) {
         if mIsMissionStarted {
-            self.missionManager!.stopMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-                self?.showAlertResult("Stop Hotpoint Mission:\(error?.description)")
+            self.missionManager!.stopMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+                self?.showAlertResult("Stop Hotpoint Mission:\(error)")
                 if error == nil {
                     self?.mIsMissionStarted = false
-                    self?.startStopButton.setTitle("Start", forState: .Normal)
+                    self?.startStopButton.setTitle("Start", for: UIControlState())
                 }
             })
         }
@@ -237,42 +237,42 @@ class NavigationHotPointViewController: DJIBaseViewController, MKMapViewDelegate
         }
     }
 
-    @IBAction func onPauseResumeButtonClicked(sender: UIButton) {
+    @IBAction func onPauseResumeButtonClicked(_ sender: UIButton) {
         if mIsMissionStarted {
             if mIsMissionPaused {
-                self.missionManager!.resumeMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-                    self?.showAlertResult("Resume Hotpoint Mission:\(error?.description)")
+                self.missionManager!.resumeMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+                    self?.showAlertResult("Resume Hotpoint Mission:\(error)")
                     if error == nil {
                         self?.mIsMissionPaused = false
-                        sender.setTitle("Pause", forState: .Normal)
+                        sender.setTitle("Pause", for: UIControlState())
                     }
                 })
             }
             else {
-                self.missionManager!.pauseMissionExecutionWithCompletion({[weak self] (error: NSError?) -> Void in
-                    self?.showAlertResult("Pause Hotpoint Mission:\(error?.description)")
+                self.missionManager!.pauseMissionExecution(completion: {[weak self] (error: Error?) -> Void in
+                    self?.showAlertResult("Pause Hotpoint Mission:\(error)")
                     if error == nil {
                         self?.mIsMissionPaused = true
-                        sender.setTitle("Resume", forState: .Normal)
+                        sender.setTitle("Resume", for: UIControlState())
                     }
                 })
             }
         }
     }
 
-    @IBAction func onRecordButtonClicked(sender: AnyObject) {
+    @IBAction func onRecordButtonClicked(_ sender: AnyObject) {
         let aircraft:DJIAircraft? = self.fetchAircraft()
         if aircraft == nil {
             return
         }
         if isRecording {
-            aircraft!.camera!.stopRecordVideoWithCompletion({[weak self] (error: NSError?) -> Void in
-                self?.showAlertResult("Stop Rec:\(error?.description)")
+            aircraft!.camera!.stopRecordVideo(completion: {[weak self] (error: Error?) -> Void in
+                self?.showAlertResult("Stop Rec:\(error)")
             })
         }
         else {
-            aircraft!.camera!.startRecordVideoWithCompletion({[weak self] (error: NSError?) -> Void in
-                self?.showAlertResult("Stard Rec: \(error?.description)")
+            aircraft!.camera!.startRecordVideo(completion: {[weak self] (error: Error?) -> Void in
+                self?.showAlertResult("Stard Rec: \(error)")
             })
         }
     }

@@ -16,10 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let remoteLoggerServerURL = "http://192.168.1.132:4567"
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        DJISDKManager.enableRemoteLoggingWithDeviceID("DJISampleAppDevice1", logServerURLString: remoteLoggerServerURL)
-        DJIRemoteLogger.setCurrentLogLevel(.Verbose)
+        DJISDKManager.enableRemoteLogging(withDeviceID: "DJISampleAppDevice1", logServerURLString: remoteLoggerServerURL)
+        DJIRemoteLogger.setCurrentLogLevel(.verbose)
         
         customizeApperance()
         
@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func customizeApperance()
     {
         UINavigationBar.appearance().barTintColor = UIColor.DJIBrandColor()
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: false)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes =  [NSForegroundColorAttributeName: UIColor.white]
     }
 }

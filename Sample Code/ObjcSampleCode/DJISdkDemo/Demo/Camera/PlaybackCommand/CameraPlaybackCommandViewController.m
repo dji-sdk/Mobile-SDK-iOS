@@ -16,6 +16,7 @@
 #import "DemoUtility.h"
 #import <VideoPreviewer/VideoPreviewer.h>
 #import "CameraPlaybackCommandViewController.h"
+#import "VideoPreviewerSDKAdapter.h"
 
 @interface CameraPlaybackCommandViewController () <DJICameraDelegate, DJIPlaybackDelegate>
 
@@ -28,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *multipleButton;
 @property (weak, nonatomic) IBOutlet UIButton *singleButton;
+
+@property (nonatomic) VideoPreviewerSDKAdapter *previewerAdapter;
 
 @end
 
@@ -165,15 +168,16 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-
-    //    self.videoFeedView.backgroundColor = [UIColor grayColor];
-    
     [[VideoPreviewer instance] start];
     [[VideoPreviewer instance] setView:self.videoFeedView];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    [self.previewerAdapter start];
 }
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
+    [self.previewerAdapter stop];
+    self.previewerAdapter = nil;
 }
 
 -(void) setIsInMultipleMode:(BOOL)isInMultipleMode {
@@ -184,9 +188,7 @@
 
 #pragma mark - DJICameraDelegate
 -(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    if(![[[VideoPreviewer instance] dataQueue] isFull]){
-        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
-    }
+    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
 }
   
 #pragma mark - DJIPlaybackDelegate

@@ -29,7 +29,7 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setVideoPreview()
         // set delegate to render camera's video feed into the view
@@ -40,13 +40,13 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
         self.isInRecordVideoMode = false
         self.isRecordingVideo = false
         // disable the shoot photo button by default
-        self.startRecordButton.enabled = false
-        self.stopRecordButton.enabled = false
+        self.startRecordButton.isEnabled = false
+        self.stopRecordButton.isEnabled = false
         // start to check the pre-condition
         self.getCameraMode()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // clean the delegate
         let camera: DJICamera? = self.fetchCamera()
@@ -65,12 +65,12 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.getCameraModeWithCompletion({[weak self](mode: DJICameraMode, error: NSError?) -> Void in
+            camera?.getModeWithCompletion({[weak self](mode: DJICameraMode, error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: getCameraModeWithCompletion::\(error!)")
                 }
-                else if mode == DJICameraMode.RecordVideo {
+                else if mode == DJICameraMode.recordVideo {
                     self?.isInRecordVideoMode = true
                 }
                 else {
@@ -89,15 +89,15 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
             
-            camera?.setCameraMode(DJICameraMode.RecordVideo, withCompletion: {[weak self](error: NSError?) -> Void in
+            camera?.setCameraMode(DJICameraMode.recordVideo, withCompletion: {[weak self](error: Error?) -> Void in
                 
                 if error != nil {
-                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: setCameraMode:withCompletion::\(error!)")
                 }
                 else {
                     // Normally, once an operation is finished, the camera still needs some time to finish up
                     // all the work. It is safe to delay the next operation after an operation is finished.
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {() -> Void in
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {() -> Void in
                         
                         self?.isInRecordVideoMode = true
                     })
@@ -110,13 +110,13 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
      *  a video now.
      */
 
-    @IBAction func onStartRecordButtonClicked(sender: AnyObject) {
+    @IBAction func onStartRecordButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            self.startRecordButton.enabled = false
-            camera?.startRecordVideoWithCompletion({[weak self](error: NSError?) -> Void in
+            self.startRecordButton.isEnabled = false
+            camera?.startRecordVideo(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: startRecordVideoWithCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: startRecordVideoWithCompletion::\(error!)")
                 }
             })
         }
@@ -126,13 +126,13 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
      *  the video.
      */
 
-    @IBAction func onStopRecordButtonClicked(sender: AnyObject) {
+    @IBAction func onStopRecordButtonClicked(_ sender: AnyObject) {
         let camera: DJICamera? = self.fetchCamera()
         if camera != nil {
-            self.stopRecordButton.enabled = false
-            camera?.stopRecordVideoWithCompletion({[weak self](error: NSError?) -> Void in
+            self.stopRecordButton.isEnabled = false
+            camera?.stopRecordVideo(completion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: stopRecordVideoWithCompletion::\(error!.description)")
+                    self?.showAlertResult("ERROR: stopRecordVideoWithCompletion::\(error!)")
                 }
             })
         }
@@ -148,8 +148,8 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
     }
 
     func toggleRecordUI() {
-        self.startRecordButton.enabled = (self.isInRecordVideoMode && !self.isRecordingVideo)
-        self.stopRecordButton.enabled = (self.isInRecordVideoMode && self.isRecordingVideo)
+        self.startRecordButton.isEnabled = (self.isInRecordVideoMode && !self.isRecordingVideo)
+        self.stopRecordButton.isEnabled = (self.isInRecordVideoMode && self.isRecordingVideo)
         if !self.isRecordingVideo {
             self.recordingTimeLabel.text = "00:00"
         }
@@ -161,11 +161,11 @@ class CameraRecordVideoViewController: DJIBaseViewController, DJICameraDelegate 
         }
     }
 
-    func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
+    func camera(_ camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int) {
         VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
 
-    func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {
+    func camera(_ camera: DJICamera, didUpdate systemState: DJICameraSystemState) {
         self.isRecordingVideo = systemState.isRecording
         self.recordingTime = systemState.currentVideoRecordingTimeInSeconds
     }

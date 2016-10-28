@@ -22,6 +22,7 @@
 #import "FCActionsTableViewController.h"
 #import "RCActionsTableViewController.h"
 #import "HandheldControllerActionsTableViewController.h"
+#import "MobileRemoteControllerViewController.h"
 
 #import "WaypointMissionViewController.h"
 #import "HotpointMissionViewController.h"
@@ -72,7 +73,8 @@
                            DJIAirLinkComponent : [AirLinkActionsTableViewController class],
                            DJIFlightControllerComponent : [FCActionsTableViewController class],
                            DJIRemoteControllerComponent : [RCActionsTableViewController class],
-                           DJIHandheldControllerComponent : [HandheldControllerActionsTableViewController class]
+                           DJIHandheldControllerComponent : [HandheldControllerActionsTableViewController class],
+                           DJIMobileRemoteControllerComponent : [MobileRemoteControllerViewController class],
                            };
         
     });

@@ -10,7 +10,7 @@ class DemoPushInfoViewController: DJIBaseViewController {
     @IBOutlet weak var pushInfoLabel: UILabel!
 
     init() {
-        super.init(nibName: "DemoPushInfoViewController", bundle: NSBundle.mainBundle())
+        super.init(nibName: "DemoPushInfoViewController", bundle: Bundle.main)
     }
 
     required init?(coder aDecoder: NSCoder) {

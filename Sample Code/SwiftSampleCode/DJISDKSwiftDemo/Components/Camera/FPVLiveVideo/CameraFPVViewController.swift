@@ -9,12 +9,15 @@ import DJISDK
 import VideoPreviewer
 
 class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
+    
     @IBOutlet weak var fpvView : UIView!
     @IBOutlet weak var fpvTemView : UIView!
     @IBOutlet weak var fpvTemEnableSwitch : UISwitch!
     @IBOutlet weak var fpvTemperatureData : UILabel!
     
-    var isSettingMode:Bool = false 
+    var isSettingMode:Bool = false
+    
+    var adapter : VideoPreviewerSDKAdapter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,10 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
             updateThermalCameraUI()
         }
         self.isSettingMode = false
+        
+        VideoPreviewer.instance().start()
+        adapter = VideoPreviewerSDKAdapter(videoPreviewer: VideoPreviewer.instance())
+        adapter.start()
     }
     
     func updateThermalCameraUI() {
@@ -33,14 +40,14 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
             return
         }
         let state:Bool = camera!.isThermalImagingCamera()
-        fpvTemView.hidden = !state
+        fpvTemView.isHidden = !state
         if (state) {
-            camera?.getThermalMeasurementModeWithCompletion({ (
-                mode:DJICameraThermalMeasurementMode, error:NSError?) -> Void in
+            camera?.getThermalMeasurementMode(completion: { (
+                mode:DJICameraThermalMeasurementMode, error:Error?) -> Void in
                 if (error == nil) {
-                    self.fpvTemEnableSwitch.setOn(mode != DJICameraThermalMeasurementMode.Disabled, animated: true)
+                    self.fpvTemEnableSwitch.setOn(mode != DJICameraThermalMeasurementMode.disabled, animated: true)
                 } else {
-                    self.showAlertResult("Failed to get the Thermal measurement mode status:\(error?.description)")
+                    self.showAlertResult("Failed to get the Thermal measurement mode status:\(error)")
                 }
             })
         }
@@ -51,39 +58,34 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        VideoPreviewer.instance().start()
         VideoPreviewer.instance().setView(self.fpvView)
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         VideoPreviewer.instance().unSetView()
+        adapter.stop()
     }
     
-    @IBAction func onSegmentControlValueChanged(sender: UISegmentedControl) {
+    @IBAction func onSegmentControlValueChanged(_ sender: UISegmentedControl) {
         let product: DJIBaseProduct? = ConnectedProductManager.sharedInstance.connectedProduct
         if product != nil {
-            if sender.selectedSegmentIndex == 0 {
-                VideoPreviewer.instance().setDecoderWithProduct(product, andDecoderType:VideoPreviewerDecoderType.SoftwareDecoder)
-            }
-            else {
-                VideoPreviewer.instance().setDecoderWithProduct(product, andDecoderType:VideoPreviewerDecoderType.HardwareDecoder)
-            }
+            VideoPreviewer.instance().enableHardwareDecode = (sender.selectedSegmentIndex == 1)
         }
     }
     
     
-    func camera(camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
+    func camera(_ camera: DJICamera, didReceiveVideoData videoBuffer: UnsafeMutablePointer<UInt8>, length size: Int){
         VideoPreviewer.instance().push(videoBuffer, length: Int32(size))
     }
     
-    func camera(camera: DJICamera, didUpdateSystemState systemState: DJICameraSystemState) {
-        if systemState.mode == DJICameraMode.Playback || systemState.mode == DJICameraMode.MediaDownload {
+    func camera(_ camera: DJICamera, didUpdate systemState: DJICameraSystemState) {
+        if systemState.mode == DJICameraMode.playback || systemState.mode == DJICameraMode.mediaDownload {
             if !self.isSettingMode {
                 self.isSettingMode = true
-                camera.setCameraMode(DJICameraMode.ShootPhoto, withCompletion: {[weak self](error: NSError?) -> Void in
+                camera.setCameraMode(DJICameraMode.shootPhoto, withCompletion: {[weak self](error: Error?) -> Void in
                     if error == nil {
                         self?.isSettingMode = false
                     }
@@ -92,18 +94,18 @@ class CameraFPVViewController: DJIBaseViewController, DJICameraDelegate {
         }
     }
     
-    func camera(camera: DJICamera, didUpdateTemperatureData temperature: Float) {
+    func camera(_ camera: DJICamera, didUpdateTemperatureData temperature: Float) {
         self.fpvTemperatureData.text = temperature.description
     }
     
-    @IBAction func onThermalTemperatureDataSwitchValueChanged(sender: UISwitch){
+    @IBAction func onThermalTemperatureDataSwitchValueChanged(_ sender: UISwitch){
         let camera: DJICamera? = self.fetchCamera()
         camera?.setThermalMeasurementMode(
-            sender.on ? DJICameraThermalMeasurementMode.SpotMetering : DJICameraThermalMeasurementMode.Disabled,
-            withCompletion: { (error:NSError?) -> Void in
+            sender.isOn ? DJICameraThermalMeasurementMode.spotMetering : DJICameraThermalMeasurementMode.disabled,
+            withCompletion: { (error:Error?) -> Void in
             if (error != nil) {
-                self.showAlertResult("Error to change ThermalMeasurementMode:\(error?.description)")
-                sender.setOn(!sender.on, animated:false)
+                self.showAlertResult("Error to change ThermalMeasurementMode:\(error)")
+                sender.setOn(!sender.isOn, animated:false)
             }
         })
     }

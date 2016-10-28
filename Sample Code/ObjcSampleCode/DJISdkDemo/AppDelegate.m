@@ -32,7 +32,6 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(double)(0x2a)/255 green:(double)(0x3b)/255 blue:(double)(0x55)/255 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application{

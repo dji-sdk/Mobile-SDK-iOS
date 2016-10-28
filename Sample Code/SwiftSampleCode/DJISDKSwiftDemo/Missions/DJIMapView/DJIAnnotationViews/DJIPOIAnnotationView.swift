@@ -14,11 +14,11 @@ class DJIPOIAnnotationView: MKAnnotationView {
     
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         if (pinView == nil) {
-            pinView = UIView(frame: CGRectMake(0.0, 0.0, 54.0, 54.0))
-            pinView!.backgroundColor = UIColor.clearColor()
+            pinView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 54.0, height: 54.0))
+            pinView!.backgroundColor = UIColor.clear
             let pinIcon: UIImageView = UIImageView(image: UIImage(named: "navigation_poi_pin"))
             pinView!.addSubview(pinIcon)
-            pinIcon.center = CGPointMake(self.pinView!.center.x, self.pinView!.center.y - pinIcon.frame.size.height * 0.5)
+            pinIcon.center = CGPoint(x: self.pinView!.center.x, y: self.pinView!.center.y - pinIcon.frame.size.height * 0.5)
         }
 
         var frame: CGRect = self.frame
@@ -31,8 +31,4 @@ class DJIPOIAnnotationView: MKAnnotationView {
    required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
 }

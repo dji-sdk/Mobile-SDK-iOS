@@ -15,6 +15,7 @@
 #import "DemoUtility.h"
 #import <VideoPreviewer/VideoPreviewer.h>
 #import "CameraShootSinglePhotoViewController.h"
+#import "VideoPreviewerSDKAdapter.h"
 
 @interface CameraShootSinglePhotoViewController () <DJICameraDelegate>
 
@@ -24,6 +25,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *videoFeedView;
 @property (weak, nonatomic) IBOutlet UIButton *shootPhotoButton;
+
+@property (nonatomic) VideoPreviewerSDKAdapter *previewerAdapter; 
 
 @end
 
@@ -128,14 +131,16 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-
-//    self.videoFeedView.backgroundColor = [UIColor grayColor];    
     [[VideoPreviewer instance] start];
     [[VideoPreviewer instance] setView:self.videoFeedView];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    [self.previewerAdapter start];
 }
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
+    [self.previewerAdapter stop];
+    self.previewerAdapter = nil;
 }
 
 -(void) setIsInShootPhotoMode:(BOOL)isInShootPhotoMode {
@@ -159,9 +164,7 @@
 
 #pragma mark - DJICameraDelegate
 -(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    if(![[[VideoPreviewer instance] dataQueue] isFull]){
-        [[VideoPreviewer instance] push:videoBuffer length:(int)size];
-    }
+    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
 }
 
 -(void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState {

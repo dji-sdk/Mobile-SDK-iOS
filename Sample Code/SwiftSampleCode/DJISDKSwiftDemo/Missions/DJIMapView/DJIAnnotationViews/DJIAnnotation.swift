@@ -44,7 +44,7 @@ class DJIAnnotation: NSObject, MKAnnotation {
         self.backGroundAnnotation = annotation
     }
 
-    func setCoordinate(coordinate: CLLocationCoordinate2D, animation: Bool) {
+    func setCoordinate(_ coordinate: CLLocationCoordinate2D, animation: Bool) {
         self.coordinate = coordinate
         if backGroundAnnotation != nil {
             backGroundAnnotation!.setCoordinate(coordinate, animation: animation)
@@ -53,11 +53,11 @@ class DJIAnnotation: NSObject, MKAnnotation {
 
     deinit {
         if backGroundAnnotation != nil && mapView != nil {
-            if NSThread.isMainThread() {
+            if Thread.isMainThread {
                 mapView!.removeAnnotation(backGroundAnnotation!)
             }
             else {
-                dispatch_sync(dispatch_get_main_queue(), {[weak self] () -> Void in
+                DispatchQueue.main.sync(execute: {[weak self] () -> Void in
                     self?.mapView!.removeAnnotation(self!.backGroundAnnotation!)
                 })
             }

@@ -6,101 +6,11 @@
 
 #import "DJIVideoHelper.h"
 
-#define INFO(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
+#define INFO(fmt, ...) //NSLog(fmt, ##__VA_ARGS__)
 #define ERROR(fmt, ...) NSLog(fmt, ##__VA_ARGS__)
 
 loadPrebuildIframeOverridePtr g_loadPrebuildIframeOverrideFunc = nil;
 loadPrebuildIframePathPtr g_loadPrebuildIframePathFunc = nil;
-
-BOOL g_is_smooth = NO;
-
-//retern the pos after 00 00 01 or 00 00 00 01
-int findNextNALStartCodeEndPos(uint8_t* buffer, int size){
-    
-    if(size < 4)
-        return -1;
-    
-    int continue_zero_count = 0;
-    
-    for (int i=0; i<size; i++) {
-        if (0 == buffer[i]) {
-            continue_zero_count ++;
-        }
-        else if(1 == buffer[i]){
-            if (continue_zero_count >=2 ) {
-                //start code found
-                return i+1;
-            }
-            //not enough zero
-            continue_zero_count = 0;
-        }
-        else{
-            continue_zero_count = 0;
-        }
-    }
-    
-    return -1;
-}
-
-//retern the pos of 00 00 01 or 00 00 00 01
-int findNextNALStartCodePos(uint8_t* buffer, int size){
-    
-    if(size < 4)
-        return -1;
-    
-    int continue_zero_count = 0;
-    
-    for (int i=0; i<size; i++) {
-        if (0 == buffer[i]) {
-            continue_zero_count ++;
-        }
-        else if(1 == buffer[i]){
-            if (continue_zero_count >=2) {
-                //start code found
-                return i-continue_zero_count;
-            }
-            //not enough zero
-            continue_zero_count = 0;
-        }
-        else{
-            continue_zero_count = 0;
-        }
-    }
-    
-    return -1;
-}
-
-
-int32_t convertOSD(uint8_t* osdBuf, int osdLen, uint8_t* convBuf, int* convLen) {
-	if (osdLen > 250)
-		return -1;
-    
-	uint8_t buff[1024];
-	memcpy(buff, osdBuf, osdLen);
-    
-	int i;
-	int count = 0;
-	int it = 0;
-	int pos = -1;
-	for (i = 0; i < osdLen; i++)
-	{
-		if (i < osdLen - 2)
-		{
-			if ((buff[i] == 0x00) && (buff[i + 1] == 0x00))
-			{
-				if (buff[i + 2] == 0x03)
-				{
-					count++;
-					pos = i + 2;
-				}			}
-		}
-		if (i != pos)
-			convBuf[it++] = buff[i];
-	}
-    
-	*convLen = osdLen - count;
-	return 0;
-}
 
 #define MAXN (200)
 
@@ -249,6 +159,8 @@ static unsigned long u(unsigned int BitCount,unsigned char * buf,unsigned int *n
 	return dwRet;
 }
 
+#pragma mark frame
+
 static void decode_scaling_list(
                                 unsigned char * buf,
                                 unsigned int nLen,
@@ -285,7 +197,7 @@ static void decode_scaling_list(
 }
 
 
-int	h264_decode_seq_parameter_set_out(unsigned char * buf, unsigned int nLen,int *Width,int *Height, int *framerate, SPS* out_sps)
+int	h264_decode_seq_parameter_set_out(unsigned char * buf,unsigned int nLen, int * out_width,int * out_height,int *framerate,SPS* out_sps)
 {
 	unsigned int StartBit=0;
 	int profile_idc, level_idc, constraint_set_flags = 0;
@@ -457,8 +369,8 @@ int	h264_decode_seq_parameter_set_out(unsigned char * buf, unsigned int nLen,int
 	sps->mb_width                       = Ue(buf,nLen,&StartBit);
 	sps->mb_height                      = Ue(buf,nLen,&StartBit);
     
-	*Width=(sps->mb_width+1)*16;
-	*Height=(sps->mb_height+1)*16;
+	*out_width=(sps->mb_width+1)*16;
+	*out_height=(sps->mb_height+1)*16;
     
 	sps->frame_mbs_only_flag = (int)u(1,buf,&StartBit);
 	if (!sps->frame_mbs_only_flag)
@@ -537,12 +449,7 @@ int	h264_decode_seq_parameter_set_out(unsigned char * buf, unsigned int nLen,int
              *  Identification codeing: time_scale == 6001 -> Smooth mode
              */
             if (sps->time_scale & 0x01) {
-                g_is_smooth = NO;
                 sps->time_scale -= 1;
-            }
-            else
-            {
-                g_is_smooth = YES;
             }
             
             if (sps->time_scale==120000 ) {
@@ -584,7 +491,7 @@ uint8_t spsFlag[] = {0x00,0x00,0x00,0x01,0x67};
 uint8_t ppsFlag[] = {0x00,0x00,0x00,0x01,0x68};
 uint8_t endFlag[] = {0x00,0x00,0x00,0x01};
 
-int find_SPS_PPS(uint8_t* pInBuff, int iSize, uint8_t* pSPS, int* iSpsLen, uint8_t* pPpsBuf,int* iPpsLen)
+int find_SPS_PPS(IN uint8_t* buf,IN int iSize,OUT uint8_t* out_SPS,OUT int* out_SPSLen,OUT uint8_t* out_PPS,OUT int* out_PPSLen)
 {
     //sps and pps nalu header pos
     int sps_len = 0;
@@ -595,12 +502,12 @@ int find_SPS_PPS(uint8_t* pInBuff, int iSize, uint8_t* pSPS, int* iSpsLen, uint8
     
     int current_pos = 0;
     while (current_pos <= iSize) {
-        int nal_start = findNextNALStartCodePos(pInBuff, iSize-current_pos);
+        int nal_start = findNextNALStartCodePos(buf, iSize-current_pos);
         if (nal_start < 0) {
             break;
         }
         
-        int tag_pos = nal_start + findNextNALStartCodeEndPos(pInBuff + nal_start, iSize-current_pos-nal_start);
+        int tag_pos = nal_start + findNextNALStartCodeEndPos(buf + nal_start, iSize-current_pos-nal_start);
         
         //If already have sps or pps, to write.
         if (sps_start_pos &&
@@ -611,9 +518,9 @@ int find_SPS_PPS(uint8_t* pInBuff, int iSize, uint8_t* pSPS, int* iSpsLen, uint8
                 break;
             }
             
-            if (pSPS) {
-                memcpy(pSPS, endFlag, sizeof(endFlag));
-                memcpy(pSPS + sizeof(endFlag), sps_start_pos, nal_start);
+            if (out_SPS) {
+                memcpy(out_SPS, endFlag, sizeof(endFlag));
+                memcpy(out_SPS + sizeof(endFlag), sps_start_pos, nal_start);
             }
             sps_len = nal_start+sizeof(endFlag);
         }
@@ -626,9 +533,9 @@ int find_SPS_PPS(uint8_t* pInBuff, int iSize, uint8_t* pSPS, int* iSpsLen, uint8
                 break;
             }
             
-            if (pPpsBuf) {
-                memcpy(pPpsBuf, endFlag, sizeof(endFlag));
-                memcpy(pPpsBuf + sizeof(endFlag), pps_start_pos, nal_start);
+            if (out_PPS) {
+                memcpy(out_PPS, endFlag, sizeof(endFlag));
+                memcpy(out_PPS + sizeof(endFlag), pps_start_pos, nal_start);
             }
             pps_len = nal_start + sizeof(endFlag);
         }
@@ -638,126 +545,135 @@ int find_SPS_PPS(uint8_t* pInBuff, int iSize, uint8_t* pSPS, int* iSpsLen, uint8
             break;
         }
         
-        pInBuff += tag_pos;
+        buf += tag_pos;
         current_pos += tag_pos;
         
-        //nalu header just have 5 bits is tyep.
-        uint8_t nalu_header_type = 0x1f&pInBuff[0];
+        //nalu header just have 5 bits is type.
+        uint8_t nalu_header_type = 0x1f&buf[0];
         if (nalu_header_type == SPS_TAG && sps_len == 0) {
-            sps_start_pos = pInBuff;
+            sps_start_pos = buf;
         }
         else if(nalu_header_type == PPS_TAG && pps_len == 0){
-            pps_start_pos = pInBuff;
+            pps_start_pos = buf;
         }
     }
     
     if (pps_len && sps_len) {
         //find both
-        *iSpsLen = sps_len;
-        *iPpsLen = pps_len;
+        *out_SPSLen = sps_len;
+        *out_PPSLen = pps_len;
         return 0;
     }
     
     return -1;
 }
 
-int getVideFrameRateWH(uint8_t* buffer, int bufferSize, bool* hasSpsPps, int* w, int* h){
-    int spsLen = 0;
-    int ppsLen = 0;
-    uint8_t spsBuf[256] = {0};
-    uint8_t ppsBuf[256] = {0};
-    
-    int res = find_SPS_PPS(buffer, bufferSize, spsBuf, &spsLen, ppsBuf, &ppsLen);
-    if (res == 0) {
-        if (hasSpsPps) {
-            *hasSpsPps = true;
+//return the pos after 00 00 01 or 00 00 00 01
+int findNextNALStartCodeEndPos(uint8_t* buf, int size){
+
+    if(size < 4)
+        return -1;
+
+    int continue_zero_count = 0;
+
+    for (int i=0; i<size; i++) {
+        if (0 == buf[i]) {
+            continue_zero_count ++;
         }
-        int len = 0;
-        uint8_t spsBuf_rm03[256] = {0};
-        convertOSD(spsBuf + 4, spsLen, spsBuf_rm03, &len);
-        int rate;
-        h264_decode_seq_parameter_set_out((uint8_t*)spsBuf_rm03, len, w, h, &rate, nil);
-        if (rate > 1 && rate < 100) {
-            return rate;
+        else if(1 == buf[i]){
+            if (continue_zero_count >=2 ) {
+                //start code found
+                return i+1;
+            }
+            //not enough zero
+            continue_zero_count = 0;
+        }
+        else{
+            continue_zero_count = 0;
         }
     }
-    
-    if (hasSpsPps) {
-        *hasSpsPps = false;
-    }
-    
-    return 0;
+
+    return -1;
 }
 
-int getVideFrameRate(uint8_t* buffer, int bufferSize, bool* hasSpsPps)
-{
-    int w, h;
-    return getVideFrameRateWH(buffer, bufferSize, hasSpsPps, &w, &h);
-}
+//retern the pos of 00 00 01 or 00 00 00 01
+int findNextNALStartCodePos(uint8_t* buf, int size){
 
-int loadPrebuildIframe(uint8_t* buffer, int in_buffer_size, PrebuildIframeInfo info){
-    if(g_loadPrebuildIframeOverrideFunc){
-        return g_loadPrebuildIframeOverrideFunc(buffer, in_buffer_size, info);
-    }
-    
-    if (!g_loadPrebuildIframePathFunc) {
-        NSLog(@"can not find idr path func");
-        return 0;
-    }
-    
-    char* file_name = g_loadPrebuildIframePathFunc(buffer, in_buffer_size, info);
-    if (!file_name) {
-        NSLog(@"idr path not found");
-        return 0;
-    }
-    
-    FILE* in_file = fopen(file_name, "rb");
-    
-    if(in_file){
-        fseek(in_file, 0, SEEK_END);
-        int file_size = (int)ftell(in_file);
-        fseek(in_file, 0, SEEK_SET);
-        
-        if (file_size > in_buffer_size) {
-            fclose(in_file);
-            return -file_size;
+    if(size < 4)
+        return -1;
+
+    int continue_zero_count = 0;
+
+    for (int i=0; i<size; i++) {
+        if (0 == buf[i]) {
+            continue_zero_count ++;
         }
-        
-        
-        fread(buffer, file_size, 1, in_file);
-        fclose(in_file);
-        return  file_size;
+        else if(1 == buf[i]){
+            if (continue_zero_count >=2) {
+                //start code found
+                return i-continue_zero_count;
+            }
+            //not enough zero
+            continue_zero_count = 0;
+        }
+        else{
+            continue_zero_count = 0;
+        }
     }
-    
 
-    //no i frame found, cannot use hardware decoder.
-    NSLog(@"no prebuild iframe");
-    return 0;
+    return -1;
 }
-
 
 #pragma mark - slice header decode
+
 #define MAX_SPS_COUNT          32
 #define MAX_PPS_COUNT         256
+
 
 static const uint8_t golomb_to_pict_type[5] = {
     2, 3, 1,
     6, 5
 };
 
-int h264_decode_slice_header(unsigned char * buf, unsigned int nLen, SPS* sps, H264SliceHeaderSimpleInfo* info)
+int h264_parse_slice_header2(uint8_t * buf, int nLen, int * sliceType, int * mbLocation, int * frameNum, int log2_max_frame_num)
 {
+    int i=0, nStartBits=0;
+    int pps_id;
+    while(1)
+    {
+        if(i+3>=nLen)//out of boundary
+            break;
+        if(buf[i]==0 && buf[i+1]==0 && buf[i+2]==1 &&( (buf[i+3]&0x1f)==0x1 ||(buf[i+3]&0x1f)==0x5))
+        {
+            buf+=i+4;
+            nLen-=i+4;
+            break;
+        }
+        i++;
+    }
+    
+    *mbLocation = Ue(buf, nLen, (unsigned int*)&nStartBits);
+    *sliceType = Ue(buf, nLen, (unsigned int*)&nStartBits);
+    pps_id = Ue(buf, nLen, (unsigned int*)&nStartBits);
+    *frameNum = (int)u(log2_max_frame_num, buf, (unsigned int*)&nStartBits);
+    return nStartBits+(i+4)*8;
+    //	    fprintf(stdout, "got new slice: #%d, sliceType: %d\n", *mbLocation, *sliceType);
+}
+
+
+int h264_decode_slice_header(unsigned char * buf,unsigned int nLen,SPS* out_sps,H264SliceHeaderSimpleInfo* out_info)
+{
+    //reader count
     unsigned int StartBit=0;
-    if (!sps) {
+    if (!out_sps) {
         return -1;
     }
     
     unsigned int first_mb_in_slice;
     unsigned int pps_id;
     unsigned int slice_type;
-
     first_mb_in_slice = Ue(buf, nLen, &StartBit);
-
+    
     slice_type = Ue(buf, nLen, &StartBit);
     if (slice_type > 9) {
         INFO(@"slice type too large (%d)", slice_type);
@@ -775,21 +691,57 @@ int h264_decode_slice_header(unsigned char * buf, unsigned int nLen, SPS* sps, H
     pps_id = Ue(buf,nLen,&StartBit);
     
     if (pps_id >= MAX_PPS_COUNT) {
-        //av_log(h->avctx, AV_LOG_ERROR, "pps_id %d out of range\n", pps_id);
         INFO(@"pps_id %d out of range\n", pps_id);
         return -1;
     }
-    int frame_num = (int)u(sps->log2_max_frame_num, buf, &StartBit);
+    int frame_num = (int)u(out_sps->log2_max_frame_num, buf, &StartBit);
     
     //we just need frame_num, first_mb_in_slice, slice_type;
-    if (info) {
-        info->first_mb_in_slice = first_mb_in_slice;
-        info->slice_type = slice_type;
-        info->frame_num = frame_num;
+    if (out_info) {
+        out_info->first_mb_in_slice = first_mb_in_slice;
+        out_info->slice_type = slice_type;
+        out_info->frame_num = frame_num;
     }
     return 0;
 }
 
+int loadPrebuildIframe(OUT uint8_t* buf,IN int size,IN PrebuildIframeInfo info)
+{
+    if(g_loadPrebuildIframeOverrideFunc){
+        return g_loadPrebuildIframeOverrideFunc(buf, size, info);
+    }
+
+    if (!g_loadPrebuildIframePathFunc) {
+        NSLog(@"can not find idr path func");
+        return 0;
+    }
+
+    char* file_name = g_loadPrebuildIframePathFunc(buf, size, info);
+    if (!file_name) {
+        NSLog(@"idr path not found");
+        return 0;
+    }
+
+    FILE* in_file = fopen(file_name, "rb");
+
+    if(in_file){
+        fseek(in_file, 0, SEEK_END);
+        int file_size = (int)ftell(in_file);
+        fseek(in_file, 0, SEEK_SET);
+
+        if (file_size > size) {
+            fclose(in_file);
+            return -file_size;
+        }
 
 
+        fread(buf, file_size, 1, in_file);
+        fclose(in_file);
+        return  file_size;
+    }
 
+
+    //no i frame found, cannot use hardware decoder.
+    NSLog(@"no prebuild iframe");
+    return 0;
+}

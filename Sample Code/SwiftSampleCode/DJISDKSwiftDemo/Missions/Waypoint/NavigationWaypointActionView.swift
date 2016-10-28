@@ -12,10 +12,6 @@ class NavigationWaypointActionView: UIView, UITextFieldDelegate {
     @IBOutlet var okButton: UIButton!
     @IBOutlet var actionTypeScrollView: UIScrollView!
     @IBOutlet var actionTypeSeg: UISegmentedControl!
-    init() {
-        super.init(frame: CGRectZero)
-        self.initWithNib()
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,22 +23,22 @@ class NavigationWaypointActionView: UIView, UITextFieldDelegate {
 
 
     func initWithNib() -> NavigationWaypointActionView {
-        var objs: [AnyObject] = NSBundle.mainBundle().loadNibNamed("NavigationWaypointActionView", owner: self, options: nil)
+        var objs: [AnyObject] = Bundle.main.loadNibNamed("NavigationWaypointActionView", owner: self, options: nil) as! [AnyObject]
         let mainView:UIView = objs[0] as! UIView
         self.frame = mainView.bounds
         self.okButton.layer.cornerRadius = 4.0
-        self.okButton.layer.borderColor = UIColor.blueColor().CGColor
+        self.okButton.layer.borderColor = UIColor.blue.cgColor
         self.okButton.layer.borderWidth = 1.2
         mainView.layer.cornerRadius = 5.0
         mainView.layer.masksToBounds = true
-        self.backgroundColor = UIColor.lightGrayColor().colorWithAlphaComponent(0.7)
+        self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
         self.addSubview(mainView)
         
         return self
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField.isFirstResponder() {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.isFirstResponder {
             textField.resignFirstResponder()
         }
         return true

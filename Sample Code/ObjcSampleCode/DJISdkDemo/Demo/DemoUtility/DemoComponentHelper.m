@@ -136,4 +136,16 @@
     return nil;
 }
 
++(DJIMobileRemoteController *)fetchMobileRemoteController {
+    if (![DJISDKManager product]) {
+        return nil;
+    }
+
+    if ([[DJISDKManager product] isKindOfClass:[DJIAircraft class]]) {
+        return ((DJIAircraft*)[DJISDKManager product]).mobileRemoteController;
+    }
+
+    return nil;
+}
+
 @end

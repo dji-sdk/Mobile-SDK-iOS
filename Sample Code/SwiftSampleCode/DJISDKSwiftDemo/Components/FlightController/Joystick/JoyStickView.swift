@@ -15,9 +15,9 @@ class JoyStickView: UIView {
     @IBOutlet var stickView: UIImageView!
     var imgStickNormal: UIImage?=nil
     var imgStickHold: UIImage?=nil
-    var mCenter: CGPoint = CGPointZero
-    var mUpdateTimer: NSTimer? = nil
-    var mTouchPoint: CGPoint = CGPointZero
+    var mCenter: CGPoint = CGPoint.zero
+    var mUpdateTimer: Timer? = nil
+    var mTouchPoint: CGPoint = CGPoint.zero
 
 
     func initStick() {
@@ -33,7 +33,7 @@ class JoyStickView: UIView {
             self.initStick()
     }
 
-    func onPanGesture(sender: AnyObject) {
+    func onPanGesture(_ sender: AnyObject) {
     }
 
      required init(coder: NSCoder) {
@@ -42,24 +42,24 @@ class JoyStickView: UIView {
             self.initStick()
     }
 
-    func notifyDir(dir: CGPoint) {
-        let vdir: NSValue = NSValue(CGPoint: dir)
-        let userInfo: [NSObject : AnyObject] = [
+    func notifyDir(_ dir: CGPoint) {
+        let vdir: NSValue = NSValue(cgPoint: dir)
+        let userInfo: [AnyHashable: Any] = [
             "dir" : vdir
         ]
 
-        let notificationCenter: NSNotificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.postNotificationName("StickChanged", object: self, userInfo: userInfo)
+        let notificationCenter: NotificationCenter = NotificationCenter.default
+        notificationCenter.post(name: Notification.Name(rawValue: "StickChanged"), object: self, userInfo: userInfo)
     }
 
-    func stickMoveTo(deltaToCenter: CGPoint) {
+    func stickMoveTo(_ deltaToCenter: CGPoint) {
         var fr: CGRect = stickView.frame
         fr.origin.x = deltaToCenter.x
         fr.origin.y = deltaToCenter.y
         stickView.frame = fr
     }
 
-    func touchEvent(touches: Set<UITouch>) {
+    func touchEvent(_ touches: Set<UITouch>) {
         if touches.count != 1 {
             return
         }
@@ -68,9 +68,9 @@ class JoyStickView: UIView {
         if view != self {
             return
         }
-        let touchPoint: CGPoint = touch.locationInView(view)
-        var dtarget: CGPoint = CGPointZero
-        var dir:CGPoint = CGPointZero
+        let touchPoint: CGPoint = touch.location(in: view)
+        var dtarget: CGPoint = CGPoint.zero
+        var dir:CGPoint = CGPoint.zero
         dir.x = touchPoint.x - mCenter.x
         dir.y = touchPoint.y - mCenter.y
         let len: Double = sqrt(Double(dir.x * dir.x + dir.y * dir.y))
@@ -92,7 +92,7 @@ class JoyStickView: UIView {
         self.notifyDir(dir)
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         stickView.image = imgStickHold
         if touches.count != 1 {
             return
@@ -102,12 +102,12 @@ class JoyStickView: UIView {
         if view != self {
             return
         }
-        mTouchPoint = touch.locationInView(view)
+        mTouchPoint = touch.location(in: view)
         self.startUpdateTimer()
         //    [self touchEvent:touches];
     }
 
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if touches.count != 1 {
             return
         }
@@ -116,32 +116,32 @@ class JoyStickView: UIView {
         if view != self {
             return
         }
-        mTouchPoint = touch.locationInView(view)
+        mTouchPoint = touch.location(in: view)
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         stickView.image = imgStickNormal!
-        let dtarget: CGPoint = CGPointZero
-        let dir: CGPoint = CGPointZero
+        let dtarget: CGPoint = CGPoint.zero
+        let dir: CGPoint = CGPoint.zero
         self.stickMoveTo(dtarget)
         self.notifyDir(dir)
         self.stopUpdateTimer()
     }
 
-    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override func touchesCancelled(_ touches: Set<UITouch>?, with event: UIEvent?) {
         stickView.image = imgStickNormal!
-        let dtarget: CGPoint = CGPointZero
-        let dir: CGPoint = CGPointZero
+        let dtarget: CGPoint = CGPoint.zero
+        let dir: CGPoint = CGPoint.zero
 
         self.stickMoveTo(dtarget)
         self.notifyDir(dir)
         self.stopUpdateTimer()
     }
 
-    func onUpdateTimerTicked(sender: AnyObject) {
+    func onUpdateTimerTicked(_ sender: AnyObject) {
         let touchPoint: CGPoint = mTouchPoint
-        var dtarget:CGPoint=CGPointZero
-        var dir:CGPoint=CGPointZero
+        var dtarget:CGPoint=CGPoint.zero
+        var dir:CGPoint=CGPoint.zero
         dir.x = touchPoint.x - mCenter.x
         dir.y = touchPoint.y - mCenter.y
         let len: Double = sqrt( Double(dir.x * dir.x + dir.y * dir.y))
@@ -164,7 +164,7 @@ class JoyStickView: UIView {
 
     func startUpdateTimer() {
         if mUpdateTimer == nil {
-            mUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(0.05, target: self, selector: #selector(JoyStickView.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
+            mUpdateTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(JoyStickView.onUpdateTimerTicked(_:)), userInfo: nil, repeats: true)
             mUpdateTimer!.fire()
         }
     }

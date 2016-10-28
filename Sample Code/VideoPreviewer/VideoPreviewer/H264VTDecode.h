@@ -3,13 +3,13 @@
 //
 //  Copyright (c) 2014 DJI. All rights reserved.
 //
-#ifndef H264_VT_DECODE_H
-#define H264_VT_DECODE_H
 #import <AVFoundation/AVFoundation.h>
 #import <VideoToolbox/VideoToolbox.h>
 #import <Foundation/Foundation.h>
 #import "DJIStreamCommon.h"
 
+#ifndef H264_VT_DECODE_H
+#define H264_VT_DECODE_H
 //interface for 264 decoder
 @protocol H264DecoderOutput <NSObject>
 @optional
@@ -43,36 +43,47 @@
     int au_size;
     int au_nal_count;
     
+    //Decoded frame count
     int _income_frame_count;
+    //Decoder to recreate the times
     int _decoder_create_count;
 }
 
 //CVImageBuffer output delegate
 @property (nonatomic, weak) id<H264DecoderOutput> delegate;
+//Enabled flag
 @property (nonatomic, assign) BOOL enabled;
+//YES if decoder is ready
+@property (nonatomic, assign) BOOL decoderInited;
+//need push a dummy iframe before decode
+@property (nonatomic, assign) BOOL dummyIPushed;
+//count decode error
+@property (nonatomic, assign) int decodeErrorCount;
+//hardware decode unavailable
+@property (nonatomic, assign) BOOL hardwareUnavailable;
+//frame rate
+@property (nonatomic, assign) NSInteger fps;
+//Encoder mode to select i-frame
 @property (assign, nonatomic) NSInteger encoderType;
-@property (nonatomic, assign) BOOL hardware_unavailable;
+@property (assign, nonatomic) CGSize videoSize;
+//In the case of hardware decoding enabled fastupload, hardware decode will the output in kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange or kCVPixelFormatType_420YpCbCr8BiPlanarFullRange format
+@property (assign, nonatomic) BOOL enableFastUpload;
 
-/***
- reset decode context. Can only be used in the decoder thread.
- ***/
+/**
+ *  reset decode context. Can only be used in the decoder thread.
+ */
 -(void) resetInDecodeThread;
 
 /**
  * Resets the video previewer, but it is not executed until it is safe to do so. It can be called in different thread.
- **/
+ */
 -(void) resetLater;
 
-/***
- convert imagebuffer to uiimage for test
- in: CVImagePixelBuffer
- ***/
--(UIImage *) convertFromCVImageBuffer:(CVImageBufferRef)imageBuffer savePath:(NSString*)path;
-
 /**
- *  FLush all the frame in the video previewer's queue. 
+ *  FLush all the frame in the video previewer's queue.
  */
 -(void) dequeueAllFrames;
 @end
+
 #endif
 

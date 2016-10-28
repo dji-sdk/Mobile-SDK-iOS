@@ -25,8 +25,10 @@ static const uint8_t g_idr_OsmoNo368_1280_720[] = {0x00, 0x00, 0x00, 0x52, 0x25,
 int loadPrebuildIframePrivate(uint8_t* buffer, int in_buffer_size, PrebuildIframeInfo info){
     uint8_t *data = NULL;
     size_t dataSize = 0;
-    
-    switch (info.encoder_type) {
+
+    H264EncoderType encodeType = info.encoder_type;
+
+    switch (encodeType) {
         case H264EncoderType_DM365_phamtom3x:
         case H264EncoderType_DM368_inspire:
         case H264EncoderType_DM368_longan:

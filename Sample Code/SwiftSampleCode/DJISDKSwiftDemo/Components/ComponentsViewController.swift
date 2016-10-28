@@ -28,14 +28,14 @@ class ComponentsViewController: DemoTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Components & Missions"
-        self.sectionNames = ["Components", "Missions"]
+        self.sectionNames = ["Components" , "Missions"]
         self.initializeComponentSection()
         self.initializeMissionSection()
     }
     
 
    func initializeComponentSection() {
-        var components: [AnyObject] = [AnyObject]()
+        var components = [DemoSettingItem]()
     
         if (ConnectedProductManager.sharedInstance.fetchAircraft() != nil){
             components.append(DemoSettingItem(name:"Flight Controller", andClass:nil))
@@ -45,7 +45,7 @@ class ComponentsViewController: DemoTableViewController {
             for name: String in (ConnectedProductManager.sharedInstance.connectedProduct!.components?.keys)! {
                 let componentObjectType:AnyObject.Type? = componentsDict[name]
                 if (componentObjectType != nil) {
-                    components.append(DemoSettingItem(name: name.capitalizedString, andClass: componentObjectType as? UIViewController.Type))
+                    components.append(DemoSettingItem(name: name.capitalized, andClass: componentObjectType as? UIViewController.Type))
                 }
             }
         }
@@ -53,7 +53,7 @@ class ComponentsViewController: DemoTableViewController {
     }
 
     func initializeMissionSection() {
-        var components: [AnyObject] = [AnyObject]()
+         var components = [DemoSettingItem]()
         
         if (ConnectedProductManager.sharedInstance.fetchHandheldController() != nil) {
             components.append(DemoSettingItem(name:"Panorama Mission", andClass:nil))
@@ -68,20 +68,20 @@ class ComponentsViewController: DemoTableViewController {
         self.items.append(components)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier != "Flight Controller") {
-            let vc = segue.destinationViewController as! DJIBaseViewController
-            vc.moduleTitle = segue.identifier?.capitalizedString
+            let vc = segue.destination as! DJIBaseViewController
+            vc.moduleTitle = segue.identifier?.capitalized
         }
     }
 
-    func componentWithKey(key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
+    func componentWithKey(_ key: String, changedFrom oldComponent: DJIBaseComponent?, to newComponent: DJIBaseComponent?) {
         if oldComponent == nil && newComponent != nil {
             // a new component is connected
             let anyObjectType = componentsDict[key] as? UIViewController.Type
             
             if (anyObjectType != nil) {
-                self.items.append(DemoSettingItem(name:key, andClass:anyObjectType))
+                self.items.append([DemoSettingItem(name:key, andClass:anyObjectType)])
             }
             
             self.tableView.reloadData()

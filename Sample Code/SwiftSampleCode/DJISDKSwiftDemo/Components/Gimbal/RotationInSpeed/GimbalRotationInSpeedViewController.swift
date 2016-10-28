@@ -13,26 +13,26 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
     @IBOutlet weak var downButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
 
-    var gimbalSpeedTimer: NSTimer? = nil
+    var gimbalSpeedTimer: Timer? = nil
     
     var rotationAngleVelocity: Float = 0
-    var rotationDirection:DJIGimbalRotateDirection = DJIGimbalRotateDirection.Clockwise
+    var rotationDirection:DJIGimbalRotateDirection = DJIGimbalRotateDirection.clockwise
     
-    @IBAction func onUpButtonClicked(sender: AnyObject) {
+    @IBAction func onUpButtonClicked(_ sender: AnyObject) {
         self.rotationAngleVelocity = 5.0
-        self.rotationDirection = DJIGimbalRotateDirection.Clockwise
+        self.rotationDirection = DJIGimbalRotateDirection.clockwise
     }
 
-    @IBAction func onDownButtonClicked(sender: AnyObject) {
+    @IBAction func onDownButtonClicked(_ sender: AnyObject) {
         self.rotationAngleVelocity = 5.0
-        self.rotationDirection = DJIGimbalRotateDirection.CounterClockwise
+        self.rotationDirection = DJIGimbalRotateDirection.counterClockwise
     }
 
-    @IBAction func onStopButtonClicked(sender: AnyObject) {
+    @IBAction func onStopButtonClicked(_ sender: AnyObject) {
         self.rotationAngleVelocity = 0.0
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.resetRotation()
         /*
@@ -40,11 +40,11 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
              *  frequency. The suggested time interval is 40ms.
              */
         if self.gimbalSpeedTimer == nil {
-            self.gimbalSpeedTimer = NSTimer.scheduledTimerWithTimeInterval(0.04, target: self, selector: #selector(GimbalRotationInSpeedViewController.onUpdateGimbalSpeedTick(_:)), userInfo: nil, repeats: true)
+            self.gimbalSpeedTimer = Timer.scheduledTimer(timeInterval: 0.04, target: self, selector: #selector(GimbalRotationInSpeedViewController.onUpdateGimbalSpeedTick(_:)), userInfo: nil, repeats: true)
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.gimbalSpeedTimer != nil {
             self.gimbalSpeedTimer!.invalidate()
@@ -52,7 +52,7 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
         }
     }
 
-    func onUpdateGimbalSpeedTick(timer: AnyObject) {
+    func onUpdateGimbalSpeedTick(_ timer: AnyObject) {
         let gimbal: DJIGimbal? = self.fetchGimbal()
         if gimbal != nil {
             var pitchRotation = DJIGimbalSpeedRotation()
@@ -60,10 +60,10 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
             pitchRotation.direction = self.rotationDirection
             var stopRotation = DJIGimbalSpeedRotation()
             stopRotation.angleVelocity = 0.0
-            stopRotation.direction = DJIGimbalRotateDirection.Clockwise
-            gimbal?.rotateGimbalBySpeedWithPitch(pitchRotation, roll: stopRotation, yaw: stopRotation, withCompletion: {[weak self](error: NSError?) -> Void in
+            stopRotation.direction = DJIGimbalRotateDirection.clockwise
+            gimbal?.rotateGimbalBySpeed(withPitch: pitchRotation, roll: stopRotation, yaw: stopRotation, withCompletion: {[weak self](error: Error?) -> Void in
                 if error != nil {
-                    self?.showAlertResult("ERROR: rotateGimbalInSpeed:\(error!.description)")
+                    self?.showAlertResult("ERROR: rotateGimbalInSpeed:\(error!)")
                 }
             })
         }
@@ -71,7 +71,7 @@ class GimbalRotationInSpeedViewController: DJIBaseViewController {
 
     func resetRotation() {
         self.rotationAngleVelocity = 0.0
-        self.rotationDirection = DJIGimbalRotateDirection.Clockwise
+        self.rotationDirection = DJIGimbalRotateDirection.clockwise
     }
 
 

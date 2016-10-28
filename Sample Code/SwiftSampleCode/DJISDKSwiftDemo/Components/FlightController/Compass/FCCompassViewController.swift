@@ -27,29 +27,29 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func onCompassCalibrationButtonClicked(sender: UIButton) {
+    @IBAction func onCompassCalibrationButtonClicked(_ sender: UIButton) {
         let STOP_TAG: Int = 100
         let START_TAG: Int = 101
         let fc: DJIFlightController? = self.fetchFlightController()
         if fc != nil {
             if sender.tag == STOP_TAG {
-                fc?.compass?.stopCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
+                fc?.compass?.stopCalibration(completion: {[weak self](error: Error?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Stop Calibration:\(error?.localizedDescription)")
                     }
                     else {
-                        sender.setTitle("Start Calibration", forState: .Normal)
+                        sender.setTitle("Start Calibration", for: UIControlState())
                         sender.tag = START_TAG
                     }
                 })
             }
             else {
-                fc?.compass?.startCalibrationWithCompletion({[weak self](error: NSError?) -> Void in
+                fc?.compass?.startCalibration(completion: {[weak self](error: Error?) -> Void in
                     if error != nil {
                         self?.showAlertResult("Start Calibration:\(error?.localizedDescription)")
                     }
                     else {
-                        sender.setTitle("Stop Calibration", forState: .Normal)
+                        sender.setTitle("Stop Calibration", for: UIControlState())
                         sender.tag = STOP_TAG
                     }
                 })
@@ -60,7 +60,7 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         }
     }
     
-    func flightController(fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState)
+    func flightController(_ fc: DJIFlightController, didUpdateSystemState state: DJIFlightControllerCurrentState)
     {
         if (fc.compass == nil) {
             return;
@@ -71,20 +71,20 @@ class FCCompassViewController: DJIBaseViewController, DJIFlightControllerDelegat
         self.statusLabel.text = self.stringWithCalibrationStatus(fc.compass!.calibrationStatus)
     }
     
-    func stringWithCalibrationStatus(status: DJICompassCalibrationStatus) -> String {
-        if status == DJICompassCalibrationStatus.None {
+    func stringWithCalibrationStatus(_ status: DJICompassCalibrationStatus) -> String {
+        if status == DJICompassCalibrationStatus.none {
             return "None"
         }
-        else if status == DJICompassCalibrationStatus.Horizontal {
+        else if status == DJICompassCalibrationStatus.horizontal {
             return "Horizontal"
         }
-        else if status == DJICompassCalibrationStatus.Vertical {
+        else if status == DJICompassCalibrationStatus.vertical {
             return "Vertical"
         }
-        else if status == DJICompassCalibrationStatus.Succeeded {
+        else if status == DJICompassCalibrationStatus.succeeded {
             return "Succeeded"
         }
-        else if status == DJICompassCalibrationStatus.Failed {
+        else if status == DJICompassCalibrationStatus.failed {
             return "Failed"
         }
         else {

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MobileRemoteControllerViewController">
+            <connections>
+                <outlet property="joystickLeft" destination="8" id="1y0-AU-ed9"/>
+                <outlet property="joystickRight" destination="DYw-WO-bdf" id="OTc-1s-qd9"/>
+                <outlet property="simulatorButton" destination="YY4-Ah-sxg" id="API-0T-Cfq"/>
+                <outlet property="simulatorStateLabel" destination="r5u-pF-1aF" id="Syn-QZ-bRa"/>
+                <outlet property="view" destination="6" id="7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DS0-tw-d4x">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-Ah-sxg">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="143" id="7tV-Gp-2DQ"/>
+                                <constraint firstAttribute="height" constant="40" id="qSN-lj-uMp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Start Simulator" backgroundImage="btn">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onSimulatorButtonClicked:" destination="-1" eventType="touchUpInside" id="NE8-gN-NFA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL6-GU-M2D">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="143" id="Yoq-hg-20t"/>
+                                <constraint firstAttribute="height" constant="40" id="ZnS-dq-5zG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Takeoff" backgroundImage="btn">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onTakeoffButtonClicked:" destination="-1" eventType="touchUpInside" id="2pZ-dK-ACv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="sL6-GU-M2D" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="-2" id="7Qe-6V-IHC"/>
+                        <constraint firstItem="sL6-GU-M2D" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="-101.5" id="BIg-dj-LHn"/>
+                        <constraint firstAttribute="height" constant="180" id="C3q-et-ICs"/>
+                        <constraint firstItem="YY4-Ah-sxg" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="101.5" id="C8Z-je-TCR"/>
+                        <constraint firstItem="YY4-Ah-sxg" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="-2" id="PJA-OO-vw0"/>
+                        <constraint firstAttribute="width" constant="362" id="rmE-do-pPY"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Joystick Left" customClass="DemoVirtualStickView">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="128" id="EjJ-v9-4WQ"/>
+                                <constraint firstAttribute="height" constant="128" id="klb-8l-AzZ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="4QB-4B-pHm"/>
+                                <constraint firstAttribute="width" constant="128" id="kCj-kA-fbN"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="10" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="0Bs-87-jb0"/>
+                        <constraint firstItem="9" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="2q2-A4-PMv">
+                            <variation key="widthClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstItem="10" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="HPb-sd-GvW">
+                            <variation key="heightClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstItem="10" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="Pj4-n5-qb5"/>
+                        <constraint firstItem="10" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="T6a-aY-13A"/>
+                        <constraint firstItem="10" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="bW4-wI-Rop">
+                            <variation key="widthClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="128" id="bhJ-j5-QRL"/>
+                        <constraint firstItem="9" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="cDT-hg-r7W"/>
+                        <constraint firstAttribute="width" constant="128" id="cWm-Ib-zZe"/>
+                        <constraint firstItem="9" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="foh-OW-GUS"/>
+                        <constraint firstAttribute="height" constant="128" id="hyW-gv-Pi6"/>
+                        <constraint firstItem="10" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="jSC-q3-Ofw"/>
+                        <constraint firstItem="9" firstAttribute="centerY" secondItem="8" secondAttribute="centerY" id="ljV-4Q-JGX"/>
+                        <constraint firstItem="9" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="lz3-GF-qeW">
+                            <variation key="heightClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="128" id="ols-Nu-ohV"/>
+                        <constraint firstItem="9" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="opQ-n9-o0g">
+                            <variation key="widthClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstItem="10" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="uAl-xZ-jQx">
+                            <variation key="widthClass=compact" constant="1"/>
+                        </constraint>
+                        <constraint firstItem="10" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="wbx-4T-nB9">
+                            <variation key="widthClass=compact" constant="1"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hyW-gv-Pi6"/>
+                            <exclude reference="ols-Nu-ohV"/>
+                            <exclude reference="foh-OW-GUS"/>
+                            <exclude reference="lz3-GF-qeW"/>
+                            <exclude reference="HPb-sd-GvW"/>
+                            <exclude reference="jSC-q3-Ofw"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <exclude reference="bhJ-j5-QRL"/>
+                            <exclude reference="cWm-Ib-zZe"/>
+                            <include reference="hyW-gv-Pi6"/>
+                            <include reference="ols-Nu-ohV"/>
+                            <exclude reference="2q2-A4-PMv"/>
+                            <exclude reference="cDT-hg-r7W"/>
+                            <include reference="foh-OW-GUS"/>
+                            <exclude reference="ljV-4Q-JGX"/>
+                            <include reference="lz3-GF-qeW"/>
+                            <exclude reference="opQ-n9-o0g"/>
+                            <exclude reference="0Bs-87-jb0"/>
+                            <include reference="HPb-sd-GvW"/>
+                            <exclude reference="Pj4-n5-qb5"/>
+                            <exclude reference="T6a-aY-13A"/>
+                            <exclude reference="bW4-wI-Rop"/>
+                            <include reference="jSC-q3-Ofw"/>
+                            <exclude reference="uAl-xZ-jQx"/>
+                            <exclude reference="wbx-4T-nB9"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="stickView" destination="9" id="12"/>
+                        <outlet property="stickViewBase" destination="10" id="11"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYw-WO-bdf" userLabel="Joystick Right" customClass="DemoVirtualStickView">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-Di-EJZ">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="128" id="i1d-B5-GaY"/>
+                                <constraint firstAttribute="height" constant="128" id="tgS-EW-G5O"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-tA-PLc">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="7Mt-SA-fYA"/>
+                                <constraint firstAttribute="width" constant="128" id="EL1-N9-5fp"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="ePh-Di-EJZ" firstAttribute="centerY" secondItem="DYw-WO-bdf" secondAttribute="centerY" id="2pu-Y5-IfA"/>
+                        <constraint firstAttribute="height" constant="128" id="4r2-Dj-Ah7"/>
+                        <constraint firstItem="Ex6-tA-PLc" firstAttribute="centerX" secondItem="DYw-WO-bdf" secondAttribute="centerX" id="AXZ-fO-WEw"/>
+                        <constraint firstAttribute="width" constant="128" id="Au1-KX-SCX"/>
+                        <constraint firstAttribute="height" constant="128" id="BCT-rD-a06"/>
+                        <constraint firstItem="Ex6-tA-PLc" firstAttribute="centerY" secondItem="DYw-WO-bdf" secondAttribute="centerY" id="Kzz-my-CHe"/>
+                        <constraint firstItem="ePh-Di-EJZ" firstAttribute="centerX" secondItem="DYw-WO-bdf" secondAttribute="centerX" id="Lt0-rs-E6r"/>
+                        <constraint firstItem="ePh-Di-EJZ" firstAttribute="centerY" secondItem="DYw-WO-bdf" secondAttribute="centerY" id="OKm-iI-AH7"/>
+                        <constraint firstItem="Ex6-tA-PLc" firstAttribute="centerY" secondItem="DYw-WO-bdf" secondAttribute="centerY" id="qYS-PW-qQ7"/>
+                        <constraint firstItem="Ex6-tA-PLc" firstAttribute="centerX" secondItem="DYw-WO-bdf" secondAttribute="centerX" id="vba-6b-vWg"/>
+                        <constraint firstItem="ePh-Di-EJZ" firstAttribute="centerX" secondItem="DYw-WO-bdf" secondAttribute="centerX" id="xGz-0J-9zA"/>
+                        <constraint firstAttribute="width" constant="128" id="yyo-yK-Hlt"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="4r2-Dj-Ah7"/>
+                            <exclude reference="yyo-yK-Hlt"/>
+                            <exclude reference="Kzz-my-CHe"/>
+                            <exclude reference="vba-6b-vWg"/>
+                            <exclude reference="2pu-Y5-IfA"/>
+                            <exclude reference="Lt0-rs-E6r"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="4r2-Dj-Ah7"/>
+                            <exclude reference="Au1-KX-SCX"/>
+                            <exclude reference="BCT-rD-a06"/>
+                            <include reference="yyo-yK-Hlt"/>
+                            <exclude reference="AXZ-fO-WEw"/>
+                            <include reference="Kzz-my-CHe"/>
+                            <exclude reference="qYS-PW-qQ7"/>
+                            <include reference="vba-6b-vWg"/>
+                            <include reference="2pu-Y5-IfA"/>
+                            <include reference="Lt0-rs-E6r"/>
+                            <exclude reference="OKm-iI-AH7"/>
+                            <exclude reference="xGz-0J-9zA"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="stickView" destination="Ex6-tA-PLc" id="ori-dQ-Wf7"/>
+                        <outlet property="stickViewBase" destination="ePh-Di-EJZ" id="RDO-ek-HNW"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simulator State" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r5u-pF-1aF">
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="291" id="2MZ-BH-E4R"/>
+                        <constraint firstAttribute="height" constant="74" id="F6c-a5-gLa"/>
+                        <constraint firstAttribute="height" constant="84" id="Hfu-ct-Ybh"/>
+                        <constraint firstAttribute="height" constant="74" id="XMA-wl-1uu"/>
+                        <constraint firstAttribute="width" constant="284" id="b7h-oM-Q7Q"/>
+                        <constraint firstAttribute="width" constant="291" id="ejJ-ee-782"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="2MZ-BH-E4R"/>
+                            <exclude reference="F6c-a5-gLa"/>
+                            <exclude reference="Hfu-ct-Ybh"/>
+                            <exclude reference="XMA-wl-1uu"/>
+                            <exclude reference="b7h-oM-Q7Q"/>
+                            <exclude reference="ejJ-ee-782"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact">
+                        <mask key="constraints">
+                            <include reference="XMA-wl-1uu"/>
+                            <include reference="ejJ-ee-782"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Hfu-ct-Ybh"/>
+                            <include reference="b7h-oM-Q7Q"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=compact-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="2MZ-BH-E4R"/>
+                            <include reference="F6c-a5-gLa"/>
+                            <exclude reference="Hfu-ct-Ybh"/>
+                            <exclude reference="XMA-wl-1uu"/>
+                            <exclude reference="b7h-oM-Q7Q"/>
+                            <exclude reference="ejJ-ee-782"/>
+                        </mask>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerY" secondItem="9" secondAttribute="centerY" id="21r-gB-Jg8">
+                    <variation key="widthClass=compact" constant="-403"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="6Da-EB-Yl0">
+                    <variation key="heightClass=compact" constant="1"/>
+                </constraint>
+                <constraint firstItem="DS0-tw-d4x" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" constant="-1.5" id="7RB-hO-uyh">
+                    <variation key="heightClass=compact" constant="-0.5"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="0.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="Dcz-XA-xLo">
+                    <variation key="heightClass=compact" constant="101.5"/>
+                </constraint>
+                <constraint firstItem="8" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" constant="-244.5" id="Euf-OU-6de">
+                    <variation key="widthClass=compact" constant="-115.5"/>
+                </constraint>
+                <constraint firstItem="DYw-WO-bdf" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" constant="100.5" id="F1y-T3-1Up">
+                    <variation key="widthClass=compact" constant="165.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="GAX-1R-GTr">
+                    <variation key="widthClass=compact" constant="1.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" constant="1" id="Hmx-8B-soc">
+                    <variation key="widthClass=compact" constant="1.5"/>
+                </constraint>
+                <constraint firstItem="DYw-WO-bdf" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" constant="244.5" id="Ika-Y8-H4T">
+                    <variation key="widthClass=compact" constant="115.5"/>
+                </constraint>
+                <constraint firstItem="DYw-WO-bdf" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="ItN-1l-T5h">
+                    <variation key="heightClass=compact" constant="245.5"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="246.5"/>
+                </constraint>
+                <constraint firstItem="8" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="SLJ-gd-leL">
+                    <variation key="heightClass=compact" constant="101.5"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="102.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="Wvb-XB-vQf">
+                    <variation key="heightClass=compact-widthClass=compact" constant="2"/>
+                </constraint>
+                <constraint firstItem="8" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="gHY-PE-ebC">
+                    <variation key="heightClass=compact" constant="-244.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="kP8-ge-cN1">
+                    <variation key="widthClass=compact" constant="-237.5"/>
+                </constraint>
+                <constraint firstItem="r5u-pF-1aF" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="l2L-CY-qwY">
+                    <variation key="heightClass=compact-widthClass=compact" constant="102.5"/>
+                </constraint>
+                <constraint firstItem="8" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" constant="100.5" id="paD-x2-tSR">
+                    <variation key="widthClass=compact" constant="165.5"/>
+                </constraint>
+                <constraint firstItem="DS0-tw-d4x" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" constant="-61.5" id="uf4-i8-XyF">
+                    <variation key="heightClass=compact" constant="-60.5"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="-59.5"/>
+                </constraint>
+                <constraint firstItem="DYw-WO-bdf" firstAttribute="centerY" secondItem="6" secondAttribute="centerY" id="z15-7R-aZe">
+                    <variation key="heightClass=compact" constant="101.5"/>
+                    <variation key="heightClass=compact-widthClass=compact" constant="102.5"/>
+                </constraint>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="SLJ-gd-leL"/>
+                    <exclude reference="gHY-PE-ebC"/>
+                    <exclude reference="ItN-1l-T5h"/>
+                    <exclude reference="z15-7R-aZe"/>
+                    <exclude reference="6Da-EB-Yl0"/>
+                    <exclude reference="Dcz-XA-xLo"/>
+                    <exclude reference="GAX-1R-GTr"/>
+                    <exclude reference="Wvb-XB-vQf"/>
+                    <exclude reference="kP8-ge-cN1"/>
+                    <exclude reference="l2L-CY-qwY"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <exclude reference="Euf-OU-6de"/>
+                    <include reference="SLJ-gd-leL"/>
+                    <include reference="gHY-PE-ebC"/>
+                    <exclude reference="paD-x2-tSR"/>
+                    <exclude reference="F1y-T3-1Up"/>
+                    <exclude reference="Ika-Y8-H4T"/>
+                    <include reference="ItN-1l-T5h"/>
+                    <include reference="z15-7R-aZe"/>
+                    <exclude reference="21r-gB-Jg8"/>
+                    <include reference="6Da-EB-Yl0"/>
+                    <include reference="Dcz-XA-xLo"/>
+                    <exclude reference="Hmx-8B-soc"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="21r-gB-Jg8"/>
+                    <include reference="GAX-1R-GTr"/>
+                    <exclude reference="Hmx-8B-soc"/>
+                    <include reference="kP8-ge-cN1"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact-widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="6Da-EB-Yl0"/>
+                    <exclude reference="Dcz-XA-xLo"/>
+                    <exclude reference="GAX-1R-GTr"/>
+                    <include reference="Wvb-XB-vQf"/>
+                    <exclude reference="kP8-ge-cN1"/>
+                    <include reference="l2L-CY-qwY"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="263.5" y="548.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn" width="16" height="34"/>
+        <image name="stick_base.png" width="128" height="128"/>
+        <image name="stick_normal.png" width="128" height="128"/>
+    </resources>
+</document>

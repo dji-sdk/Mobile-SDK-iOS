@@ -7,9 +7,9 @@
 //
 import UIKit
 protocol DJIStepsCollectionViewDelegate: class {
-    func stepsCollectionView(view: DJIStepsCollectionView, didSelectType type: DJICollectionViewCellType)
+    func stepsCollectionView(_ view: DJIStepsCollectionView, didSelectType type: DJICollectionViewCellType)
 
-    func stepsCollectionViewDidDeleteLast(view: DJIStepsCollectionView)
+    func stepsCollectionViewDidDeleteLast(_ view: DJIStepsCollectionView)
 }
 class DJIStepsCollectionView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate: DJIStepsCollectionViewDelegate? = nil
@@ -17,16 +17,16 @@ class DJIStepsCollectionView: UIView, UICollectionViewDelegate, UICollectionView
     @IBOutlet weak var collectionView:UICollectionView?
     
     init() {
-        super.init(frame: CGRectZero)
-        var views: [AnyObject] = NSBundle.mainBundle().loadNibNamed("DJIStepsCollectionView", owner:self, options: nil)
+        super.init(frame: CGRect.zero)
+        var views: [AnyObject] = Bundle.main.loadNibNamed("DJIStepsCollectionView", owner:self, options: nil) as! [AnyObject]
         let mainView: UIView = views[0] as! UIView
         self.frame = mainView.bounds
         
         self.addSubview(mainView)
         self.layer.cornerRadius = 5.0
         self.layer.masksToBounds = true
-        let nib: UINib = UINib(nibName: "DJICollectionViewCell", bundle: NSBundle.mainBundle())
-        self.collectionView!.registerNib(nib, forCellWithReuseIdentifier: "DJICollectionViewCell")
+        let nib: UINib = UINib(nibName: "DJICollectionViewCell", bundle: Bundle.main)
+        self.collectionView!.register(nib, forCellWithReuseIdentifier: "DJICollectionViewCell")
         
         for type in DJICollectionViewCellType.allValues {
             self.allSteps.append(type)
@@ -42,36 +42,36 @@ class DJIStepsCollectionView: UIView, UICollectionViewDelegate, UICollectionView
         super.init(frame: frame)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         if (self.delegate != nil) {
-                let type: DJICollectionViewCellType = self.allSteps[indexPath.row]
+                let type: DJICollectionViewCellType = self.allSteps[(indexPath as NSIndexPath).row]
                 self.delegate!.stepsCollectionView(self, didSelectType: type)
             }
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.allSteps.count
     }
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell: DJICollectionViewCell? = (collectionView.dequeueReusableCellWithReuseIdentifier("DJICollectionViewCell", forIndexPath: indexPath) as? DJICollectionViewCell)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell: DJICollectionViewCell? = (collectionView.dequeueReusableCell(withReuseIdentifier: "DJICollectionViewCell", for: indexPath) as? DJICollectionViewCell)
         if (cell == nil) {
             cell = DJICollectionViewCell.collectionViewCell()
         }
         
-        let type: DJICollectionViewCellType = self.allSteps[indexPath.row]
+        let type: DJICollectionViewCellType = self.allSteps[(indexPath as NSIndexPath).row]
         cell!.cellType = type
         return cell!
     }
 
-    @IBAction func onOKButtonClicked(sender: AnyObject) {
-        UIView.animateWithDuration(0.2, animations: {() -> Void in
+    @IBAction func onOKButtonClicked(_ sender: AnyObject) {
+        UIView.animate(withDuration: 0.2, animations: {() -> Void in
             self.alpha = 0.0
         })
     }
 
-    @IBAction func onDELButtonClicked(sender: AnyObject) {
+    @IBAction func onDELButtonClicked(_ sender: AnyObject) {
         if (self.delegate != nil) {
             self.delegate!.stepsCollectionViewDidDeleteLast(self)
         }
