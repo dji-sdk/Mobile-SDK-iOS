@@ -10,6 +10,10 @@ Developers can [run the sample application](https://developer.dji.com/mobile-sdk
 
 One of DJI's aircraft or handheld cameras will be required to run the sample application.
 
+> Note: Since the "DJISDK.framework" supports **Bitcode** now, the size of it becomes much bigger(**146.1MB**), which exceeds GitHub's file size limit of 100 MB for pushing. So we use [Git LFS](https://git-lfs.github.com) to upload the framework. 
+> 
+> Therefore, we suggest you to use `git clone` command to clone the sample code rather than downloading the ZIP file directly. Otherwise, you may not be able to get the framework file and build the project successfully. It may take time for you to clone the entire sample code project. 
+
 ## Development Workflow 
 
 From registering as a developer, to deploying an application, the following will take you through the full Mobile SDK Application development process:
@@ -42,6 +46,10 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 ## SDK API Reference
 
 [**iOS SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/ios/index.html)
+
+## CocoaPods Support
+
+DJI iOS SDK supports CocoaPods now. Please check this link for details: <https://cocoapods.org/pods/DJI-SDK-iOS>.
 
 ## FFmpeg Customization
 
