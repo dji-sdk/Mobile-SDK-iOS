@@ -12,7 +12,9 @@ One of DJI's aircraft or handheld cameras will be required to run the sample app
 
 > Note: Since the "DJISDK.framework" supports **Bitcode** now, the size of it becomes much bigger(**146.1MB**), which exceeds GitHub's file size limit of 100 MB for pushing. So we use [Git LFS](https://git-lfs.github.com) to upload the framework. 
 > 
-> Therefore, we suggest you to use `git clone` command to clone the sample code rather than downloading the ZIP file directly. Otherwise, you may not be able to get the framework file and build the project successfully. It may take time for you to clone the entire sample code project. 
+> Therefore, we suggest you to download and install the [Git LFS](https://git-lfs.github.com) on your Mac first and use `git clone` command to clone the sample code and download the framework file rather than downloading the ZIP file directly. 
+> 
+> Otherwise, you may not be able to get the framework file and build the project successfully. 
 
 ## Development Workflow 
 
