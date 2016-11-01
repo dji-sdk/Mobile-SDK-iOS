@@ -6,15 +6,39 @@ The DJI Mobile SDK enables you to automate your DJI Product. You can control fli
 
 ## Get Started Immediately
 
+### Download Sample Code
+
+Since the "DJISDK.framework" supports **Bitcode** now, the file size is **146.1MB**, which exceeds GitHub's file size limit of 100 MB for pushing and pulling. So you must use [Git Large File Storage](https://git-lfs.github.com) for downloading the SDK framework file.
+
+Please check the following steps to download the entire Sample Code with SDK framework:
+
+**1.** You need to install [Git Large File Storage](https://git-lfs.github.com) by running the following commands in Terminal:
+
+~~~
+brew install git-lfs
+git lfs install
+~~~
+> Note: Please check [Git LFS Website](https://git-lfs.github.com) for more details.
+
+**2.** Be sure to restart your Terminal after installing Git LFS.
+
+**3.** Use `git clone` command to clone the sample code project rather than downloading the ZIP file directly:
+
+~~~
+git clone git@github.com:dji-sdk/Mobile-SDK-iOS.git
+~~~
+
+**4.** If you have already cloned the sample code project before, please run the following commands in the project's path to download the **DJISDK.framework** file: 
+
+~~~
+git reset HEAD --hard
+~~~
+
+### Run Sample Code
+
 Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) to immediately run code and see how the DJI Mobile SDK can be used.
 
-One of DJI's aircraft or handheld cameras will be required to run the sample application.
-
-> Note: Since the "DJISDK.framework" supports **Bitcode** now, the size of it becomes much bigger(**146.1MB**), which exceeds GitHub's file size limit of 100 MB for pushing. So we use [Git LFS](https://git-lfs.github.com) to upload the framework. 
-> 
-> Therefore, we suggest you to download and install the [Git LFS](https://git-lfs.github.com) on your Mac first and use `git clone` command to clone the sample code and download the framework file rather than downloading the ZIP file directly. 
-> 
-> Otherwise, you may not be able to get the framework file and build the project successfully. 
+One of DJI's aircraft or handheld cameras will be required to run the sample application. 
 
 ## Development Workflow 
 
