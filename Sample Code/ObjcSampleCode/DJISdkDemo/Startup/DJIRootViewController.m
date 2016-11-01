@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productConnectionStatus;
 @property (weak, nonatomic) IBOutlet UILabel *productModel;
 @property (weak, nonatomic) IBOutlet UILabel *productFirmwarePackageVersion;
+@property (weak, nonatomic) IBOutlet UILabel *debugModeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet UILabel *sdkVersionLabel;
 @end
@@ -51,6 +52,7 @@
     self.productModel.hidden = YES;
     //Disable the connect button by default
     [self.connectButton setEnabled:NO];
+    [self.debugModeLabel setHidden:!ENTER_DEBUG_MODE];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

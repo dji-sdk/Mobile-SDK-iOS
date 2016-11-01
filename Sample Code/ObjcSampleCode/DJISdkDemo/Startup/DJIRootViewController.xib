@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DJIRootViewController">
             <connections>
                 <outlet property="connectButton" destination="MAn-Va-gIb" id="QOh-pV-Yk6"/>
+                <outlet property="debugModeLabel" destination="eCe-rU-in2" id="W1f-xI-Ou0"/>
                 <outlet property="productConnectionStatus" destination="Bak-4S-0aB" id="943-ah-tEB"/>
                 <outlet property="productFirmwarePackageVersion" destination="Gkz-4X-7cj" id="riK-CX-dZ4"/>
                 <outlet property="productModel" destination="PI2-Yc-rWq" id="O5q-Wv-I40"/>
@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Trying to connect..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Bak-4S-0aB">
-                    <rect key="frame" x="154" y="-37" width="362" height="21"/>
+                    <rect key="frame" x="154" y="42" width="362" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="6Dt-uk-uQk"/>
                         <constraint firstAttribute="width" constant="362" id="bAY-xg-O7X"/>
@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firmware Package Version: Not Available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkz-4X-7cj">
-                    <rect key="frame" x="54" y="118" width="560" height="21"/>
+                    <rect key="frame" x="54" y="143" width="560" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="560" id="RIB-0q-OzL"/>
                         <constraint firstAttribute="height" constant="21" id="aLl-tQ-bWp"/>
@@ -41,7 +41,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model: Not Available" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PI2-Yc-rWq">
-                    <rect key="frame" x="54" y="86" width="560" height="21"/>
+                    <rect key="frame" x="54" y="111" width="560" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="0MS-gs-2US"/>
                         <constraint firstAttribute="width" constant="560" id="SjW-RX-EXX"/>
@@ -88,6 +88,16 @@
                         <action selector="onConnectButtonClicked:" destination="-1" eventType="touchUpInside" id="EuV-oU-X0M"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-rU-in2">
+                    <rect key="frame" x="181" y="74" width="306" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="U6I-Vr-4pQ"/>
+                        <constraint firstAttribute="width" constant="306" id="nfO-jE-DPf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -97,15 +107,21 @@
                 <constraint firstItem="Gkz-4X-7cj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7Km-ST-gRX"/>
                 <constraint firstItem="MAn-Va-gIb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="56.5" id="AWA-68-VeF"/>
                 <constraint firstItem="PI2-Yc-rWq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FqY-bI-gS4"/>
-                <constraint firstItem="Bak-4S-0aB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-213.5" id="Kru-y0-nhK">
-                    <variation key="heightClass=compact" constant="-134"/>
+                <constraint firstItem="Bak-4S-0aB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-135" id="Kru-y0-nhK">
+                    <variation key="heightClass=compact" constant="-140"/>
+                    <variation key="heightClass=compact-widthClass=regular" constant="-144"/>
                 </constraint>
                 <constraint firstItem="Bak-4S-0aB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="1" id="OC7-QQ-kBE"/>
-                <constraint firstItem="PI2-Yc-rWq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-91.5" id="j6C-cM-5Ec"/>
+                <constraint firstItem="eCe-rU-in2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="R8x-9v-fWv"/>
+                <constraint firstItem="eCe-rU-in2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-103" id="i8F-ru-sHa">
+                    <variation key="heightClass=compact" constant="-111"/>
+                    <variation key="heightClass=compact-widthClass=regular" constant="-113"/>
+                </constraint>
+                <constraint firstItem="PI2-Yc-rWq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-66" id="j6C-cM-5Ec"/>
                 <constraint firstItem="oMC-hP-kHn" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="lyz-G5-ecU">
                     <variation key="heightClass=compact" constant="162.5"/>
                 </constraint>
-                <constraint firstItem="Gkz-4X-7cj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-59.5" id="nir-fO-xnF"/>
+                <constraint firstItem="Gkz-4X-7cj" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-34" id="nir-fO-xnF"/>
                 <constraint firstItem="lja-dC-YIU" firstAttribute="centerX" secondItem="MAn-Va-gIb" secondAttribute="centerX" id="oUy-yx-38o"/>
                 <constraint firstItem="lja-dC-YIU" firstAttribute="top" secondItem="MAn-Va-gIb" secondAttribute="bottom" constant="8" id="rEZ-sG-hBR"/>
                 <constraint firstItem="oMC-hP-kHn" firstAttribute="top" secondItem="lja-dC-YIU" secondAttribute="bottom" constant="27" id="uyh-zB-dww"/>
@@ -120,7 +136,7 @@
                     <exclude reference="lyz-G5-ecU"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="485.5" y="684.5"/>
+            <point key="canvasLocation" x="512.5" y="716.5"/>
         </view>
     </objects>
     <resources>

@@ -9,6 +9,8 @@
 import UIKit
 import DJISDK
 
+let enterDebugMode = false
+
 class StartupViewController: DJIBaseViewController {
     
     @IBOutlet weak var productConnectionStatus: UILabel!
@@ -17,6 +19,7 @@ class StartupViewController: DJIBaseViewController {
     @IBOutlet weak var openComponents: UIButton!
     @IBOutlet weak var bluetoothConnectorButton: UIButton!
     @IBOutlet weak var sdkVersionLabel: UILabel!
+    @IBOutlet weak var debugModeLabel: UILabel!
     
     var connectedProduct:DJIBaseProduct?=nil
     var componentDictionary = Dictionary<String, Array<DJIBaseComponent>>()
@@ -42,7 +45,7 @@ class StartupViewController: DJIBaseViewController {
         bluetoothConnectorButton.isEnabled = true;
         productModel.isHidden = true
         productFirmwarePackageVersion.isHidden = true
-        
+        debugModeLabel.isHidden = !enterDebugMode
     }
     
     func showAlert(_ msg: String?) {
@@ -70,15 +73,13 @@ extension StartupViewController : DJISDKManagerDelegate
         }
         
         logDebug("Registered!")
-        #if arch(i386) || arch(x86_64)
-            //Simulator
-            DJISDKManager.enterDebugMode(withDebugId: "10.128.129.28")
-        #else
-            //Device
+        
+        if enterDebugMode {
+            DJISDKManager.enterDebugMode(withDebugId: "10.81.2.28")
+        }else{
             DJISDKManager.startConnectionToProduct()
-            
-        #endif
-       
+        }
+
     }
      
     func sdkManagerProductDidChange(from oldProduct: DJIBaseProduct?, to newProduct: DJIBaseProduct?) {

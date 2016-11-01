@@ -179,11 +179,11 @@ class NavigationWaypointViewController: DJIBaseViewController, DJIFlightControll
         self.isEditEnable = false
         self.waypointConfigView.alpha = 0
         self.waypointConfigView.delegate = self
-        self.waypointConfigView.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onWaypointConfigOKButtonClicked(_:)), for: .touchUpInside)
+        self.waypointConfigView.okButton?.addTarget(self, action: #selector(NavigationWaypointViewController.onWaypointConfigOKButtonClicked(_:)), for: .touchUpInside)
         self.view!.addSubview(self.waypointConfigView)
         self.waypointMissionConfigView = NavigationWaypointMissionConfigView()
         self.waypointMissionConfigView!.alpha = 0
-        self.waypointMissionConfigView!.okButton.addTarget(self, action: #selector(NavigationWaypointViewController.onMissionConfigOKButtonClicked(_:)), for: .touchUpInside)
+        self.waypointMissionConfigView!.okButton?.addTarget(self, action: #selector(NavigationWaypointViewController.onMissionConfigOKButtonClicked(_:)), for: .touchUpInside)
         self.view!.addSubview(self.waypointMissionConfigView!)
         self.tipsLabel.layer.cornerRadius = 5.0
         self.tipsLabel.layer.backgroundColor = UIColor.black.cgColor
