@@ -45,11 +45,12 @@ UITableViewDelegate>
 
 @property (nonatomic) NSArray *mediaList;
 @property (nonatomic) DJIMedia *selectedMedia;
+@property (weak, nonatomic) IBOutlet UIView *videoPreviewView;
 @property (nonatomic, weak) DJIMediaManager *mediaManager;
-@property (nonatomic) UIView* videoPreviewView;
 @property (weak, nonatomic) IBOutlet UITableView *mediaListTable;
 @property (nonatomic) DemoScrollView *statusView;
 @property (weak, nonatomic) IBOutlet UITextField *seekText;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -93,7 +94,6 @@ UITableViewDelegate>
 
 - (void)setupVideoPreviewView
 {
-    self.videoPreviewView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     self.videoPreviewView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.videoPreviewView];
     [self.view sendSubviewToBack:self.videoPreviewView];
@@ -122,6 +122,8 @@ UITableViewDelegate>
 
 -(void) loadMediaList {
     WeakRef(target);
+    
+    [self showActivityIndicator:YES];
     DJICamera *camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         [camera setCameraMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
@@ -133,6 +135,9 @@ UITableViewDelegate>
                 [self.mediaManager fetchMediaListWithCompletion:
                  ^(NSArray<DJIMedia *> * _Nullable mediaList, NSError * _Nullable error) {
                      WeakReturn(target);
+                     
+                     [target showActivityIndicator:NO];
+                     
                      if (error) {
                          ShowResult(@"Fetch media failed: %@", error.localizedDescription);
                      }
@@ -144,6 +149,19 @@ UITableViewDelegate>
             }
         }];
     }
+}
+
+- (void)showActivityIndicator:(BOOL)isShow
+{
+    if (isShow) {
+        [self.activityIndicator setHidden:NO];
+        [self.activityIndicator startAnimating];
+    }else
+    {
+        [self.activityIndicator stopAnimating];
+        [self.activityIndicator setHidden:YES];
+    }
+
 }
 
 - (IBAction)onStatusClicked:(id)sender {
@@ -240,13 +258,16 @@ UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    WeakRef(target);
     self.selectedMedia = self.mediaList[indexPath.row];
     [self.mediaManager playVideo:self.selectedMedia withCompletion:^(NSError * _Nullable error) {
+        
+        WeakReturn(target);
         if (error) {
-            ShowResult(@"ERROR: %@", error.description);
+            [DemoAlertView showAlertViewWithMessage:[NSString stringWithFormat:@"%@", error.description] titles:@[@"OK"] action:nil presentedViewController:target];
         }
         else {
-            NSLog(@"Success. ");
+            NSLog(@"Play Video Success.");
         }
     }];
 }

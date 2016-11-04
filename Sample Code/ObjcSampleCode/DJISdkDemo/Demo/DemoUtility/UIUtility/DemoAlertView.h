@@ -20,6 +20,8 @@ typedef void (^DemoAlertInputViewActionBlock)(NSArray<UITextField*>* _Nullable t
 
 +(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles textFields:(NSArray<NSString*>* _Nullable)textFields action:(DemoAlertInputViewActionBlock _Nullable)actionBlock;
 
++(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(DemoAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController;
+
 -(void) dismissAlertView;
 
 -(void) unpdateMessage:(nullable NSString *)message;

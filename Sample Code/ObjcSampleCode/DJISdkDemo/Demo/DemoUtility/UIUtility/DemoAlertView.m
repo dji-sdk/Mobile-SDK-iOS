@@ -36,8 +36,26 @@ void ShowResult(NSString *format, ...)
 
 @end
 
-
 @implementation DemoAlertView
+
++(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(DemoAlertViewActionBlock _Nullable)actionBlock presentedViewController:(UIViewController *)viewController
+{
+    DemoAlertView* alertView = [[DemoAlertView alloc] init];
+    
+    alertView.alertController = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+    for (NSUInteger index = 0; index < titles.count; ++index) {
+        UIAlertActionStyle actionStyle = (index == 0) ? UIAlertActionStyleCancel : UIAlertActionStyleDefault;
+        UIAlertAction* alertAction = [UIAlertAction actionWithTitle:titles[index] style:actionStyle handler:^(UIAlertAction * _Nonnull action) {
+            if (actionBlock) {
+                actionBlock(index);
+            }
+        }];
+        [alertView.alertController addAction:alertAction];
+    }
+    
+    [viewController presentViewController:alertView.alertController animated:YES completion:nil];
+    return alertView;
+}
 
 +(instancetype _Nullable) showAlertViewWithMessage:(NSString* _Nullable)message titles:(NSArray<NSString*> * _Nullable)titles action:(DemoAlertViewActionBlock _Nullable)actionBlock
 {
