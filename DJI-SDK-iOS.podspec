@@ -38,7 +38,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   s.author       = { "DJI SDK" => "sdk@dji.com" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source       = { :http => "https://dev.dji.com/downloads/cocoapods_link/9d5e298c-62d3-4fe5-ade7-b097370e7e69.zip"}
+  s.source       = { :http => "http://d35qw215j8euqw.cloudfront.net/iOS_Mobile_SDK_3.4.1_161111.zip"}
   s.ios.vendored_frameworks = 'iOS_Mobile_SDK/DJISDK.framework'
 
 end
