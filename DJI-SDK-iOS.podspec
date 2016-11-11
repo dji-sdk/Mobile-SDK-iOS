@@ -9,15 +9,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "DJI-SDK-iOS"
-  s.version      = "3.4"
+  s.version      = "3.4.1"
   s.summary      = "DJI Mobile SDK for iOS"
   s.homepage     = "https://github.com/dji-sdk/Mobile-SDK-iOS"
   s.license      = { :type => 'CUSTOM', :file => 'LICENSE.txt'}
   s.author       = { "DJI SDK" => "sdk@dji.com" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source       = { :git => "https://github.com/dji-sdk/Mobile-SDK-iOS.git", :tag => "v3.4" }
-
-  s.ios.vendored_frameworks = 'Framework/*.framework'
+  s.source       = { :http => "https://dev.dji.com/downloads/cocoapods_link/9d5e298c-62d3-4fe5-ade7-b097370e7e69.zip"}
+  s.ios.vendored_frameworks = 'iOS_Mobile_SDK/DJISDK.framework'
 
 end
