@@ -20,18 +20,7 @@ sudo gem install cocoapods
 
 The process may take a long time, please wait. For further installation instructions, please check [this guides](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-**2.** Install Git Large File Storage (Git LFS)
-
-Since the **DJISDK.framework** file exceeds the 100 MB limitation of Github file upload, you need to use [Git Large File Storage](https://git-lfs.github.com) to download the SDK file. Enter the following command to install it:
-
-~~~
-brew install git-lfs
-git lfs install
-~~~
-
-Be sure to **restart** your terminal after installing the Git LFS.
-
-**3.** Install SDK with CocoaPods in the Project
+**2.** Install SDK with CocoaPods in the Project
 
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** folders' directory:
 
