@@ -128,7 +128,7 @@
     }
     [self.rightWheel setValue:self.wheelOffset animated:YES];
     
-    [self.modeSwitch setSelectedSegmentIndex:state.flightModeSwitch.mode];
+    [self.modeSwitch setSelectedSegmentIndex:state.flightModeSwitch];
     
     UIColor* pressedColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
     UIColor* normalColor = [UIColor whiteColor];

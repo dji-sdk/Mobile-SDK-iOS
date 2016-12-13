@@ -413,9 +413,9 @@ ss += ll; \
     if(_pFrame == NULL)
     {
         av_register_all();
-		
-		av_log_set_level(AV_LOG_QUIET);
-		
+        
+        av_log_set_level(AV_LOG_QUIET);
+        
         pCodec = avcodec_find_decoder(AV_CODEC_ID_H264);
         _pCodecCtx = avcodec_alloc_context3(pCodec);
         _pFrame = av_frame_alloc();

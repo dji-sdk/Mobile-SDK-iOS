@@ -96,7 +96,6 @@
 
 -(void)intelligentFlightAssistant:(DJIIntelligentFlightAssistant *)assistant didUpdateVisionDetectionState:(DJIVisionDetectionState *)state {
     self.isSensorWorking.text = state.isSensorWorking ? @"YES" : @"NO";
-    self.isBraking.text = state.isBraking ? @"YES" : @"NO";
     self.systemWarning.text = [self stringWithSystemWarning:state.systemWarning];
     
     self.l2Distance.text = [NSString stringWithFormat:@"%f", ((DJIVisionDetectionSector*)(state.detectionSectors[0])).obstacleDistanceInMeters];

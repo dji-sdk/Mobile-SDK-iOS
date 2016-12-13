@@ -104,7 +104,7 @@ class RCHardwareStateViewController:DJIBaseViewController, DJIRemoteControllerDe
             self.wheelOffset = 20
         }
         self.rightWheel.setValue(Float(self.wheelOffset), animated: true)
-        self.modeSwitch.selectedSegmentIndex = Int(state.flightModeSwitch.mode.rawValue)
+        self.modeSwitch.selectedSegmentIndex = Int(state.flightModeSwitch.rawValue)
         let pressedColor: UIColor = UIColor.red.withAlphaComponent(0.5)
         let normalColor: UIColor = UIColor.white
         self.cameraRecord.backgroundColor = (state.recordButton.buttonDown.boolValue ? pressedColor : normalColor)

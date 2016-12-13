@@ -62,21 +62,20 @@ class FCIntelligentAssistantViewController: DJIBaseViewController, DJIIntelligen
     func intelligentFlightAssistant(_ assistant: DJIIntelligentFlightAssistant, didUpdate state: DJIVisionDetectionState) {
         
         self.isSensorWorking.text = state.isSensorWorking.description
-        self.isBraking.text = state.isBraking.description
         self.systemWarning.text = stringWithSystemWarnings(state.systemWarning)
         
-        let firstSector : DJIVisionDetectionSector? = state.detectionSectors[0] as? DJIVisionDetectionSector
-            self.l2Distance.text = firstSector?.obstacleDistanceInMeters.description
+        let firstSector : DJIVisionDetectionSector? = state.detectionSectors?[0]
+        self.l2Distance.text = firstSector?.obstacleDistanceInMeters.description
         self.l2WarningLevel.text = firstSector?.warningLevel.rawValue.description
         
-        self.l1Distance.text = (state.detectionSectors[1] as?DJIVisionDetectionSector)?.obstacleDistanceInMeters.description
-        self.l1WarningLevel.text = (state.detectionSectors[1] as? DJIVisionDetectionSector)?.warningLevel.rawValue.description
+        self.l1Distance.text = (state.detectionSectors?[1])?.obstacleDistanceInMeters.description
+        self.l1WarningLevel.text = (state.detectionSectors?[1])?.warningLevel.rawValue.description
+
+        self.r1Distance.text = (state.detectionSectors?[2])?.obstacleDistanceInMeters.description
+        self.r1WarningLevel.text = (state.detectionSectors?[2])?.warningLevel.rawValue.description
         
-        self.r1Distance.text = (state.detectionSectors[2] as?DJIVisionDetectionSector)?.obstacleDistanceInMeters.description
-        self.r1WarningLevel.text = (state.detectionSectors[2] as? DJIVisionDetectionSector)?.warningLevel.rawValue.description
-        
-        self.r2Distance.text = (state.detectionSectors[3] as?DJIVisionDetectionSector)?.obstacleDistanceInMeters.description
-        self.r2WarningLevel.text = (state.detectionSectors[3] as? DJIVisionDetectionSector)?.warningLevel.rawValue.description
+        self.r2Distance.text = (state.detectionSectors?[3])?.obstacleDistanceInMeters.description
+        self.r2WarningLevel.text = (state.detectionSectors?[3])?.warningLevel.rawValue.description
     }
     
     func stringWithSystemWarnings(_ status: DJIVisionSystemWarning) -> String {

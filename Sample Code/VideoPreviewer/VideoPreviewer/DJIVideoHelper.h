@@ -26,6 +26,9 @@ typedef NS_ENUM(NSUInteger, H264EncoderType){
     H264EncoderType_LightBridge2 = 7, //lb2 dm368
     H264EncoderType_A9_P3_W = 8, //p3w wifi
     H264EncoderType_A9_OSMO_NO_368 = 9, //without DM368 osmo+A9+X3 camera
+    H264EncoderType_H1_Inspire2 = 10, //inspire2
+    H264EncoderType_1860_Inspire2_FPV = 11, //inspire2'fpv camera.
+    H264EncoderType_GD600 = 12, //gd600camera camera.
 };
 
 ////For acquiring pre-construction I frame struct

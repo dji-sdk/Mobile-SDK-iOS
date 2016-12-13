@@ -33,7 +33,7 @@ If you install it successfully, you may get the messages similar to the followin
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (3.4.1)
+Installing DJI-SDK-iOS (3.5)
 Generating Pods project
 Integrating client project
 
@@ -44,7 +44,7 @@ installed.
 
 ### Run Sample Code
 
-Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) to immediately run code and see how the DJI Mobile SDK can be used.
+Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) immediately to see how the DJI Mobile SDK can be used.
 
 One of DJI's aircraft or handheld cameras will be required to run the sample application. 
 
@@ -80,10 +80,6 @@ Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk
 ## SDK API Reference
 
 [**iOS SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/ios/index.html)
-
-## CocoaPods Support
-
-DJI iOS SDK supports CocoaPods now. Please check this link for details: <https://cocoapods.org/pods/DJI-SDK-iOS>.
 
 ## FFmpeg Customization
 
