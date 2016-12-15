@@ -159,7 +159,7 @@ LB2AUDHackParserDelegate>{
     }
     
     [_videoExtractor freeExtractor];
-    [self close];
+    [self privateClose];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -391,13 +391,18 @@ LB2AUDHackParserDelegate>{
 
 - (void)close{
     BEGIN_DISPATCH_QUEUE
+    [self privateClose];
+    END_DISPATCH_QUEUE
+}
+
+- (void)privateClose
+{
     [_dataQueue clear];
     if(_decodeThread!=nil){
         [_decodeThread cancel];
         _decodeThread = nil;
     }
     _status.isRunning = NO;
-    END_DISPATCH_QUEUE
 }
 
 - (void)setType:(VideoPreviewerType)type{
