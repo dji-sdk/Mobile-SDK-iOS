@@ -49,6 +49,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     if (self = [super init]) {
         _cameraMode = DJICameraModeUnknown;
         _photoRatio = DJICameraPhotoAspectRatioUnknown;
+        _isSecondaryLiveStream = NO;
 
         if (g_loadPrebuildIframeOverrideFunc == NULL) {
             g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
@@ -151,6 +152,12 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 }
 
 -(void)updateEncodeType {
+    // Check if Inspire 2 FPV
+    if (self.isSecondaryLiveStream) {
+        [self.videoPreviewer setEncoderType:H264EncoderType_1860_Inspire2_FPV];
+        return;
+    }
+
     // Check if Lightbridge 2
     if ([[self class] isUsingLightbridge2WithProductName:self.productName
                                               isAircraft:self.isAircraft
@@ -160,16 +167,17 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     }
 
     H264EncoderType encodeType = [[self class] getDataSourceWithCameraName:self.cameraName
-                                                             andIsAircraft:self.isAircraft];
-    if (encodeType == H264EncoderType_unknown) {
-        [self setDefaultConfiguration];
-        return;
-    }
+                                                             andIsAircraft:self.isAircraft];;
 
     [self.videoPreviewer setEncoderType:encodeType];
 }
 
 -(void)updateContentRect {
+    if (self.isSecondaryLiveStream) {
+        [self setDefaultContentRect];
+        return;
+    }
+    
     if ([self.cameraName isEqual:DJICameraDisplayNameXT]) {
         [self updateContentRectForXT];
         return;
@@ -225,7 +233,9 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         area = [DJIVideoPresentViewAdjustHelper normalizeFrame:destRect withIdentityRect:streamRect];
     }
 
-    self.videoPreviewer.contentClipRect = area;
+    if (!CGRectEqualToRect(self.videoPreviewer.contentClipRect, area)) {
+        self.videoPreviewer.contentClipRect = area;
+    }
 }
 
 -(void)setDefaultContentRect {
@@ -259,7 +269,9 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     }
 
     if ([productName isEqual:DJIAircraftModelNameA3] ||
-        [productName isEqual:DJIAircraftModelNameMatrice600]) {
+        [productName isEqual:DJIAircraftModelNameN3] ||
+        [productName isEqual:DJIAircraftModelNameMatrice600] ||
+        [productName isEqual:DJIAircraftModelNameMatrice600Pro]) {
         return YES;
     }
 
@@ -314,6 +326,14 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         else {
             return H264EncoderType_unknown;
         }
+    }
+    else if ([cameraName isEqualToString:DJICameraDisplayNameZ30]) {
+        return H264EncoderType_GD600;
+    }
+    else if ([cameraName isEqualToString:DJICameraDisplayNamePhantom4ProCamera] ||
+             [cameraName isEqualToString:DJICameraDisplayNameX5S] ||
+             [cameraName isEqualToString:DJICameraDisplayNameX4S]) {
+        return H264EncoderType_H1_Inspire2;
     }
 
     return H264EncoderType_unknown;
