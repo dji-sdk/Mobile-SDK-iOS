@@ -44,7 +44,7 @@ installed.
 
 ### Run Sample Code
 
-Developers can [run the sample application](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html) immediately to see how the DJI Mobile SDK can be used.
+Developers can [setup the App Key](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#objective-c-app-key-setup) and run the sample code to see how the DJI Mobile SDK can be used.
 
 One of DJI's aircraft or handheld cameras will be required to run the sample application. 
 
