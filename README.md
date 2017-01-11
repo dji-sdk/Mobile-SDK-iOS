@@ -18,17 +18,17 @@ Open Terminal and change to the download project's directory, enter the followin
 sudo gem install cocoapods
 ~~~
 
-The process may take a long time, please wait. For further installation instructions, please check [this guides](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+The process may take a long time, please wait. For further installation instructions, please check [this guide](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
 **2.** Install SDK with CocoaPods in the Project
 
-Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** folders' directory:
+Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
 ~~~
 pod install
 ~~~
 
-If you install it successfully, you may get the messages similar to the followings:
+If you install it successfully, you should get the messages similar to the following:
 
 ~~~
 Analyzing dependencies
@@ -41,6 +41,13 @@ Integrating client project
 Pod installation complete! There is 1 dependency from the Podfile and 1 total pod
 installed.
 ~~~
+
+> **Note**: If you saw "Unable to satisfy the following requirements" issue during pod install, please run the following commands to update your pod repo and install the pod again:
+> 
+> ~~~
+> pod repo update
+> pod install
+> ~~~
 
 ### Run Sample Code
 
