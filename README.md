@@ -84,6 +84,17 @@ Several iOS tutorials are provided as examples on how to use different features 
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
+## SDK Keys
+SDK Keys can be used as an alternative interface to access the product.
+
+A detailed introduction for SDK Keys is [here](./docs/README-KeyedInterface.md).
+
+## Missions Refactor
+
+Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0, missions are being refactored to be more robust and easier to manage.
+
+A detailed introduction for missions is [here](./docs/README-Mission.md).
+
 ## SDK API Reference
 
 [**iOS SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/ios/index.html)
