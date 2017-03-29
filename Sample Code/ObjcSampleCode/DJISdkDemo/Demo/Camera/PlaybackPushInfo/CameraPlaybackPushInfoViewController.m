@@ -46,10 +46,10 @@
 -(void) playbackManager:(DJIPlaybackManager *)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *)playbackState {
     NSMutableString* playbackString = [[NSMutableString alloc] init];
     [playbackString appendFormat:@"CurrentSelectedFileIndex: %d\n", playbackState.currentSelectedFileIndex];
-    [playbackString appendFormat:@"MediaFileType: %d\n", (int)playbackState.mediaFileType];
+    [playbackString appendFormat:@"FileType: %d\n", (int)playbackState.fileType];
     [playbackString appendFormat:@"NumberOfMediaFiles: %d\n", playbackState.numberOfMediaFiles];
     [playbackString appendFormat:@"PlaybackMode: %d\n", playbackState.playbackMode];
-    [playbackString appendFormat:@"NumbersOfSelected: %d", playbackState.numberOfSelectedFiles];
+    [playbackString appendFormat:@"NumbersOfSelected: %d", playbackState.selectedFileCount];
     
     self.pushInfoLabel.text = playbackString;
 }

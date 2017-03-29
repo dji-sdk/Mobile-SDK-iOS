@@ -11,8 +11,8 @@
 @implementation DJIGimbal (CapabilityCheck)
 
 -(DJIParamCapability *) getCapabilityWithKey:(NSString *)key {
-    if (self.gimbalCapability && self.gimbalCapability[key]) {
-        DJIParamCapability *capability = (DJIParamCapability *)self.gimbalCapability[key];
+    if (self.capabilities && self.capabilities[key]) {
+        DJIParamCapability *capability = (DJIParamCapability *)self.capabilities[key];
         return capability;
     }
     return nil;

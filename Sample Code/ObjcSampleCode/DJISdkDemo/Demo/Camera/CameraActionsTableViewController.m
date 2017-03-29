@@ -18,6 +18,7 @@
 #import "CameraFetchMediaViewController.h"
 #import "CameraFPVViewController.h"
 #import "CameraMediaPlaybackViewController.h"
+#import "In2P4PCameraPlayBackViewController.h"
 
 @interface CameraActionsTableViewController ()
 
@@ -48,8 +49,16 @@
                             [DemoSettingItem itemWithName:@"Playback Download" andClass:[CameraPlaybackDownloadViewController class]]]];
 
     // Media Download
-    [self.items addObject:@[[DemoSettingItem itemWithName:@"Fetch media" andClass:[CameraFetchMediaViewController class]],
-                            [DemoSettingItem itemWithName:@"Media playback" andClass:[CameraMediaPlaybackViewController class]]]];
+    NSMutableArray *medias = [NSMutableArray arrayWithObject:[DemoSettingItem itemWithName:@"Fetch media" andClass:[CameraFetchMediaViewController class]]];
+    DJIBaseProduct *product = [DemoComponentHelper fetchProduct];
+    if ([product.model isEqualToString:DJIAircraftModelNamePhantom4Pro] ||
+        [product.model isEqualToString:DJIAircraftModelNameInspire2]) {
+        [medias addObject:[DemoSettingItem itemWithName:@"Media playback" andClass:[In2P4PCameraPlayBackViewController class]]];
+    }
+    else {
+        [medias addObject:[DemoSettingItem itemWithName:@"Media playback" andClass:[CameraMediaPlaybackViewController class]]];
+    }
+    [self.items addObject:medias];
     
 }
 
@@ -72,7 +81,7 @@
 
     UIViewController * vc = [[item.viewControllerClass alloc] init];
     vc.title = item.itemName;
-    if ([vc.title isEqual:@"Media playback"]) {
+    if ([vc.title isEqual:@"Media playback"] && [vc isKindOfClass:[CameraMediaPlaybackViewController class]]) {
         // Media Playback view controller only supports landscape orientation.
         // Use presentViewController: instead of navigationController. 
         UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;

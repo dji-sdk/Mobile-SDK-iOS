@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <DJISDK/DJISDK.h>
 
-@interface MissionBaseViewController : UIViewController <DJIMissionManagerDelegate, DJIFlightControllerDelegate>
+@interface MissionBaseViewController : UIViewController <DJIFlightControllerDelegate>
 
 @property (nonatomic, strong) DJIMission* mission;
 @property(nonatomic, assign) CLLocationCoordinate2D homeLocation;
@@ -23,6 +23,12 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
+- (IBAction)onPrepareButtonClicked:(id)sender;
+- (IBAction)onStartButtonClicked:(id)sender;
+- (IBAction)onStopButtonClicked:(id)sender;
+- (IBAction)onDownloadButtonClicked:(id)sender;
+- (IBAction)onPauseButtonClicked:(id)sender;
+- (IBAction)onResumeButtonClicked:(id)sender; 
 
 // methods to override by sub-classes
 -(DJIMission*) initializeMission;

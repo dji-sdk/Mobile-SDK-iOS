@@ -87,10 +87,10 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getCameraModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: getCameraModeWithCompletion:. %@", error.description);
+                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
             }
             else if (mode == DJICameraModePlayback) {
                 target.isInPlaybackMode = YES;
@@ -109,10 +109,10 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setCameraMode:DJICameraModePlayback withCompletion:^(NSError * _Nullable error) {
+        [camera setMode:DJICameraModePlayback withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: setCameraMode:withCompletion:. %@", error.description);
+                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
             }
             else {
                 // Normally, once an operation is finished, the camera still needs some time to finish up
@@ -170,14 +170,16 @@
 - (void)setVideoPreview {
     [[VideoPreviewer instance] start];
     [[VideoPreviewer instance] setView:self.videoFeedView];
-    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
 }
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
-    [self.previewerAdapter stop];
-    self.previewerAdapter = nil;
+    if (self.previewerAdapter) {
+    	[self.previewerAdapter stop];
+    	self.previewerAdapter = nil;
+    }
 }
 
 -(void) setIsInMultipleMode:(BOOL)isInMultipleMode {
@@ -187,8 +189,8 @@
 }
 
 #pragma mark - DJICameraDelegate
--(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
+-(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)length {
+    [[VideoPreviewer instance] push:videoBuffer length:(int)length];
 }
   
 #pragma mark - DJIPlaybackDelegate

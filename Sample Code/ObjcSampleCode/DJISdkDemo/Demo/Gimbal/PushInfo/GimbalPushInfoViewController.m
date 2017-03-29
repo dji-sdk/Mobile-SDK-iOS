@@ -40,21 +40,21 @@
 
 #pragma mark - DJIGimbalDelegate
 // Override method in DJIGimbalDelegate to receive the pushed data
--(void)gimbal:(DJIGimbal *)gimbal didUpdateGimbalState:(DJIGimbalState *)gimbalState {
+-(void)gimbal:(DJIGimbal *)gimbal didUpdateState:(DJIGimbalState *)state {
     NSMutableString* gimbalInfoString = [[NSMutableString alloc] init];
-    [gimbalInfoString appendFormat:@"Gimbal attitude in degree: (%f, %f, %f)\n", gimbalState.attitudeInDegrees.pitch,
-     gimbalState.attitudeInDegrees.roll,
-     gimbalState.attitudeInDegrees.yaw];
-    [gimbalInfoString appendFormat:@"Roll fine tune in degree: %d\n", (int)gimbalState.rollFineTuneInDegrees];
+    [gimbalInfoString appendFormat:@"Gimbal attitude in degree: (%f, %f, %f)\n", state.attitudeInDegrees.pitch,
+     state.attitudeInDegrees.roll,
+     state.attitudeInDegrees.yaw];
+    [gimbalInfoString appendFormat:@"Roll fine tune in degree: %d\n", (int)state.rollFineTuneInDegrees];
     [gimbalInfoString appendString:@"Gimbal work mode: "];
-    switch (gimbalState.workMode) {
-        case DJIGimbalWorkModeFpvMode:
+    switch (state.mode) {
+        case DJIGimbalModeFPV:
             [gimbalInfoString appendString:@"FPV\n"];
             break;
-        case DJIGimbalWorkModeFreeMode:
+        case DJIGimbalModeFree:
             [gimbalInfoString appendString:@"Free\n"];
             break;
-        case DJIGimbalWorkModeYawFollowMode:
+        case DJIGimbalModeYawFollow:
             [gimbalInfoString appendString:@"Yaw-follow\n"];
             break;
             
@@ -62,15 +62,15 @@
             break;
     }
     [gimbalInfoString appendString:@"Is attitude reset: "];
-    [gimbalInfoString appendString:gimbalState.isAttitudeReset?@"YES\n" : @"NO\n"];
+    [gimbalInfoString appendString:state.isAttitudeReset?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is calibrating: "];
-    [gimbalInfoString appendString:gimbalState.isCalibrating?@"YES\n" : @"NO\n"];
+    [gimbalInfoString appendString:state.isCalibrating?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is pitch at stop: "];
-    [gimbalInfoString appendString:gimbalState.isPitchAtStop?@"YES\n" : @"NO\n"];
+    [gimbalInfoString appendString:state.isPitchAtStop?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is roll at stop: "];
-    [gimbalInfoString appendString:gimbalState.isRollAtStop?@"YES\n" : @"NO\n"];
+    [gimbalInfoString appendString:state.isRollAtStop?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is yaw at stop: "];
-    [gimbalInfoString appendString:gimbalState.isYawAtStop?@"YES\n" : @"NO\n"];
+    [gimbalInfoString appendString:state.isYawAtStop?@"YES\n" : @"NO\n"];
     
     self.pushInfoLabel.text = gimbalInfoString; 
 }

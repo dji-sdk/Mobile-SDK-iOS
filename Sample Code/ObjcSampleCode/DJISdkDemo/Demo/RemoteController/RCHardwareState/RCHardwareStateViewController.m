@@ -108,23 +108,21 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) remoteController:(DJIRemoteController*)rc didUpdateHardwareState:(DJIRCHardwareState)state
+-(void)remoteController:(DJIRemoteController *)rc didUpdateHardwareState:(DJIRCHardwareState)state
 {
-    self.rightHorizontal.text = [NSString stringWithFormat:@"%d", state.rightHorizontal.value];
-    self.rightVertical.text = [NSString stringWithFormat:@"%d", state.rightVertical.value];
-    self.leftVertical.text = [NSString stringWithFormat:@"%d", state.leftVertical.value];
-    self.leftHorizontal.text = [NSString stringWithFormat:@"%d", state.leftHorizontal.value];
+    self.rightHorizontal.text = [NSString stringWithFormat:@"%d", state.rightStick.horizontalPosition];
+    self.rightVertical.text = [NSString stringWithFormat:@"%d", state.rightStick.verticalPosition];
+    self.leftVertical.text = [NSString stringWithFormat:@"%d", state.leftStick.verticalPosition];
+    self.leftHorizontal.text = [NSString stringWithFormat:@"%d", state.leftStick.horizontalPosition];
     
-    [self.leftWheel setValue:state.leftWheel.value animated:YES];
+    [self.leftWheel setValue:state.leftWheel animated:YES];
     
-    int sign = state.rightWheel.wheelDirection ? 1 : -1;
-    int offset = state.rightWheel.value * sign;
-    self.wheelOffset += offset;
+    self.wheelOffset += (int)state.rightWheel.value;
     if (self.wheelOffset > 20) {
-        self.wheelOffset = -20;
+        self.wheelOffset = 20;
     }
     if (self.wheelOffset < -20) {
-        self.wheelOffset = 20;
+        self.wheelOffset = -20;
     }
     [self.rightWheel setValue:self.wheelOffset animated:YES];
     
@@ -133,25 +131,25 @@
     UIColor* pressedColor = [[UIColor redColor] colorWithAlphaComponent:0.5];
     UIColor* normalColor = [UIColor whiteColor];
     
-    [self.cameraRecord setBackgroundColor:(state.recordButton.buttonDown ? pressedColor : normalColor)];
+    [self.cameraRecord setBackgroundColor:(state.recordButton.isClicked ? pressedColor : normalColor)];
     [self.cameraRecord setHidden:!state.recordButton.isPresent];
     
-    [self.cameraShutter setBackgroundColor:(state.shutterButton.buttonDown ? pressedColor : normalColor)];
+    [self.cameraShutter setBackgroundColor:(state.shutterButton.isClicked ? pressedColor : normalColor)];
     [self.cameraShutter setHidden:!state.shutterButton.isPresent];
     
-    [self.cameraPlayback setBackgroundColor:(state.playbackButton.buttonDown ? pressedColor : normalColor)];
+    [self.cameraPlayback setBackgroundColor:(state.playbackButton.isClicked ? pressedColor : normalColor)];
     [self.cameraPlayback setHidden:!state.shutterButton.isPresent];
     
-    [self.goHomeButton setBackgroundColor:(state.goHomeButton.buttonDown ? pressedColor : normalColor)];
+    [self.goHomeButton setBackgroundColor:(state.goHomeButton.isClicked ? pressedColor : normalColor)];
     [self.goHomeButton setHidden:!state.shutterButton.isPresent];
     
-    [self.customButton1 setBackgroundColor:(state.customButton1.buttonDown ? pressedColor : normalColor)];
+    [self.customButton1 setBackgroundColor:(state.c1Button.isClicked ? pressedColor : normalColor)];
     [self.customButton1 setHidden:!state.shutterButton.isPresent];
     
-    [self.customButton2 setBackgroundColor:(state.customButton2.buttonDown ? pressedColor : normalColor)];
+    [self.customButton2 setBackgroundColor:(state.c2Button.isClicked ? pressedColor : normalColor)];
     [self.customButton2 setHidden:!state.shutterButton.isPresent];
     
-    BOOL isTranforam = state.transformationSwitch.transformationSwitchState == DJIRCHardwareTransformationSwitchStateRetract;
+    BOOL isTranforam = state.transformationSwitch.state == DJIRCTransformationSwitchStateRetract;
     [self.transformSwitch setOn:isTranforam animated:YES];
 }
 

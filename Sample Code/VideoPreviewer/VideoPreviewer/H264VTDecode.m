@@ -7,9 +7,10 @@
 #import <UIKit/UIKit.h>
 #import "H264VTDecode.h"
 #import "DJIVideoHelper.h"
+//#import "DJILogCenter.h"
 
-#define INFO(fmt, ...)  NSLog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
-#define ERROR(fmt, ...) NSLog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
+#define INFO(fmt, ...) //DJILog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
+#define ERROR(fmt, ...) //DJILog(@"[VTDecoder]"fmt, ##__VA_ARGS__)
 
 #define DEFAULT_STREAM_FPS (30)
 #define FRAME_MAX_SLICE_COUNT (30)
@@ -261,13 +262,13 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
         SInt32 destinationPixelType = kCVPixelFormatType_420YpCbCr8Planar;
         if (_enableFastUpload) {
             destinationPixelType = kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange;
-            if (_currentSPS.full_range) {
+            if (_currentSPS.full_range == 1) {
                 destinationPixelType = kCVPixelFormatType_420YpCbCr8BiPlanarFullRange;
             }
         }
         else{
             destinationPixelType = kCVPixelFormatType_420YpCbCr8Planar;
-            if (_currentSPS.full_range) {
+            if (_currentSPS.full_range == 1) {
                 destinationPixelType = kCVPixelFormatType_420YpCbCr8PlanarFullRange;
             }
         }
@@ -656,6 +657,7 @@ void DJIHWDecoderDidDecompress( void *decompressionOutputRefCon, void *sourceFra
                 }else{
                     //decode
                     frame->frame_info.frame_index = frameIndex;
+                    frame->frame_info.frame_flag.is_fullrange = (_currentSPS.full_range == 1);
                     decode_ret = [self pushSampleBuffer:au_buf Size:au_size frameInfo:frame];
                     last_decode_frame_index = frameIndex;
                     if (decode_ret !=0) {

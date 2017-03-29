@@ -29,7 +29,7 @@
  */
 @interface MediaPlaybackViewCell : UITableViewCell
 
-@property (nonatomic) DJIMedia *media;
+@property (nonatomic) DJIMediaFile *media;
 
 @end
 
@@ -44,7 +44,7 @@ UITableViewDataSource,
 UITableViewDelegate>
 
 @property (nonatomic) NSArray *mediaList;
-@property (nonatomic) DJIMedia *selectedMedia;
+@property (nonatomic) DJIMediaFile *selectedMedia;
 @property (weak, nonatomic) IBOutlet UIView *videoPreviewView;
 @property (nonatomic, weak) DJIMediaManager *mediaManager;
 @property (weak, nonatomic) IBOutlet UITableView *mediaListTable;
@@ -126,14 +126,14 @@ UITableViewDelegate>
     [self showActivityIndicator:YES];
     DJICamera *camera = [DemoComponentHelper fetchCamera];
     if (camera) {
-        [camera setCameraMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
+        [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"SetCameraMode Failed: %@", error.description);
             }
             else {
                 WeakReturn(target); 
                 [self.mediaManager fetchMediaListWithCompletion:
-                 ^(NSArray<DJIMedia *> * _Nullable mediaList, NSError * _Nullable error) {
+                 ^(NSArray<DJIMediaFile *> * _Nullable mediaList, NSError * _Nullable error) {
                      WeakReturn(target);
                      
                      [target showActivityIndicator:NO];
@@ -321,8 +321,8 @@ UITableViewDelegate>
     return nil;
 }
 
--(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
+-(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)length {
+    [[VideoPreviewer instance] push:videoBuffer length:(int)length];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {

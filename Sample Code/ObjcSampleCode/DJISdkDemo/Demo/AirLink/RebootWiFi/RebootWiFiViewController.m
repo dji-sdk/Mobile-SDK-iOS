@@ -30,7 +30,7 @@
     [super viewWillAppear:animated];
     
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
-    if (airLink && [airLink isWifiLinkSupported]) {
+    if (airLink && airLink.isWiFiLinkSupported) {
         [self.rebootWiFiButton setEnabled:YES];
     }
     else {
@@ -42,7 +42,7 @@
 - (IBAction)onRebootWiFiClicked:(id)sender {
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
     if (airLink) {
-        [airLink.wifiLink rebootWiFiWithCompletion:^(NSError * _Nullable error) {
+        [airLink.wifiLink rebootWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: rebootWiFi. %@", error.description);
             }

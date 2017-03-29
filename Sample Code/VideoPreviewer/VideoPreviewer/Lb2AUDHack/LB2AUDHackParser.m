@@ -63,10 +63,10 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     int workOffset = 0;
 
     uint8_t* outputBuf = (uint8_t*)data_in;
-
+    
     while (workOffset < in_size) {
         uint8_t current_byte = *((uint8_t*)data_in + workOffset);
-
+        
         if (_status == LB2AUDHackParserStatus_SeekNAL) {
             // search nalu's head
             if (current_byte == 0) {
@@ -97,32 +97,31 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
             }
         }
         else if(_status == LB2AUDHackParserStatus_SeekFilter){
-            //It is not a filer. Remove the aud found before
-            if (workOffset > 6) {
-                //aud is in the same pack. For this case, skipping it is enough.
-                int outputSize = (workOffset - (int)(outputBuf - (uint8_t*)data_in)) - 6;
-                [self flushBufferWithAppendData:outputBuf size:outputSize];
-
-                //skip aud
-                outputBuf = (uint8_t*)data_in + workOffset;
-            }else{
-
-                int bufferSub = 6 - workOffset;
-                bufferSize -= bufferSub;
-                if (bufferSize < 0) {
-                    bufferSize = 0;
+                //It is not a filer. Remove the aud found before
+                if (workOffset > 6) {
+                    //aud is in the same pack. For this case, skipping it is enough.
+                    int outputSize = (workOffset - (int)(outputBuf - (uint8_t*)data_in)) - 6;
+                    [self flushBufferWithAppendData:outputBuf size:outputSize];
+                    
+                    //skip aud
+                    outputBuf = (uint8_t*)data_in + workOffset;
+                }else{
+                    int bufferSub = 6 - workOffset;
+                    bufferSize -= bufferSub;
+                    if (bufferSize < 0) {
+                        bufferSize = 0;
+                    }
+                    
+                    // Move the pointer
+                    outputBuf = ((uint8_t*)data_in + workOffset);
+                    //flush buffer
+                    [self flushBufferWithAppendData:nil size:0];
                 }
-
-                // Move the pointer
-                outputBuf = ((uint8_t*)data_in + workOffset);
-                //flush buffer
-                [self flushBufferWithAppendData:nil size:0];
-            }
-
-            workOffset--;
-            self.status = LB2AUDHackParserStatus_SeekNAL;
+                
+                workOffset--;
+                self.status = LB2AUDHackParserStatus_SeekNAL;
         }
-
+        
         workOffset++; // work on the next byte
     }
     
@@ -158,7 +157,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
         [self flushBufferWithAppendData:nil size:0];
     }
     
-    // If size is larger than the buffer size, discard the exceeding part. 
+    // If size is larger than the buffer size, discard the exceeding part.
     int writeSize = MIN(size, DATA_BUFFER_SIZE);
     memcpy(dataBuffer+bufferSize, data, writeSize);
     bufferSize += writeSize;

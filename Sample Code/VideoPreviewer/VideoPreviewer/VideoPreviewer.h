@@ -9,13 +9,14 @@
 #import "DJIStreamCommon.h"
 #import "VideoFrameExtractor.h"
 #import "MovieGLView.h"
-#import "VideoPreviewerQueue.h"
 #import "H264VTDecode.h"
 #import "DJIVideoHelper.h"
+#import "SoftwareDecodeProcessor.h"
+#import "VideoPreviewerQueue.h"
+
 #import "DJIVideoPresentViewAdjustHelper.h"
 #import "DJIVTH264DecoderIFrameData.h"
-#import "LB2AUDHackParser.h"
-#import "SoftwareDecodeProcessor.h"
+#import "DJIRTPlayerRenderView.h"
 
 #define __WAIT_STEP_FRAME__   (0) //单步调试用，搭配test_queue_pull
 
@@ -51,30 +52,39 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
     VideoPreviewerTypeNone, //none
 };
 
-@protocol VideoPreviewerDelegate <NSObject>
-@optional
-/**
- *  callback current image state
- *
- *  @param state image state
- */
-- (void)previewDidUpdateStatus;
 
-/**
- *  VideoPreviewer event notification
- *
- *  @param event event
- */
-- (void)previewDidReceiveEvent:(VideoPreviewerEvent)event;
-
-@end
+#pragma mark - data input
 
 /**
  *  UI component used to show the video feed streamed from DJI device. FFmpeg is
  *  required. It consists of decoder, data buffer queue and OpenGL renderer。
  *  Set the view before calling the `start` method。
  */
-@interface VideoPreviewer : NSObject <VideoFrameProcessor>
+@interface VideoPreviewer : NSObject
+
+// a tag for video processor and frame processor
+@property (assign, nonatomic) uint8_t videoChannelTag;
+
+/*
+ * create a new preview, this instance is not the default one
+ */
+-(instancetype) init;
+
+/**
+ *  Push video data
+ */
+-(void) push:(uint8_t*)videoData length:(int)len;
+
+/**
+ *  Clear video data buffer
+ */
+-(void) clearVideoData;
+
+@end
+
+#pragma mark - instance
+
+@interface VideoPreviewer (Instance)
 
 /**
  *  YES if this is the first instance
@@ -82,9 +92,27 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
 @property (nonatomic, readonly) BOOL isDefaultPreviewer;
 
 /**
+ *  get default previewer
+ */
++(VideoPreviewer*) instance;
+
+@end
+
+#pragma mark - geometry
+
+@interface VideoPreviewer (Geometry)
+/**
  *  for kvo, preview content frame
  */
 @property (nonatomic, readonly) CGRect frame;
+
+/*
+ * for internal use only
+ */
+@property (nonatomic, readonly) MovieGLView* internalGLView;
+@end
+
+@interface VideoPreviewer ()
 
 /**
  *  rotation of the preview content
@@ -98,54 +126,9 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
 @property (assign, nonatomic) CGRect contentClipRect;
 
 /**
- *  Current status of Video Previewer.
- */
-@property (assign,readonly) VideoPreviewerStatus status;
-
-/**
- *  Current status of the decoder inside Video Previewer.
- */
-@property (nonatomic, readonly) VideoDecoderStatus decoderStatus;
-
-/**
  *  The display type used by the Video Previewer
  */
 @property (nonatomic, assign) VideoPreviewerType type;
-/**
-*  enable hadeware decode
-*/
-@property (assign, nonatomic) BOOL enableHardwareDecode;
-
-/**
- *  Use for choice the H264 steam type, default is inspire.
- */
-@property (assign,nonatomic) H264EncoderType encoderType;
-
-/**
- *  Format of the output frame
- */
-@property (readonly, nonatomic) VPFrameType frameOutputType;
-
-/**
- *  Enables the fast uploading to GPU. It is useful for hardware decoding and
- *  when it is enabled, the output image encoding format will become semi-Planer.
- */
-@property (assign, nonatomic) BOOL enableFastUpload;
-
-/**
- *  get default previewer
- */
-+(VideoPreviewer*) instance;
-
-/**
- *  Push video data
- */
--(void) push:(uint8_t*)videoData length:(int)len;
-
-/**
- *  Clear video data buffer
- */
--(void) clearVideoData;
 
 /**
  *  set the UIView which will display the rendering video stream
@@ -184,6 +167,49 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  *  @return the location of point in the UIView
  */
 -(CGPoint) convertPoint:(CGPoint)point fromVideoViewToView:(UIView *)view;
+
+@end
+
+#pragma mark - decoder control
+
+@interface VideoPreviewer (DecoderControl)
+/**
+ *  Current status of Video Previewer.
+ */
+@property (assign, readonly) VideoPreviewerStatus status;
+
+/**
+ *  Current status of the decoder inside Video Previewer.
+ */
+@property (nonatomic, readonly) VideoDecoderStatus decoderStatus;
+
+/*
+ * current stream info for rkvo
+ */
+@property (nonatomic, readonly) DJIVideoStreamBasicInfo currentStreamInfo;
+/**
+ *  Format of the output frame
+ */
+@property (readonly, nonatomic) VPFrameType frameOutputType;
+@end
+
+@interface VideoPreviewer ()  <VideoFrameProcessor>
+
+/**
+ *  enable hadeware decode
+ */
+@property (assign, nonatomic) BOOL enableHardwareDecode;
+
+/**
+ *  Use for choice the H264 steam type, default is inspire.
+ */
+@property (assign,nonatomic) H264EncoderType encoderType;
+
+/**
+ *  Enables the fast uploading to GPU. It is useful for hardware decoding and
+ *  when it is enabled, the output image encoding format will become semi-Planar.
+ */
+@property (assign, nonatomic) BOOL enableFastUpload;
 
 /**
  *  Start the decoding.
@@ -224,41 +250,16 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  */
 - (void)close;
 
-/**
- *  Called when the application is about to enter background.
+/*
+ * clear gl view to black
  */
-- (void)enterBackground;
+- (void)clearRender;
 
-/**
- *  Called when the application is about to enter the foreground.
- */
-- (void)enterForegournd;
+@end
 
+#pragma mark - snapshot
 
-/**
- * Enable overexposure tips
- */
--(void) enableOverExposedWarning:(float)threshold;
-
-/**
- * Enable focus tips
- */
--(void) enableFocusWarning:(BOOL)status;
-
-/**
- * Setting the Focus range rendering prompt
- */
--(void) setFocusWarningRange:(CGRect)range;
-
-/**
- *  Setting the Focus range rendering prompt
- */
--(void) setFocusWarningThreshold:(float)threshold;
-
-/**
- * Setting Exposure Compensation
- */
--(void) setLuminanceScale:(float)scale;
+@interface VideoPreviewer (SnapShot)
 
 /**
  *  Screen capture of the current view
@@ -269,6 +270,12 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  *  Screen capture thumbnail
  */
 -(void) snapshotThumnnail:(void(^)(UIImage* snapshot))block;
+
+@end
+
+#pragma mark - processor
+
+@interface VideoPreviewer (Processor)
 
 /**
  *  @param processor Processor registered to receive the H264 stream data.
@@ -289,4 +296,58 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  *  @param processor Remove registered processor list.
  */
 -(void) unregistFrameProcessor:(id)processor;
+
+@end
+
+#pragma mark - filters and effects
+///////////////// Filter's config ///////////////////////////
+
+@interface VideoPreviewer ()
+
+/**
+ * Enable overexposure tips
+ */
+@property (nonatomic, assign) float overExposedWarningThreshold;
+
+
+/**
+ * Setting Exposure Compensation
+ */
+@property (nonatomic, assign) float luminanceScale;
+
+
+/////////////// use sobel process //////////
+/**
+ * Enable focus tips
+ */
+@property (nonatomic, assign) BOOL enableFocusWarning;
+/**
+ *  Setting the Focus range rendering prompt
+ */
+@property (nonatomic, assign) float focusWarningThreshold;
+
+
+////////////// revers d-log filter from camera ///////
+@property (assign, nonatomic) DLogReverseLookupTableType dLogReverse;
+
+
+///////////// hsb config //////////////////
+@property (assign, nonatomic) BOOL enableHSB;
+@property (assign, nonatomic) DJILiveViewRenderHSBConfig hsbConfig;
+
+
+///////////// shadow and highlight ///////////
+@property (assign, nonatomic) BOOL enableShadowAndHighLightenhancement;
+/**
+ * 0 - 1, increase to lighten shadows.
+ * @default 0
+ */
+@property(readwrite, nonatomic) CGFloat shadowsLighten;
+
+/**
+ * 0 - 1, increase to darken highlights.
+ * @default 0
+ */
+@property(readwrite, nonatomic) CGFloat highlightsDecrease;
+
 @end

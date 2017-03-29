@@ -3,17 +3,35 @@
 //
 //  Copyright (c) 2013 DJI. All rights reserved.
 //
-
-
+//#import "DJILogCenter.h"
+//#import "DJIVideoStuckTester.h"
+#import "VideoPreviewerQueue.h"
 #import "VideoPreviewer.h"
+//#import "DJIDispatch.h"
 #import <sys/time.h>
 #include <OpenGLES/ES2/gl.h>
-#import "SoftwareDecodeProcessor.h"
 #import "LB2AUDHackParser.h"
 #import "VideoPreviewerMacros.h"
 
+//#import "DJIDataDumper.h"
+//#import "DJIH264FrameRawLayerDumper.h"
+
+#define __TEST_VIDEO_DELAY__  (0)
+#define __PERFROMANCE_COUNT__ (0) //显示性能计数
+#define __TEST_QUEUE_PULL__   (0) //从264码流文件拉取调试
+#define __TEST_FRAME_PULL__   (0) //从帧文件拉取调试
+#define __TEST_PACK_PULL__    (0) //从分包文件拉取调试
+
+#define __TEST_PACK_DUMP__    (0) //保存分包文件
+#define __TEST_FRAME_DUMP__   (0) //保存分帧文件
+#define __LB2_PARSER_DUMP__   (0) //保存lb2hack输出
+
 #define FRAME_DROP_THRESHOLD  (70)
 #define RENDER_DROP_THRESHOLD (5)
+
+#if __TEST_VIDEO_DELAY__
+#import "DJITestDelayLogic.h"
+#endif
 
 @interface VideoPreviewer () <
 H264DecoderOutput,
@@ -35,12 +53,13 @@ LB2AUDHackParserDelegate>{
     long long _lastDataInputTime; //Last received time data
     long long _lastFrameDecodedTime; //Last time available to decode
     
-    
-#if __TEST_FRAME_DUMP__
+    dispatch_queue_t _dispatchQueue;
+#if __TEST_FRAME_DUMP__ || __LB2_PARSER_DUMP__
     /**
      *  dumper for frame
      */
     DJIH264FrameRawLayerDumper* frameLayerDumper;
+    DJIDataDumper* lb2Dumper;
 #endif
     
 #if __TEST_PACK_DUMP__
@@ -57,7 +76,10 @@ LB2AUDHackParserDelegate>{
  *  frame buffer queue
  */
 @property(nonatomic, strong) VideoPreviewerQueue *dataQueue;
-
+//gl view
+@property (nonatomic, strong) MovieGLView* internalGLView;
+//basic status
+@property (assign, nonatomic) VideoPreviewerStatus status;
 //ffmpeg warpper
 @property (strong, nonatomic) VideoFrameExtractor *videoExtractor;
 //hardware decode use videotool box on ios8
@@ -69,6 +91,7 @@ LB2AUDHackParserDelegate>{
 //frame output type
 @property (assign, nonatomic) VPFrameType frameOutputType;
 //stream processor list
+@property (assign, nonatomic) DJIVideoStreamBasicInfo currentStreamInfo;
 @property (strong, nonatomic) NSMutableArray* stream_processor_list;
 @property (strong, nonatomic) NSMutableArray* frame_processor_list;
 @property (assign, nonatomic) BOOL grayOutPause;
@@ -79,14 +102,11 @@ LB2AUDHackParserDelegate>{
 @end
 
 @implementation VideoPreviewer
-{
-    dispatch_queue_t _dispatchQueue;
-}
 
 -(id)init
 {
     self= [super init];
-
+    
     _dispatchQueue = dispatch_queue_create("video_previewer_async_queue", DISPATCH_QUEUE_SERIAL);
 
     _decodeThread          = nil;
@@ -96,6 +116,7 @@ LB2AUDHackParserDelegate>{
     _dataQueue             = [[VideoPreviewerQueue alloc] initWithSize:100];
     _stream_processor_list = [[NSMutableArray alloc] init];
     _frame_processor_list  = [[NSMutableArray alloc] init];
+    _luminanceScale        = 1.0;
     _enableFastUpload      = YES; //default use fast upload
     safe_resume_skip_count = 0;
     
@@ -159,6 +180,7 @@ LB2AUDHackParserDelegate>{
     }
     
     [_videoExtractor freeExtractor];
+    [_glView releaseResourece];
     [self privateClose];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -193,6 +215,30 @@ LB2AUDHackParserDelegate>{
 
 -(void) push:(uint8_t*)videoData length:(int)len
 {
+#if __TEST_VIDEO_DELAY__
+    if ([DJITestDelayLogic sharedInstance].hasSynced && ![DJITestDelayLogic sharedInstance].isSyncing) {
+        [[DJITestDelayLogic sharedInstance] startSyncTime];
+        return;
+    }
+    if ([DJITestDelayLogic sharedInstance].hasSynced) {
+        NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate];
+        [[DJITestDelayLogic sharedInstance] logPackSize:len time:currentTimeInterval];
+        return;
+    }
+#endif
+    
+#if __TEST_PACK_DUMP__
+    if (!packLayerDumper) {
+        packLayerDumper = [[DJIDataDumper alloc] init];
+        packLayerDumper.namePerfix = @"videoPack";
+        packLayerDumper.packAlignMode = YES;
+    }
+    
+    if (packLayerDumper) {
+        [packLayerDumper dumpData:videoData length:len];
+    }
+#endif
+    
     _lastDataInputTime = [self getTickCount];
     if (_status.isRunning) {
         if (_encoderType == H264EncoderType_LightBridge2) {
@@ -205,9 +251,12 @@ LB2AUDHackParserDelegate>{
                 }
                 
                 if (self.dataQueue.count > FRAME_DROP_THRESHOLD) {
-                    NSLog(@"decode dataqueue drop %d", FRAME_DROP_THRESHOLD);
+//                    DJILOG(@"decode dataqueue drop %d", FRAME_DROP_THRESHOLD);
                     [self.dataQueue clear];
                 }
+#if __TEST_VIDEO_STUCK__
+                [DJIVideoStuckTester parseFrameWithIndex:frame->frame_info.frame_index];
+#endif
                 [self.dataQueue push:(uint8_t*)frame length:sizeof(VideoFrameH264Raw) + frame->frame_size];
             }];
         }
@@ -221,6 +270,7 @@ LB2AUDHackParserDelegate>{
 -(void) clearVideoData
 {
     [self.dataQueue clear];
+    [_glView clear];
 }
 
 -(void) snapshotPreview:(void(^)(UIImage* snapshot))block{
@@ -250,13 +300,13 @@ LB2AUDHackParserDelegate>{
 {
     BEGIN_DISPATCH_QUEUE
     if(_glView == nil){
+        //generate
         _glView = [[MovieGLView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
         _glView.delegate = self;
         _glView.rotation = self.rotation;
         _glView.contentClipRect = self.contentClipRect;
-        //set self frame property
-        [self movieGlView:_glView didChangedFrame:_glView.frame];
     }
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         if(_glView.superview != view){
             [view addSubview:_glView];
@@ -264,6 +314,9 @@ LB2AUDHackParserDelegate>{
         [view sendSubviewToBack:_glView];
         [_glView adjustSize];
         _status.isGLViewInit = YES;
+        //set self frame property
+        [self movieGlView:_glView didChangedFrame:_glView.frame];
+        self.internalGLView = _glView;
     });
     END_DISPATCH_QUEUE
     return NO;
@@ -278,6 +331,7 @@ LB2AUDHackParserDelegate>{
             [_glView removeFromSuperview];
             //_glView = nil; // Deliberately not release dglView, Avoid each entry view flickering。
             _status.isGLViewInit = NO;
+            self.internalGLView = nil;
         });
     }
     END_DISPATCH_QUEUE
@@ -359,12 +413,12 @@ LB2AUDHackParserDelegate>{
 - (void)resume{
     BEGIN_DISPATCH_QUEUE
     _status.isPause = NO;
-    NSLog(@"Resume the decoding");
+//    DJILOG(@"Resume the decoding");
     END_DISPATCH_QUEUE
 }
 
 - (void)safeResume{
-    NSLog(@"begin Try safe resuming");
+//    DJILOG(@"begin Try safe resuming");
     safe_resume_skip_count = 25;
     [self resume];
 }
@@ -377,7 +431,7 @@ LB2AUDHackParserDelegate>{
     BEGIN_DISPATCH_QUEUE
     _status.isPause = YES;
     _grayOutPause = isGrayout;
-    NSLog(@"Pause decoding");
+//    DJILOG(@"Pause decoding");
     //Wake up waiting threads will immediately render a black white image
     [self.dataQueue wakeupReader];
     
@@ -392,6 +446,14 @@ LB2AUDHackParserDelegate>{
 - (void)close{
     BEGIN_DISPATCH_QUEUE
     [self privateClose];
+    END_DISPATCH_QUEUE
+}
+
+-(void) clearRender
+{
+    BEGIN_DISPATCH_QUEUE
+    [_glView clear];
+    [self.dataQueue wakeupReader];
     END_DISPATCH_QUEUE
 }
 
@@ -451,26 +513,37 @@ LB2AUDHackParserDelegate>{
     return !_status.isBackground && _status.isGLViewInit;
 }
 
--(void) enableOverExposedWarning:(float)threshold
+-(void) setOverExposedWarningThreshold:(float)overExposedWarningThreshold
 {
-    _glView.overExposedMark = threshold;
+    _overExposedWarningThreshold = overExposedWarningThreshold;
+    _glView.overExposedMark = overExposedWarningThreshold;
 }
 
--(void) enableFocusWarning:(BOOL)status
+-(void) setEnableFocusWarning:(BOOL)enableFocusWarning
 {
-    _glView.useSobelProcess  = status;
+    _enableFocusWarning = enableFocusWarning;
+    _glView.enableFocusWarning  = enableFocusWarning;
 }
 
--(void) setFocusWarningRange:(CGRect)range{
-    _glView.sobelRange = range;
+- (void) setFocusWarningThreshold:(float)focusWarningThreshold{
+    
+    _focusWarningThreshold = focusWarningThreshold;
+    _glView.focusWarningThreshold = focusWarningThreshold;
 }
 
-- (void)setFocusWarningThreshold:(float)threshold{
-    _glView.focusWarningThreshold = threshold;
+-(void) setLuminanceScale:(float)luminanceScale{
+    _luminanceScale = luminanceScale;
+    _glView.luminanceScale = luminanceScale;
 }
 
--(void) setLuminanceScale:(float)scale{
-    _glView.luminanceScale = scale;
+-(void) setEnableHSB:(BOOL)enableHSB{
+    _enableHSB = enableHSB;
+    _glView.enableHSB = enableHSB;
+}
+
+-(void) setHsbConfig:(DJILiveViewRenderHSBConfig)hsbConfig{
+    _hsbConfig = hsbConfig;
+    _glView.hsbConfig = hsbConfig;
 }
 
 -(void) setEncoderType:(H264EncoderType)encoderType{
@@ -480,6 +553,15 @@ LB2AUDHackParserDelegate>{
     
     _encoderType = encoderType;
     _stream_basic_info.encoderType = encoderType;
+}
+
+-(void) setEnableShadowAndHighLightenhancement:(BOOL)enable{
+    if (_enableShadowAndHighLightenhancement == enable) {
+        return;
+    }
+    
+    _enableShadowAndHighLightenhancement = enable;
+    _glView.enableShadowAndHighLightenhancement = enable;
 }
 
 -(void) setEnableHardwareDecode:(BOOL)enableHardwareDecode{
@@ -527,13 +609,13 @@ LB2AUDHackParserDelegate>{
 - (void)enterBackground{
     //It is not allowed to call OpenGL's interface in the background. Ensure all work is done before entering the background.
     pthread_mutex_lock(&_render_mutex);
-    NSLog(@"videoPreviewer background");
+//    DJILOG(@"videoPreviewer background");
     _status.isBackground = YES;
     pthread_mutex_unlock(&_render_mutex);
 }
 
 - (void)enterForegournd{
-    NSLog(@"videoPreviewer active");
+//    DJILOG(@"videoPreviewer active");
     _status.isBackground = NO;
 }
 
@@ -576,6 +658,8 @@ LB2AUDHackParserDelegate>{
     
     videoDecoderCanReset = NO;
     videoDecoderFailedCount = 0;
+    
+    BOOL stream_info_changed = YES; //need notify at the first time
     DJIVideoStreamBasicInfo current_stream_info = {0};
     memcpy(&current_stream_info, &_stream_basic_info, sizeof(DJIVideoStreamBasicInfo));
     
@@ -587,9 +671,21 @@ LB2AUDHackParserDelegate>{
             uint8_t *inputData = nil;
             
             int queueNodeSize;
+#if __TEST_QUEUE_PULL__
+            //Get the test data from the queue
+            frameRaw = [self testQueuePull:&queueNodeSize];
+#elif __TEST_FRAME_PULL__
+            //Get test data frame
+            frameRaw = [self testFramePull:&queueNodeSize];
+#else
+        
+#if __TEST_PACK_PULL__
+            [self testPackPull];
+#endif
             //Normal access to data
             frameRaw = (VideoFrameH264Raw*)[_dataQueue pull:&queueNodeSize];
-
+#endif
+            
             if (frameRaw && frameRaw->frame_size + sizeof(VideoFrameH264Raw) == queueNodeSize) {
                 inputData = frameRaw->frame_data;
                 inputDataSize = frameRaw->frame_size;
@@ -602,6 +698,18 @@ LB2AUDHackParserDelegate>{
             }
             [frameLayerDumper dumpFrame:frameRaw];
 #endif
+            
+            //sync config
+            _glView.overExposedMark = _overExposedWarningThreshold;
+            _glView.luminanceScale = _luminanceScale;
+            _glView.enableFocusWarning = _enableFocusWarning;
+            _glView.focusWarningThreshold = _focusWarningThreshold;
+            _glView.dLogReverse = _dLogReverse;
+            _glView.enableHSB = _enableHSB;
+            _glView.hsbConfig = _hsbConfig;
+            _glView.enableShadowAndHighLightenhancement = _enableShadowAndHighLightenhancement;
+            _glView.shadowsLighten = _shadowsLighten;
+            _glView.highlightsDecrease = _highlightsDecrease;
             
             if(inputData == NULL)
             {
@@ -646,12 +754,20 @@ LB2AUDHackParserDelegate>{
                 }
             }
             
-            BOOL stream_info_changed = NO;
             _stream_basic_info.frameRate = _videoExtractor.frameRate;
             _stream_basic_info.frameSize = CGSizeMake(_videoExtractor.outputWidth, _videoExtractor.outputHeight);
             if (memcmp(&current_stream_info, &_stream_basic_info, sizeof(current_stream_info)) !=0 ) {
                 current_stream_info = _stream_basic_info;
                 stream_info_changed = YES;
+            }
+            
+            //notifiy rkvo
+            if (stream_info_changed) {
+                __weak VideoPreviewer* target = self;
+                dispatch_async(dispatch_get_main_queue(),
+                               ^{
+                                   target.currentStreamInfo = current_stream_info;
+                               });
             }
             
             
@@ -661,6 +777,7 @@ LB2AUDHackParserDelegate>{
                 if(_hw_decoder && !_hw_decoder.hardwareUnavailable && _enableHardwareDecode){
                     //decode use video toolbox
                     _hw_decoder.enabled = YES;
+                    _hw_decoder.encoderType = _encoderType;
                     _hw_decoder.enableFastUpload = self.enableFastUpload;
                     _soft_decoder.enabled = NO;
                     
@@ -687,6 +804,7 @@ LB2AUDHackParserDelegate>{
                 //rotation info set
                 //will effect video cache system
                 frameRaw->frame_info.rotate = _rotation;
+                frameRaw->frame_info.frame_flag.channelType = _videoChannelTag;
                 
                 pthread_mutex_lock(&_processor_mutex);
                 NSArray* streamProcessorCopyList = [NSArray arrayWithArray:_stream_processor_list];
@@ -752,6 +870,9 @@ LB2AUDHackParserDelegate>{
                 }
             }
             
+            //cleanups
+            stream_info_changed = NO;
+            
 #if __PERFROMANCE_COUNT__
             //Performance Testing
             [self performanceCount:inputDataSize];
@@ -759,9 +880,9 @@ LB2AUDHackParserDelegate>{
             
             if(safe_resume_skip_count){
                 safe_resume_skip_count--;
-                //NSLog(@"safe resume frame:%d", safe_resume_skip_count);
+//                DJILog(@"safe resume frame:%d", safe_resume_skip_count);
                 if (safe_resume_skip_count == 0) { //Recovering from decoding pause
-                    NSLog(@"safe resume complete");
+//                    DJILOG(@"safe resume complete");
                     
                     if (self.isDefaultPreviewer) {
                         //only notify if this is default previewer
@@ -816,13 +937,22 @@ LB2AUDHackParserDelegate>{
 
 -(void) lb2AUDHackParser:(id)parser didParsedData:(void *)data size:(int)size{
     
+#if __LB2_PARSER_DUMP__
+    if(!lb2Dumper){
+        lb2Dumper = [[DJIDataDumper alloc] init];
+        lb2Dumper.namePerfix = @"lb2_hack";
+    }
+    
+    [lb2Dumper dumpData:data length:size];
+#endif
+    
     [_videoExtractor parseVideo:data length:size withFrame:^(VideoFrameH264Raw *frame) {
         if (!frame) {
             return;
         }
         
         if (self.dataQueue.count > FRAME_DROP_THRESHOLD) {
-            NSLog(@"decode dataqueue drop %d", FRAME_DROP_THRESHOLD);
+//            DJILOG(@"decode dataqueue drop %d", FRAME_DROP_THRESHOLD);
             [self.dataQueue clear];
         }
         [self.dataQueue push:(uint8_t*)frame length:sizeof(VideoFrameH264Raw) + frame->frame_size];
@@ -985,6 +1115,230 @@ LB2AUDHackParserDelegate>{
 -(void) hardwareDecoderUnavailable{
     //use soft decoder
     self.enableHardwareDecode = NO;
+}
+
+
+#pragma mark - tests
+
+static FILE* g_fp = nil;
+static uint8_t* g_pBuffer = nil;
+
+#if __WAIT_STEP_FRAME__
+dispatch_semaphore_t g_restart_wait = 0;
+#endif
+
+-(uint8_t*) testQueuePull:(int*)size{
+    int frameSize = 2048;
+    
+    if (!g_fp) {
+        NSArray* doucuments = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString* filePath = [doucuments objectAtIndex:0];
+        
+        filePath = [filePath stringByAppendingPathComponent:@"hard_3M.h264"];
+        g_fp = fopen([filePath UTF8String], "rb");
+        g_pBuffer = (uint8_t*)malloc(frameSize);
+    }
+    
+#if __WAIT_STEP_FRAME__
+    if (g_restart_wait == 0) {
+        g_restart_wait = dispatch_semaphore_create(0);
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleTestNotification:)
+                                                     name:@"preview"
+                                                   object:nil];
+    }
+
+#endif
+    
+    while (g_fp)
+    {
+        static int read_size = 0;
+        static int parse_size = 0;
+        static int frame_counter = 0;
+        
+        while (!feof(g_fp)) {
+            
+            __block uint8_t* outframe = nil;
+            __block int outframeSize = 0;
+            
+            size_t nRead = fread(g_pBuffer, 1, frameSize, g_fp);
+            //                        [[[VideoPreviewer instance] dataQueue] push:pBuffer length:nRead];
+            read_size += nRead;
+            [_videoExtractor parseVideo:g_pBuffer length:frameSize withFrame:^(VideoFrameH264Raw *frame) {
+                if (frame) {
+                    outframe = (uint8_t*)frame;
+                    outframeSize = frame->frame_size + sizeof(VideoFrameH264Raw);
+                }
+            }];
+            if (outframe) {
+                self.encoderType = H264EncoderType_GD600;
+                self.enableHardwareDecode = YES;
+                *size = outframeSize;
+                
+#if __WAIT_STEP_FRAME__
+                dispatch_semaphore_wait(g_restart_wait, DISPATCH_TIME_FOREVER);
+//                DJILog(@"frame %d offset:%p", frame_counter, parse_size);
+#endif
+                parse_size += outframeSize;
+                frame_counter ++;
+                return outframe;
+            }
+        }
+        
+        parse_size = 0;
+        frame_counter = 0;
+        fseek(g_fp, SEEK_SET, 0);
+    }
+    return nil;
+}
+
+#if __TEST_FRAME_PULL__
+
+static DJIH264FrameRawLayerDumper* g_frameReader = nil;
+-(VideoFrameH264Raw*) testFramePull:(int*)size{
+    static DJIDataDumper* dumper = nil;
+    
+    if (!g_frameReader) {
+        g_frameReader = [[DJIH264FrameRawLayerDumper alloc] init];
+        [g_frameReader openFile:@"h264frame_2016-05-06[10][29][48][372]_clip.bin"];
+        //dumper = [[DJIDataDumper alloc] init];
+        //dumper.namePerfix = @"frame_out";
+    }
+    
+#if __WAIT_STEP_FRAME__
+    if (g_restart_wait == 0) {
+        g_restart_wait = dispatch_semaphore_create(0);
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(handleTestNotification:)
+                                                     name:@"preview"
+                                                   object:nil];
+    }
+    dispatch_semaphore_wait(g_restart_wait, DISPATCH_TIME_FOREVER);
+#endif
+    
+    VideoFrameH264Raw* frame = [g_frameReader readNextFrame];
+    if (!frame) {
+        [g_frameReader seekToHead];
+        return nil;
+    }
+    
+    [dumper dumpData:frame->frame_data length:frame->frame_size];
+    
+    self.encoderType = H264EncoderType_H1_Inspire2;
+    *size = (int)frame->frame_size + (int)sizeof(VideoFrameH264Raw);
+    return frame;
+}
+#endif
+
+-(void) handleTestNotification:(NSNotification*)notify{
+    
+#if __WAIT_STEP_FRAME__
+    if ([notify.object isEqualToString:@"start"]) {
+
+        if (g_restart_wait) {
+            dispatch_semaphore_signal(g_restart_wait);
+        }
+    }
+#endif
+}
+
+static NSThread* g_pack_pull_test_thread;
+
+-(void) testPackPull{
+#if __TEST_PACK_PULL__
+    if (g_pack_pull_test_thread) {
+        return;
+    }
+    
+    g_pack_pull_test_thread = [[NSThread alloc] initWithTarget:self
+                                                      selector:@selector(packPullThreadWork)
+                                                        object:nil];
+    [g_pack_pull_test_thread start];
+#endif
+}
+
+#if __TEST_PACK_PULL__
+-(void) packPullThreadWork{
+    DJIDataDumper* dumper = [[DJIDataDumper alloc] init];
+    if (![dumper openFile:@"videoPack_2016-09-24[21][12][15][720].bin" withPackAlignMode:YES]) {
+        return;
+    }
+    
+    size_t data_counter = 0;
+    size_t pack_counter = 0;
+    
+    while (1) {
+        @autoreleasepool {
+            if (self.dataQueue.count > 3) {
+                usleep(5000);
+                continue;
+            }
+            
+            size_t size = 0;
+            uint8_t* data = [dumper readNextPack:&size];
+            pack_counter++;
+            data_counter += size;
+            
+            if (data && size) {
+                self.encoderType = H264EncoderType_LightBridge2;
+                [self push:data length:(int)size];
+            }
+            else{
+                [dumper seekToHead];
+                pack_counter = 0;
+                data_counter = 0;
+#if __WAIT_STEP_FRAME__
+                if (g_restart_wait == 0) {
+                    g_restart_wait = dispatch_semaphore_create(0);
+                    [[NSNotificationCenter defaultCenter] addObserver:self
+                                                             selector:@selector(handleTestNotification:)
+                                                                 name:@"preview"
+                                                               object:nil];
+                }
+                dispatch_semaphore_wait(g_restart_wait, DISPATCH_TIME_FOREVER);
+#endif
+            }
+            
+            if (data) {
+                free(data);
+            }
+        }
+        usleep(2000);
+    }
+}
+#endif
+
+-(void) performanceCount:(int)inputDataSize {
+    static NSDate* startTime = nil;
+    static int video_last_count_time = 0;
+    CGFloat _outputFps;
+    int _outputKbitPerSec;
+    
+    if (startTime == nil) {
+        startTime = [NSDate date];
+    }
+    
+    //status check
+    int tEndTime = (1000*(-[startTime timeIntervalSinceNow]));
+    {
+        static int frame_count = 0;
+        static int bits_count = 0;
+        
+        frame_count++;
+        bits_count += inputDataSize*8;
+        
+        int diff = (int)((tEndTime - video_last_count_time));
+        if (diff >= 1000) {
+            _outputFps = 1000*frame_count/(double)diff;
+            _outputKbitPerSec = (1000/(double)1024)*(bits_count/(double)diff);
+            
+//            DJILOG(@"fps:%.2f rate:%dkbps buffer:%d", _outputFps, _outputKbitPerSec, (int)_dataQueue.count);
+            
+            frame_count = 0;
+            bits_count = 0;
+            video_last_count_time = tEndTime;
+        }
+    }
 }
 
 @end

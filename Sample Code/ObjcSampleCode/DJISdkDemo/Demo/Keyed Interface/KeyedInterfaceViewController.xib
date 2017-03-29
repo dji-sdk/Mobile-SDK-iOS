@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyedInterfaceViewController">
+            <connections>
+                <outlet property="batteryLevelLabel" destination="e9U-dv-XT1" id="Q6k-ck-ggJ"/>
+                <outlet property="exposureSettingsButton" destination="gZu-Im-DTk" id="z9b-QB-RYH"/>
+                <outlet property="exposureSettingsLabel" destination="jkU-uY-5N2" id="66s-Af-ygn"/>
+                <outlet property="getBatteryLevelButton" destination="ggY-VY-ccG" id="fNu-i6-LdQ"/>
+                <outlet property="listeningCoordinatesLabel" destination="taM-Gp-XXk" id="gtz-CF-8Ip"/>
+                <outlet property="listeningOnCoordinatesButton" destination="BrM-4F-VKY" id="HbW-LS-j37"/>
+                <outlet property="setCameraModeButton" destination="lHt-eK-oba" id="H4d-3x-lFm"/>
+                <outlet property="setCameraModeLabel" destination="qn3-AD-8I5" id="fug-rg-VfO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggY-VY-ccG">
+                    <rect key="frame" x="131" y="70" width="113" height="30"/>
+                    <state key="normal" title="Get battery level"/>
+                    <connections>
+                        <action selector="getBatteryLevel:" destination="-1" eventType="touchUpInside" id="Jdq-qP-qAF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHt-eK-oba">
+                    <rect key="frame" x="126" y="154" width="123" height="30"/>
+                    <state key="normal" title="Set Camera Mode"/>
+                    <connections>
+                        <action selector="setCameraMode:" destination="-1" eventType="touchUpInside" id="dOj-lB-IkJ"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9U-dv-XT1">
+                    <rect key="frame" x="164.5" y="108" width="46" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Mode: N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn3-AD-8I5">
+                    <rect key="frame" x="115.5" y="192" width="144" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrM-4F-VKY">
+                    <rect key="frame" x="137.5" y="238" width="100" height="30"/>
+                    <state key="normal" title="Start Listening"/>
+                    <connections>
+                        <action selector="startStopListeningOnCoodinates:" destination="-1" eventType="touchUpInside" id="SaY-AR-z7d"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat: 0,000 - Long: 0,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taM-Gp-XXk">
+                    <rect key="frame" x="94.5" y="276" width="186" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZu-Im-DTk">
+                    <rect key="frame" x="111.5" y="322" width="153" height="30"/>
+                    <state key="normal" title="Get Exposure Settings"/>
+                    <connections>
+                        <action selector="getExposureSettings:" destination="-1" eventType="touchUpInside" id="kxY-Ci-pp7"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkU-uY-5N2">
+                    <rect key="frame" x="10" y="360" width="356" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jkU-uY-5N2" firstAttribute="centerX" secondItem="gZu-Im-DTk" secondAttribute="centerX" id="1Z8-Qp-LPb"/>
+                <constraint firstItem="BrM-4F-VKY" firstAttribute="top" secondItem="qn3-AD-8I5" secondAttribute="bottom" constant="25" id="2Rq-KR-x3Y"/>
+                <constraint firstItem="qn3-AD-8I5" firstAttribute="centerX" secondItem="lHt-eK-oba" secondAttribute="centerX" id="39J-fl-OKG"/>
+                <constraint firstItem="jkU-uY-5N2" firstAttribute="top" secondItem="gZu-Im-DTk" secondAttribute="bottom" constant="8" id="ERd-XB-KEi"/>
+                <constraint firstItem="jkU-uY-5N2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="EUR-5X-3cZ"/>
+                <constraint firstItem="e9U-dv-XT1" firstAttribute="centerX" secondItem="ggY-VY-ccG" secondAttribute="centerX" id="FEC-wy-vzG"/>
+                <constraint firstItem="e9U-dv-XT1" firstAttribute="top" secondItem="ggY-VY-ccG" secondAttribute="bottom" constant="8" id="GLJ-eR-r9I"/>
+                <constraint firstItem="ggY-VY-ccG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="HNX-Ec-JTg"/>
+                <constraint firstItem="taM-Gp-XXk" firstAttribute="top" secondItem="BrM-4F-VKY" secondAttribute="bottom" constant="8" id="LJh-ey-5AN"/>
+                <constraint firstItem="lHt-eK-oba" firstAttribute="centerX" secondItem="e9U-dv-XT1" secondAttribute="centerX" id="T6c-sS-Y72"/>
+                <constraint firstItem="gZu-Im-DTk" firstAttribute="centerX" secondItem="taM-Gp-XXk" secondAttribute="centerX" id="WHq-hc-ekS"/>
+                <constraint firstItem="lHt-eK-oba" firstAttribute="top" secondItem="e9U-dv-XT1" secondAttribute="bottom" constant="25" id="WQx-sp-yeh"/>
+                <constraint firstItem="BrM-4F-VKY" firstAttribute="centerX" secondItem="qn3-AD-8I5" secondAttribute="centerX" id="XTS-Ih-gfa"/>
+                <constraint firstItem="qn3-AD-8I5" firstAttribute="top" secondItem="lHt-eK-oba" secondAttribute="bottom" constant="8" id="fBJ-G0-Yrs"/>
+                <constraint firstItem="ggY-VY-ccG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="fhf-ZI-S9r"/>
+                <constraint firstItem="gZu-Im-DTk" firstAttribute="top" secondItem="taM-Gp-XXk" secondAttribute="bottom" constant="25" id="tpH-J0-5di"/>
+                <constraint firstItem="taM-Gp-XXk" firstAttribute="centerX" secondItem="BrM-4F-VKY" secondAttribute="centerX" id="vJP-Vl-8h3"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

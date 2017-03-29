@@ -22,13 +22,14 @@
 #import "FCActionsTableViewController.h"
 #import "RCActionsTableViewController.h"
 #import "HandheldControllerActionsTableViewController.h"
-#import "MobileRemoteControllerViewController.h"
 
 #import "WaypointMissionViewController.h"
 #import "HotpointMissionViewController.h"
 #import "FollowMeMissionViewController.h"
-#import "CustomMissionViewController.h"
+#import "TimelineMissionViewController.h"
 #import "PanoramaMissionViewController.h"
+
+#import "KeyedInterfaceViewController.h"
 
 @interface ComponentSelectionViewController () <DJIBaseProductDelegate>
 
@@ -44,20 +45,56 @@
     
     self.title = @"Components & Missions";
     
-    self.sectionNames = [NSMutableArray arrayWithArray:@[@"Components", @"Missions"]];
+    self.sectionNames = [NSMutableArray arrayWithArray:@[@"SDK 4.0 New Interfaces", @"Components"]];
     
+    [self initializeSDK40Section];
     [self initializeComponentSection];
-    [self initializeMissionSection];
 }
 
+- (void)initializeSDK40Section {
+    DJIBaseProduct* product = [DemoComponentHelper fetchProduct];
+    NSMutableArray *sdk40Interfaces = [NSMutableArray new];
+    
+    if ([product isKindOfClass:[DJIAircraft class]]) {
+        [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint Mission Operator" andClass:[WaypointMissionViewController class]]];
+        [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Hotpoint Mission Operator" andClass:[HotpointMissionViewController class]]];
+        [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"FollowMe Mission Operator" andClass:[FollowMeMissionViewController class]]];
+        [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Timeline Mission Operator" andClass:[TimelineMissionViewController class]]];
+    } else if ([product isKindOfClass:[DJIHandheld class]]) {
+    	[sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Panorama Mission Operator" andClass:[PanoramaMissionViewController class]]];
+    }
+    
+    [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Keyed Interface" andClass:[KeyedInterfaceViewController class]]];
+    
+    [self.items addObject:sdk40Interfaces];
+}
 
 // Use DJIBaseProduct's components property to initialize the table view.
 -(void) initializeComponentSection {
     NSMutableArray* components = [[NSMutableArray alloc] init];
-    for (NSString* name in [[DemoComponentHelper fetchProduct].components allKeys]) {
-        [components addObject:[DemoSettingItem itemWithName:[name capitalizedString] andClass:[[self componentVCDict] objectForKey:name]]];
-    }
     
+    if ([DemoComponentHelper fetchBattery]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIBatteryComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIBatteryComponent]]];
+    }
+    if ([DemoComponentHelper fetchGimbal]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIGimbalComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIGimbalComponent]]];
+    }
+    if ([DemoComponentHelper fetchCamera]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJICameraComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJICameraComponent]]];
+    }
+    if ([DemoComponentHelper fetchAirLink]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIAirLinkComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIAirLinkComponent]]];
+    }
+    if ([DemoComponentHelper fetchFlightController]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIFlightControllerComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIFlightControllerComponent]]];
+    }
+    if ([DemoComponentHelper fetchRemoteController]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIRemoteControllerComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIRemoteControllerComponent]]];
+    }
+    if ([DemoComponentHelper fetchHandheldController]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJIHandheldControllerComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIHandheldControllerComponent]]];
+    }
+
     [self.items addObject:components];
 }
 
@@ -74,28 +111,10 @@
                            DJIFlightControllerComponent : [FCActionsTableViewController class],
                            DJIRemoteControllerComponent : [RCActionsTableViewController class],
                            DJIHandheldControllerComponent : [HandheldControllerActionsTableViewController class],
-                           DJIMobileRemoteControllerComponent : [MobileRemoteControllerViewController class],
                            };
         
     });
     return componentsDict;
-}
-
-// An aircraft can execute four types of missions while a handheld device can execute only the panorama mission.
--(void) initializeMissionSection {
-    DJIBaseProduct* product = [DemoComponentHelper fetchProduct];
-    if ([product isKindOfClass:[DJIAircraft class]]) {
-        [self.items addObject:@[[DemoSettingItem itemWithName:@"Waypoint Mission" andClass:[WaypointMissionViewController class]],
-                                [DemoSettingItem itemWithName:@"Hotpoint Mission" andClass:[HotpointMissionViewController class]],
-                                [DemoSettingItem itemWithName:@"Follow-me Mission" andClass:[FollowMeMissionViewController class]],
-                                [DemoSettingItem itemWithName:@"Custom Mission" andClass:[CustomMissionViewController class]]]];
-    }
-    else if ([product isKindOfClass:[DJIHandheld class]]) {
-        [self.items addObject:@[[DemoSettingItem itemWithName:@"Panorama Mission" andClass:[PanoramaMissionViewController class]]]];
-    }
-    else {
-        [self.items addObject:@[]];
-    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -113,20 +132,20 @@
 // 2. When a new component is connected (newComponent is not nil), we add an item to the table.
 -(void) componentWithKey:(NSString *)key changedFrom:(DJIBaseComponent *)oldComponent to:(DJIBaseComponent *)newComponent {
     if (oldComponent == nil && newComponent != nil) { // a new component is connected
-        for (DemoSettingItem* item in self.items[0]) {
+        for (DemoSettingItem* item in self.items[1]) {
             if ([item.itemName isEqualToString:[key capitalizedString]]) {
                 return;
             }
         }
-        [self.items[0] addObject:[DemoSettingItem itemWithName:[key capitalizedString] andClass:[[self componentVCDict] objectForKey:key]]];
+        [self.items[1] addObject:[DemoSettingItem itemWithName:[key capitalizedString] andClass:[[self componentVCDict] objectForKey:key]]];
         [self.tableView reloadData];
         return;
     }
 
-    for (DemoSettingItem* item in self.items[0]) {
+    for (DemoSettingItem* item in self.items[1]) {
         if ([item.itemName isEqualToString:[key capitalizedString]]) {
             if (oldComponent != nil && newComponent == nil) { // a component is disconnected
-                [self.items[0] removeObject:item];
+                [self.items[1] removeObject:item];
                 [self.tableView reloadData];
                 return;
             }

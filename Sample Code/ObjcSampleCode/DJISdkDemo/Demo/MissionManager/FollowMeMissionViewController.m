@@ -18,6 +18,8 @@
  */
 #import <DJISDK/DJISDK.h>
 #import "FollowMeMissionViewController.h"
+#import "DemoAlertView.h"
+#import "DemoUtilityMacro.h"
 
 #define RUNNING_DISTANCE_IN_METER   (10)
 #define ONE_METER_OFFSET            (0.00000901315)
@@ -30,6 +32,7 @@
 @property (nonatomic) CLLocationCoordinate2D target2;
 @property (nonatomic) CLLocationCoordinate2D prevTarget;
 @property (nonatomic) BOOL isGoingToNorth;
+@property (nonatomic, weak) DJIFollowMeMissionOperator *followMeOperator;
 
 @end
 
@@ -42,12 +45,15 @@
     
     // Follow-me mission required the aircraft location before initializing the mission
     // Therefore, we disable the prepare button until the aircraft location is valid
-    [self.prepareButton setEnabled:CLLocationCoordinate2DIsValid(self.aircraftLocation)];
+    self.followMeOperator = [[DJISDKManager missionControl] followMeMissionOperator];
 }
 
 -(void)setAircraftLocation:(CLLocationCoordinate2D)aircraftLocation {
     _aircraftLocation = aircraftLocation;
-    [self.prepareButton setEnabled:CLLocationCoordinate2DIsValid(self.aircraftLocation)];
+    self.prepareButton.enabled = NO;
+    self.pauseButton.enabled = NO;
+    self.resumeButton.enabled = NO;
+    self.downloadButton.enabled = NO;
 }
 
 -(DJIMission*) initializeMission {
@@ -102,7 +108,7 @@
     }
     
     CLLocationCoordinate2D target = CLLocationCoordinate2DMake(self.prevTarget.latitude + offset, self.prevTarget.longitude);
-    [DJIFollowMeMission updateFollowMeCoordinate:target withCompletion:nil];
+    [self.followMeOperator updateFollowMeCoordinate:target];
     
     self.prevTarget = target;
     
@@ -130,39 +136,50 @@
     return [location1 distanceFromLocation:location2];
 }
 
-#pragma mark - Override Methods
--(void)missionManager:(DJIMissionManager *)manager missionProgressStatus:(DJIMissionProgressStatus *)missionProgress {
-    if ([missionProgress isKindOfClass:[DJIFollowMeMissionStatus class]]) {
-        DJIFollowMeMissionStatus* fmStatus = (DJIFollowMeMissionStatus*)missionProgress;
-        
-        [self showFollowMeMissionStatus:fmStatus];
-    }
-}
+#pragma mark - Execution
 
-/**
- *  Method to display the current status of the follow-me mission.
- */
--(void) showFollowMeMissionStatus:(DJIFollowMeMissionStatus*)fmStatus {
-    NSMutableString* statusStr = [NSMutableString stringWithFormat:@"HorizontalDistance: %f\n", fmStatus.horizontalDistance];
-    [statusStr appendFormat:@"ExecutionState: %u", (unsigned int)fmStatus.executionState];
+- (IBAction)onStartButtonClicked:(id)sender
+{
+    WeakRef(target);
+    DJIFollowMeMission* mission = (DJIFollowMeMission*)[self initializeMission];
+    [self.followMeOperator startMission:mission withCompletion:^(NSError * _Nullable error) {
+       	if (error) {
+            ShowResult(@"Start Mission Failed:%@", error);
+        } else {
+            [target missionDidStart:error];
+        }
+    }];
     
-    [self.statusLabel setText:statusStr];
+    [self.followMeOperator addListenerToEvents:self withQueue:nil andBlock:^(DJIFollowMeMissionEvent * _Nonnull event) {
+        [target onReciviedFollowMeEvent:event];
+    }];
 }
 
--(void)mission:(DJIMission *)mission didDownload:(NSError *)error {
-    if (error) return;
-    if ([mission isKindOfClass:[DJIFollowMeMission class]]) {
-        // Display information of the downloaded follow-me mission.
-        [self showFollowMeMission:(DJIFollowMeMission*)mission];
+- (IBAction)onStopButtonClicked:(id)sender
+{
+    WeakRef(target);
+    [self.followMeOperator stopMissionWithCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            ShowResult(@"Stop Mission Failed:%@", error.description);
+        } else {
+            [target startUpdateTimer];
+            [target.followMeOperator removeListener:self];
+        }
+    }];
+}
+
+
+-(void)onReciviedFollowMeEvent:(DJIFollowMeMissionEvent*)event
+{
+    NSMutableString *statusStr = [NSMutableString new];
+    [statusStr appendFormat:@"previousState:%@\n", [[self class] descriptionForState:event.previousState]];
+    [statusStr appendFormat:@"currentState:%@\n", [[self class] descriptionForState:event.currentState]];
+    [statusStr appendFormat:@"distanceToFollowMeCoordinate:%f\n", event.distanceToFollowMeCoordinate];
+    
+    if (event.error) {
+        [statusStr appendFormat:@"Mission Executing Error:%@", event.error.description];
     }
-}
-
--(void) showFollowMeMission:(DJIFollowMeMission*)fmMission {
-    NSMutableString* missionInfo = [NSMutableString stringWithString:@"The follow-me mission is downloaded successfully: \n"];
-    [missionInfo appendFormat:@"Follow-me Coordinate: (%f, %f)\n", fmMission.followMeCoordinate.latitude, fmMission.followMeCoordinate.longitude];
-    [missionInfo appendFormat:@"Altitude: %f\n", fmMission.followMeAltitude];
-    [missionInfo appendString:[NSString stringWithFormat:@"Heading: %u\n", (unsigned int)fmMission.heading]];
-    [self.statusLabel setText:missionInfo];
+    [self.statusLabel setText:statusStr];
 }
 
 -(void)missionDidStart:(NSError *)error {
@@ -177,19 +194,21 @@
     [self startUpdateTimer];
 }
 
--(void)missionWillPause {
-    [self pauseUpdateTimer];
-}
-
--(void)missionDidResume:(NSError *)error {
-    // Only resume the updating if the mission is resumed successfully.
-    if (error) return;
-    
-    [self resumeUpdateTimer];
-}
-
--(void)missionDidStop:(NSError *)error {
-    [self stopUpdateTimer];
++(NSString *)descriptionForState:(DJIFollowMeMissionState)state {
+    switch (state) {
+        case DJIFollowMeMissionStateUnknown:
+            return @"Unknown";
+        case DJIFollowMeMissionStateExecuting:
+            return @"Executing";
+        case DJIFollowMeMissionStateRecovering:
+            return @"Recovering";
+        case DJIFollowMeMissionStateDisconnected:
+            return @"Disconnected";
+        case DJIFollowMeMissionStateNotSupported:
+            return @"NotSupported";
+        case DJIFollowMeMissionStateReadyToStart:
+            return @"ReadyToStart";
+    }
 }
 
 @end

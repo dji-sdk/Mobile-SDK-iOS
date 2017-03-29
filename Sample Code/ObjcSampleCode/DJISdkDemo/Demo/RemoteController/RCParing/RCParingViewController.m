@@ -33,7 +33,7 @@
 - (IBAction)onStartParingButtonClicked:(id)sender {
     DJIRemoteController* rc = [DemoComponentHelper fetchRemoteController];
     if (rc) {
-        [rc enterRCToAircraftPairingModeWithCompletion:^(NSError * _Nullable error) {
+        [rc startPairingWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Start Failed:%@", error.localizedDescription);
             }
@@ -52,7 +52,7 @@
 - (IBAction)onStopParingButtonClicked:(id)sender {
     DJIRemoteController* rc = [DemoComponentHelper fetchRemoteController];
     if (rc) {
-        [rc exitRCToAircraftPairingModeWithCompletion:^(NSError * _Nullable error) {
+        [rc stopPairingWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Stop Failed:%@", error.localizedDescription);
             }

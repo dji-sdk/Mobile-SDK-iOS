@@ -75,31 +75,31 @@
     }
 }
 
-- (void)flightController:(DJIFlightController *)fc didUpdateSystemState:(DJIFlightControllerCurrentState *)state
+-(void)flightController:(DJIFlightController *)fc didUpdateState:(DJIFlightControllerState *)state
 {
     self.headingLabel.text = [NSString stringWithFormat:@"%0.1f", fc.compass.heading];
     self.calibratingLabel.text = fc.compass.isCalibrating ? @"YES" : @"NO";
-    self.statusLabel.text = [self stringWithCalibrationStatus:fc.compass.calibrationStatus];
+    self.statusLabel.text = [self stringWithCalibrationStatus:fc.compass.calibrationState];
 }
 
--(NSString*) stringWithCalibrationStatus:(DJICompassCalibrationStatus)status
+-(NSString*) stringWithCalibrationStatus:(DJICompassCalibrationState)status
 {
-    if (status == DJICompassCalibrationStatusNone) {
-        return @"None";
+    if (status == DJICompassCalibrationStateNotCalibrating) {
+        return @"NotCalibrating";
     }
-    else if (status == DJICompassCalibrationStatusHorizontal)
+    else if (status == DJICompassCalibrationStateHorizontal)
     {
         return @"Horizontal";
     }
-    else if (status == DJICompassCalibrationStatusVertical)
+    else if (status == DJICompassCalibrationStateVertical)
     {
         return @"Vertical";
     }
-    else if (status == DJICompassCalibrationStatusSucceeded)
+    else if (status == DJICompassCalibrationStateSuccessful)
     {
-        return @"Succeeded";
+        return @"Successful";
     }
-    else if (status == DJICompassCalibrationStatusFailed)
+    else if (status == DJICompassCalibrationStateFailed)
     {
         return @"Failed";
     }

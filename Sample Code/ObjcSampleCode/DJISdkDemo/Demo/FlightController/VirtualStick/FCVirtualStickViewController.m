@@ -70,7 +70,7 @@
     [super viewWillAppear:animated];
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc && fc.simulator) {
-        self.isSimulatorOn = fc.simulator.isSimulatorStarted;
+        self.isSimulatorOn = fc.simulator.isSimulatorActive;
         [self updateSimulatorUI];
         
         [fc.simulator addObserver:self forKeyPath:@"isSimulatorStarted" options:NSKeyValueObservingOptionNew context:nil];
@@ -91,7 +91,7 @@
 {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc disableVirtualStickControlModeWithCompletion:^(NSError * _Nullable error) {
+        [fc setVirtualStickModeEnabled:NO withCompletion:^(NSError * _Nullable error) {
             if (error){
                 ShowResult(@"Exit Virtual Stick Mode: %@", error.debugDescription);
             } else{
@@ -111,8 +111,8 @@
     if (fc) {
         fc.yawControlMode = DJIVirtualStickYawControlModeAngularVelocity;
         fc.rollPitchControlMode = DJIVirtualStickRollPitchControlModeVelocity;
-        
-        [fc enableVirtualStickControlModeWithCompletion:^(NSError *error) {
+
+        [fc setVirtualStickModeEnabled:YES withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Enter Virtual Stick Mode:%@", error.description);
             }
@@ -132,7 +132,7 @@
 {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc takeoffWithCompletion:^(NSError *error) {
+        [fc startTakeoffWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Takeoff:%@", error.description);
             } else {
@@ -172,16 +172,19 @@
         if (!self.isSimulatorOn) {
             // The initial aircraft's position in the simulator.
             CLLocationCoordinate2D location = CLLocationCoordinate2DMake(22, 113);
-            [fc.simulator startSimulatorWithLocation:location updateFrequency:20 GPSSatellitesNumber:10 withCompletion:^(NSError * _Nullable error) {
-                if (error) {
-                    ShowResult(@"Start simulator error:%@", error.description);
-                } else {
-                    ShowResult(@"Start simulator succeeded.");
-                }
-            }];
+            [fc.simulator startWithLocation:location
+                            updateFrequency:20
+                        GPSSatellitesNumber:10
+                             withCompletion:^(NSError * _Nullable error) {
+                                 if (error) {
+                                     ShowResult(@"Start simulator error:%@", error.description);
+                                 } else {
+                                     ShowResult(@"Start simulator succeeded.");
+                                 }
+                             }];
         }
         else {
-            [fc.simulator stopSimulatorWithCompletion:^(NSError * _Nullable error) {
+            [fc.simulator stopWithCompletion:^(NSError * _Nullable error) {
                 if (error) {
                     ShowResult(@"Stop simulator error:%@", error.description);
                 } else {
@@ -224,8 +227,8 @@
 }
 
 -(void) setXVelocity:(float)x andYVelocity:(float)y {
-    mXVelocity = x * DJIVirtualStickRollPitchControlMaxVelocity;
-    mYVelocity = y * DJIVirtualStickRollPitchControlMaxVelocity;
+    mXVelocity = x * 5.0;
+    mYVelocity = y * 5.0;
     [self updateJoystick];
 }
 
@@ -263,7 +266,7 @@
 
 #pragma mark - Delegate
 
--(void)simulator:(DJISimulator *)simulator updateSimulatorState:(DJISimulatorState *)state {
+-(void)simulator:(DJISimulator *)simulator didUpdateState:(DJISimulatorState *)state {
     [self.simulatorStateLabel setHidden:NO];
     self.simulatorStateLabel.text = [NSString stringWithFormat:@"Yaw: %f\nX: %f Y: %f Z: %f", state.yaw, state.positionX, state.positionY, state.positionZ];
 }

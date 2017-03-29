@@ -1,5 +1,6 @@
 //
 //  DJIVideoPresentViewAdjustHelper.m
+//  DJIWidget
 //
 //  Copyright (c) 2016 DJI. All rights reserved.
 //

@@ -6,20 +6,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <DJISDK/DJISDK.h>
 
 @class VideoPreviewer;
 
-@interface VideoPreviewerSDKAdapter : NSObject
+@interface VideoPreviewerSDKAdapter : NSObject <DJIVideoFeedSourceListener, DJIVideoFeedListener>
 
-+(instancetype)adapterWithVideoPreviewer:(VideoPreviewer *)videoPreviewer;
++(instancetype)adapterWithDefaultSettings;
+
++(instancetype)adapterWithForLightbridge2; 
+
++(instancetype)adapterWithVideoPreviewer:(VideoPreviewer *)videoPreviewer andVideoFeed:(DJIVideoFeed *)videoFeed;
 
 @property (nonatomic, weak) VideoPreviewer *videoPreviewer;
 
-@property (nonatomic) BOOL isSecondaryLiveStream; // Only useful for Inspire 2
+@property (nonatomic, weak) DJIVideoFeed *videoFeed;
 
 -(void)start;
 
 -(void)stop;
-
 
 @end

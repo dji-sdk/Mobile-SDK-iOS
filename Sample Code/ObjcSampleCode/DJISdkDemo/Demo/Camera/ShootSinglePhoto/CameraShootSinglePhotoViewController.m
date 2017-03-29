@@ -72,10 +72,10 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getCameraModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: getCameraModeWithCompletion:. %@", error.description);
+                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
             }
             else if (mode == DJICameraModeShootPhoto) {
                 target.isInShootPhotoMode = YES;
@@ -95,17 +95,25 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setCameraMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
+        [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: setCameraMode:withCompletion:. %@", error.description);
+                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
             }
             else {
                 // Normally, once an operation is finished, the camera still needs some time to finish up
                 // all the work. It is safe to delay the next operation after an operation is finished.
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     WeakReturn(target);
-                    target.isInShootPhotoMode = YES;
+                    [camera setShootPhotoMode:DJICameraShootPhotoModeSingle withCompletion:^(NSError * _Nullable error) {
+                        WeakReturn(target);
+                        if (error) {
+                            ShowResult(@"ERROR: setShootPhotoMode:withCompletion:. %@", error.description);
+                        }
+                        else {
+                            target.isInShootPhotoMode = YES;
+                        }
+                    }];
                 });
             }
         }];
@@ -121,7 +129,7 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         [self.shootPhotoButton setEnabled:NO];
-        [camera startShootPhoto:DJICameraShootPhotoModeSingle withCompletion:^(NSError * _Nullable error) {
+        [camera startShootPhotoWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: startShootPhoto:withCompletion:. %@", error.description);
             }
@@ -133,14 +141,16 @@
 - (void)setVideoPreview {
     [[VideoPreviewer instance] start];
     [[VideoPreviewer instance] setView:self.videoFeedView];
-    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
 }
 
 - (void)cleanVideoPreview {
     [[VideoPreviewer instance] unSetView];
-    [self.previewerAdapter stop];
-    self.previewerAdapter = nil;
+    if (self.previewerAdapter) {
+    	[self.previewerAdapter stop];
+    	self.previewerAdapter = nil;
+    }
 }
 
 -(void) setIsInShootPhotoMode:(BOOL)isInShootPhotoMode {
@@ -163,8 +173,8 @@
 }
 
 #pragma mark - DJICameraDelegate
--(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size {
-    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
+-(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)length {
+    [[VideoPreviewer instance] push:videoBuffer length:(int)length];
 }
 
 -(void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState {

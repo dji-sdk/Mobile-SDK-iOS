@@ -148,4 +148,11 @@
     return nil;
 }
 
++(DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
+                                              withListener:(id)listener
+                                            andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock {
+    [[DJISDKManager keyManager] startListeningForChangesOnKey:key withListener:listener andUpdateBlock:updateBlock];
+    return [[DJISDKManager keyManager] getValueForKey:key];
+}
+
 @end

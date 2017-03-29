@@ -40,7 +40,7 @@
     
     
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
-    if (airLink && [airLink isLBAirLinkSupported]) {
+    if (airLink && airLink.isLightbridgeLinkSupported) {
         [self getLBChannelMode];
     }
     else {
@@ -57,25 +57,25 @@
     [super viewWillDisappear:animated];
     
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
-    if (airLink && [airLink isLBAirLinkSupported]) {
-        [airLink.lbAirLink setChannelSelectionMode:DJILBAirLinkChannelSelectionModeAuto withCompletion:nil];
+    if (airLink && airLink.isLightbridgeLinkSupported) {
+        [airLink.lightbridgeLink setChannelSelectionMode:DJILightbridgeChannelSelectionModeAuto withCompletion:nil];
     }
 }
 
 /**
- *  Check if the LB Air Link is in mode DJILBAirLinkChannelSelectionModeManual. 
- *  We need to set it to DJILBAirLinkChannelSelectionModeManual if it is not.
+ *  Check if the LB Air Link is in mode DJILightbridgeChannelSelectionModeManual. 
+ *  We need to set it to DJILightbridgeChannelSelectionModeManual if it is not.
  */
 -(void) getLBChannelMode {
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
     if (airLink) {
         WeakRef(target);
-        [airLink.lbAirLink getChannelSelectionModeWithCompletion:^(DJILBAirLinkChannelSelectionMode mode, NSError * _Nullable error) {
+        [airLink.lightbridgeLink getChannelSelectionModeWithCompletion:^(DJILightbridgeChannelSelectionMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: getChannelSelectionMode. %@", error.description);
             }
-            else if (mode == DJILBAirLinkChannelSelectionModeManual) {
+            else if (mode == DJILightbridgeChannelSelectionModeManual) {
                 [target.getValueButton setEnabled:YES];
                 [target.setValueButton setEnabled:YES];
             }
@@ -90,7 +90,7 @@
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
     if (airLink) {
         WeakRef(target);
-        [airLink.lbAirLink setChannelSelectionMode:DJILBAirLinkChannelSelectionModeManual withCompletion:^(NSError * _Nullable error) {
+        [airLink.lightbridgeLink setChannelSelectionMode:DJILightbridgeChannelSelectionModeManual withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: setChannelSelectionMode. %@", error.description);
@@ -107,7 +107,7 @@
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
     if (airLink) {
         WeakRef(target);
-        [airLink.lbAirLink getChannelWithCompletion:^(int channel, NSError * _Nullable error) {
+        [airLink.lightbridgeLink getChannelNumberWithCompletion:^(int channel, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: getChannel. %@",error.description);
@@ -124,7 +124,7 @@
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
     if (airLink) {
         int channelIndex = [self.setValueTextField.text intValue];
-        [airLink.lbAirLink setChannel:channelIndex withCompletion:^(NSError * _Nullable error) {
+        [airLink.lightbridgeLink setChannelNumber:channelIndex withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: setChannel. %@", error.description);
             }

@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "DJI-SDK-iOS"
-  s.version      = "3.5.1"
+  s.version      = "4.0"
   s.summary      = "DJI Mobile SDK for iOS"
   s.homepage     = "https://github.com/dji-sdk/Mobile-SDK-iOS"
   s.license      = { :type => 'CUSTOM', :text => <<-LICENSE
@@ -35,10 +35,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     LICENSE
   }
 
-  s.author       = { "DJI SDK" => "sdk@dji.com" }
+  s.author       = { "DJI SDK" => "dev@dji.com" }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source       = { :http => "http://dh7g4ai1w5iq6.cloudfront.net/ios_sdk/iOS_Mobile_SDK_3.5.1_170116.zip"}
+  s.source       = { :http => "http://dh7g4ai1w5iq6.cloudfront.net/ios_sdk/iOS_Mobile_SDK_4.0_170329.zip"}
   s.ios.vendored_frameworks = 'iOS_Mobile_SDK/DJISDK.framework'
 
 end

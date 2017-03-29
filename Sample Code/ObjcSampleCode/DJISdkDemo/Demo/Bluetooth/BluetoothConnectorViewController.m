@@ -27,7 +27,7 @@ static NSString* const BluetoothCellReuseKey = @"BluetoothCellReuseKey";
 @implementation BluetoothConnectorViewController
 
 -(DJIBluetoothProductConnector *)bluetoothConnector {
-    return [DJISDKManager bluetoothConnector];
+    return [DJISDKManager bluetoothProductConnector];
 }
 
 - (void)viewDidLoad

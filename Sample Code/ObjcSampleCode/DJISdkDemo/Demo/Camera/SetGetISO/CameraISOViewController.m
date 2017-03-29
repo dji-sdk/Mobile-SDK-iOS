@@ -87,10 +87,10 @@ static NSString* STATE_WAIT_FOR_INPUT = @"The input should be an integer. ";
     
     if (camera) {
         WeakRef(target);
-        [camera getCameraModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: getCameraModeWithCompletion:. %@", error.description];
+                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: getModeWithCompletion:. %@", error.description];
             }
             else if (mode == DJICameraModeShootPhoto || mode == DJICameraModeRecordVideo) {
                 // the first pre-condition is satisfied. Check the second one.
@@ -112,10 +112,10 @@ static NSString* STATE_WAIT_FOR_INPUT = @"The input should be an integer. ";
     DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setCameraMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
+        [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: setCameraMode:withCompletion:. %@", error.description];
+                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: setMode:withCompletion:. %@", error.description];
             }
             else {
                 // Normally, once an operation is finished, the camera still needs some time to finish up
@@ -192,9 +192,13 @@ static NSString* STATE_WAIT_FOR_INPUT = @"The input should be an integer. ";
  *  We provide a utility class called DJICameraParameters to check what the valid range for a parameter is.
  */
 -(void) updateValidISORange {
+    DJICamera* camera = [DemoComponentHelper fetchCamera];
+    if (camera == nil) {
+        return;
+    }
     NSMutableString* str = [NSMutableString stringWithString:STATE_WAIT_FOR_INPUT];
     [str appendString:@"\n the valid range: \n"];
-    [str appendString:[DJICameraParameters sharedInstance].supportedCameraISORange.horizontalDescription];
+    [str appendString:camera.capabilities.ISORange.horizontalDescription];
     self.rangeLabel.text = str;
 }
 

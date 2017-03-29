@@ -37,13 +37,13 @@
     DJIBattery* battery = [DemoComponentHelper fetchBattery];
     if (battery) {
         WeakRef(target);
-        [battery getSelfDischargeDayWithCompletion:^(uint8_t day, NSError * _Nullable error) {
+        [battery getSelfDischargeInDaysWithCompletion:^(uint8_t days, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: getBatterySelfDischargeDay. %@", error.description);
             }
             else {
-                NSString* getTextString = [NSString stringWithFormat:@"%u", day];
+                NSString* getTextString = [NSString stringWithFormat:@"%u", days];
                 target.getValueTextField.text = getTextString;
             }
         }];
@@ -55,7 +55,7 @@
     if (battery) {
         int selDischargeDay = [self.setValueTextField.text intValue];
 
-        [battery setSelfDischargeDay:selDischargeDay withCompletion:^(NSError * _Nullable error) {
+        [battery setSelfDischargeInDays:selDischargeDay withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: setBatterySelfDischargeDay. %@. ", error.description);
             }

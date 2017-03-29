@@ -16,7 +16,6 @@
 @property(strong,nonatomic) NSTimer* gimbalSpeedTimer;
 
 @property(atomic) float rotationAngleVelocity;
-@property(atomic) DJIGimbalRotateDirection rotationDirection;
 
 @end
 
@@ -46,12 +45,10 @@
 
 - (IBAction)onUpButtonClicked:(id)sender {
     self.rotationAngleVelocity = 5.0;
-    self.rotationDirection = DJIGimbalRotateDirectionClockwise;
 }
 
 - (IBAction)onDownButtonClicked:(id)sender {
-    self.rotationAngleVelocity = 5.0;
-    self.rotationDirection = DJIGimbalRotateDirectionCounterClockwise;
+    self.rotationAngleVelocity = -5.0;
 }
 
 - (IBAction)onStopButtonClicked:(id)sender {
@@ -61,15 +58,13 @@
 -(void) onUpdateGimbalSpeedTick:(id)timer {
     __weak DJIGimbal* gimbal = [DemoComponentHelper fetchGimbal];
     if (gimbal) {
-        DJIGimbalSpeedRotation pitchRotation;
-        pitchRotation.angleVelocity = self.rotationAngleVelocity;
-        pitchRotation.direction = self.rotationDirection;
-        
-        DJIGimbalSpeedRotation stopRotation;
-        stopRotation.angleVelocity = 0.0;
-        stopRotation.direction = DJIGimbalRotateDirectionClockwise;
-        
-        [gimbal rotateGimbalBySpeedWithPitch:pitchRotation roll:stopRotation yaw:stopRotation withCompletion:^(NSError * _Nullable error) {
+        DJIGimbalRotation *rotation = [DJIGimbalRotation gimbalRotationWithPitchValue:@(self.rotationAngleVelocity)
+                                                                            rollValue:nil
+                                                                             yawValue:nil
+                                                                                 time:0
+                                                                                 mode:DJIGimbalRotationModeSpeed];
+
+        [gimbal rotateWithRotation:rotation completion:^(NSError * _Nullable error) {
             if (error) {
                 NSLog(@"ERROR: rotateGimbalInSpeed. %@", error.description);
             }
@@ -79,7 +74,6 @@
 
 -(void) resetRotation {
     self.rotationAngleVelocity = 0.0;
-    self.rotationDirection = DJIGimbalRotateDirectionClockwise;
 }
 
 @end

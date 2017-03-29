@@ -6,6 +6,7 @@
 //
 
 #import "VideoPreviewerSDKAdapter.h"
+#import "VideoPreviewerSDKAdapter+Lightbridge2.h"
 #import <VideoPreviewer/VideoPreviewer.h>
 
 #import <DJISDK/DJISDK.h>
@@ -33,14 +34,27 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 @property (nonatomic) DJICameraMode cameraMode;
 @property (nonatomic) DJICameraPhotoAspectRatio photoRatio;
 
-@end
+@property (nonatomic) BOOL isForLightbridge2;
 
+@end
 
 @implementation VideoPreviewerSDKAdapter
 
-+(instancetype)adapterWithVideoPreviewer:(VideoPreviewer *)videoPreviewer {
++(instancetype)adapterWithDefaultSettings {
+    return [self adapterWithVideoPreviewer:[VideoPreviewer instance] andVideoFeed:[DJISDKManager videoFeeder].primaryVideoFeed];
+}
+
++(instancetype)adapterWithForLightbridge2 {
+    VideoPreviewerSDKAdapter *adapter = [self adapterWithDefaultSettings];
+    adapter.isForLightbridge2 = YES;
+    return adapter;
+}
+
++(instancetype)adapterWithVideoPreviewer:(VideoPreviewer *)videoPreviewer
+                            andVideoFeed:(DJIVideoFeed *)videoFeed {
     VideoPreviewerSDKAdapter *adapter = [VideoPreviewerSDKAdapter new];
     adapter.videoPreviewer = videoPreviewer;
+    adapter.videoFeed = videoFeed;
 
     return adapter;
 }
@@ -49,21 +63,34 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     if (self = [super init]) {
         _cameraMode = DJICameraModeUnknown;
         _photoRatio = DJICameraPhotoAspectRatioUnknown;
-        _isSecondaryLiveStream = NO;
-
         if (g_loadPrebuildIframeOverrideFunc == NULL) {
             g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
         }
+        _isForLightbridge2 = NO;
     }
     return self;
 }
 
 -(void)start {
     [self startRefreshTimer];
+    [[DJISDKManager videoFeeder] addVideoFeedSourceListener:self];
+    if (self.videoFeed) {
+        [self.videoFeed addListener:self withQueue:nil];
+    }
+    if (self.isForLightbridge2) {
+        [self startLightbridgeListen];
+    }
 }
 
 -(void)stop {
     [self stopRefreshTimer];
+    [[DJISDKManager videoFeeder] removeVideoFeedSourceListener:self];
+    if (self.videoFeed) {
+        [self.videoFeed removeListener:self];
+    }
+    if (self.isForLightbridge2) {
+        [self stopLightbridgeListen]; 
+    }
 }
 
 -(void)startRefreshTimer {
@@ -94,7 +121,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 
     // 1. check if the product is still connecting
     DJIBaseProduct *product = [DJISDKManager product];
-    if (product == nil || !product.isConnected) {
+    if (product == nil) {
         return;
     }
 
@@ -114,14 +141,14 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     DJICamera *camera = [[self class] camera];
     if (camera) {
         weakSelf(target);
-        [camera getCameraModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
             weakReturn(target);
             if (error == nil) {
                 target.cameraMode = mode;
                 [target updateContentRect];
             }
         }];
-        [camera getPhotoRatioWithCompletion:^(DJICameraPhotoAspectRatio ratio, NSError * _Nullable error) {
+        [camera getPhotoAspectRatioWithCompletion:^(DJICameraPhotoAspectRatio ratio, NSError * _Nullable error) {
             weakReturn(target);
             if (error == nil) {
                 target.photoRatio = ratio;
@@ -153,7 +180,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 
 -(void)updateEncodeType {
     // Check if Inspire 2 FPV
-    if (self.isSecondaryLiveStream) {
+    if (self.videoFeed.physicalSource == DJIVideoFeedPhysicalSourceFPVCamera) {
         [self.videoPreviewer setEncoderType:H264EncoderType_1860_Inspire2_FPV];
         return;
     }
@@ -173,7 +200,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 }
 
 -(void)updateContentRect {
-    if (self.isSecondaryLiveStream) {
+    if (self.videoFeed.physicalSource == DJIVideoFeedPhysicalSourceFPVCamera) {
         [self setDefaultContentRect];
         return;
     }
@@ -292,10 +319,10 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         /**
          *  Osmo's video encoding solution is changed since a firmware version.
          *  X3 also began to support digital zoom since that version. Therefore, 
-         *  `isDigitalZoomScaleSupported` is used to determine the correct
+         *  `isDigitalZoomSupported` is used to determine the correct
          *  encode type.
          */
-        if (!isAircraft && [camera isDigitalZoomScaleSupported]) {
+        if (!isAircraft && [camera isDigitalZoomSupported]) {
             return H264EncoderType_A9_OSMO_NO_368;
         }
         else {
@@ -337,6 +364,27 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     }
 
     return H264EncoderType_unknown;
+}
+
+#pragma mark video delegate
+-(void)videoFeed:(DJIVideoFeed *)videoFeed didUpdateVideoData:(NSData *)videoData {
+    if (videoFeed != self.videoFeed) {
+        NSLog(@"ERROR: Wrong video feed update is received!");
+    }
+    [self.videoPreviewer push:(uint8_t *)[videoData bytes] length:(int)videoData.length];
+}
+
+-(void)videoFeed:(DJIVideoFeed *)videoFeed didChangePhysicalSource:(DJIVideoFeedPhysicalSource)physicalSource {
+    if (videoFeed == self.videoFeed) {
+        if (physicalSource == DJIVideoFeedPhysicalSourceUnknown) {
+            NSLog(@"Video feed is disconnected. ");
+            return;
+        }
+        else {
+            [self updateEncodeType];
+            [self updateContentRect];
+        }
+    }
 }
 
 @end

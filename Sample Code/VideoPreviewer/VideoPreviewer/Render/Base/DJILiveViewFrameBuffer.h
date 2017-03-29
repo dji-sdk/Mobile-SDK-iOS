@@ -1,0 +1,63 @@
+//
+//  DJILiveViewFrameBuffer.h
+//  DJIWidget
+//
+//  Created by ai.chuyue on 2016/10/23.
+//  Copyright © 2016年 Jerome.zhang. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/ES2/gl.h>
+#import <OpenGLES/ES2/glext.h>
+#import <QuartzCore/QuartzCore.h>
+#import <CoreMedia/CoreMedia.h>
+
+
+typedef struct DJILiveViewRenderTextureOptions {
+    GLenum minFilter;
+    GLenum magFilter;
+    GLenum wrapS;
+    GLenum wrapT;
+    GLenum internalFormat;
+    GLenum format;
+    GLenum type;
+} DJILiveViewRenderTextureOptions;
+
+DJILiveViewRenderTextureOptions defaultOptionsForTexture();
+
+@interface DJILiveViewFrameBuffer : NSObject
+
+@property(readonly) CGSize size;
+@property(readonly) DJILiveViewRenderTextureOptions textureOptions;
+@property(readonly) GLuint texture;
+@property(readonly) BOOL missingFramebuffer;
+@property(readonly) id context;
+
+// Initialization and teardown
+- (id)initWithContext:(id)context
+                 size:(CGSize)framebufferSize;
+
+- (id)initWithContext:(id)context
+                 size:(CGSize)framebufferSize
+       textureOptions:(DJILiveViewRenderTextureOptions)fboTextureOptions
+          onlyTexture:(BOOL)onlyGenerateTexture;
+
+- (id)initWithContext:(id)context
+                 size:(CGSize)framebufferSize
+    overriddenTexture:(GLuint)inputTexture;
+
+// Usage
+- (void)activateFramebuffer;
+
+// Image capture
+- (CGImageRef)newCGImageFromFramebufferContents;
+- (void)restoreRenderTarget;
+
+// Raw data bytes
+- (void)lockForReading;
+- (void)unlockAfterReading;
+- (NSUInteger)bytesPerRow;
+- (GLubyte *)byteBuffer;
+
+@end

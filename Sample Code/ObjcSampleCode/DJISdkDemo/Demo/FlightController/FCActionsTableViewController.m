@@ -34,12 +34,12 @@
     DemoSettingItem* item1 = [DemoSettingItem itemWithName:@"Compass" andClass:[FCCompassViewController class]];
     DemoSettingItem* item2 = [DemoSettingItem itemWithName:@"Flight Limitation" andClass:[FCFlightLimitationViewController class]];
     DemoSettingItem* item3 = [DemoSettingItem itemWithName:@"Landing Gear" andClass:[FCLandingGearViewController class]];
-    DemoSettingItem* item4 = [DemoSettingItem itemWithName:@"Intelligent Flight Assistant" andClass:[FCIntelligentAssistantViewController class]];
+    DemoSettingItem* item4 = [DemoSettingItem itemWithName:@"Flight Assistant" andClass:[FCIntelligentAssistantViewController class]];
     NSMutableArray* array = [[NSMutableArray alloc] initWithArray:@[item0, item1, item2]];
     if (fc && fc.isLandingGearMovable) {
         [array addObject:item3];
     }
-    if (fc && fc.intelligentFlightAssistant) {
+    if (fc && fc.flightAssistant) {
         [array addObject:item4];
     }
     

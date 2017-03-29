@@ -44,7 +44,6 @@
     [super viewWillAppear:animated];
     
     // set the delegate
-    [[DJIMissionManager sharedInstance] setDelegate:self];
     if ([DemoComponentHelper fetchAircraft] != nil) { // the product is an aircraft
         if ([DemoComponentHelper fetchFlightController]) {
             [[DemoComponentHelper fetchFlightController] setDelegate:self];
@@ -62,9 +61,6 @@
             [flightController setDelegate:nil];
         }
     }
-    if ([DJIMissionManager sharedInstance].delegate == self) {
-        [[DJIMissionManager sharedInstance] setDelegate:nil];
-    }
 }
 
 #pragma mark - UI Actions
@@ -73,24 +69,6 @@
     self.mission = [self initializeMission];
     
     if (self.mission == nil) return; // initialization failed
-
-    WeakRef(target);
-    [[DJIMissionManager sharedInstance] prepareMission:self.mission withProgress:^(float progress) {
-        WeakReturn(target);
-        
-        [target.progressBar setHidden:NO];
-        [target.progressBar setProgress:progress];
-        
-    } withCompletion:^(NSError * _Nullable error) {
-        if (error) {
-            ShowResult(@"ERROR: prepareMission:withProgress:withCompletion:. %@", error.description);
-        }
-        else {
-            ShowResult(@"SUCCESS: prepareMission:withProgress:withCompletion:.");
-        }
-        
-        [target.progressBar setHidden:YES];
-    }];
 }
 
 /**
@@ -98,48 +76,12 @@
  *  For example: before starting a follow-me mission, the aircraft should be in the air and the altitude is not lower than 10m.
  */
 - (IBAction)onStartButtonClicked:(id)sender {
-    [[DJIMissionManager sharedInstance] startMissionExecutionWithCompletion:^(NSError * _Nullable error) {
-        if (error) {
-            ShowResult(@"ERROR: startMissionExecutionWithCompletion:. %@", error.description);
-        }
-        else {
-            ShowResult(@"SUCCESS: startMissionExecutionWithCompletion:. ");
-        }
-        [self missionDidStart:error];
-    }];
 }
 
 - (IBAction)onStopButtonClicked:(id)sender {
-    [[DJIMissionManager sharedInstance] stopMissionExecutionWithCompletion:^(NSError * _Nullable error) {
-        if (error) {
-            ShowResult(@"ERROR: stopMissionExecutionWithCompletion:. %@", error.description);
-        }
-        else {
-            ShowResult(@"SUCCESS: stopMissionExecutionWithCompletion:. ");
-        }
-        [self missionDidStop:error];
-    }];
 }
 
 - (IBAction)onDownloadButtonClicked:(id)sender {
-    WeakRef(target);
-    [[DJIMissionManager sharedInstance] downloadMissionWithProgress:^(float progress) {
-        WeakReturn(target);
-        
-        [target.progressBar setHidden:NO];
-        [target.progressBar setProgress:progress];
-        
-    } withCompletion:^(DJIMission * _Nullable newMission, NSError * _Nullable error) {
-        WeakReturn(target);
-        if (error) {
-            ShowResult(@"ERROR: downloadMissionWithProgress:withCompletion:. %@", error.description);
-        }
-        else {
-            ShowResult(@"SUCCESS: downloadMissionWithProgress:withCompletion:. ");
-        }
-        [target mission:newMission didDownload:error];
-        [target.progressBar setHidden:YES];
-    }];
 }
 
 /**
@@ -147,41 +89,17 @@
  */
 - (IBAction)onPauseButtonClicked:(id)sender {
     [self missionWillPause];
-    
-    if ([self.mission isPausable]) {
-        [[DJIMissionManager sharedInstance] pauseMissionExecutionWithCompletion:^(NSError * _Nullable error) {
-            if (error) {
-                ShowResult(@"ERROR: pauseMissionExecutionWithCompletion:. %@", error.description);
-            }
-            else {
-                ShowResult(@"SUCCESS: pauseMissionExecutionWithCompletion:. ");
-            }
-        }];
-    }
 }
 
 - (IBAction)onResumeButtonClicked:(id)sender {
     // Only missions that support pause can be resumed.
-    if ([self.mission isPausable]) {
-        WeakRef(target);
-        [[DJIMissionManager sharedInstance] resumeMissionExecutionWithCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: resumeMissionExecutionWithCompletion:. %@", error.description);
-            }
-            else {
-                ShowResult(@"SUCCESS: resumeMissionExecutionWithCompletion:. ");
-            }
-            [target missionDidResume:error];
-        }];
-    }
 }
 
 #pragma mark - DJIFlightControllerDelegate
 /**
  *  Some missions need the aircraft's current location and the home point location.
  */
--(void)flightController:(DJIFlightController *)fc didUpdateSystemState:(DJIFlightControllerCurrentState *)state {
+-(void)flightController:(DJIFlightController *)fc didUpdateState:(DJIFlightControllerState *)state {
     self.aircraftLocation = state.aircraftLocation;
     self.homeLocation = state.homeLocation;
 }
@@ -234,34 +152,5 @@
 -(void)mission:(DJIMission *)mission didDownload:(NSError *)error {
     
 }
-
-
-#pragma mark DJIMissionManagerDelegate
-/**
- *  Method that tells the view controller when the mission's execution is finished.
- *  Sub-class can override it to do other tasks after a mission is finished.
- */
--(void)missionManager:(DJIMissionManager *)manager didFinishMissionExecution:(NSError *)error {
-    if (error) {
-        ShowResult(@"ERROR: missionManager:didFinishMissionExecution:. %@", error.description);
-    }
-    else {
-        ShowResult(@"SUCCESS: missionManager:didFinishMissionExecution:."); 
-    }
-}
-
-/**
- *  The method will tell the view controller about the current progress of the executing mission. DJIMissionProgressStatus is 
- *  an abstract class. A specific mission will have the corresponding status, which inherits from DJIMissionProgressStatus. 
- *  In order to get the information from missionProgress variable, user need to do type-casting and convert it into the specific 
- *  mission's status.
- *  For more information, please refer to WaypointMissionViewController.m etc.
- */
--(void)missionManager:(DJIMissionManager *)manager missionProgressStatus:(DJIMissionProgressStatus *)missionProgress {
-    
-}
-
-
-
 
 @end

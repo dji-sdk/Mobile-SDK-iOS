@@ -1,21 +1,8 @@
-//
-//  ESGLView.h
-//  kxmovie
-//
-//  Created by Kolyvan on 22.10.12.
-//  Copyright (c) 2012 Konstantin Boukreev . All rights reserved.
-//
-//  https://github.com/kolyvan/kxmovie
-//  this file is part of KxMovie
-//  KxMovie is licenced under the LGPL v3, see lgpl-3.0.txt
+
 #import <UIKit/UIKit.h>
 #import "DJIStreamCommon.h"
 #include <sys/types.h>
-
-
-#define THUMBNAIL_ENABLE (1)
-#define THUMBNAIL_IMAGE_WIDTH (154)
-#define THUMBNAIL_IMAGE_HIGHT (87)
+#import "DJILiveViewColorMonitorFilter.h"
 
 @class MovieGLView;
 @protocol MovieGLViewDelegate <NSObject>
@@ -23,20 +10,35 @@
 -(void) movieGlView:(MovieGLView*)view didChangedFrame:(CGRect)frame;
 @end
 
-typedef void (^snapshotBlock)(UIImage* image);
+
+#pragma mark - basics
 
 @interface MovieGLView : UIView
 
+- (id)initWithFrame:(CGRect)frame;
+//if draw called can came from multi thread, must enable this flag
+- (id)initWithFrame:(CGRect)frame multiThreadSupported:(BOOL)multiThread;
+
+//!!!!!!!! importent !!!!!!!!!
+//重要！在释放前必须清理资源
+//must called before release
+- (void)releaseResourece;
+
+//adjust self frame with input frame size
+- (BOOL)adjustSize;
+//push and render a new yuv frame, use nil frame to repaint
+- (void)render: (VideoFrameYUV *) frame;
+//clear buffer, render a black image
+- (void)clear;
+
+@end
+
+#pragma mark - geometry
+
+@interface MovieGLView ()
+
 // rotation of the preview content
 @property (assign, nonatomic) VideoStreamRotationType rotation;
-
-//render the view with grayscale
-@property (assign, nonatomic) BOOL grayScale;
-//enable over exposed texture
-@property (assign, nonatomic) float overExposedMark;
-//scale on output luminance
-@property (assign, nonatomic) float luminanceScale;
-@property (assign, nonatomic) float focusWarningThreshold;
 
 /**
  *  Rect represents the content to be clipped. It is relative rect proportional
@@ -45,18 +47,24 @@ typedef void (^snapshotBlock)(UIImage* image);
  */
 @property (assign, nonatomic) CGRect contentClipRect;
 
-//use sobel process
-@property (assign, nonatomic) BOOL useSobelProcess;
-//sobel range in (0, 1)
-@property (assign, nonatomic) CGRect sobelRange;
+//the way that glview adjust self
+@property (assign,nonatomic) VideoPresentContentMode type;
+//callback for geometry change
+@property (nonatomic, weak) id<MovieGLViewDelegate> delegate;
+@end
 
-#if THUMBNAIL_ENABLE
+#pragma mark - snapshot
+
+//snapshot callback block
+typedef void (^snapshotBlock)(UIImage* image);
+
+@interface MovieGLView ()
+
 /**
- *  Callback that receives a thumbnail snapshot from the next rendered frame. 
+ *  Callback that receives a thumbnail snapshot from the next rendered frame.
  *  After the snapshot is generated, the property will be reset to nil.
  */
 @property (copy, nonatomic) snapshotBlock snapshotThumbnailCallback;
-#endif
 
 /**
  *  Callback that receives a snapshot from the next rendered frame.
@@ -64,14 +72,61 @@ typedef void (^snapshotBlock)(UIImage* image);
  */
 @property (copy, nonatomic) snapshotBlock snapshotCallback;
 
-- (id)initWithFrame:(CGRect)frame;
+@end
 
-//adjust self frame with input frame size
-- (BOOL)adjustSize;
-//push and render a new yuv frame, use nil frame to repaint
-- (void)render: (VideoFrameYUV *) frame;
+#pragma mark - filter and effects
 
-//the way that glview adjust self
-@property (assign,nonatomic) VideoPresentContentMode type;
-@property (nonatomic, weak) id<MovieGLViewDelegate> delegate;
+typedef struct {
+    float hue; //[-360, 360]
+    float brightness; //[0, 2]
+    float saturation; //[0, 2]
+}DJILiveViewRenderHSBConfig;
+
+
+@interface MovieGLView ()
+
+//render the view with grayscale
+@property (assign, nonatomic) BOOL grayScale;
+
+//enable over exposed texture
+@property (assign, nonatomic) float overExposedMark;
+
+//scale on output luminance
+@property (assign, nonatomic) float luminanceScale;
+
+
+/////////////// use sobel process
+@property (assign, nonatomic) BOOL enableFocusWarning;
+//threshold for focuswarning
+@property (assign, nonatomic) float focusWarningThreshold;
+
+
+////////////// revers d-log filter from camera ///////
+@property (assign, nonatomic) DLogReverseLookupTableType dLogReverse;
+
+
+///////////// hsb config //////////////////
+@property (assign, nonatomic) BOOL enableHSB;
+@property (assign, nonatomic) DJILiveViewRenderHSBConfig hsbConfig;
+
+
+///////////// shadow and highlight ///////////
+@property (assign, nonatomic) BOOL enableShadowAndHighLightenhancement;
+/**
+ * 0 - 1, increase to lighten shadows.
+ * @default 0
+ */
+@property(readwrite, nonatomic) CGFloat shadowsLighten;
+
+/**
+ * 0 - 1, increase to darken highlights.
+ * @default 0
+ */
+@property(readwrite, nonatomic) CGFloat highlightsDecrease;
+
+//////////// color monitor //////////
+@property (nonatomic, assign) BOOL enableColorMonitor;
+//read only
+@property (nonatomic, strong) DJILiveViewColorMonitorFilter* colorMonitor;
+
 @end

@@ -28,9 +28,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *rollMinButton;
 @property (weak, nonatomic) IBOutlet UIButton *rollMaxButton;
 
-@property (assign, nonatomic) DJIGimbalAngleRotation pitchRotation;
-@property (assign, nonatomic) DJIGimbalAngleRotation yawRotation;
-@property (assign, nonatomic) DJIGimbalAngleRotation rollRotation;
+@property (assign, nonatomic) NSNumber *pitchRotation;
+@property (assign, nonatomic) NSNumber *yawRotation;
+@property (assign, nonatomic) NSNumber *rollRotation;
 
 - (IBAction)rotateGimbalToMin:(id)sender;
 - (IBAction)rotateGimbalToMax:(id)sender;
@@ -63,9 +63,9 @@
 
 -(void) setupRotationStructs {
     DJIGimbal* gimbal = [DemoComponentHelper fetchGimbal];
-    _pitchRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustPitch];
-    _yawRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustYaw];
-    _rollRotation.enabled = [gimbal isFeatureSupported:DJIGimbalParamAdjustRoll];
+    self.pitchRotation = [gimbal isFeatureSupported:DJIGimbalParamAdjustPitch] ? @(0) : nil;
+    self.yawRotation = [gimbal isFeatureSupported:DJIGimbalParamAdjustYaw] ? @(0) : nil;
+    self.rollRotation = [gimbal isFeatureSupported:DJIGimbalParamAdjustRoll] ? @(0) : nil;
 }
 
 -(void) enablePitchExtensionIfPossible {
@@ -87,19 +87,16 @@
     }
     
     NSString *key = [self getCorrespondingKeyWithButton:(UIButton *)sender];
-    NSInteger min = -[[gimbal getParamMin:key] integerValue];
+    NSInteger min = [[gimbal getParamMin:key] integerValue];
     
     if ([key isEqualToString:DJIGimbalParamAdjustPitch]) {
-        _pitchRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
-        _pitchRotation.angle = (float)min;
+        self.pitchRotation = self.pitchRotation ? @(min) : nil;
     }
     else if ([key isEqualToString:DJIGimbalParamAdjustYaw]) {
-        _yawRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
-        _yawRotation.angle = (float)min;
+        self.yawRotation = self.yawRotation ? @(min) : nil;
     }
     else if ([key isEqualToString:DJIGimbalParamAdjustRoll]) {
-        _rollRotation.direction = DJIGimbalRotateDirectionCounterClockwise;
-        _rollRotation.angle = (float)min;
+        self.rollRotation = self.rollRotation ? @(min) : nil;
     }
     
     [self sendRotateGimbalCommand];
@@ -115,26 +112,23 @@
     NSInteger max = [[gimbal getParamMax:key] integerValue];
     
     if ([key isEqualToString:DJIGimbalParamAdjustPitch]) {
-        _pitchRotation.direction = DJIGimbalRotateDirectionClockwise;
-        _pitchRotation.angle = (float)max;
+        self.pitchRotation = self.pitchRotation ? @(max) : nil;
     }
     else if ([key isEqualToString:DJIGimbalParamAdjustYaw]) {
-        _yawRotation.direction = DJIGimbalRotateDirectionClockwise;
-        _yawRotation.angle = (float)max;
+        self.yawRotation = self.yawRotation ? @(max) : nil;
     }
     else if ([key isEqualToString:DJIGimbalParamAdjustRoll]) {
-        _rollRotation.direction = DJIGimbalRotateDirectionClockwise;
-        _rollRotation.angle = (float)max;
+        self.rollRotation = self.rollRotation ? @(max) : nil;
     }
     
     [self sendRotateGimbalCommand];
 }
 
 - (IBAction)resetGimbal:(id)sender {
-    _pitchRotation.angle = 0;
-    _yawRotation.angle = 0;
-    _rollRotation.angle = 0;
-    
+    self.pitchRotation = self.pitchRotation ? @(0) : nil;
+    self.yawRotation = self.yawRotation ? @(0) : nil;
+    self.rollRotation = self.rollRotation ? @(0) : nil;
+
     [self sendRotateGimbalCommand];
 }
 
@@ -143,10 +137,14 @@
     if (gimbal == nil) {
         return;
     }
-    
-    [gimbal rotateGimbalWithAngleMode:DJIGimbalAngleModeAbsoluteAngle pitch:self.pitchRotation roll:self.rollRotation yaw:self.yawRotation withCompletion:^(NSError * _Nullable error) {
+
+    DJIGimbalRotation *rotation = [DJIGimbalRotation gimbalRotationWithPitchValue:self.pitchRotation
+                                                                        rollValue:self.rollRotation
+                                                                         yawValue:self.yawRotation time:2
+                                                                             mode:DJIGimbalRotationModeAbsoluteAngle];
+    [gimbal rotateWithRotation:rotation completion:^(NSError * _Nullable error) {
         if (error) {
-            ShowResult(@"rotateGimbalWithAngleMode failed: %@", error.description);
+            ShowResult(@"rotateWithRotation failed: %@", error.description);
         }
     }];
 }

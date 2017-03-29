@@ -29,25 +29,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //Register App with App Key
-    NSString* appKey = @""; //TODO: Please enter your App Key here
-    
-    if ([appKey length] == 0) {
-        ShowResult(@"Please enter your app key.");
-    }
-    else
-    {
-        [DJISDKManager registerApp:appKey withDelegate:self];
-    }
+    [DJISDKManager registerAppWithDelegate:self];
     
     [self initUI];
+}
+
+- (void)appRegisteredWithError:(NSError *_Nullable)error
+{
+    if (error) {
+        ShowResult(@"Registration Error:%@", error);
+        [self.connectButton setEnabled:NO];
+    }
+    else {
+        
+#if ENTER_DEBUG_MODE
+        [DJISDKManager enableBridgeModeWithBridgeAppIP:@"127.0.0.1"];
+#else
+        [DJISDKManager startConnectionToProduct];
+#endif
+        
+#if ENABLE_REMOTE_LOGGER
+        [DJISDKManager enableRemoteLoggingWithDeviceID:@"Device ID" logServerURLString:@"Enter Remote Logger URL here"];
+#endif
+    }
+}
+
+-(void) productConnected:(DJIBaseProduct* _Nullable) product {
+    if (product) {
+        self.product = product;
+        [self.connectButton setEnabled:YES];
+    }
+    
+    [self updateStatusBasedOn:product];
+}
+
+-(void) productDisconnected {
+    
+    NSString* message = [NSString stringWithFormat:@"Connection lost. Back to root. "];
+    
+    WeakRef(target);
+    [DemoAlertView showAlertViewWithMessage:message titles:@[@"Cancel", @"Back"] action:^(NSUInteger buttonIndex) {
+        WeakReturn(target);
+        if (buttonIndex == 1) {
+            if (![target.navigationController.topViewController isKindOfClass:[DJIRootViewController class]]) {
+                [target.navigationController popToRootViewControllerAnimated:NO];
+            }
+        }
+    }];
+    [self.connectButton setEnabled:NO];
+    
+    [self.connectButton setEnabled:NO];
+    self.product = nil;
+    
+    [self updateStatusBasedOn:nil];
 }
 
 - (void)initUI
 {
     self.title = @"DJI iOS SDK Sample";
-    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager getSDKVersion]];
+    self.sdkVersionLabel.text = [@"DJI SDK Version: " stringByAppendingString:[DJISDKManager SDKVersion]];
     self.productFirmwarePackageVersion.hidden = YES;
     self.productModel.hidden = YES;
     //Disable the connect button by default
@@ -72,52 +112,6 @@
 - (IBAction)onBluetoothButtonClicked:(id)sender {
     BluetoothConnectorViewController* vc = [[BluetoothConnectorViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
-}
-
-#pragma mark -
--(void) sdkManagerDidRegisterAppWithError:(NSError *)error {
-    if (error) {
-        ShowResult(@"Registration Error:%@", error);
-        [self.connectButton setEnabled:NO];
-    }
-    else {
-        
-#if ENTER_DEBUG_MODE
-        [DJISDKManager enterDebugModeWithDebugId:@"10.128.129.78"];
-#else
-        [DJISDKManager startConnectionToProduct];
-#endif
-        
-#if ENABLE_REMOTE_LOGGER
-        [DJISDKManager enableRemoteLoggingWithDeviceID:@"Device ID" logServerURLString:@"Enter Remote Logger URL here"];
-#endif
-    }
-    
-}
-
--(void) sdkManagerProductDidChangeFrom:(DJIBaseProduct* _Nullable) oldProduct to:(DJIBaseProduct* _Nullable) newProduct{
-    if (newProduct) {
-        self.product = newProduct;
-        [self.connectButton setEnabled:YES];
-        
-    } else {
-        NSString* message = [NSString stringWithFormat:@"Connection lost. Back to root. "];
-
-        WeakRef(target);
-        [DemoAlertView showAlertViewWithMessage:message titles:@[@"Cancel", @"Back"] action:^(NSUInteger buttonIndex) {
-            WeakReturn(target);
-            if (buttonIndex == 1) {
-                if (![target.navigationController.topViewController isKindOfClass:[DJIRootViewController class]]) {
-                    [target.navigationController popToRootViewControllerAnimated:NO];
-                }
-            }
-        }];
-        [self.connectButton setEnabled:NO];
-        
-        self.product = nil;
-    }
-    
-    [self updateStatusBasedOn:newProduct];
 }
 
 #pragma mark -

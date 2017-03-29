@@ -51,9 +51,15 @@ installed.
 
 ### Run Sample Code
 
-Developers can [setup the App Key](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#objective-c-app-key-setup) and run the sample code to see how the DJI Mobile SDK can be used.
+Developers will need to setup the App Key by editing the sample code's info.plist, [after generating their unique App Key] (https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#generate-an-app-key).
 
-One of DJI's aircraft or handheld cameras will be required to run the sample application. 
+For the Objective-C sample app, the key value **DJISDKAppKey** should to be added to DJISdkDemo-Info.plist with your unique app key as a string.  (It is no longer necessary to edit the "DJIRootViewController.m" as in previous versions of the DJI SDK.)
+
+For the Swift sample app, the DJISDKAppKey is present in the Info.plist - developers just need to add their unique key.
+In both cases developers will still need to update the [Bundle Identifier] (http://developer.dji.com/user/mobile-sdk/ios-configuration/)  .
+
+
+One of DJI's aircraft or handheld cameras will be required to run the sample application.  
 
 ## Development Workflow 
 
@@ -97,17 +103,13 @@ A detailed introduction for missions is [here](./docs/README-Mission.md).
 
 ## SDK API Reference
 
-[**iOS SDK API Documentation**](https://developer.dji.com/iframe/mobile-sdk-doc/ios/index.html)
+[**iOS SDK API Documentation**](http://developer.dji.com/api-reference/ios-api/index.html)
 
 ## FFmpeg Customization
 
 We have forked the original FFmpeg and added customized features to provide more video frame information including the frame's width and height, frame rate number, etc. These features will help to implement video hardware decoding. 
 
 The SDK Sample Code uses code of [FFmpeg](http://ffmpeg.org) licensed under the [LGPLv2.1](http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html) and its source code can be downloaded from this [Github Page](https://github.com/dji-sdk/FFmpeg).
-
-## Video Hardware Decoder Open Source
-
-Please check the [VideoPreviewer](https://github.com/dji-sdk/Mobile-SDK-iOS/tree/master/Sample%20Code/VideoPreviewer/VideoPreviewer) source code for details.
 
 ## Support
 

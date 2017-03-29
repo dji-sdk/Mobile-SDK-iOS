@@ -15,7 +15,7 @@
 @interface FCLandingGearViewController () <DJIFlightControllerDelegate>
 
 @property (assign, nonatomic) DJILandingGearMode landingGearMode;
-@property (assign, nonatomic) DJILandingGearStatus landingGearStatus;
+@property (assign, nonatomic) DJILandingGearState landingGearStatus;
 
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *modeLabel;
@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.landingGearMode = DJILandingGearModeUnknown;
-    self.landingGearStatus = DJILandingGearStatusUnknown;
+    self.landingGearStatus = DJILandingGearStateUnknown;
     
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
@@ -45,7 +45,7 @@
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     DJILandingGear* landingGear = fc.landingGear;
     if (landingGear) {
-        [landingGear turnOnAutoLandingGearWithCompletion:^(NSError * _Nullable error) {
+        [landingGear setAutomaticMovementEnabled:YES withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Turn on:%@", error.localizedDescription);
             }
@@ -61,7 +61,7 @@
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     DJILandingGear* landingGear = fc.landingGear;
     if (landingGear) {
-        [landingGear turnOffAutoLandingGearWithCompletion:^(NSError * _Nullable error) {
+        [landingGear setAutomaticMovementEnabled:NO withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Turn Off:%@", error.localizedDescription);
             }
@@ -105,7 +105,7 @@
     }
 }
 
-- (void)flightController:(DJIFlightController *)fc didUpdateSystemState:(DJIFlightControllerCurrentState *)state
+-(void)flightController:(DJIFlightController *)fc didUpdateState:(DJIFlightControllerState *)state
 {
     DJILandingGear* landingGear = fc.landingGear;
     if (landingGear.mode != _landingGearMode) {
@@ -113,8 +113,8 @@
         self.modeLabel.text = [self stringWithLandingGearMode:_landingGearMode];
     }
     
-    if (landingGear.status != _landingGearStatus) {
-        _landingGearStatus = landingGear.status;
+    if (landingGear.state != _landingGearStatus) {
+        _landingGearStatus = landingGear.state;
         self.statusLabel.text = [self stringWithLandingGearStatus:_landingGearStatus];
     }
 }
@@ -124,9 +124,9 @@
     if (mode == DJILandingGearModeAuto) {
         return @"Auto";
     }
-    else if (mode == DJILandingGearModeNormal)
+    else if (mode == DJILandingGearModeManual)
     {
-        return @"Normal";
+        return @"Manual";
     }
     else if (mode == DJILandingGearModeTransport)
     {
@@ -138,24 +138,24 @@
     }
 }
 
--(NSString*) stringWithLandingGearStatus:(DJILandingGearStatus)status
+-(NSString*) stringWithLandingGearStatus:(DJILandingGearState)status
 {
-    if (status == DJILandingGearStatusDeployed) {
+    if (status == DJILandingGearStateDeployed) {
         return @"Deployed";
     }
-    else if (status == DJILandingGearStatusDeploying)
+    else if (status == DJILandingGearStateDeploying)
     {
         return @"Deploying";
     }
-    else if (status == DJILandingGearStatusRetracted)
+    else if (status == DJILandingGearStateRetracted)
     {
         return @"Retracted";
     }
-    else if (status == DJILandingGearStatusRetracting)
+    else if (status == DJILandingGearStateRetracting)
     {
         return @"Retracting";
     }
-    else if (status == DJILandingGearStatusStopped)
+    else if (status == DJILandingGearStateStopped)
     {
         return @"Stoped";
     }

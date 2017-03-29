@@ -178,6 +178,11 @@ ss += ll; \
             bool isSpsPpsFound = false;
             //int rate = getVideFrameRateWH(packet.data, packet.size, &isSpsPpsFound, &_outputWidth, &_outputHeight);
             
+            if(_pCodecPaser->height_in_pixel == 1088){
+                //1080p hack
+                _pCodecPaser->height_in_pixel = 1080;
+            }
+            
             _outputWidth = _pCodecPaser->width_in_pixel;
             _outputHeight = _pCodecPaser->height_in_pixel;
             isSpsPpsFound = _pCodecPaser->frame_has_sps?YES:NO;
@@ -274,6 +279,11 @@ ss += ll; \
                 // something wrong;
             }
             
+            if(_pCodecPaser->height_in_pixel == 1088){
+                //1080p hack
+                _pCodecPaser->height_in_pixel = 1080;
+            }
+            
             outputFrame->frame_info.width = _pCodecPaser->width_in_pixel;
             outputFrame->frame_info.height = _pCodecPaser->height_in_pixel;
             
@@ -286,6 +296,7 @@ ss += ll; \
             outputFrame->frame_info.frame_flag.has_sps = _pCodecPaser->frame_has_sps;
             outputFrame->frame_info.frame_flag.has_pps = _pCodecPaser->frame_has_pps;
             outputFrame->frame_info.frame_flag.has_idr = (_pCodecPaser->key_frame ==1)?1:0;
+            outputFrame->frame_info.frame_flag.is_fullrange = NO; //we can only get this in sps, set this bit later
         }
         
         block(outputFrame);
@@ -316,6 +327,10 @@ ss += ll; \
         int got_picture;
         avcodec_decode_video2(_pCodecCtx, _pFrame, &got_picture, &packet);
         
+        if (_pCodecCtx->height == 1088) {
+            _pCodecCtx->height = 1080;
+        }
+        
         _outputWidth = _pCodecCtx->width;
         _outputHeight = _pCodecCtx->height;
         
@@ -338,6 +353,10 @@ ss += ll; \
         
         int got_picture;
         avcodec_decode_video2(_pCodecCtx, _pFrame, &got_picture, &packet);
+        
+        if (_pCodecCtx->height == 1088) {
+            _pCodecCtx->height = 1080;
+        }
         
         _outputWidth = _pCodecCtx->width;
         _outputHeight = _pCodecCtx->height;
@@ -378,7 +397,13 @@ ss += ll; \
             }
             
             av_free_packet(&packet);
-            if (_outputWidth != _pCodecCtx->width || _outputHeight != _pCodecCtx->height) {
+            
+            if (_pCodecCtx->height == 1088) {
+                _pCodecCtx->height = 1080;
+            }
+            
+            if (_outputWidth != _pCodecCtx->width
+                || _outputHeight != _pCodecCtx->height) {
                 _outputWidth = _pCodecCtx->width;
                 _outputHeight = _pCodecCtx->height;
                 continue;

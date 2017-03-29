@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *showPreviewButton;
 @property (weak, nonatomic) IBOutlet UIButton *showFullImageButton;
 @property(nonatomic, strong) NSArray* mediaList;
-@property(nonatomic, strong) DJIMedia* imageMedia;
+@property(nonatomic, strong) DJIMediaFile *imageMedia;
 
 @end
 
@@ -71,10 +71,10 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getCameraModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: getCameraModeWithCompletion:. %@", error.description);
+                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
             }
             else if (mode != DJICameraModeMediaDownload) {
                 [target setCameraMode];
@@ -93,10 +93,10 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setCameraMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
+        [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
-                ShowResult(@"ERROR: setCameraMode:withCompletion:. %@", error.description);
+                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
             }
             else {
                 [target startFetchMedia];
@@ -113,7 +113,7 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera.mediaManager fetchMediaListWithCompletion:^(NSArray<DJIMedia *> * _Nullable mediaList, NSError * _Nullable error) {
+        [camera.mediaManager fetchMediaListWithCompletion:^(NSArray<DJIMediaFile *> * _Nullable mediaList, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: fetchMediaListWithCompletion:. %@", error.description);
@@ -208,7 +208,7 @@
     _mediaList = mediaList;
     
     // Cache the first JPEG media file in the list.
-    for (DJIMedia* media in self.mediaList) {
+    for (DJIMediaFile *media in self.mediaList) {
         if (media.mediaType == DJIMediaTypeJPEG) {
             self.imageMedia = media;
             break;

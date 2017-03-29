@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKit.h>
 
 #define H264_FRAME_INVALIED_UUID (0)
 
@@ -17,6 +17,16 @@ typedef enum : NSUInteger {
     VPFrameTypeYUV420SemiPlaner = 1,
     VPFrameTypeRGBA = 2,
 } VPFrameType;
+
+/*
+ * the type of reverse lookup table for dlog filter
+ */
+typedef enum : NSUInteger {
+    DLogReverseLookupTableTypeNone, //not use dlog reverse
+    DLogReverseLookupTableP4POld, //old camera firmware, ask Luminis for detail
+    DLogReverseLookupTableTypeDefault, //for p4p and in2
+} DLogReverseLookupTableType;
+
 
 /**
  *  Rotation of the video tream. VideoPreviewer is adaptive to the rotation of
@@ -50,6 +60,11 @@ typedef struct{
             int has_sps :1; //has sps info
             int has_pps :1; //has pps info
             int has_idr :1; //has idr frame
+            int is_fullrange:1; //the luma is in fullrange
+            int ignore_render:1; //render should ignore this frame
+            int reserved:3;
+            
+            uint8_t channelType:8; //DJIVideoDataDispatcherOutputChannel
         } frame_flag;
         uint32_t value;
     };
@@ -92,7 +107,7 @@ typedef struct
     pthread_rwlock_t mutex;
     // It is only valid when fastupload is enabled.
     void* cv_pixelbuffer_fastupload;
-
+    
     uint32_t frame_uuid; //frame id from decoder
     VideoFrameH264BasicInfo frame_info;
 } VideoFrameYUV;
@@ -156,13 +171,14 @@ typedef NS_ENUM(NSUInteger, VideoPresentContentMode){
 -(BOOL) streamProcessorEnabled;
 
 -(DJIVideoStreamProcessorType) streamProcessorType;
+;
+-(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame;
+@optional
 /**
  *  @return Treatment success / failure
  */
 -(BOOL) streamProcessorHandleFrame:(uint8_t*)data size:(int)size __attribute__((deprecated("VideoPreview will ignore this method. ")));
-;
--(BOOL) streamProcessorHandleFrameRaw:(VideoFrameH264Raw*)frame;
-@optional
+
 /**
  *  Stream basic information is changed (e.g. parameters of processor is re-configured)
  */

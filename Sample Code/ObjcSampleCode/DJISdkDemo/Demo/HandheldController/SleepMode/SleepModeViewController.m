@@ -60,7 +60,7 @@
     DJIHandheldController* handheld = [DemoComponentHelper fetchHandheldController];
     if (handheld) {
         [self.awakeButton setEnabled:NO];
-        [self sendPowerMode:DJIHandheldPowerModeAwake];
+        [self sendPowerMode:DJIHandheldPowerModeOn];
     }
 }
 
@@ -68,14 +68,14 @@
     DJIHandheldController* handheld = [DemoComponentHelper fetchHandheldController];
     if (handheld) {
         [self.shutdownButton setEnabled:NO];
-        [self sendPowerMode:DJIHandheldPowerModePowerOff];
+        [self sendPowerMode:DJIHandheldPowerModeOff];
     }
 }
 
 -(void) sendPowerMode:(DJIHandheldPowerMode)mode {
     DJIHandheldController* handheld = [DemoComponentHelper fetchHandheldController];
     if (handheld) {
-        [handheld setHandheldPowerMode:mode withCompletion:^(NSError * _Nullable error) {
+        [handheld setPowerMode:mode withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: setHandheldPowerMode failed. %@", error.description);
             }
@@ -95,13 +95,13 @@
             [self.shutdownButton setEnabled:YES];
             break;
 
-        case DJIHandheldPowerModeAwake:
+        case DJIHandheldPowerModeOn:
             [self.sleepButton setEnabled:YES];
             [self.awakeButton setEnabled:NO];
             [self.shutdownButton setEnabled:YES];
             break;
             
-        case DJIHandheldPowerModePowerOff:
+        case DJIHandheldPowerModeOff:
             [self.sleepButton setEnabled:NO];
             [self.awakeButton setEnabled:NO];
             [self.shutdownButton setEnabled:NO];

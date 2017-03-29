@@ -10,36 +10,110 @@
  */
 #import <DJISDK/DJISDK.h>
 #import "PanoramaMissionViewController.h"
+#import "DemoUtilityMacro.h"
+#import "DemoAlertView.h"
 
 @interface PanoramaMissionViewController ()
-
+@property (nonatomic, weak) DJIPanoramaMissionOperator *panoramaOperator;
 @end
 
 @implementation PanoramaMissionViewController
 
-/**
- *  Initialize the panorama mission. Currently, the mission supports two types: full circle and half circle. User need specifies the
- *  type when creating the mission. 
- */
--(DJIMission*) initializeMission {
-    DJIPanoramaMission* mission = [[DJIPanoramaMission alloc] initWithPanoramaMode:DJIPanoramaModeFullCircle];
-    return mission;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.panoramaOperator = [[DJISDKManager missionControl] panoramaMissionOperator];
+    self.pauseButton.enabled = NO;
+    self.downloadButton.enabled = NO;
+    self.resumeButton.enabled = NO;
 }
 
-#pragma mark - Override Methods
--(void)missionManager:(DJIMissionManager *)manager missionProgressStatus:(DJIMissionProgressStatus *)missionProgress {
-    if ([missionProgress isKindOfClass:[DJIPanoramaMissionStatus class]]) {
-        DJIPanoramaMissionStatus* panoStatus = (DJIPanoramaMissionStatus*)missionProgress;
-        
-        [self showPanoramaMissionStatus:panoStatus];
+/**
+ *  Panorama mission doesn't require user to create a DJIMission instance.
+ */
+-(DJIMission *) initializeMission {
+    return nil;
+}
+
+#pragma mark - Execution
+
+- (IBAction)onPrepareButtonClicked:(id)sender
+{
+    [self.panoramaOperator setupWithMode:DJIPanoramaModeFullCircle withCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            ShowResult(@"Setup Mission Failed:%@", error.description);
+        } else {
+            ShowResult(@"Mission Setuped");
+        }
+    }];
+}
+
+- (IBAction)onStartButtonClicked:(id)sender
+{
+    [self.panoramaOperator startMissionWithCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            ShowResult(@"ERROR: startWithCompletion:. %@", error.description);
+        }
+        else {
+            ShowResult(@"SUCCESS: startWithCompletion:. ");
+        }
+    }];
+    
+    WeakRef(target);
+    [self.panoramaOperator addListenerToEvents:self withQueue:dispatch_get_main_queue() andBlock:^(DJIPanoramaMissionEvent * _Nonnull event) {
+        [target showPanoramaMissionStatus:event];
+    }];
+}
+
+- (IBAction)onStopButtonClicked:(id)sender
+{
+    WeakRef(target);
+ 	[self.panoramaOperator stopMissionWithCompletion:^(NSError * _Nullable error) {
+        if (error) {
+            ShowResult(@"ERROR: stopWithCompletion:. %@", error.description);
+        }
+        else {
+            [target.panoramaOperator removeListener:self];
+            ShowResult(@"SUCCESS: stopWithCompletion:. ");
+        }
+    }];
+}
+
+-(void) showPanoramaMissionStatus:(DJIPanoramaMissionEvent*)event {
+    
+    if (event.error) {
+        ShowResult(@"Mission Executing Error:%@", event.error);
+        [self.panoramaOperator removeListener:self];
+    } else {
+        NSMutableString* statusString = [NSMutableString new];
+        [statusString appendFormat:@"Prev State:%@\n", [[self class] descriptionForState:event.previousState ]];
+        [statusString appendFormat:@"Cur State:%@\n", [[self class] descriptionForState:event.currentState]];
+        [statusString appendFormat:@"total:%tu curShot:%tu, curSaved:%tu\n",
+                                    event.executionState.totalNumber,
+                                    event.executionState.currentShotNumber,
+                                    event.executionState.currentSavedNumber];
+        self.statusLabel.text = statusString;
     }
 }
 
--(void) showPanoramaMissionStatus:(DJIPanoramaMissionStatus*)panoStatus {
-    NSMutableString* statusStr = [NSMutableString stringWithFormat:@"Total Photo Num: %tu\n", panoStatus.totalNumber];
-    [statusStr appendFormat:@"Current Shot Num: %tu\n", panoStatus.currentShotNumber];
-    [statusStr appendFormat:@"Current Saved Num: %tu\n", panoStatus.currentSavedNumber];
-    [self.statusLabel setText:statusStr];
++(NSString *)descriptionForState:(DJIPanoramaMissionState)state {
+    switch (state) {
+        case DJIPanoramaMissionStateUnknown:
+            return @"Unknown";
+        case DJIHotpointMissionStateExecuting:
+            return @"Executing";
+        case DJIPanoramaMissionStateReadyToExecute:
+            return @"ReadyToExecute";
+        case DJIHotpointMissionStateDisconnected:
+            return @"Disconnected";
+        case DJIPanoramaMissionStateNotSupported:
+            return @"NotSupported";
+        case DJIPanoramaMissionStateReadyToSetup:
+            return @"ReadyToSetup";
+        case DJIPanoramaMissionStateSettingUp:
+            return @"Setuping";
+    }
+    
+    return nil;
 }
-
 @end

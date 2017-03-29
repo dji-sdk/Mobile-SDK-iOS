@@ -28,7 +28,7 @@
     [super viewWillAppear:animated];
     
     DJIAirLink* airLink = [DemoComponentHelper fetchAirLink];
-    if (airLink && [airLink isWifiLinkSupported]) {
+    if (airLink && airLink.isWiFiLinkSupported) {
         [self.getValueButton setEnabled:YES];
         [self.setValueButton setEnabled:YES];
     }
@@ -43,7 +43,7 @@
     __weak DJIWiFiLink* wifiLink = [DemoComponentHelper fetchAirLink].wifiLink;
     if (wifiLink) {
         WeakRef(target);
-        [wifiLink getWiFiSSIDWithCompletion:^(NSString * _Nonnull ssid, NSError * _Nullable error) {
+        [wifiLink getSSIDWithCompletion:^(NSString * _Nonnull ssid, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: getWiFiSSID. %@", error.description);
@@ -58,7 +58,7 @@
 - (IBAction)onSetButtonClicked:(id)sender {
     __weak DJIWiFiLink* wifiLink = [DemoComponentHelper fetchAirLink].wifiLink;
     if (wifiLink) {
-        [wifiLink setWiFiSSID:self.setValueTextField.text withCompletion:^(NSError * _Nullable error) {
+        [wifiLink setSSID:self.setValueTextField.text withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"ERROR: setWiFiSSID. %@. ", error.description);
             }

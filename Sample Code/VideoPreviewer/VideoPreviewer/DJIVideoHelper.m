@@ -451,7 +451,7 @@ int	h264_decode_seq_parameter_set_out(unsigned char * buf,unsigned int nLen, int
             if (sps->time_scale & 0x01) {
                 sps->time_scale -= 1;
             }
-            
+
             if (sps->time_scale==120000 ) {
                 *framerate = 60;
             }

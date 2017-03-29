@@ -49,11 +49,11 @@
     [cameraInfoString appendString:@"Recording: "];
     [cameraInfoString appendString:systemState.isRecording?@"YES\n" : @"NO\n"];
     [cameraInfoString appendString:@"Camera over-heated: "];
-    [cameraInfoString appendString:systemState.isCameraOverHeated?@"YES\n" : @"NO\n"];
+    [cameraInfoString appendString:systemState.isOverheating?@"YES\n" : @"NO\n"];
     [cameraInfoString appendString:@"Camera has error: "];
-    [cameraInfoString appendString:systemState.isCameraError?@"YES\n" : @"NO\n"];
+    [cameraInfoString appendString:systemState.hasError?@"YES\n" : @"NO\n"];
     [cameraInfoString appendString:@"In USB mode: "];
-    [cameraInfoString appendString:systemState.isUSBMode?@"YES\n" : @"NO\n"];
+    [cameraInfoString appendString:systemState.isInUSBMode?@"YES\n" : @"NO\n"];
     [cameraInfoString appendString:@"Camera Mode: "];
     switch (systemState.mode) {
         case DJICameraModeShootPhoto:
@@ -72,7 +72,7 @@
         default:
             break;
     }
-    [cameraInfoString appendFormat:@"Current video recording time: %d\n", systemState.currentVideoRecordingTimeInSeconds];
+    [cameraInfoString appendFormat:@"Current video recording time: %tu\n", systemState.currentVideoRecordingTimeInSeconds];
     self.pushInfoLabel.text = cameraInfoString;
 }
 

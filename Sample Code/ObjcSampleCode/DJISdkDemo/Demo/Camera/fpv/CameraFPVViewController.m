@@ -39,7 +39,7 @@
     self.needToSetMode = YES;
 
     [[VideoPreviewer instance] start];
-    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithVideoPreviewer:[VideoPreviewer instance]];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
 }
 
@@ -58,8 +58,11 @@
     
     // Call unSetView during exiting to release the memory.
     [[VideoPreviewer instance] unSetView];
-    [self.previewerAdapter stop];
-    self.previewerAdapter = nil;
+   
+    if (self.previewerAdapter) {
+        [self.previewerAdapter stop];
+        self.previewerAdapter = nil;
+    }
 }
 
 
@@ -86,7 +89,7 @@
 
 - (void)updateThermalCameraUI {
     DJICamera* camera = [DemoComponentHelper fetchCamera];
-    if (camera && [camera isThermalImagingCamera]) {
+    if (camera && [camera isThermalCamera]) {
         [self.fpvTemView setHidden:NO];
         WeakRef(target);
         [camera getThermalMeasurementModeWithCompletion:^(DJICameraThermalMeasurementMode mode, NSError * _Nullable error) {
@@ -107,14 +110,6 @@
 
 #pragma mark - DJICameraDelegate
 /**
- *  This video data is received through this method. Then the data is passed to VideoPreviewer.
- */
-- (void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)size
-{
-    [[VideoPreviewer instance] push:videoBuffer length:(int)size];
-}
-
-/**
  *  DJICamera will send the live stream only when the mode is in DJICameraModeShootPhoto or DJICameraModeRecordVideo. Therefore, in order 
  *  to demonstrate the FPV (first person view), we need to switch to mode to one of them.
  */
@@ -125,7 +120,7 @@
         if (self.needToSetMode) {
             self.needToSetMode = NO;
             WeakRef(obj);
-            [camera setCameraMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
+            [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
                 if (error) {
                     WeakReturn(obj);
                     obj.needToSetMode = YES;

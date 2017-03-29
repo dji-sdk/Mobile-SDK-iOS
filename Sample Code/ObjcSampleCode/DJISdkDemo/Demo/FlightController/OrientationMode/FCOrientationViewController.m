@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.orientationMode = DJIFlightOrientationModeDefaultAircraftHeading;
+    self.orientationMode = DJIFlightOrientationModeAircraftHeading;
     self.orientationModeLabel.text = [self stringWithOrientationMode:_orientationMode];
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
@@ -72,7 +72,7 @@
 {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc setFlightOrientationMode:DJIFlightOrientationModeDefaultAircraftHeading withCompletion:^(NSError * _Nullable error) {
+        [fc setFlightOrientationMode:DJIFlightOrientationModeAircraftHeading withCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Default:%@", error.localizedDescription);
             }
@@ -85,8 +85,7 @@
 }
 
 #pragma mark - System State Updates
-
-- (void)flightController:(DJIFlightController *)fc didUpdateSystemState:(DJIFlightControllerCurrentState *)state
+-(void)flightController:(DJIFlightController *)fc didUpdateState:(DJIFlightControllerState *)state
 {
     if (_orientationMode != state.orientationMode) {
         _orientationMode = state.orientationMode;

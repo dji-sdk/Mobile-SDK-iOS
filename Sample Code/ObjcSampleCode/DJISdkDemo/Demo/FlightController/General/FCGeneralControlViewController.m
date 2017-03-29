@@ -25,7 +25,7 @@
 - (IBAction)onTakeoffButtonClicked:(id)sender {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc takeoffWithCompletion:^(NSError * _Nullable error) {
+        [fc startTakeoffWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Takeoff Error:%@", error.localizedDescription);
             }
@@ -44,7 +44,7 @@
 - (IBAction)onGoHomeButtonClicked:(id)sender {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc goHomeWithCompletion:^(NSError * _Nullable error) {
+        [fc startGoHomeWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"GoHome Error:%@", error.localizedDescription);
             }
@@ -63,7 +63,7 @@
 - (IBAction)onLandButtonClicked:(id)sender {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {
-        [fc autoLandingWithCompletion:^(NSError * _Nullable error) {
+        [fc startLandingWithCompletion:^(NSError * _Nullable error) {
             if (error) {
                 ShowResult(@"Land Error:%@", error.localizedDescription);
             }
