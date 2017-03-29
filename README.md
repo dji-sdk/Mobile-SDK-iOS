@@ -51,12 +51,12 @@ installed.
 
 ### Run Sample Code
 
-Developers will need to setup the App Key by editing the sample code's info.plist, [after generating their unique App Key] (https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#generate-an-app-key).
+Developers will need to setup the App Key by editing the sample code's info.plist, [after generating their unique App Key](https://developer.dji.com/mobile-sdk/documentation/quick-start/index.html#generate-an-app-key).
 
 For the Objective-C sample app, the key value **DJISDKAppKey** should to be added to DJISdkDemo-Info.plist with your unique app key as a string.  (It is no longer necessary to edit the "DJIRootViewController.m" as in previous versions of the DJI SDK.)
 
 For the Swift sample app, the DJISDKAppKey is present in the Info.plist - developers just need to add their unique key.
-In both cases developers will still need to update the [Bundle Identifier] (http://developer.dji.com/user/mobile-sdk/ios-configuration/)  .
+In both cases developers will still need to update the [Bundle Identifier](http://developer.dji.com/user/mobile-sdk/ios-configuration/) .
 
 
 One of DJI's aircraft or handheld cameras will be required to run the sample application.  
