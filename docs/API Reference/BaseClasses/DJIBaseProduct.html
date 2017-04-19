@@ -404,7 +404,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIBaseProduct</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIBaseProduct</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Abstract class for all DJI Products. <code><a href="../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> and <code><a href="../Products/Handheld/DJIHandheld.html#djihandheld">DJIHandheld</a></code> objects  are sublcasses of <code><a href="../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code> and can be accessed from <code><a href="../Components/SDKManager/DJISDKManager.html#djisdkmanager_product">product</a></code> in <code><a href="../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>. Additional components can be found in <code><a href="../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> and <code><a href="../Products/Handheld/DJIHandheld.html#djihandheld">DJIHandheld</a></code> that are unique to those products only.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +412,7 @@
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIBaseProductDelegate&gt; delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_delegate</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Used to notify user of changes in connectivity between the DJI product and the mobile device, changes in components that are part of the product, and diagnostic information from the product.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +422,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getFirmwarePackageVersionWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getFirmwarePackageVersionWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSString</span> *_Nullable version, <span class="built_in">NSError</span> *_Nullable error))block</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getFirmwarePackageVersion</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gets the product's firmware package version. Products other than  Phantom 4, Phantom 4 Pro, Mavic Pro, and Inspire 2, require internet connection. The execution time for this method  depends on the speed of internet connectivity.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -431,7 +431,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setName:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setName:(<span class="built_in">NSString</span> *)name withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_setName</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Retrieves the model of the product.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -440,7 +440,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getNameWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getNameWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSString</span> *_Nullable name, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getName</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Retrieves the model of the product.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -449,7 +449,7 @@
 <div class="article"><h6><font color="#AAA">property </font>model</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *_Nullable model</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../Components/KeyManager/DJIProductKey.html#djiproductkey_djiproductparammodelname_inline">DJIProductKey.DJIProductParamModelName</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../Components/KeyManager/DJIProductKey.html#djiproductkey_djiproductparammodelname_inline">DJIProductKey.DJIProductParamModelName</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_model</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Retrieves the model of the product. See <code><a href="../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> and  <code><a href="../Products/Handheld/DJIHandheld.html#djihandheld">DJIHandheld</a></code> for the possible strings that can be returned.</font></p>
 </div>
@@ -457,7 +457,7 @@
 <div class="article"><h6><font color="#AAA">property </font>camera</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICamera *_Nullable camera</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getCamera</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Retrieves an instance of the device's camera.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -467,7 +467,7 @@
 <div class="article"><h6><font color="#AAA">property </font>battery</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIBattery *_Nullable battery</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getBattery</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Retrieves an instance of the product's smart battery. When using products with multiple batteries, such as the M600 or Inspire 2, use <code><a href="../Products/Aircraft/DJIAircraft.html#djiaircraft_batteries">batteries</a></code>, as this method will only return a single battery.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
@@ -477,7 +477,7 @@
 <div class="article"><h6><font color="#AAA">property </font>gimbal</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbal *_Nullable gimbal</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getGimbal</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Retrieves an instance of the device's gimbal.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
@@ -487,7 +487,7 @@
 <div class="article"><h6><font color="#AAA">property </font>airLink</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIAirLink *_Nullable airLink</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_getAirLink</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Retrieves an instance of the device's AirLink.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
@@ -497,7 +497,7 @@
 <div class="article"><h6><font color="#AAA">property </font>videoFeeder</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) DJIVideoFeeder *videoFeeder</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_videoFeeder</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The videoFeeder.</font></p>
 <h5 id="see-also-v6">See Also:</h5>
@@ -508,7 +508,7 @@
 <div class="article"><h6><font color="#AAA">protocol </font>DJIBaseProductDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIBaseProductDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_Protocol</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods that notify user of changes in  connectivity between the DJI product and the mobile device, changes  in components that are part of the product, and diagnostic information  from the product.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -516,7 +516,7 @@
 <div class="article"><h6><font color="#AAA">method </font>product:didUpdateDiagnosticsInformation</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)product:(DJIBaseProduct *_Nonnull)product didUpdateDiagnosticsInformation:(<span class="built_in">NSArray</span> *_Nonnull)info</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_UpdateDiagnosticsInformation</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Called when the product's diagnostic information is updated.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -526,7 +526,7 @@
 <div class="article"><h6><font color="#AAA">typedef block </font>DJICompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJICompletionBlock)(<span class="built_in">NSError</span> *_Nullable error)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct_CompletionBlock</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Completion block for asynchronous operations. This completion block is used for methods that return at an  unknown future time.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>

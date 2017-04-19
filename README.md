@@ -33,7 +33,7 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (3.5.1)
+Installing DJI-SDK-iOS (4.0.1)
 Generating Pods project
 Integrating client project
 
@@ -90,14 +90,19 @@ Several iOS tutorials are provided as examples on how to use different features 
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
+## DJI Mobile UI Library
+
+DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UILibrary-iOS).
+
 ## SDK Keys
+
 SDK Keys can be used as an alternative interface to access the product.
 
 A detailed introduction for SDK Keys is [here](./docs/README-KeyedInterface.md).
 
 ## Missions Refactor
 
-Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0, missions are being refactored to be more robust and easier to manage.
+Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0.1, missions are being refactored to be more robust and easier to manage.
 
 A detailed introduction for missions is [here](./docs/README-Mission.md).
 

@@ -404,7 +404,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIFlyZoneManager</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIFlyZoneManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Fly Zone Manager gives information about nearby fly zones, and APIs to unlock zones that can be unlocked. Depending on location, there are three types of fly zones possible: <ul> <li>NFZ: Cylinder or truncated cone volume where flight is restricted</li> <li>Poly: Fly zone that consists of one or more sub fly zones that are cylinders or complex volumes with different height limitations. A height limitation of 0 means flight is completely restricted. This is used by Mavic, Phantom 4 Pro, Inspire 2 and Phantom 4</li> <li>GEO: Cylinder volume with four levels of restriction:
 <ul>
@@ -422,7 +422,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIFlyZoneDelegate&gt; delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_delegate</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Delegate to receive the updated status.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -432,7 +432,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>getFlyZonesInSurroundingAreaWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getFlyZonesInSurroundingAreaWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span>&lt;DJIFlyZoneInformation*&gt; *_Nullable infos, <span class="built_in">NSError</span>* _Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_getFlyZonesInSurroundingArea</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gets all the fly zones within 20km of the aircraft. During simulation, this method is available only when the aircraft location is within 50km of (37.460484, -122.115312) or within 50km of (22.5726, 113.8124499). Use of the geographic information provided by DJIFlyZoneManager is restricted. Refer to the DJI Developer Policy.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -441,7 +441,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>logIntoDJIUserAccountWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)logIntoDJIUserAccountWithCompletion:(DJIAccountStateCompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_logIntoDJIUserAccount</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">After invoking this method, a dialog redirecting users to log into their DJI account will be shown. After  the login process, if the account has not been authorized to unlock authorization zones, the dialog will  then redirect users to authorize their account.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -450,7 +450,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>logOutOfDJIUserAccountWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)logOutOfDJIUserAccountWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_logOutOfDJIUserAccount</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Logs out the DJI user that is logged in.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -459,7 +459,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">property </font>loggedInDJIUserAccountName</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *loggedInDJIUserAccountName</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_loggedInDJIUserAccountName</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The name of the currently logged in user account.  It is <code>nil</code> if <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_getuseraccountstatus">getUserAccountState</a></code> is either:  <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_djiuseraccountstatus_notloggedin">DJIUserAccountStateNotLoggedIn</a></code>,  <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_djiuseraccountstatus_tokenoutofdate">DJIUserAccountStateTokenOutOfDate</a></code> or <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_djiuseraccountstatus_unknown">DJIUserAccountStateUnknown</a></code>.</font></p>
 </div>
@@ -467,7 +467,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>getUserAccountState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(DJIUserAccountState)getUserAccountState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_getUserAccountStatus</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Gets the DJI user account state.</font></p>
 <h5 id="return">Return:</h5>
@@ -476,7 +476,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>getUnlockedFlyZonesWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getUnlockedFlyZonesWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span>&lt;DJIFlyZoneInformation*&gt; *_Nullable infos, <span class="built_in">NSError</span>* _Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_getUnlockedFlyZones</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Gets a list of unlocked fly zones of the authorized account from the server.  The list contains the fly zones unlocked by the Flight Planner  (http://www.dji.com/flysafe/geo-system#planner), and the fly zones unlocked  during flight using DJI GO or any DJI Mobile SDK based application.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -485,7 +485,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>unlockFlyZones:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)unlockFlyZones:(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *_Nonnull)flyZoneIDs withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_unlockFlyZones</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Unlocks the selected fly zones. This method can be used to unlock  enhanced warning and authorization zones. After unlocking the zones, flight will be unrestricted in those zones until the unlock expires.  The unlocking record will be linked to the user's account and will  be accessible to DJI GO and other DJI Mobile SDK based applications.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -494,7 +494,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">property </font>databaseVersion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *databaseVersion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_databaseVersion</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The version of the fly zone database in the firmware of the aircraft. It is <code>nil</code> if <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_databasestate">databaseState</a></code> is  <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_djiflyzoneinformation_djiflyzonedatabasestate_initializing">DJIFlyZoneDatabaseStateInitializing</a></code>.</font></p>
 </div>
@@ -502,7 +502,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">property </font>databaseState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIFlyZoneDatabaseState databaseState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_databaseState</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The fly zone database state in the firmware of the aircraft. The SDK will compare the version of the database on the aircraft against the latest one online. When the aircraft database is  out-of-date, the user should use DJI GO or Assistant 2 to update the firmware.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -512,7 +512,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>setGEOSystemEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setGEOSystemEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_setGEOSystemEnabled</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666"><code>YES</code> to enable GEO system. By default, if the GEO system is available at the aircraft's  location, the GEO system will be enabled.  This setting can be changed when the aircraft is in the air, however it will not take effect until the aircraft lands. When the GEO system is disabled, the aircraft  reverts to the NFZ (No Fly Zone) system. This interface may be deprecated in the future.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -521,7 +521,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>getGEOSystemEnabled</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getGEOSystemEnabled:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_getGEOSystemEnabled</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666"><code>YES</code> to enable GEO system. By default, if the GEO system is available at the aircraft's  location, the GEO system will be enabled.  This setting can be changed when the aircraft is in the air, however it will not take effect until the aircraft lands. When the GEO system is disabled, the aircraft  reverts to the NFZ (No Fly Zone) system. This interface may be deprecated in the future.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -531,7 +531,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">enum </font>DJIUserAccountState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUserAccountState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIUserAccountStatus</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">User account status. Users need to be logged in.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -540,7 +540,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">enum </font>DJIFlyZoneDatabaseState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIFlyZoneDatabaseState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIFlyZoneInformation_DJIFlyZoneDatabaseState</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The state of the fly zone database on the aircraft.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
@@ -549,7 +549,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">enum </font>DJIFlyZoneState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIFlyZoneState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIFlyZoneInformation_flyZoneStatus</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">This enum describes whether the aircraft is clear of, near, or actually in a fly zone.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
@@ -558,7 +558,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIFlyZoneDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIFlyZoneDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_protocol</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">This protocol provides the delegate method to receive updated fly zone information.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -567,7 +567,7 @@ has been authorized to unlock authorization zones.</li>
 <div class="article"><h6><font color="#AAA">method </font>flyZoneManager:didUpdateFlyZoneState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line"> -(<span class="keyword">void</span>)flyZoneManager:(DJIFlyZoneManager *)manager didUpdateFlyZoneState:(DJIFlyZoneState)state</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_UpdateFlyZoneStatus</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Called when the latest fly zone status is received.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
