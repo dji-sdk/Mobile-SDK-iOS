@@ -105,7 +105,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         if let aircarftLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation)  {
             DJISDKManager.keyManager()?.startListeningForChanges(on: aircarftLocationKey, withListener: self) { [unowned self] (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
                 if newValue != nil {
-                    let newLocationValue = newValue!.value as! DJISDKLocation
+                    let newLocationValue = newValue!.value as! CLLocation
                     
                     if CLLocationCoordinate2DIsValid(newLocationValue.coordinate) {
                         self.aircraftAnnotation.coordinate = newLocationValue.coordinate
@@ -129,7 +129,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         if let homeLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamHomeLocation) {
             DJISDKManager.keyManager()?.startListeningForChanges(on: homeLocationKey, withListener: self) { [unowned self] (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
                 if (newValue != nil) {
-                    let newLocationValue = newValue!.value as! DJISDKLocation
+                    let newLocationValue = newValue!.value as! CLLocation
                     
                     if CLLocationCoordinate2DIsValid(newLocationValue.coordinate) {
                         self.homeAnnotation.coordinate = newLocationValue.coordinate
@@ -209,7 +209,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
             return
         }
         
-        let droneLocation = droneLocationValue.value as! DJISDKLocation
+        let droneLocation = droneLocationValue.value as! CLLocation
         let droneCoordinates = droneLocation.coordinate
     
         if let aircraft = DJISDKManager.product() as? DJIAircraft {
@@ -366,7 +366,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
             return nil
         }
         
-        let droneLocation = droneLocationValue.value as! DJISDKLocation
+        let droneLocation = droneLocationValue.value as! CLLocation
         let droneCoordinates = droneLocation.coordinate
         
         if !CLLocationCoordinate2DIsValid(droneCoordinates) {
@@ -445,7 +445,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
             return nil
         }
         
-        let droneLocation = droneLocationValue.value as! DJISDKLocation
+        let droneLocation = droneLocationValue.value as! CLLocation
         let droneCoordinates = droneLocation.coordinate
         
         if !CLLocationCoordinate2DIsValid(droneCoordinates) {

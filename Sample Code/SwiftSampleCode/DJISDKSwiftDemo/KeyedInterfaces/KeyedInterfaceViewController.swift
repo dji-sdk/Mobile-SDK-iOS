@@ -101,7 +101,7 @@ class KeyedInterfaceViewController: UIViewController {
             DJISDKManager.keyManager()?.startListeningForChanges(on: locationKey!, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
                 if newValue != nil {
                     // DJIFlightControllerParamAircraftLocation is associated with a DJISDKLocation object
-                    let aircraftCoordinates = newValue!.value! as! DJISDKLocation
+                    let aircraftCoordinates = newValue!.value! as! CLLocation
                     
                     self.listeningCoordinatesLabel.text = "Lat: \(aircraftCoordinates.coordinate.latitude) - Long: \(aircraftCoordinates.coordinate.longitude)"
                 }
