@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJITapFlyExecutionState</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJITapFlyExecutionState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides the detailed state of a TapFly Mission that is executing.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>direction</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISDKVector3D *direction</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState_direction</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The direction vector the aircraft is travelling in using the N-E-D  (North-East-Down) coordinate system.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +434,7 @@
 <div class="article"><h6><font color="#AAA">property </font>imageLocation</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGPoint</span> imageLocation</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState_imageLocation</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The image point from the video feed where the vision system should calculate the  flight direction from. The image point is normalized to [0,1] where (0,0) is the  top left corner and (1,1) is the bottom right.</font></p>
 </div>
@@ -430,7 +442,7 @@
 <div class="article"><h6><font color="#AAA">property </font>speed</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> speed</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState_speed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The real-time speed of the aircraft in m/s.</font></p>
 </div>
@@ -438,7 +450,7 @@
 <div class="article"><h6><font color="#AAA">property </font>bypassDirection</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIBypassDirection bypassDirection</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState_bypassDirection</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The direction the aircraft is moving around or bypassing an obstacle in. Will be  <code><a href="../../Components/Missions/DJITapFlyMission.html#djitapflymission_djibypassdirection_none">DJIBypassDirectionNone</a></code> if the aircraft is not executing  an avoidance maneuver.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -448,7 +460,7 @@
 <div class="article"><h6><font color="#AAA">property </font>relativeHeading</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> relativeHeading</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission_DJITapFlyExecutionState_relativeHeading</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITapFlyMission.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Aircraft's heading relative to the flight direction.</font></p>
 </div>

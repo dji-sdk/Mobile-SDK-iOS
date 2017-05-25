@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIVisionDetectionState</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIVisionDetectionState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class gives state information about the product's vision sensors used for obstacle detection. The two  types of sensors used are dual camera sensors operating in the visible spectrum (dual-camera sensor) and  infrared time of flight (TOF) sensors. Note, Inspire 2's upwards-facing infrared TOF sensor is not returned  in this state. It is accessed through <code><a href="../../Components/IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html#djivisiondetectionstate_djivisioncontrolstate">DJIVisionControlState</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>isSensorBeingUsed</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isSensorBeingUsed</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamissensorbeingused_inline">DJIFlightControllerKey.DJIFlightAssistantParamIsSensorBeingUsed</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_isSensorWorking</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamissensorbeingused_inline">DJIFlightControllerKey.DJIFlightAssistantParamIsSensorBeingUsed</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666"><code>YES</code> if the vision sensor is working.</font></p>
 </div>
@@ -420,7 +432,7 @@
 <div class="article"><h6><font color="#AAA">property </font>systemWarning</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIVisionSystemWarning systemWarning</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamsystemwarning_inline">DJIFlightControllerKey.DJIFlightAssistantParamSystemWarning</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_systemWarning</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamsystemwarning_inline">DJIFlightControllerKey.DJIFlightAssistantParamSystemWarning</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Distance warning level between the obstacle and the aircraft. This is a combination of warning levels from each sector.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -430,7 +442,7 @@
 <div class="article"><h6><font color="#AAA">property </font>position</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIVisionSensorPosition position</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_position</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The vision sensor's position on the aircraft. For Phantom 4 Pro, there are 4 vision sensors on the aircraft.  The sensors on the nose and tail are dual-camera sensors. The sensors on the left and right are infrared  time-of-flight (TOF) sensors.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -440,7 +452,7 @@
 <div class="article"><h6><font color="#AAA">property </font>obstacleDistanceInMeters</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> obstacleDistanceInMeters</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_obstacleDistanceInMeters</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The distance to the closest detected obstacle, in meters. It is only used when the sensor is an infrared TOF  sensor. The valid range is [0.3, 5.0]. Phantom 4 Pro has two infrared sensors on its left and right. Both sensors have a 70-degree horizontal field of view (FOV) and 20-degree vertical FOV. The value  is always 0.0 if the sensor is a dual-camera sensor or the sensor is not working properly.</font></p>
 </div>
@@ -448,7 +460,7 @@
 <div class="article"><h6><font color="#AAA">property </font>detectionSectors</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nullable</span>, <span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSArray</span>&lt;DJIObstacleDetectionSector *&gt; *detectionSectors</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamdetectionsectors_inline">DJIFlightControllerKey.DJIFlightAssistantParamDetectionSectors</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_detectionSectors</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamdetectionsectors_inline">DJIFlightControllerKey.DJIFlightAssistantParamDetectionSectors</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The vision system can see in front of the aircraft with a 70 degree horizontal field of view (FOV) and 55-degree  vertical FOV for the Phantom 4. The horizontal FOV is split into four equal sectors and this array contains the  distance and warning information for each sector. For Phantom 4, the horizontal FOV is separated into 4 sectors.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
@@ -459,7 +471,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIVisionSensorPosition</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIVisionSensorPosition)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_visionSensorPosition</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Position of the sensor on the aircraft.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -468,7 +480,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIVisionSystemWarning</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIVisionSystemWarning)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamsystemwarning_inline">DJIFlightControllerKey.DJIFlightAssistantParamSystemWarning</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIVisionDetectionState_VisionSystemWarning</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamsystemwarning_inline">DJIFlightControllerKey.DJIFlightAssistantParamSystemWarning</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Distance warning returned by the front vision system. Warning Level 4 is the most serious level.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>

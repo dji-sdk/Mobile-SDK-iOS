@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISDKManager</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISDKManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class is the entry point for using the SDK with a DJI product.  Most importantly, this class is used to register the SDK, and to connect  to and access the product. This class also provides access to important feature managers (such as <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">keyManager</a></code>), debugging tools, and threading control of asynchronous completion blocks. SDK Registration using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerAppWithDelegate</a></code> must be successful before the SDK can be used with a DJI product.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -413,7 +425,7 @@
 <div class="article"><h6><font color="#AAA">extern </font>DJISDKVersionNumber</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">FOUNDATION_EXPORT <span class="keyword">double</span> DJISDKVersionNumber</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_SDKVersionNumber</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDK.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Version number of DJI Mobile SDK.</font></p>
 </div>
@@ -421,7 +433,7 @@
 <div class="article"><h6><font color="#AAA">extern </font>DJISDKVersionString</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">FOUNDATION_EXPORT <span class="keyword">const</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> DJISDKVersionString[]</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_SDKVersionString</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDK.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Version string of DJI Mobile SDK.</font></p>
 </div>
@@ -429,7 +441,7 @@
 <div class="article"><h6><font color="#AAA">class method </font>SDKVersion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="built_in">NSString</span> *)SDKVersion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_getSDKVersion</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gets the DJI Mobile SDK Version. Returns SDK version as a string.</font></p>
 <h5 id="return">Return:</h5>
@@ -438,7 +450,7 @@
 <div class="article"><h6><font color="#AAA">class method </font>registerAppWithDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)registerAppWithDelegate:(<span class="keyword">id</span>&lt;DJISDKManagerDelegate&gt;)delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_registerApp</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The first time the app is initialized after installation, the app connects to a DJI Server through the  internet to verify the Application Key. Subsequent app starts will use locally cached verification  information to register the app.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -447,7 +459,7 @@
 <div class="article"><h6><font color="#AAA">class method </font>hasSDKRegistered</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="built_in">BOOL</span>)hasSDKRegistered</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_hasSDKRegistered</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Registration state.</font></p>
 <h5 id="return-v2">Return:</h5>
@@ -456,7 +468,7 @@
 <div class="article"><h6><font color="#AAA">class method </font>setCompletionBlockQueue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)setCompletionBlockQueue:(<span class="built_in">dispatch_queue_t</span>)completionBlockQueue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_setCompletionBlockQueue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Queue in which completion blocks are called. If left unset,  completion blocks are called in main queue.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -465,54 +477,72 @@
 <div class="article"><h6><font color="#AAA">class method </font>setDisableCountryCodeCheck</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)setDisableCountryCodeCheck:(<span class="built_in">BOOL</span>)disableCountryCodeCheck</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_setDisableCountryCodeCheck</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Some products (e.g. Mavic Pro, Inspire 2, Phantom 4 Pro) make use of both 2.4 GHz and 5 GHz spectrums for wireless communication. While 5 GHz will not necessarily have the same range as 2.4 GHz, it can be useful  if the 2.4 GHz band has a lot of existing interference. However, as some countries do not permit the use of the 5 GHz spectrum, the SDK will automatically try to determine the country in which the product is operating and enable or disable the 5 GHz option accordingly. The process of determining in which country the product is flying uses location information. This method can be used to disable this check, but must  be called before <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerAppWithDelegate</a></code> to take effect. If  disabled, only 2.4 GHz will be available as an option.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">disableCountryCodeCheck</font></font></td><td><font color="#666"><i><code>YES</code> if the country code check is disabled.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_useraccountmanager"><div class="api-col left">User Account Manager</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_useraccountmanager_inline">userAccountManager</a></div></div><div class="inline-doc" id="djisdkmanager_useraccountmanager_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">class method </font>userAccountManager</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (DJIUserAccountManager *)userAccountManager</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Used to manage the DJI account of users. Login is required by <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">DJIFlyZoneManager</a></code>  and <code><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">DJIAppActivationManager</a></code>.</font></p>
+<h5 id="return-v3">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager">DJIUserAccountManager</a> *</font></td><td><font color="#666"><i>A instance of <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager">DJIUserAccountManager</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djisdkmanager_appactivationmanager"><div class="api-col left">App Activation Manager</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_appactivationmanager_inline">appActivationManager</a></div></div><div class="inline-doc" id="djisdkmanager_appactivationmanager_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">class method </font>appActivationManager</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (DJIAppActivationManager *)appActivationManager</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Used to check the states related to the App Activation.</font></p>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">DJIAppActivationManager</a> *</font></td><td><font color="#666"><i>A instance of <code><a href="../../Components/AppActivationManager/DJIAppActivationManager.html#djiappactivationmanager">DJIAppActivationManager</a></code>.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="product-connection">Product Connection</h4>
 <div class="api-row" id="djisdkmanager_product"><div class="api-col left">Product</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_product_inline">product</a></div></div><div class="inline-doc" id="djisdkmanager_product_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>product</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (__kindof DJIBaseProduct *_Nullable)product</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_product</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">The DJI product which is connected to the mobile device, only available after successful registration of the app.</font></p>
-<h5 id="return-v3">Return:</h5>
+<h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">__kindof <a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a> *_Nullable</font></td><td><font color="#666"><i>A instance of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_bluetoothconnector"><div class="api-col left">Bluetooth</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_bluetoothconnector_inline">bluetoothProductConnector</a></div></div><div class="inline-doc" id="djisdkmanager_bluetoothconnector_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>bluetoothProductConnector</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> DJIBluetoothProductConnector *)bluetoothProductConnector</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_bluetoothConnector</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Used to establish the Bluetooth connection between the mobile device and the DJI product. The Bluetooth connection needs to be established before a connection between the SDK and the DJI product can be made using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_startconnectiontoproduct">startConnectionToProduct</a></code>.</font></p>
-<h5 id="return-v4">Return:</h5>
+<h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">DJIBluetoothProductConnector</a> *</font></td><td><font color="#666"><i>A <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">DJIBluetoothProductConnector</a></code> instance.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_startconnectiontoproduct"><div class="api-col left">Connection</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_startconnectiontoproduct_inline">startConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_startconnectiontoproduct_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>startConnectionToProduct</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="built_in">BOOL</span>)startConnectionToProduct</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_startConnectionToProduct</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Starts a connection between the SDK and the DJI product. This method should be called  after successful registration of the app and once there is a data connection between the mobile device and DJI product. This data connection is either a USB cable connection, a WiFi connection (that needs to be established outside of the SDK) or a Bluetooth connection (that needs to be established with <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">bluetoothProductConnector</a></code>). If the connection succeeds, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_productconnectedupdate">productConnected</a></code> will be called if the connection succeeded. Returns <code>YES</code> if the connection is started successfully. For products which connect to the mobile device using Bluetooth, <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_bluetoothconnector">bluetoothProductConnector</a></code> should be used to get a <code><a href="../../Components/SDKManager/DJIBluetoothProductConnector.html#djibluetoothproductconnector">DJIBluetoothProductConnector</a></code> object which can handle Bluetooth device connection.</font></p>
-<h5 id="return-v5">Return:</h5>
+<h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if the connection is started successfully.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_stopconnectiontoproduct"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_stopconnectiontoproduct_inline">stopConnectionToProduct</a></div></div><div class="inline-doc" id="djisdkmanager_stopconnectiontoproduct_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>stopConnectionToProduct</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)stopConnectionToProduct</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_stopConnectionToProduct</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Disconnect from the connected DJI product.</font></p>
 </div>
 <div class="api-row" id="djisdkmanager_closeconnectionwhenenterbackground"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_closeconnectionwhenenterbackground_inline">closeConnectionWhenEnteringBackground</a></div></div><div class="inline-doc" id="djisdkmanager_closeconnectionwhenenterbackground_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>closeConnectionWhenEnteringBackground</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)closeConnectionWhenEnteringBackground:(<span class="built_in">BOOL</span>)isClose</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_closeConnectionWhenEnterBackground</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Set the SDK to close the connection automatically when the app enters the background, and resume connection  automatically when the app enters the foreground. Default is <code>YES</code>.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isClose</font></font></td><td><font color="#666"><i><code>YES</code> if the connection should be closed when entering background.</i></font></td></tr></table></html></div>
@@ -522,8 +552,8 @@
 <div class="article"><h6><font color="#AAA">class method </font>enableBridgeModeWithBridgeAppIP</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)enableBridgeModeWithBridgeAppIP:(<span class="built_in">NSString</span> *)bridgeAppIP</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_enterDebugMode</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Enter debug mode with debug IP.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">bridgeAppIP</font></font></td><td><font color="#666"><i>Debug IP of the DJI Bridge App.</i></font></td></tr></table></html></div>
@@ -531,8 +561,8 @@
 <div class="article"><h6><font color="#AAA">class method </font>enableRemoteLoggingWithDeviceID:logServerURLString</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)enableRemoteLoggingWithDeviceID:(<span class="built_in">NSString</span> *_Nullable)deviceID logServerURLString:(<span class="built_in">NSString</span> *)url</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_enableRemoteLogging</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Enable remote logging with log server URL.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString *_Nullable <font color="#000">deviceID</font></font></td><td><font color="#666"><i>Optional device ID to uniquely identify logs from an installation.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">url</font></font></td><td><font color="#666"><i>URL of the remote log server.</i></font></td></tr></table></html></div>
@@ -540,17 +570,17 @@
 <div class="article"><h6><font color="#AAA">class method </font>archiveLogs</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> <span class="built_in">NSString</span> *)archiveLogs</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_archiveLogs</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">The DJI Mobile SDK collects logs that are related to flight. These logs can be used to help diagnose the cause  of a product's flight failure at the SDK and mobile application layers. They are predominantly used by a DJI  service facility, who will combine them with the product's flight logs (stored on the product) to better  understand the root cause of a crash and determine whether the incident is covered under warranty. They can  also be used by developers to debug their application. SDK Logs record commands from the application to the  SDK, and information from the SDK to the application that are related to flight. Logs are cached to the mobile  device, and will overwrite themselves to limit storage footprint. <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_archivelogs">archiveLogs</a></code> will move the logs to an archive  folder. Logs in the archive, will only be overwritten by newer archives that go beyond the storage limit and not  normal log generation. The storage limit for normal log generation is 400 MB (about 500 minutes of flight). The  storage limit for the archive is an additional 400 MB. The logs have an encrypted and unencrypted portion. The  unencrypted portion can be used by developers to see all commands and information sent to and received from the  SDK by the mobile application that is related to flight. The encrypted portion can only be used by a DJI service  facility as it includes proprietary hardware protocols and is used to tie the SDK logs and product flight logs  together. Logs can be transferred to the DJI service facility either by manually downloading from the mobile  device using iTunes, or the application can send archived logs to a DJI endpoint using <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_uploadarchivedlogs">uploadArchivedLogs</a></code>.  Developers should be careful to upload logs directly when the user is on a cellular connection as the archive  can be up to 400 MB. Return path of archived logs, nil if a problem occurred.</font></p>
-<h5 id="return-v6">Return:</h5>
+<h5 id="return-v8">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable NSString *</font></td><td><font color="#666"><i>An NSString object for the archive logs.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_uploadarchivedlogs"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_uploadarchivedlogs_inline">uploadArchivedLogs</a></div></div><div class="inline-doc" id="djisdkmanager_uploadarchivedlogs_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>uploadArchivedLogs</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)uploadArchivedLogs</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_uploadArchivedLogs</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Upload the archive to DJI. The archive will not be deleted when calling this method.</font></p>
 </div>
 <html><p><br></p></html>
@@ -559,8 +589,8 @@
 <div class="article"><h6><font color="#AAA">class method </font>setBridgeAppServerDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)setBridgeAppServerDelegate:(<span class="keyword">id</span> &lt;BridgeAppServerDelegate&gt;)delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DebugServer_setDebugServerDelegate</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Register the delegate object to get the connection status of the debug server with the Remote controller and the debug client. Note, this  method is only used if building the Bridge App application and should not be used in a typical application.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id &lt;<a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_debugserver_protocol">BridgeAppServerDelegate</a>&gt; <font color="#000">delegate</font></font></td><td><font color="#666"><i>DJISDKDebugServerDelegate object.</i></font></td></tr></table></html></div>
@@ -568,8 +598,8 @@
 <div class="article"><h6><font color="#AAA">class method </font>startBridgeAppServerWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)startBridgeAppServerWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSString</span> *ipaddress))block</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DebugServer_startSDKDebugServer</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Start the debug server. Note, this method is only used if building  the Bridge App application and should not be used in a typical application.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">ipaddress</font></font></td><td><font color="#666"><i>The IP address string.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(NSString *ipaddress) <font color="#000">block</font></font></td><td><font color="#666"><i>block returns the IP address of the server.</i></font></td></tr></table></html></div>
@@ -577,8 +607,8 @@
 <div class="article"><h6><font color="#AAA">class method </font>stopSDKDebugServer</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">void</span>)stopSDKDebugServer</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DebugServer_stopSDKDebugServer</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Stop the debug server and release the service objects used by the server. Note, this method is only used if building the Bridge App application  and should not be used in a typical application.</font></p>
 </div>
 <html><p><br></p></html>
@@ -587,37 +617,37 @@
 <div class="article"><h6><font color="#AAA">class method </font>flyZoneManager</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> DJIFlyZoneManager *)flyZoneManager</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_flyZoneManager</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Provide access to <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">DJIFlyZoneManager</a></code> used to manage DJI's GEO system for no fly zones.</font></p>
-<h5 id="return-v7">Return:</h5>
+<h5 id="return-v9">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">DJIFlyZoneManager</a> *</font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager">DJIFlyZoneManager</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_keymanager"><div class="api-col left">SDK Keys</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_keymanager_inline">keyManager</a></div></div><div class="inline-doc" id="djisdkmanager_keymanager_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>keyManager</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> DJIKeyManager *)keyManager</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_keyManager</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Provide access to the SDK Key interface.</font></p>
-<h5 id="return-v8">Return:</h5>
+<h5 id="return-v10">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a> *</font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_missioncontrol"><div class="api-col left">Mission Control</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_missioncontrol_inline">missionControl</a></div></div><div class="inline-doc" id="djisdkmanager_missioncontrol_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>missionControl</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> DJIMissionControl *)missionControl</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_missionControl</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Provide access to <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">DJIMissionControl</a></code> used to manage missions.</font></p>
-<h5 id="return-v9">Return:</h5>
+<h5 id="return-v11">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">DJIMissionControl</a> *</font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIMissionControl.html#djimissioncontrol">DJIMissionControl</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djisdkmanager_videofeeder"><div class="api-col left">Video Feeder</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_videofeeder_inline">videoFeeder</a></div></div><div class="inline-doc" id="djisdkmanager_videofeeder_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">class method </font>videoFeeder</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> DJIVideoFeeder *)videoFeeder</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_videoFeeder</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Provide access to <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a></code> used to video feeder.</font></p>
-<h5 id="return-v10">Return:</h5>
+<h5 id="return-v12">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a> *</font></td><td><font color="#666"><i>An instance of <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a></code>.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
@@ -625,24 +655,24 @@
 <div class="article"><h6><font color="#AAA">define </font>SDK_APP_KEY_INFO_PLIST_KEY</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="meta">#define SDK_APP_KEY_INFO_PLIST_KEY @<span class="meta-string">"DJISDKAppKey"</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DJISDKAppKey</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">To register the app, create a new key in the info.plist file where the plist key  is &quot;DJISDKAppKey&quot; and its value is your DJI registered App key.</font></p>
 </div>
 <div class="api-row" id="djisdkmanager_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_protocol_inline">DJISDKManagerDelegate</a></div></div><div class="inline-doc" id="djisdkmanager_protocol_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">protocol </font>DJISDKManagerDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJISDKManagerDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_Protocol</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to receive the updated registration status and the change of the  connected product.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <div class="api-row" id="djisdkmanager_didregisterappwitherror"><div class="api-col left">SDK Registration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_didregisterappwitherror_inline">appRegisteredWithError</a></div></div><div class="inline-doc" id="djisdkmanager_didregisterappwitherror_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>appRegisteredWithError</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)appRegisteredWithError:(<span class="built_in">NSError</span> *_Nullable)error</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_didRegisterAppWithError</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Delegate method after the application attempts to register.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i><code>nil</code> if registration is successful. Otherwise it contains an <code>NSError</code> object with error codes from <code><a href="../../Components/SDKError/DJIError.html#djierror_djisdkregistrationerror">DJISDKRegistrationError</a></code>.</i></font></td></tr></table></html></div>
@@ -650,8 +680,8 @@
 <div class="article"><h6><font color="#AAA">method </font>productConnected</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)productConnected:(DJIBaseProduct *_Nullable)product</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_productConnectedUpdate</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Called when the &quot;product&quot; is connected.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a> *_Nullable <font color="#000">product</font></font></td><td><font color="#666"><i>Product object. nil if the USB link or WiFi link between the product and phone is  disconnected.</i></font></td></tr></table></html></div>
@@ -659,16 +689,16 @@
 <div class="article"><h6><font color="#AAA">method </font>productDisconnected</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)productDisconnected</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_productDisconnectedUpdate</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Called when the &quot;product&quot; is disconnected.</font></p>
 </div>
 <div class="api-row" id="djisdkmanager_componentconnectedupdate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_componentconnectedupdate_inline">componentConnectedWithKey:andIndex</a></div></div><div class="inline-doc" id="djisdkmanager_componentconnectedupdate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>componentConnectedWithKey:andIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)componentConnectedWithKey:(<span class="built_in">NSString</span> * _Nullable)key andIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_componentConnectedUpdate</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Called when the &quot;component&quot; is connected.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * _Nullable <font color="#000">key</font></font></td><td><font color="#666"><i>Key of the component.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the component.</i></font></td></tr></table></html></div>
@@ -676,8 +706,8 @@
 <div class="article"><h6><font color="#AAA">method </font>componentDisconnectedWithKey:andIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)componentDisconnectedWithKey:(<span class="built_in">NSString</span> * _Nullable)key andIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_componentDisconnectedUpdate</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Called when the &quot;component&quot; is disconnected.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * _Nullable <font color="#000">key</font></font></td><td><font color="#666"><i>Key of the component.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the component.</i></font></td></tr></table></html></div>
@@ -686,16 +716,16 @@
 <div class="article"><h6><font color="#AAA">protocol </font>BridgeAppServerDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">BridgeAppServerDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DebugServer_Protocol</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to receive the updated connection status between the debug server,  remote controller and debug client.</font></p>
 <h5 id="protocol-methods-v2">Protocol Methods:</h5>
 <div class="api-row" id="djisdkmanager_debugserver_connectionstatus"><div class="api-col left">Connection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djisdkmanager_debugserver_connectionstatus_inline">bridgeAppServerWithRCConnectionStatus:andDebugClientConnectionStatus</a></div></div><div class="inline-doc" id="djisdkmanager_debugserver_connectionstatus_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>bridgeAppServerWithRCConnectionStatus:andDebugClientConnectionStatus</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)bridgeAppServerWithRCConnectionStatus:(<span class="built_in">BOOL</span>)isRCConnected andDebugClientConnectionStatus:(<span class="built_in">BOOL</span>)isWifiConnected</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISDKManager_DebugServer_ConnectionStatus</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISDKManager.h</font></td></tr></table></html>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Callback delegate method after the Debug server is started.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isRCConnected</font></font></td><td><font color="#666"><i><code>YES</code> if the RC is connected with the Debug server.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isWifiConnected</font></font></td><td><font color="#666"><i><code>YES</code> if the debug client is connected with the Debug server based on WiFi.</i></font></td></tr></table></html></div>

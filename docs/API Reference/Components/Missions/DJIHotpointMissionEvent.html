@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIHotpointMissionEvent</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHotpointMissionEvent</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionEvent</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class encapsulates all the state changs of the Hotpoint mission operator.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>previousState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIHotpointMissionState previousState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionEvent_previousState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The previous state of the operator.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +434,7 @@
 <div class="article"><h6><font color="#AAA">property </font>currentState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIHotpointMissionState currentState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionEvent_currentState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The current state of the operator.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -432,7 +444,7 @@
 <div class="article"><h6><font color="#AAA">property </font>radius</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> radius</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionEvent_radius</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The Hotpoint radius in meters of the mission.  If there is no executing mission, it is 0.</font></p>
 </div>
@@ -440,7 +452,7 @@
 <div class="article"><h6><font color="#AAA">property </font>error</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSError</span> *error</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionEvent_error</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The encountered error if there is any. Otherwise, it is <code>nil</code>.</font></p>
 </div>
@@ -449,11 +461,11 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIHotpointMissionState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIHotpointMissionState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">States of <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator">DJIHotpointMissionOperator</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_unknown_inline"></a>DJIHotpointMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the inital state when the  operator has just been created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_disconnected_inline"></a>DJIHotpointMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_recovering_inline"></a>DJIHotpointMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering.  At this time, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_notsupported_inline"></a>DJIHotpointMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_readytostart_inline"></a>DJIHotpointMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executinginitialphase_inline"></a>DJIHotpointMissionStateExecutingInitialPhase</font></td><td><font color="#666">The aircraft is moving torwards the start point of the Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executing_inline"></a>DJIHotpointMissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executionpaused_inline"></a>DJIHotpointMissionStateExecutionPaused</font></td><td><font color="#666">Hotpoint mission is paused successfully. User can call  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_resumemission">resumeMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_unknown_inline"></a>DJIHotpointMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the initial state when the  operator has just been created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_disconnected_inline"></a>DJIHotpointMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_recovering_inline"></a>DJIHotpointMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering.  At this time, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_notsupported_inline"></a>DJIHotpointMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_readytostart_inline"></a>DJIHotpointMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executinginitialphase_inline"></a>DJIHotpointMissionStateExecutingInitialPhase</font></td><td><font color="#666">The aircraft is moving towards the start point of the Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executing_inline"></a>DJIHotpointMissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executionpaused_inline"></a>DJIHotpointMissionStateExecutionPaused</font></td><td><font color="#666">Hotpoint mission is paused successfully. User can call  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_resumemission">resumeMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
 
         </div>
       </div>

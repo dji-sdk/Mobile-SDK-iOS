@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIHotpointMission</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHotpointMission</span> : <span class="title">DJIMission</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Mission/DJIMission.html#djimission">DJIMission</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Mission/DJIMission.html#djimission">DJIMission</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Thes class represents a Hotpoint mission. In a Hotpoint mission, the aircraft will  repeatedly fly circles of a  constant radius around a specified point called a Hot Point. The user can control  the aircraft to fly around the Hotpoint with a specific radius and altitude. During  execution, the user can also use the physical remote controller to modify its radius  and speed. It is not supported by Mavic Pro when using a WiFi connection.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">method </font>checkParameters</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSError</span> *)checkParameters</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_checkParameters</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Checks if the configuration for mission is valid before calling  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_startmission">startMission:withCompletion</a></code> of <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator">DJIHotpointMissionOperator</a></code>.</font></p>
 <h5 id="return">Return:</h5>
@@ -421,7 +433,7 @@
 <div class="article"><h6><font color="#AAA">property </font>hotpoint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CLLocationCoordinate2D</span> hotpoint</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_hotpoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sets the coordinate of the hot point.</font></p>
 </div>
@@ -429,7 +441,7 @@
 <div class="article"><h6><font color="#AAA">property </font>startPoint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointStartPoint startPoint</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_startPoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Set aircraft's initial point on the circular flight path when starting the hot point  mission.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -439,7 +451,7 @@
 <div class="article"><h6><font color="#AAA">property </font>heading</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointHeading heading</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_heading</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Aircraft's heading while flying around the hot point. It can be pointed toward or  away from the hot point, forward or backward along its flight route, or can be  manually controlled by the remote controller.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -449,7 +461,7 @@
 <div class="article"><h6><font color="#AAA">property </font>altitude</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> altitude</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_altitude</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the altitude of the hot point orbit with a range [5,500] meters.  The altitude is relative to the ground altitude from which the aircraft took off.</font></p>
 </div>
@@ -457,7 +469,7 @@
 <div class="article"><h6><font color="#AAA">property </font>radius</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> radius</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_radius</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Sets the circular flight path radius with which the aircraft will fly around the  hotpoint. The value of this property should be in the range  of [<code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointminradius">DJIHotpointMinRadius</a></code>, <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointmaxradius">DJIHotpointMaxRadius</a></code>] meters.</font></p>
 </div>
@@ -465,7 +477,7 @@
 <div class="article"><h6><font color="#AAA">property </font>angularVelocity</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> angularVelocity</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_angularVelocity</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the angular velocity in degrees/s of the aircraft as it orbits the hot  point. The default value is 20 degrees/s. The maximum angular velocity allowed  is relative to the orbit radius.</font></p>
 </div>
@@ -474,7 +486,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMaxRadius</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxRadius</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointMaxRadius</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Maximum radius, in meters, of the circular path the aircraft will fly around the  point of interest. Currently 500m.</font></p>
 </div>
@@ -482,7 +494,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMinRadius</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinRadius</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointMinRadius</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Minimum radius, in meters, of the circular path the aircraft will fly around the  point of interest.</font></p>
 </div>
@@ -490,7 +502,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMaxAltitude</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxAltitude</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointMaxAltitude</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Maximum altitude in meters for a Hotpoint mission.</font></p>
 </div>
@@ -498,7 +510,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMinAltitude</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinAltitude</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointMinAltitude</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Minimum altitude in meters for a Hotpoint mission.</font></p>
 </div>
@@ -506,7 +518,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIHotpointStartPoint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointStartPoint)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointStartPoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Aircraft starting point relative to the hot point.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -515,7 +527,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIHotpointHeading</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointHeading)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIHotPointMission_DJIHotPointHeading</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Heading of the aircraft while orbiting the hot point.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>

@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISimulator</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISimulator</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">DJI aircraft can be put into simulation mode using this class. Developers can start and stop the simulation, as well as monitor basic aircraft attitude and location information.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJISimulatorDelegate&gt; delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_delegate</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the delegate of simulator.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +434,7 @@
 <div class="article"><h6><font color="#AAA">property </font>isSimulatorActive</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isSimulatorActive</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamissimulatoractive_inline">DJIFlightControllerKey.DJIFlightControllerParamIsSimulatorActive</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_isSimulatorStarted</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamissimulatoractive_inline">DJIFlightControllerKey.DJIFlightControllerParamIsSimulatorActive</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666"><code>YES</code> if the simulator is started.</font></p>
 </div>
@@ -430,7 +442,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startWithLocation:updateFrequency:GPSSatellitesNumber:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)startWithLocation:(<span class="built_in">CLLocationCoordinate2D</span>)location</div><div class="line">          updateFrequency:(<span class="built_in">NSUInteger</span>)frequency</div><div class="line">      GPSSatellitesNumber:(<span class="built_in">NSUInteger</span>)number</div><div class="line">           withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamstartsimulator_inline">DJIFlightControllerKey.DJIFlightControllerParamStartSimulator</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_startSimulator</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamstartsimulator_inline">DJIFlightControllerKey.DJIFlightControllerParamStartSimulator</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Start simulator. Will result in error if simulation is already started.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -439,7 +451,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stopWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamstopsimulator_inline">DJIFlightControllerKey.DJIFlightControllerParamStopSimulator</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_stopSimulator</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamstopsimulator_inline">DJIFlightControllerKey.DJIFlightControllerParamStopSimulator</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Stop the simulator.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -448,7 +460,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setFlyZoneLimitationEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setFlyZoneLimitationEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorflyzonelimitationenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorFlyZoneLimitationEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_setFlyZoneEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorflyzonelimitationenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorFlyZoneLimitationEnabled</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Enable/disable the fly zone system in the simulator. By default, fly zone is disabled in the simulator.  Rebooting the aircraft is required for the settings to take effect.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -457,7 +469,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getFlyZoneLimitationEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getFlyZoneLimitationEnabledWithCompletion:(<span class="keyword">void</span>(^)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))block</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorflyzonelimitationenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorFlyZoneLimitationEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_getFlyZoneEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorflyzonelimitationenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorFlyZoneLimitationEnabled</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Gets fly zone system simulator status (enabled/disabled). By default, fly zone is disabled in the simulator.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -467,7 +479,7 @@
 <div class="article"><h6><font color="#AAA">protocol </font>DJISimulatorDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJISimulatorDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorstate_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_Protocol</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorstate_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorState</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">This protocol provides the delegate method of the simulator.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -476,7 +488,7 @@
 <div class="article"><h6><font color="#AAA">method </font>simulator:didUpdateState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)simulator:(DJISimulator *_Nonnull)simulator didUpdateState:(DJISimulatorState *_Nonnull)state</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorstate_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJISimulator_updateSimulatorState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorstate_inline">DJIFlightControllerKey.DJIFlightControllerParamSimulatorState</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Updates the simulator's current state.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>

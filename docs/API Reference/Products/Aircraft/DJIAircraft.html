@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../../Components/AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../../Components/UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../../Components/IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../../Components/IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../../Components/FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../../Components/FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIAircraft</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAircraft</span> : <span class="title">DJIBaseProduct</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Aircraft product class, which includes basic product information and access to all components (such as flight controller, battery etc.). This object is accessed  from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_product">product</a></code> in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>. Aircraft components are defined in both <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> and its parent <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>flightController</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIFlightController *_Nullable flightController</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_flightController</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns an instance of the aircraft's flight controller.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +434,7 @@
 <div class="article"><h6><font color="#AAA">property </font>batteries</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSArray</span>&lt;DJIBattery *&gt; *_Nullable batteries</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_batteries</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Returns an array of the aircraft's batteries. It is used when the aircraft has multiple batteries, e.g. Matrice 600.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -432,7 +444,7 @@
 <div class="article"><h6><font color="#AAA">property </font>remoteController</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRemoteController *_Nullable remoteController</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_remoteController</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Returns an instance of the aircraft's remote controller.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
@@ -442,7 +454,7 @@
 <div class="article"><h6><font color="#AAA">property </font>mobileRemoteController</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIMobileRemoteController *_Nullable mobileRemoteController</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_mobileRemoteController</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">A simulated remote controller on the mobile device. It is supported only by Mavic Pro using WiFi.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
@@ -453,7 +465,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameUnknownAircraft</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameUnknownAircraft</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameUnknownAircraft</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The Aircraft's model name is unknown.</font></p>
 </div>
@@ -461,7 +473,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameInspire1</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameInspire1</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameInspire1</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The aircraft's model name is Inspire 1.</font></p>
 </div>
@@ -469,7 +481,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameInspire1Pro</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameInspire1Pro</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameInspire1Pro</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The aircraft's model name is Inspire 1 Pro.</font></p>
 </div>
@@ -477,7 +489,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameInspire1RAW</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameInspire1RAW</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameInspire1RAW</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The aircraft's model name is Inspire 1 Raw.</font></p>
 </div>
@@ -485,7 +497,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameInspire2</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameInspire2</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameInspire2</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The aircraft's model name is Inspire 2.</font></p>
 </div>
@@ -493,7 +505,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom3Professional</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom3Professional</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom3Professional</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 3 Professional.</font></p>
 </div>
@@ -501,7 +513,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom3Advanced</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom3Advanced</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom3Advanced</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 3 Advanced.</font></p>
 </div>
@@ -509,7 +521,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom3Standard</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom3Standard</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom3Standard</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 3 Standard.</font></p>
 </div>
@@ -517,7 +529,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom34K</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom34K</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom34K</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 3 4K.</font></p>
 </div>
@@ -525,7 +537,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom4</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom4</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom4</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 4.</font></p>
 </div>
@@ -533,7 +545,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom4Pro</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom4Pro</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNamePhantom4Pro</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">The aircraft's model name is Phantom 4 Pro.</font></p>
 </div>
@@ -541,48 +553,64 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameMatrice100</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameMatrice100</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameMatrice100</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">The aircraft's model name is Matrice 100.</font></p>
+</div>
+<div class="api-row" id="djiaircraft_djiaircraftmodelnamematrice200"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamematrice200_inline">DJIAircraftModelNameMatrice200</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamematrice200_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameMatrice200</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameMatrice200</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">The aircraft's model name is Matrice 200.</font></p>
+</div>
+<div class="api-row" id="djiaircraft_djiaircraftmodelnamephantom4advanced"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamephantom4advanced_inline">DJIAircraftModelNamePhantom4Advanced</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamephantom4advanced_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNamePhantom4Advanced</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNamePhantom4Advanced</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">The aircraft's model name is Phantom 4 Advanced.</font></p>
 </div>
 <div class="api-row" id="djiaircraft_djiaircraftmodelnamematrice600"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamematrice600_inline">DJIAircraftModelNameMatrice600</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamematrice600_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameMatrice600</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameMatrice600</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameMatrice600</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">The aircraft's model name is Matrice 600.</font></p>
 </div>
 <div class="api-row" id="djiaircraft_djiaircraftmodelnamematrice600pro"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamematrice600pro_inline">DJIAircraftModelNameMatrice600Pro</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamematrice600pro_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameMatrice600Pro</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameMatrice600Pro</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameMatrice600Pro</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">The aircraft's model name is Matrice 600 Pro.</font></p>
 </div>
 <div class="api-row" id="djiaircraft_djiaircraftmodelnamea3"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamea3_inline">DJIAircraftModelNameA3</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamea3_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameA3</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameA3</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameA3</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">The aircraft flight controller's model name is A3.</font></p>
 </div>
 <div class="api-row" id="djiaircraft_djiaircraftmodelnamemavicpro"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamemavicpro_inline">DJIAircraftModelNameMavicPro</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamemavicpro_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameMavicPro</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameMavicPro</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameMavicPro</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">The aircraft's model name is Mavic Pro.</font></p>
 </div>
 <div class="api-row" id="djiaircraft_djiaircraftmodelnamen3"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djiaircraft_djiaircraftmodelnamen3_inline">DJIAircraftModelNameN3</a></div></div><div class="inline-doc" id="djiaircraft_djiaircraftmodelnamen3_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftModelNameN3</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIAircraftModelNameN3</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraft_DJIAircraftModelNameN3</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraft.h</font></td></tr></table></html>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">The aircraft flight controller's model name is N3.</font></p>
 </div>
 

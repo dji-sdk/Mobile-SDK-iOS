@@ -124,7 +124,7 @@
         {
             if (newValue) {
                // DJIFlightControllerParamAircraftLocation is associated with a DJISDKLocation object
-                DJISDKLocation *aircraftCoordinates = (DJISDKLocation *)newValue.value;
+                CLLocation *aircraftCoordinates = (CLLocation *)newValue.value;
                 
                 self.listeningCoordinatesLabel.text = [NSString stringWithFormat:@"Lat: %.6f - Long: %.6f", aircraftCoordinates.coordinate.latitude, aircraftCoordinates.coordinate.longitude];
             }

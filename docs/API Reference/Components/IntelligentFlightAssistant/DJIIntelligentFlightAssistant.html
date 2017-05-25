@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIFlightAssistant</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIFlightAssistant</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerflightassistantsubcomponent_inline">DJIFlightControllerKey.DJIFlightControllerFlightAssistantSubComponent</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerflightassistantsubcomponent_inline">DJIFlightControllerKey.DJIFlightControllerFlightAssistantSubComponent</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class contains components of the Intelligent Flight Assistant and provides methods to change its settings.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIFlightAssistantDelegate&gt; delegate</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_delegate</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Intelligent flight assistant delegate.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -422,7 +434,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setCollisionAvoidanceEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setCollisionAvoidanceEnabled:(<span class="built_in">BOOL</span>)enable</div><div class="line">                      withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamcollisionavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamCollisionAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setCollisionAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamcollisionavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamCollisionAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Enable collision avoidance. When enabled, the aircraft will stop and try to go  around detected obstacles.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -431,7 +443,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getCollisionAvoidanceEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getCollisionAvoidanceEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enable, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamcollisionavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamCollisionAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getCollisionAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamcollisionavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamCollisionAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gets collision avoidance status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -440,7 +452,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setUpwardsAvoidanceEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setUpwardsAvoidanceEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamupwardsavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamUpwardsAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setUpwardsAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamupwardsavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamUpwardsAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Enables/disables upward avoidance. When the Inspire 2's upwards-facing infrared sensor detects an obstacle, the  aircraft will slow its ascent and maintain a minimum distance of 1 meter from the obstacle. The  sensor has a 10-degree horizontal field of view (FOV) and 10-degree vertical FOV. The maximum detection  distance is 5m.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -449,7 +461,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getUpwardsAvoidanceEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getUpwardsAvoidanceEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamupwardsavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamUpwardsAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getUpwardsAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamupwardsavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamUpwardsAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Gets upward avoidance status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -458,7 +470,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setActiveObstacleAvoidanceEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setActiveObstacleAvoidanceEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamactiveobstacleavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamActiveObstacleAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setActiveObstacleAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamactiveobstacleavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamActiveObstacleAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Enables/disables active obstacle avoidance. When enabled, and an obstacle is moving toward the aircraft,  the aircraft will actively fly away from it. If while actively avoiding a moving obstacle, the aircraft  detects another obstacle in its avoidance path, it will  stop. <code><a href="../../Components/IntelligentFlightAssistant/DJIIntelligentFlightAssistant.html#djiintelligentflightassistant_setcollisionavoidanceenabled">setCollisionAvoidanceEnabled:withCompletion</a></code> must also be enabled.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -467,7 +479,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getActiveObstacleAvoidanceEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getActiveObstacleAvoidanceEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamactiveobstacleavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamActiveObstacleAvoidanceEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getActiveObstacleAvoidanceEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamactiveobstacleavoidanceenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamActiveObstacleAvoidanceEnabled</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Gets active obstacle avoidance status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -476,7 +488,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setVisionAssistedPositioningEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setVisionAssistedPositioningEnabled:(<span class="built_in">BOOL</span>)enabled</div><div class="line">                             withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamvisionassistedpositioningenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamVisionAssistedPositioningEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setVisionPositioningEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamvisionassistedpositioningenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamVisionAssistedPositioningEnabled</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Enable vision positioning. Vision positioning is used to augment GPS to improve  location accuracy when hovering and improve velocity calculation when flying.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -485,7 +497,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getVisionAssistedPositioningEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getVisionAssistedPositioningEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled,</div><div class="line">                                                                            <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamvisionassistedpositioningenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamVisionAssistedPositioningEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getVisionPositioningEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightController.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamvisionassistedpositioningenabled_inline">DJIFlightControllerKey.DJIFlightControllerParamVisionAssistedPositioningEnabled</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Gets vision positioning status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -494,7 +506,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setPrecisionLandingEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setPrecisionLandingEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamprecisionlandingenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamPrecisionLandingEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setPrecisionLandingEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamprecisionlandingenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamPrecisionLandingEnabled</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Enables/disables precision landing. When enabled, the aircraft will record its take-off location visually  (as well as with GPS). On a Return-To-Home action the aircraft will attempt to perform a precision landing  using the additional visual information. This method only works on a Return-To-Home action when the home  location is successfully recorded during take-off, and not changed during flight.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -503,7 +515,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getPrecisionLandingEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getPrecisionLandingEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamprecisionlandingenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamPrecisionLandingEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getPrecisionLandingEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamprecisionlandingenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamPrecisionLandingEnabled</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Gets precision landing status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -512,16 +524,16 @@
 <div class="article"><h6><font color="#AAA">method </font>setLandingProtectionEnabled:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setLandingProtectionEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamlandingprotectionenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamLandingProtectionEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_setLandingProtectionEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamlandingprotectionenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamLandingProtectionEnabled</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Enables/disables landing protection. During auto-landing, the downwards facing vision sensor will check if  the ground surface is flat enough for a safe landing. If it is not and landing proteciton is enabled, then  landing will abort and need to be manually performed by the user.</font></p>
+<p><font color="#666">Enables/disables landing protection. During auto-landing, the downwards facing vision sensor will check if  the ground surface is flat enough for a safe landing. If it is not and landing protection is enabled, then  landing will abort and need to be manually performed by the user.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the landing protection.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block&lt;&lt;&gt;android:Callback&gt; that receives the setter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getlandingprotectionenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getlandingprotectionenabled_inline">getLandingProtectionEnabledWithCompletion</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getlandingprotectionenabled_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getLandingProtectionEnabledWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getLandingProtectionEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamlandingprotectionenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamLandingProtectionEnabled</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_getLandingProtectionEnabled</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamlandingprotectionenabled_inline">DJIFlightControllerKey.DJIFlightAssistantParamLandingProtectionEnabled</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets landing protection status (enabled/disabled).</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
@@ -531,7 +543,7 @@
 <div class="article"><h6><font color="#AAA">protocol </font>DJIFlightAssistantDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIFlightAssistantDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_Protocol</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">This protocol provides an delegate method to update the Intelligent Flight Assistant current state.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
@@ -540,7 +552,7 @@
 <div class="article"><h6><font color="#AAA">method </font>flightAssistant:didUpdateVisionControlState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)flightAssistant:(DJIFlightAssistant *)assistant</div><div class="line">       didUpdateVisionControlState:(DJIVisionControlState *)state</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_UpdateVisionControlState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Callback function that updates the aircraft state controlled by the intelligent flight assistant.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
@@ -549,7 +561,7 @@
 <div class="article"><h6><font color="#AAA">method </font>flightAssistant:didUpdateVisionDetectionState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)flightAssistant:(DJIFlightAssistant *)assistant</div><div class="line">     didUpdateVisionDetectionState:(DJIVisionDetectionState *)state</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIntelligentFlightAssistant_updateVisionDetectionState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Callback function that updates the vision detection state. The frequency of this method is 10Hz.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>

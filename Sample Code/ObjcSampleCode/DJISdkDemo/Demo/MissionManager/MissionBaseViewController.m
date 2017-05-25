@@ -100,8 +100,8 @@
  *  Some missions need the aircraft's current location and the home point location.
  */
 -(void)flightController:(DJIFlightController *)fc didUpdateState:(DJIFlightControllerState *)state {
-    self.aircraftLocation = state.aircraftLocation;
-    self.homeLocation = state.homeLocation;
+    self.aircraftLocation = state.aircraftLocation.coordinate;
+    self.homeLocation = state.homeLocation.coordinate;
 }
 
 

@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIIMUState</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIIMUState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUState</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides the inertial measurement unit's (IMU) state information.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>index</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_imuID</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The IMU's ID. Starts at 0.</font></p>
 </div>
@@ -420,7 +432,7 @@
 <div class="article"><h6><font color="#AAA">property </font>gyroscopeState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIMUSensorState gyroscopeState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustategyroscopestate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateGyroscopeState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_gyroscopeStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustategyroscopestate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateGyroscopeState</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The gyroscopic sensor's state value.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -430,7 +442,7 @@
 <div class="article"><h6><font color="#AAA">property </font>accelerometerState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIMUSensorState accelerometerState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimuaccelerometerstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUAccelerometerState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_accelerometorStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimuaccelerometerstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUAccelerometerState</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The accelerometors sensor state value.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -440,7 +452,7 @@
 <div class="article"><h6><font color="#AAA">property </font>calibrationProgress</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> calibrationProgress</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationprogress_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationProgress</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_calibrationProgress</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationprogress_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationProgress</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The IMU's calibration progress, its range being [1, 100]. If the IMU is  not calibrating, the value of the calibration progress will be -1.</font></p>
 </div>
@@ -448,7 +460,7 @@
 <div class="article"><h6><font color="#AAA">property </font>calibrationState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIMUCalibrationState calibrationState</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_calibrationStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationState</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The status of the IMU's calibration.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
@@ -458,7 +470,7 @@
 <div class="article"><h6><font color="#AAA">property </font>multipleOrientationCalibrationHint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) DJIIMUMultipleOrientationCalibrationHint *multipleOrientationCalibrationHint</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_multiOrientationCalibrationHint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">For products that require the user to orient the aircraft during the IMU calibration, this method can be used to  inform the user when each orientation is done. It is supported by flight controller firmware 3.2.0.0 or above.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
@@ -469,7 +481,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIIMUSensorState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIIMUSensorState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimuaccelerometerstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUAccelerometerState</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustategyroscopestate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateGyroscopeState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_DJIIMUSensorStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimuaccelerometerstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUAccelerometerState</a>, <a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustategyroscopestate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateGyroscopeState</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Enum for IMU calibration Status.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -478,7 +490,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIIMUCalibrationState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIIMUCalibrationState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationState</a></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_DJIIMUCalibrationStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamimustatecalibrationstate_inline">DJIFlightControllerKey.DJIFlightControllerParamIMUStateCalibrationState</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Enum for IMU calibration Status.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
@@ -487,7 +499,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIIMUCalibrationOrientation</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIIMUCalibrationOrientation)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_DJIIMUCalibrationOrientation</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The different orientations the aircraft needs for a multi-orientation IMU calibration.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
@@ -496,7 +508,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIIMUOrientationCalibrationState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIIMUOrientationCalibrationState)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIIMUState_DJIIMUMultiOrientationCalibrationStatus</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIMUState.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">IMU calibration status for the current aircraft orientation.</font></p>
 <h5 id="enum-members-v4">Enum Members:</h5>

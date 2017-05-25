@@ -73,6 +73,8 @@
 		B821D41C1C316B530014ADBD /* DJIRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821D41A1C316B530014ADBD /* DJIRootViewController.xib */; };
 		B82542001C98E8E80021CDDF /* VideoPreviewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B82541FF1C98E8500021CDDF /* VideoPreviewer.framework */; };
 		B82542011C98E8E80021CDDF /* VideoPreviewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B82541FF1C98E8500021CDDF /* VideoPreviewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B83731EC1ED3139C00B7AEE9 /* AppActivationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83731EA1ED3139C00B7AEE9 /* AppActivationViewController.m */; };
+		B83731ED1ED3139C00B7AEE9 /* AppActivationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83731EB1ED3139C00B7AEE9 /* AppActivationViewController.xib */; };
 		B83997641DBE4EBD004A3275 /* DemoVirtualStickView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83997631DBE4EBD004A3275 /* DemoVirtualStickView.m */; };
 		B83BDB5F1DBE0C180060A0DE /* DemoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83BDB5D1DBE0C180060A0DE /* DemoScrollView.m */; };
 		B83BDB601DBE0C180060A0DE /* DemoScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83BDB5E1DBE0C180060A0DE /* DemoScrollView.xib */; };
@@ -253,6 +255,9 @@
 		B821D41A1C316B530014ADBD /* DJIRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DJIRootViewController.xib; path = Startup/DJIRootViewController.xib; sourceTree = "<group>"; };
 		B82541F81C98E8450021CDDF /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../../Framework/DJISDK.framework; sourceTree = "<group>"; };
 		B82541FA1C98E8500021CDDF /* VideoPreviewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VideoPreviewer.xcodeproj; path = ../VideoPreviewer/VideoPreviewer.xcodeproj; sourceTree = "<group>"; };
+		B83731E91ED3139C00B7AEE9 /* AppActivationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppActivationViewController.h; sourceTree = "<group>"; };
+		B83731EA1ED3139C00B7AEE9 /* AppActivationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppActivationViewController.m; sourceTree = "<group>"; };
+		B83731EB1ED3139C00B7AEE9 /* AppActivationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppActivationViewController.xib; sourceTree = "<group>"; };
 		B83997621DBE4EBD004A3275 /* DemoVirtualStickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoVirtualStickView.h; path = DemoUtility/UIUtility/DemoVirtualStickView.h; sourceTree = "<group>"; };
 		B83997631DBE4EBD004A3275 /* DemoVirtualStickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoVirtualStickView.m; path = DemoUtility/UIUtility/DemoVirtualStickView.m; sourceTree = "<group>"; };
 		B83BDB5C1DBE0C180060A0DE /* DemoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoScrollView.h; path = DemoUtility/UIUtility/DemoScrollView.h; sourceTree = "<group>"; };
@@ -428,6 +433,7 @@
 			children = (
 				F47C29BB1BDA2304001E6A75 /* ComponentSelectionViewController.h */,
 				F47C29BC1BDA2304001E6A75 /* ComponentSelectionViewController.m */,
+				B83731E81ED312B300B7AEE9 /* AppActivation */,
 				B84049421D780C26001DA2D7 /* Bluetooth */,
 				B8AF302C1E8A82D40087AFAF /* Camera */,
 				3B2CDD951C3DA1CF00DB096B /* RemoteController */,
@@ -679,6 +685,16 @@
 				B82541FF1C98E8500021CDDF /* VideoPreviewer.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B83731E81ED312B300B7AEE9 /* AppActivation */ = {
+			isa = PBXGroup;
+			children = (
+				B83731E91ED3139C00B7AEE9 /* AppActivationViewController.h */,
+				B83731EA1ED3139C00B7AEE9 /* AppActivationViewController.m */,
+				B83731EB1ED3139C00B7AEE9 /* AppActivationViewController.xib */,
+			);
+			path = AppActivation;
 			sourceTree = "<group>";
 		};
 		B84049421D780C26001DA2D7 /* Bluetooth */ = {
@@ -1038,6 +1054,7 @@
 				3BA7667C19FE38130077CA52 /* stick_normal.png in Resources */,
 				3B16A8F619D12167008C1818 /* InfoPlist.strings in Resources */,
 				B8AF305E1E8A82D40087AFAF /* CameraPlaybackDownloadViewController.xib in Resources */,
+				B83731ED1ED3139C00B7AEE9 /* AppActivationViewController.xib in Resources */,
 				B84049471D780C26001DA2D7 /* BluetoothConnectorViewController.xib in Resources */,
 				B8AF305C1E8A82D40087AFAF /* CameraPlaybackCommandViewController.xib in Resources */,
 				B8450C721C3798CC00921E19 /* MissionBaseViewController.xib in Resources */,
@@ -1177,6 +1194,7 @@
 				B821D3F61C31643D0014ADBD /* DemoPushInfoViewController.m in Sources */,
 				3B2CDD851C3CC21D00DB096B /* FCCompassViewController.m in Sources */,
 				3B16A8F819D12167008C1818 /* main.m in Sources */,
+				B83731EC1ED3139C00B7AEE9 /* AppActivationViewController.m in Sources */,
 				ACB121061E8B1010006EE2DB /* TimelineMissionViewController.m in Sources */,
 				220836071E83E023003B2365 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */,
 				B821D3F81C31643D0014ADBD /* DemoSettingItem.m in Sources */,

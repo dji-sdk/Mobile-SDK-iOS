@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMutableWaypointMission</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIMutableWaypointMission</span> : <span class="title">DJIWaypointMission</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission">DJIWaypointMission</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission">DJIWaypointMission</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The class represents a waypoint mission that can be changed. This class should be  used to initialize the parameters of a waypoint mission.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addWaypoint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addWaypoint:(DJIWaypoint *)waypoint</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_addWaypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Add a waypoint to the waypoint mission. The number of waypoints should be in the range [2, 99]. When a waypoint is added successfully, <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_waypointcount">waypointCount</a></code> will increment by 1. A waypoint will only be valid if the distance (in three dimensions) between two adjacent waypoints is in range [0.5,2000] meters.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -421,7 +433,7 @@
 <div class="article"><h6><font color="#AAA">method </font>addWaypoints</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addWaypoints:(<span class="built_in">NSArray</span> *)waypoints</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_addWaypoints</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Adds an array of waypoints to the waypoint mission. The number of waypoints should be in the range [2, 99]`. When  the waypoints are added successfully, <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_waypointcount">waypointCount</a></code> will increment by the number of added waypoints.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -430,7 +442,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeWaypoint</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeWaypoint:(DJIWaypoint *)waypoint</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeWaypoint</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Removes the last waypoint stored in the mission. When  the waypoint is removed successfully, <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_waypointcount">waypointCount</a></code> will decrease by 1.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -439,7 +451,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeWaypointAtIndex</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeWaypointAtIndex:(<span class="built_in">NSInteger</span>)index</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeWaypointAtIndex</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Removes the waypoint at an index. When  the waypoint is removed successfully, <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_waypointcount">waypointCount</a></code> will decrease by 1.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -448,7 +460,7 @@
 <div class="article"><h6><font color="#AAA">method </font>removeAllWaypoints</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeAllWaypoints</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission_removeAllWaypoints</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Removes all waypoints from the waypoint mission. When  all waypoints are removed successfully, <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_waypointcount">waypointCount</a></code> will be 0.</font></p>
 </div>
@@ -456,7 +468,7 @@
 <div class="article"><h6><font color="#AAA">property </font>autoFlightSpeed</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="keyword">float</span> autoFlightSpeed</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_autoFlightSpeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The base automatic speed of the aircraft as it moves between waypoints with range [-15, 15] m/s. The aircraft's actual speed is a combination of the base automatic speed, and the speed control given by the throttle joystick on the remote controller. If &quot;autoFlightSpeed &gt;0&quot;: Actual speed is &quot;autoFlightSpeed&quot; + Joystick Speed (with combined max of &quot;maxFlightSpeed&quot;) If &quot;autoFlightSpeed =0&quot;: Actual speed is controlled only by the remote controller joystick. If &quot;autoFlightSpeed &lt;0&quot; and the aircraft is at the first waypoint, the aircraft will hover in place until the speed is made positive by the remote controller joystick. In flight controller firmware 3.2.10.0 or above, different speeds between individual waypoints can also be set in waypoint objects which will overwrite &quot;autoFlightSpeed&quot;.</font></p>
 </div>
@@ -464,7 +476,7 @@
 <div class="article"><h6><font color="#AAA">property </font>gotoFirstWaypointMode</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIWaypointMissionGotoWaypointMode gotoFirstWaypointMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_gotoFirstWaypointMode</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Determines the aricraft how to go to first waypoint frome current position. Default is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissiongotowaypointmode_safely">DJIWaypointMissionGotoWaypointSafely</a></code>.</font></p>
 <h5 id="see-also">See Also:</h5>
@@ -474,7 +486,7 @@
 <div class="article"><h6><font color="#AAA">property </font>finishedAction</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIWaypointMissionFinishedAction finishedAction</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_finishedAction</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Action the aircraft will take when the waypoint mission is complete.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
@@ -484,7 +496,7 @@
 <div class="article"><h6><font color="#AAA">property </font>exitMissionOnRCSignalLost</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="built_in">BOOL</span> exitMissionOnRCSignalLost</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_exitMissionOnRCSignalLost</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Determines whether exit mission when RC signal lost. Default is NO.</font></p>
 </div>
@@ -492,7 +504,7 @@
 <div class="article"><h6><font color="#AAA">property </font>repeatTimes</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="keyword">int</span> repeatTimes</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_repeatTimes</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Repeat times for mission execution. Default is 1.</font></p>
 </div>
@@ -500,7 +512,7 @@
 <div class="article"><h6><font color="#AAA">property </font>maxFlightSpeed</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="keyword">float</span> maxFlightSpeed</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_maxFlightSpeed</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">While the aircraft is traveling between waypoints, you can offset its speed by using the throttle joystick on the remote controller. &quot;maxFlightSpeed&quot; is this offset when the joystick is pushed to maximum deflection. For example, If maxFlightSpeed is 10 m/s, then pushing the throttle joystick all the way up will add 10 m/s to the aircraft speed, while pushing down will subtract 10 m/s from the aircraft speed. If the remote controller stick is not at maximum deflection, then the offset speed will be interpolated between &quot;[0, maxFlightSpeed]&quot;&quot; with a resolution of 1000 steps. If the offset speed is negative, then the aircraft will fly backwards to previous waypoints. When it reaches the first waypoint, it will then hover in place until a positive speed is applied. &quot;maxFlightSpeed&quot; has a range of [2,15] m/s.</font></p>
 </div>
@@ -508,7 +520,7 @@
 <div class="article"><h6><font color="#AAA">property </font>rotateGimbalPitch</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="built_in">BOOL</span> rotateGimbalPitch</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_rotateGimbalPitch</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Determines whether the aircraft can rotate gimbal pitch when executing waypoint mission. If <code>YES</code>, the aircraft will control gimbal pitch rotation between waypoints using the <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint_gimbalpitch">gimbalPitch</a></code> of the <code><a href="../../Components/Missions/DJIWaypoint.html#djiwaypoint">DJIWaypoint</a></code>.</font></p>
 </div>
@@ -516,7 +528,7 @@
 <div class="article"><h6><font color="#AAA">property </font>headingMode</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIWaypointMissionHeadingMode headingMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_headingMode</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Heading of the aircraft as it moves between waypoints. Default is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_auto">DJIWaypointMissionHeadingAuto</a></code>.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
@@ -526,7 +538,7 @@
 <div class="article"><h6><font color="#AAA">property </font>pointOfInterest</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="built_in">CLLocationCoordinate2D</span> pointOfInterest</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_pointOfInterest</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Property is used when <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode">DJIWaypointMissionHeadingMode</a></code> is <code><a href="../../Components/Missions/DJIWaypointMission.html#djiwaypointmission_djiwaypointmissionheadingmode_towardpointofinterest">DJIWaypointMissionHeadingTowardPointOfInterest</a></code>. Aircraft will always be heading to point while executing mission. Default is &quot;kCLLocationCoordinate2DInvalid&quot;.</font></p>
 </div>
@@ -534,7 +546,7 @@
 <div class="article"><h6><font color="#AAA">property </font>flightPathMode</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIWaypointMissionFlightPathMode flightPathMode</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIMutableWaypointMission_flightPathMode</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMission.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Flight path mode of the waypoint mission.</font></p>
 <h5 id="see-also-v4">See Also:</h5>

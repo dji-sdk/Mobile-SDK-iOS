@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIKeyManager</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIKeyManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666"><code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> provides access to the keyed interface using  <code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code> and corresponding subclass objects. <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> is accessed from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">keyManager</a></code>  in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getValueForKey</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">nullable</span> DJIKeyedValue *)getValueForKey:(DJIKey *)key</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_getValueForKey</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the latest known value if available for the key.  Does not pull it from the product if unavailable.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -423,7 +435,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getValueForKey:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getValueForKey:(DJIKey *)key</div><div class="line">        withCompletion:(DJIKeyedGetCompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_getValueForKeywithCompletion</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Performs a get on a gettable key, pulling the information from the product if necessary.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -432,7 +444,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setValue:forKey:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setValue:(<span class="keyword">id</span>)value</div><div class="line">          forKey:(DJIKey *)key</div><div class="line">        withCompletion:(DJIKeyedSetCompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_setValueForKeyWithCompletion</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Performs a set on a settable key, changing attributes on the  connected product.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
@@ -441,7 +453,7 @@
 <div class="article"><h6><font color="#AAA">method </font>performActionForKey:withArguments:andCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)performActionForKey:(DJIKey *)key</div><div class="line">              withArguments:(<span class="keyword">nullable</span> <span class="built_in">NSArray</span> *)arguments</div><div class="line">              andCompletion:(DJIKeyedActionCompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_performActionForKeyWithArgumentsAndCompletion</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Performs an action on an actionable key.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -450,7 +462,7 @@
 <div class="article"><h6><font color="#AAA">method </font>startListeningForChangesOnKey:withListener:andUpdateBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)startListeningForChangesOnKey:(DJIKey *)key</div><div class="line">                         withListener:(<span class="keyword">id</span>)listener</div><div class="line">                       andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_startListeningForChangesOnKeuyWithListenerAndUpdateBlock</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Subscribes the listener object to all changes of value on the given  key.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -459,7 +471,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stopListeningOnKey:ofListener</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopListeningOnKey:(DJIKey *)key</div><div class="line">               ofListener:(<span class="keyword">id</span>)listener</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_stopListeningOnKeyOfListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Stops the subscription to updates of a specific key value for a  specific listener. Does not affect other listeners subscribing to  this key or other subscriptions of the <code>listener</code>.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -468,7 +480,7 @@
 <div class="article"><h6><font color="#AAA">method </font>stopAllListeningOfListeners</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopAllListeningOfListeners:(<span class="keyword">id</span>)listener</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_stopAllListeneingOfListener</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Stops all subscriptions on all key value updates for the given listener.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -478,7 +490,7 @@
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedGetCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedGetCompletionBlock)(DJIKeyedValue * _Nullable value, <span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_DJIKeyedGetCompletionBlock</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The completion block called when performing a get on a key.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -487,7 +499,7 @@
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedSetCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedSetCompletionBlock)(<span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_DJIKeyedSetCompletionBlock</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The completion block called when performing a set on a key.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -496,7 +508,7 @@
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedActionCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedActionCompletionBlock)(<span class="built_in">BOOL</span> finished, DJIKeyedValue * _Nullable response, <span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_DJIKeyedActionCompletionBlock</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The completion block called when performing an action on a key.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -505,7 +517,7 @@
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedListenerUpdateBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedListenerUpdateBlock)(DJIKeyedValue * _Nullable oldValue, DJIKeyedValue * _Nullable newValue)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyManager_DJIKeyedListenerUpdateBlock</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">The completion block. called everytime the value behind a key is updated.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>

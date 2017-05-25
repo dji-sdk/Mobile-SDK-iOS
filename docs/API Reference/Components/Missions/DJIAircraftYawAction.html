@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIAircraftYawAction</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAircraftYawAction</span> : <span class="title">DJIMissionAction</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Missions/DJIMissionAction.html#djimissionaction">DJIMissionAction</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Missions/DJIMissionAction.html#djimissionaction">DJIMissionAction</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class represents an aircraft yaw rotation action to be scheduled on the Mission  Control timeline. By creating an object of this class and adding it to the timeline,  an aircraft will rotate around yaw by the specified angle with the specified speed  when the Timeline reaches the action.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">method </font>initWithRelativeAngle:andAngularVelocity</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span> _Nullable)initWithRelativeAngle:(<span class="keyword">double</span>)angle andAngularVelocity:(<span class="keyword">double</span>)velocity</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction_initWithRelativeAngleAndAngularVelocity</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Initialize with a yaw angle relative to current heading and an angular velocity. The angular velocity has a range of [0, 100] degrees/s and a default value of 20 degrees/s.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -424,7 +436,7 @@
 <div class="article"><h6><font color="#AAA">const </font>DJIAircraftYawActionErrorDomain</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="built_in">NSErrorDomain</span> DJIAircraftYawActionErrorDomain</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction_DJIAircraftYawActionErrorDomain</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The error domain used to describe errors produced by the <code><a href="../../Components/Missions/DJIAircraftYawAction.html#djiaircraftyawaction">DJIAircraftYawAction</a></code> object.</font></p>
 </div>
@@ -432,7 +444,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIAircraftYawActionError</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIAircraftYawActionError)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction_DJIAircraftYawActionError</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAircraftYawAction.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Error codes for errors specific to <code><a href="../../Components/Missions/DJIAircraftYawAction.html#djiaircraftyawaction_djiaircraftyawactionerrordomain">DJIAircraftYawActionErrorDomain</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>

@@ -80,7 +80,13 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            </dd>
                     </ul>
+                  </dd>
+                  <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
+                  </dd>
+                  <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
                   </dd>
           </dl>
           <dl>
@@ -149,6 +155,12 @@
                             <dd><a data-href="../IMUState/DJIIMUState.html" class="sub-toggle">DJIIMUState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                            <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../FlightController/DJIAirSenseAirplaneState.html">DJIAirSenseAirplaneState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -404,7 +416,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIKeyedValue</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIKeyedValue</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666"><code><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue">DJIKeyedValue</a></code> is a container object for values associated with  <code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code> objects. The raw value is held inside <code><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue_value">value</a></code> and  convenience methods are offers for quicker access.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -412,7 +424,7 @@
 <div class="article"><h6><font color="#AAA">property </font>value</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="keyword">id</span> value</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_value</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The raw value object. For struct, the value is held in an NSValue.</font></p>
 </div>
@@ -420,7 +432,7 @@
 <div class="article"><h6><font color="#AAA">property </font>charValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">char</span> charValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_charValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Convenience accessor to char value.</font></p>
 </div>
@@ -428,7 +440,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedCharValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">unsigned</span> <span class="keyword">char</span> unsignedCharValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedCharValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Convenience accessor to unsigned char value.</font></p>
 </div>
@@ -436,7 +448,7 @@
 <div class="article"><h6><font color="#AAA">property </font>shortValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">short</span> shortValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_shortValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Convenience accessor to short value.</font></p>
 </div>
@@ -444,7 +456,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedShortValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">unsigned</span> <span class="keyword">short</span> unsignedShortValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedShortValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Convenience accessor to unsigned short value.</font></p>
 </div>
@@ -452,7 +464,7 @@
 <div class="article"><h6><font color="#AAA">property </font>intValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">int</span> intValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_intValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Convenience accessor to int value.</font></p>
 </div>
@@ -460,7 +472,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedIntValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">unsigned</span> <span class="keyword">int</span> unsignedIntValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedIntValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Convenience accessor to unsigned int value.</font></p>
 </div>
@@ -468,7 +480,7 @@
 <div class="article"><h6><font color="#AAA">property </font>longValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">long</span> longValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_longValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Convenience accessor to long value.</font></p>
 </div>
@@ -476,7 +488,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedLongValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">unsigned</span> <span class="keyword">long</span> unsignedLongValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedLongValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Convenience accessor to unsigned long value.</font></p>
 </div>
@@ -484,7 +496,7 @@
 <div class="article"><h6><font color="#AAA">property </font>longLongValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">long</span> <span class="keyword">long</span> longLongValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_longLongValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Convenience accessor to long long value.</font></p>
 </div>
@@ -492,7 +504,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedLongLongValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> unsignedLongLongValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedLongLongValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Convenience accessor to unsigned long long value.</font></p>
 </div>
@@ -500,7 +512,7 @@
 <div class="article"><h6><font color="#AAA">property </font>floatValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">float</span> floatValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_floatValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Convenience accessor to float value.</font></p>
 </div>
@@ -508,7 +520,7 @@
 <div class="article"><h6><font color="#AAA">property </font>doubleValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="keyword">double</span> doubleValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_doubleValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Convenience accessor to double value.</font></p>
 </div>
@@ -516,7 +528,7 @@
 <div class="article"><h6><font color="#AAA">property </font>boolValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> boolValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_boolValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Convenience accessor to bool value.</font></p>
 </div>
@@ -524,7 +536,7 @@
 <div class="article"><h6><font color="#AAA">property </font>integerValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> integerValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_integerValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Convenience accessor to NSInteger value.</font></p>
 </div>
@@ -532,7 +544,7 @@
 <div class="article"><h6><font color="#AAA">property </font>unsignedIntegerValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSUInteger</span> unsignedIntegerValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_unsignedIntegerValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Convenience accessor to NSUInteger value.</font></p>
 </div>
@@ -540,7 +552,7 @@
 <div class="article"><h6><font color="#AAA">property </font>stringValue</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *stringValue</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue_stringValue</font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Convenience accessor to string value.</font></p>
 </div>

@@ -10,6 +10,7 @@
 #import "BluetoothConnectorViewController.h"
 #import "DemoAlertView.h"
 #import "DemoUtilityMacro.h"
+#import "AppActivationViewController.h"
 
 #define ENTER_DEBUG_MODE 0
 #define ENABLE_REMOTE_LOGGER 0
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *debugModeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet UILabel *sdkVersionLabel;
+
+@property (nonatomic) AppActivationViewController *appActivationVC;
 @end
 
 @implementation DJIRootViewController
@@ -51,6 +54,10 @@
 #if ENABLE_REMOTE_LOGGER
         [DJISDKManager enableRemoteLoggingWithDeviceID:@"Device ID" logServerURLString:@"Enter Remote Logger URL here"];
 #endif
+
+        self.appActivationVC = [[AppActivationViewController alloc] init];
+        self.appActivationVC.navController = self.navigationController; 
+        [self.appActivationVC setup];
     }
 }
 
