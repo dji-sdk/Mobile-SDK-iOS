@@ -40,6 +40,7 @@
 @interface CameraMediaPlaybackViewController ()
 <DJIMediaManagerDelegate,
 DJICameraDelegate,
+DJIVideoFeedListener,
 UITableViewDataSource,
 UITableViewDelegate>
 
@@ -71,11 +72,14 @@ UITableViewDelegate>
     [super viewDidAppear:animated];
     [self fetchMediaList];
     [self setupVideoPreviewView];
+
+    [[DJISDKManager videoFeeder].primaryVideoFeed addListener:self withQueue:dispatch_get_main_queue()];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self cleanupVideoPreviewView];
+    [[DJISDKManager videoFeeder].primaryVideoFeed removeListener:self];
 }
 
 - (void)fetchMediaList{
@@ -321,8 +325,8 @@ UITableViewDelegate>
     return nil;
 }
 
--(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)length {
-    [[VideoPreviewer instance] push:videoBuffer length:(int)length];
+-(void)videoFeed:(DJIVideoFeed *)videoFeed didUpdateVideoData:(NSData *)videoData {
+    [[VideoPreviewer instance] push:(uint8_t *)[videoData bytes] length:(int)[videoData length]];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {
