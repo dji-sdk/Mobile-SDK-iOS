@@ -23,7 +23,6 @@ typedef enum : NSUInteger {
  */
 typedef enum : NSUInteger {
     DLogReverseLookupTableTypeNone, //not use dlog reverse
-    DLogReverseLookupTableP4POld, //old camera firmware, ask Luminis for detail
     DLogReverseLookupTableTypeDefault, //for p4p and in2
 } DLogReverseLookupTableType;
 

@@ -8,6 +8,8 @@
 
 #import "DJIReverseDLogFilter.h"
 
+#define DJI_VIDEOPREVIEW_RESOURCES_PATH @"VideoPreviewer.framework/VideoPreviewer.bundle"
+
 @implementation DJIReverseDLogFilter
 
 -(id) initWithContext:(DJILiveViewRenderContext *)acontext{
@@ -36,7 +38,7 @@
     DJILiveViewRenderTexture* texture = nil;
     
     if (lutName) {
-        UIImage* lookupTexture = [UIImage imageNamed:lutName];
+        UIImage* lookupTexture = [self getImageFromNamed:lutName];
         texture = [[DJILiveViewRenderTexture alloc]
                                              initWithContext:context
                                              image:lookupTexture];
@@ -51,14 +53,25 @@
     dispatch_once(&onceToken, ^{
         lutDic = @{
                    @(DLogReverseLookupTableTypeDefault)
-                   :@"p4p_dlog_lut_new",
-                   
-                   @(DLogReverseLookupTableP4POld)
-                   :@"p4p_dlog_lut_old",
+                   :@"delog_lut",
                    };
     });
     
     return lutDic[@(type)];
+}
+
+-(UIImage*) getImageFromNamed:(NSString*)imageName
+{
+    static NSBundle* bundle = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        NSString* frameworkPath = [[NSBundle mainBundle] privateFrameworksPath];
+        NSString* resourcePath = [frameworkPath stringByAppendingPathComponent:DJI_VIDEOPREVIEW_RESOURCES_PATH];
+        bundle = [NSBundle bundleWithPath:resourcePath];
+    });
+
+    UIImage* image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+    return image;
 }
 
 @end
