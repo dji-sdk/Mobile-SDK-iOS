@@ -135,9 +135,8 @@ UITableViewDelegate>
                 ShowResult(@"SetCameraMode Failed: %@", error.description);
             }
             else {
-                WeakReturn(target); 
-                [self.mediaManager fetchMediaListWithCompletion:
-                 ^(NSArray<DJIMediaFile *> * _Nullable mediaList, NSError * _Nullable error) {
+                WeakReturn(target);
+                [self.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
                      WeakReturn(target);
                      
                      [target showActivityIndicator:NO];
@@ -146,7 +145,7 @@ UITableViewDelegate>
                          ShowResult(@"Fetch media failed: %@", error.localizedDescription);
                      }
                      else {
-                         target.mediaList = mediaList;
+                         target.mediaList = [target.mediaManager fileListSnapshot];
                          [target.mediaListTable reloadData];
                      }
                  }];
@@ -248,8 +247,7 @@ UITableViewDelegate>
     cell.media = self.mediaList[indexPath.row];
     cell.textLabel.text = cell.media.fileName;
 
-    if (cell.media.mediaType == DJIMediaTypeM4V ||
-        cell.media.mediaType == DJIMediaTypeMOV ||
+    if (cell.media.mediaType == DJIMediaTypeMOV ||
         cell.media.mediaType == DJIMediaTypeMP4) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }

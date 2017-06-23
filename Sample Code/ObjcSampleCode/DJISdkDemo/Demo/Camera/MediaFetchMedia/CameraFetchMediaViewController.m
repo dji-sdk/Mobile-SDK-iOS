@@ -113,13 +113,13 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera.mediaManager fetchMediaListWithCompletion:^(NSArray<DJIMediaFile *> * _Nullable mediaList, NSError * _Nullable error) {
+        [camera.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: fetchMediaListWithCompletion:. %@", error.description);
             }
             else {
-                target.mediaList = mediaList;
+                target.mediaList = [camera.mediaManager fileListSnapshot];
                 ShowResult(@"SUCCESS: The media list is fetched. ");
             }
         }];
@@ -131,21 +131,28 @@
  *  If it is nil, we need to call fetchThumbnailWithCompletion: before fetching the thumbnail.
  */
 - (IBAction)onShowThumbnailButtonClicked:(id)sender {
-    [self.showThumbnailButton setEnabled:NO];
-    if (self.imageMedia.thumbnail == nil) {
-        // fetch thumbnail is not invoked yet
-        WeakRef(target);
-        [self.imageMedia fetchThumbnailWithCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: fetchThumbnailWithCompletion:. %@", error.description);
-            }
-            else {
-                [target showPhotoWithImage:target.imageMedia.thumbnail];
-            }
-            [target.showThumbnailButton setEnabled:YES];
-        }];
+    if (self.imageMedia.thumbnail) {
+        [self showPhotoWithImage:self.imageMedia.thumbnail];
+        return;
     }
+
+    [self.showThumbnailButton setEnabled:NO];
+    __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
+    [camera.mediaManager.taskScheduler resumeWithCompletion:nil];
+
+    WeakRef(target);
+    DJIFetchMediaTask *task = [DJIFetchMediaTask taskWithFile:self.imageMedia content:DJIFetchMediaTaskContentThumbnail andCompletion:^(DJIMediaFile * _Nonnull file, DJIFetchMediaTaskContent content, NSError * _Nullable error) {
+        WeakReturn(target);
+        if (error) {
+            ShowResult(@"ERROR: Fetch thumbnail failed:%@", error.localizedDescription);
+        }
+        else {
+            [target showPhotoWithImage:target.imageMedia.thumbnail];
+        }
+        [target.showThumbnailButton setEnabled:YES];
+    }];
+
+    [camera.mediaManager.taskScheduler moveTaskToEnd:task];
 }
 
 /**
@@ -154,18 +161,28 @@
  *  fetchPreviewImageWithCompletion:.
  */
 - (IBAction)onShowPreviewButtonClicked:(id)sender {
+    if (self.imageMedia.preview) {
+        [self showPhotoWithImage:self.imageMedia.preview];
+        return;
+    }
+
     [self.showPreviewButton setEnabled:NO];
+    __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
+    [camera.mediaManager.taskScheduler resumeWithCompletion:nil];
+
     WeakRef(target);
-    [self.imageMedia fetchPreviewImageWithCompletion:^(UIImage *image, NSError * error) {
+    DJIFetchMediaTask *task = [DJIFetchMediaTask taskWithFile:self.imageMedia content:DJIFetchMediaTaskContentPreview andCompletion:^(DJIMediaFile * _Nonnull file, DJIFetchMediaTaskContent content, NSError * _Nullable error) {
         WeakReturn(target);
         if (error) {
-            ShowResult(@"ERROR: fetchPreviewImageWithCompletion:%@", error);
+            ShowResult(@"ERROR: Fetch preview failed:%@", error.localizedDescription);
         }
         else {
-            [target showPhotoWithImage:image];
+            [target showPhotoWithImage:target.imageMedia.preview];
         }
         [target.showPreviewButton setEnabled:YES];
     }];
+
+    [camera.mediaManager.taskScheduler moveTaskToEnd:task];
 }
 
 /**
@@ -182,8 +199,8 @@
     
     WeakRef(target);
     __block NSMutableData* downloadData = [[NSMutableData alloc] init];
-    
-    [self.imageMedia fetchMediaDataWithCompletion:^(NSData *data, BOOL *stop, NSError *error) {
+
+    [self.imageMedia fetchFileDataWithOffset:0 updateQueue:dispatch_get_main_queue() updateBlock:^(NSData * _Nullable data, BOOL isComplete, NSError * _Nullable error) {
         WeakReturn(target);
         if (error) {
             ShowResult(@"ERROR: fetchMediaDataWithCompletion:. %@", error.description);
@@ -191,12 +208,10 @@
         }
         else {
             [downloadData appendData:data];
-            if (downloadData.length == target.imageMedia.fileSizeInBytes) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    WeakReturn(target);
-                    [target showPhotoWithData:downloadData];
-                    [self.showFullImageButton setEnabled:YES];
-                });
+            if (isComplete) {
+                WeakReturn(target);
+                [target showPhotoWithData:downloadData];
+                [self.showFullImageButton setEnabled:YES];
             }
         }
         [self.showFullImageButton setEnabled:YES];

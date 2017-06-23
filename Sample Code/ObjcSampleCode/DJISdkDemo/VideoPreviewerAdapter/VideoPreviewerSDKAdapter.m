@@ -354,10 +354,14 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             return H264EncoderType_unknown;
         }
     }
+    else if ([cameraName isEqualToString:DJICameraDisplayNameSparkCamera]) {
+        return H264EncoderType_1860_phantom4x;
+    }
     else if ([cameraName isEqualToString:DJICameraDisplayNameZ30]) {
         return H264EncoderType_GD600;
     }
     else if ([cameraName isEqualToString:DJICameraDisplayNamePhantom4ProCamera] ||
+             [cameraName isEqualToString:DJICameraDisplayNamePhantom4AdvancedCamera] ||
              [cameraName isEqualToString:DJICameraDisplayNameX5S] ||
              [cameraName isEqualToString:DJICameraDisplayNameX4S]) {
         return H264EncoderType_H1_Inspire2;

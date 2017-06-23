@@ -1,6 +1,6 @@
 //
-//  VideoPreviewerSDKAdapter.m
-//  VideoPreviewer
+//  VideoPreviewerSDKAdapter+Lightbridge2.m
+//  DJISdkDemo
 //
 //  Copyright © 2017 DJI. All rights reserved.
 //

@@ -155,17 +155,16 @@
 
 - (void)loadMediaList {
     WeakRef(target);
-    [self.mediaManager fetchMediaListWithCompletion:
-     ^(NSArray<DJIMediaFile *> * _Nullable mediaList, NSError * _Nullable error) {
-         WeakReturn(target);
-         if (error) {
-             ShowResult(@"Fetch media failed: %@", error.localizedDescription);
-         }
-         else {
-             target.mediaList = mediaList;
-             [target.mediaListTable reloadData];
-         }
-     }];
+    [self.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
+        WeakReturn(target);
+        if (error) {
+            ShowResult(@"Fetch media failed: %@", error.localizedDescription);
+        }
+        else {
+            target.mediaList = [target.mediaManager fileListSnapshot];
+            [target.mediaListTable reloadData];
+        }
+    }];
 }
 
 #pragma mark- Media Event
@@ -279,8 +278,7 @@
     cell.media = self.mediaList[indexPath.row];
     cell.textLabel.text = cell.media.fileName;
     
-    if (cell.media.mediaType == DJIMediaTypeM4V ||
-        cell.media.mediaType == DJIMediaTypeMOV ||
+    if (cell.media.mediaType == DJIMediaTypeMOV ||
         cell.media.mediaType == DJIMediaTypeMP4) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }

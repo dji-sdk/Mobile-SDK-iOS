@@ -196,6 +196,12 @@
                                       </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">DJIMediaVideoPlaybackState</a>
                                       </dd>
+                                      <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">DJIFetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                        <ul class="sub-menu">
+                                                <dd><a href="../Camera/DJIMediaManager_DJIFetchMediaTask.html">DJIFetchMediaTask</a>
+                                                </dd>
+                                        </ul>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Camera/DJIPlaybackManager.html" class="sub-toggle">DJIPlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -479,9 +485,25 @@ This is mostly useful in DJIKey subclasses.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable instancetype</font></td><td><font color="#666"><i>A valid key object or nil if an error occured.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
+<div class="api-row" id="djikey_djiparamconnection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djikey_djiparamconnection_inline">DJIParamConnection</a></div></div><div class="inline-doc" id="djikey_djiparamconnection_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">const </font>DJIParamConnection</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">EXTERN_KEY <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIParamConnection</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">Param to check product's and components' connection state. It can be used with <code><a href="../../Components/KeyManager/DJIProductKey.html#djiproductkey">DJIProductKey</a></code> or other component key classes (e.g. <code><a href="../../Components/KeyManager/DJICameraKey.html#djicamerakey">DJICameraKey</a></code>).</font></p>
+</div>
 <div class="api-row" id="djibatterykey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIBatteryKey.html">DJIBatteryKey</a></div></div><div class="api-row" id="djicamerakey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJICameraKey.html">DJICameraKey</a></div></div><div class="api-row" id="djiflightcontrollerkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a></div></div><div class="api-row" id="djigimbalkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIGimbalKey.html">DJIGimbalKey</a></div></div><div class="api-row" id="djiproductkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIProductKey.html">DJIProductKey</a></div></div><div class="api-row" id="djiremotecontrollerkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html">DJIRemoteControllerKey</a></div></div><div class="api-row" id="djihandheldcontrollerkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIHandheldControllerKey.html">DJIHandheldControllerKey</a></div></div><div class="api-row" id="djimissionkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIMissionKey.html">DJIMissionKey</a></div></div><div class="api-row" id="djiairlinkkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIAirLinkKey.html">DJIAirLinkKey</a></div></div>
 <h5 id="class-keys">Class Keys:</h5>
-<html><table class="key_table"><tr><td colspan="2"><a href="#djikeydjiparamconnection_inline"></a><p class="key_table_key_string key_table_key_first_row">DJIParamConnection</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td><p class="key_table_title_string">Description:</p></td><td><p class="key_table_type_string">
+<html><table class="key_table"><tr><td colspan="2"><a href="#djikeydjiparamconnection_inline"></a><p class="key_table_key_string key_table_key_first_row">DJIParamConnection</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_productconnectedupdate">productConnected</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_productdisconnectedupdate">productDisconnected</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_componentconnectedupdate">componentConnectedWithKey:andIndex</a></code></font></p>
+<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_componentdisconnectedupdate">componentDisconnectedWithKey:andIndex</a></code></font></p>
+<p></p></td></tr><tr><td><p class="key_table_title_string">Description:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666">Returns <code>YES</code> if the product is connected to the mobile device. For aircraft with remote controllers, this will be <code>YES</code> if the mobile device is connected to (and can communicate with) the remote controller. To understand whether the remote controller is connected to the aircraft, the flight controller component <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft_flightcontroller">flightController</a></code> which is part of <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> should be queried.</font></p>
 <p></p></td></tr></table></html>
 
