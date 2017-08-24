@@ -277,24 +277,20 @@ NSString *const renderToScreenFS = SHADER_STRING
     if(CGRectEqualToRect(adjustFrame, _targetLayerFrame)){
         return NO;
     }else{
-        _targetLayerFrame = adjustFrame;
+        _targetLayerFrame          = adjustFrame;
+        __weak typeof(self) target = self;
+        void(^adjustFrameFunc)() = ^{
+            [target setFrame:adjustFrame];
+            [target notifyFrameChange];
+        };
+        
         if([NSThread isMainThread]){
-            [self setFrame:adjustFrame];
-            [self notifyFrameChange];
+            adjustFrameFunc();
         }
         else{
-            
-            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-            
             dispatch_async(dispatch_get_main_queue(), ^{
-                
-                [self setFrame:adjustFrame];
-                [self notifyFrameChange];
-                dispatch_semaphore_signal(semaphore);
+                adjustFrameFunc();
             });
-            
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            
         }
         return YES;
     }

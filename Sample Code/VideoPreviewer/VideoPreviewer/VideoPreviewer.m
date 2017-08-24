@@ -298,7 +298,7 @@ LB2AUDHackParserDelegate>{
 
 -(BOOL)setView:(UIView *)view
 {
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     if(_glView == nil){
         //generate
         _glView = [[MovieGLView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
@@ -307,24 +307,22 @@ LB2AUDHackParserDelegate>{
         _glView.contentClipRect = self.contentClipRect;
     }
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if(_glView.superview != view){
-            [view addSubview:_glView];
-        }
-        [view sendSubviewToBack:_glView];
-        [_glView adjustSize];
-        _status.isGLViewInit = YES;
-        //set self frame property
-        [self movieGlView:_glView didChangedFrame:_glView.frame];
-        self.internalGLView = _glView;
-    });
+    if(_glView.superview != view){
+        [view addSubview:_glView];
+    }
+    [view sendSubviewToBack:_glView];
+    [_glView adjustSize];
+    _status.isGLViewInit = YES;
+    //set self frame property
+    [self movieGlView:_glView didChangedFrame:_glView.frame];
+    self.internalGLView = _glView;
     END_DISPATCH_QUEUE
     return NO;
 }
 
 -(void)unSetView
 {
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     if(_glView != nil && _glView.superview !=nil)
     {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -338,7 +336,7 @@ LB2AUDHackParserDelegate>{
 }
 
 -(void)adjustViewSize{
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     pthread_mutex_lock(&_render_mutex);
     if (_glView && [self glviewCanRender]) {
         [_glView adjustSize];
@@ -365,7 +363,7 @@ LB2AUDHackParserDelegate>{
 
 - (BOOL)start
 {
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     if(_decodeThread == nil && !_status.isRunning)
     {
         _decodeThread = [[NSThread alloc] initWithTarget:self selector:@selector(decodeRunloop) object:nil];
@@ -378,7 +376,7 @@ LB2AUDHackParserDelegate>{
 
 -(void) reset
 {
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     if(_decodeThread && _status.isRunning)
     {
         safe_resume_skip_count = 0;
@@ -411,7 +409,7 @@ LB2AUDHackParserDelegate>{
 }
 
 - (void)resume{
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     _status.isPause = NO;
 //    DJILOG(@"Resume the decoding");
     END_DISPATCH_QUEUE
@@ -428,7 +426,7 @@ LB2AUDHackParserDelegate>{
 }
 
 - (void)pauseWithGrayout:(BOOL)isGrayout{
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     _status.isPause = YES;
     _grayOutPause = isGrayout;
 //    DJILOG(@"Pause decoding");
@@ -444,14 +442,14 @@ LB2AUDHackParserDelegate>{
 }
 
 - (void)close{
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     [self privateClose];
     END_DISPATCH_QUEUE
 }
 
 -(void) clearRender
 {
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     [_glView clear];
     [self.dataQueue wakeupReader];
     END_DISPATCH_QUEUE
@@ -470,7 +468,7 @@ LB2AUDHackParserDelegate>{
 - (void)setType:(VideoPreviewerType)type{
     if(_type == type)return;
     if(_glView == nil)return;
-    BEGIN_DISPATCH_QUEUE
+    BEGIN_MAIN_DISPATCH_QUEUE
     pthread_mutex_lock(&_render_mutex);
     _type = type;
     if(_type == VideoPreviewerTypeFullWindow){
