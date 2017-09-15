@@ -61,8 +61,6 @@
         default:
             break;
     }
-    [gimbalInfoString appendString:@"Is attitude reset: "];
-    [gimbalInfoString appendString:state.isAttitudeReset?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is calibrating: "];
     [gimbalInfoString appendString:state.isCalibrating?@"YES\n" : @"NO\n"];
     [gimbalInfoString appendString:@"Is pitch at stop: "];

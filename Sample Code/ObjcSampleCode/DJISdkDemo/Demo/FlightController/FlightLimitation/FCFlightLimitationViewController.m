@@ -39,14 +39,14 @@
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
     if (fc) {        
         WeakRef(target);
-        [fc getMaxFlightHeightWithCompletion:^(float height, NSError * _Nullable error) {
+        [fc getMaxFlightHeightWithCompletion:^(NSUInteger height, NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"Get Max Flight Height:%@", error.localizedDescription);
             }
             else
             {
-                target.heightLimitTextField.text = [NSString stringWithFormat:@"%0.1f", height];
+                target.heightLimitTextField.text = [NSString stringWithFormat:@"%tu", height];
             }
         }];
     }
@@ -72,14 +72,14 @@
                 // We check the flight radius limitation only if it is enabled.
                 if (enabled) {
                     target.radiusLimitTextField.enabled = YES;
-                    [fc getMaxFlightRadiusWithCompletion:^(float radius, NSError * _Nullable error) {
+                    [fc getMaxFlightRadiusWithCompletion:^(NSUInteger radius, NSError * _Nullable error) {
                         WeakReturn(target);
                         if (error) {
                             ShowResult(@"Get MaxFlightRadius:%@", error.localizedDescription);
                         }
                         else
                         {
-                            target.radiusLimitTextField.text = [NSString stringWithFormat:@"%0.1f", radius];
+                            target.radiusLimitTextField.text = [NSString stringWithFormat:@"%tu", radius];
                         }
                     }];
                 }
@@ -112,14 +112,14 @@
                 if (sender.on) {
                     target.radiusLimitTextField.enabled = YES;
                     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
-                    [fc getMaxFlightRadiusWithCompletion:^(float radius, NSError * _Nullable error) {
+                    [fc getMaxFlightRadiusWithCompletion:^(NSUInteger radius, NSError * _Nullable error) {
                         WeakReturn(target);
                         if (error) {
                             ShowResult(@"%@", error.localizedDescription);
                         }
                         else
                         {
-                            target.radiusLimitTextField.text = [NSString stringWithFormat:@"%0.1f", radius];
+                            target.radiusLimitTextField.text = [NSString stringWithFormat:@"%tu", radius];
                         }
                     }];
                 }
