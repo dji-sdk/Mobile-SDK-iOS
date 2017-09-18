@@ -76,8 +76,11 @@ From registering as a developer, to deploying an application, the following will
 
 Several iOS tutorials are provided as examples on how to use different features of the Mobile SDK and debug tools includes:
 
+- [Application Activation and Aircraft Binding](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/ActivationAndBinding.html)
+- [Getting Started with DJI UI Library](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/UILibraryDemo.html)
 - [Camera Application](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/index.html)
 - [Photo and Video Playback Application](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/PlaybackDemo.html)
+- [Media Manager Application](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/MediaManagerDemo.html)
 - [MapView And Waypoint Application](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/GSDemo.html)
 - [Panorama Appliation](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/PanoDemo.html)
 - [TapFly and ActiveTrack Appliation](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/P4MissionsDemo.html)
@@ -85,6 +88,7 @@ Several iOS tutorials are provided as examples on how to use different features 
 - [GEO System Application](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/GEODemo.html)
 - [Using the Bridge App](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/BridgeAppDemo.html)
 - [Using the Remote Logger](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/RemoteLoggerDemo.html)
+
 
 ## Learn More about DJI Products and the Mobile SDK
 
