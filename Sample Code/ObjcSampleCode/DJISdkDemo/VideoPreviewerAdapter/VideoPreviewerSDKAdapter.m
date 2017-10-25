@@ -241,9 +241,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     }
 
     if (needFitToRate && self.photoRatio != DJICameraPhotoAspectRatioUnknown) {
-        CGRect streamRect = CGRectMake(0, 0, 16, 9);
-        CGRect destRect = streamRect;
-        CGSize rateSize = CGSizeMake(16, 9);
+        CGSize rateSize;
 
         switch (self.photoRatio) {
             case DJICameraPhotoAspectRatio3_2:
@@ -253,10 +251,12 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
                 rateSize = CGSizeMake(4, 3);
                 break;
             default:
-                break;
+             	rateSize = CGSizeMake(16, 9);
+				break;
         }
 
-        destRect = [DJIVideoPresentViewAdjustHelper aspectFitWithFrame:streamRect size:rateSize];
+        CGRect streamRect = CGRectMake(0, 0, 16, 9);
+        CGRect destRect = [DJIVideoPresentViewAdjustHelper aspectFitWithFrame:streamRect size:rateSize];
         area = [DJIVideoPresentViewAdjustHelper normalizeFrame:destRect withIdentityRect:streamRect];
     }
 
