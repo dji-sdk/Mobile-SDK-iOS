@@ -27,6 +27,7 @@ class StartupViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard let connectedKey = DJIProductKey(param: DJIParamConnection) else {
             NSLog("Error creating the connectedKey")
             return;
@@ -49,6 +50,7 @@ class StartupViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         DJISDKManager.keyManager()?.stopAllListening(ofListeners: self)
     }
     
