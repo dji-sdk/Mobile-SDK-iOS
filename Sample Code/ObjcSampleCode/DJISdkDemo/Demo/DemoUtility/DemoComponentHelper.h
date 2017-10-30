@@ -24,17 +24,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DemoComponentHelper : NSObject
 
-+(DJIBaseProduct*) fetchProduct; 
-+(DJIAircraft*) fetchAircraft;
-+(DJIHandheld*) fetchHandheld; 
-+(DJICamera*) fetchCamera;
-+(DJIGimbal*) fetchGimbal;
-+(DJIFlightController*) fetchFlightController;
-+(DJIRemoteController*) fetchRemoteController;
-+(DJIBattery*) fetchBattery;
-+(DJIAirLink*) fetchAirLink;
-+(DJIHandheldController*) fetchHandheldController;
-+(DJIMobileRemoteController*) fetchMobileRemoteController;
++(nullable DJIBaseProduct*) fetchProduct;
++(nullable DJIAircraft*) fetchAircraft;
++(nullable DJIHandheld*) fetchHandheld;
++(nullable DJICamera*) fetchCamera;
++(nullable DJIGimbal*) fetchGimbal;
++(nullable DJIFlightController*) fetchFlightController;
++(nullable DJIRemoteController*) fetchRemoteController;
++(nullable DJIBattery*) fetchBattery;
++(nullable DJIAirLink*) fetchAirLink;
++(nullable DJIHandheldController*) fetchHandheldController;
++(nullable DJIMobileRemoteController*) fetchMobileRemoteController;
 +(nullable DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
                                                        withListener:(id)listener
                                                      andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock;
