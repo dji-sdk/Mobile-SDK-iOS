@@ -76,13 +76,9 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         DJISDKManager.missionControl()?.addListener(self, toTimelineProgressWith: { (event: DJIMissionControlTimelineEvent, element: DJIMissionControlTimelineElement?, error: Error?, info: Any?) in
             
             switch event {
@@ -140,6 +136,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     }
 
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         DJISDKManager.missionControl()?.removeListener(self)
         DJISDKManager.keyManager()?.stopAllListening(ofListeners: self)
     }
