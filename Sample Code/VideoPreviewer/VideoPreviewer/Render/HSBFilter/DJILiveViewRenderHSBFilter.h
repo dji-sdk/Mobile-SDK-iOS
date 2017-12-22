@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderHSBFilter.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/27.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderColorMatrixFilter.h"

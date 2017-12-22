@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderLookupFilter.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/26.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderTexture.h"

@@ -35,6 +35,15 @@
 -(void) dealloc{
     for(int i = 0;i<RENDER_FRAME_NUMBER;i++){
         if (_renderYUVFrame[i]) {
+            if (_renderYUVFrame[i]->luma) {
+                free(_renderYUVFrame[i]->luma);
+            }
+            if (_renderYUVFrame[i]->chromaB) {
+                free(_renderYUVFrame[i]->chromaB);
+            }
+            if (_renderYUVFrame[i]->chromaR) {
+                free(_renderYUVFrame[i]->chromaR); 
+            }
             free(_renderYUVFrame[i]);
             _renderYUVFrame[i] = NULL;
         }
@@ -59,7 +68,7 @@
             //render
             [weakself.extractor getYuvFrame:_renderYUVFrame[_decodeFrameIndex]];
             [weakself.frameProcessor videoProcessFrame:_renderYUVFrame[_decodeFrameIndex]];
-            
+
             _decodeFrameIndex = (++_decodeFrameIndex)%RENDER_FRAME_NUMBER;
             
         }else{

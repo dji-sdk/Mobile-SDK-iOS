@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -472,7 +490,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">QuickShot modes, which define different preset path for a QuickShot mission.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>DJIActiveTrackQuickShotModeCircle</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DJIActiveTrackQuickShotModeDronie</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the objec it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>DJIActiveTrackQuickShotModeHelix</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>DJIActiveTrackQuickShotModeRocket</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>DJIActiveTrackQuickShotModeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>DJIActiveTrackQuickShotModeCircle</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DJIActiveTrackQuickShotModeDronie</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>DJIActiveTrackQuickShotModeHelix</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>DJIActiveTrackQuickShotModeRocket</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>DJIActiveTrackQuickShotModeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
 
         </div>
       </div>

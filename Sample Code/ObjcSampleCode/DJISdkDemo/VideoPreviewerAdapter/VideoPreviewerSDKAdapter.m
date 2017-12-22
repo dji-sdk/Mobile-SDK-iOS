@@ -251,8 +251,8 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
                 rateSize = CGSizeMake(4, 3);
                 break;
             default:
-             	rateSize = CGSizeMake(16, 9);
-				break;
+                rateSize = CGSizeMake(16, 9);
+                break;
         }
 
         CGRect streamRect = CGRectMake(0, 0, 16, 9);

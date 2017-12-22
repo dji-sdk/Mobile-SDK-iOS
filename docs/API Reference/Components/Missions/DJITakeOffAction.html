@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -424,7 +442,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJITakeOffAction</span> : <span class="title">DJIMissionAction</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJITakeOffAction.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Missions/DJIMissionAction.html#djimissionaction">DJIMissionAction</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class represents a take-off action used as an element in a Timeline mission. By creating an object of this class and adding it to Mission Control's Timeline,  the aircraft will take-off when the Timeline reaches the action.</font></p>
+<p><font color="#666">This class represents a take-off action used as an element in a Timeline mission. By creating an object of this class and adding it to Mission Control's Timeline,  the aircraft will take-off when the Timeline reaches the action. Note: This action  has 60 seconds TIME_OUT mechanism. Before invoking this action, please make sure the  aircraft's motors are turned off.</font></p>
 
         </div>
       </div>

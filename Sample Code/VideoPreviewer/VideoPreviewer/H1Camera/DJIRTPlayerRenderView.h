@@ -1,8 +1,5 @@
 //
 //  DJIRTPlayerRenderView.h
-//  Phantom3
-//
-//  Created by ai.chuyue on 2016/11/23.
 //  Copyright © 2016年 DJIDevelopers.com. All rights reserved.
 //
 

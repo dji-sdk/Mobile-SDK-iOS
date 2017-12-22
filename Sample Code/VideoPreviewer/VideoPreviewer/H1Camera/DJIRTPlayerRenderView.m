@@ -1,8 +1,5 @@
 //
 //  DJIRTPlayerRenderView.m
-//  Phantom3
-//
-//  Created by ai.chuyue on 2016/11/23.
 //  Copyright © 2016年 DJIDevelopers.com. All rights reserved.
 //
 
@@ -39,7 +36,7 @@
 @implementation DJIRTPlayerRenderView
 
 -(id) initWithDecoderType:(LiveStreamDecodeType)decodeType
-                encoderType:(H264EncoderType)encoderType{
+              encoderType:(H264EncoderType)encoderType{
     
     if(self = [super init]){
         _decoderType = decodeType;

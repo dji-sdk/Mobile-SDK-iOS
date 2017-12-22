@@ -1,9 +1,5 @@
 //
 //  DJICameraRemotePlayerView.m
-//  Phantom3
-//
-//  Created by ai.chuyue on 2016/11/21.
-//  Copyright © 2016年 DJIDevelopers.com. All rights reserved.
 //
 
 #import "DJICameraRemotePlayerView.h"

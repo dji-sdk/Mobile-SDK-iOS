@@ -1,12 +1,8 @@
 //
 //  DJILiveViewRenderPass.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "DJILiveViewFrameBuffer.h"
 #import "DJILiveViewRenderContext.h"
@@ -37,10 +33,17 @@
     BOOL overrideInputSize;
     BOOL usingNextFrameForImageCapture;
 }
+
 @property (assign, nonatomic) BOOL enabled;
+@property (assign, nonatomic) BOOL released;
 @property (assign, nonatomic) DJILiveViewRenderTextureOptions outputTextureOptions;
 
 -(instancetype) initWithContext:(DJILiveViewRenderContext*)context;
+
+/*
+ * call before dealloc
+ */
+-(void) releaseResources;
 
 /** Adds a target to receive notifications when new frames are available.
  

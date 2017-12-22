@@ -1,9 +1,5 @@
 //
 //  DJILiveViewColorMonitorFilter.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2017/1/14.
-//  Copyright © 2017年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewColorMonitorFilter.h"

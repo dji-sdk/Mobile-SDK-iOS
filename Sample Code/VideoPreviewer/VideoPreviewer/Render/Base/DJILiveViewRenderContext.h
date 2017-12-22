@@ -1,12 +1,7 @@
 //
 //  DJILiveViewRenderContext.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DJILiveViewRenderProgram.h"
 
@@ -19,6 +14,10 @@
 @property(readonly, retain, nonatomic) DJILiveViewRenderProgram *currentShaderProgram;
 @property(readonly, retain, nonatomic) EAGLContext *context;
 @property(readonly) CVOpenGLESTextureCacheRef coreVideoTextureCache;
+//yes if context is already released
+@property (readonly) BOOL released;
+//release
+-(void) releaseContext;
 
 - (void)useAsCurrentContext;
 - (void)setContextShaderProgram:(DJILiveViewRenderProgram *)shaderProgram;

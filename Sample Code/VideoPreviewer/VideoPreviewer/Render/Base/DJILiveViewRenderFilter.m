@@ -1,13 +1,11 @@
 //
 //  DJILiveViewRenderFilter.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/24.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderCommon.h"
 #import "DJILiveViewRenderFilter.h"
+#import <OpenGLES/ES2/gl.h>
+
 
 NSString *const kDJIImageVertexShaderString = SHADER_STRING
 (
@@ -64,7 +62,8 @@ fragmentShaderFromString:(NSString *)fragmentShaderString
     [context useAsCurrentContext];
     
     filterProgram = [[DJILiveViewRenderProgram alloc]
-                     initWithVertexShaderString:vertexShaderString
+                     initWithContext:context
+                     vertexShaderString:vertexShaderString
                      fragmentShaderString:fragmentShaderString];
     
     if (!filterProgram.initialized)
@@ -147,14 +146,16 @@ fragmentShaderFromFile:(NSString *)fragmentShaderFilename;
     // This is where you can override to provide some custom setup, if your filter has a size-dependent element
 }
 
+-(void)releaseResources{
+    if(filterProgram.released == NO){
+        [context useAsCurrentContext];
+        [filterProgram destory];
+    }
+    [super releaseResources];
+}
+
 - (void)dealloc
 {
-#if !OS_OBJECT_USE_OBJC
-    if (imageCaptureSemaphore != NULL)
-    {
-        dispatch_release(imageCaptureSemaphore);
-    }
-#endif
     
 }
 

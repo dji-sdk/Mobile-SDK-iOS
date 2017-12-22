@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderFocusWarningFilter.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/24.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderFilter.h"

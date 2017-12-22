@@ -1,13 +1,8 @@
 //
 //  DJILiveViewRenderPass.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderPass.h"
-#import <UIKit/UIKit.h>
 
 @implementation DJILiveViewRenderPass
 
@@ -25,6 +20,15 @@
     _enabled = YES;
     
     return self;
+}
+
+-(void) releaseResources{
+    if(outputFramebuffer.released == NO){
+        
+        [context useAsCurrentContext];
+        [outputFramebuffer destroyFramebuffer];
+    }
+    self.released = YES;
 }
 
 - (void)dealloc

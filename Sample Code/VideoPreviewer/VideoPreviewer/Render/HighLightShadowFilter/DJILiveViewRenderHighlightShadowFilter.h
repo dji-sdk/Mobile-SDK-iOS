@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderHighlightShadowFilter.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/12/7.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderFilter.h"

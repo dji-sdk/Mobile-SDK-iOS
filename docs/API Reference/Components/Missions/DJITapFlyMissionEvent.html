@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -473,7 +491,7 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">All the possible states of <code><a href="../../Components/Missions/DJITapFlyMissionOperator.html#djitapflymissionoperator">DJITapFlyMissionOperator</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_unknown_inline"></a>DJITapFlyMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the inital state when the operator is  first created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_disconnected_inline"></a>DJITapFlyMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_recovering_inline"></a>DJITapFlyMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering.  In this state, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_notsupported_inline"></a>DJITapFlyMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_cannotstart_inline"></a>DJITapFlyMissionStateCannotStart</font></td><td><font color="#666">There is an existing error stopping the TapFly mission to start.  Resolve <code><a href="../../Components/Missions/DJITapFlyMissionOperator.html#djitapflymissionoperator_persistenterror">persistentError</a></code>  of <code><a href="../../Components/Missions/DJITapFlyMissionOperator.html#djitapflymissionoperator">DJITapFlyMissionOperator</a></code> to start a mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_readytostart_inline"></a>DJITapFlyMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executing_inline"></a>DJITapFlyMissionStateExecuting</font></td><td><font color="#666">The operator is executing a TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executionpaused_inline"></a>DJITapFlyMissionStateExecutionPaused</font></td><td><font color="#666">The execution of the TapFly mission is paused. User can pause or resume a  TapFly mission by pressing the pause button on the physical remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executionresetting_inline"></a>DJITapFlyMissionStateExecutionResetting</font></td><td><font color="#666">The TapFly mission cannot continue the execution. The execution is being stopped automatically.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_unknown_inline"></a>DJITapFlyMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the initial state when the operator is  first created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_disconnected_inline"></a>DJITapFlyMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_recovering_inline"></a>DJITapFlyMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering.  In this state, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_notsupported_inline"></a>DJITapFlyMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_cannotstart_inline"></a>DJITapFlyMissionStateCannotStart</font></td><td><font color="#666">There is an existing error stopping the TapFly mission to start.  Resolve <code><a href="../../Components/Missions/DJITapFlyMissionOperator.html#djitapflymissionoperator_persistenterror">persistentError</a></code>  of <code><a href="../../Components/Missions/DJITapFlyMissionOperator.html#djitapflymissionoperator">DJITapFlyMissionOperator</a></code> to start a mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_readytostart_inline"></a>DJITapFlyMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executing_inline"></a>DJITapFlyMissionStateExecuting</font></td><td><font color="#666">The operator is executing a TapFly mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executionpaused_inline"></a>DJITapFlyMissionStateExecutionPaused</font></td><td><font color="#666">The execution of the TapFly mission is paused. User can pause or resume a  TapFly mission by pressing the pause button on the physical remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djitapflymissionstate_executionresetting_inline"></a>DJITapFlyMissionStateExecutionResetting</font></td><td><font color="#666">The TapFly mission cannot continue the execution. The execution is being stopped automatically.</font></td></tr></table></html></div>
 
         </div>
       </div>

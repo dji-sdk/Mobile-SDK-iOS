@@ -5,18 +5,19 @@
 //
 
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "DJIStreamCommon.h"
 #import "VideoFrameExtractor.h"
 #import "MovieGLView.h"
 #import "H264VTDecode.h"
 #import "DJIVideoHelper.h"
+#import "DJISmoothDecode.h"
 #import "SoftwareDecodeProcessor.h"
-#import "VideoPreviewerQueue.h"
-
 #import "DJIVideoPresentViewAdjustHelper.h"
-#import "DJIVTH264DecoderIFrameData.h"
+
+// SDK
 #import "DJIRTPlayerRenderView.h"
+#import "DJIVTH264DecoderIFrameData.h"
 
 #define __WAIT_STEP_FRAME__   (0) //单步调试用，搭配test_queue_pull
 
@@ -62,6 +63,9 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  */
 @interface VideoPreviewer : NSObject
 
+
+@property (nonatomic,assign,getter=isPerformanceCountEnabled) BOOL performanceCountEnabled;
+
 // a tag for video processor and frame processor
 @property (assign, nonatomic) uint8_t videoChannelTag;
 
@@ -96,6 +100,12 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  */
 +(VideoPreviewer*) instance;
 
+// SDK
+/**
+ *  Release the default instance.
+ */
++(void)releaseInstance;
+
 @end
 
 #pragma mark - geometry
@@ -116,6 +126,7 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
 
 /**
  *  rotation of the preview content
+ *  CAUTION: SHOULD BE CALLED IN MAIN THREAD!
  */
 @property (assign, nonatomic) VideoStreamRotationType rotation;
 
@@ -123,10 +134,12 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
 // use all 0 as default
 // use this rect to mark the usable part of the input stream
 // glview will use this part to do auto size adjust
+// CAUTION: SHOULD BE CALLED IN MAIN THREAD!
 @property (assign, nonatomic) CGRect contentClipRect;
 
 /**
  *  The display type used by the Video Previewer
+ *  CAUTION: SHOULD BE CALLED IN MAIN THREAD!
  */
 @property (nonatomic, assign) VideoPreviewerType type;
 
@@ -350,4 +363,12 @@ typedef NS_ENUM(NSUInteger, VideoPreviewerType){
  */
 @property(readwrite, nonatomic) CGFloat highlightsDecrease;
 
+@end
+
+
+#pragma mark - smooth decode
+///////////////// delay the decode and smooth config ///////////////////////////
+
+@interface VideoPreviewer ()
+@property (nonatomic, strong) id<DJISmoothDecodeProtocol> smoothDecode;
 @end

@@ -17,7 +17,7 @@
     return [DJISDKManager product]; 
 }
 
-+(nullable DJIAircraft*) fetchAircraft {
++(DJIAircraft*) fetchAircraft {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -29,7 +29,7 @@
     return nil;
 }
 
-+(nullable DJIHandheld *)fetchHandheld {
++(DJIHandheld *)fetchHandheld {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -41,7 +41,7 @@
     return nil;
 }
 
-+(nullable DJICamera*) fetchCamera {
++(DJICamera*) fetchCamera {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -55,7 +55,7 @@
     return nil;
 }
 
-+(nullable DJIGimbal*) fetchGimbal {
++(DJIGimbal*) fetchGimbal {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -70,7 +70,7 @@
     return nil;
 }
 
-+(nullable DJIFlightController*) fetchFlightController {
++(DJIFlightController*) fetchFlightController {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -82,7 +82,7 @@
     return nil;
 }
 
-+(nullable DJIRemoteController*) fetchRemoteController {
++(DJIRemoteController*) fetchRemoteController {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -94,7 +94,7 @@
     return nil;
 }
 
-+(nullable DJIBattery*) fetchBattery {
++(DJIBattery*) fetchBattery {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -108,7 +108,7 @@
     
     return nil;
 }
-+(nullable DJIAirLink*) fetchAirLink {
++(DJIAirLink*) fetchAirLink {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -123,7 +123,7 @@
     return nil;
 }
 
-+(nullable DJIHandheldController*) fetchHandheldController
++(DJIHandheldController*) fetchHandheldController
 {
     if (![DJISDKManager product]) {
         return nil;
@@ -136,7 +136,7 @@
     return nil;
 }
 
-+(nullable DJIMobileRemoteController *)fetchMobileRemoteController {
++(DJIMobileRemoteController *)fetchMobileRemoteController {
     if (![DJISDKManager product]) {
         return nil;
     }
@@ -148,7 +148,7 @@
     return nil;
 }
 
-+(nullable DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
++(DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
                                               withListener:(id)listener
                                             andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock {
     [[DJISDKManager keyManager] startListeningForChangesOnKey:key withListener:listener andUpdateBlock:updateBlock];

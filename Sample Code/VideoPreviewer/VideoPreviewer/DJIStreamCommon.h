@@ -46,14 +46,14 @@ typedef NS_ENUM(NSUInteger, VideoStreamRotationType){
 typedef struct{
     uint16_t width;
     uint16_t height;
-    
+
     uint16_t fps;
     uint8_t  rotate; //0 - default, 1 - 90, 2 - 180, 3 - 270, VideoStreamRotationType
     uint8_t  reserved;
-    
+
     uint16_t frame_index;
     uint16_t max_frame_index_plus_one;
-    
+
     union{
         struct{
             int has_sps :1; //has sps info
@@ -61,13 +61,17 @@ typedef struct{
             int has_idr :1; //has idr frame
             int is_fullrange:1; //the luma is in fullrange
             int ignore_render:1; //render should ignore this frame
-            int reserved:3;
-            
+            int incomplete_frame_flag:1; //mark this frame as a incomplete or failed frame
+            int reserved:2;
+
             uint8_t channelType:8; //DJIVideoDataDispatcherOutputChannel
         } frame_flag;
         uint32_t value;
     };
-    
+
+    uint32_t frame_poc; //present order
+    uint32_t ca_media_time_ms; //CACurrentMediaTime in ms
+
 } VideoFrameH264BasicInfo;
 
 typedef struct{
@@ -196,5 +200,12 @@ typedef NS_ENUM(NSUInteger, VideoPresentContentMode){
  */
 -(BOOL) videoProcessorEnabled;
 -(void) videoProcessFrame:(VideoFrameYUV*)frame;
--(void) videoProcessFailedFrame;
+
+@optional
+/*
+ * this output frame is not the same frame that input to the decoder
+ * this frame only keeps some basic infomations from that input frame
+ */
+-(void) videoProcessFailedFrame:(VideoFrameH264Raw*)frame;
 @end
+

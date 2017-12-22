@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="../Missions/DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -451,9 +469,15 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIObstacleDetectionSectorWarning)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Distance warning returned by each sector of the front vision system. Warning Level 4 is the most serious level.</font></p>
+<p><font color="#666">Distance warning returned by each sector of the front vision system. Warning Level 6 is the most serious level. For different aircraft, the same warning level will refer to different distances. Spark only supports the follow warning levels: <ul>
+<li><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_visionsectorwarning_invalid">DJIObstacleDetectionSectorWarningInvalid</a></code></li>
+<li><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_visionsectorwarning_level1">DJIObstacleDetectionSectorWarningLevel1</a></code></li>
+<li><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_visionsectorwarning_level2">DJIObstacleDetectionSectorWarningLevel2</a></code></li>
+<li><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_visionsectorwarning_level3">DJIObstacleDetectionSectorWarningLevel3</a></code></li>
+<li><code><a href="../../Components/VisionDetectionState/DJIVisionDetectionState_DJIVisionDetectionSector.html#djivisiondetectionstate_visionsectorwarning_unknown">DJIObstacleDetectionSectorWarningUnknown</a></code></li></ul></font></p>
+
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_invalid_inline"></a>DJIObstacleDetectionSectorWarningInvalid</font></td><td><font color="#666">The warning level is invalid. The sector cannot determine depth of the scene in front of it.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level1_inline"></a>DJIObstacleDetectionSectorWarningLevel1</font></td><td><font color="#666">The distance between the obstacle detected by the sector and the aircraft is over 4 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level2_inline"></a>DJIObstacleDetectionSectorWarningLevel2</font></td><td><font color="#666">The distance between the obstacle detected by the sector and the aircraft is between 3 - 4 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level3_inline"></a>DJIObstacleDetectionSectorWarningLevel3</font></td><td><font color="#666">The distance between the obstacle detected by the sector and the aircraft is between 2 - 3 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level4_inline"></a>DJIObstacleDetectionSectorWarningLevel4</font></td><td><font color="#666">The distance between the obstacle detected by the sector and the aircraft is less than 2 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_unknown_inline"></a>DJIObstacleDetectionSectorWarningUnknown</font></td><td><font color="#666">The distance warning is unknown. This warning is returned when an exception occurs.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_invalid_inline"></a>DJIObstacleDetectionSectorWarningInvalid</font></td><td><font color="#666">The warning level is invalid. The sector cannot determine depth of the scene in front of it.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level1_inline"></a>DJIObstacleDetectionSectorWarningLevel1</font></td><td><font color="#666">Warning level 1. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by  the sector and the aircraft is over 10 meters. <br> - Spark: the distance between the obstacle  detected by the sector and the aircraft is over 4 meters. <br> - Others: the distance between  the obstacle detected by the sector and the aircraft is over 20 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level2_inline"></a>DJIObstacleDetectionSectorWarningLevel2</font></td><td><font color="#666">Warning level 2. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by the  sector and the aircraft is between 8 - 10 meters. <br> - Spark: the distance between the obstacle  detected by the sector and the aircraft is between 2 - 4 meters. <br> - Others: the distance between  the obstacle detected by the sector and the aircraft is between 15 - 20 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level3_inline"></a>DJIObstacleDetectionSectorWarningLevel3</font></td><td><font color="#666">Warning level 3. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by the sector  and the aircraft is between 6 - 8 meters. <br> - Spark: the distance between the obstacle detected by the  sector and the aircraft is less than 2 meters. <br> - Others: the distance between the obstacle detected  by the sector and the aircraft is between 10 - 15 meters.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level4_inline"></a>DJIObstacleDetectionSectorWarningLevel4</font></td><td><font color="#666">Warning level 4. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by the sector and the  aircraft is between 4 - 6 meters. <br> - Others: the distance between the obstacle detected by the sector and the  aircraft is between 6 - 10 meters. Spark does not support this warning level.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level5_inline"></a>DJIObstacleDetectionSectorWarningLevel5</font></td><td><font color="#666">Warning level 5. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by the sector and the  aircraft is between 2 - 4 meters. <br> - Others: the distance between the obstacle detected by the sector and the  aircraft is between 3 - 6 meters. Spark does not support this warning level.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_level6_inline"></a>DJIObstacleDetectionSectorWarningLevel6</font></td><td><font color="#666">Warning level 6. <br> - Phantom 4 and Mavic Pro: the distance between the obstacle detected by the sector and the  aircraft is less than 2 meters. <br> - Others: the distance between the obstacle detected by the sector and the  aircraft is less than 3 meters. Spark does not support this warning level.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djivisiondetectionstate_visionsectorwarning_unknown_inline"></a>DJIObstacleDetectionSectorWarningUnknown</font></td><td><font color="#666">The distance warning is unknown. This warning is returned when an exception occurs.</font></td></tr></table></html></div>
 
         </div>
       </div>

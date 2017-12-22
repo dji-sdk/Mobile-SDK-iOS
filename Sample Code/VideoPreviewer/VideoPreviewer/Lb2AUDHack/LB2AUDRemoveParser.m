@@ -1,5 +1,5 @@
 //
-//  LB2AUDHackParser.m
+//  LB2AUDRemoveParser.m
 //
 //  Copyright (c) 2013 DJI. All rights reserved.
 //
@@ -8,29 +8,29 @@
  *  A workaround for Lightbridge 2's video feed.
  */
 
-#import "LB2AUDHackParser.h"
+#import "LB2AUDRemoveParser.h"
 
 typedef enum : NSUInteger {
-    LB2AUDHackParserStatus_SeekNAL, //searching nal
-    LB2AUDHackParserStatus_SeekAUD, //searching aud
-    LB2AUDHackParserStatus_SeekFilter, //searching filter
-} LB2AUDHackParserStatus;
+    LB2AUDRemoveParserStatus_SeekNAL, //searching nal
+    LB2AUDRemoveParserStatus_SeekAUD, //searching aud
+    LB2AUDRemoveParserStatus_SeekFilter, //searching filter
+} LB2AUDRemoveParserStatus;
 
 #define DATA_BUFFER_SIZE (1024*1024)
-static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
-//static const uint8_t g_LB2AUDHackParser_filter[] = {0x00, 0x00, 0x00, 0x01, 0x0c};
+static const uint8_t g_LB2AUDRemoveParser_aud[] = {0x09, 0x10};
+//static const uint8_t g_LB2AUDRemoveParser_filter[] = {0x00, 0x00, 0x00, 0x01, 0x0c};
 
-@interface LB2AUDHackParser (){
+@interface LB2AUDRemoveParser (){
     uint8_t* dataBuffer;
     int bufferSize;
 }
 
-@property (nonatomic, assign) LB2AUDHackParserStatus status;
+@property (nonatomic, assign) LB2AUDRemoveParserStatus status;
 @property (nonatomic, assign) int seekNALZeroCount; //counter for searching nal. init value is 0.
 @property (nonatomic, assign) int seekAUDPos; //search aud's current position (in byte)
 @end
 
-@implementation LB2AUDHackParser
+@implementation LB2AUDRemoveParser
 -(id) init{
     if (self = [super init]) {
         dataBuffer = (uint8_t*)malloc(DATA_BUFFER_SIZE);
@@ -47,7 +47,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
 }
 
 -(void) reset{
-    _status = LB2AUDHackParserStatus_SeekNAL;
+    _status = LB2AUDRemoveParserStatus_SeekNAL;
     bufferSize = 0;
     _seekAUDPos = 0;
     _seekNALZeroCount = 0;
@@ -67,14 +67,14 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     while (workOffset < in_size) {
         uint8_t current_byte = *((uint8_t*)data_in + workOffset);
         
-        if (_status == LB2AUDHackParserStatus_SeekNAL) {
+        if (_status == LB2AUDRemoveParserStatus_SeekNAL) {
             // search nalu's head
             if (current_byte == 0) {
                 _seekNALZeroCount++;
             }else if(current_byte == 1){
                 if (_seekNALZeroCount >= 3) {
                     // nalu is found
-                    self.status = LB2AUDHackParserStatus_SeekAUD;
+                    self.status = LB2AUDRemoveParserStatus_SeekAUD;
                 }else{
                     _seekNALZeroCount = 0;
                 }
@@ -82,21 +82,21 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
                 _seekNALZeroCount = 0;
             }
         }
-        else if(_status == LB2AUDHackParserStatus_SeekAUD){
+        else if(_status == LB2AUDRemoveParserStatus_SeekAUD){
             // search aud
-            if (current_byte == g_LB2AUDHackParser_aud[_seekAUDPos]) {
+            if (current_byte == g_LB2AUDRemoveParser_aud[_seekAUDPos]) {
                 // it is aud
                 _seekAUDPos++;
-                if (_seekAUDPos == sizeof(g_LB2AUDHackParser_aud)) {
+                if (_seekAUDPos == sizeof(g_LB2AUDRemoveParser_aud)) {
                     // the aud is complete
-                    self.status = LB2AUDHackParserStatus_SeekFilter;
+                    self.status = LB2AUDRemoveParserStatus_SeekFilter;
                 }
             }else{
                 // not aud, continue to search
-                self.status = LB2AUDHackParserStatus_SeekNAL;
+                self.status = LB2AUDRemoveParserStatus_SeekNAL;
             }
         }
-        else if(_status == LB2AUDHackParserStatus_SeekFilter){
+        else if(_status == LB2AUDRemoveParserStatus_SeekFilter){
                 //It is not a filer. Remove the aud found before
                 if (workOffset > 6) {
                     //aud is in the same pack. For this case, skipping it is enough.
@@ -119,7 +119,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
                 }
                 
                 workOffset--;
-                self.status = LB2AUDHackParserStatus_SeekNAL;
+                self.status = LB2AUDRemoveParserStatus_SeekNAL;
         }
         
         workOffset++; // work on the next byte
@@ -129,7 +129,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     if (outputBuf - (uint8_t*)data_in < in_size) {
         int remainSize = in_size - (int)(outputBuf - (uint8_t*)data_in);
         
-        if (_status == LB2AUDHackParserStatus_SeekNAL && _seekNALZeroCount == 0) {
+        if (_status == LB2AUDRemoveParserStatus_SeekNAL && _seekNALZeroCount == 0) {
             //If we are still searching nal, we assume the data is usable.
             [self flushBufferWithAppendData:outputBuf size:remainSize];
         }else{
@@ -139,7 +139,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     }
 }
 
--(void) setStatus:(LB2AUDHackParserStatus)status{
+-(void) setStatus:(LB2AUDRemoveParserStatus)status{
     _status = status;
     
     // reset the variable whenever the status changes
@@ -164,7 +164,7 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
 }
 
 -(void) flushBufferWithAppendData:(uint8_t*)appand size:(int)size{
-    if (![_delegate respondsToSelector:@selector(lb2AUDHackParser:didParsedData:size:)]) {
+    if (![_delegate respondsToSelector:@selector(lb2AUDRemoveParser:didParsedData:size:)]) {
         bufferSize = 0;
         return;
     }
@@ -172,12 +172,12 @@ static const uint8_t g_LB2AUDHackParser_aud[] = {0x09, 0x10};
     // Output the data
     if (bufferSize) {
         //data in buffer first
-        [_delegate lb2AUDHackParser:self didParsedData:dataBuffer size:bufferSize];
+        [_delegate lb2AUDRemoveParser:self didParsedData:dataBuffer size:bufferSize];
         bufferSize = 0;
     }
     
     if (appand && size != 0) {
-        [_delegate lb2AUDHackParser:self didParsedData:appand size:size];
+        [_delegate lb2AUDRemoveParser:self didParsedData:appand size:size];
     }
 }
 @end

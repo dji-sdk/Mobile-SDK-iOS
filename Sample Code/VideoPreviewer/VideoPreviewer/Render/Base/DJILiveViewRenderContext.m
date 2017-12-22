@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderContext.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderContext.h"
@@ -32,6 +28,10 @@
     return [self initWithMultiThreadSupport:NO];
 }
 
+- (void) dealloc{
+    
+}
+
 - (id)initWithMultiThreadSupport:(BOOL)multiThread;
 {
     if (!(self = [super init]))
@@ -48,6 +48,10 @@
 
 - (void)useAsCurrentContext;
 {
+    if (_released) {
+        return;
+    }
+    
     EAGLContext *imageProcessingContext = [self context];
     if ([EAGLContext currentContext] != imageProcessingContext)
     {
@@ -55,8 +59,17 @@
     }
 }
 
+-(void) releaseContext{
+    NSLog(@"[gl] release context:%p", self.context);
+    _released = YES;
+}
+
 - (void)setContextShaderProgram:(DJILiveViewRenderProgram *)shaderProgram;
 {
+    if (_released) {
+        return;
+    }
+    
     EAGLContext *imageProcessingContext = [self context];
     if ([EAGLContext currentContext] != imageProcessingContext)
     {
@@ -108,6 +121,10 @@
 
 - (void)presentBufferForDisplay;
 {
+    if (_released) {
+        return;
+    }
+    
     [self.context presentRenderbuffer:GL_RENDERBUFFER];
 }
 
@@ -118,7 +135,10 @@
     
     if (programFromCache == nil)
     {
-        programFromCache = [[DJILiveViewRenderProgram alloc] initWithVertexShaderString:vertexShaderString fragmentShaderString:fragmentShaderString];
+        programFromCache = [[DJILiveViewRenderProgram alloc] initWithContext:self
+                                                          vertexShaderString:vertexShaderString
+                                                        fragmentShaderString:fragmentShaderString];
+        
         [shaderProgramCache setObject:programFromCache forKey:lookupKeyForShaderProgram];
         //        [shaderProgramUsageHistory addObject:lookupKeyForShaderProgram];
         //        if ([shaderProgramUsageHistory count] >= MAXSHADERPROGRAMSALLOWEDINCACHE)

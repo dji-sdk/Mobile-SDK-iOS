@@ -1,9 +1,5 @@
 //
 //  DJILiveViewFrameBuffer.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewFrameBuffer.h"
@@ -255,6 +251,8 @@ void dji_dataProviderUnlockCallback (void *info, const void *data, size_t size);
     {
         glDeleteTextures(1, &_texture);
     }
+    
+    _released = YES;
 }
 
 #pragma mark -
@@ -297,7 +295,7 @@ void dji_dataProviderUnlockCallback (void *info, const void *data, size_t size)
     GLubyte *rawImagePixels;
     
     CGDataProviderRef dataProvider = NULL;
-    if (false)//[DJILiveViewRenderContext supportsFastTextureUpload])
+    if ((false))//[DJILiveViewRenderContext supportsFastTextureUpload])
     {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
         NSUInteger paddedWidthOfImage = CVPixelBufferGetBytesPerRow(renderTarget) / 4.0;
@@ -321,7 +319,7 @@ void dji_dataProviderUnlockCallback (void *info, const void *data, size_t size)
     
     CGColorSpaceRef defaultRGBColorSpace = CGColorSpaceCreateDeviceRGB();
     
-    if (false)
+    if ((false))
     {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
         cgImageFromBytes = CGImageCreate((int)_size.width, (int)_size.height, 8, 32, CVPixelBufferGetBytesPerRow(renderTarget), defaultRGBColorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaNoneSkipFirst, dataProvider, NULL, NO, kCGRenderingIntentDefault);
@@ -401,7 +399,7 @@ void dji_dataProviderUnlockCallback (void *info, const void *data, size_t size)
 {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
     [self lockForReading];
-    GLubyte * bufferBytes = CVPixelBufferGetBaseAddress(renderTarget);
+    GLubyte * bufferBytes = (GLubyte *)CVPixelBufferGetBaseAddress(renderTarget);
     [self unlockAfterReading];
     return bufferBytes;
 #else

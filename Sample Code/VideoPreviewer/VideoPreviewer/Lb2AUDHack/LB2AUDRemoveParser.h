@@ -1,10 +1,10 @@
 //
-//  LB2AUDHackParser.h
+//  LB2AUDRemoveParser.h
 //
 //  Copyright (c) 2013 DJI. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*
  Some version of LB2 will prefix each slice with AUD. VideoPreviewer need to parse the stream before the stream is parsed by avparser.
@@ -23,12 +23,12 @@
  Also we found that there is an isssue in the stream sent by Lightbridge 2. Whenever there are two adjacent AUDs, the decoder may fail. This workaround will detect this scenario and remove the AUDs.
  */
 
-@protocol LB2AUDHackParserDelegate <NSObject>
--(void) lb2AUDHackParser:(id)parser didParsedData:(void*)data size:(int)size;
+@protocol LB2AUDRemoveParserDelegate <NSObject>
+-(void) lb2AUDRemoveParser:(id)parser didParsedData:(void*)data size:(int)size;
 @end
 
-@interface LB2AUDHackParser : NSObject
-@property (nonatomic, weak) id<LB2AUDHackParserDelegate> delegate;
+@interface LB2AUDRemoveParser : NSObject
+@property (nonatomic, weak) id<LB2AUDRemoveParserDelegate> delegate;
 
 -(id) init;
 -(void) parse:(void*)data_in inSize:(int)in_size;

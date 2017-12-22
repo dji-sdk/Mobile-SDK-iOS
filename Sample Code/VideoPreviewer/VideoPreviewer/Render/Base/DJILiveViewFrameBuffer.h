@@ -1,12 +1,8 @@
 //
 //  DJILiveViewFrameBuffer.h
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
@@ -32,6 +28,7 @@ DJILiveViewRenderTextureOptions defaultOptionsForTexture();
 @property(readonly) DJILiveViewRenderTextureOptions textureOptions;
 @property(readonly) GLuint texture;
 @property(readonly) BOOL missingFramebuffer;
+@property(readonly) BOOL released;
 @property(readonly) id context;
 
 // Initialization and teardown
@@ -49,6 +46,7 @@ DJILiveViewRenderTextureOptions defaultOptionsForTexture();
 
 // Usage
 - (void)activateFramebuffer;
+- (void)destroyFramebuffer;
 
 // Image capture
 - (CGImageRef)newCGImageFromFramebufferContents;

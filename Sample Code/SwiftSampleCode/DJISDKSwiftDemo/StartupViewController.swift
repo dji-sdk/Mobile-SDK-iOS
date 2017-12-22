@@ -27,7 +27,6 @@ class StartupViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         guard let connectedKey = DJIProductKey(param: DJIParamConnection) else {
             NSLog("Error creating the connectedKey")
             return;
@@ -46,11 +45,20 @@ class StartupViewController: UIViewController {
                     }
                 }
             })
+            DJISDKManager.keyManager()?.getValueFor(connectedKey, withCompletion: { (value:DJIKeyedValue?, error:Error?) in
+                if let unwrappedValue = value {
+                    if unwrappedValue.boolValue {
+                        // UI goes on MT.
+                        DispatchQueue.main.async {
+                            self.productConnected()
+                        }
+                    }
+                }
+            })
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
         DJISDKManager.keyManager()?.stopAllListening(ofListeners: self)
     }
     

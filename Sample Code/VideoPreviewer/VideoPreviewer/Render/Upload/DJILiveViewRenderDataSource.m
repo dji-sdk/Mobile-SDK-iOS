@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderDataSource.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderCommon.h"
@@ -37,15 +33,15 @@ GLfloat g_yuvTransformMatRBGFullRange[16] = {
 NSString *const yuvConvertFS = SHADER_STRING
 (
  varying highp vec2 v_texcoord;
- 
+
  uniform sampler2D s_texture_y;
  uniform sampler2D s_texture_u;
  uniform sampler2D s_texture_v;
- 
+
  //yuv full range convert matrix
  uniform highp mat4 yuvTransformMatrix;
  uniform highp vec4 luminanceScale;
- 
+
  void main()
  {
      //get rgb color
@@ -63,15 +59,15 @@ NSString *const yuvConvertFS = SHADER_STRING
 NSString *const yuvBiConvertFS = SHADER_STRING
 (
  varying highp vec2 v_texcoord;
- 
+
  uniform sampler2D s_texture_y;
  uniform sampler2D s_texture_u;
- 
+
  //yuv full range convert matrix
  uniform highp mat4 yuvTransformMatrix;
  //l = (scale.x + orig) * scale.y
  uniform highp vec4 luminanceScale;
- 
+
  void main()
  {
      //get rgb color
@@ -90,10 +86,10 @@ NSString *const rgbaFS = SHADER_STRING
 (
  varying highp vec2 v_texcoord;
  uniform sampler2D s_texture_y;
- 
+
  uniform highp vec4 luminanceScale;
  uniform highp mat4 yuvTransformMatrix;
- 
+
  void main()
  {
      //get rgb color
@@ -105,30 +101,30 @@ NSString *const rgbaFS = SHADER_STRING
  );
 
 @interface DJILiveViewRenderDataSource (){
-    
+
     BOOL       _inputLoaded;
     VPFrameType _lastFrameType;
-    
+
     GLuint     _inputWidth;
     GLuint     _inputHeight;
     GLuint     _inputWidthRGB;
     GLuint     _inputHeightRGB;
-    
+
     GLuint     _outputWidth;
     GLuint     _outputHeight;
-    
+
     GLuint positionAttribute;
     GLuint textureCoordinateAttribute;
-    
+
     GLuint textureUniforms[3];
     GLuint uniformYUVMatrix;
     GLuint luminanceScaleUniform;
-    
+
     GLuint textureInputRGB;
     GLuint textureInput[3];
     GLuint textureInputFastupload[3];
     CVOpenGLESTextureRef fastuploadCVRef[3];
-    
+
     BOOL   isFullRange;
 }
 @property (nonatomic, strong) DJILiveViewRenderProgram* programBiYUV;
@@ -141,16 +137,16 @@ NSString *const rgbaFS = SHADER_STRING
 
 -(id) initWithContext:(DJILiveViewRenderContext *)aContext{
     if (self == [super initWithContext:aContext]) {
-        
+
         _luminanceScale = 1.0;
         _grayScale = NO;
         _rotation = VideoStreamRotationDefault;
         _outputWidth = 1280;
         _outputHeight = 720;
-        
+
         [self loadShaders];
     }
-    
+
     return self;
 }
 
@@ -159,7 +155,7 @@ NSString *const rgbaFS = SHADER_STRING
         glDeleteTextures(3, textureInput);
         textureInput[0] = 0;
     }
-    
+
     if (textureInputRGB) {
         glDeleteTextures(1, &textureInputRGB);
         textureInputRGB = 0;
@@ -167,13 +163,19 @@ NSString *const rgbaFS = SHADER_STRING
 }
 
 -(void) loadShaders{
-    _programRGBA = [[DJILiveViewRenderProgram alloc] initWithVertexShaderString:passThroughVS fragmentShaderString:rgbaFS];
+    _programRGBA = [[DJILiveViewRenderProgram alloc] initWithContext:context
+                                                  vertexShaderString:passThroughVS
+                                                fragmentShaderString:rgbaFS];
     [self setupShader:_programRGBA];
-    
-    _programYUV = [[DJILiveViewRenderProgram alloc] initWithVertexShaderString:passThroughVS fragmentShaderString:yuvConvertFS];
+
+    _programYUV = [[DJILiveViewRenderProgram alloc] initWithContext:context
+                                                 vertexShaderString:passThroughVS
+                                               fragmentShaderString:yuvConvertFS];
     [self setupShader:_programYUV];
-    
-    _programBiYUV = [[DJILiveViewRenderProgram alloc] initWithVertexShaderString:passThroughVS fragmentShaderString:yuvBiConvertFS];
+
+    _programBiYUV = [[DJILiveViewRenderProgram alloc] initWithContext:context
+                                                   vertexShaderString:passThroughVS
+                                                 fragmentShaderString:yuvBiConvertFS];
     [self setupShader:_programBiYUV];
 }
 
@@ -189,10 +191,10 @@ NSString *const rgbaFS = SHADER_STRING
             _outputWidth = yuvFrame->height;
         }
     }
-    
+
     //create a new buffer if the size is not correct
     [self configOutputBuffer];
-    
+
     if (yuvFrame) {
         if ([DJILiveViewRenderContext supportsFastTextureUpload]
             && yuvFrame->cv_pixelbuffer_fastupload) {
@@ -202,39 +204,39 @@ NSString *const rgbaFS = SHADER_STRING
             textureInputFastupload[0] = 0;
             textureInputFastupload[1] = 0;
             textureInputFastupload[2] = 0;
-            
+
             //support rgb，yuvplaner
             [self loadTextureNormal:yuvFrame];
         }
     }
-    
+
 }
 
 -(void) loadTextureNormal:(VideoFrameYUV*)yuvFrame{
-    
+
     if (!yuvFrame || !yuvFrame->luma) {
         return;
     }
-    
+
     GLuint frameWidth = yuvFrame->width;
     GLuint frameHeight = yuvFrame->height;
-    
+
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    
+
     if (yuvFrame->frameType == VPFrameTypeYUV420Planer) {
         if (0 == textureInput[0])
             glGenTextures(3, textureInput);
-        
+
         UInt8 *pixels[3] = { yuvFrame->luma, yuvFrame->chromaB, yuvFrame->chromaR };
         int widths[3]  = { frameWidth, frameWidth / 2, frameWidth / 2 };
         int heights[3] = { frameHeight, frameHeight / 2, frameHeight / 2 };
-        
+
         if (frameHeight != _inputHeight
             || frameWidth != _inputWidth) {
-            
+
             _inputWidth = frameWidth;
             _inputHeight = frameHeight;
-            
+
             for (int i = 0; i < 3; ++i) { //create texture storage
                 glBindTexture(GL_TEXTURE_2D, textureInput[i]);
                 glTexImage2D(GL_TEXTURE_2D,
@@ -261,14 +263,14 @@ NSString *const rgbaFS = SHADER_STRING
         if (0 == textureInputRGB) {
             glGenTextures(1, &textureInputRGB);
         }
-        
+
         if (frameWidth != _inputWidthRGB
             || frameHeight != _inputHeightRGB) {
-            
+
             _inputWidthRGB = frameWidth;
             _inputHeightRGB = frameHeight;
-            
-            
+
+
             glBindTexture(GL_TEXTURE_2D, textureInputRGB);
             glTexImage2D(GL_TEXTURE_2D,
                          0,
@@ -288,7 +290,7 @@ NSString *const rgbaFS = SHADER_STRING
             glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, frameWidth, frameHeight, GL_RGBA, GL_UNSIGNED_BYTE, yuvFrame->luma);
         }
     }
-    
+
     _lastFrameType = yuvFrame->frameType;
     _inputLoaded = YES;
     isFullRange = yuvFrame->frame_info.frame_flag.is_fullrange;
@@ -308,10 +310,10 @@ NSString *const rgbaFS = SHADER_STRING
         int widths[3]  = { frameWidth, frameWidth / 2, frameWidth / 2 };
         int heights[3] = { frameHeight, frameHeight / 2, frameHeight / 2 };
         int byteTypes[3] = {GL_LUMINANCE, GL_LUMINANCE, GL_LUMINANCE};
-        
+
         for (int i=0; i<3; i++) {
             glActiveTexture(GL_TEXTURE0 + i);
-            
+
             CVReturn err;
             // Y-plane
             err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
@@ -326,13 +328,13 @@ NSString *const rgbaFS = SHADER_STRING
                                                                GL_UNSIGNED_BYTE,
                                                                i,
                                                                &fastuploadCVRef[i]);
-            
+
             if (err)
             {
                 NSLog(@"Error at CVOpenGLESTextureCacheCreateTextureFromImage %d", err);
                 return;
             }
-            
+
             textureInputFastupload[i] = CVOpenGLESTextureGetName(fastuploadCVRef[i]);
             glBindTexture(GL_TEXTURE_2D, textureInputFastupload[i]);
             glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -346,10 +348,10 @@ NSString *const rgbaFS = SHADER_STRING
         int widths[2]  = { frameWidth, frameWidth / 2};
         int heights[2] = { frameHeight, frameHeight / 2,};
         int byteTypes[2] = {GL_LUMINANCE, GL_LUMINANCE_ALPHA};
-        
+
         for (int i=0; i<2; i++) {
             glActiveTexture(GL_TEXTURE0 + i);
-            
+
             CVReturn err;
             // Y-plane
             err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
@@ -364,22 +366,22 @@ NSString *const rgbaFS = SHADER_STRING
                                                                GL_UNSIGNED_BYTE,
                                                                i,
                                                                &fastuploadCVRef[i]);
-            
+
             if (err)
             {
                 NSLog(@"Error at CVOpenGLESTextureCacheCreateTextureFromImage %d", err);
                 return;
             }
-            
+
             textureInputFastupload[i] = CVOpenGLESTextureGetName(fastuploadCVRef[i]);
             glBindTexture(GL_TEXTURE_2D, textureInputFastupload[i]);
             glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
             glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-            
+
         }
         textureInputFastupload[2] = 0;
     }
-    
+
     _lastFrameType = yuvFrame->frameType;
     _inputLoaded = YES;
     isFullRange = yuvFrame->frame_info.frame_flag.is_fullrange;
@@ -392,10 +394,10 @@ NSString *const rgbaFS = SHADER_STRING
 -(void) renderPass{
     //begin render
     [outputFramebuffer activateFramebuffer];
-    
+
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
-    
+
     if (!_inputLoaded) {
         //just clean
         _inputLoaded = NO;
@@ -407,40 +409,40 @@ NSString *const rgbaFS = SHADER_STRING
         GLint uniformColorMatrix = uniformYUVMatrix;
         GLint uniformLumianceScale = luminanceScaleUniform;
         GLfloat* colorTransformMat = g_yuvTransformMatRBGVideoRange;
-        
+
         //y offset for yuv transform mat
         GLfloat yuvTransYOffset = 0;
-        
+
         if (isFullRange) {
             colorTransformMat = g_yuvTransformMatRBGFullRange;
         }else{
             yuvTransYOffset = -0.0627451;
         }
-        
-        
+
+
         //load shader
         if (_lastFrameType == VPFrameTypeYUV420Planer) {
             [self setActiveProgram:_programYUV];
-            
+
             //set color transform mat
             if (_grayScale) {
                 colorTransformMat = g_yuvTransformMatGray;
             }
-            
+
         }else if(_lastFrameType == VPFrameTypeYUV420SemiPlaner){
             [self setActiveProgram:_programBiYUV];
             textureCount = 2;
-            
+
             //set color transform mat
             if (_grayScale) {
                 colorTransformMat = g_yuvTransformMatGray;
             }
-            
+
         }else if(_lastFrameType == VPFrameTypeRGBA){
             [self setActiveProgram:_programRGBA];
             textureCount = 1;
         }
-        
+
         //select input texture
         GLuint* textures = textureInput;
         if (textureInputFastupload[0] != 0) {
@@ -450,29 +452,29 @@ NSString *const rgbaFS = SHADER_STRING
             textures = &textureInputRGB;
             textureCount = 1;
         }
-        
+
         for (int i = 0; i < textureCount; ++i) {
             glActiveTexture(GL_TEXTURE0 + i);
             glBindTexture(GL_TEXTURE_2D, textures[i]);
             glUniform1i(samplers[i], i);
         }
-        
+
         glUniformMatrix4fv(uniformColorMatrix, 1, false, colorTransformMat);
-        
+
         //set luminance scale and offset
         glUniform4f(uniformLumianceScale,
                     yuvTransYOffset,
                     _luminanceScale,
                     0,
                     0);
-        
+
         glVertexAttribPointer(positionAttribute, 2, GL_FLOAT, 0, 0, g_defaultVertexs);
         glEnableVertexAttribArray(positionAttribute);
         glVertexAttribPointer(textureCoordinateAttribute, 2, GL_FLOAT, 0, 0, [self currentYUVCoord]);
         glEnableVertexAttribArray(textureCoordinateAttribute);
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     }
-    
+
     //release cv ref
     for (int i=0; i<3; i++) {
         if (fastuploadCVRef[i]) {
@@ -480,7 +482,7 @@ NSString *const rgbaFS = SHADER_STRING
             fastuploadCVRef[i] = NULL;
         }
     }
-    
+
     [self informTargetsAboutNewFrameAtTime:kCMTimeZero];
 }
 
@@ -488,13 +490,13 @@ NSString *const rgbaFS = SHADER_STRING
 
 -(void) setupShader:(DJILiveViewRenderProgram*)progam{
     [context useAsCurrentContext];
-    
+
     if (!progam.initialized)
     {
         [progam addAttribute:@"position"];
         [progam addAttribute:@"texcoord"];
 
-        
+
         if (![progam link])
         {
             NSString *progLog = [progam programLog];
@@ -514,23 +516,23 @@ NSString *const rgbaFS = SHADER_STRING
         [context setContextShaderProgram:_activeProgram];
         return;
     }
-    
+
     _activeProgram = activeProgram;
     [context useAsCurrentContext];
 
-    
+
     if (_activeProgram) {
         positionAttribute = [_activeProgram attributeIndex:@"position"];
         textureCoordinateAttribute = [_activeProgram attributeIndex:@"texcoord"];
-        
+
         textureUniforms[0] = [_activeProgram uniformIndex:@"s_texture_y"];
         textureUniforms[1] = [_activeProgram uniformIndex:@"s_texture_u"];
         textureUniforms[2] = [_activeProgram uniformIndex:@"s_texture_v"];
         uniformYUVMatrix = [_activeProgram uniformIndex:@"yuvTransformMatrix"];
         luminanceScaleUniform = [_activeProgram uniformIndex:@"luminanceScale"];
-        
+
         [context setContextShaderProgram:_activeProgram];
-        
+
         glEnableVertexAttribArray(positionAttribute);
         glEnableVertexAttribArray(textureCoordinateAttribute);
     }else{
@@ -574,7 +576,7 @@ NSString *const rgbaFS = SHADER_STRING
         default:
             break;
     }
-    
+
     return g_yuvQuadTexCoordsNormal;
 }
 
@@ -588,14 +590,14 @@ NSString *const rgbaFS = SHADER_STRING
         if ([currentTarget enabled] == NO) {
             continue;
         }
-        
+
         NSInteger indexOfObject = [targets indexOfObject:currentTarget];
         NSInteger textureIndex = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
-        
+
         [self setInputFramebufferForTarget:currentTarget atIndex:textureIndex];
         [currentTarget setInputSize:outputFramebuffer.size atIndex:textureIndex];
     }
-    
+
     // Trigger processing last, so that our unlock comes first in serial execution, avoiding the need for a callback
     for (id<DJILiveViewRenderInput> currentTarget in targets)
     {
@@ -611,3 +613,4 @@ NSString *const rgbaFS = SHADER_STRING
 
 
 @end
+

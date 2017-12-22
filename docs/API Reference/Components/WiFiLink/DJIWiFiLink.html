@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="../Missions/DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="../Missions/DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../Missions/DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="../Missions/DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="../Missions/DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -422,7 +440,7 @@
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIWiFiLink</h1></div>
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIWiFiLink</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiairlinkwifilinksubcomponent_inline">DJIAirLinkKey.DJIAirLinkWiFiLinkSubComponent</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiairlinkwifilinksubcomponent_key">DJIAirLinkKey.DJIAirLinkWiFiLinkSubComponent</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides methods to change the setting of the product's WiFi. Rebooting WiFi is required in order to make new settings take effect.</font></p>
 <h5 id="class-members">Class Members:</h5>
@@ -440,7 +458,7 @@
 <div class="article"><h6><font color="#AAA">method </font>rebootWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)rebootWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamrebootwifi_inline">DJIAirLinkKey.DJIWiFiLinkParamRebootWiFi</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamrebootwifi_key">DJIAirLinkKey.DJIWiFiLinkParamRebootWiFi</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Reboot WiFi to enable new settings to take effect.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
@@ -449,7 +467,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setSSID:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setSSID:(<span class="built_in">NSString</span> *_Nonnull)ssid</div><div class="line"> withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamssid_inline">DJIAirLinkKey.DJIWiFiLinkParamSSID</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamssid_key">DJIAirLinkKey.DJIWiFiLinkParamSSID</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Sets the WiFi SSID. The setting will take effect only after the product reboots.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
@@ -458,16 +476,16 @@
 <div class="article"><h6><font color="#AAA">method </font>getSSIDWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getSSIDWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSString</span> *_Nullable ssid,</div><div class="line">                                                    <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamssid_inline">DJIAirLinkKey.DJIWiFiLinkParamSSID</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamssid_key">DJIAirLinkKey.DJIWiFiLinkParamSSID</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Gets the WiFi SSID.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString *_Nullable <font color="#000">ssid</font></font></td><td><font color="#666"><i>The ssid string.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSString *_Nullable ssid,                                                     NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString *_Nullable <font color="#000">ssid</font></font></td><td><font color="#666"><i>The SSID string.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSString *_Nullable ssid,                                                     NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_setwifipassword"><div class="api-col left">WiFi Password</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setwifipassword_inline">setPassword:withCompletion</a></div></div><div class="inline-doc" id="djiwifilink_setwifipassword_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>setPassword:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setPassword:(<span class="built_in">NSString</span> *_Nullable)password</div><div class="line">     withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparampassword_inline">DJIAirLinkKey.DJIWiFiLinkParamPassword</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparampassword_key">DJIAirLinkKey.DJIWiFiLinkParamPassword</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the WiFi Password.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
@@ -476,7 +494,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getPasswordWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getPasswordWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSString</span> *_Nullable password,</div><div class="line">                                                        <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparampassword_inline">DJIAirLinkKey.DJIWiFiLinkParamPassword</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparampassword_key">DJIAirLinkKey.DJIWiFiLinkParamPassword</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Get the WiFi Password.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
@@ -485,7 +503,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setFrequencyBand:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand</div><div class="line">          withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_inline">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_key">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the WiFi frequency band.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
@@ -494,7 +512,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getFrequencyBandWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getFrequencyBandWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(DJIWiFiFrequencyBand frequencyBand,</div><div class="line">                                                         <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_inline">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_key">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Gets the current WiFi frequency band.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
@@ -503,7 +521,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setChannelNumber:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setChannelNumber:(<span class="built_in">NSUInteger</span>)channelNumber withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelnumber_inline">DJIAirLinkKey.DJIWiFiLinkParamChannelNumber</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelnumber_key">DJIAirLinkKey.DJIWiFiLinkParamChannelNumber</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_getavailablechannels">getAvailableChannelNumbersWithCompletion</a></code> must be used to determine which channels are possible  to set. When a new channel is set, the WiFi on the product will reboot. The channel can only be changed when the  product is not flying. Supported only by Mavic Pro.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
@@ -512,7 +530,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getChannelNumberWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getChannelNumberWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSUInteger</span> channelNumber,</div><div class="line">                                                <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelnumber_inline">DJIAirLinkKey.DJIWiFiLinkParamChannelNumber</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelnumber_key">DJIAirLinkKey.DJIWiFiLinkParamChannelNumber</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Gets the WiFi channel. Channels 1-13 are in the 2.4 GHz band. Other channels are in the 5 GHz band.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
@@ -521,7 +539,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getAvailableChannelNumbersWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getAvailableChannelNumbersWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *_Nullable channelNumbers,</div><div class="line">                                                          <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamavailablechannelnumbers_inline">DJIAirLinkKey.DJIWiFiLinkParamAvailableChannelNumbers</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamavailablechannelnumbers_key">DJIAirLinkKey.DJIWiFiLinkParamAvailableChannelNumbers</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">DJIWiFiFrequencyBandDual</a></code> is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
@@ -530,7 +548,7 @@
 <div class="article"><h6><font color="#AAA">method </font>setDataRate:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setDataRate:(DJIWiFiDataRate)rate withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_inline">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_key">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Sets the WiFi data rate (throughput). Higher data rates increase the quality of video transmission, but can only be  used at shorter ranges.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
@@ -539,7 +557,7 @@
 <div class="article"><h6><font color="#AAA">method </font>getDataRateWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getDataRateWithCompletion:(<span class="keyword">void</span> (^)(DJIWiFiDataRate rate,</div><div class="line">                                           <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_inline">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_key">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets the current data rate (throughput).</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
@@ -558,7 +576,7 @@
 <div class="article"><h6><font color="#AAA">method </font>wifiLink:didUpdateMagneticInterferenceLevel</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdateMagneticInterferenceLevel:(DJIWiFiMagneticInterferenceLevel)level</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparammagneticinterferencelevel_inline">DJIAirLinkKey.DJIWiFiLinkParamMagneticInterferenceLevel</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparammagneticinterferencelevel_key">DJIAirLinkKey.DJIWiFiLinkParamMagneticInterferenceLevel</a></font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Updates the WiFi Signal Quality.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
@@ -567,7 +585,7 @@
 <div class="article"><h6><font color="#AAA">method </font>wifiLink:didUpdateChannelInterference</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)wifiLink:(DJIWiFiLink *_Nonnull)link didUpdateChannelInterference:(<span class="built_in">NSArray</span>&lt;DJIWiFiChannelInterference *&gt; *)interferences</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelinterference_inline">DJIAirLinkKey.DJIWiFiLinkParamChannelInterference</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelinterference_key">DJIAirLinkKey.DJIWiFiLinkParamChannelInterference</a></font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">This will be invoked when there is a change in RSSI. Interference power of the available channels.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
@@ -577,7 +595,7 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIWiFiFrequencyBand</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIWiFiFrequencyBand)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_inline">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_key">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">WiFi frequency band.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
@@ -586,16 +604,16 @@
 <div class="article"><h6><font color="#AAA">enum </font>DJIWiFiMagneticInterferenceLevel</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIWiFiMagneticInterferenceLevel)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparammagneticinterferencelevel_inline">DJIAirLinkKey.DJIWiFiLinkParamMagneticInterferenceLevel</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparammagneticinterferencelevel_key">DJIAirLinkKey.DJIWiFiLinkParamMagneticInterferenceLevel</a></font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
-<p><font color="#666">WiFi magnetic interferrence - as measured by Osmo, Phantom 3 4K and Phantom 3 Standard.</font></p>
+<p><font color="#666">WiFi magnetic interference - as measured by Osmo, Phantom 3 4K and Phantom 3 Standard.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_good_inline"></a>DJIWiFiMagneticInterferenceLevelLow</font></td><td><font color="#666">WiFi magnetic interference is low.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_medium_inline"></a>DJIWiFiMagneticInterferenceLevelMedium</font></td><td><font color="#666">WiFi magnetic interference is medium. At this level, the video quality will be degraded compared to when the signal quality is low.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_bad_inline"></a>DJIWiFiMagneticInterferenceLevelHigh</font></td><td><font color="#666">WiFi magnetic interference is high. At this level, the video quality will be degraded compared to when the signal quality is medium.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwifilink_djiwifisignalquality_unknown_inline"></a>DJIWiFiMagneticInterferenceLevelUnknown</font></td><td><font color="#666">WiFi magnetic interference is Unknown.</font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_djiwifidatarate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwifilink_djiwifidatarate_inline">DJIWiFiDataRate</a></div></div><div class="inline-doc" id="djiwifilink_djiwifidatarate_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>DJIWiFiDataRate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIWiFiDataRate)</div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_inline">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAirLinkBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamdatarate_key">DJIAirLinkKey.DJIWiFiLinkParamDataRate</a></font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">WiFi data rate. Lower rates are used for longer ranges, but will have lower video quality.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>

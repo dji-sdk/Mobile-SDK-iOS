@@ -80,13 +80,15 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJIIndividualUnlockZone</a>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
           </dl>
           <dl>
@@ -214,6 +216,8 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
                     </ul>
@@ -264,6 +268,10 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCredentials.html">DJIRCCredentials</a>
                             </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
+                            </dd>
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIMutableRCButtonConfiguration.html">DJIMutableRCButtonConfiguration</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
@@ -306,9 +314,19 @@
                             </dd>
                             <dd><a href="DJIShootPhotoAction.html">DJIShootPhotoAction</a>
                             </dd>
+                            <dd><a href="DJILandAction.html">DJILandAction</a>
+                            </dd>
                     </ul>
                   </dd>
-                  <dd><a href="DJIMissionTrigger.html">DJIMissionTrigger</a>
+                  <dd><a data-href="DJIMissionTrigger.html" class="sub-toggle">DJIMissionTrigger<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJIMissionTrigger_DJIBatteryLevelMissionTrigger.html">DJIBatteryLevelMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIWaypointReachedMissionTrigger.html">DJIWaypointReachedMissionTrigger</a>
+                            </dd>
+                            <dd><a href="DJIMissionTrigger_DJIAircraftLandedMissionTrigger.html">DJIAircraftLandedMissionTrigger</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="DJIWaypointMissionOperator.html" class="sub-toggle">DJIWaypointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -502,7 +520,7 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The error codes for the <code><a href="../../Components/Missions/DJIGoToAction.html#djigotoaction">DJIGoToAction</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_unknown_inline"></a>DJIGoToActionErrorUnknown</font></td><td><font color="#666">Default placeholder error.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidaltitude_inline"></a>DJIGoToActionErrorInvalidAltitude</font></td><td><font color="#666">Altitude value is invalid.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidcoordinates_inline"></a>DJIGoToActionErrorInvalidCoordinates</font></td><td><font color="#666">GPS Coordinates of the GoToAction Waypoint is not valid. Lattitude value should be in  the range [-90f, 90f] and longitude value should be in the range [-180f, 180f].</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidflightspeed_inline"></a>DJIGoToActionErrorInvalidFlightSpeed</font></td><td><font color="#666">Flight speed of the GoToAction Waypoint is not valid. Value should be in range [2, 15] m/s.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_unknown_inline"></a>DJIGoToActionErrorUnknown</font></td><td><font color="#666">Default placeholder error.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidaltitude_inline"></a>DJIGoToActionErrorInvalidAltitude</font></td><td><font color="#666">Altitude value is invalid.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidcoordinates_inline"></a>DJIGoToActionErrorInvalidCoordinates</font></td><td><font color="#666">GPS Coordinates of the GoToAction Waypoint is not valid. Latitude value should be in  the range [-90f, 90f] and longitude value should be in the range [-180f, 180f].</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigotoaction_djigotoactionerror_invalidflightspeed_inline"></a>DJIGoToActionErrorInvalidFlightSpeed</font></td><td><font color="#666">Flight speed of the GoToAction Waypoint is not valid. Value should be in range [2, 15] m/s.</font></td></tr></table></html></div>
 
         </div>
       </div>

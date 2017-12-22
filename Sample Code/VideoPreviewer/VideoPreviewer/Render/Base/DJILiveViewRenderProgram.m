@@ -1,12 +1,9 @@
 //
 //  DJILiveViewRenderProgram.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/23.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderProgram.h"
+#import "DJILiveViewRenderContext.h"
 
 // START:typedefs
 #pragma mark Function Pointer Definitions
@@ -30,13 +27,14 @@ typedef void (*GLLogFunction) (GLuint program, GLsizei bufsize, GLsizei* length,
 
 @synthesize initialized = _initialized;
 
-- (id)initWithVertexShaderString:(NSString *)vShaderString
-            fragmentShaderString:(NSString *)fShaderString;
+- (id)initWithContext:(DJILiveViewRenderContext*)ctx
+   vertexShaderString:(NSString *)vShaderString
+ fragmentShaderString:(NSString *)fShaderString;
 {
     if ((self = [super init]))
     {
         _initialized = NO;
-        
+        _context = ctx;
         attributes = [[NSMutableArray alloc] init];
         uniforms = [[NSMutableArray alloc] init];
         program = glCreateProgram();
@@ -63,34 +61,34 @@ typedef void (*GLLogFunction) (GLuint program, GLsizei bufsize, GLsizei* length,
     return self;
 }
 
-- (id)initWithVertexShaderString:(NSString *)vShaderString
-          fragmentShaderFilename:(NSString *)fShaderFilename;
-{
-    NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
-    NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
-    
-    if ((self = [self initWithVertexShaderString:vShaderString fragmentShaderString:fragmentShaderString]))
-    {
-    }
-    
-    return self;
-}
-
-- (id)initWithVertexShaderFilename:(NSString *)vShaderFilename
-            fragmentShaderFilename:(NSString *)fShaderFilename;
-{
-    NSString *vertShaderPathname = [[NSBundle mainBundle] pathForResource:vShaderFilename ofType:@"vsh"];
-    NSString *vertexShaderString = [NSString stringWithContentsOfFile:vertShaderPathname encoding:NSUTF8StringEncoding error:nil];
-    
-    NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
-    NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
-    
-    if ((self = [self initWithVertexShaderString:vertexShaderString fragmentShaderString:fragmentShaderString]))
-    {
-    }
-    
-    return self;
-}
+//- (id)initWithVertexShaderString:(NSString *)vShaderString
+//          fragmentShaderFilename:(NSString *)fShaderFilename;
+//{
+//    NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
+//    NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
+//    
+//    if ((self = [self initWithVertexShaderString:vShaderString fragmentShaderString:fragmentShaderString]))
+//    {
+//    }
+//    
+//    return self;
+//}
+//
+//- (id)initWithVertexShaderFilename:(NSString *)vShaderFilename
+//            fragmentShaderFilename:(NSString *)fShaderFilename;
+//{
+//    NSString *vertShaderPathname = [[NSBundle mainBundle] pathForResource:vShaderFilename ofType:@"vsh"];
+//    NSString *vertexShaderString = [NSString stringWithContentsOfFile:vertShaderPathname encoding:NSUTF8StringEncoding error:nil];
+//    
+//    NSString *fragShaderPathname = [[NSBundle mainBundle] pathForResource:fShaderFilename ofType:@"fsh"];
+//    NSString *fragmentShaderString = [NSString stringWithContentsOfFile:fragShaderPathname encoding:NSUTF8StringEncoding error:nil];
+//    
+//    if ((self = [self initWithVertexShaderString:vertexShaderString fragmentShaderString:fragmentShaderString]))
+//    {
+//    }
+//    
+//    return self;
+//}
 // END:init
 // START:compile
 - (BOOL)compileShader:(GLuint *)shader
@@ -222,10 +220,12 @@ typedef void (*GLLogFunction) (GLuint program, GLsizei bufsize, GLsizei* length,
     }
 }
 
-#pragma mark -
-// START:dealloc
-- (void)dealloc
-{
+-(void) destory{
+    if(_context.released == YES)
+        return;
+    
+    [_context useAsCurrentContext];
+    
     if (vertShader)
         glDeleteShader(vertShader);
     
@@ -234,6 +234,18 @@ typedef void (*GLLogFunction) (GLuint program, GLsizei bufsize, GLsizei* length,
     
     if (program)
         glDeleteProgram(program);
+    
+    _released = YES;
+}
+
+#pragma mark -
+// START:dealloc
+- (void)dealloc
+{
+    
+    if (self.released == NO) {
+        [self destory];
+    }
     
 }
 // END:dealloc

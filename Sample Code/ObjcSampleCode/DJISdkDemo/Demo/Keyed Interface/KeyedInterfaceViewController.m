@@ -46,7 +46,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
+    [super viewWillAppear:animated];
     self.batteryLevelLabel.text = @"N/A %";
     self.setCameraModeLabel.text = @"N/A";
     self.listeningCoordinatesLabel.text = @"Lat: N/A - Long: N/A";

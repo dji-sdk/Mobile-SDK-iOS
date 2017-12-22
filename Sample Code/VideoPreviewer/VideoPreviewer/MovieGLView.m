@@ -6,7 +6,6 @@
 #import <OpenGLES/EAGL.h>
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
-//#import "DJILogCenter.h"
 #import "DJIVideoPresentViewAdjustHelper.h"
 
 //pipeline
@@ -25,11 +24,14 @@
 
 #include <pthread.h>
 
+// SDK
+#import "VideoPreviewerMacros.h"
+
 #define THUMBNAIL_IMAGE_WIDTH (320)
 #define THUMBNAIL_IMAGE_HIGHT (180)
 
-//#define INFO(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
-//#define ERROR(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
+#define INFO(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
+#define ERROR(fmt, ...) //DJILog(@"[GLView]"fmt, ##__VA_ARGS__)
 //////////////////////////////////////////////////////////
 
 #pragma mark - shaders
@@ -37,6 +39,11 @@
 enum {
     ATTRIBUTE_VERTEX,
    	ATTRIBUTE_TEXCOORD,
+};
+
+typedef NS_ENUM(uint8_t, GLViewAdjustSizeStatus) {
+    GLViewAdjustSizeStatusIdle,
+    GLViewAdjustSizeStatusAdjusting,
 };
 
 //need a virticl flip to present
@@ -124,6 +131,12 @@ NSString *const renderToScreenFS = SHADER_STRING
 @property (nonatomic, strong) DJILiveViewRenderHighlightShadowFilter* highlightFilter;
 //lock for render;
 @property (nonatomic, strong) NSLock* renderLock;
+
+@property (nonatomic) GLViewAdjustSizeStatus adjustSizeStatus;
+
+@property (nonatomic) CADisplayLink *displayLink;
+@property (nonatomic) CGRect cachedSuperviewBounds;
+
 @end
 
 @implementation MovieGLView {
@@ -168,6 +181,7 @@ NSString *const renderToScreenFS = SHADER_STRING
     GLfloat _downscale_quadTexCoords[8];
     
     DJIVideoPresentViewAdjustHelper* _adjustHelper;
+
 }
 
 #pragma mark - for UIKit
@@ -188,7 +202,12 @@ NSString *const renderToScreenFS = SHADER_STRING
         
         _adjustHelper = [[DJIVideoPresentViewAdjustHelper alloc] init];
         _renderLock = [[NSLock alloc] init];
-        
+
+        _displayLink = nil;
+        _cachedSuperviewBounds = CGRectZero;
+
+        _adjustSizeStatus = GLViewAdjustSizeStatusIdle;
+
         //use a default input size
         _inputWidth   = 1280;
         _inputHeight  = 720;
@@ -217,7 +236,7 @@ NSString *const renderToScreenFS = SHADER_STRING
         
         if (!context) {
             
-//            ERROR(@"failed to setup EAGLContext");
+            ERROR(@"failed to setup EAGLContext");
             self = nil;
             return nil;
         }
@@ -229,14 +248,14 @@ NSString *const renderToScreenFS = SHADER_STRING
         GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
         if (status != GL_FRAMEBUFFER_COMPLETE) {
             
-//            ERROR(@"failed to make complete framebuffer object %x", status);
+            ERROR(@"failed to make complete framebuffer object %x", status);
             self = nil;
             return nil;
         }
         
         GLenum glError = glGetError();
         if (GL_NO_ERROR != glError) {
-//            ERROR(@"failed to setup GL %x", glError);
+            ERROR(@"failed to setup GL %x", glError);
             self = nil;
             return nil;
         }
@@ -251,78 +270,137 @@ NSString *const renderToScreenFS = SHADER_STRING
 }
 
 - (void)releaseResourece{
+    if (self.displayLink) {
+        [self.displayLink invalidate];
+        self.displayLink = nil;
+    }
+
     [self.renderLock lock];
     self.willRelease = YES;
+
+    [context useAsCurrentContext];
+
     //release the first chain of retain cicle
+    [self.dataSource removeAllTargets];
+    [self.dataSource releaseResources];
     self.dataSource = nil;
+
+    [self.focusWarningFilter removeAllTargets];
+    [self.focusWarningFilter releaseResources];
+    self.focusWarningFilter = nil;
+
+    [self.reverseDLogFilter removeAllTargets];
+    [self.reverseDLogFilter releaseResources];
+    self.hsbFilter = nil;
+
+    [self.highlightFilter removeAllTargets];
+    [self.highlightFilter releaseResources];
+    self.highlightFilter = nil;
+
+    [self.colorMonitor releaseResources];
+    self.colorMonitor = nil;
+
+    if (_framebuffer) {
+        glDeleteFramebuffers(1, &_framebuffer);
+        _framebuffer = 0;
+    }
+
+    if (_renderbuffer) {
+        glDeleteRenderbuffers(1, &_renderbuffer);
+        _renderbuffer = 0;
+    }
+
+    [presentProgram destory];
+
+    //release context
+    [context releaseContext];
+    context = nil;
     [self.renderLock unlock];
 }
 
 - (BOOL)adjustSize{
-    //May enter from the non-threaded rendering, here do not call any GL codes
-    
-    if(self.superview==nil)return NO;
-    
+    NSAssert([NSThread isMainThread], @"adjustViewSize should be called in main thread only. ");
+    if(self.superview == nil) return NO;
+
     _adjustHelper.videoSize = CGSizeMake(_inputWidth, _inputHeight);
     _adjustHelper.contentMode = self.type;
     _adjustHelper.rotation = self.rotation;
     _adjustHelper.boundingFrame = self.superview.bounds;
     _adjustHelper.contentClipRect = self.contentClipRect;
-    
+
     //adjust frame is the final target frame
     CGRect adjustFrame = [_adjustHelper getFinalFrame];
     _adjustHelper.lastFrame = adjustFrame;
-    
-    
+
+
     if(CGRectEqualToRect(adjustFrame, _targetLayerFrame)){
         return NO;
-    }else{
-        _targetLayerFrame          = adjustFrame;
-        __weak typeof(self) target = self;
-        void(^adjustFrameFunc)() = ^{
-            [target setFrame:adjustFrame];
-            [target notifyFrameChange];
-        };
-        
-        if([NSThread isMainThread]){
-            adjustFrameFunc();
-        }
-        else{
-            dispatch_async(dispatch_get_main_queue(), ^{
-                adjustFrameFunc();
-            });
-        }
+    }else {
+        _targetLayerFrame = adjustFrame;
+        [self setFrame:adjustFrame];
+        [self notifyFrameChange];
         return YES;
     }
 }
 
 -(void) notifyFrameChange{
+    //always on main thread
     if ([_delegate respondsToSelector:@selector(movieGlView:didChangedFrame:)]) {
         [_delegate movieGlView:self didChangedFrame:self.frame];
     }
 }
 
 -(void) setFrame:(CGRect)frame{
-    //Non-GL thread protection, do not call any GL codes
+    NSAssert([NSThread isMainThread], @"setFrame should be called in main thread only. ");
+    if (CGRectEqualToRect(frame, self.frame)) {
+        return;
+    }
     [super setFrame:frame];
     _targetLayerFrame = frame;
-    //After the view frame changes in the need to re-bind buffer, or size may be abnormal
-    //However, we should do this thing in the render thread inside
+    [self rebindFrameBuffer];
 }
 
-- (void)dealloc
-{
-    [self.renderLock lock];
-    if (_framebuffer) {
-        glDeleteFramebuffers(1, &_framebuffer);
-        _framebuffer = 0;
+// WORKAROUND: The prevoius design make the movie gl view observe the change of superview in the rendering thread.
+// This will cause the complain of Main Thread Checker. Therefore, a timer in main queue is created to keep
+// fetching the latest frame of superview.
+-(void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    if (self.superview) {
+        [self startObserveSuperviewBounds];
+    }
+    else {
+        [self stopObserveSuperviewBounds];
+    }
+}
+
+-(void)startObserveSuperviewBounds {
+    if (self.displayLink) {
+        return;
+    }
+
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(checkSuperViewBoundChange)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop]
+                           forMode:NSDefaultRunLoopMode];
+}
+
+-(void)stopObserveSuperviewBounds {
+    if (self.displayLink == nil) {
+        return;
     }
     
-    if (_renderbuffer) {
-        glDeleteRenderbuffers(1, &_renderbuffer);
-        _renderbuffer = 0;
+    [self.displayLink invalidate];
+    self.displayLink = nil;
+}
+
+-(void)checkSuperViewBoundChange {
+    if (self.superview == nil) {
+        return;
     }
-    [self.renderLock unlock];
+
+    if (!CGRectEqualToRect(self.cachedSuperviewBounds, self.superview.bounds)) {
+        self.cachedSuperviewBounds = self.superview.bounds;
+        [self adjustSize];
+    }
 }
 
 #pragma mark - gl render
@@ -333,28 +411,28 @@ NSString *const renderToScreenFS = SHADER_STRING
         && _dataSource != nil) {
         return;
     }
-    
+
     if (_willRelease) {
         return;
     }
-    
+
     //基础 pipline
     if (!_dataSource) {
         _dataSource = [[DJILiveViewRenderDataSource alloc] initWithContext:context];
-        
+
         //缩略图采集
         _scaleFilter = [[DJILiveViewRenderScaleFilter alloc] initWithContext:context];
         _scaleFilter.targetSize = CGSizeMake(THUMBNAIL_IMAGE_WIDTH, THUMBNAIL_IMAGE_HIGHT);
         _scaleFilter.enabled = NO;
     }
     [_dataSource removeAllTargets];
-    
+
     //基础
     [_dataSource addTarget:_scaleFilter atTextureLocation:0];
-    
+
     //后续的步奏
     DJILiveViewRenderPass* lastPass = _dataSource;
-    
+
     //color monitor
     if (_enableColorMonitor) {
         if (self.colorMonitor == nil) {
@@ -426,29 +504,42 @@ NSString *const renderToScreenFS = SHADER_STRING
 - (void)render: (VideoFrameYUV *) frame
 {
     [self.renderLock lock];
+
+    //context check
+    if(context == nil || self.willRelease){
+        [self.renderLock unlock];
+        return;
+    }
+
     [context useAsCurrentContext];
-    
     //update frame
     if (frame){
         if(frame->width > 2000 || frame->height > 2000){
-//            ERROR(@"size error %f %f", frame->width, frame->height);
+            ERROR(@"size error %f %f", frame->width, frame->height);
             [self.renderLock unlock];
             return;
         }
-        
-        _inputWidth = frame->width;
-        _inputHeight = frame->height;
+
+        if (_inputWidth != frame->width ||
+            _inputHeight != frame->height) {
+
+            if (self.adjustSizeStatus != GLViewAdjustSizeStatusAdjusting) {
+                self.adjustSizeStatus = GLViewAdjustSizeStatusAdjusting;
+                weakSelf(target);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    weakReturn(target);
+                    MovieGLView *strongView = target;
+                    strongView->_inputWidth = frame->width;
+                    strongView->_inputHeight = frame->height;
+                    [target adjustSize];
+                    target.adjustSizeStatus = GLViewAdjustSizeStatusIdle;
+                });
+            }
+            [self.renderLock unlock];
+            return;
+        }
     }
-    
-    //resize self
-    [self adjustSize];
-    
-    //check framebuffer
-    if (_viewPointWidth != (GLint)self.frame.size.width
-        || _viewPointHeight != (GLint)self.frame.size.height) {
-        [self rebindFrameBuffer];
-    }
-    
+
     //pipeline
     [self setupPipLine];
 
@@ -587,24 +678,25 @@ NSString *const renderToScreenFS = SHADER_STRING
 - (BOOL)loadShadersPresent
 {
     [context useAsCurrentContext];
-    
+
     if (presentProgram) {
         [context setContextShaderProgram:presentProgram];
         glEnableVertexAttribArray(_attrVertex);
         glEnableVertexAttribArray(_attrTexcoord);
         return YES;
     }
-    
+
     presentProgram = [[DJILiveViewRenderProgram alloc]
-                      initWithVertexShaderString:overExpVS
+                      initWithContext:context
+                      vertexShaderString:overExpVS
                       fragmentShaderString:renderToScreenFS];
-    
+
     if (!presentProgram.initialized)
     {
         [presentProgram addAttribute:@"position"];
         [presentProgram addAttribute:@"texcoord"];
-        
-        
+
+
         if (![presentProgram link])
         {
             NSString *progLog = [presentProgram programLog];
@@ -617,21 +709,22 @@ NSString *const renderToScreenFS = SHADER_STRING
             return NO;
         }
     }
-    
+
 
     _attrVertex = [presentProgram attributeIndex:@"position"];
     _attrTexcoord = [presentProgram attributeIndex:@"texcoord"];
-    
+
     glEnableVertexAttribArray(_attrVertex);
     glEnableVertexAttribArray(_attrTexcoord);
-    
+
     _uniformPresentSampler = [presentProgram uniformIndex:@"s_texture"];
     _over_exposed_param = [presentProgram uniformIndex:@"overexp_texture_param"];
     _over_exposed_tex_uniform = [presentProgram uniformIndex:@"s_texture_overexp"];
-    
+
     //load over exposed texture
     //use gl_repeat on this texture, the size of this texture must be pow of 2
     {
+        // SDK Changes
         UIImage* image = [self getImageFromNamed:@"overExposedTexture"];
         DJILiveViewRenderTextureOptions options = defaultOptionsForTexture();
         options.wrapS = GL_REPEAT;
@@ -640,67 +733,54 @@ NSString *const renderToScreenFS = SHADER_STRING
                                                                           cgImage:[image CGImage]
                                                                            option:options];
     }
-    
+
     return YES;
-}
-
-#define DJI_VIDEOPREVIEW_RESOURCES_PATH @"VideoPreviewer.framework/VideoPreviewer.bundle"
-
--(UIImage*) getImageFromNamed:(NSString*)imageName
-{
-    static NSBundle* bundle = nil;
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        NSString* frameworkPath = [[NSBundle mainBundle] privateFrameworksPath];
-        NSString* resourcePath = [frameworkPath stringByAppendingPathComponent:DJI_VIDEOPREVIEW_RESOURCES_PATH];
-        bundle = [NSBundle bundleWithPath:resourcePath];
-    });
-    
-    UIImage* image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
-    return image;
 }
 
 -(void) renderToScreen{
     //3. screen present
     [self loadShadersPresent];
-    
+
     if (!presentProgram) {
         return;
     }
-    
+
     //bind output
     glBindFramebuffer(GL_FRAMEBUFFER, _framebuffer);
     glViewport(0, 0, _backingWidth, _backingHeight);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderbuffer);
-    
+
     glClearColor(0, 0, 0, 0);
     glClear(GL_COLOR_BUFFER_BIT);
-    
+
     //bind input
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, inputBuffer.texture);
-    glUniform1i(_uniformPresentSampler, 0);
-    
+    if(inputBuffer.texture)
+    {
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, inputBuffer.texture);
+        glUniform1i(_uniformPresentSampler, 0);
+    }
+
     //set over exposed texture
     GLfloat over_exposed_param[4] = {1, 1, 0, 0};
-    
+
     if(_overExposedMark > 0 && _over_exposed_texture){
         glActiveTexture(GL_TEXTURE0 + 3);
         glBindTexture(GL_TEXTURE_2D, _over_exposed_texture.texture);
         glUniform1i(_over_exposed_tex_uniform, 3);
-        
+
         double over_exposed_tex_width = _over_exposed_texture.pixelSizeOfImage.width;
         if(over_exposed_tex_width > 0.0000001){
             over_exposed_param[0] = _backingWidth/over_exposed_tex_width;
             over_exposed_param[1] = _backingHeight/over_exposed_tex_width;
         }
-        
+
         static float offset = 0.0;
         float delta_time = [self getCurrentTimeDiff]/1000.0;
         offset += delta_time*0.5;
         offset -= floorf(offset);
         over_exposed_param[2] = offset;
-        
+
         //enable blend
         over_exposed_param[3] = _overExposedMark;
     }
@@ -710,7 +790,7 @@ NSString *const renderToScreenFS = SHADER_STRING
     glEnableVertexAttribArray(ATTRIBUTE_VERTEX);
     glVertexAttribPointer(ATTRIBUTE_TEXCOORD, 2, GL_FLOAT, 0, 0, g_postQuadTexCoords);
     glEnableVertexAttribArray(ATTRIBUTE_TEXCOORD);
-    
+
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 }
 
@@ -731,16 +811,18 @@ NSString *const renderToScreenFS = SHADER_STRING
 
 //called when output changes
 -(void) rebindFrameBuffer{
+    [self.renderLock lock];
+
     [context useAsCurrentContext];
-    
+
     if (_framebuffer) {
         glDeleteFramebuffers(1, &_framebuffer);
     }
-    
+
     if (_renderbuffer) {
         glDeleteRenderbuffers(1, &_renderbuffer);
     }
-    
+
     //When the screen size changes, we need to re-create a rendering surface
     glGenFramebuffers(1, &_framebuffer);
     glGenRenderbuffers(1, &_renderbuffer);
@@ -751,14 +833,16 @@ NSString *const renderToScreenFS = SHADER_STRING
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &_backingWidth);
     glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &_backingHeight);
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderbuffer);
-    
+
     GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
     if (status != GL_FRAMEBUFFER_COMPLETE) {
-//        ERROR(@"failed to make complete framebuffer object %x", status);
+        //        ERROR(@"failed to make complete framebuffer object %x", status);
     }
-    
+
     _viewPointWidth = self.frame.size.width;
     _viewPointHeight = self.frame.size.height;
+
+    [_renderLock unlock];
 }
 
 #pragma mark - snapshot and thumbnail rending
@@ -833,4 +917,48 @@ NSString *const renderToScreenFS = SHADER_STRING
     _enableColorMonitor = enableColorMonitor;
     _needUpdatePipline = YES;
 }
+
+-(void)setType:(VideoPresentContentMode)type {
+    NSAssert([NSThread isMainThread], @"setType should be called in main thread only. ");
+    if (_type == type) {
+        return;
+    }
+    _type = type;
+    [self adjustSize];
+}
+
+-(void)setRotation:(VideoStreamRotationType)rotation {
+    NSAssert([NSThread isMainThread], @"setRotation should be called in main thread only. ");
+    if (_rotation == rotation) {
+        return;
+    }
+    _rotation = rotation;
+    [self adjustSize];
+}
+
+-(void)setContentClipRect:(CGRect)contentClipRect {
+    NSAssert([NSThread isMainThread], @"setContentClipRect should be called in main thread only. ");
+    if (CGRectEqualToRect(contentClipRect, _contentClipRect)) {
+        return;
+    }
+    _contentClipRect = contentClipRect;
+    [self adjustSize];
+}
+
+// SDK
+#define DJI_VIDEOPREVIEW_RESOURCES_PATH @"VideoPreviewer.framework/VideoPreviewer.bundle"
+-(UIImage*) getImageFromNamed:(NSString*)imageName
+{
+    static NSBundle* bundle = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        NSString* frameworkPath = [[NSBundle mainBundle] privateFrameworksPath];
+        NSString* resourcePath = [frameworkPath stringByAppendingPathComponent:DJI_VIDEOPREVIEW_RESOURCES_PATH];
+        bundle = [NSBundle bundleWithPath:resourcePath];
+    });
+
+    UIImage* image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+    return image;
+}
+
 @end

@@ -11,6 +11,7 @@
 #import <sys/time.h>
 
 #include "libavformat/avformat.h"
+#include "libavcodec/avcodec.h"
 #include "libswscale/swscale.h"
 
 @interface VideoFrameExtractor (){
@@ -162,11 +163,17 @@ ss += ll; \
 -(void) privateParseVideo:(uint8_t*)buf length:(int)length withOutputBlock:(void (^)(AVPacket* frame))block
 {
     if(_pCodecCtx == NULL) return;
-    
-    
-    int paserLength_In = length;
+
+    // Need padding for FFMpeg. Otherwise Address Sanitizer will complain heap overflow.
+    size_t lengthWithPadding = length + FF_INPUT_BUFFER_PADDING_SIZE;
+    uint8_t *bufWithPadding = malloc(lengthWithPadding);
+    memset(bufWithPadding, 0, lengthWithPadding);
+    memcpy(bufWithPadding, buf, length);
+
+    uint8_t *paserBuffer_In = bufWithPadding;
+    int paserLength_In = (int)length;
     int paserLen;
-    uint8_t *paserBuffer_In = buf;
+
     while (paserLength_In > 0) {
         AVPacket packet;
         av_init_packet(&packet);
@@ -235,6 +242,11 @@ ss += ll; \
         
         av_free_packet(&packet);
     }
+
+    if (bufWithPadding) {
+        free(bufWithPadding);
+    }
+
 }
 
 -(void) parseVideo:(uint8_t*)buf length:(int)length withOutputBlock:(void (^)(uint8_t* frame, int size))block{
@@ -378,6 +390,7 @@ ss += ll; \
         int paserLen;
         int decode_data_length;
         int got_picture = 0;
+
         uint8_t *paserBuffer_In = buf;
         while (paserLength_In > 0) {
             AVPacket packet;
@@ -416,7 +429,7 @@ ss += ll; \
             {
                 callback(YES);
             }
-        }        
+        }
     }
     return  YES;
 }

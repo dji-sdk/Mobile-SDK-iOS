@@ -1,9 +1,5 @@
 //
 //  DJILiveViewRenderScaleFilter.m
-//  DJIWidget
-//
-//  Created by ai.chuyue on 2016/10/25.
-//  Copyright © 2016年 Jerome.zhang. All rights reserved.
 //
 
 #import "DJILiveViewRenderScaleFilter.h"
