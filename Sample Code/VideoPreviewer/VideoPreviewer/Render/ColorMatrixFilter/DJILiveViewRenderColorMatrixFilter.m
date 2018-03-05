@@ -32,20 +32,19 @@ NSString *const kDJIGPUImageColorMatrixFragmentShaderString = SHADER_STRING
 -(id) initWithContext:(DJILiveViewRenderContext *)acontext{
     if (self = [super initWithContext:acontext
              fragmentShaderFromString:kDJIGPUImageColorMatrixFragmentShaderString]) {
-        
+
+        colorMatrixUniform = [filterProgram uniformIndex:@"colorMatrix"];
+        intensityUniform = [filterProgram uniformIndex:@"intensity"];
+
+        self.intensity = 1.f;
+        self.colorMatrix = (DJIGPUMatrix4x4){
+            {1.f, 0.f, 0.f, 0.f},
+            {0.f, 1.f, 0.f, 0.f},
+            {0.f, 0.f, 1.f, 0.f},
+            {0.f, 0.f, 0.f, 1.f}
+        };
     }
-    
-    colorMatrixUniform = [filterProgram uniformIndex:@"colorMatrix"];
-    intensityUniform = [filterProgram uniformIndex:@"intensity"];
-    
-    self.intensity = 1.f;
-    self.colorMatrix = (DJIGPUMatrix4x4){
-        {1.f, 0.f, 0.f, 0.f},
-        {0.f, 1.f, 0.f, 0.f},
-        {0.f, 0.f, 1.f, 0.f},
-        {0.f, 0.f, 0.f, 1.f}
-    };
-    
+
     return self;
 }
 
