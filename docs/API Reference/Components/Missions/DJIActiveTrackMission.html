@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -450,14 +482,22 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="built_in">CGRect</span> targetRect</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">A bounding box for the target. The rectangle is normalized to [0,1] where (0,0)  is the top left of the video preview and (1,1) is the bottom right. The <code>size</code>  parameter of <code>CGRect</code> can be set to 0 to initialize the mission with a point  instead of a rectangle. If the mission is initialized with a point, the vision  system will try to recognize the object around the point and return the representative  rect in the status delegate.</font></p>
+<p><font color="#666">A bounding box for the target. The rectangle is normalized to [0,1] where (0,0) is the top left  of the video preview and (1,1) is the bottom right. The <code>size</code> parameter of <code>CGRect</code> can be set  to 0 to initialize the mission with a point instead of a rectangle. If the mission is  initialized with a point, the vision system will try to recognize the object around the point  and return the representative rect in the status delegate. <br><br> This property is used when  the <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission">DJIActiveTrackMission</a></code> object is passed to <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_startmission">startMission:withCompletion</a></code>.  If the object is passed to <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_startautosensingmission">startAutoSensingMission:withCompletion</a></code>, this property  will be ignored. Use <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_subjectindex">subjectIndex</a></code> to select the target to track instead.</font></p>
+</div>
+<div class="api-row" id="djiactivetrackmission_subjectindex"><div class="api-col left">Subject Index</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_subjectindex_inline">subjectIndex</a></div></div><div class="inline-doc" id="djiactivetrackmission_subjectindex_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>subjectIndex</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) <span class="built_in">NSInteger</span> subjectIndex</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">The index of the subject to track. After starting auto sensing (by calling <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_enableautosensing">enableAutoSensingWithCompletion</a></code>  or <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_enableautosensingforquickshot">enableAutoSensingForQuickShotWithCompletion</a></code>), the aircraft will push the sensed subjects  (<code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_autosensedsubjects">autoSensedSubjects</a></code>). Select the subject to track by passing the index of the subject. <br><br>This  property is used when the <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission">DJIActiveTrackMission</a></code> object is passed to <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_startautosensingmission">startAutoSensingMission:withCompletion</a></code>.  If the object is passed to <code><a href="../../Components/Missions/DJIActiveTrackMissionOperator.html#djiactivetrackmissionoperator_startmission">startMission:withCompletion</a></code>, this property will be ignored. Use <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_targetrect">targetRect</a></code>  to define the target to track.</font></p>
 </div>
 <div class="api-row" id="djiactivetrackmission_mode"><div class="api-col left">Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_mode_inline">mode</a></div></div><div class="inline-doc" id="djiactivetrackmission_mode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>mode</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIActiveTrackMode mode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">ActiveTrack Mission mode. Defaults to <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_trace">DJIActiveTrackModeTrace</a></code>.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode">DJIActiveTrackMode</a></code></font></p>
@@ -467,18 +507,18 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIActiveTrackQuickShotMode quickShotMode</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">The QuickShot mode determines the preset flight path. It is only used when <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_mode">mode</a></code>  is <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">DJIActiveTrackModeQuickShot</a></code>.  Defaults to <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode_unknown">DJIActiveTrackQuickShotModeUnknown</a></code>.  It is only supported by Spark.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">DJIActiveTrackQuickShotMode</a></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiactivetracktrackingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a></div></div><div class="api-row" id="djiactivetrackmission_djiactivetrackmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djiactivetrackmode_inline">DJIActiveTrackMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_djiactivetrackmode_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a></div></div><div class="api-row" id="djiactivetrackmission_djisubjectsensingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a></div></div><div class="api-row" id="djiactivetrackmission_djiactivetrackmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djiactivetrackmode_inline">DJIActiveTrackMode</a></div></div><div class="inline-doc" id="djiactivetrackmission_djiactivetrackmode_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>DJIActiveTrackMode</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIActiveTrackMode)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Different modes of the ActiveTrack Mission. Defaults to  <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_trace">DJIActiveTrackModeTrace</a></code>, set to  others to enable the feature.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_trace_inline"></a>DJIActiveTrackModeTrace</font></td><td><font color="#666">Aircraft moves in behind the subject keeping a constant distance to it.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_profile_inline"></a>DJIActiveTrackModeProfile</font></td><td><font color="#666">Aircraft moves in parallel with the subject in the frame instead of behind.  Mission with this mode can only be started when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlight_inline"></a>DJIActiveTrackModeSpotlight</font></td><td><font color="#666">In Spotlight mode, the aircraft camera automatically follows the subject by  rotating the aircraft's yaw, but the aircraft does not automatically keep a  constant distance with the subject. Mission with this mode can only be started  when the aircraft is flying.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_spotlightpro_inline"></a>DJIActiveTrackModeSpotlightPro</font></td><td><font color="#666">In Spotlight Pro mode, the aircraft camera automatically follows the subject by  rotating the gimbal's yaw, but the aircraft does not automatically keep a constant  distance with the subject.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_quickshot_inline"></a>DJIActiveTrackModeQuickShot</font></td><td><font color="#666">In QuickShot mode, the aircraft will fly in one of four preset paths (see <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackquickshotmode">DJIActiveTrackQuickShotMode</a></code>)  while tracking the object recording a video. When a QuickShot mission ends, a 10-second video will be  generated. It is only supported by Spark.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackmode_unknown_inline"></a>DJIActiveTrackModeUnknown</font></td><td><font color="#666">The active track mode is unknown.</font></td></tr></table></html></div>
@@ -487,10 +527,10 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIActiveTrackQuickShotMode)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">QuickShot modes, which define different preset path for a QuickShot mission.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>DJIActiveTrackQuickShotModeCircle</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DJIActiveTrackQuickShotModeDronie</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>DJIActiveTrackQuickShotModeHelix</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>DJIActiveTrackQuickShotModeRocket</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>DJIActiveTrackQuickShotModeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_circle_inline"></a>DJIActiveTrackQuickShotModeCircle</font></td><td><font color="#666">Aircraft will circle around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_dronie_inline"></a>DJIActiveTrackQuickShotModeDronie</font></td><td><font color="#666">Aircraft will fly backward and upward with camera locked on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_helix_inline"></a>DJIActiveTrackQuickShotModeHelix</font></td><td><font color="#666">Aircraft will fly upward, spiraling around the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_rocket_inline"></a>DJIActiveTrackQuickShotModeRocket</font></td><td><font color="#666">The aircraft will ascend with the camera pointing downward on the object it is tracking.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_boomerang_inline"></a>DJIActiveTrackQuickShotModeBoomerang</font></td><td><font color="#666">The aircraft will fly around the tracking object in an upwardly sloped oval with the  video finishing at the start point. Only supported by DJI Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_asteroid_inline"></a>DJIActiveTrackQuickShotModeAsteroid</font></td><td><font color="#666">The aircraft will fly backward and upward while recording video, capture a sphere  panorama at the end of the flight path, then combine the footage and panorama into  a short video. Only supported by DJI Mavic Air.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackmission_djiactivetrackquickshotmode_unknown_inline"></a>DJIActiveTrackQuickShotModeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
 
         </div>
       </div>

@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="" class="active">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="../Missions/DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -460,7 +492,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isConnected</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraSSDState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#djicamerakey_djicameraparamssdisconnected_key">DJICameraKey.DJICameraParamSSDIsConnected</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666"><code>YES</code> if the SSD is connected. Note, if the camera is disconnected,  the values for other properties in <code><a href="../../Components/Camera/DJICamera_DJICameraSSDState.html#djicamera_djicamerassdstate">DJICameraSSDState</a></code> are undefined.</font></p>
+<p><font color="#666"><code>YES</code> if the SSD is connected. Note, if the camera is disconnected, the values for other properties in <code><a href="../../Components/Camera/DJICamera_DJICameraSSDState.html#djicamera_djicamerassdstate">DJICameraSSDState</a></code> are undefined.</font></p>
 </div>
 <div class="api-row" id="djicamera_djicamerassdstate_totalspace"><div class="api-col left">Capacity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerassdstate_totalspace_inline">capacity</a></div></div><div class="inline-doc" id="djicamera_djicamerassdstate_totalspace_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>capacity</h6></div>
@@ -478,7 +510,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> availableRecordingTimeInSeconds</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraSSDState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJICameraKey.html#djicamerakey_djicameraparamssdavailablerecordingtimeinseconds_key">DJICameraKey.DJICameraParamSSDAvailableRecordingTimeInSeconds</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">SSD's remaining time in seconds, based on the current <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameravideoresolution">DJICameraVideoResolution</a></code>  and <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameravideoframerate">DJICameraVideoFrameRate</a></code>. @return SSD's remaining time measured in seconds.</font></p>
+<p><font color="#666">SSD's remaining time in seconds, based on the current <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameravideoresolution">DJICameraVideoResolution</a></code> and <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameravideoframerate">DJICameraVideoFrameRate</a></code>. @return SSD's remaining time measured in seconds.</font></p>
 </div>
 <div class="api-row" id="djicamera_djicamerassdstate_remainingspaceinmegabytes"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicamera_djicamerassdstate_remainingspaceinmegabytes_inline">remainingSpaceInMB</a></div></div><div class="inline-doc" id="djicamera_djicamerassdstate_remainingspaceinmegabytes_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>remainingSpaceInMB</h6></div>

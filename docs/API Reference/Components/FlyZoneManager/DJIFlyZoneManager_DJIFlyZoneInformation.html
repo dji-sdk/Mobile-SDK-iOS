@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="../Missions/DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -532,7 +564,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setUnlockingEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">When <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>, unlocked fly zones  can be disabled. This is useful if the aircraft is shared between users.</font></p>
+<p><font color="#666">Disables the unlocked fly zones. This is useful if the aircraft is shared between users. It is not  supported by Inspire 1 series or Phatom 3 series. For the other products, it is supported  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the unlocked fly zone.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i><code>completion block</code> to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline">getUnlockingEnabledWithCompletion</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline" <blockquote="">
@@ -541,7 +573,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getUnlockingEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666"><code>YES</code> if the unlocked fly zone is enabled. This method can only be used when  <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
+<p><font color="#666"><code>YES</code> if the unlocked fly zone is enabled. It is not supported by Inspire 1 series or Phatom 3  series. For the other products, it is supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> if the visual stabilization is enabled.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(BOOL enabled, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_starttime"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_starttime_inline">startTime</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_starttime_inline" <blockquote="">
@@ -602,7 +634,7 @@
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">An enum class represents the category of fly zone.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_warning_inline"></a>DJIFlyZoneCategoryWarning</font></td><td><font color="#666">Warning zones do not restrict flight and are informational to alert the user. In a warning zone, users should be  prompted with a warning message describing the zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_authorization_inline"></a>DJIFlyZoneCategoryAuthorization</font></td><td><font color="#666">Authorization zones restrict flight by default, but can be unlocked by a GEO authorized user.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_restricted_inline"></a>DJIFlyZoneCategoryRestricted</font></td><td><font color="#666">Restricted zones restrict flight by default and cannot be unlocked by a GEO authorized user.  Users should contact flysafe@dji.com if they have authorization to fly in a restricted zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_enhancedwarning_inline"></a>DJIFlyZoneCategoryEnhancedWarning</font></td><td><font color="#666">Enhanced warning zones restrict flight by default, and can be unlocked  using <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_unlockflyzones">unlockFlyZones:withCompletion</a></code> without requiring the user to be logged into their DJI account.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_unknown_inline"></a>DJIFlyZoneCategoryUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_warning_inline"></a>DJIFlyZoneCategoryWarning</font></td><td><font color="#666">Warning zones do not restrict flight and are informational to alert the user. In a warning zone, users should be  prompted with a warning message describing the zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_authorization_inline"></a>DJIFlyZoneCategoryAuthorization</font></td><td><font color="#666">Authorization zones restrict flight by default, but can be unlocked by a GEO authorized user.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_restricted_inline"></a>DJIFlyZoneCategoryRestricted</font></td><td><font color="#666">Restricted zones restrict flight by default and cannot be unlocked by a GEO authorized user.  Users should contact flysafe@dji.com if they have authorization to fly in a restricted zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_enhancedwarning_inline"></a>DJIFlyZoneCategoryEnhancedWarning</font></td><td><font color="#666">Enhanced warning zones do not restrict flight but are highly recommended to be informational  to alert the user. In an enhanced warning zone, users should be prompted with a warning message  describing the zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djiflyzoneinformation_flyzonecategory_unknown_inline"></a>DJIFlyZoneCategoryUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_flyzonereason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_flyzonereason_inline">DJIFlyZoneReason</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_flyzonereason_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">enum </font>DJIFlyZoneReason</h6></div>
 

@@ -33,7 +33,7 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.4)
+Installing DJI-SDK-iOS (4.5)
 Generating Pods project
 Integrating client project
 
@@ -77,7 +77,7 @@ From registering as a developer, to deploying an application, the following will
 Several iOS tutorials are provided as examples on how to use different features of the Mobile SDK and debug tools includes:
 
 - [Application Activation and Aircraft Binding](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/ActivationAndBinding.html)
-- [Getting Started with DJI UI Library](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/UILibraryDemo.html)
+- [Getting Started with DJI UX SDK](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/UXSDKDemo.html)
 - [Camera Application](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/index.html)
 - [Photo and Video Playback Application](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/PlaybackDemo.html)
 - [Media Manager Application](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/MediaManagerDemo.html)
@@ -94,9 +94,9 @@ Several iOS tutorials are provided as examples on how to use different features 
 
 Please visit [DJI Mobile SDK Documentation](https://developer.dji.com/mobile-sdk/documentation/introduction/index.html) for more details.
 
-## DJI Mobile UI Library
+## DJI Mobile UX SDK
 
-DJI Mobile UILibrary is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UILibrary-iOS).
+DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check [here](https://github.com/dji-sdk/Mobile-UXSDK-iOS).
 
 ## SDK Keys
 

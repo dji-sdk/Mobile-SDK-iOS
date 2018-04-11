@@ -155,13 +155,13 @@
 
 - (void)loadMediaList {
     WeakRef(target);
-    [self.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
+    [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
         WeakReturn(target);
         if (error) {
             ShowResult(@"Fetch media failed: %@", error.localizedDescription);
         }
         else {
-            target.mediaList = [target.mediaManager fileListSnapshot];
+            target.mediaList = [target.mediaManager sdCardFileListSnapshot];
             [target.mediaListTable reloadData];
         }
     }];

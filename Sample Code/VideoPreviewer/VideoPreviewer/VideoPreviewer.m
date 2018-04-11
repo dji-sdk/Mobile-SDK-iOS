@@ -201,6 +201,7 @@ LB2AUDRemoveParserDelegate>{
         //use hardware decode on ios8
         _hw_decoder = [[H264VTDecode alloc] init];
         _hw_decoder.delegate = self;
+        _enableHardwareDecode = YES;
     }
 #endif
 
@@ -612,6 +613,12 @@ static VideoPreviewer* previewer = nil;
 
     _encoderType = encoderType;
     _stream_basic_info.encoderType = encoderType;
+    
+    if (_encoderType == H264EncoderType_MavicAir) {
+        self.pocBufferSize = 2;
+    } else {
+        self.pocBufferSize = 0;
+    }
 }
 
 -(void) setEnableShadowAndHighLightenhancement:(BOOL)enable{
@@ -627,7 +634,7 @@ static VideoPreviewer* previewer = nil;
     if (_enableHardwareDecode == enableHardwareDecode) {
         return;
     }
-
+    
     _enableHardwareDecode = enableHardwareDecode;
     [_hw_decoder resetLater];
 }

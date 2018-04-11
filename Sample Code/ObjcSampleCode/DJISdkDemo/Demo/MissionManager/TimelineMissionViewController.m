@@ -46,64 +46,107 @@
     self.downloadButton.enabled = NO;
 }
 
--(void) initializeActions {
+- (void)initializeActionsWithCompletion:(void(^)())completion {
     if (self.actions == nil) {
         self.actions = [[NSMutableArray alloc] init];
     }
     
-    // Step 1: take off from the ground
-    DJITakeOffAction* takeoffAction = [[DJITakeOffAction alloc] init];
-    [self.actions addObject:takeoffAction];
+    WeakRef(target);
     
-    DJIHotpointMission* hotpointMission = [[DJIHotpointMission alloc] init];
-    hotpointMission.hotpoint = _homeLocation;
-    hotpointMission.altitude = 15;
-    hotpointMission.radius = 10;
-    hotpointMission.angularVelocity = -[DJIHotpointMissionOperator maxAngularVelocityForRadius:10];
-    hotpointMission.startPoint = DJIHotpointStartPointNearest;
-    hotpointMission.heading = DJIHotpointHeadingTowardHotpoint;
-    DJIHotpointAction* hotpointAction = [[DJIHotpointAction alloc] initWithMission:hotpointMission];
-    [self.actions addObject:hotpointAction];
+    // Step 1: take off from the ground
+    void (^addTakeOffAction)() = ^() {
+        DJITakeOffAction* takeoffAction = [[DJITakeOffAction alloc] init];
+        [target.actions addObject:takeoffAction];
+    };
+    
+    void (^addHotpointAction)(float radius, float angularVelocity) = ^(float radius, float angularVelocity) {
+        DJIHotpointMission* hotpointMission = [[DJIHotpointMission alloc] init];
+        hotpointMission.hotpoint = _homeLocation;
+        hotpointMission.altitude = 15;
+        hotpointMission.radius = radius;
+        hotpointMission.angularVelocity = angularVelocity;
+        hotpointMission.startPoint = DJIHotpointStartPointNearest;
+        hotpointMission.heading = DJIHotpointHeadingTowardHotpoint;
+        DJIHotpointAction* hotpointAction = [[DJIHotpointAction alloc] initWithMission:hotpointMission];
+        [self.actions addObject:hotpointAction];
+    };
     
     // Step 3: shoot 3 photos with 5 seconds interval between each
-    DJIShootPhotoAction* shootPhotoAction = [[DJIShootPhotoAction alloc] initWithPhotoCount:3 timeInterval:10.0];
-    [self.actions addObject:shootPhotoAction];
+    void (^addShootPhotoAction)() = ^() {
+        DJIShootPhotoAction* shootPhotoAction = [[DJIShootPhotoAction alloc] initWithPhotoCount:3 timeInterval:10.0];
+        [target.actions addObject:shootPhotoAction];
+    };
     
     // Step 4: start recording video
-    DJIRecordVideoAction* recordVideoAction = [[DJIRecordVideoAction alloc] initWithStartRecordVideo];
-    [self.actions addObject:recordVideoAction];
+    void (^addRecordVideoAction)() = ^() {
+        DJIRecordVideoAction* recordVideoAction = [[DJIRecordVideoAction alloc] initWithStartRecordVideo];
+        [target.actions addObject:recordVideoAction];
+    };
     
     // Step 5: start a waypoint mission while the aircraft is still recording the video
-    DJIWaypointMission *waypointAction = [self initializeWaypointMissonStep];
-    [self.actions addObject:waypointAction];
+    void (^addWaypointMission)() = ^() {
+        DJIWaypointMission *waypointAction = [target initializeWaypointMissonStep];
+        [target.actions addObject:waypointAction];
+    };
     
     // Step 6: go to the target location
-    DJIGoToAction* gotoAction = [[DJIGoToAction alloc] initWithCoordinate:CLLocationCoordinate2DMake(self.homeLocation.latitude + 40 * ONE_METER_OFFSET, self.homeLocation.longitude + 50 * ONE_METER_OFFSET) altitude:40.0];
-    [self.actions addObject:gotoAction];
+    void (^addGoToAction)() = ^() {
+        DJIGoToAction* gotoAction = [[DJIGoToAction alloc] initWithCoordinate:CLLocationCoordinate2DMake(target.homeLocation.latitude + 40 * ONE_METER_OFFSET, target.homeLocation.longitude + 50 * ONE_METER_OFFSET) altitude:40.0];
+        [target.actions addObject:gotoAction];
+    };
     
     // Step 2: reset the gimbal to horizontal angle
-    DJIGimbalAttitude atti = {-10, 0, 0};
-    DJIGimbalAttitudeAction* gimbalAttiAction = [[DJIGimbalAttitudeAction alloc] initWithAttitude:atti];
-    [self.actions addObject:gimbalAttiAction];
+    void (^addGimbalAttitudeAction)() = ^() {
+        DJIGimbalAttitude atti = {-10, 0, 0};
+        DJIGimbalAttitudeAction* gimbalAttiAction = [[DJIGimbalAttitudeAction alloc] initWithAttitude:atti];
+        [target.actions addObject:gimbalAttiAction];
+    };
     
     // Step 7: stop the recording when the waypoint mission is finished
-    recordVideoAction = [[DJIRecordVideoAction alloc] initWithStopRecordVideo];
-    [self.actions addObject:recordVideoAction];
+    void (^addStopRecordVideoAction)() = ^() {
+        DJIRecordVideoAction* recordVideoAction = [[DJIRecordVideoAction alloc] initWithStopRecordVideo];
+        [target.actions addObject:recordVideoAction];
+    };
     
     // Step 8: go back home
-    DJIGoHomeAction* gohomeAction = [[DJIGoHomeAction alloc] init];
-    [self.actions addObject:gohomeAction];
+    void (^addGoHomeAction)() = ^() {
+        DJIGoHomeAction* gohomeAction = [[DJIGoHomeAction alloc] init];
+        [target.actions addObject:gohomeAction];
+    };
+    
+    double radius = 10;
+    [DJIHotpointMissionOperator getMaxAngularVelocityForRadius:radius withCompletion:^(float angularVelocity, NSError * _Nullable error) {
+        addTakeOffAction();
+        
+        if (!error) {
+            addHotpointAction(radius, angularVelocity);
+        }
+        
+        addShootPhotoAction();
+        addRecordVideoAction();
+        addWaypointMission();
+        addGoToAction();
+        addGimbalAttitudeAction();
+        addStopRecordVideoAction();
+        addGoHomeAction();
+        
+        if (completion) {
+            completion();
+        }
+    }];
 }
 
 - (IBAction)onPrepareButtonClicked:(id)sender
 {
-    [self initializeActions];
-    NSError *error = [[DJISDKManager missionControl] scheduleElements:self.actions];
-    if (error) {
-        ShowResult(@"Schedule Timeline Actions Failed:%@", error.description);
-    } else {
-        ShowResult(@"Actions schedule succeed!");
-    }
+    WeakRef(target);
+    [self initializeActionsWithCompletion:^{
+        NSError *error = [[DJISDKManager missionControl] scheduleElements:target.actions];
+        if (error) {
+            ShowResult(@"Schedule Timeline Actions Failed:%@", error.description);
+        } else {
+            ShowResult(@"Actions schedule succeed!");
+        }
+    }];
 }
 
 - (IBAction)onStartButtonClicked:(id)sender

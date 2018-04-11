@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="../Missions/DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -442,7 +474,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIKeyManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666"><code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> provides access to the keyed interface using  <code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code> and corresponding subclass objects. <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> is accessed from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">keyManager</a></code>  in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>.</font></p>
+<p><font color="#666"><code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> provides access to the keyed interface using <code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code> and corresponding subclass objects. <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code> is accessed from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_keymanager">keyManager</a></code> in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djikeymanager_getvalueforkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djikeymanager_getvalueforkey_inline">getValueForKey</a></div></div><div class="inline-doc" id="djikeymanager_getvalueforkey_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">method </font>getValueForKey</h6></div>
@@ -509,42 +541,53 @@
 <p><font color="#666">Stops all subscriptions on all key value updates for the given listener.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener object passed to <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager_startlisteningforchangesonkeuywithlistenerandupdateblock">startListeningForChangesOnKey:withListener:andUpdateBlock</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djikeymanager_iskeysupported"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djikeymanager_iskeysupported_inline">isKeySupported</a></div></div><div class="inline-doc" id="djikeymanager_iskeysupported_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>isKeySupported</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)isKeySupported:(DJIKey *)key</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Determines if a key is supported by the connected product.</font></p>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a> * <font color="#000">key</font></font></td><td><font color="#666"><i>Key to be check on current product.</i></font></td></tr></table></html>
+<h5 id="return-v2">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if the key is supported.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djikey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIKey.html">DJIKey</a></div></div><div class="api-row" id="djikeyedvalue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/KeyManager/DJIKeyedValue.html">DJIKeyedValue</a></div></div><div class="api-row" id="djikeymanager_djikeyedgetcompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djikeymanager_djikeyedgetcompletionblock_inline">DJIKeyedGetCompletionBlock</a></div></div><div class="inline-doc" id="djikeymanager_djikeyedgetcompletionblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedGetCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedGetCompletionBlock)(DJIKeyedValue * _Nullable value, <span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">The completion block called when performing a get on a key.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue">DJIKeyedValue</a> * _Nullable <font color="#000">value</font></font></td><td><font color="#666"><i>An optional value returned as a result of the get. Nil if no value exists yet or if an error is returned.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError * _Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error object in case the call failed.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djikeymanager_djikeyedsetcompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djikeymanager_djikeyedsetcompletionblock_inline">DJIKeyedSetCompletionBlock</a></div></div><div class="inline-doc" id="djikeymanager_djikeyedsetcompletionblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedSetCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedSetCompletionBlock)(<span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">The completion block called when performing a set on a key.</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSError * _Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>An optional error in case the call failed.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djikeymanager_djikeyedactioncompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djikeymanager_djikeyedactioncompletionblock_inline">DJIKeyedActionCompletionBlock</a></div></div><div class="inline-doc" id="djikeymanager_djikeyedactioncompletionblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedActionCompletionBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedActionCompletionBlock)(<span class="built_in">BOOL</span> finished, DJIKeyedValue * _Nullable response, <span class="built_in">NSError</span> * _Nullable error)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">The completion block called when performing an action on a key.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">finished</font></font></td><td><font color="#666"><i>Whether or not the action finished.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue">DJIKeyedValue</a> * _Nullable <font color="#000">response</font></font></td><td><font color="#666"><i>The optional response value of the action.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError * _Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>The option error in case the call failed.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djikeymanager_djikeyedlistenerupdateblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djikeymanager_djikeyedlistenerupdateblock_inline">DJIKeyedListenerUpdateBlock</a></div></div><div class="inline-doc" id="djikeymanager_djikeyedlistenerupdateblock_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIKeyedListenerUpdateBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIKeyedListenerUpdateBlock)(DJIKeyedValue * _Nullable oldValue, DJIKeyedValue * _Nullable newValue)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyManager.h</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">The completion block, called every time the value behind a key is updated.</font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue">DJIKeyedValue</a> * _Nullable <font color="#000">oldValue</font></font></td><td><font color="#666"><i>The old value. <code>nil</code> if no value was present before.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue">DJIKeyedValue</a> * _Nullable <font color="#000">newValue</font></font></td><td><font color="#666"><i>The new value. <code>nil</code> if the stored values are being flushed.</i></font></td></tr></table></html></div>
 
         </div>

@@ -292,7 +292,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
             let error = DJISDKManager.missionControl()?.scheduleElement(element)
             
             if error != nil {
-                NSLog("Error scheduling element \(error)")
+                NSLog("Error scheduling element \(String(describing: error))")
                 return;
             }
             
@@ -460,7 +460,9 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         mission.hotpoint = CLLocationCoordinate2DMake(droneCoordinates.latitude + offset, droneCoordinates.longitude)
         mission.altitude = 15
         mission.radius = 15
-        mission.angularVelocity = DJIHotpointMissionOperator.maxAngularVelocity(forRadius: mission.radius) * (arc4random() % 2 == 0 ? -1 : 1)
+        DJIHotpointMissionOperator.getMaxAngularVelocity(forRadius: Double(mission.radius), withCompletion: {(velocity:Float, error:Error?) in
+            mission.angularVelocity = velocity
+        })
         mission.startPoint = .nearest
         mission.heading = .alongCircleLookingForward
         

@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -470,14 +502,22 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> radius</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">The Hotpoint radius in meters of the mission.  If there is no executing mission, it is 0.</font></p>
+<p><font color="#666">The Hotpoint radius in meters of the mission. If there is no executing mission, it is 0.</font></p>
+</div>
+<div class="api-row" id="djihotpointmissionevent_maxangularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionevent_maxangularvelocity_inline">maxAngularVelocity</a></div></div><div class="inline-doc" id="djihotpointmissionevent_maxangularvelocity_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>maxAngularVelocity</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> maxAngularVelocity</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">The Hotpoint max angular velocity from current radius.</font></p>
 </div>
 <div class="api-row" id="djihotpointmissionevent_error"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmissionevent_error_inline">error</a></div></div><div class="inline-doc" id="djihotpointmissionevent_error_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>error</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSError</span> *error</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">The encountered error if there is any. Otherwise, it is <code>nil</code>.</font></p>
 </div>
 <h5 id="related">Related:</h5>
@@ -486,10 +526,10 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIHotpointMissionState)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">States of <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator">DJIHotpointMissionOperator</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_unknown_inline"></a>DJIHotpointMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the initial state when the  operator has just been created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_disconnected_inline"></a>DJIHotpointMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_recovering_inline"></a>DJIHotpointMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering.  At this time, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_notsupported_inline"></a>DJIHotpointMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_readytostart_inline"></a>DJIHotpointMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executinginitialphase_inline"></a>DJIHotpointMissionStateExecutingInitialPhase</font></td><td><font color="#666">The aircraft is moving towards the start point of the Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executing_inline"></a>DJIHotpointMissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executionpaused_inline"></a>DJIHotpointMissionStateExecutionPaused</font></td><td><font color="#666">Hotpoint mission is paused successfully. User can call  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_resumemission">resumeMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_unknown_inline"></a>DJIHotpointMissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. This is the initial state when the operator has just been created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_disconnected_inline"></a>DJIHotpointMissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_recovering_inline"></a>DJIHotpointMissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device and aircraft is recovering. At this time, the operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_notsupported_inline"></a>DJIHotpointMissionStateNotSupported</font></td><td><font color="#666">The connected product does not support Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_readytostart_inline"></a>DJIHotpointMissionStateReadyToStart</font></td><td><font color="#666">The operator is ready to start a Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executinginitialphase_inline"></a>DJIHotpointMissionStateExecutingInitialPhase</font></td><td><font color="#666">The aircraft is moving towards the start point of the Hotpoint mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executing_inline"></a>DJIHotpointMissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmissionstate_executionpaused_inline"></a>DJIHotpointMissionStateExecutionPaused</font></td><td><font color="#666">Hotpoint mission is paused successfully. User can call <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_resumemission">resumeMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
 
         </div>
       </div>

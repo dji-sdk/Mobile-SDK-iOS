@@ -10,10 +10,51 @@ import UIKit
 import DJISDK
 
 class KeyedInterfaceViewController: UIViewController {
+    
+    var cameraStorageLocation: DJICameraStorageLocation = .unknown
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let cameraStorageLocationKey = DJICameraKey(param: DJICameraParamStorageLocation) {
+            DJISDKManager.keyManager()?.getValueFor(cameraStorageLocationKey, withCompletion: { (value: DJIKeyedValue?, error: Error?) in
+                guard error == nil && value != nil else {
+                    // Insert graceful error handling here.
+                    
+                    self.cameraStorageLocationLabel.text = "Error"
+                    return
+                }
+                
+                self.cameraStorageLocation = DJICameraStorageLocation(rawValue: (value?.value as! NSNumber).uintValue)!
+                
+                if self.cameraStorageLocation == .sdCard {
+                    self.cameraStorageLocationLabel.text = "SD Card"
+                } else if self.cameraStorageLocation == .internalStorage {
+                    self.cameraStorageLocationLabel.text = "Internal Storage"
+                } else {
+                    self.cameraStorageLocationLabel.text = "Uknown"
+                }
+            })
+        }
+        //We need to get the product type then listen for changes on the product type to determine if we should show the UI for SDCard and Internal Storage which is only supported on Mavic Air.
+        if let productKey = DJIProductKey.modelName() {
+            
+            DJISDKManager.keyManager()?.getValueFor(productKey, withCompletion: { (value: DJIKeyedValue?, error: Error?) in
+                guard error == nil && value != nil else {
+                    // Insert graceful error handling here.
+                    return
+                }
+                if let productName = value?.stringValue {
+                    self.changeUIForProduct(productName: productName)
+                }
+            })
+            
+            DJISDKManager.keyManager()?.startListeningForChanges(on: productKey, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
+                
+                if let productName = newValue?.stringValue {
+                    self.changeUIForProduct(productName: productName)
+                }
+            })
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -22,16 +63,15 @@ class KeyedInterfaceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func changeUIForProduct(productName: String) {
+        if productName != DJIAircraftModelNameMavicAir {
+            self.cameraStorageLocationLabel.isHidden = true
+            self.toggleCameraStorageLocationButton.isHidden = true
+        } else {
+            self.cameraStorageLocationLabel.isHidden = false
+            self.toggleCameraStorageLocationButton.isHidden = false
+        }
     }
-    */
     
     @IBOutlet weak var getBatteryLevelButton: UIButton!
     @IBOutlet weak var getBatteryLevelLabel: UILabel!
@@ -107,7 +147,6 @@ class KeyedInterfaceViewController: UIViewController {
             })
             self.listeningCoordinatesLabel.text = "Started...";
         }
-        
         isListening = !isListening
     }
     
@@ -134,6 +173,35 @@ class KeyedInterfaceViewController: UIViewController {
             self.getExposureSettingsLabel.text = "ISO: \(exposureSettings.ISO)\nAperture: \(exposureSettings.aperture.rawValue)\nEV: \(exposureSettings.exposureCompensation.rawValue)\nShutter:\(exposureSettings.shutterSpeed.rawValue)"
         })
         
+    }
+    
+    @IBOutlet weak var cameraStorageLocationLabel: UILabel!
+    
+    @IBOutlet weak var toggleCameraStorageLocationButton: UIButton!
+    @IBAction func toggleCameraStorageLocationPressed(_ sender: Any) {
+        let newCameraStorageLocation:DJICameraStorageLocation
+        if self.cameraStorageLocation == .sdCard {
+            newCameraStorageLocation = .internalStorage
+        } else {
+            newCameraStorageLocation = .sdCard
+        }
+        if let cameraStorageLocationKey = DJICameraKey(param: DJICameraParamStorageLocation) {
+            DJISDKManager.keyManager()?.setValue(NSNumber(value:newCameraStorageLocation.rawValue), for: cameraStorageLocationKey, withCompletion: { (error: Error?) in
+                guard error == nil else {
+                    // Insert graceful error handling here.
+                    self.cameraStorageLocationLabel.text = "Error"
+                    return
+                }
+                self.cameraStorageLocation = newCameraStorageLocation
+                if self.cameraStorageLocation == .sdCard {
+                    self.cameraStorageLocationLabel.text = "SD Card"
+                } else if self.cameraStorageLocation == .internalStorage {
+                    self.cameraStorageLocationLabel.text = "Internal Storage"
+                } else {
+                    self.cameraStorageLocationLabel.text = "Uknown"
+                }
+            })
+        }
     }
     
 }

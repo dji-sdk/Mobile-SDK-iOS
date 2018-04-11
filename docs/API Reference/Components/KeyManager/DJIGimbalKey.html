@@ -90,6 +90,32 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubBoundDevice.html">DJIFlightHubBoundDevice</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUser.html">DJIFlightHubUser</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubTeam.html">DJIFlightHubTeam</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubUpStream.html">DJIFlightHubUpStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubLiveStream.html">DJIFlightHubLiveStream</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightPathNode.html">DJIFlightHubFlightPathNode</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubFlightHistoricalDetail.html">DJIFlightHubFlightHistoricalDetail</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubStatistics.html">DJIFlightHubStatistics</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
+                            </dd>
+                            <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -146,6 +172,8 @@
                                       </dd>
                                       <dd><a href="../IntelligentFlightAssistant/DJIVisionDetectionState_DJIVisionControlState.html">Detection State</a>
                                       </dd>
+                                      <dd><a href="../IntelligentFlightAssistant/DJISmartCaptureState.html">Smart Capture State</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -159,6 +187,8 @@
                                       <dd><a href="../IMUState/DJIIMUState_DJIIMUMultiOrientationCalibrationHint.html">DJIIMUMultipleOrientationCalibrationHint</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../OnboardSDKDevice/DJIOnboardSDKDevice.html">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -188,7 +218,7 @@
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraLensState.html">DJICameraFocusState</a>
                             </dd>
-                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraSDCardState</a>
+                            <dd><a href="../Camera/DJICamera_DJICameraSDCardState.html">DJICameraStorageState</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDState.html">DJICameraSSDState</a>
                             </dd>
@@ -406,6 +436,8 @@
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIActiveTrackTrackingState.html">DJIActiveTrackTrackingState</a>
                                       </dd>
+                                      <dd><a href="../Missions/DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../Missions/DJIActiveTrackMissionEvent.html">DJIActiveTrackMissionEvent</a>
@@ -468,11 +500,7 @@
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setmotorcontrolgyrofilteringonaxis">setMotorControlGyroFilteringFactor:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getmotorcontrolgyrofilteringonaxis">getMotorControlGyroFilteringFactorOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamiscalibratingstatedependprogress_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamIsCalibratingStateDependProgress</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawmotorcontrolstrength_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawMotorControlStrength</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setmotorcontrolstrengthonaxis">setMotorControlStrength:onAxis:withCompletion</a></code></font></p>
-<p></p></td><tr><td></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getmotorcontrolstrengthonaxis">getMotorControlStrengthOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamrestorefactorysettings_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamRestoreFactorySettings</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Action</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamiscalibratingstatedependprogress_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamIsCalibratingStateDependProgress</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchcontrollermaxspeed_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchControllerMaxSpeed</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSUInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamrestorefactorysettings_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamRestoreFactorySettings</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Action</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_loadfactorysettings">restoreFactorySettings</a></code></font></p>
 <p></p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamcalibrationprogress_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamCalibrationProgress</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_GimbalState.html#djigimbal_gimbalstate_calibrationprogress">calibrationProgress</a></code></font></p>
@@ -532,7 +560,7 @@
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setcontrollerspeedonaxis">setControllerSpeedCoefficient:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getcontrollerspeedonaxis">getControllerSpeedCoefficientOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchmotorcontrolgyrofilteringfactor_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchMotorControlGyroFilteringFactor</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamattitudesynchronizationenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamAttitudeSynchronizationEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Set, Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchmotorcontrolgyrofilteringfactor_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchMotorControlGyroFilteringFactor</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setmotorcontrolgyrofilteringonaxis">setMotorControlGyroFilteringFactor:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getmotorcontrolgyrofilteringonaxis">getMotorControlGyroFilteringFactorOnAxis:withCompletion</a></code></font></p>
@@ -540,10 +568,10 @@
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setcontrollersmoothingonaxis">setControllerSmoothingFactor:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getcontrollersmoothingonaxis">getControllerSmoothingFactorOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchrangeextensionenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchRangeExtensionEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setpitchrangeextensionenabled">setPitchRangeExtensionEnabled:withCompletion</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawinvertedcontrolenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawInvertedControlEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setinvertedcontrolenabled">setInvertedControlEnabled:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getpitchrangeextensionenabled">getPitchRangeExtensionEnabledWithCompletion</a></code></font></p>
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getinvertedcontrolenabled">getInvertedControlEnabledOnAxis:withCompletion</a></code></font></p>
 <p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamattitudeyawrelativetoaircraft_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamAttitudeYawRelativeToAircraft</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Push</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Double</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_gimbalstate_yawrelativetoaircraftheading">yawRelativeToAircraftHeading</a></code></font></p>
 <p></p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchsmoothtrackacceleration_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchSmoothTrackAcceleration</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
@@ -584,11 +612,7 @@
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getcontrollerspeedonaxis">getControllerSpeedCoefficientOnAxis:withCompletion</a></code></font></p>
 <p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamtoggleselfie_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamToggleSelfie</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Action</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_togglegimbalselfie">toggleSelfieWithCompletion</a></code></font></p>
-<p></p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawinvertedcontrolenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawInvertedControlEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setinvertedcontrolenabled">setInvertedControlEnabled:onAxis:withCompletion</a></code></font></p>
-<p></p></td><tr><td></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getinvertedcontrolenabled">getInvertedControlEnabledOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawsmoothtrackenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawSmoothTrackEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawsmoothtrackenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawSmoothTrackEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setsmoothtrackenabledonaxis">setSmoothTrackEnabled:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getsmoothtrackenabledonaxis">getSmoothTrackEnabledOnAxis:withCompletion</a></code></font></p>
@@ -600,21 +624,23 @@
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setsmoothtrackdeadbandonaxis">setSmoothTrackDeadband:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getsmoothtrackdeadbandonaxis">getSmoothTrackDeadbandOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamstickcontrolmode_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamStickControlMode</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_controllermode">DJIHandheldControllerStickControlMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamstickcontrolmode_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamStickControlMode</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/HandheldController/DJIHandheldController.html#djihandheldcontroller_djihandheldcontrollerstickcontrolmode">DJIHandheldControllerStickControlMode</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setcontrollermode">setStickControllerMode:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getcontrollermode">getStickControllerModeWithCompletion</a></code></font></p>
-<p></p></td></tr><tr><td></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_controllermode">DJIHandheldControllerStickControlMode</a></code></font></p>
 <p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchinvertedcontrolenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchInvertedControlEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setinvertedcontrolenabled">setInvertedControlEnabled:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getinvertedcontrolenabled">getInvertedControlEnabledOnAxis:withCompletion</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawmotorcontrolstrength_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawMotorControlStrength</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setmotorcontrolstrengthonaxis">setMotorControlStrength:onAxis:withCompletion</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getmotorcontrolstrengthonaxis">getMotorControlStrengthOnAxis:withCompletion</a></code></font></p>
 <p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawsmoothtrackacceleration_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawSmoothTrackAcceleration</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setsmoothtrackaccelerationonaxis">setSmoothTrackAcceleration:onAxis:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getsmoothtrackaccelerationonaxis">getSmoothTrackAccelerationOnAxis:withCompletion</a></code></font></p>
-<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchdownendpoint_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchDownEndpoint</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamyawcontrollermaxspeed_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamYawControllerMaxSpeed</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSUInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">-</p></td><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchdownendpoint_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchDownEndpoint</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSInteger</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setendpointindirection">setEndpoint:forDirection:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getendpointindirection">getEndpointForDirection:withCompletion</a></code></font></p>
@@ -637,7 +663,11 @@
 <p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparamfinetunerollindegrees_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamFineTuneRollInDegrees</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Action</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>NSArray<nsnumber> (offset: float)</nsnumber></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_finetunegimbalrollindegrees">fineTuneRollInDegrees:withCompletion</a></code></font></p>
 <p></p></td><tr><td></td><td><p class="key_table_type_string">
-</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_GimbalState.html#djigimbal_gimbalstate_rollfinetuneindegrees">rollFineTuneInDegrees</a></code></font></p>
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_GimbalState.html#djigimbal_gimbalstate_rollfinetuneindegrees">fineTunedRoll</a></code></font></p>
+<p></p></td></tr><tr><td colspan="2"><a href="#djigimbalkey_djigimbalparampitchrangeextensionenabled_key"></a><p class="key_table_key_string key_table_key_row">DJIGimbalParamPitchRangeExtensionEnabled</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code>Boolean</code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_setpitchrangeextensionenabled">setPitchRangeExtensionEnabled:withCompletion</a></code></font></p>
+<p></p></td><tr><td></td><td><p class="key_table_type_string">
+</p><p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_getpitchrangeextensionenabled">getPitchRangeExtensionEnabledWithCompletion</a></code></font></p>
 <p></p></td></tr></table></html>
 
         </div>
