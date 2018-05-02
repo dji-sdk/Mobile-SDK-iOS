@@ -1,0 +1,51 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK 4.5.0 to 4.5.1 Differences</h1>
+
+<br>
+
+<h2>API changes</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">4.5.0 Parent and Name</font></td><td width=15%><font color="#000">4.5.0 Code</font></td><td width=15%><font color="#000">4.5.1 Parent and Name</font></td><td width=15%><font color="#000">4.5.1 Code</font></td><td width=3%><font color="#000">Parent</font></td><td width=3%><font color="#000">Name</font></td><td width=3%><font color="#000">Type</font></td><td width=3%><font color="#000">Param</font></td><td width=3%><font color="#000">Return</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">loadCustomUnlockZonesFromServerWithCompletion</span></td><td width=15%><span class="source-code">-(void)loadCustomUnlockZonesFromServerWithCompletion:(DJICompletionBlock)completion</span></td><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">reloadUnlockedZoneGroupsFromServerWithCompletion</span></td><td width=15%><span class="source-code">-(void)reloadUnlockedZoneGroupsFromServerWithCompletion:(DJICompletionBlock)completion</span></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td><td width=3%></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">getUnlockedFlyZonesWithCompletion</span></td><td width=15%><span class="source-code">-(void)getUnlockedFlyZonesWithCompletion:(void (^_Nonnull)(NSArray&lt;DJIFlyZoneInformation*&gt; *_Nullable infos, NSError* _Nullable error))completion</span></td><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">getUnlockedFlyZonesForAircraftWithCompletion</span></td><td width=15%><span class="source-code">-(void)getUnlockedFlyZonesForAircraftWithCompletion:(void (^_Nonnull)(NSArray&lt;DJIFlyZoneInformation*&gt; *_Nullable infos, NSError* _Nullable error))completion</span></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td><td width=3%></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">getCustomUnlockZones</span></td><td width=15%><span class="source-code">- (NSArray&lt;DJICustomUnlockZone *&gt; * _Nullable)getCustomUnlockZones</span></td><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">getCustomUnlockZonesFromAircraft</span></td><td width=15%><span class="source-code">- (NSArray&lt;DJICustomUnlockZone *&gt; * _Nullable)getCustomUnlockZonesFromAircraft</span></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td><td width=3%></td><td width=3%></td></tr></table><br>
+
+<h2>APIs added to 4.5.1</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIUnlockedZoneGroup.h: </span><span class="interface-name">DJIUnlockedZoneGroup</span></td><td width=15%><span class="source-code">@interface DJIUnlockedZoneGroup : NSObject</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIUnlockedZoneGroup.h: DJIUnlockedZoneGroup.</span><span class="interface-name">SN</span></td><td width=15%><span class="source-code">@property(nonatomic, readonly) NSString *SN</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIUnlockedZoneGroup.h: DJIUnlockedZoneGroup.</span><span class="interface-name">customUnlockZones</span></td><td width=15%><span class="source-code">@property(nonatomic, readonly) NSArray&lt;DJICustomUnlockZone *&gt; *customUnlockZones</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIUnlockedZoneGroup.h: DJIUnlockedZoneGroup.</span><span class="interface-name">selfUnlockedFlyZones</span></td><td width=15%><span class="source-code">@property(nonatomic, readonly) NSArray&lt;DJIFlyZoneInformation *&gt; *selfUnlockedFlyZones</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">getLoadedUnlockedZoneGroupsWithCompletion</span></td><td width=15%><span class="source-code">- (void)getLoadedUnlockedZoneGroupsWithCompletion:(void (^_Nonnull)(NSArray&lt;DJIUnlockedZoneGroup *&gt; *_Nullable groups,
+																	NSError* _Nullable error))completion</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlyZoneManager.h: DJIFlyZoneManager.</span><span class="interface-name">syncUnlockedZoneGroupToAircraftWithCompletion</span></td><td width=15%><span class="source-code">- (void)syncUnlockedZoneGroupToAircraftWithCompletion:(DJICompletionBlock)completion</span></td></tr></table><p style="font-size:50%; color:white">8d555a3 f8e2357 6d8de74 fdf1137 </p></body>
+</html>
+
