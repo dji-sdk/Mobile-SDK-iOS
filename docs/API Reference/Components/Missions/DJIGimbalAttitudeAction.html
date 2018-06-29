@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIProductKey.html">DJIProductKey</a>
@@ -89,6 +91,8 @@
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
                   <dd><a href="../UserAccountManager/DJIUserAccountManager.html">DJIUserAccountManager</a>
+                  </dd>
+                  <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
@@ -322,6 +326,12 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">DJIMobileRemoteController</a>
                   </dd>
+                  <dd><a data-href="../Payload/DJIPayload.html" class="sub-toggle">DJIPayload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Payload/DJIPayload_PayloadWidget.html">DJIPayloadWidget</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -484,27 +494,48 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span> _Nullable)initWithAttitude:(DJIGimbalAttitude)attitude</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Initialize instance with gimbal target attitude.</font></p>
+<p><font color="#666">Initialize instance with gimbal target attitude. The value of <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a></code> is <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode_unknown">DJIGimbalModeUnknown</a></code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_attitude">DJIGimbalAttitude</a> <font color="#000">attitude</font></font></td><td><font color="#666"><i>Gimbal target attitude.</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">instancetype _Nullable</font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction">DJIGimbalAttitudeAction</a></code>.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djigimbalattitudeaction_initwithattitude_gimbalmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbalattitudeaction_initwithattitude_gimbalmode_inline">initWithAttitude:gimbalMode</a></div></div><div class="inline-doc" id="djigimbalattitudeaction_initwithattitude_gimbalmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">method </font>initWithAttitude:gimbalMode</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span> _Nullable)initWithAttitude:(DJIGimbalAttitude)attitude</div><div class="line">                                gimbalMode:(DJIGimbalMode)gimbalMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Initialize instance with gimbal target attitude and gimbal mode.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_attitude">DJIGimbalAttitude</a> <font color="#000">attitude</font></font></td><td><font color="#666"><i>Gimbal target attitude.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a> <font color="#000">gimbalMode</font></font></td><td><font color="#666"><i>Gimbal mode to switch to.</i></font></td></tr></table></html>
+<h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">instancetype _Nullable</font></td><td><font color="#666"><i>An instance of <code><a href="../../Components/Missions/DJIGimbalAttitudeAction.html#djigimbalattitudeaction">DJIGimbalAttitudeAction</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbalattitudeaction_completiontime"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbalattitudeaction_completiontime_inline">completionTime</a></div></div><div class="inline-doc" id="djigimbalattitudeaction_completiontime_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>completionTime</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">double</span> completionTime</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Completion time, in seconds, for the gimbal to go to the target attitude from current  attitude. Default is 1 second.</font></p>
+</div>
+<div class="api-row" id="djigimbalattitudeaction_gimbalmode"><div class="api-col left">Gimbal Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbalattitudeaction_gimbalmode_inline">gimbalMode</a></div></div><div class="inline-doc" id="djigimbalattitudeaction_gimbalmode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>gimbalMode</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIGimbalMode gimbalMode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Gimbal mode to switch to when executing the action. When it is <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode_unknown">DJIGimbalModeUnknown</a></code>,  the action will not change the gimbal mode.</font></p>
+<h5 id="see-also">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a></code></font></p>
 </div>
 <div class="api-row" id="djigimbalattitudeaction_targetattitude"><div class="api-col left">Attitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbalattitudeaction_targetattitude_inline">targetAttitude</a></div></div><div class="inline-doc" id="djigimbalattitudeaction_targetattitude_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>targetAttitude</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAttitude targetAttitude</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Target gimbal attitude.</font></p>
-<h5 id="see-also">See Also:</h5>
+<h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_attitude">DJIGimbalAttitude</a></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
@@ -513,7 +544,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="keyword">const</span> <span class="built_in">NSErrorDomain</span> DJIGimbalAttitudeActionErrorDomain</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">The Error domain for DJIGimbalAttitudeAction specific Errors.</font></p>
 </div>
 <div class="api-row" id="djigimbalattitudeaction_djigimbalattitudeactionerror"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djigimbalattitudeaction_djigimbalattitudeactionerror_inline">DJIGimbalAttitudeActionError</a></div></div><div class="inline-doc" id="djigimbalattitudeaction_djigimbalattitudeactionerror_inline" <blockquote="">
@@ -521,7 +552,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIGimbalAttitudeActionError)</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalAttitudeAction.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">A list of all errors relative to the gimbal attitude action.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djigimbalattitudeaction_djigimbalattitudeactionerror_unknown_inline"></a>DJIGimbalAttitudeActionErrorUnknown</font></td><td><font color="#666">Default error if nothing else matches.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbalattitudeaction_djigimbalattitudeactionerror_yawoutsidemaxcapabilities_inline"></a>DJIGimbalAttitudeActionErrorYawOutsideMaxCapabilities</font></td><td><font color="#666">Yaw value passed is beyond the max capabilities of the gimbal.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbalattitudeaction_djigimbalattitudeactionerror_pitchoutsidemaxcapabilities_inline"></a>DJIGimbalAttitudeActionErrorPitchOutsideMaxCapabilities</font></td><td><font color="#666">Pitch value passed is beyond the max capabilities of the gimbal.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djigimbalattitudeaction_djigimbalattitudeactionerror_completiontimeinvalid_inline"></a>DJIGimbalAttitudeActionErrorCompletionTimeInvalid</font></td><td><font color="#666">Completion Time value passed is invalid (less than 0).</font></td></tr></table></html></div>

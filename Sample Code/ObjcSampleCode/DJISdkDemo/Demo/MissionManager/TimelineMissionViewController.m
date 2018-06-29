@@ -73,7 +73,7 @@
     
     // Step 3: shoot 3 photos with 5 seconds interval between each
     void (^addShootPhotoAction)() = ^() {
-        DJIShootPhotoAction* shootPhotoAction = [[DJIShootPhotoAction alloc] initWithPhotoCount:3 timeInterval:10.0];
+        DJIShootPhotoAction* shootPhotoAction = [[DJIShootPhotoAction alloc] initWithPhotoCount:3 timeInterval:10.0 waitUntilFinish:YES];
         [target.actions addObject:shootPhotoAction];
     };
     

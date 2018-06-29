@@ -3,14 +3,101 @@
 //
 
 #import "DJILiveViewColorMonitorFilter.h"
-#import <UIKit/UIKit.h>
+@interface DJILiveViewColorMonitorMapedCGImageHolder : NSObject{
+    uint8_t* outputBuffer;
+}
+
+@property (nonatomic, readonly) UIView* holderView;
+@property (nonatomic, readonly) NSUInteger bufferdImageWidth;
+@property (nonatomic, readonly) NSUInteger bufferdImageHeight;
+
+-(id) initWithSize:(CGSize)size;
+@end
+
+@implementation DJILiveViewColorMonitorMapedCGImageHolder
+
+-(id) initWithSize:(CGSize)size{
+    if (self = [super init]) {
+        //create view and bufferd image
+
+
+        _bufferdImageWidth = size.width;
+        _bufferdImageHeight = size.height;
+
+        if (_bufferdImageWidth == 0 || _bufferdImageHeight == 0) {
+            return nil;
+        }
+
+        _holderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+        outputBuffer = malloc(_bufferdImageWidth*_bufferdImageHeight*4);
+    }
+    return self;
+}
+
+-(uint8_t*) dataBuffer{
+    return outputBuffer;
+}
+
+-(void) update{
+
+    CGDataProviderRef provider = CGDataProviderCreateWithData(nil,
+                                                              outputBuffer,
+                                                              _bufferdImageWidth*_bufferdImageHeight*4,
+                                                              nil);
+
+    CGColorSpaceRef defaultRGBColorSpace = CGColorSpaceCreateDeviceRGB();
+    CGImageRef cgImageFromBytes = CGImageCreate((int)_bufferdImageWidth,
+                                                (int)_bufferdImageHeight,
+                                                8, 32, 4 * (int)_bufferdImageWidth,
+                                                defaultRGBColorSpace,
+                                                kCGBitmapByteOrderDefault | kCGImageAlphaNoneSkipLast,
+                                                provider, NULL, NO, kCGRenderingIntentDefault);
+
+    // Capture image with current device orientation
+    CGDataProviderRelease(provider);
+    CGColorSpaceRelease(defaultRGBColorSpace);
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        // output image
+        if (NO == CGRectEqualToRect(self.holderView.frame, self.holderView.superview.bounds)) {
+            self.holderView.frame = self.holderView.bounds;
+        }
+
+        self.holderView.layer.contents = (__bridge id _Nullable)(cgImageFromBytes);
+        CGImageRelease(cgImageFromBytes);
+    });
+
+}
+
+-(void) dealloc{
+
+    uint8_t* buffer = outputBuffer;
+    UIView* holderView = _holderView;;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        [holderView removeFromSuperview];
+
+        if(holderView.layer.contents){
+            holderView.layer.contents = nil;
+        }
+
+        //release in main queue
+        if (buffer) {
+            free(buffer);
+        }
+    });
+}
+
+@end
 
 #define FRAME_BUFFER_COUNT (1)
 #define HIST_HEIGH (256)
 #define MAX_VALUE_INDEX (HIST_HEIGH)
 
-#define P_HIST(x, value, channel) ((ushort*)(histBuffer + value*bytesPerHistBuffer) + x*4 + channel)
-#define HIST_SHORT_SET(x, value, channel) {ushort* pHist = P_HIST(x, value, channel); *pHist = *pHist+1;}
+#define P_HIST(x, value, channel) ((ushort*)(histBuffer + value*bytesPerHistBuffer) + (x<<2) + channel)
+#define HIST_SHORT_SET(x, value, channel) {(*P_HIST(x, value, channel))++;}
 
 void bufferReleaseFunc(void * __nullable info,
                        const void *  data, size_t size){
@@ -20,16 +107,26 @@ void bufferReleaseFunc(void * __nullable info,
 }
 
 @interface DJILiveViewColorMonitorFilter (){
-    NSUInteger inputWidth;
-    NSUInteger inputHeigh;
-    
-    uint8_t* outputBuffer; //w * h *4
-    
+
+    //////////////////////////////////
+    //for hist mode
+    BOOL needUpdateView;
+    NSUInteger bufferInputWidth;
+    NSUInteger bufferInputHeigh;
+
+    DJILiveViewColorMonitorDisplayType bufferDisplayType;
+    DJILiveViewColorMonitorMapedCGImageHolder* imageHolder;
+
     NSUInteger histBufferSize;
     NSUInteger bytesPerHistBuffer;
     uint8_t* histBuffer; //w * (HIST_HEIGH+1)[ushort] * 4, one more line for maxium hist value
-    
-    CGImageRef lastImage; //not need release
+
+    //////////////////////////////////
+
+    NSUInteger pointsBufferSize;
+    CGPoint* pointsBuffer;
+
+    NSTimeInterval start;
 }
 
 @property (nonatomic, strong) NSLock* frameBufferLock;
@@ -41,12 +138,26 @@ void bufferReleaseFunc(void * __nullable info,
 
 -(id) initWithContext:(DJILiveViewRenderContext *)acontext{
     self = [super initWithContext:acontext];
-    
+
     _frameBufferLock = [[NSLock alloc] init];
     _frameBuffers = [NSMutableArray array];
-    inputWidth = 0;
-    inputHeigh = 0;
-    
+
+    _intensity = 2.0;
+    _lineBlendMode = kCGBlendModePlusLighter;
+    bufferInputWidth = 0;
+    bufferInputHeigh = 0;
+    needUpdateView = YES;
+
+    imageHolder = nil;
+    histBuffer = nil;
+    pointsBuffer = nil;
+
+    self.colorMonitorScaleFactor = 1.0;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.monitor = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 240)];
+    });
+
     for (int i =0; i < FRAME_BUFFER_COUNT; i++) {
         [_frameBuffers addObject:[NSNull null]];
     }
@@ -58,8 +169,18 @@ void bufferReleaseFunc(void * __nullable info,
 }
 
 -(void) dealloc{
+
+    UIView* monitor = self.monitor;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [monitor removeFromSuperview];
+    });
+
     if (histBuffer) {
         free(histBuffer);
+    }
+
+    if (pointsBuffer) {
+        free(pointsBuffer);
     }
 }
 
@@ -69,43 +190,91 @@ void bufferReleaseFunc(void * __nullable info,
     {
         return;
     }
-    
+
     DJILiveViewFrameBuffer* frameBuffer = [self frameBufferForOutput];
     if (frameBuffer == nil) {
         //no available framebuffer, return
         return;
     }
-    
+
     [context setContextShaderProgram:filterProgram];
     CGSize FBOSize = [self sizeOfFBO];
-    
+
+    if (FBOSize.width * FBOSize.height == 0) {
+        //nothing to do
+        [self pushFrameBuffer:frameBuffer];
+        return;
+    }
+
     if ([frameBuffer isKindOfClass:[DJILiveViewFrameBuffer class]] == NO
         || NO == CGSizeEqualToSize(FBOSize, frameBuffer.size)) {
         frameBuffer = [[DJILiveViewFrameBuffer alloc]
-                             initWithContext:context
-                             size:FBOSize
-                             textureOptions:self.outputTextureOptions
-                             onlyTexture:NO];
+                       initWithContext:context
+                       size:FBOSize
+                       textureOptions:self.outputTextureOptions
+                       onlyTexture:NO];
     }
-    
+
     [frameBuffer activateFramebuffer];
-    
+
     [self setUniformsForProgramAtIndex:0];
     glClearColor(backgroundColorRed, backgroundColorGreen, backgroundColorBlue, backgroundColorAlpha);
     glClear(GL_COLOR_BUFFER_BIT);
-    
+
     glActiveTexture(GL_TEXTURE2);
     glBindTexture(GL_TEXTURE_2D, [firstInputFramebuffer texture]);
-    
+
     glUniform1i(filterInputTextureUniform, 2);
     glEnableVertexAttribArray(filterPositionAttribute);
     glEnableVertexAttribArray(filterTextureCoordinateAttribute);
     glVertexAttribPointer(filterPositionAttribute, 2, GL_FLOAT, 0, 0, vertices);
     glVertexAttribPointer(filterTextureCoordinateAttribute, 2, GL_FLOAT, 0, 0, textureCoordinates);
-    
+
     glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
+
     [self colorWave:frameBuffer];
+}
+
+-(CGSize) sizeOfFBO{
+    //input size should decieded by view size
+    CGSize inputSize = [super sizeOfFBO];
+    CGSize monitorSize = self.monitor.bounds.size;
+
+    if (self.renderMode == DJILiveViewColorMonitorRenderModeHistgram) {
+        CGSize newSize = CGSizeMake(monitorSize.width, inputSize.height);
+        if (_displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+            newSize.width /= 3;
+        }
+
+        return newSize;
+    }else{
+        //降低一些分辨率，提高性能
+        CGSize newSize = CGSizeMake(MIN(monitorSize.width, inputSize.width),
+                                    MIN(monitorSize.height * 0.5, inputSize.height));
+
+        if(_displayType == DJILiveViewColorMonitorDisplayTypeSeparate){
+            newSize.width /= 3;
+        }
+
+
+        return [self sizeScale:newSize scale:self.colorMonitorScaleFactor];
+
+
+    }
+}
+
+-(CGSize)sizeScale:(CGSize)size scale:(float)scale{
+    return CGSizeMake(size.width*scale, size.height*scale);
+}
+
+-(void) setDisplayType:(DJILiveViewColorMonitorDisplayType)displayType{
+    _displayType = displayType;
+    needUpdateView = YES;
+}
+
+-(void) setRenderMode:(DJILiveViewColorMonitorRenderMode)renderMode{
+    _renderMode = renderMode;
+    needUpdateView = YES;
 }
 
 #pragma mark - input control
@@ -116,6 +285,8 @@ void bufferReleaseFunc(void * __nullable info,
     if (_frameBuffers.count) {
         buffer = _frameBuffers.lastObject;
         [_frameBuffers removeLastObject];
+
+        start = CFAbsoluteTimeGetCurrent();
     }
     [_frameBufferLock unlock];
     return buffer;
@@ -125,53 +296,79 @@ void bufferReleaseFunc(void * __nullable info,
     if (frameBuffer == nil) {
         return;
     }
-    
+
     [_frameBufferLock lock];
     [_frameBuffers addObject:frameBuffer];
+    NSTimeInterval duration = CFAbsoluteTimeGetCurrent() - start;
+    //NSLog(@"duration:\t%f", duration);
     [_frameBufferLock unlock];
 }
 
 #pragma mark - color mointor
 
 -(void) colorWave:(DJILiveViewFrameBuffer*)input{
-    //__weak DJILiveViewColorMonitorFilter* target = self;
-    dispatch_async(_workingQueue, ^{
-        [self doCalcColorMonitorWithInputStage1:input];
-    });
+
+    if (_renderMode == DJILiveViewColorMonitorRenderModeHistgram) {
+        dispatch_async(_workingQueue, ^{
+            [self doCalcColorMonitorWithInputStage1:input];
+        });
+    }else{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), _workingQueue, ^{
+            if(_displayType == DJILiveViewColorMonitorDisplayTypeYChannel){
+
+                [self doCalcColorMonitorWithInputStage1WithCoreGraphicsYChannel:input];
+            }else{
+
+                [self doCalcColorMonitorWithInputStage1WithCoreGraphics:input];
+            }
+        });
+    }
 }
 
 -(void) doCalcColorMonitorWithInputStage1:(DJILiveViewFrameBuffer*)input{
     //working in background thread
-    
-    if (input == nil
-        || input.size.width == 0
-        || input.size.height == 0) {
+
+    if (input == nil){
         return;
     }
-    
+
+    if(input.size.width == 0
+       || input.size.height == 0)
+    {
+        [self pushFrameBuffer:input];
+        return;
+    }
+
+    NSUInteger outputBufferWidth = input.size.width;
+    DJILiveViewColorMonitorDisplayType displayType = _displayType;
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        //more width if seperate
+        outputBufferWidth *= 3;
+    }
+
     //input size check & buffer prepear
-    if (input.size.width != inputWidth) {
-        
-        if (outputBuffer) {
-            free(outputBuffer);
-        }
-        outputBuffer = malloc(input.size.width * HIST_HEIGH * 4);
-        
-        if (input.size.width > inputWidth) {
+    if ((NSUInteger)input.size.width != bufferInputWidth
+        || bufferDisplayType != displayType
+        || imageHolder == nil) {
+
+        imageHolder = [[DJILiveViewColorMonitorMapedCGImageHolder alloc] initWithSize:CGSizeMake(outputBufferWidth, HIST_HEIGH)];
+
+        if (input.size.width > bufferInputWidth) {
             //only recreate if larger
             if (histBuffer != nil) {
                 free(histBuffer);
             }
-            
+
             bytesPerHistBuffer = input.size.width*4*sizeof(short);
             histBufferSize = bytesPerHistBuffer * (HIST_HEIGH+1);
             histBuffer = malloc(histBufferSize);
         }
-        
-        inputWidth = input.size.width;
-        inputHeigh = input.size.height;
+
+        bufferInputWidth = input.size.width;
+        bufferInputHeigh = input.size.height;
+        bufferDisplayType = displayType;
     }
-    
+
     //bytes read
     [input lockForReading];
     uint8_t* inputBuffer = [input byteBuffer];
@@ -181,152 +378,436 @@ void bufferReleaseFunc(void * __nullable info,
         [self pushFrameBuffer:input];
         return;
     }
-    
+
     //generate histgram
+    uint8_t r, g, b;//, l;
+    uint8_t* rowPixel = nil;
+
     memset(histBuffer, 0, histBufferSize);
-    for (int row = 0; row < inputHeigh; row++) {
-        
-        uint8_t* rowPixel = inputBuffer + bytesPerRow*row;
-        
-        for (int col = 0; col < inputWidth; col++) {
-            uint8_t* pixel = rowPixel + col*4;
-            
-            uint8_t r = *pixel;
-            uint8_t g = *(pixel+1);
-            uint8_t b = *(pixel+2);
-            uint8_t l = *(pixel+3); //hack for lumiunce
-            
+    for (int row = 0; row < bufferInputHeigh; row++) {
+
+        rowPixel = inputBuffer + bytesPerRow*row;
+
+        for (int col = 0; col < bufferInputWidth; col++) {
+            uint8_t* pixel = rowPixel + (col<<2);
+
+            r = *pixel;
+            g = *(pixel+1);
+            b = *(pixel+2);
+            //l = *(pixel+3); //hack for lumiunce
+
             HIST_SHORT_SET(col, r, 0);
             HIST_SHORT_SET(col, g, 1);
             HIST_SHORT_SET(col, b, 2);
-            HIST_SHORT_SET(col, l, 3);
-            
+            //HIST_SHORT_SET(col, l, 3);
+
         }
     }
-    
+
     //next stage
-    dispatch_async(_workingQueue, ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.005 * NSEC_PER_SEC)), _workingQueue, ^{
         [self doCalcColorMonitorWithInputStage2:input];
     });
 }
 
 -(void) doCalcColorMonitorWithInputStage2:(DJILiveViewFrameBuffer*)input{
-    //get maxium value for hist
-    for (int col = 0; col < inputWidth; col++) {
-        
-        ushort* r_max = P_HIST(col, MAX_VALUE_INDEX, 0);
-        ushort* g_max = P_HIST(col, MAX_VALUE_INDEX, 1);
-        ushort* b_max = P_HIST(col, MAX_VALUE_INDEX, 2);
-        ushort* l_max = P_HIST(col, MAX_VALUE_INDEX, 3);
-    
-        for (int row = 0; row < HIST_HEIGH; row++) {
-            
-            ushort r = *P_HIST(col, row, 0);
-            ushort g = *P_HIST(col, row, 1);
-            ushort b = *P_HIST(col, row, 2);
-            ushort l = *P_HIST(col, row, 3);
-            
-            if (r > *r_max) {
-                *r_max = r;
+    //generate final image
+    uint8_t* outputBuffer = [imageHolder dataBuffer];
+
+    if(bufferDisplayType == DJILiveViewColorMonitorDisplayTypeSeparate){
+        //三通道分离显示模式
+
+        NSUInteger outputBytesPerRow = bufferInputWidth*4*3;
+        NSUInteger colOffset = 0;
+        NSUInteger hist_row = 0;
+
+        for (int col = 0; col < bufferInputWidth; col++) {
+
+            //r
+            colOffset = (col+0)*4;
+            for (int row = 0; row < HIST_HEIGH; row++) {
+
+                hist_row = HIST_HEIGH - row - 1;
+
+                ushort r = *P_HIST(col, hist_row, 2);
+                uint8_t out_r = MIN(r*_intensity, 255);
+
+                uint8_t* pixel = outputBuffer + row*outputBytesPerRow + colOffset;
+                *pixel = out_r;
+                *(pixel+1) = 0;
+                *(pixel+2) = 0;
+                //*(pixel+3) = out_r; //alpha
             }
-            if (g > *g_max) {
-                *g_max = g;
+
+            //g
+            colOffset = (col+bufferInputWidth)*4;
+            for (int row = 0; row < HIST_HEIGH; row++) {
+
+                hist_row = HIST_HEIGH - row - 1;
+
+                ushort g = *P_HIST(col, hist_row, 1);
+                uint8_t out_g = MIN(g*_intensity, 255);
+
+                uint8_t* pixel = outputBuffer + row*outputBytesPerRow + colOffset;
+                *pixel = 0;
+                *(pixel+1) = out_g;
+                *(pixel+2) = 0;
+                //*(pixel+3) = out_g;
             }
-            if (b > *b_max) {
-                *b_max = b;
+
+            //b
+            colOffset = (col+bufferInputWidth*2)*4;
+            for (int row = 0; row < HIST_HEIGH; row++) {
+
+                hist_row = HIST_HEIGH - row - 1;
+
+
+                ushort b = *P_HIST(col, hist_row, 0);
+                uint8_t out_b = MIN(b*_intensity, 255);
+
+                uint8_t* pixel = outputBuffer + row*outputBytesPerRow + colOffset;
+                *pixel = 0;
+                *(pixel+1) = 0;
+                *(pixel+2) = out_b;
+                //*(pixel+3) = out_b;
             }
-            if (l > *l_max) {
-                *l_max = l;
+        }
+
+    }else{
+        //三通道混合显示模式
+
+        NSUInteger outputBytesPerRow = bufferInputWidth*4;
+        for (int col = 0; col < bufferInputWidth; col++) {
+
+            for (int row = 0; row < HIST_HEIGH; row++) {
+
+                NSUInteger hist_row = HIST_HEIGH - row - 1;
+
+                CGFloat r = (CGFloat)*P_HIST(col, hist_row, 2);
+                CGFloat g = (CGFloat)*P_HIST(col, hist_row, 1);
+                CGFloat b = (CGFloat)*P_HIST(col, hist_row, 0);
+                //CGFloat l = (CGFloat)*P_HIST(col, hist_row, 3);
+
+                //uint8_t out_l_half = (l/l_max);
+
+                uint8_t out_r = MIN(r*_intensity, 255);
+                uint8_t out_g = MIN(g*_intensity, 255);
+                uint8_t out_b = MIN(b*_intensity, 255);
+
+                uint8_t* pixel = outputBuffer + row*outputBytesPerRow + col*4;
+                *pixel = out_r;
+                *(pixel+1) = out_g;
+                *(pixel+2) = out_b;
+                //*(pixel+3) = MIN(255, (int)out_r + out_b + out_g); //alpha
             }
         }
     }
-    
-    dispatch_async(_workingQueue, ^{
-        [self doCalcColorMonitorWithInputStage3:input];
+
+    [input unlockAfterReading];
+    [self pushFrameBuffer:input];
+
+    //image create
+    [imageHolder update];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // output image
+        UIImageView* monitor = (UIImageView*)self.monitor;
+
+        if (monitor.image) {
+            monitor.image = nil;
+        }
+
+        if (monitor.subviews.firstObject != imageHolder.holderView) {
+            [monitor.subviews.firstObject removeFromSuperview];
+
+            [monitor addSubview:imageHolder.holderView];
+            imageHolder.holderView.frame = monitor.bounds;
+        }
+
+        if(needUpdateView){
+            needUpdateView = NO;
+            [imageHolder.holderView setNeedsDisplay];
+        }
     });
 }
 
+#pragma mark - core graphics test
 
--(void) doCalcColorMonitorWithInputStage3:(DJILiveViewFrameBuffer*)input{
-    //generate final image
-    NSUInteger outputBytesPerRow = inputWidth*4;
-    for (int col = 0; col < inputWidth; col++) {
-        
-        CGFloat r_max = (CGFloat)*P_HIST(col, MAX_VALUE_INDEX, 0);
-        if(r_max == 0){
-            r_max = CGFLOAT_MAX;
+#define DST_X_FROM_SRC(x) (x * dst_one_srcW)
+#define DST_Y_FROM_HIST(v) (dstH - (v * dat_one_hist))
+
+-(void) doCalcColorMonitorWithInputStage1WithCoreGraphics:(DJILiveViewFrameBuffer*)input{
+    //working in background thread
+
+    if (input == nil){
+        return;
+    }
+
+    if(input.size.width == 0
+       || input.size.height == 0) {
+        [self pushFrameBuffer:input];
+        return;
+    }
+
+    //input size check & buffer prepear
+    NSUInteger inputWidth = input.size.width;
+    NSUInteger inputHeigh = input.size.height;
+    DJILiveViewColorMonitorDisplayType displayType = _displayType;
+
+    //bytes read
+    [input lockForReading];
+    uint8_t* inputBuffer = [input byteBuffer];
+    NSUInteger bytesPerRow = [input bytesPerRow];
+    if (inputBuffer == nil) {
+        [input unlockAfterReading];
+        [self pushFrameBuffer:input];
+        return;
+    }
+
+    NSUInteger pointCountRequired = inputWidth;
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        pointCountRequired*=3;
+    }
+    if (pointsBufferSize < pointCountRequired) {
+        if(pointsBuffer){
+            free(pointsBuffer);
         }
-        
-        CGFloat g_max = (CGFloat)*P_HIST(col, MAX_VALUE_INDEX, 1);
-        if(g_max == 0){
-            g_max = CGFLOAT_MAX;
+
+        pointsBuffer = (CGPoint*)malloc(sizeof(CGPoint)*pointCountRequired);
+        pointsBufferSize = pointCountRequired;
+    }
+
+    CGPoint* points = pointsBuffer;
+    uint8_t* rowPixel, *pixel;
+    CGFloat srcW = inputWidth;
+    CGFloat srcH = inputHeigh;
+    CGFloat dstW = _monitor.bounds.size.width;
+    CGFloat dstH = _monitor.bounds.size.height;
+
+    CGFloat one_srcW = 1.0/srcW;
+    CGFloat one_srcH = 1.0/srcH;
+
+    CGFloat dst_one_srcW = dstW * one_srcW;
+    CGFloat dst_offset = 0;
+    CGFloat one_hist = 1.0/255.0;
+    CGFloat dat_one_hist = dstH * one_hist;
+
+    if (_displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        dst_one_srcW /= 3;
+    }
+
+    CGFloat renderScale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(dstW, dstH), NO, renderScale);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetBlendMode(ctx, _lineBlendMode);
+
+    //计算浓度
+    CGFloat lineWidth = MAX(0.01, MIN(1.0, _intensity * one_srcH));
+    CGContextSetLineWidth(ctx, lineWidth); // 线的宽度，用这个决定颜色浓度
+
+    //R channel
+    NSUInteger pixelOffset = 2;
+    CGContextSetRGBStrokeColor(ctx, 1.0, 0.5, 0.5, 1.0);
+
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        for (NSUInteger col =0; col < inputWidth*3; col++) {
+            points[col].x = DST_X_FROM_SRC(col);
         }
-        
-        CGFloat b_max = (CGFloat)*P_HIST(col, MAX_VALUE_INDEX, 2);
-        if(b_max == 0){
-            b_max = CGFLOAT_MAX;
-        }
-        
-        CGFloat l_max = (CGFloat)*P_HIST(col, MAX_VALUE_INDEX, 3);
-        if(l_max == 0){
-            l_max = CGFLOAT_MAX;
-        }
-        
-        for (int row = 0; row < HIST_HEIGH; row++) {
-            
-            NSUInteger hist_row = HIST_HEIGH - row - 1;
-            
-            CGFloat r = (CGFloat)*P_HIST(col, hist_row, 0);
-            CGFloat g = (CGFloat)*P_HIST(col, hist_row, 1);
-            CGFloat b = (CGFloat)*P_HIST(col, hist_row, 2);
-            CGFloat l = (CGFloat)*P_HIST(col, hist_row, 3);
-            
-            uint8_t out_l_half = (l/l_max);
-            
-            uint8_t out_r = 127.5*((r/r_max) + out_l_half);
-            uint8_t out_g = 127.5*((g/g_max) + out_l_half);
-            uint8_t out_b = 127.5*((b/b_max) + out_l_half);
-            
-            uint8_t* pixel = outputBuffer + row*outputBytesPerRow + col*4;
-            *pixel = out_r;
-            *(pixel+1) = out_g;
-            *(pixel+2) = out_b;
+    }else{
+        for (NSUInteger col =0; col < inputWidth; col++) {
+            points[col].x = DST_X_FROM_SRC(col);
         }
     }
-    
+
+    for (NSUInteger row = 0; row < inputHeigh; row++) {
+
+        rowPixel = inputBuffer + bytesPerRow*row;
+
+        for (NSUInteger col = 0; col < inputWidth; col++) {
+
+            pixel = rowPixel + (col<<2) + pixelOffset;
+            points[col].y = DST_Y_FROM_HIST(*pixel);
+        }
+
+        CGContextAddLines(ctx, points, inputWidth);
+    }
+    CGContextStrokePath(ctx);
+
+
+    //B channel
+    NSUInteger colOffset = 0;
+    pixelOffset = 0;
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        colOffset = 2*inputWidth;
+    }
+
+    CGContextSetRGBStrokeColor(ctx, 0.5, 0.5, 1.0, 1.0);
+
+    for (NSUInteger row = 0; row < inputHeigh; row++) {
+
+        rowPixel = inputBuffer + bytesPerRow*row;
+
+        for (NSUInteger col = 0; col < inputWidth; col++) {
+
+            pixel = rowPixel + (col<<2) + pixelOffset;
+            points[col + colOffset].y = DST_Y_FROM_HIST(*pixel);
+        }
+
+        CGContextAddLines(ctx, points + colOffset, inputWidth);
+    }
+    CGContextStrokePath(ctx);
+
+
+    //G channel
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        colOffset = inputWidth;
+    }
+
+    pixelOffset = 1;
+    CGContextSetRGBStrokeColor(ctx, 0.5, 1.0, 0.5, 1.0);
+
+    for (NSUInteger row = 0; row < inputHeigh; row++) {
+
+        rowPixel = inputBuffer + bytesPerRow*row;
+
+        for (NSUInteger col = 0; col < inputWidth; col++) {
+
+            pixel = rowPixel + (col<<2) + pixelOffset;
+            points[col + colOffset].y = DST_Y_FROM_HIST(*pixel);
+        }
+
+        CGContextAddLines(ctx, points + colOffset, inputWidth);
+    }
+    CGContextStrokePath(ctx);
+
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext(); //0.3s
+    UIGraphicsEndImageContext();
+
     [input unlockAfterReading];
     [self pushFrameBuffer:input];
-    
-    //image create
-    if (true) {
-        CGDataProviderRef provider = CGDataProviderCreateWithData(nil,
-                                                                  outputBuffer,
-                                                                  inputWidth*HIST_HEIGH*4,
-                                                                  nil);
-        CGColorSpaceRef defaultRGBColorSpace = CGColorSpaceCreateDeviceRGB();
-        CGImageRef cgImageFromBytes = CGImageCreate((int)inputWidth,
-                                                    (int)HIST_HEIGH,
-                                                    8, 32, 4 * (int)inputWidth,
-                                                    defaultRGBColorSpace,
-                                                    kCGBitmapByteOrderDefault | kCGImageAlphaNoneSkipLast,
-                                                    provider, NULL, NO, kCGRenderingIntentDefault);
-        
-        // Capture image with current device orientation
-        CGDataProviderRelease(provider);
-        CGColorSpaceRelease(defaultRGBColorSpace);
-        lastImage = cgImageFromBytes;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            // output image
-            if (self.monitor == nil) {
-                self.monitor = [[UIView alloc] init];
-                self.monitor.contentMode = UIViewContentModeScaleToFill;
-            }
-            
-            self.monitor.layer.contents = (__bridge id _Nullable)(cgImageFromBytes);
-            CGImageRelease(cgImageFromBytes);
-        });
+    if(imageHolder){
+        imageHolder = nil;
     }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        if(self.monitor.subviews.count){
+            [self.monitor.subviews.firstObject removeFromSuperview];
+        }
+
+        ((UIImageView*)self.monitor).image = result;
+    });
+}
+
+-(void) doCalcColorMonitorWithInputStage1WithCoreGraphicsYChannel:(DJILiveViewFrameBuffer*)input{
+    //working in background thread
+
+    if (input == nil){
+        return;
+    }
+
+    if(input.size.width == 0
+       || input.size.height == 0) {
+        [self pushFrameBuffer:input];
+        return;
+    }
+
+    //input size check & buffer prepear
+    NSUInteger inputWidth = input.size.width;
+    NSUInteger inputHeigh = input.size.height;
+    DJILiveViewColorMonitorDisplayType displayType = _displayType;
+
+    //bytes read
+    [input lockForReading];
+    uint8_t* inputBuffer = [input byteBuffer];
+    NSUInteger bytesPerRow = [input bytesPerRow];
+    if (inputBuffer == nil) {
+        [input unlockAfterReading];
+        [self pushFrameBuffer:input];
+        return;
+    }
+
+    NSUInteger pointCountRequired = inputWidth;
+    if (displayType == DJILiveViewColorMonitorDisplayTypeSeparate) {
+        pointCountRequired*=3;
+    }
+    if (pointsBufferSize < pointCountRequired) {
+        if(pointsBuffer){
+            free(pointsBuffer);
+        }
+
+        pointsBuffer = (CGPoint*)malloc(sizeof(CGPoint)*pointCountRequired);
+        pointsBufferSize = pointCountRequired;
+    }
+
+    CGPoint* points = pointsBuffer;
+    uint8_t* rowPixel, *pixel;
+    CGFloat srcW = inputWidth;
+    CGFloat srcH = inputHeigh;
+    CGFloat dstW = _monitor.bounds.size.width;
+    CGFloat dstH = _monitor.bounds.size.height;
+
+    CGFloat one_srcW = 1.0/srcW;
+    CGFloat one_srcH = 1.0/srcH;
+
+    CGFloat dst_one_srcW = dstW * one_srcW;
+    CGFloat dst_offset = 0;
+    CGFloat one_hist = 1.0/255.0;
+    CGFloat dat_one_hist = dstH * one_hist;
+
+
+
+    CGFloat renderScale = [UIScreen mainScreen].scale;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(dstW, dstH), NO, renderScale);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetBlendMode(ctx, _lineBlendMode);
+
+    //计算浓度
+    CGFloat lineWidth = MAX(0.01, MIN(1.0, _intensity*2 * one_srcH));
+    CGContextSetLineWidth(ctx, lineWidth); // 线的宽度，用这个决定颜色浓度
+
+    //Y channel
+    NSUInteger pixelOffset = 3;
+    CGContextSetRGBStrokeColor(ctx, 1.0, 1.0, 1.0, 1.0);
+
+
+
+    for (NSUInteger col =0; col < inputWidth; col++) {
+        points[col].x = DST_X_FROM_SRC(col);
+    }
+
+
+    for (NSUInteger row = 0; row < inputHeigh; row++) {
+
+        rowPixel = inputBuffer + bytesPerRow*row;
+
+        for (NSUInteger col = 0; col < inputWidth; col++) {
+
+            pixel = rowPixel + (col<<2) + pixelOffset;
+            points[col].y = DST_Y_FROM_HIST(*pixel);
+        }
+
+        CGContextAddLines(ctx, points, inputWidth);
+    }
+    CGContextStrokePath(ctx);
+
+
+    UIImage* result = UIGraphicsGetImageFromCurrentImageContext(); //0.3s
+    UIGraphicsEndImageContext();
+
+    [input unlockAfterReading];
+    [self pushFrameBuffer:input];
+    if(imageHolder){
+        imageHolder = nil;
+    }
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+
+        if(self.monitor.subviews.count){
+            [self.monitor.subviews.firstObject removeFromSuperview];
+        }
+
+        ((UIImageView*)self.monitor).image = result;
+    });
 }
 
 @end

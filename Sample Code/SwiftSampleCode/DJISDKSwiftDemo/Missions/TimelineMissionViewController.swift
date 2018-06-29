@@ -326,7 +326,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
             case .singleShootPhoto:
                 return DJIShootPhotoAction(singleShootPhoto: ())
             case .continuousShootPhoto:
-                return DJIShootPhotoAction(photoCount: 10, timeInterval: 3.0)
+                return DJIShootPhotoAction(photoCount: 10, timeInterval: 3.0, waitUntilFinish: true)
             case .recordVideoDuration:
                 return DJIRecordVideoAction(duration: 10)
             case .recordVideoStart:
