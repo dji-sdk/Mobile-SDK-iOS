@@ -19,6 +19,7 @@
 #import "CameraFPVViewController.h"
 #import "CameraMediaPlaybackViewController.h"
 #import "In2P4PCameraPlayBackViewController.h"
+#import "XT2CameraViewController.h"
 
 @interface CameraActionsTableViewController ()
 
@@ -36,7 +37,11 @@
                             [DemoSettingItem itemWithName:@"Set/Get ISO" andClass:[CameraISOViewController class]]]];
     // FPV
     [self.items addObject:@[[DemoSettingItem itemWithName:@"First Person View (FPV)" andClass:[CameraFPVViewController class]]]];
-    
+
+    if ([DemoXT2Helper isXT2Camera]) {
+        [self.sectionNames insertObject:@"XT2" atIndex:2];
+        [self.items addObject:@[[DemoSettingItem itemWithName:@"XT2 Camera" andClass:[XT2CameraViewController class]]]];
+    }
     // Shoot Photo
     [self.items addObject:@[[DemoSettingItem itemWithName:@"Shoot Single Photo" andClass:[CameraShootSinglePhotoViewController class]]]];
     

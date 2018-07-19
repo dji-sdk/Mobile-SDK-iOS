@@ -44,6 +44,9 @@
 		3BA7667B19FE38130077CA52 /* stick_hold.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA7667819FE38130077CA52 /* stick_hold.png */; };
 		3BA7667C19FE38130077CA52 /* stick_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BA7667919FE38130077CA52 /* stick_normal.png */; };
 		3BF0597B1BB255BD00F21C88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF0597A1BB255BD00F21C88 /* LaunchScreen.xib */; };
+		5D0C94B120EEEBBE00B78E65 /* DemoXT2Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94B020EEEBBE00B78E65 /* DemoXT2Helper.m */; };
+		5D0C94BF20EFD26400B78E65 /* XT2CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */; };
+		5D0C94C220EFD29A00B78E65 /* XT2CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */; };
 		865297AC1E4924400021E066 /* KeyedInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865297AA1E4924400021E066 /* KeyedInterfaceViewController.m */; };
 		865297AD1E4924400021E066 /* KeyedInterfaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 865297AB1E4924400021E066 /* KeyedInterfaceViewController.xib */; };
 		ACB121061E8B1010006EE2DB /* TimelineMissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB121051E8B1010006EE2DB /* TimelineMissionViewController.m */; };
@@ -203,6 +206,11 @@
 		3BA7667819FE38130077CA52 /* stick_hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_hold.png; sourceTree = "<group>"; };
 		3BA7667919FE38130077CA52 /* stick_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_normal.png; sourceTree = "<group>"; };
 		3BF0597A1BB255BD00F21C88 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = ../LaunchScreen.xib; sourceTree = "<group>"; };
+		5D0C94AF20EEEBBE00B78E65 /* DemoXT2Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DemoXT2Helper.h; path = DemoUtility/DemoXT2Helper.h; sourceTree = "<group>"; };
+		5D0C94B020EEEBBE00B78E65 /* DemoXT2Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DemoXT2Helper.m; path = DemoUtility/DemoXT2Helper.m; sourceTree = "<group>"; };
+		5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XT2CameraViewController.xib; sourceTree = "<group>"; };
+		5D0C94C020EFD29A00B78E65 /* XT2CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XT2CameraViewController.h; sourceTree = "<group>"; };
+		5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XT2CameraViewController.m; sourceTree = "<group>"; };
 		865297A91E4924400021E066 /* KeyedInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyedInterfaceViewController.h; sourceTree = "<group>"; };
 		865297AA1E4924400021E066 /* KeyedInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyedInterfaceViewController.m; sourceTree = "<group>"; };
 		865297AB1E4924400021E066 /* KeyedInterfaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyedInterfaceViewController.xib; sourceTree = "<group>"; };
@@ -578,6 +586,16 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		5D0C94BD20EFD21000B78E65 /* XT2 */ = {
+			isa = PBXGroup;
+			children = (
+				5D0C94C020EFD29A00B78E65 /* XT2CameraViewController.h */,
+				5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */,
+				5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */,
+			);
+			path = XT2;
+			sourceTree = "<group>";
+		};
 		6ABAC78C9EBB40FA6C72509F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +754,8 @@
 				B821D3E11C3162770014ADBD /* DemoUtilityMacro.h */,
 				B821D3E21C31641C0014ADBD /* DemoComponentHelper.h */,
 				B821D3E31C31641C0014ADBD /* DemoComponentHelper.m */,
+				5D0C94AF20EEEBBE00B78E65 /* DemoXT2Helper.h */,
+				5D0C94B020EEEBBE00B78E65 /* DemoXT2Helper.m */,
 				F47C29DB1BDA2380001E6A75 /* UIUtility */,
 			);
 			name = DemoUtility;
@@ -778,6 +798,7 @@
 				B8AF304A1E8A82D40087AFAF /* SetGetISO */,
 				B8AF304D1E8A82D40087AFAF /* ShootSinglePhoto */,
 				B8AF30511E8A82D40087AFAF /* SystemPushInfo */,
+				5D0C94BD20EFD21000B78E65 /* XT2 */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -1066,6 +1087,7 @@
 				3BA7667A19FE38130077CA52 /* stick_base.png in Resources */,
 				B8AF30581E8A82D40087AFAF /* CameraFetchMediaViewController.xib in Resources */,
 				B8AF30641E8A82D40087AFAF /* CameraShootSinglePhotoViewController.xib in Resources */,
+				5D0C94BF20EFD26400B78E65 /* XT2CameraViewController.xib in Resources */,
 				3B628AC81AEE2AF90079AF13 /* aircraft@2x.png in Resources */,
 				3B2CDD8D1C3CC21D00DB096B /* FCOrientationViewController.xib in Resources */,
 				3B2CDD901C3CC21D00DB096B /* FCVirtualStickViewController.xib in Resources */,
@@ -1169,7 +1191,9 @@
 				B8AF30621E8A82D40087AFAF /* CameraISOViewController.m in Sources */,
 				B814FF901C9810A2000D32AC /* FCIntelligentAssistantViewController.m in Sources */,
 				3B2CDD8F1C3CC21D00DB096B /* FCVirtualStickViewController.m in Sources */,
+				5D0C94C220EFD29A00B78E65 /* XT2CameraViewController.m in Sources */,
 				3B2CDD8A1C3CC21D00DB096B /* FCLandingGearViewController.m in Sources */,
+				5D0C94B120EEEBBE00B78E65 /* DemoXT2Helper.m in Sources */,
 				B8AF30631E8A82D40087AFAF /* CameraShootSinglePhotoViewController.m in Sources */,
 				B821D3F41C31643D0014ADBD /* DemoGetSetViewController.m in Sources */,
 				B8AF305D1E8A82D40087AFAF /* CameraPlaybackDownloadViewController.m in Sources */,
