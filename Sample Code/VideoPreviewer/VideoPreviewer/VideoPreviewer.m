@@ -90,7 +90,7 @@ LB2AUDRemoveParserDelegate>{
 //basic status
 @property (assign, nonatomic) VideoPreviewerStatus status;
 //ffmpeg warpper
-@property (strong, nonatomic) VideoFrameExtractor *videoExtractor;
+@property (strong, nonatomic) DJICustomVideoFrameExtractor *videoExtractor;
 
 //hardware decode use videotool box on ios8
 @property (strong, nonatomic) H264VTDecode *hw_decoder;
@@ -165,7 +165,7 @@ LB2AUDRemoveParserDelegate>{
     //command queue
     self.cmdQueue = [[VideoPreviewerAsyncCommandQueue alloc] initWithThreadSafe:YES];
 
-    _videoExtractor = [[VideoFrameExtractor alloc] initExtractor];
+    _videoExtractor = [[DJICustomVideoFrameExtractor alloc] initExtractor];
     [_videoExtractor setShouldVerifyVideoStream:YES];
     pthread_mutex_init(&_processor_mutex, nil);
 
@@ -445,7 +445,7 @@ static VideoPreviewer* previewer = nil;
             usleep(10000);
         }
         _decodeThread = nil;
-        [_videoExtractor clearBuffer];
+        [_videoExtractor clearExtractorBuffer];
         [_dataQueue clear];
 
         if (_hw_decoder) {

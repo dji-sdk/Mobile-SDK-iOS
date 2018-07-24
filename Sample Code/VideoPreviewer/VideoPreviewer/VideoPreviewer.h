@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DJIStreamCommon.h"
-#import "VideoFrameExtractor.h"
+#import "DJICustomVideoFrameExtractor.h"
 #import "MovieGLView.h"
 #import "H264VTDecode.h"
 #import "DJIVideoHelper.h"

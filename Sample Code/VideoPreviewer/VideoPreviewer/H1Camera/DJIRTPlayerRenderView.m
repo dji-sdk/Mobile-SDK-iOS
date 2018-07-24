@@ -28,7 +28,7 @@
 @property (nonatomic) BOOL isBackGround;
 @property (nonatomic) BOOL framePushed;
 
-@property (nonatomic) VideoFrameExtractor* frameExtractor;
+@property (nonatomic) DJICustomVideoFrameExtractor* frameExtractor;
 @property (nonatomic) H264VTDecode* hwDecoder;
 @property (nonatomic) SoftwareDecodeProcessor* softDecoder;
 @end
@@ -58,7 +58,7 @@
         //frameDataBuffer = (uint8_t*)malloc(MAX_FRAME_BUFFER_SIZE);
         
         //decode
-        _frameExtractor = [[VideoFrameExtractor alloc] initExtractor];
+        _frameExtractor = [[DJICustomVideoFrameExtractor alloc] initExtractor];
         
 #if TARGET_IPHONE_SIMULATOR
         //模拟器只能软解

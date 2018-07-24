@@ -1,32 +1,18 @@
 //
-//  Video.h
-//  iFrameExtractor
+//  DJICustomVideoFrameExtractor.h
 //
-//  Created by lajos on 1/10/10.
-//
-//  Copyright 2010 Lajos Kamocsay
-//
-//  lajos at codza dot com
-//
-//  iFrameExtractor is free software; you can redistribute it and/or
-//  modify it under the terms of the GNU Lesser General Public
-//  License as published by the Free Software Foundation; either
-//  version 2.1 of the License, or (at your option) any later version.
-// 
-//  iFrameExtractor is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-//  Lesser General Public License for more details.
+//  Copyright (c) 2018 DJI. All rights reserved.
 //
 
 
 #import <Foundation/Foundation.h>
+
+#import <UIKit/UIKit.h>
 #import "MovieGLView.h"
 
-@protocol VideoDataProcessDelegate <NSObject>
+@protocol DJIVideoDataProcessDelegate <NSObject>
 
 @optional
-
 /**
  *  It is called after the video data is parsed
  *
@@ -36,50 +22,35 @@
 - (void)processVideoData:(uint8_t *)data length:(int)length;
 @end
 
-/**
- *  Please init extractor before using it.
- *
- */
-@interface VideoFrameExtractor : NSObject {
-    
-	int _videoStream;
-	int _sourceWidth, _sourceHeight;
-	int _outputWidth, _outputHeight;
-	double _duration;
-    
-    BOOL _shouldVerifyVideoStream;
-}
+@interface DJICustomVideoFrameExtractor : NSObject
 
-@property (weak) id<VideoDataProcessDelegate> delegate;
+@property (weak) id<DJIVideoDataProcessDelegate> delegate;
 
-/**
- *  If the stream is encoded by DJI's encoder. It is used to workaround an issue
- *  in DJI's encoder.
- */
 @property (nonatomic, assign) BOOL usingDJIAircraftEncoder;
+@property (nonatomic, assign) BOOL shouldVerifyVideoStream;
 
 @property(nonatomic, readonly) int frameRate;
 @property(nonatomic, readonly) int outputWidth;
 @property(nonatomic, readonly) int outputHeight;
+@property(nonatomic, readonly) double duration;
+
 
 /**
  *  init extractor
  *
  *  @return the extractor
  */
--(id)initExtractor;
+-(instancetype) initExtractor;
 
 /**
  *  clean extractor's buffer
  */
-- (void)clearBuffer;
+-(void) clearExtractorBuffer;
 
 /**
  *  release the extractor
  */
--(void)freeExtractor;
-
--(void) setShouldVerifyVideoStream:(BOOL)shouldVerify;
+-(void) freeExtractor;
 
 -(void) parseVideo:(uint8_t*)buf length:(int)length withOutputBlock:(void (^)(uint8_t* frame, int size))block;
 
@@ -108,7 +79,7 @@
  *
  *  @param yuv YuvFrame
  */
--(void)getYuvFrame:(VideoFrameYUV *)yuv;
+-(void) getYuvFrame:(VideoFrameYUV *)yuv;
 
 /**
  *

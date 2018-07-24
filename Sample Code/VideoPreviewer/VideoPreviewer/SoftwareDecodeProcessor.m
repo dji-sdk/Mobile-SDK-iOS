@@ -13,12 +13,12 @@
     int _decodeFrameIndex;   //decoding frame index
 }
 
-@property (nonatomic, strong) VideoFrameExtractor* extractor;
+@property (nonatomic, strong) DJICustomVideoFrameExtractor* extractor;
 @end
 
 @implementation SoftwareDecodeProcessor
 
--(id) initWithExtractor:(VideoFrameExtractor*)extractor{
+-(id) initWithExtractor:(DJICustomVideoFrameExtractor*)extractor{
     self = [super init];
     if (self) {
         _extractor = extractor;

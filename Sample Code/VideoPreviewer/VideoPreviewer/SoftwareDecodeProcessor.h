@@ -6,11 +6,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DJIStreamCommon.h"
-#import "VideoFrameExtractor.h"
+#import "DJICustomVideoFrameExtractor.h"
 
 @interface SoftwareDecodeProcessor : NSObject <VideoStreamProcessor>
 @property (nonatomic, weak) id<VideoFrameProcessor> frameProcessor;
 @property (nonatomic, assign) BOOL enabled;
 
--(id) initWithExtractor:(VideoFrameExtractor*)extractor;
+-(id) initWithExtractor:(DJICustomVideoFrameExtractor*)extractor;
 @end
