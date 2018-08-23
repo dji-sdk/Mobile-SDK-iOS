@@ -2,19 +2,20 @@
 //  XT2CameraViewController.m
 //  DJISdkDemo
 //
+//  Created by Jason Rinn on 7/6/18.
 //  Copyright © 2018 DJI. All rights reserved.
 //
 
 #import "XT2CameraViewController.h"
 #import "VideoPreviewerSDKAdapter.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
 #import "DemoUtility.h"
 
 @interface XT2CameraViewController () <DJICameraDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *fpvPreviewView;
 @property (strong, nonatomic) VideoPreviewerSDKAdapter *adapter;
-@property (strong, nonatomic) VideoPreviewer *videoPreviewer;
+@property (strong, nonatomic) DJIVideoPreviewer *videoPreviewer;
 @property (weak, nonatomic) IBOutlet UIButton *shootPhotoButton;
 @property (weak, nonatomic) IBOutlet UISwitch *fpvTemEnableSwitch;
 @property (weak, nonatomic) IBOutlet UILabel *fpvTemperatureData;
@@ -49,9 +50,9 @@
     //Set up the video previewer for the XT2.
     //NOTE: The same video previewer can access either camera depending on the video mode.
     //See the button's below to change the video mode.
-    self.videoPreviewer = [[VideoPreviewer alloc] init];
+    self.videoPreviewer = [[DJIVideoPreviewer alloc] init];
     [self.videoPreviewer setView:self.fpvPreviewView];
-    [self.videoPreviewer setType:VideoPreviewerTypeAutoAdapt];
+    [self.videoPreviewer setType:DJIVideoPreviewerTypeAutoAdapt];
     DJIVideoFeed *videoFeed;
     if (![DemoXT2Helper isXT2Camera] && [DemoXT2Helper connectedThermalCamera].index == 1) {
         videoFeed = [DJISDKManager videoFeeder].secondaryVideoFeed;

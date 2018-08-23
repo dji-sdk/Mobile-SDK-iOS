@@ -2,6 +2,7 @@
 //  DemoXT2Helper.m
 //  DJISdkDemo
 //
+//  Created by Jason Rinn on 7/5/18.
 //  Copyright © 2018 DJI. All rights reserved.
 //
 

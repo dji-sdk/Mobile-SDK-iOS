@@ -6,7 +6,8 @@
 //
 
 #import "In2P4PCameraPlayBackViewController.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
+#import <DJIWidget/DJIRTPlayerRenderView.h>
 #import "DemoUtility.h"
 #import <DJISDK/DJISDK.h>
 

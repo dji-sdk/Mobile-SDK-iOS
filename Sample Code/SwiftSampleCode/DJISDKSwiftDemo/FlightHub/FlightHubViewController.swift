@@ -17,14 +17,24 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     @IBOutlet weak var leftStackView: UIStackView!
     @IBOutlet weak var middleStackView: UIStackView!
     @IBOutlet weak var rightStackView: UIStackView!
+    @IBOutlet weak var activateBtn: UIButton!
     var dataUploadingEnabled = false
     
+    func showAlert(_ msg: String?) {
+        // create the alert
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func flightHubManager(_ flightHubManager: DJIFlightHubManager, didUpdate state: DJIFlightHubUploadState, error: Error?) {
-        if state == .notLoggedIn {
-            self.updateUI(isLogin: false)
+        if state == .notLoggedIn  {
+            self.updateAccountUI(isLogin: false)
             self.loginToAccount(completionHandler: { [unowned self] (success:Bool) in
                 if (success) {
-                    self.updateUI(isLogin: true)
+                    self.updateAccountUI(isLogin: true)
                 }
             })
         }
@@ -33,36 +43,23 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         if DJISDKManager.flightHubManager()?.isUserActivated == false {
-            let currentState = DJISDKManager.userAccountManager().getUserAccountState()
+            self.updateAuthorizationUI(isAuthorization: false)
+            let currentState = DJISDKManager.userAccountManager().userAccountState
             if currentState == .notLoggedIn || currentState == .tokenOutOfDate {
-                self.updateUI(isLogin: false)
+                self.updateAccountUI(isLogin: false)
                 self.loginToAccount(completionHandler: { (success:Bool) in
                     if success {
-                        DJISDKManager.flightHubManager()?.updateActivationState(completion: { [unowned self] (error: Error?) in
-                            guard error == nil else {
-                                print("Failed to activate with error: \(String(describing: error))")
-                                return
-                            }
-                            DJISDKManager.flightHubManager()?.delegate = self
-                            self.updateUI(isLogin: true)
-                        })
+                        self.updateAccountUI(isLogin: true)
                     } else {
                         print("Failed to login to account")
                     }
                 })
             } else {
-                DJISDKManager.flightHubManager()?.updateActivationState(completion: { [unowned self] (error: Error?) in
-                    guard error == nil else {
-                        print("Failed to activate with error: \(String(describing: error))")
-                        return
-                    }
-                    DJISDKManager.flightHubManager()?.delegate = self
-                    self.updateUI(isLogin: true)
-                })
+                self.updateAccountUI(isLogin: true)
             }
         } else {
             DJISDKManager.flightHubManager()?.delegate = self
-            self.updateUI(isLogin: true)
+            self.updateAuthorizationUI(isAuthorization: true)
         }
     }
     
@@ -93,17 +90,24 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         
     }
     
-    private func updateUI (isLogin: Bool ) {
-        
-        if (isLogin){
+    private func updateAccountUI (isLogin: Bool) {
+        if (isLogin) {
             self.djiAccountStatusLabel.text = "Logged In"
+            self.activateBtn.isEnabled = true
+        } else {
+            self.djiAccountStatusLabel.text = "Logged Out"
+            self.activateBtn.isEnabled = false
+        }
+    }
+    
+    private func updateAuthorizationUI (isAuthorization: Bool) {
+        if (isAuthorization) {
             self.flightHubAuthorizationLabel.text = "Authorized"
             self.flightHubInformationTextView.isHidden = false
             self.rightStackView.isHidden = false
             self.middleStackView.isHidden = false
             self.leftStackView.isHidden = false
-        }else{
-            self.djiAccountStatusLabel.text = "Logged Out"
+        } else {
             self.flightHubAuthorizationLabel.text = "Not Authorized"
             self.flightHubInformationTextView.isHidden = true
             self.rightStackView.isHidden = true
@@ -252,7 +256,7 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         
         self.loginToAccount(completionHandler: { [unowned self] (success:Bool) in
             if (success) {
-                self.updateUI(isLogin: true)
+                self.updateAccountUI(isLogin: true)
             }
         })
     }
@@ -261,10 +265,23 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         
         self.logoutAccount(completionHandler: { [unowned self] (success:Bool) in
             if (success) {
-                self.updateUI(isLogin: false)
+                self.updateAccountUI(isLogin: false)
             }
         })
         
+    }
+    
+    @IBAction func activateAccount(_ sender: Any) {
+        
+        DJISDKManager.flightHubManager()?.updateActivationState(completion: { [unowned self] (error: Error?) in
+            guard error == nil else {
+                self.showAlert(error.debugDescription)
+                self.updateAuthorizationUI(isAuthorization: false)
+                return
+            }
+            DJISDKManager.flightHubManager()?.delegate = self
+            self.updateAuthorizationUI(isAuthorization: true)
+        })
     }
     
     @IBAction func onGetStreamSourcePressed(_ sender: Any) {

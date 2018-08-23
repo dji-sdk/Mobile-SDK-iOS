@@ -5,12 +5,12 @@
 //  Copyright © 2015 DJI. All rights reserved.
 //
 /**
- *  This file demonstrates how to receive the video data from DJICamera and display the video using VideoPreviewer.
+ *  This file demonstrates how to receive the video data from DJICamera and display the video using DJIVideoPreviewer.
  */
 #import "CameraFPVViewController.h"
 #import "DemoUtility.h"
 #import "VideoPreviewerSDKAdapter.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
 #import <DJISDK/DJISDK.h>
 
 @interface CameraFPVViewController () <DJICameraDelegate>
@@ -38,16 +38,20 @@
 
     self.needToSetMode = YES;
 
-    [[VideoPreviewer instance] start];
+    [[DJIVideoPreviewer instance] start];
     self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
+	if (([camera.displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
+		 [camera.displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera])) {
+		[self.previewerAdapter setupFrameControlHandler];
+	}
 }
 
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    [[VideoPreviewer instance] setView:self.fpvView];
+    [[DJIVideoPreviewer instance] setView:self.fpvView];
     
     [self updateThermalCameraUI]; 
 }
@@ -57,7 +61,7 @@
     [super viewWillDisappear:animated];
     
     // Call unSetView during exiting to release the memory.
-    [[VideoPreviewer instance] unSetView];
+    [[DJIVideoPreviewer instance] unSetView];
    
     if (self.previewerAdapter) {
         [self.previewerAdapter stop];
@@ -67,12 +71,12 @@
 
 
 /**
- *  VideoPreviewer is used to decode the video data and display the decoded frame on the view. VideoPreviewer provides both software 
+ *  DJIVideoPreviewer is used to decode the video data and display the decoded frame on the view. DJIVideoPreviewer provides both software
  *  decoding and hardware decoding. When using hardware decoding, for different products, the decoding protocols are different and the hardware decoding is only supported by some products.
  */
 -(IBAction) onSegmentControlValueChanged:(UISegmentedControl*)sender
 {
-    [VideoPreviewer instance].enableHardwareDecode = sender.selectedSegmentIndex == 1;
+    [DJIVideoPreviewer instance].enableHardwareDecode = sender.selectedSegmentIndex == 1;
 }
 
 - (IBAction)onThermalTemperatureDataSwitchValueChanged:(id)sender {

@@ -202,6 +202,10 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html">DJIFlightControllerLEDsSettings</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIMutableFlightControllerLEDsSettings.html">DJIMutableFlightControllerLEDsSettings</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -253,6 +257,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraOriginalPhotoSettings.html">DJICameraOriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
@@ -619,10 +625,20 @@
 <div class="api-row" id="djikeyedvalue_stringvalue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikeyedvalue_stringvalue_inline">stringValue</a></div></div><div class="inline-doc" id="djikeyedvalue_stringvalue_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>stringValue</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) <span class="built_in">NSString</span> *stringValue</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *stringValue</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Convenience accessor to string value.</font></p>
+</div>
+<div class="api-row" id="djikeyedvalue_paramrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikeyedvalue_paramrange_inline">paramRange</a></div></div><div class="inline-doc" id="djikeyedvalue_paramrange_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>paramRange</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) DJIParamCapabilityMinMax *paramRange</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKeyedValue.h</font></td></tr></table></html>
+<h5 id="description-v19">Description:</h5>
+<p><font color="#666">Convenient accessor to the parameter range. <code>nil</code> if <code><a href="../../Components/KeyManager/DJIKeyedValue.html#djikeyedvalue_value">value</a></code> is not in a  type of <code><a href="../../Components/ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html#djiparamcapability_djiparamcapabilityminmax">DJIParamCapabilityMinMax</a></code>.</font></p>
+<h5 id="see-also">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/ParamCapability/DJIParamCapability_DJIParamCapabilityMinMax.html#djiparamcapability_djiparamcapabilityminmax">DJIParamCapabilityMinMax</a></code></font></p>
 </div>
 
         </div>

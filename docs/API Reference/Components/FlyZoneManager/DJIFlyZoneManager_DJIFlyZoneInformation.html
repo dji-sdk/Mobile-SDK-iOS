@@ -202,6 +202,10 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerLEDsSettings.html">DJIFlightControllerLEDsSettings</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIMutableFlightControllerLEDsSettings.html">DJIMutableFlightControllerLEDsSettings</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -253,6 +257,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraWhiteBalanceInterface.html">DJICameraWhiteBalance</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraSSDClipFileNameInterface.html">DJICameraSSDClipFileName</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraOriginalPhotoSettings.html">DJICameraOriginalPhotoSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
                             </dd>
@@ -576,7 +582,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)setUnlockingEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Disables the unlocked fly zones. This is useful if the aircraft is shared between users. It is not  supported by Inspire 1 series or Phatom 3 series. For the other products, it is supported  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
+<p><font color="#666">Disables the unlocked fly zones. This is useful if the aircraft is shared between users. It is not  supported by Inspire 1 series or Phantom 3 series. For the other products, it is supported  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the unlocked fly zone.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i><code>completion block</code> to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline">getUnlockingEnabledWithCompletion</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_getunlockingenabled_inline" <blockquote="">
@@ -585,7 +591,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)getUnlockingEnabledWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneInformation.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
-<p><font color="#666"><code>YES</code> if the unlocked fly zone is enabled. It is not supported by Inspire 1 series or Phatom 3  series. For the other products, it is supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
+<p><font color="#666"><code>YES</code> if the unlocked fly zone is enabled. It is not supported by Inspire 1 series or Phantom 3  series. For the other products, it is supported when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager.html#djiflyzonemanager_isindividualunlockzonesupported">isCustomUnlockZoneSupported</a></code> is <code>YES</code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> if the visual stabilization is enabled.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(BOOL enabled, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_starttime"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_starttime_inline">startTime</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_starttime_inline" <blockquote="">

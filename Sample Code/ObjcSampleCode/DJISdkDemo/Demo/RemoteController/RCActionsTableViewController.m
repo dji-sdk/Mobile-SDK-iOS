@@ -8,6 +8,7 @@
 #import "RCActionsTableViewController.h"
 #import "RCHardwareStateViewController.h"
 #import "RCParingViewController.h"
+#import "RCGimbalControlViewController.h"
 #import "DemoSettingItem.h"
 #import "DemoComponentHelper.h"
 #import <DJISDK/DJISDK.h>
@@ -24,7 +25,8 @@
     
     DemoSettingItem* item1 = [DemoSettingItem itemWithName:@"RCHardwareState" andClass:[RCHardwareStateViewController class]];
     DemoSettingItem* item2 = [DemoSettingItem itemWithName:@"RCParing" andClass:[RCParingViewController class]];
-    [self.items addObject:@[item1, item2]];
+    DemoSettingItem* item3 = [DemoSettingItem itemWithName:@"RCGimbalControl" andClass:[RCGimbalControlViewController class]];
+    [self.items addObject:@[item1, item2, item3]];
 
 }
 
