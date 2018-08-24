@@ -69,13 +69,13 @@
             self.fastUploadEnabled = NO;
             self.fastUploadType = kCVPixelFormatType_420YpCbCr8Planar;
         }
-    }
-    memcpy([self frame],videoFrame,sizeof(VideoFrameYUV));
-    if (videoFrame->cv_pixelbuffer_fastupload != NULL){
-        CVPixelBufferRetain(videoFrame->cv_pixelbuffer_fastupload);
-    }
-    else{
-        [self reconstructFastUploadFrame];
+        memcpy([self frame],videoFrame,sizeof(VideoFrameYUV));
+        if (videoFrame->cv_pixelbuffer_fastupload != NULL){
+            CVPixelBufferRetain(videoFrame->cv_pixelbuffer_fastupload);
+        }
+        else{
+            [self reconstructFastUploadFrame];
+        }
     }
 }
 
