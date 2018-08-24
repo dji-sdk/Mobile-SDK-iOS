@@ -13,7 +13,7 @@
 
 #import <DJISDK/DJISDK.h>
 #import "DemoUtility.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
 #import "CameraShootSinglePhotoViewController.h"
 #import "VideoPreviewerSDKAdapter.h"
 
@@ -139,14 +139,19 @@
 
 #pragma mark - UI related
 - (void)setVideoPreview {
-    [[VideoPreviewer instance] start];
-    [[VideoPreviewer instance] setView:self.videoFeedView];
+    [[DJIVideoPreviewer instance] start];
+    [[DJIVideoPreviewer instance] setView:self.videoFeedView];
     self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
+	DJICamera* camera = [DemoComponentHelper fetchCamera];
+	if (([camera.displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
+		 [camera.displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera])) {
+		[self.previewerAdapter setupFrameControlHandler];
+	}
 }
 
 - (void)cleanVideoPreview {
-    [[VideoPreviewer instance] unSetView];
+    [[DJIVideoPreviewer instance] unSetView];
     if (self.previewerAdapter) {
     	[self.previewerAdapter stop];
     	self.previewerAdapter = nil;
@@ -174,7 +179,7 @@
 
 #pragma mark - DJICameraDelegate
 -(void)camera:(DJICamera *)camera didReceiveVideoData:(uint8_t *)videoBuffer length:(size_t)length {
-    [[VideoPreviewer instance] push:videoBuffer length:(int)length];
+    [[DJIVideoPreviewer instance] push:videoBuffer length:(int)length];
 }
 
 -(void)camera:(DJICamera *)camera didUpdateSystemState:(DJICameraSystemState *)systemState {

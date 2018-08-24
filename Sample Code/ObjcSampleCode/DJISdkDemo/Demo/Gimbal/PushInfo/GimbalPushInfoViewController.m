@@ -45,7 +45,7 @@
     [gimbalInfoString appendFormat:@"Gimbal attitude in degree: (%f, %f, %f)\n", state.attitudeInDegrees.pitch,
      state.attitudeInDegrees.roll,
      state.attitudeInDegrees.yaw];
-    [gimbalInfoString appendFormat:@"Roll fine tune in degree: %d\n", (int)state.rollFineTuneInDegrees];
+    [gimbalInfoString appendFormat:@"Roll fine tune in degree: %d\n", (int)state.fineTunedRoll];
     [gimbalInfoString appendString:@"Gimbal work mode: "];
     switch (state.mode) {
         case DJIGimbalModeFPV:

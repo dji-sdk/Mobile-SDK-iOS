@@ -8,14 +8,15 @@
 #import "CameraMediaPlaybackViewController.h"
 #import "DemoUtility.h"
 #import <DJISDK/DJISDK.h>
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
+#import "VideoPreviewerSDKAdapter.h"
 
 /**
  *  This file demonstrates how to use the video playback in media manager. It
  *  includes:
  *  1. How to show the video feed on the view. Video feed of the playing video
  *     is delivered through [camera:didReceiveVideoData:]. The video feed is
- *     is displayed using VideoPreviewer.
+ *     is displayed using DJIVideoPreviewer.
  *  2. How to set delegate to the media manager. It is important to check
  *     current playback state.
  *  3. How to select the video to play.
@@ -40,7 +41,6 @@
 @interface CameraMediaPlaybackViewController ()
 <DJIMediaManagerDelegate,
 DJICameraDelegate,
-DJIVideoFeedListener,
 UITableViewDataSource,
 UITableViewDelegate>
 
@@ -52,6 +52,7 @@ UITableViewDelegate>
 @property (nonatomic) DemoScrollView *statusView;
 @property (weak, nonatomic) IBOutlet UITextField *seekText;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property(nonatomic) VideoPreviewerSDKAdapter *previewerAdapter;
 
 @end
 
@@ -65,21 +66,17 @@ UITableViewDelegate>
 
     self.statusView = [DemoScrollView viewWithViewController:self];
     [self.statusView setHidden:YES];
-
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self fetchMediaList];
     [self setupVideoPreviewView];
-
-    [[DJISDKManager videoFeeder].primaryVideoFeed addListener:self withQueue:dispatch_get_main_queue()];
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self cleanupVideoPreviewView];
-    [[DJISDKManager videoFeeder].primaryVideoFeed removeListener:self];
 }
 
 - (void)fetchMediaList{
@@ -102,16 +99,21 @@ UITableViewDelegate>
     [self.view addSubview:self.videoPreviewView];
     [self.view sendSubviewToBack:self.videoPreviewView];
 
-    [VideoPreviewer instance].type = VideoPreviewerTypeAutoAdapt;
-    [[VideoPreviewer instance] start];
-    [[VideoPreviewer instance] reset];
-    [[VideoPreviewer instance] setView:self.videoPreviewView];
-
+    [DJIVideoPreviewer instance].type = DJIVideoPreviewerTypeAutoAdapt;
+    [[DJIVideoPreviewer instance] start];
+    [[DJIVideoPreviewer instance] setView:self.videoPreviewView];
+    self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
+    [self.previewerAdapter start];
+    DJICamera *camera = [DemoComponentHelper fetchCamera];
+    if (([camera.displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
+         [camera.displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera])) {
+        [self.previewerAdapter setupFrameControlHandler];
+    }
 #if !TARGET_IPHONE_SIMULATOR
-    [VideoPreviewer instance].enableHardwareDecode = YES;
+    [DJIVideoPreviewer instance].enableHardwareDecode = YES;
 #endif
 
-    [VideoPreviewer instance].encoderType = H264EncoderType_unknown;
+    [DJIVideoPreviewer instance].encoderType = H264EncoderType_unknown;
 }
 
 -(void)cleanupVideoPreviewView
@@ -120,8 +122,13 @@ UITableViewDelegate>
         [self.videoPreviewView removeFromSuperview];
         self.videoPreviewView = nil;
     }
-
-    [[VideoPreviewer instance] unSetView];
+    
+    [[DJIVideoPreviewer instance] unSetView];
+    
+    if (self.previewerAdapter) {
+        [self.previewerAdapter stop];
+        self.previewerAdapter = nil;
+    }
 }
 
 -(void) loadMediaList {
@@ -136,7 +143,7 @@ UITableViewDelegate>
             }
             else {
                 WeakReturn(target);
-                [self.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
+                [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
                      WeakReturn(target);
                      
                      [target showActivityIndicator:NO];
@@ -145,7 +152,7 @@ UITableViewDelegate>
                          ShowResult(@"Fetch media failed: %@", error.localizedDescription);
                      }
                      else {
-                         target.mediaList = [target.mediaManager fileListSnapshot];
+                         target.mediaList = [target.mediaManager sdCardFileListSnapshot];
                          [target.mediaListTable reloadData];
                      }
                  }];
@@ -285,10 +292,10 @@ UITableViewDelegate>
         [stateStr appendFormat:@"Orientation: %@\n", [self orientationToString:state.playingMedia.videoOrientation]];
 
         if (state.playingMedia.videoOrientation == DJICameraOrientationLandscape) {
-            [VideoPreviewer instance].rotation = VideoStreamRotationDefault;
+            [DJIVideoPreviewer instance].rotation = VideoStreamRotationDefault;
         }
         else if (state.playingMedia.videoOrientation == DJICameraOrientationPortrait) {
-            [VideoPreviewer instance].rotation = VideoStreamRotationCW90;
+            [DJIVideoPreviewer instance].rotation = VideoStreamRotationCW90;
         }
     }
     [stateStr appendFormat:@"Status: %@\n", [self statusToString:state.playbackStatus]];
@@ -321,10 +328,6 @@ UITableViewDelegate>
             break;
     }
     return nil;
-}
-
--(void)videoFeed:(DJIVideoFeed *)videoFeed didUpdateVideoData:(NSData *)videoData {
-    [[VideoPreviewer instance] push:(uint8_t *)[videoData bytes] length:(int)[videoData length]];
 }
 
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations {

@@ -6,7 +6,8 @@
 //
 
 #import "In2P4PCameraPlayBackViewController.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
+#import <DJIWidget/DJIRTPlayerRenderView.h>
 #import "DemoUtility.h"
 #import <DJISDK/DJISDK.h>
 
@@ -155,13 +156,13 @@
 
 - (void)loadMediaList {
     WeakRef(target);
-    [self.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
+    [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
         WeakReturn(target);
         if (error) {
             ShowResult(@"Fetch media failed: %@", error.localizedDescription);
         }
         else {
-            target.mediaList = [target.mediaManager fileListSnapshot];
+            target.mediaList = [target.mediaManager sdCardFileListSnapshot];
             [target.mediaListTable reloadData];
         }
     }];
