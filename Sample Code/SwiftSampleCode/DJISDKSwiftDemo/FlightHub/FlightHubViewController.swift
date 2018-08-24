@@ -63,11 +63,6 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-    
     private func loginToAccount(completionHandler: @escaping (Bool) -> ()) {
         DJISDKManager.userAccountManager().logIntoDJIUserAccount(withAuthorizationRequired: false, withCompletion: { (state:DJIUserAccountState?, error:Error?)in
             if error != nil{
