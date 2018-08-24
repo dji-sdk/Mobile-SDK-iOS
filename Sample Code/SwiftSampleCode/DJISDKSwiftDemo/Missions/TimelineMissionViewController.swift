@@ -472,7 +472,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     // MARK: - Convenience
     
     func degreesToRadians(_ degrees: Double) -> Double {
-        return M_PI / 180 * degrees
+        return Double.pi / 180 * degrees
     }
 
 }
