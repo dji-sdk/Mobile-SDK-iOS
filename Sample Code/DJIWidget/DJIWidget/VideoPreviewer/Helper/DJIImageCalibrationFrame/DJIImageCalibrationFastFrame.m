@@ -39,17 +39,17 @@
     return self;
 }
 
--(void)loadFrame:(VideoFrameYUV*)frame
+-(void)loadFrame:(VideoFrameYUV*)videoFrame
       fastUpload:(BOOL)fastUpload{
     [self prepareToClean];
     CGSize frameSize = CGSizeZero;
     VPFrameType frameType = VPFrameTypeYUV420Planer;
-    if (frame != NULL){
-        frameSize = CGSizeMake(frame->width, frame->height);
-        frameType = frame->frameType;
-        if (frame->cv_pixelbuffer_fastupload != NULL){
+    if (videoFrame != NULL){
+        frameSize = CGSizeMake(videoFrame->width, videoFrame->height);
+        frameType = videoFrame->frameType;
+        if (videoFrame->cv_pixelbuffer_fastupload != NULL){
             self.fastUploadEnabled = YES;
-            self.fastUploadType = CVPixelBufferGetPixelFormatType(frame->cv_pixelbuffer_fastupload);
+            self.fastUploadType = CVPixelBufferGetPixelFormatType(videoFrame->cv_pixelbuffer_fastupload);
         }
         else if (fastUpload){
             switch (frameType) {
@@ -72,9 +72,9 @@
             self.fastUploadType = kCVPixelFormatType_420YpCbCr8Planar;
         }
     }
-    memcpy([self frame],frame,sizeof(VideoFrameYUV));
-    if (frame->cv_pixelbuffer_fastupload != NULL){
-        CVPixelBufferRetain(frame->cv_pixelbuffer_fastupload);
+    memcpy([self frame],videoFrame,sizeof(VideoFrameYUV));
+    if (videoFrame->cv_pixelbuffer_fastupload != NULL){
+        CVPixelBufferRetain(videoFrame->cv_pixelbuffer_fastupload);
     }
     else{
         [self reconstructFastUploadFrame];
