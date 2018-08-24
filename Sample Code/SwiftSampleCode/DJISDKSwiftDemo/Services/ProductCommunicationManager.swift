@@ -33,7 +33,7 @@ class ProductCommunicationManager: NSObject {
 extension ProductCommunicationManager : DJISDKManagerDelegate {
     func appRegisteredWithError(_ error: Error?) {
         
-        NSLog("SDK Registered with error \(error?.localizedDescription)")
+        NSLog("SDK Registered with error \(error?.localizedDescription ?? "")")
         
         if enableBridgeMode {
             DJISDKManager.enableBridgeMode(withBridgeAppIP: bridgeAppIP)
