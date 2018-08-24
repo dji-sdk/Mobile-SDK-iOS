@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)push:(uint8_t *)buf length:(int)len;
 
-- (uint8_t *)pull:(int *)len;
+- (nullable uint8_t *)pull:(int *)len;
 
 - (bool)isFull;
 
