@@ -33,11 +33,6 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)onCompassCalibrationButtonClicked:(UIButton*)sender {
     const int STOP_TAG = 100;
     const int START_TAG = 101;

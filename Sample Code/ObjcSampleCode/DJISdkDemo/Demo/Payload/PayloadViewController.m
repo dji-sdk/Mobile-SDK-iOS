@@ -30,11 +30,6 @@
 
 @implementation PayloadViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -46,11 +41,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     DJIPayload *payload = [DemoComponentHelper fetchPayload];
     self.payloadName.text = [payload getPayloadProductName];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Button
