@@ -58,8 +58,13 @@ For the Objective-C sample app, the key value **DJISDKAppKey** should to be adde
 For the Swift sample app, the DJISDKAppKey is present in the Info.plist - developers just need to add their unique key.
 In both cases developers will still need to update the [Bundle Identifier](http://developer.dji.com/user/mobile-sdk/ios-configuration/) .
 
-
 One of DJI's aircraft or handheld cameras will be required to run the sample application.  
+
+### DJIWidget Integration
+
+In iOS SDK 4.7, we have replaced the **VideoPreviewer** with **DJIWidget** for video decoding. Please be sure to integrate the contents of **DJIWidget** into your project if you are not using our sample code template or are upgrading to 4.7 for the first time. 
+
+Follow the Build Phases settings of either sample code project in this repo for the best result. You must then remove the **VideoPreviewer** project if you were using it previously.
 
 ## Development Workflow 
 
