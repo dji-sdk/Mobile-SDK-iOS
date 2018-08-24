@@ -7,8 +7,8 @@
 
 #import "VideoPreviewerSDKAdapter.h"
 #import "VideoPreviewerSDKAdapter+Lightbridge2.h"
-#import <VideoPreviewer/VideoPreviewer.h>
-
+#import "DJIDecodeImageCalibrateControlLogic.h"
+#import <DJIWidget/DJIVTH264DecoderIFrameData.h>
 #import <DJISDK/DJISDK.h>
 
 #define weakSelf(__TARGET__) __weak typeof(self) __TARGET__=self
@@ -17,7 +17,7 @@
 const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 
 /**
- *  Information needed by VideoPreviewer includes: 
+ *  Information needed by DJIVideoPreviewer includes: 
  *  1. Product names.
  *  2. (Osmo only) Is digital zoom supported. 
  *  3. (Marvik only) Is in portrait mode.
@@ -36,12 +36,14 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 
 @property (nonatomic) BOOL isForLightbridge2;
 
+@property (nonatomic) DJIDecodeImageCalibrateControlLogic *calibrateLogic;
+
 @end
 
 @implementation VideoPreviewerSDKAdapter
 
 +(instancetype)adapterWithDefaultSettings {
-    return [self adapterWithVideoPreviewer:[VideoPreviewer instance] andVideoFeed:[DJISDKManager videoFeeder].primaryVideoFeed];
+    return [self adapterWithVideoPreviewer:[DJIVideoPreviewer instance] andVideoFeed:[DJISDKManager videoFeeder].primaryVideoFeed];
 }
 
 +(instancetype)adapterWithForLightbridge2 {
@@ -50,12 +52,12 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     return adapter;
 }
 
-+(instancetype)adapterWithVideoPreviewer:(VideoPreviewer *)videoPreviewer
++(instancetype)adapterWithVideoPreviewer:(DJIVideoPreviewer *)videoPreviewer
                             andVideoFeed:(DJIVideoFeed *)videoFeed {
     VideoPreviewerSDKAdapter *adapter = [VideoPreviewerSDKAdapter new];
     adapter.videoPreviewer = videoPreviewer;
     adapter.videoFeed = videoFeed;
-
+	adapter.videoPreviewer.calibrateDelegate = adapter.calibrateLogic;
     return adapter;
 }
 
@@ -67,6 +69,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
         }
         _isForLightbridge2 = NO;
+		_calibrateLogic = [[DJIDecodeImageCalibrateControlLogic alloc] init];
     }
     return self;
 }
@@ -156,16 +159,17 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             }
         }];
         [self updateContentRect];
+		self.calibrateLogic.cameraName = camera.displayName;
     }
 
     if ([camera.displayName isEqual:DJICameraDisplayNameMavicProCamera]) {
         [camera getOrientationWithCompletion:^(DJICameraOrientation orientation, NSError * _Nullable error) {
             if (error == nil) {
                 if (orientation == DJICameraOrientationLandscape) {
-                    [VideoPreviewer instance].rotation = VideoStreamRotationDefault;
+                    [DJIVideoPreviewer instance].rotation = VideoStreamRotationDefault;
                 }
                 else {
-                    [VideoPreviewer instance].rotation = VideoStreamRotationCW90;
+                    [DJIVideoPreviewer instance].rotation = VideoStreamRotationCW90;
                 }
             }
         }];
@@ -176,6 +180,10 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     [self.videoPreviewer setEncoderType:H264EncoderType_unknown];
     self.videoPreviewer.rotation = VideoStreamRotationDefault;
     self.videoPreviewer.contentClipRect = CGRectMake(0, 0, 1, 1);
+}
+
+-(void)setupFrameControlHandler {
+	self.videoPreviewer.frameControlHandler = self;
 }
 
 -(void)updateEncodeType {
@@ -313,8 +321,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 }
 
 + (H264EncoderType) getDataSourceWithCameraName:(NSString *)cameraName andIsAircraft:(BOOL)isAircraft {
-    if ([cameraName isEqualToString:DJICameraDisplayNameX3] ||
-        [cameraName isEqualToString:DJICameraDisplayNameZ3]) {
+    if ([cameraName isEqualToString:DJICameraDisplayNameX3]) {
         DJICamera *camera = [VideoPreviewerSDKAdapter camera];
         /**
          *  Osmo's video encoding solution is changed since a firmware version.
@@ -328,6 +335,9 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         else {
             return H264EncoderType_DM368_inspire;
         }
+    }
+    else if ([cameraName isEqualToString:DJICameraDisplayNameZ3]) {
+        return H264EncoderType_A9_OSMO_NO_368;
     }
     else if ([cameraName isEqualToString:DJICameraDisplayNameX5] ||
              [cameraName isEqualToString:DJICameraDisplayNameX5R]) {
@@ -363,8 +373,13 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     else if ([cameraName isEqualToString:DJICameraDisplayNamePhantom4ProCamera] ||
              [cameraName isEqualToString:DJICameraDisplayNamePhantom4AdvancedCamera] ||
              [cameraName isEqualToString:DJICameraDisplayNameX5S] ||
-             [cameraName isEqualToString:DJICameraDisplayNameX4S]) {
+             [cameraName isEqualToString:DJICameraDisplayNameX4S] ||
+			 [cameraName isEqualToString:DJICameraDisplayNameX7] ||
+             [cameraName isEqualToString:DJICameraDisplayNamePayload]) {
         return H264EncoderType_H1_Inspire2;
+    }
+    else if ([cameraName isEqualToString:DJICameraDisplayNameMavicAirCamera]) {
+        return H264EncoderType_MavicAir;
     }
 
     return H264EncoderType_unknown;
@@ -389,6 +404,32 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             [self updateContentRect];
         }
     }
+}
+
+- (BOOL)parseDecodingAssistInfoWithBuffer:(uint8_t *)buffer length:(int)length assistInfo:(DJIDecodingAssistInfo *)assistInfo {
+	return [[DJISDKManager videoFeeder] parseDecodingAssistInfoWithBuffer:buffer length:length assistInfo:(void *)assistInfo];
+}
+
+- (BOOL)isNeedFitFrameWidth {
+	NSString* displayName = [[self class] camera].displayName;
+	if ([displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
+		[displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera]) {
+		return YES;
+	}
+	
+	return NO;
+}
+
+- (void)syncDecoderStatus:(BOOL)isNormal {
+	[[DJISDKManager videoFeeder] syncDecoderStatus:isNormal];
+}
+
+- (void)decodingDidSucceedWithTimestamp:(uint32_t)timestamp {
+	[[DJISDKManager videoFeeder] decodingDidSucceedWithTimestamp:(NSUInteger)timestamp];
+}
+
+- (void)decodingDidFail {
+	[[DJISDKManager videoFeeder] decodingDidFail];
 }
 
 @end

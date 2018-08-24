@@ -13,7 +13,7 @@
  */
 #import <DJISDK/DJISDK.h>
 #import "DemoUtility.h"
-#import <VideoPreviewer/VideoPreviewer.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
 #import "CameraFetchMediaViewController.h"
 
 @interface CameraFetchMediaViewController ()
@@ -113,13 +113,13 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera.mediaManager refreshFileListWithCompletion:^(NSError * _Nullable error) {
+        [camera.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
             WeakReturn(target);
             if (error) {
                 ShowResult(@"ERROR: fetchMediaListWithCompletion:. %@", error.description);
             }
             else {
-                target.mediaList = [camera.mediaManager fileListSnapshot];
+                target.mediaList = [camera.mediaManager sdCardFileListSnapshot];
                 ShowResult(@"SUCCESS: The media list is fetched. ");
             }
         }];

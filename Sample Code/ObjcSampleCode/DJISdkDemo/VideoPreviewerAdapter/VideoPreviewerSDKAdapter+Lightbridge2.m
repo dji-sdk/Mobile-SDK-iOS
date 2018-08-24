@@ -6,10 +6,10 @@
 //
 
 #import "VideoPreviewerSDKAdapter+Lightbridge2.h"
-#import "DemoUtilityMacro.h"
-#import <DJISDK/DJISDK.h>
-#import <VideoPreviewer/VideoPreviewer.h>
+#import "DemoUtility.h"
 #import "DemoComponentHelper.h"
+#import <DJISDK/DJISDK.h>
+#import <DJIWidget/DJIVideoPreviewer.h>
 
 #define IS_FLOAT_EQUAL(a, b) (fabs(a - b) < 0.0005)
 

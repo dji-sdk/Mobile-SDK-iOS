@@ -123,6 +123,18 @@
     return nil;
 }
 
++(nullable DJIPayload*) fetchPayload {
+    if (![DJISDKManager product]) {
+        return nil;
+    }
+    
+    if ([[DJISDKManager product] isKindOfClass:[DJIAircraft class]]) {
+        return ((DJIAircraft*)[DJISDKManager product]).payload;
+    }
+    
+    return nil;
+}
+
 +(DJIHandheldController*) fetchHandheldController
 {
     if (![DJISDKManager product]) {

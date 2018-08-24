@@ -20,5 +20,6 @@
 #import "DemoTableViewController.h"
 #import "MBProgressHUD.h"
 #import "DemoScrollView.h"
+#import "DemoXT2Helper.h"
 
 #endif /* DemoUtility_h */
