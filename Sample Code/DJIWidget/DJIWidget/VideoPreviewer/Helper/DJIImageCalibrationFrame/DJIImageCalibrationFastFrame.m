@@ -42,10 +42,8 @@
 -(void)loadFrame:(VideoFrameYUV*)videoFrame
       fastUpload:(BOOL)fastUpload{
     [self prepareToClean];
-    CGSize frameSize = CGSizeZero;
     VPFrameType frameType = VPFrameTypeYUV420Planer;
     if (videoFrame != NULL){
-        frameSize = CGSizeMake(videoFrame->width, videoFrame->height);
         frameType = videoFrame->frameType;
         if (videoFrame->cv_pixelbuffer_fastupload != NULL){
             self.fastUploadEnabled = YES;
