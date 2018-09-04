@@ -33,7 +33,7 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.7)
+Installing DJI-SDK-iOS (4.7.1)
 Generating Pods project
 Integrating client project
 
