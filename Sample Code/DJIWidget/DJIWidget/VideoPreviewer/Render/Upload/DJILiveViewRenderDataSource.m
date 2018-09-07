@@ -104,8 +104,8 @@ NSString *const rgbaFS = SHADER_STRING
 @implementation DJILiveViewRenderDataSource
 
 -(id) initWithContext:(DJILiveViewRenderContext *)aContext{
-    if (self == [super initWithContext:aContext]) {
-        
+    if (self = [super initWithContext:aContext]) {
+
         _luminanceScale = 1.0;
         _grayScale = NO;
         _rotation = VideoStreamRotationDefault;
