@@ -50,7 +50,8 @@
                 break;
             }
             preFileName = fileName;
-            NSString* bundlePath = [[NSBundle mainBundle] pathForResource:fileName ofType:type];
+			NSBundle *bundle = [NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"DistortionResource" withExtension:@"bundle"]];
+			NSString* bundlePath = [bundle pathForResource:fileName ofType:type inDirectory:@"distortion"];
             if (!bundlePath){
                 break;
             }
