@@ -46,7 +46,7 @@
     else {
         
 #if ENTER_DEBUG_MODE
-        [DJISDKManager enableBridgeModeWithBridgeAppIP:@"127.0.0.1"];
+        [DJISDKManager enableBridgeModeWithBridgeAppIP:@"172.20.10.3"];
 #else
         [DJISDKManager startConnectionToProduct];
 #endif
@@ -83,7 +83,6 @@
             }
         }
     }];
-    [self.connectButton setEnabled:NO];
     
     [self.connectButton setEnabled:NO];
     self.product = nil;
