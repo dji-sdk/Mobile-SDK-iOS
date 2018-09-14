@@ -20,7 +20,7 @@ sudo gem install cocoapods
 
 The process may take a long time, please wait. For further installation instructions, please check [this guide](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 
-**2.** Install SDK with CocoaPods in the Project
+**2.** Install SDK and DJIWidget with CocoaPods in the Project
 
 Run the following command in the **ObjcSampleCode** and **SwiftSampleCode** paths:
 
@@ -34,6 +34,7 @@ If you install it successfully, you should get the messages similar to the follo
 Analyzing dependencies
 Downloading dependencies
 Installing DJI-SDK-iOS (4.7.1)
+Installing DJIWidget (1.0)
 Generating Pods project
 Integrating client project
 
@@ -62,9 +63,11 @@ One of DJI's aircraft or handheld cameras will be required to run the sample app
 
 ### DJIWidget Integration
 
-In iOS SDK 4.7, we have replaced the **VideoPreviewer** with **DJIWidget** for video decoding. Please be sure to integrate the contents of **DJIWidget** into your project if you are not using our sample code template or are upgrading to 4.7 for the first time. 
+Starting from DJI iOS SDK 4.7, we have replaced the **VideoPreviewer** with **DJIWidget** for video decoding. Please add the following line to your Podfile to install it to your Xcode project:
 
-Follow the Build Phases settings of either sample code project in this repo for the best result. You must then remove the **VideoPreviewer** project if you were using it previously.
+~~~
+pod 'DJIWidget', '~> 1.0'
+~~~
 
 ## Development Workflow 
 
@@ -93,7 +96,6 @@ Several iOS tutorials are provided as examples on how to use different features 
 - [GEO System Application](http://developer.dji.com/mobile-sdk/documentation/ios-tutorials/GEODemo.html)
 - [Using the Bridge App](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/BridgeAppDemo.html)
 - [Using the Remote Logger](https://developer.dji.com/mobile-sdk/documentation/ios-tutorials/RemoteLoggerDemo.html)
-
 
 ## Learn More about DJI Products and the Mobile SDK
 

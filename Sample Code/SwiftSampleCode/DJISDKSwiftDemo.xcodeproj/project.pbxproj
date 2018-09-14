@@ -7,11 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		023E524221291A5A00213696 /* DJIWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0282DA8021291A2A00D8F1E0 /* DJIWidget.framework */; };
-		023E524321291A6700213696 /* DJIWidget.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0282DA8021291A2A00D8F1E0 /* DJIWidget.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A402788320AD473E0072809B /* FlightHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A402788220AD473E0072809B /* FlightHubViewController.swift */; };
-		A4698547212E9091001A1F08 /* FFmpeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4698546212E9091001A1F08 /* FFmpeg.framework */; };
-		A4698548212E9091001A1F08 /* FFmpeg.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A4698546212E9091001A1F08 /* FFmpeg.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A47868D7209AC6DA00DBC666 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47868C5209AC6DA00DBC666 /* AppDelegate.swift */; };
 		A47868D8209AC6DA00DBC666 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A47868C6209AC6DA00DBC666 /* Assets.xcassets */; };
 		A47868D9209AC6DA00DBC666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47868C7209AC6DA00DBC666 /* LaunchScreen.storyboard */; };
@@ -27,16 +23,6 @@
 		B06EA971D6515087DA6C15DE /* libPods-DJISDKSwiftDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6806BA82A93F6159B12D3F /* libPods-DJISDKSwiftDemo.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0282DA7F21291A2A00D8F1E0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0282DA7B21291A2A00D8F1E0 /* DJIWidget.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2E54A2CD1F4A904000916B4D;
-			remoteInfo = DJIWidget;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		86985DA41E8356C600577EC7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -44,8 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				023E524321291A6700213696 /* DJIWidget.framework in Embed Frameworks */,
-				A4698548212E9091001A1F08 /* FFmpeg.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,12 +37,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0282DA7B21291A2A00D8F1E0 /* DJIWidget.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DJIWidget.xcodeproj; path = ../DJIWidget/DJIWidget.xcodeproj; sourceTree = "<group>"; };
 		128ABACC526C7880A0AB3F06 /* Pods-DJISDKSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKSwiftDemo/Pods-DJISDKSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4B0C6B02B8D1383630F1B67E /* Pods-DJISDKSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DJISDKSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DJISDKSwiftDemo/Pods-DJISDKSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		86985CC91E834EC200577EC7 /* DJISDKSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJISDKSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A402788220AD473E0072809B /* FlightHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightHubViewController.swift; sourceTree = "<group>"; };
-		A4698546212E9091001A1F08 /* FFmpeg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FFmpeg.framework; path = ../DJIWidget/FFmpeg/FFmpeg.framework; sourceTree = "<group>"; };
 		A47868C5209AC6DA00DBC666 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A47868C6209AC6DA00DBC666 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A47868C8209AC6DA00DBC666 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,28 +61,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				023E524221291A5A00213696 /* DJIWidget.framework in Frameworks */,
 				B06EA971D6515087DA6C15DE /* libPods-DJISDKSwiftDemo.a in Frameworks */,
-				A4698547212E9091001A1F08 /* FFmpeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0282DA7C21291A2A00D8F1E0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0282DA8021291A2A00D8F1E0 /* DJIWidget.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		0B6F263FBC093B7B6FB6EF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A4698546212E9091001A1F08 /* FFmpeg.framework */,
-				0282DA7B21291A2A00D8F1E0 /* DJIWidget.xcodeproj */,
 				BA6806BA82A93F6159B12D3F /* libPods-DJISDKSwiftDemo.a */,
 			);
 			name = Frameworks;
@@ -245,28 +215,12 @@
 			mainGroup = 86985CC01E834EC200577EC7;
 			productRefGroup = 86985CCA1E834EC200577EC7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0282DA7C21291A2A00D8F1E0 /* Products */;
-					ProjectRef = 0282DA7B21291A2A00D8F1E0 /* DJIWidget.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				86985CC81E834EC200577EC7 /* DJISDKSwiftDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		0282DA8021291A2A00D8F1E0 /* DJIWidget.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = DJIWidget.framework;
-			remoteRef = 0282DA7F21291A2A00D8F1E0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		86985CC71E834EC200577EC7 /* Resources */ = {
