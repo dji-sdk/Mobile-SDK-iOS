@@ -121,12 +121,6 @@ A detailed introduction for missions is [here](./docs/README-Mission.md).
 
 [**iOS SDK API Documentation**](http://developer.dji.com/api-reference/ios-api/index.html)
 
-## FFmpeg Customization
-
-We have forked the original FFmpeg and added customized features to provide more video frame information including the frame's width and height, frame rate number, etc. These features will help to implement video hardware decoding. 
-
-The SDK Sample Code is dynamically linked with unmodified libraries of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>LGPLv2.1</a>. The source code of these FFmpeg libraries, the compilation instructions, and the LGPL v2.1 license are provided in [Github](https://github.com/dji-sdk/FFmpeg).
-
 ## Support
 
 You can get support from DJI with the following methods:
