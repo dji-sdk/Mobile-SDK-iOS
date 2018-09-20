@@ -31,6 +31,7 @@
 #import "PayloadViewController.h"
 
 #import "KeyedInterfaceViewController.h"
+#import "AppRedirectGoViewController.h"
 
 @interface ComponentSelectionViewController () <DJIBaseProductDelegate>
 
@@ -66,7 +67,7 @@
     }
     
     [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Keyed Interface" andClass:[KeyedInterfaceViewController class]]];
-    
+	[sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Redirect to DJI Go" andClass:[AppRedirectGoViewController class]]];
     [self.items addObject:sdk40Interfaces];
 }
 
