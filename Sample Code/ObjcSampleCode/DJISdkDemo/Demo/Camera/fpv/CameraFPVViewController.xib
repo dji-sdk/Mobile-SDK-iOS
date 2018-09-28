@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraFPVViewController" customModule="DJISdkDemo" customModuleProvider="target">
@@ -11,17 +15,18 @@
                 <outlet property="fpvTemView" destination="Hyu-Oa-Kmq" id="D0W-fA-GE9"/>
                 <outlet property="fpvTemperatureData" destination="cyu-ix-m0k" id="jKa-Rn-FaE"/>
                 <outlet property="fpvView" destination="sEi-ws-hWb" id="QJg-e1-4QY"/>
+                <outlet property="showImageButton" destination="qsy-ue-0th" id="K6V-g5-SBC"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="OEE-c1-3cS"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEi-ws-hWb">
-                    <rect key="frame" x="22" y="269" width="557" height="295"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="8" y="335.5" width="359" height="206"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="295" id="2K7-Dw-BYb">
                             <variation key="heightClass=compact" constant="181"/>
@@ -49,7 +54,7 @@
                     </variation>
                 </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nFi-G1-DAY">
-                    <rect key="frame" x="151" y="77" width="299" height="29"/>
+                    <rect key="frame" x="38" y="139.5" width="299" height="29"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="299" id="6xk-L4-vad"/>
                         <constraint firstAttribute="height" constant="28" id="fK0-IB-KX0"/>
@@ -79,7 +84,7 @@
                     </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hyu-Oa-Kmq">
-                    <rect key="frame" x="150" y="144" width="301" height="60"/>
+                    <rect key="frame" x="37" y="205.5" width="301" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thermal Temperature Data:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxS-TY-aLE">
                             <rect key="frame" x="2" y="5" width="210" height="21"/>
@@ -88,7 +93,7 @@
                                 <constraint firstAttribute="height" constant="21" id="lz9-DP-kQQ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature (Degree Celsius):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wN-Yl-K6D">
@@ -98,7 +103,7 @@
                                 <constraint firstAttribute="width" constant="226" id="GaD-At-6eu"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-Sv-1Sy">
@@ -118,11 +123,11 @@
                                 <constraint firstAttribute="height" constant="21" id="gme-9e-itd"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="5wN-Yl-K6D" firstAttribute="centerY" secondItem="Hyu-Oa-Kmq" secondAttribute="centerY" id="3Z7-ej-q12">
                             <variation key="heightClass=compact" constant="11.5"/>
@@ -200,8 +205,18 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qsy-ue-0th">
+                    <rect key="frame" x="218" y="83" width="88" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="iqQ-he-NAE"/>
+                    </constraints>
+                    <state key="normal" title="Screenshot"/>
+                    <connections>
+                        <action selector="showCurrentFrameImage:" destination="-1" eventType="touchUpInside" id="hd5-Hv-yRp"/>
+                    </connections>
+                </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Hyu-Oa-Kmq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0wz-Ct-4zj">
                     <variation key="heightClass=compact" constant="2"/>
@@ -213,6 +228,7 @@
                     <variation key="heightClass=compact" constant="2"/>
                 </constraint>
                 <constraint firstItem="nFi-G1-DAY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S77-E2-vIY"/>
+                <constraint firstItem="qsy-ue-0th" firstAttribute="bottom" secondItem="nFi-G1-DAY" secondAttribute="top" constant="-26.5" id="V33-Oo-A2U"/>
                 <constraint firstItem="Hyu-Oa-Kmq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ajE-Su-10f">
                     <variation key="heightClass=compact" constant="2"/>
                 </constraint>
@@ -224,6 +240,7 @@
                     <variation key="heightClass=compact" constant="75"/>
                     <variation key="widthClass=compact" constant="105"/>
                 </constraint>
+                <constraint firstItem="qsy-ue-0th" firstAttribute="leading" secondItem="nFi-G1-DAY" secondAttribute="leading" constant="180" id="fJu-rq-MlY"/>
                 <constraint firstItem="Hyu-Oa-Kmq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oFC-0k-TPm">
                     <variation key="heightClass=compact" constant="-59.5"/>
                 </constraint>
@@ -241,23 +258,18 @@
                     <variation key="heightClass=compact" constant="2"/>
                 </constraint>
             </constraints>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="9hI-qn-li6"/>
-                    <exclude reference="wud-u3-ghl"/>
                     <exclude reference="ojC-Iq-RbO"/>
                     <exclude reference="rql-Uu-dv2"/>
                     <exclude reference="ajE-Su-10f"/>
                     <exclude reference="oFC-0k-TPm"/>
+                    <exclude reference="9hI-qn-li6"/>
+                    <exclude reference="wud-u3-ghl"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">
                 <mask key="constraints">
-                    <include reference="9hI-qn-li6"/>
-                    <exclude reference="JlI-aZ-De1"/>
-                    <exclude reference="eGS-1n-L3w"/>
-                    <include reference="wud-u3-ghl"/>
                     <exclude reference="S77-E2-vIY"/>
                     <exclude reference="oXy-dd-5ow"/>
                     <include reference="ojC-Iq-RbO"/>
@@ -266,9 +278,13 @@
                     <include reference="ajE-Su-10f"/>
                     <exclude reference="at3-wC-Fpd"/>
                     <include reference="oFC-0k-TPm"/>
+                    <include reference="9hI-qn-li6"/>
+                    <exclude reference="JlI-aZ-De1"/>
+                    <exclude reference="eGS-1n-L3w"/>
+                    <include reference="wud-u3-ghl"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="501.5" y="627.5"/>
+            <point key="canvasLocation" x="290" y="603"/>
         </view>
     </objects>
 </document>
