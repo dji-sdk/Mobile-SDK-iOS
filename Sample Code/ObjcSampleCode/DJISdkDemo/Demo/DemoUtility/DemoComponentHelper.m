@@ -160,6 +160,18 @@
     return nil;
 }
 
++(nullable DJIAccessoryAggregation*) fetchAccessoryAggregation {
+    if (![DJISDKManager product]) {
+        return nil;
+    }
+    
+    if ([[DJISDKManager product] isKindOfClass:[DJIAircraft class]]) {
+        return ((DJIAircraft *)[DJISDKManager product]).accessoryAggregation;
+    }
+    
+    return nil;
+}
+
 +(DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
                                               withListener:(id)listener
                                             andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock {

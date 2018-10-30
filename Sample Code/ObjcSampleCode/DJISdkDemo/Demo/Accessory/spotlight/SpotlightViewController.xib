@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpotlightViewController">
+            <connections>
+                <outlet property="enableSwitch" destination="vAM-5a-wrj" id="06j-gE-h6v"/>
+                <outlet property="panel" destination="DAp-rF-3J1" id="Kzs-kM-Eji"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enabled: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQP-w9-cNW">
+                    <rect key="frame" x="10" y="30" width="71" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CSs-s2-rZb"/>
+                        <constraint firstAttribute="width" constant="71" id="aqo-wt-dfU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAM-5a-wrj">
+                    <rect key="frame" x="91" y="30" width="49" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="47" id="fSv-O7-dF6"/>
+                        <constraint firstAttribute="height" constant="31" id="pQn-ff-YZO"/>
+                    </constraints>
+                    <connections>
+                        <action selector="enableSwitch:" destination="-1" eventType="valueChanged" id="GcF-L4-zwK"/>
+                    </connections>
+                </switch>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAp-rF-3J1">
+                    <rect key="frame" x="10" y="71" width="355" height="586"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DAp-rF-3J1" firstAttribute="top" secondItem="vAM-5a-wrj" secondAttribute="bottom" constant="10" id="9Xg-3E-jtM"/>
+                <constraint firstItem="DAp-rF-3J1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="CiY-YK-d97"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="DAp-rF-3J1" secondAttribute="bottom" constant="10" id="HCq-Sw-wga"/>
+                <constraint firstItem="VQP-w9-cNW" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="Psk-Gl-Bhv"/>
+                <constraint firstItem="vAM-5a-wrj" firstAttribute="leading" secondItem="VQP-w9-cNW" secondAttribute="trailing" constant="10" id="UOb-8z-ffN"/>
+                <constraint firstItem="vAM-5a-wrj" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="XIO-SJ-ekx"/>
+                <constraint firstItem="VQP-w9-cNW" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="u75-U6-sOB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="DAp-rF-3J1" secondAttribute="trailing" constant="10" id="uOT-Oh-lFT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

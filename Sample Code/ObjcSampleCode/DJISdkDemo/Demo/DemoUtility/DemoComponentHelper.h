@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(nullable DJIPayload*) fetchPayload;
 +(nullable DJIHandheldController*) fetchHandheldController;
 +(nullable DJIMobileRemoteController*) fetchMobileRemoteController;
++(nullable DJIAccessoryAggregation*) fetchAccessoryAggregation;
 +(nullable DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
                                                        withListener:(id)listener
                                                      andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock;

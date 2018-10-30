@@ -17,8 +17,8 @@
 
 -(void)startLightbridgeListen {
     DJIAirLinkKey *extEnabledKey = [DJIAirLinkKey keyWithIndex:0
-                                                    subElement:DJIAirLinkLightbridgeLinkSubComponent
-                                                      subIndex:0
+												  subComponent:DJIAirLinkLightbridgeLinkSubComponent
+											 subComponentIndex:0
                                                       andParam:DJILightbridgeLinkParamEXTVideoInputPortEnabled];
     WeakRef(target);
     DJIKeyedValue *extEnabled = [DemoComponentHelper startListeningAndGetValueForChangesOnKey:extEnabledKey
@@ -32,8 +32,8 @@
     self.isEXTPortEnabled = extEnabled.value;
 
     DJIAirLinkKey *LBPercentKey = [DJIAirLinkKey keyWithIndex:0
-                                                   subElement:DJIAirLinkLightbridgeLinkSubComponent
-                                                     subIndex:0
+												 subComponent:DJIAirLinkLightbridgeLinkSubComponent
+											subComponentIndex:0
                                                      andParam:DJILightbridgeLinkParamBandwidthAllocationForLBVideoInputPort];
     DJIKeyedValue *LBPercent = [DemoComponentHelper startListeningAndGetValueForChangesOnKey:LBPercentKey
                                                                           withListener:self
@@ -46,8 +46,8 @@
     self.LBEXTPercent = LBPercent.value;
 
     DJIAirLinkKey *HDMIPercentKey = [DJIAirLinkKey keyWithIndex:0
-                                                     subElement:DJIAirLinkLightbridgeLinkSubComponent
-                                                       subIndex:0
+												   subComponent:DJIAirLinkLightbridgeLinkSubComponent
+											  subComponentIndex:0
                                                        andParam:DJILightbridgeLinkParamBandwidthAllocationForHDMIVideoInputPort];
     DJIKeyedValue *HDMIPercent = [DemoComponentHelper startListeningAndGetValueForChangesOnKey:HDMIPercentKey
                                                                             withListener:self
