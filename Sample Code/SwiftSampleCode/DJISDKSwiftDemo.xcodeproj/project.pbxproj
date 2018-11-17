@@ -13,7 +13,6 @@
 		A47868D9209AC6DA00DBC666 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47868C7209AC6DA00DBC666 /* LaunchScreen.storyboard */; };
 		A47868DA209AC6DA00DBC666 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A47868C9209AC6DA00DBC666 /* Main.storyboard */; };
 		A47868DB209AC6DA00DBC666 /* BluetoothConnectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47868CB209AC6DA00DBC666 /* BluetoothConnectorViewController.swift */; };
-		A47868DC209AC6DA00DBC666 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A47868CC209AC6DA00DBC666 /* Info.plist */; };
 		A47868DD209AC6DA00DBC666 /* KeyedInterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47868CE209AC6DA00DBC666 /* KeyedInterfaceViewController.swift */; };
 		A47868DE209AC6DA00DBC666 /* TimelineElementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47868D0209AC6DA00DBC666 /* TimelineElementCollectionViewCell.swift */; };
 		A47868DF209AC6DA00DBC666 /* TimelineMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47868D1209AC6DA00DBC666 /* TimelineMissionViewController.swift */; };
@@ -162,6 +161,7 @@
 				86985CC61E834EC200577EC7 /* Frameworks */,
 				86985CC71E834EC200577EC7 /* Resources */,
 				8A68B323F021A127CDC7173C /* [CP] Embed Pods Frameworks */,
+				F15D5A44573548FFFCCB798C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A47868DC209AC6DA00DBC666 /* Info.plist in Resources */,
 				A47868DA209AC6DA00DBC666 /* Main.storyboard in Resources */,
 				A47868D8209AC6DA00DBC666 /* Assets.xcassets in Resources */,
 				A47868D9209AC6DA00DBC666 /* LaunchScreen.storyboard in Resources */,
@@ -255,7 +254,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F15D5A44573548FFFCCB798C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DJISDKSwiftDemo/Pods-DJISDKSwiftDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
