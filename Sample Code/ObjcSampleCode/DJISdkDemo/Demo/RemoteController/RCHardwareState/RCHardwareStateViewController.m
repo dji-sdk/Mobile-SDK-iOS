@@ -102,12 +102,6 @@
     self.customButton2.layer.masksToBounds = YES;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)remoteController:(DJIRemoteController *)rc didUpdateHardwareState:(DJIRCHardwareState)state
 {
     self.rightHorizontal.text = [NSString stringWithFormat:@"%d", state.rightStick.horizontalPosition];

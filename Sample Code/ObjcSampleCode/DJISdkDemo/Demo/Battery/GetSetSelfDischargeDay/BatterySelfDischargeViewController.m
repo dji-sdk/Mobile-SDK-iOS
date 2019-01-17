@@ -24,11 +24,6 @@
     self.rangeLabel.text = @"The input should be an integer. The range is [1, 10]. ";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)onGetButtonClicked:(id)sender {
     [self updateSelfDischargeDay];
 }
