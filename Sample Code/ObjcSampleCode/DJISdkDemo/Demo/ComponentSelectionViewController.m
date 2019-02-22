@@ -32,6 +32,7 @@
 #import "AccessoryAggregationViewController.h"
 
 #import "KeyedInterfaceViewController.h"
+#import "VideoLiveStreamingViewController.h"
 
 @interface ComponentSelectionViewController () <DJIBaseProductDelegate>
 
@@ -67,6 +68,7 @@
     }
     
     [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Keyed Interface" andClass:[KeyedInterfaceViewController class]]];
+	[sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Live Streaming" andClass:[VideoLiveStreamingViewController class]]];
     
     [self.items addObject:sdk40Interfaces];
 }

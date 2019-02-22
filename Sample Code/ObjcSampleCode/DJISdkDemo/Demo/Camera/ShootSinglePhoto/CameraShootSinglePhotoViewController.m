@@ -230,10 +230,7 @@
     self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
 	DJICamera* camera = [DemoComponentHelper fetchCamera];
-	if (([camera.displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
-		 [camera.displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera])) {
-		[self.previewerAdapter setupFrameControlHandler];
-	}
+	[self.previewerAdapter setupFrameControlHandler];
 }
 
 - (void)cleanVideoPreview {

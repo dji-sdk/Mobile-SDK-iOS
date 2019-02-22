@@ -21,5 +21,5 @@
 #import "MBProgressHUD.h"
 #import "DemoScrollView.h"
 #import "DemoXT2Helper.h"
-
+#import "DemoSelectView.h"
 #endif /* DemoUtility_h */

@@ -29,6 +29,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var availableElementsView: UICollectionView!
     var availableElements = [TimelineElementKind]()
     
+    @IBOutlet weak var simulatorSwitch: UISwitch!
     @IBOutlet weak var mapView: MKMapView!
     
     var homeAnnotation = DJIImageAnnotation(identifier: "homeAnnotation")
@@ -41,8 +42,6 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
-    @IBOutlet weak var simulatorButton: UIButton!
-
     fileprivate var _isSimulatorActive: Bool = false
     public var isSimulatorActive: Bool {
         get {
@@ -50,13 +49,11 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         }
         set {
             _isSimulatorActive = newValue
-            self.simulatorButton.titleLabel?.text = _isSimulatorActive ? "Stop Simulator" : "Start Simulator"
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.availableElementsView.delegate = self
         self.availableElementsView.dataSource = self
         
@@ -66,11 +63,17 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         self.availableElements.append(contentsOf: [.takeOff, .goTo, .goHome, .gimbalAttitude, .singleShootPhoto, .continuousShootPhoto, .recordVideoDuration, .recordVideoStart, .recordVideoStop, .waypointMission, .hotpointMission, .aircraftYaw])
         
         self.mapView.delegate = self
-        
+        weak var weakSelf = self
         if let isSimulatorActiveKey = DJIFlightControllerKey(param: DJIFlightControllerParamIsSimulatorActive) {
+            let simulatorActiveValue : DJIKeyedValue? = DJISDKManager.keyManager()?.getValueFor(isSimulatorActiveKey)
+            if simulatorActiveValue != nil{
+                weakSelf?.simulatorSwitch.isOn = (simulatorActiveValue?.boolValue)!
+                weakSelf?._isSimulatorActive = (simulatorActiveValue?.boolValue)!
+            }
             DJISDKManager.keyManager()?.startListeningForChanges(on: isSimulatorActiveKey, withListener: self, andUpdate: { (oldValue: DJIKeyedValue?, newValue : DJIKeyedValue?) in
                 if newValue?.boolValue != nil {
-                    self.isSimulatorActive = (newValue?.boolValue)!
+                    weakSelf?._isSimulatorActive = (newValue?.boolValue)!
+                    weakSelf?.simulatorSwitch.isOn = (newValue?.boolValue)!
                 }
             })
         }
@@ -101,7 +104,6 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         })
         
         self.mapView.addAnnotations([self.aircraftAnnotation, self.homeAnnotation])
-        
         
         if let aircarftLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation)  {
             DJISDKManager.keyManager()?.startListeningForChanges(on: aircarftLocationKey, withListener: self) { [unowned self] (oldValue: DJIKeyedValue?, newValue: DJIKeyedValue?) in
@@ -201,29 +203,40 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
         DJISDKManager.missionControl()?.stopTimeline()
     }
     
-    @IBAction func startSimulatorButtonAction(_ sender: Any) {
-        guard let droneLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation) else {
-            return
-        }
-        
-        guard let droneLocationValue = DJISDKManager.keyManager()?.getValueFor(droneLocationKey) else {
-            return
-        }
-        
-        let droneLocation = droneLocationValue.value as! CLLocation
-        let droneCoordinates = droneLocation.coordinate
     
+    @IBAction func onSimulatorSwitchValueChanged(_ sender: UISwitch) {
+        startSimulatorButtonAction()
+    }
+    
+    func startSimulatorButtonAction() {
+        //If no gps, the aircrfat location value will be nil.
+//        guard let droneLocationKey = DJIFlightControllerKey(param: DJIFlightControllerParamAircraftLocation) else {
+//            return
+//        }
+//        guard let droneLocationValue = DJISDKManager.keyManager()?.getValueFor(droneLocationKey) else {
+//            return
+//        }
+//
+//        let droneLocation = droneLocationValue.value as! CLLocation
+//        let droneCoordinates = droneLocation.coordinate
+        
+        weak var weakSelf = self
+        let location = CLLocationCoordinate2DMake(22.53, 114);
         if let aircraft = DJISDKManager.product() as? DJIAircraft {
-            if self.isSimulatorActive {
+            if _isSimulatorActive {
                 aircraft.flightController?.simulator?.stop(completion: nil)
             } else {
-                aircraft.flightController?.simulator?.start(withLocation: droneCoordinates,
+                aircraft.flightController?.simulator?.start(withLocation: location,
                                                                       updateFrequency: 30,
                                                                       gpsSatellitesNumber: 12,
                                                                       withCompletion: { (error) in
                     if (error != nil) {
+                        weakSelf?.simulatorSwitch.isOn = false
+                        DJIAlert.show(title: "", msg: "start simulator failed:" + (error?.localizedDescription)!, fromVC: weakSelf! as UIViewController)
                         NSLog("Start Simulator Error: \(error.debugDescription)")
-                    }
+                    }else{
+                        DJIAlert.show(title: "", msg: "start simulator Successful!" , fromVC: weakSelf! as UIViewController)
+                                                                        }
                 })
             }
         }
@@ -472,7 +485,7 @@ class TimelineMissionViewController: UIViewController, UICollectionViewDelegate,
     // MARK: - Convenience
     
     func degreesToRadians(_ degrees: Double) -> Double {
-        return M_PI / 180 * degrees
+        return Double.pi / 180 * degrees
     }
 
 }

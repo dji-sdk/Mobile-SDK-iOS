@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Wf-wJ-3VA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Wf-wJ-3VA">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Startup View Controller-->
         <scene sceneID="SIb-O8-flv">
@@ -788,13 +783,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw0-FH-CVe">
-                                <rect key="frame" x="319" y="360" width="29" height="21"/>
+                                <rect key="frame" x="319.5" y="360" width="28.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zV-X5-EE6">
-                                <rect key="frame" x="221.5" y="389" width="224" height="30"/>
+                                <rect key="frame" x="221.5" y="388.5" width="224" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="QSe-d9-OOn"/>
                                 </constraints>
@@ -804,7 +799,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-gz-6O8">
-                                <rect key="frame" x="247" y="427" width="173" height="21"/>
+                                <rect key="frame" x="247" y="426.5" width="173" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="cZm-2Q-JrG"/>
                                 </constraints>
@@ -973,25 +968,28 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qD9-lL-6UE">
                                 <rect key="frame" x="5" y="68" width="657" height="179"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tq-qe-jRl">
-                                <rect key="frame" x="559" y="257" width="103" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="Ckh-SD-Y3o"/>
-                                    <constraint firstAttribute="height" constant="30" id="xSo-wo-E7l"/>
-                                </constraints>
-                                <state key="normal" title="Start Simulator"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simulator：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zx-3R-sMI">
+                                <rect key="frame" x="513" y="255" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ry6-ww-8YU">
+                                <rect key="frame" x="608" y="250" width="51" height="31"/>
                                 <connections>
-                                    <action selector="startSimulatorButtonAction:" destination="oJj-Fc-UDf" eventType="touchUpInside" id="g5N-Ub-5sL"/>
+                                    <action selector="onSimulatorSwitchValueChanged:" destination="oJj-Fc-UDf" eventType="valueChanged" id="32d-w2-ruN"/>
                                 </connections>
-                            </button>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ry6-ww-8YU" firstAttribute="leading" secondItem="2Zx-3R-sMI" secondAttribute="trailing" constant="5" id="4ti-e4-Fd8"/>
                             <constraint firstItem="WPe-Wz-0CN" firstAttribute="trailing" secondItem="gyT-98-iUf" secondAttribute="trailingMargin" id="7Ec-H7-Syx"/>
                             <constraint firstItem="qD9-lL-6UE" firstAttribute="top" secondItem="WPe-Wz-0CN" secondAttribute="bottom" constant="8" id="7Z0-2r-mE0"/>
-                            <constraint firstItem="2tq-qe-jRl" firstAttribute="top" secondItem="qD9-lL-6UE" secondAttribute="bottom" constant="10" id="HF0-Yw-bEv"/>
+                            <constraint firstAttribute="trailing" secondItem="ry6-ww-8YU" secondAttribute="trailing" constant="10" id="IAF-P4-oFh"/>
                             <constraint firstItem="qD9-lL-6UE" firstAttribute="leading" secondItem="gyT-98-iUf" secondAttribute="leadingMargin" constant="-15" id="IoM-bc-kMD"/>
-                            <constraint firstAttribute="trailing" secondItem="2tq-qe-jRl" secondAttribute="trailing" constant="5" id="KDq-cl-Jv8"/>
+                            <constraint firstItem="ry6-ww-8YU" firstAttribute="top" secondItem="qD9-lL-6UE" secondAttribute="bottom" constant="3" id="JqR-dU-7Z0"/>
+                            <constraint firstItem="ry6-ww-8YU" firstAttribute="centerY" secondItem="2Zx-3R-sMI" secondAttribute="centerY" id="TBN-QE-Nl5"/>
                             <constraint firstItem="cJ8-ii-cNI" firstAttribute="top" secondItem="VhK-q5-Lac" secondAttribute="bottom" constant="10" id="aps-3T-vU5"/>
                             <constraint firstItem="9Pf-hX-Apj" firstAttribute="centerY" secondItem="nTm-DJ-Cdg" secondAttribute="centerY" id="de6-3N-kOM"/>
                             <constraint firstItem="VhK-q5-Lac" firstAttribute="leading" secondItem="gyT-98-iUf" secondAttribute="leadingMargin" id="iRD-gP-sVQ"/>
@@ -1010,14 +1008,14 @@
                         <outlet property="availableElementsView" destination="WPe-Wz-0CN" id="n4p-bO-adD"/>
                         <outlet property="mapView" destination="qD9-lL-6UE" id="1ch-14-goL"/>
                         <outlet property="playButton" destination="9Pf-hX-Apj" id="ssm-kW-8vL"/>
-                        <outlet property="simulatorButton" destination="2tq-qe-jRl" id="nkR-sf-OWY"/>
+                        <outlet property="simulatorSwitch" destination="ry6-ww-8YU" id="pDa-pu-oAO"/>
                         <outlet property="stopButton" destination="nTm-DJ-Cdg" id="7zU-cX-kdy"/>
                         <outlet property="timelineView" destination="VhK-q5-Lac" id="KBy-e3-FLB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PK8-oJ-5fZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4141.6000000000004" y="-181.25937031484258"/>
+            <point key="canvasLocation" x="4141.0794602698652" y="-181.59999999999999"/>
         </scene>
         <!--Bluetooth Connector View Controller-->
         <scene sceneID="v6p-ea-HIW">
