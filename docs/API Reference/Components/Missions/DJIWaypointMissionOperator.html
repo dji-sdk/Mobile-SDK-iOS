@@ -70,6 +70,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIAccessoryKey.html">DJIAccessoryKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRTKBaseStationKey.html">DJIRTKBaseStationKey</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="../KeyManager/DJIKeyedValue.html">DJIKeyedValue</a>
@@ -154,7 +156,9 @@
             </dt>
                   <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">DJIFlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState.html">DJIFlightControllerState</a>
+                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrentState.html">DJIFlightControllerState</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -170,13 +174,15 @@
                                         <ul class="sub-menu">
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceState.html">DJIRTKNetworkServiceState</a>
                                                 </dd>
+                                                <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServicePlan.html">DJIRTKNetworkServicePlan</a>
+                                                </dd>
+                                                <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServicePlansState.html">DJIRTKNetworkServicePlansState</a>
+                                                </dd>
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceSettings.html">DJIRTKNetworkServiceSettings</a>
                                                 </dd>
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIMutableRTKNetworkServiceSettings.html">DJIMutableRTKNetworkServiceSettings</a>
                                                 </dd>
                                         </ul>
-                                      </dd>
-                                      <dd><a href="../RTK/DJIRTK_DJIRTKGroundSystemBatteryState.html">DJIRTKBaseStationBatteryState</a>
                                       </dd>
                                       <dd><a href="../RTK/DJIRTK_DJIRTKReceiverInfo.html">DJIRTKReceiverInfo</a>
                                       </dd>
@@ -400,6 +406,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../RTKBaseStation/DJIRTKBaseStation.html" class="sub-toggle">DJIRTKBaseStation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html">DJIRTKBaseStationBatteryState</a>
+                            </dd>
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -594,7 +608,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getPreviousInterruptionWithCompletion:(<span class="keyword">void</span>(^)(DJIWaypointMissionInterruption *_Nullable interruption, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Gets the interruption of the last waypoint mission. If a waypoint mission is interrupted  before the completion, the aircraft will record the interruption information. This information  is only available when the last waypoint mission is incomplete and the first waypoint of the  mission has been reached. The interruption will also be recorded if the mission is stopped by  the user. The interruption information is recorded in the aircraft and the information persists  even after the aircraft's reboot.</font></p>
+<p><font color="#666">Gets the interruption of the last waypoint mission. If a waypoint mission is interrupted  before the completion, the aircraft will record the interruption information. This information  is only available when the last waypoint mission is incomplete and the first waypoint of the  mission has been reached. The interruption will also be recorded if the mission is stopped by  the user. The interruption information is recorded in the aircraft and the information persists  even after the aircraft's reboot. Supported only by Phantom 4 RTK.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html#djiwaypointmission_djiwaypointmissioninterruption">DJIWaypointMissionInterruption</a> *_Nullable <font color="#000">interruption</font></font></td><td><font color="#666"><i>The interruption information to get. Returns NULL if there is any error.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void(^)(<a href="../../Components/Missions/DJIWaypointMission_DJIWaypointMissionInterruption.html#djiwaypointmission_djiwaypointmissioninterruption">DJIWaypointMissionInterruption</a> *_Nullable interruption, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointmissionoperator_uploadmission"><div class="api-col left">Mission Upload to Aircraft</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointmissionoperator_uploadmission_inline">uploadMissionWithCompletion</a></div></div><div class="inline-doc" id="djiwaypointmissionoperator_uploadmission_inline" <blockquote="">

@@ -70,6 +70,8 @@
                                       </dd>
                                       <dd><a href="DJIAccessoryKey.html">DJIAccessoryKey</a>
                                       </dd>
+                                      <dd><a href="DJIRTKBaseStationKey.html">DJIRTKBaseStationKey</a>
+                                      </dd>
                               </ul>
                             </dd>
                             <dd><a href="DJIKeyedValue.html">DJIKeyedValue</a>
@@ -154,7 +156,9 @@
             </dt>
                   <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">DJIFlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrectState.html">DJIFlightControllerState</a>
+                            <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrentState.html">DJIFlightControllerState</a>
+                            </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -170,13 +174,15 @@
                                         <ul class="sub-menu">
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceState.html">DJIRTKNetworkServiceState</a>
                                                 </dd>
+                                                <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServicePlan.html">DJIRTKNetworkServicePlan</a>
+                                                </dd>
+                                                <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServicePlansState.html">DJIRTKNetworkServicePlansState</a>
+                                                </dd>
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIRTKNetworkServiceSettings.html">DJIRTKNetworkServiceSettings</a>
                                                 </dd>
                                                 <dd><a href="../RTK/DJIRTKNetworkServiceProvider_DJIMutableRTKNetworkServiceSettings.html">DJIMutableRTKNetworkServiceSettings</a>
                                                 </dd>
                                         </ul>
-                                      </dd>
-                                      <dd><a href="../RTK/DJIRTK_DJIRTKGroundSystemBatteryState.html">DJIRTKBaseStationBatteryState</a>
                                       </dd>
                                       <dd><a href="../RTK/DJIRTK_DJIRTKReceiverInfo.html">DJIRTKReceiverInfo</a>
                                       </dd>
@@ -400,6 +406,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../RTKBaseStation/DJIRTKBaseStation.html" class="sub-toggle">DJIRTKBaseStation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html">DJIRTKBaseStationBatteryState</a>
+                            </dd>
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -565,6 +579,18 @@
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryKey.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/KeyManager/DJIKey.html#djikey">DJIKey</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666"><code><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey">DJIBatteryKey</a></code> is a key dedicated to accessing Battery related attributes.</font></p>
+<h5 id="class-members">Class Members:</h5>
+<div class="api-row" id="djibatterykey_create_batteryaggregationkey"><div class="api-col left">Battery AggregationKey</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djibatterykey_create_batteryaggregationkey_inline">keyWithAggregationParam</a></div></div><div class="inline-doc" id="djibatterykey_create_batteryaggregationkey_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">class method </font>keyWithAggregationParam</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithAggregationParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)aggregationParam</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryKey.h</font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Creates a Battery Aggregation key.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSString * <font color="#000">aggregationParam</font></font></td><td><font color="#666"><i>A valid String-formatted key as defined in DJIBatteryKey headers.</i></font></td></tr></table></html>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable instancetype</font></td><td><font color="#666"><i>A valid key object or <code>nil</code> if an error occurred..</i></font></td></tr></table></html></div>
 <h5 id="class-keys">Class Keys:</h5>
 <html><table class="key_table"><tr><td colspan="2"><a href="#djibatterykey_djibatteryparamlevel1cellvoltagebehavior_key"></a><p class="key_table_key_string key_table_key_first_row">DJIBatteryParamLevel1CellVoltageBehavior</p></td></tr><td><p class="key_table_title_string">Access:</p></td><td><p class="key_table_type_string">Get, Set</p></td><tr class="key_table_doc_row"><td><p class="key_table_title_string">Type:</p></td><td><p class="key_table_type_string"><code><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a></code></p></td></tr><td><p class="key_table_title_string">API:</p></td><td><p class="key_table_type_string">
 </p><p><font color="#666"><code><a href="../../Components/Battery/DJIBattery.html#djibattery_setlevel1cellvoltagebehavior">setLevel1CellVoltageBehavior:withCompletion</a></code></font></p>
