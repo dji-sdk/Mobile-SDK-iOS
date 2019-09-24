@@ -90,6 +90,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">DJIFlyingSafetyWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">DJIFlyingSafetySeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">DJIFlyingSafetyTip</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">DJIFlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">DJIFlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
@@ -128,32 +138,20 @@
                   </dd>
           </dl>
           <dl>
-            <dt>Base Classes
+            <dt>Component Classes
             </dt>
-                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">DJIBaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../../BaseClasses/DJIVideoFeeder.html" class="sub-toggle">DJIVideoFeeder<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html">DJIVideoFeed</a>
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
+                                      </dd>
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
                                       </dd>
                               </ul>
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../BaseComponent/DJIBaseComponent.html">DJIBaseComponent</a>
-                  </dd>
-          </dl>
-          <dl>
-            <dt>Product Classes
-            </dt>
-                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">DJIAircraft</a>
-                  </dd>
-                  <dd><a href="../../Products/Handheld/DJIHandheld.html">DJIHandheld</a>
-                  </dd>
-          </dl>
-          <dl>
-            <dt>Component Classes
-            </dt>
                   <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">DJIFlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrentState.html">DJIFlightControllerState</a>
@@ -413,6 +411,30 @@
                             <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a>
                             </dd>
                     </ul>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Base Classes
+            </dt>
+                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">DJIBaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../../BaseClasses/DJIVideoFeeder.html" class="sub-toggle">DJIVideoFeeder<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html">DJIVideoFeed</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../BaseComponent/DJIBaseComponent.html">DJIBaseComponent</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Product Classes
+            </dt>
+                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">DJIAircraft</a>
+                  </dd>
+                  <dd><a href="../../Products/Handheld/DJIHandheld.html">DJIHandheld</a>
                   </dd>
           </dl>
           <dl>
@@ -784,7 +806,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>

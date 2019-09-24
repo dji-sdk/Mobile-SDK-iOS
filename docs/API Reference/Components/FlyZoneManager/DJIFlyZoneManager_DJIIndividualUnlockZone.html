@@ -90,6 +90,16 @@
                             </dd>
                             <dd><a href="" class="active">DJICustomUnlockZone</a>
                             </dd>
+                            <dd><a href="DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">DJIFlyingSafetyWarningInformation</a>
+                            </dd>
+                            <dd><a href="DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">DJIFlyingSafetySeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="DJIFlyZoneManager_DJIFlyingSafetyTip.html">DJIFlyingSafetyTip</a>
+                            </dd>
+                            <dd><a href="DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">DJIFlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="DJIFlyZoneManager_DJIFlySafeNotification.html">DJIFlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
@@ -128,32 +138,20 @@
                   </dd>
           </dl>
           <dl>
-            <dt>Base Classes
+            <dt>Component Classes
             </dt>
-                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">DJIBaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="../../BaseClasses/DJIVideoFeeder.html" class="sub-toggle">DJIVideoFeeder<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html">DJIVideoFeed</a>
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
+                                      </dd>
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
                                       </dd>
                               </ul>
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a href="../BaseComponent/DJIBaseComponent.html">DJIBaseComponent</a>
-                  </dd>
-          </dl>
-          <dl>
-            <dt>Product Classes
-            </dt>
-                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">DJIAircraft</a>
-                  </dd>
-                  <dd><a href="../../Products/Handheld/DJIHandheld.html">DJIHandheld</a>
-                  </dd>
-          </dl>
-          <dl>
-            <dt>Component Classes
-            </dt>
                   <dd><a data-href="../FlightController/DJIFlightController.html" class="sub-toggle">DJIFlightController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightController/DJIFlightController_DJIFlightControllerCurrentState.html">DJIFlightControllerState</a>
@@ -416,6 +414,30 @@
                   </dd>
           </dl>
           <dl>
+            <dt>Base Classes
+            </dt>
+                  <dd><a data-href="../../BaseClasses/DJIBaseProduct.html" class="sub-toggle">DJIBaseProduct<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../../BaseClasses/DJIVideoFeeder.html" class="sub-toggle">DJIVideoFeeder<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html">DJIVideoFeed</a>
+                                      </dd>
+                              </ul>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a href="../BaseComponent/DJIBaseComponent.html">DJIBaseComponent</a>
+                  </dd>
+          </dl>
+          <dl>
+            <dt>Product Classes
+            </dt>
+                  <dd><a href="../../Products/Aircraft/DJIAircraft.html">DJIAircraft</a>
+                  </dd>
+                  <dd><a href="../../Products/Handheld/DJIHandheld.html">DJIHandheld</a>
+                  </dd>
+          </dl>
+          <dl>
             <dt>Mission Classes
             </dt>
                   <dd><a href="../Missions/DJIMissionControl.html">DJIMissionControl</a>
@@ -588,12 +610,22 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The unique ID of the Custom Unlock Zone.</font></p>
 </div>
+<div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_type"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_type_inline">type</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_type_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>type</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICustomUnlockType type</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">The type of custom unlocking.</font></p>
+<h5 id="see-also">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype">DJICustomUnlockType</a></code></font></p>
+</div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_name"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_name_inline">name</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_name_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>name</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span>* name</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v4">Description:</h5>
 <p><font color="#666">Name of the Custom Unlock Zone.</font></p>
 </div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_center"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_center_inline">center</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_center_inline" <blockquote="">
@@ -601,23 +633,47 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> center</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">The coordinate of the Custom Unlock Zone's center.</font></p>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">The coordinate of the Custom Unlock Zone's center. Only used when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djiindividualunlockzone_type">type</a></code>  is <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype_circle">DJICustomUnlockTypeCircle</a></code>.</font></p>
 </div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_radius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_radius_inline">radius</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_radius_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>radius</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> radius</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">The radius of the Custom Unlock Zone in meters.</font></p>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">The radius of the Custom Unlock Zone in meters. Valid when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djiindividualunlockzone_type">type</a></code>  is <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype_circle">DJICustomUnlockTypeCircle</a></code>.</font></p>
+</div>
+<div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_countrycode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_countrycode_inline">countryCode</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_countrycode_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>countryCode</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span>* countryCode</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Check country code (https://www.iso.org/iso-3166-country-codes.html) for the custom unlock zone's shape.  Valid when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djiindividualunlockzone_type">type</a></code> is <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype_country">DJICustomUnlockTypeCountry</a></code>.</font></p>
+</div>
+<div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_maxflightaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_maxflightaltitude_inline">maxFlightAltitude</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_maxflightaltitude_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>maxFlightAltitude</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> maxFlightAltitude</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">The unlocked max flight altitude limit in the custom unlock zone. Valid when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djiindividualunlockzone_type">type</a></code>  is <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype_maxflightaltitudelimit">DJICustomUnlockTypeMaxFlightAltitudeLimit</a></code>.</font></p>
+</div>
+<div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_vertices"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_vertices_inline">vertices</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_vertices_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">property </font>vertices</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSArray</span>&lt;<span class="built_in">NSValue</span> *&gt; *vertices</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">The vertices (locations) that make up the custom unlock zone shape. Only used  when <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djiindividualunlockzone_type">type</a></code> is <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html#djiflyzonemanager_djicustomunlocktype_polygon">DJICustomUnlockTypePolygon</a></code>.</font></p>
 </div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_starttime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_starttime_inline">startTime</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_starttime_inline" <blockquote="">
 <div class="article"><h6><font color="#AAA">property </font>startTime</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span>* startTime</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">The timestamp of when the unlocking begins, formatted in UTC (YYYY-MM-DD hh:mm:ss).  When the time is not available from the server, <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html#djiflyzonemanager_djiflyzoneinformation_invalidtimestamp">DJIFlyZoneInformationInvalidTimestamp</a></code> will be returned.</font></p>
 </div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_endtime"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_endtime_inline">endTime</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_endtime_inline" <blockquote="">
@@ -625,7 +681,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span>* endTime</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">The timestamp of when the unlocking ends, formatted in UTC (YYYY-MM-DD hh:mm:ss).  When the time is not available from the server, <code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIFlyZoneInformation.html#djiflyzonemanager_djiflyzoneinformation_invalidtimestamp">DJIFlyZoneInformationInvalidTimestamp</a></code> will be returned.</font></p>
 </div>
 <div class="api-row" id="djiflyzonemanager_djiindividualunlockzone_isexpired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiindividualunlockzone_isexpired_inline">isExpired</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiindividualunlockzone_isexpired_inline" <blockquote="">
@@ -633,9 +689,19 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isExpired</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666"><code>YES</code> if the Custom Unlock Zone has expired. After a zone is expired,  the location will be locked.</font></p>
 </div>
+<h5 id="related">Related:</h5>
+<div class="api-row" id="djiflyzonemanager_djicustomunlocktype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djicustomunlocktype_inline">DJICustomUnlockType</a></div></div><div class="inline-doc" id="djiflyzonemanager_djicustomunlocktype_inline" <blockquote="">
+<div class="article"><h6><font color="#AAA">enum </font>DJICustomUnlockType</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJICustomUnlockType)</div></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICustomUnlockZone.h</font></td></tr></table></html>
+<h5 id="description-v13">Description:</h5>
+<p><font color="#666">An enum class represents the type of custom unlocking.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djicustomunlocktype_circle_inline"></a>DJICustomUnlockTypeCircle</font></td><td><font color="#666">The custom unlock zone is a circle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djicustomunlocktype_country_inline"></a>DJICustomUnlockTypeCountry</font></td><td><font color="#666">The custom unlock zone is a country.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djicustomunlocktype_maxflightaltitudelimit_inline"></a>DJICustomUnlockTypeMaxFlightAltitudeLimit</font></td><td><font color="#666">Unlock the max flight altitude limit in the custom unlock zone.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djicustomunlocktype_polygon_inline"></a>DJICustomUnlockTypePolygon</font></td><td><font color="#666">The custom unlock zone is a polygon.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiflyzonemanager_djicustomunlocktype_unknown_inline"></a>DJICustomUnlockTypeUnknown</font></td><td><font color="#666">The custom unlock type is unknown.</font></td></tr></table></html></div>
 
         </div>
       </div>
@@ -644,7 +710,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
