@@ -51,6 +51,11 @@ extension ProductCommunicationManager : DJISDKManagerDelegate {
         
     }
     
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        NSLog("Download database : \n%lld/%lld" + progress.completedUnitCount, progress.totalUnitCount)
+    }
+    
+    
     func componentConnected(withKey key: String?, andIndex index: Int) {
         
     }

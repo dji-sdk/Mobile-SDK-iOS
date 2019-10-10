@@ -61,6 +61,11 @@
     }
 }
 
+- (void)didUpdateDatabaseDownloadProgress:(NSProgress *)progress
+{
+    NSLog(@"Download Database:\n%lld/%lld", progress.completedUnitCount, progress.totalUnitCount);
+}
+
 -(void) productConnected:(DJIBaseProduct* _Nullable) product {
     if (product) {
         self.product = product;
