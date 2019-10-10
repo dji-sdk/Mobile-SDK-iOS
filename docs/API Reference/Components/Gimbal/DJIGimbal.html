@@ -90,6 +90,16 @@
                             </dd>
                             <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIIndividualUnlockZone.html">DJICustomUnlockZone</a>
                             </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyWarningInformation.html">DJIFlyingSafetyWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html">DJIFlyingSafetySeriousWarningInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlyingSafetyTip.html">DJIFlyingSafetyTip</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeReturnToHomeInformation.html">DJIFlySafeReturnToHomeInformation</a>
+                            </dd>
+                            <dd><a href="../FlyZoneManager/DJIFlyZoneManager_DJIFlySafeNotification.html">DJIFlySafeNotification</a>
+                            </dd>
                     </ul>
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
@@ -123,6 +133,18 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
+                            </dd>
+                    </ul>
+                  </dd>
+                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
+                                      </dd>
+                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
+                                      </dd>
+                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -716,7 +738,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setPitchRangeExtensionEnabled:(<span class="built_in">BOOL</span>)isEnabled</div><div class="line">                       withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbal.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#djigimbalkey_djigimbalparampitchrangeextensionenabled_key">DJIGimbalKey.DJIGimbalParamPitchRangeExtensionEnabled</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Extends the pitch range of gimbal. If extended, the gimbal's pitch control range can be [-30, 90], otherwise, it's [0, 90]. Use <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_parampitchrangeextensionenabled">DJIGimbalParamPitchRangeExtensionEnabled</a></code> to check if it is supported by the gimbal.</font></p>
+<p><font color="#666">Extends the pitch range of gimbal. If extended, the gimbal's pitch control range can be [-90, 30], otherwise, it's [-90, 0]. Use <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_parampitchrangeextensionenabled">DJIGimbalParamPitchRangeExtensionEnabled</a></code> to check if it is supported by the gimbal.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isEnabled</font></font></td><td><font color="#666"><i>Whether the pitch range should be extended</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbal_getpitchrangeextensionenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_getpitchrangeextensionenabled_inline">getPitchRangeExtensionEnabledWithCompletion</a></div></div><div class="inline-doc" id="djigimbal_getpitchrangeextensionenabled_inline" <blockquote="">
@@ -1495,7 +1517,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header"><a href="javascript:;" @click="closeSearch" class="btn-close">×</a>
-            <h2 class="title"> Search Mobile SDK Document
+            <h2 class="title">Search Mobile SDK Document
             </h2>
             <input type="text" v-model="searchInput" @keydown.enter="search">
           </div>
