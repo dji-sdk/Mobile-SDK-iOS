@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpgradeManagerViewController">
+            <connections>
+                <outlet property="aircraftButton" destination="JuS-7K-SjH" id="S76-y4-kHg"/>
+                <outlet property="remoteControllerButton" destination="XoH-61-vEu" id="v09-L7-WU4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuS-7K-SjH">
+                    <rect key="frame" x="137" y="428" width="140" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Aircraft">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="enterAircraftUpgrade:" destination="-1" eventType="touchUpInside" id="ccC-xk-mBR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoH-61-vEu">
+                    <rect key="frame" x="137" y="388" width="140" height="30"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="DbY-Yr-6o9"/>
+                    </constraints>
+                    <state key="normal" title="Remote Controller">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <state key="disabled">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="enterRemoteControllUpgrade:" destination="-1" eventType="touchUpInside" id="dXb-pQ-cmJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JuS-7K-SjH" firstAttribute="top" secondItem="XoH-61-vEu" secondAttribute="bottom" constant="10" id="JRD-VM-Oz8"/>
+                <constraint firstItem="XoH-61-vEu" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="Uzp-yb-W1a"/>
+                <constraint firstItem="JuS-7K-SjH" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="Xwz-i6-8Hh"/>
+                <constraint firstItem="XoH-61-vEu" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" constant="-50" id="asq-iU-sJh"/>
+                <constraint firstItem="JuS-7K-SjH" firstAttribute="height" secondItem="XoH-61-vEu" secondAttribute="height" id="bPX-6T-vQh"/>
+                <constraint firstItem="JuS-7K-SjH" firstAttribute="width" secondItem="XoH-61-vEu" secondAttribute="width" id="p5I-k7-HpW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="147.99107142857142"/>
+        </view>
+    </objects>
+</document>

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0282DA762129103100D8F1E0 /* DJIDecodeImageCalibrateControlLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 0282DA752129103100D8F1E0 /* DJIDecodeImageCalibrateControlLogic.m */; };
+		045BB6302354559B00131208 /* UpgradeComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BB62B2354559B00131208 /* UpgradeComponentViewController.m */; };
+		045BB6312354559B00131208 /* UpgradeComponentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045BB62C2354559B00131208 /* UpgradeComponentViewController.xib */; };
+		045BB6322354559B00131208 /* UpgradeManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045BB62E2354559B00131208 /* UpgradeManagerViewController.m */; };
+		045BB6332354559B00131208 /* UpgradeManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045BB62F2354559B00131208 /* UpgradeManagerViewController.xib */; };
 		14DC633E219A74DE004399FD /* VideoLiveStreamingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DC633C219A74DD004399FD /* VideoLiveStreamingViewController.m */; };
 		14DC633F219A74DE004399FD /* VideoLiveStreamingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC633D219A74DE004399FD /* VideoLiveStreamingViewController.xib */; };
 		17DB9378E0A50F3F579257CD /* libPods-DJISdkDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0E5C197998E87B3E6956A /* libPods-DJISdkDemo.a */; };
@@ -160,6 +164,12 @@
 /* Begin PBXFileReference section */
 		0282DA742129103000D8F1E0 /* DJIDecodeImageCalibrateControlLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DJIDecodeImageCalibrateControlLogic.h; sourceTree = "<group>"; };
 		0282DA752129103100D8F1E0 /* DJIDecodeImageCalibrateControlLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DJIDecodeImageCalibrateControlLogic.m; sourceTree = "<group>"; };
+		045BB62A2354559B00131208 /* UpgradeComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeComponentViewController.h; sourceTree = "<group>"; };
+		045BB62B2354559B00131208 /* UpgradeComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeComponentViewController.m; sourceTree = "<group>"; };
+		045BB62C2354559B00131208 /* UpgradeComponentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeComponentViewController.xib; sourceTree = "<group>"; };
+		045BB62D2354559B00131208 /* UpgradeManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpgradeManagerViewController.h; sourceTree = "<group>"; };
+		045BB62E2354559B00131208 /* UpgradeManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpgradeManagerViewController.m; sourceTree = "<group>"; };
+		045BB62F2354559B00131208 /* UpgradeManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpgradeManagerViewController.xib; sourceTree = "<group>"; };
 		14DC633B219A74DD004399FD /* VideoLiveStreamingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoLiveStreamingViewController.h; path = Liveview/VideoLiveStreamingViewController.h; sourceTree = "<group>"; };
 		14DC633C219A74DD004399FD /* VideoLiveStreamingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoLiveStreamingViewController.m; path = Liveview/VideoLiveStreamingViewController.m; sourceTree = "<group>"; };
 		14DC633D219A74DE004399FD /* VideoLiveStreamingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoLiveStreamingViewController.xib; path = Liveview/VideoLiveStreamingViewController.xib; sourceTree = "<group>"; };
@@ -398,6 +408,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045BB6282354559B00131208 /* Upgrade */ = {
+			isa = PBXGroup;
+			children = (
+				045BB6292354559B00131208 /* component */,
+				045BB62D2354559B00131208 /* UpgradeManagerViewController.h */,
+				045BB62E2354559B00131208 /* UpgradeManagerViewController.m */,
+				045BB62F2354559B00131208 /* UpgradeManagerViewController.xib */,
+			);
+			path = Upgrade;
+			sourceTree = "<group>";
+		};
+		045BB6292354559B00131208 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				045BB62A2354559B00131208 /* UpgradeComponentViewController.h */,
+				045BB62B2354559B00131208 /* UpgradeComponentViewController.m */,
+				045BB62C2354559B00131208 /* UpgradeComponentViewController.xib */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
 		14DC6339219A74C6004399FD /* LiveView */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +513,7 @@
 		3B16A91A19D1219B008C1818 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				045BB6282354559B00131208 /* Upgrade */,
 				14DC6339219A74C6004399FD /* LiveView */,
 				9CBE86072186DACF00F1B71C /* Accessory */,
 				9CA1F236212D3AF1002AB9D1 /* Payload */,
@@ -1204,6 +1236,7 @@
 				9CBE862E2186F03C00F1B71C /* BeaconViewController.xib in Resources */,
 				9CC4CB86212D3B7F00B267A1 /* PayloadViewController.xib in Resources */,
 				9CBE86742187377F00F1B71C /* SpeakerAudioPlaylistTableViewCell.xib in Resources */,
+				045BB6332354559B00131208 /* UpgradeManagerViewController.xib in Resources */,
 				3B16A8F619D12167008C1818 /* InfoPlist.strings in Resources */,
 				B8AF305E1E8A82D40087AFAF /* CameraPlaybackDownloadViewController.xib in Resources */,
 				A4473E2121427623002895F8 /* DistortionResource.bundle in Resources */,
@@ -1211,6 +1244,7 @@
 				B84049471D780C26001DA2D7 /* BluetoothConnectorViewController.xib in Resources */,
 				B8AF305C1E8A82D40087AFAF /* CameraPlaybackCommandViewController.xib in Resources */,
 				AC341485210BB28100BFBC34 /* RCGimbalControlViewController.xib in Resources */,
+				045BB6312354559B00131208 /* UpgradeComponentViewController.xib in Resources */,
 				B8450C721C3798CC00921E19 /* MissionBaseViewController.xib in Resources */,
 				B8C6CA6E1C3F9AD000CAC10B /* SleepModeViewController.xib in Resources */,
 				9CBE86332186F05100F1B71C /* SpeakerViewController.xib in Resources */,
@@ -1285,7 +1319,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${SRCROOT}/Pods/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework/strip-frameworks.sh\"";
+			shellScript = "bash \"${SRCROOT}/Pods/DJI-SDK-iOS/iOS_Mobile_SDK/DJISDK.framework/strip-frameworks.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1345,6 +1379,7 @@
 				B80CF57E1CC5C40C004358FC /* GimbalCapabilityViewController.m in Sources */,
 				3B2CDD981C3DA20A00DB096B /* RCActionsTableViewController.m in Sources */,
 				AC341484210BB28100BFBC34 /* RCGimbalControlViewController.m in Sources */,
+				045BB6302354559B00131208 /* UpgradeComponentViewController.m in Sources */,
 				14DC633E219A74DE004399FD /* VideoLiveStreamingViewController.m in Sources */,
 				B8AF30541E8A82D40087AFAF /* CameraActionsTableViewController.m in Sources */,
 				B8AF30651E8A82D40087AFAF /* CameraPushInfoViewController.m in Sources */,
@@ -1360,6 +1395,7 @@
 				3B2CDD851C3CC21D00DB096B /* FCCompassViewController.m in Sources */,
 				9CBE865521870D0C00F1B71C /* RecordingHandler.m in Sources */,
 				3B16A8F819D12167008C1818 /* main.m in Sources */,
+				045BB6322354559B00131208 /* UpgradeManagerViewController.m in Sources */,
 				B83731EC1ED3139C00B7AEE9 /* AppActivationViewController.m in Sources */,
 				ACB121061E8B1010006EE2DB /* TimelineMissionViewController.m in Sources */,
 				220836071E83E023003B2365 /* VideoPreviewerSDKAdapter+Lightbridge2.m in Sources */,

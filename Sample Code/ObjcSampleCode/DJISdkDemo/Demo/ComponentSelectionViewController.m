@@ -30,6 +30,7 @@
 #import "PanoramaMissionViewController.h"
 #import "PayloadViewController.h"
 #import "AccessoryAggregationViewController.h"
+#import "UpgradeManagerViewController.h"
 
 #import "KeyedInterfaceViewController.h"
 #import "VideoLiveStreamingViewController.h"
@@ -104,7 +105,10 @@
     if ([DemoComponentHelper fetchAccessoryAggregation]) {
         [components addObject:[DemoSettingItem itemWithName:[DJIAccessoryAggregationComponent capitalizedString] andClass:[AccessoryAggregationViewController class]]];
     }
-
+    if ([DJISDKManager upgradeManager]) {
+        [components addObject:[DemoSettingItem itemWithName:[UpgradeManagerKey capitalizedString] andClass:[UpgradeManagerViewController class]]];
+    }
+    
     [self.items addObject:components];
 }
 

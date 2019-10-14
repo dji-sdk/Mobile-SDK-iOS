@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpgradeComponentViewController">
+            <connections>
+                <outlet property="componentLabel" destination="zLv-IF-Neo" id="JNy-qa-Ll3"/>
+                <outlet property="firmwareState" destination="emB-jg-yoM" id="hMC-3s-9jI"/>
+                <outlet property="versionInfoTextView" destination="O9q-uz-6J1" id="M7L-cY-LZd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firmware State: Not refreshed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emB-jg-yoM">
+                    <rect key="frame" x="0.0" y="54" width="414" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="akZ-ct-dv5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Component: Not refreshed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLv-IF-Neo">
+                    <rect key="frame" x="0.0" y="85" width="414" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="HGi-rq-fsk"/>
+                        <constraint firstAttribute="height" constant="21" id="fCw-Th-oBZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Not refreshed" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9q-uz-6J1">
+                    <rect key="frame" x="10" y="116" width="394" height="736"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="O9q-uz-6J1" secondAttribute="bottom" constant="10" id="4I8-kF-SYU"/>
+                <constraint firstItem="zLv-IF-Neo" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="51q-9y-EUl"/>
+                <constraint firstItem="O9q-uz-6J1" firstAttribute="top" secondItem="zLv-IF-Neo" secondAttribute="bottom" constant="10" id="BrG-SY-bHV"/>
+                <constraint firstItem="O9q-uz-6J1" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="GLM-Tj-y2n"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="O9q-uz-6J1" secondAttribute="trailing" constant="10" id="SOA-xA-NfF"/>
+                <constraint firstItem="zLv-IF-Neo" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="VnF-OS-A9h"/>
+                <constraint firstItem="emB-jg-yoM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="dei-vc-Vig"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="emB-jg-yoM" secondAttribute="trailing" id="ewa-RB-UcL"/>
+                <constraint firstItem="emB-jg-yoM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="l3d-TR-G4H"/>
+                <constraint firstItem="zLv-IF-Neo" firstAttribute="top" secondItem="emB-jg-yoM" secondAttribute="bottom" constant="10" id="yW5-p5-DJ9"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="148"/>
+        </view>
+    </objects>
+</document>
