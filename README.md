@@ -34,7 +34,7 @@ If you install it successfully, you should get the messages similar to the follo
 Analyzing dependencies
 Downloading dependencies
 Installing DJI-SDK-iOS (4.11)
-Installing DJIWidget (1.6.1)
+Installing DJIWidget (1.6.2)
 Installing DJIFlySafeDatabaseResource (01.00.01.17)
 Generating Pods project
 Integrating client project
@@ -67,7 +67,7 @@ One of DJI's aircraft or handheld cameras will be required to run the sample app
 Starting from DJI iOS SDK 4.7, we have replaced the **VideoPreviewer** with **DJIWidget** for video decoding. Please add the following line to your Podfile to install it to your Xcode project:
 
 ~~~
-pod 'DJIWidget', '~> 1.6.1'
+pod 'DJIWidget', '~> 1.6.2'
 ~~~
 
 ## Development Workflow 
