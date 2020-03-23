@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -382,15 +378,13 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
                             </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
-                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="DJIHandheldController.html" class="sub-toggle">DJIHandheldController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="DJIHandheldController_DJIHandheldControllerHardwareState.html">DJIHandheldControllerHardwareState</a>
                             </dd>
-                            <dd><a data-href="" class="sub-toggle">DJIHandheldControllerLEDCommand<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href class="sub-toggle">DJIHandheldControllerLEDCommand<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIHandheldController_DJIHandheldControllerLEDCommand_DJIHandheldControllerLEDColorPattern.html">DJIHandheldControllerLEDColorPattern</a>
                                       </dd>
@@ -597,35 +591,35 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIHandheldControllerLEDCommand</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHandheldControllerLEDCommand</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHandheldControllerLEDCommand</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheldControllerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Command used to control different colors (red, green and blue) of the handheld controller's LED.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_red"><div class="api-col left">Color</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_red_inline">red</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_red_inline" <blockquote="">
+<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_red"><div class="api-col left">Color</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_red_inline">red</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_red_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>red</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *red</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *red</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheldControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Pattern to control the red color.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand_DJIHandheldControllerLEDColorPattern.html#djihandheldcontroller_djihandheldcontrollerledcommand_djihandheldcontrollerledcolorpattern">DJIHandheldControllerLEDColorPattern</a></code></font></p>
 </div>
-<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_green"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_green_inline">green</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_green_inline" <blockquote="">
+<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_green"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_green_inline">green</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_green_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>green</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *green</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *green</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheldControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Pattern to control the green color.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/HandheldController/DJIHandheldController_DJIHandheldControllerLEDCommand_DJIHandheldControllerLEDColorPattern.html#djihandheldcontroller_djihandheldcontrollerledcommand_djihandheldcontrollerledcolorpattern">DJIHandheldControllerLEDColorPattern</a></code></font></p>
 </div>
-<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_blue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_blue_inline">blue</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_blue_inline" <blockquote="">
+<div class="api-row" id="djihandheldcontroller_djihandheldcontrollerledcommand_blue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheldcontroller_djihandheldcontrollerledcommand_blue_inline">blue</a></div></div><div class="inline-doc" id="djihandheldcontroller_djihandheldcontrollerledcommand_blue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>blue</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *blue</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>) DJIHandheldControllerLEDColorPattern *blue</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheldControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Pattern to control the blue color.</font></p>

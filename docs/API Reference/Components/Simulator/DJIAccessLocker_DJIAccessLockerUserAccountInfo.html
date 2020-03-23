@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -232,7 +226,7 @@
                               <ul class="sub-menu">
                                       <dd><a href="DJIAccessLocker_DJIAccessLockerFormattingState.html">DJIAccessLockerFormattingState</a>
                                       </dd>
-                                      <dd><a href="" class="active">DJIAccessLockerUserAccountInfo</a>
+                                      <dd><a href class="active">DJIAccessLockerUserAccountInfo</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,31 +591,31 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIAccessLockerUserAccountInfo</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAccessLockerUserAccountInfo</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAccessLockerUserAccountInfo</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The class represents the user account information of the access locker.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_username"><div class="api-col left">User Name</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_username_inline">username</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_username_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_username"><div class="api-col left">User Name</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_username_inline">username</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_username_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>username</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *username</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *username</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The user name.</font></p>
 </div>
-<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode"><div class="api-col left">Security Code</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode_inline">securityCode</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode"><div class="api-col left">Security Code</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode_inline">securityCode</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_securitycode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>securityCode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *securityCode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *securityCode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The security code of the account.</font></p>
 </div>
-<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername"><div class="api-col left">Initialize</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername_inline">initWithUserName:securityCode</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername"><div class="api-col left">Initialize</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername_inline">initWithUserName:securityCode</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockeruseraccountinfo_initwithusername_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>initWithUserName:securityCode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">instancetype</span>)initWithUserName:(<span class="built_in">NSString</span> *)username securityCode:(<span class="built_in">NSString</span> *)securityCode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">instancetype</span>)initWithUserName:(<span class="built_in">NSString</span> *)username securityCode:(<span class="built_in">NSString</span> *)securityCode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Constructor method for the UserAccountInfo.</font></p>

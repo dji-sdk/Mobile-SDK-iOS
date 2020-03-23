@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -374,15 +370,13 @@
                             </dd>
                             <dd><a href="DJIRemoteController_DJIRCButtonConfiguration.html">DJIRCButtonConfiguration</a>
                             </dd>
-                            <dd><a href="" class="active">DJIMutableRCButtonConfiguration</a>
+                            <dd><a href class="active">DJIMutableRCButtonConfiguration</a>
                             </dd>
                             <dd><a href="DJIRemoteController_DJIRCCalibrationComponentState.html">DJIRCCalibrationComponentState</a>
                             </dd>
                             <dd><a href="DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,176 +591,176 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIMutableRCButtonConfiguration</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIMutableRCButtonConfiguration</span> : <span class="title">DJIRCButtonConfiguration</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIMutableRCButtonConfiguration</span> : <span class="title">DJIRCButtonConfiguration</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html#djiremotecontroller_djircbuttonconfiguration">DJIRCButtonConfiguration</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The mutable configuration for the customizable buttons on the remote controller. For the compatibility with DJI Go, there are rules to follow when assigning an action to a button. Refer to <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCButtonConfiguration.html#djiremotecontroller_djircbuttonconfiguration_getvalidactionsforbutton">getValidActionsForButton</a></code> for more detail.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="customize-rc">Customize RC</h4>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c1action"><div class="api-col left">Mutable Button Configuration</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c1action_inline">C1Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c1action_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c1action"><div class="api-col left">Mutable Button Configuration</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c1action_inline">C1Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c1action_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>C1Action</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C1Action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C1Action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Action bound to the C1 button.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c2action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c2action_inline">C2Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c2action_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c2action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c2action_inline">C2Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c2action_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>C2Action</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C2Action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C2Action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Action bound to the C2 button.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c3action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c3action_inline">C3Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c3action_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c3action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c3action_inline">C3Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c3action_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>C3Action</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C3Action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C3Action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Action bound to the C3 button.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c4action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c4action_inline">C4Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c4action_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_c4action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_c4action_inline">C4Action</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_c4action_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>C4Action</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C4Action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction C4Action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Action bound to the C4 button.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_baaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_baaction_inline">BAAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_baaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_baaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_baaction_inline">BAAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_baaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BAAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BAAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BAAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Action bound to the BA button.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bbaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bbaction_inline">BBAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bbaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bbaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bbaction_inline">BBAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bbaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BBAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BBAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BBAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Action bound to the BB button.</font></p>
 <h5 id="see-also-v6">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bcaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bcaction_inline">BCAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bcaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bcaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bcaction_inline">BCAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bcaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BCAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BCAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BCAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Action bound to the BC button.</font></p>
 <h5 id="see-also-v7">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bdaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bdaction_inline">BDAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bdaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bdaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bdaction_inline">BDAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bdaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BDAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BDAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BDAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Action bound to the BD button.</font></p>
 <h5 id="see-also-v8">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_beaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_beaction_inline">BEAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_beaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_beaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_beaction_inline">BEAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_beaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BEAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BEAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BEAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Action bound to the BE button.</font></p>
 <h5 id="see-also-v9">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bfaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bfaction_inline">BFAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bfaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bfaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bfaction_inline">BFAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bfaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BFAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BFAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BFAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Action bound to the BF button.</font></p>
 <h5 id="see-also-v10">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bgaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bgaction_inline">BGAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bgaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bgaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bgaction_inline">BGAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bgaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BGAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BGAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BGAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Action bound to the BG button.</font></p>
 <h5 id="see-also-v11">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bhaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bhaction_inline">BHAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bhaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_bhaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_bhaction_inline">BHAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_bhaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>BHAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BHAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction BHAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Action bound to the BH button.</font></p>
 <h5 id="see-also-v12">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_tdaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_tdaction_inline">TDAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_tdaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_tdaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_tdaction_inline">TDAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_tdaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>TDAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction TDAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction TDAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Action bound to the TD button.</font></p>
 <h5 id="see-also-v13">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_menuaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_menuaction_inline">MENUAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_menuaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_menuaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_menuaction_inline">MENUAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_menuaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>MENUAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction MENUAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction MENUAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Action bound to the MENU button.</font></p>
 <h5 id="see-also-v14">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_lsaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_lsaction_inline">LSAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_lsaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_lsaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_lsaction_inline">LSAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_lsaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>LSAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction LSAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction LSAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Action bound to the LS button.</font></p>
 <h5 id="see-also-v15">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_rsaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_rsaction_inline">RSAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_rsaction_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_rsaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_rsaction_inline">RSAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_rsaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>RSAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction RSAction</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIRCButtonAction RSAction</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Action bound to the RS button.</font></p>
 <h5 id="see-also-v16">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircbuttonaction">DJIRCButtonAction</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_configbutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_configbutton_inline">configButton:withAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_configbutton_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djimutablercbuttonconfiguration_configbutton"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djimutablercbuttonconfiguration_configbutton_inline">configButton:withAction</a></div></div><div class="inline-doc" id="djiremotecontroller_djimutablercbuttonconfiguration_configbutton_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>configButton:withAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)configButton:(DJIRCCustomizableButton)button withAction:(DJIRCButtonAction)action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)configButton:(DJIRCCustomizableButton)button withAction:(DJIRCButtonAction)action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Configures a button with an action.</font></p>

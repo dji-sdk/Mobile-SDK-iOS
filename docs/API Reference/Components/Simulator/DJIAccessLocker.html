@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -228,7 +222,7 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="" class="sub-toggle">DJIAccessLocker<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href class="sub-toggle">DJIAccessLocker<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIAccessLocker_DJIAccessLockerFormattingState.html">DJIAccessLockerFormattingState</a>
                                       </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,146 +591,146 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIAccessLocker</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAccessLocker</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIAccessLocker</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The Access Locker provides methods to control the permission to access the aircraft. For an aircraft with advanced security features, the aircraft is  locked after a user account is set up: the storage is not accessible; the live view is not available; the aircraft cannot take off. The user can unlock  the aircraft with the security code to access all features of the aircraft. The security code is encrypted in the aircraft. DJI will not be able to fetch  the security code. If the security code is forgotten, the user has to format the storage to reset the protection system. All the files in the internal  storage and the user account information will be deleted. The Access Locker is only supported by Mavic 2 Enterprise.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiaccesslocker_delegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djiaccesslocker_delegate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_delegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djiaccesslocker_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIAccessLockerDelegate&gt; delegate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIAccessLockerDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Delegate that receives the information sent by the Access Locker.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerdelegate">DJIAccessLockerDelegate</a></code></font></p>
 </div>
-<div class="api-row" id="djiaccesslocker_state"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_state_inline">state</a></div></div><div class="inline-doc" id="djiaccesslocker_state_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_state"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_state_inline">state</a></div></div><div class="inline-doc" id="djiaccesslocker_state_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>state</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIAccessLockerState state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIAccessLockerState state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The latest state of the Access Locker.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate">DJIAccessLockerState</a></code></font></p>
 </div>
-<div class="api-row" id="djiaccesslocker_formattingstate"><div class="api-col left">Formatting State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_formattingstate_inline">formattingState</a></div></div><div class="inline-doc" id="djiaccesslocker_formattingstate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_formattingstate"><div class="api-col left">Formatting State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_formattingstate_inline">formattingState</a></div></div><div class="inline-doc" id="djiaccesslocker_formattingstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>formattingState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIAccessLockerFormattingState *formattingState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIAccessLockerFormattingState *formattingState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The latest formatting state of the Access Locker.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerFormattingState.html#djiaccesslocker_djiaccesslockerformattingstate">DJIAccessLockerFormattingState</a></code></font></p>
 </div>
-<div class="api-row" id="djiaccesslocker_getversion"><div class="api-col left">Get Version</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_getversion_inline">getVersionWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_getversion_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_getversion"><div class="api-col left">Get Version</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_getversion_inline">getVersionWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_getversion_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getVersionWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getVersionWithCompletion:(<span class="keyword">void</span> (^_Nullable)(<span class="built_in">NSUInteger</span> version, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getVersionWithCompletion:(<span class="keyword">void</span> (^_Nullable)(<span class="built_in">NSUInteger</span> version, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The version of the security feature.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">version</font></font></td><td><font color="#666"><i>Version of the security feature.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nullable)(NSUInteger version, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_getusername"><div class="api-col left">Get User Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_getusername_inline">getUsernameWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_getusername_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_getusername"><div class="api-col left">Get User Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_getusername_inline">getUsernameWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_getusername_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUsernameWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getUsernameWithCompletion:(<span class="keyword">void</span> (^_Nullable)(<span class="built_in">NSString</span> *userName, <span class="built_in">NSError</span> *_Nullable error))completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getUsernameWithCompletion:(<span class="keyword">void</span> (^_Nullable)(<span class="built_in">NSString</span> *userName, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Returns the username of the current Access Locker account.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">userName</font></font></td><td><font color="#666"><i>User name of the current Access Locker account.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nullable)(NSString *userName, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_setupuseraccount"><div class="api-col left">Set Up User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_setupuseraccount_inline">setUpUserAccount:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_setupuseraccount_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_setupuseraccount"><div class="api-col left">Set Up User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_setupuseraccount_inline">setUpUserAccount:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_setupuseraccount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setUpUserAccount:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setUpUserAccount:(DJIAccessLockerUserAccountInfo *)account withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setUpUserAccount:(DJIAccessLockerUserAccountInfo *)account withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Sets up a user account to enable the access protection of  the aircraft. After setting up a user account, the security  code of the user is required in each power-cycle of the  aircraft or the aircraft is just paired with the remote  controller. The security code is also required to access  data in the aircraft through DJI Assistant 2. This method  is only valid when the state is <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_notinitialized">DJIAccessLockerStateNotInitialized</a></code>. If  the method executes successfully, the state will change  to <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_unlocked">DJIAccessLockerStateUnlocked</a></code>.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html#djiaccesslocker_djiaccesslockeruseraccountinfo">DJIAccessLockerUserAccountInfo</a> * <font color="#000">account</font></font></td><td><font color="#666"><i>User account info to be set to the Access Locker system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_login"><div class="api-col left">Login</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_login_inline">login:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_login_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_login"><div class="api-col left">Login</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_login_inline">login:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_login_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>login:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)login:(DJIAccessLockerUserAccountInfo *)account withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)login:(DJIAccessLockerUserAccountInfo *)account withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Logs in to unlock the access protection of the aircraft.  This method is valid when the state is <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_locked">DJIAccessLockerStateLocked</a></code>.  If the user is logged in successfully, the state will change to <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_unlocked">DJIAccessLockerStateUnlocked</a></code>.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html#djiaccesslocker_djiaccesslockeruseraccountinfo">DJIAccessLockerUserAccountInfo</a> * <font color="#000">account</font></font></td><td><font color="#666"><i>User account info to be set to the Access Locker system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_modifyuseraccount"><div class="api-col left">Modify User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_modifyuseraccount_inline">modifyUserAccount:newUserAccountInfo:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_modifyuseraccount_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_modifyuseraccount"><div class="api-col left">Modify User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_modifyuseraccount_inline">modifyUserAccount:newUserAccountInfo:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_modifyuseraccount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>modifyUserAccount:newUserAccountInfo:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)modifyUserAccount:(DJIAccessLockerUserAccountInfo *)currentAccountInfo newUserAccountInfo:(DJIAccessLockerUserAccountInfo *)newUserAccountInfo withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)modifyUserAccount:(DJIAccessLockerUserAccountInfo *)currentAccountInfo newUserAccountInfo:(DJIAccessLockerUserAccountInfo *)newUserAccountInfo withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Modifies the user account. The old user account information will be overridden  by the new one. This method is valid when the state is  either <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_unlocked">DJIAccessLockerStateUnlocked</a></code>  or <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_locked">DJIAccessLockerStateLocked</a></code>. If the user account is  modified, the aircraft will be unlocked and the state will change  to <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_unlocked">DJIAccessLockerStateUnlocked</a></code>.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html#djiaccesslocker_djiaccesslockeruseraccountinfo">DJIAccessLockerUserAccountInfo</a> * <font color="#000">currentAccountInfo</font></font></td><td><font color="#666"><i>Current user account info to be set to the Access Locker system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html#djiaccesslocker_djiaccesslockeruseraccountinfo">DJIAccessLockerUserAccountInfo</a> * <font color="#000">newUserAccountInfo</font></font></td><td><font color="#666"><i>New user account info to be set to the Access Locker system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_resetuseraccount"><div class="api-col left">Reset User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_resetuseraccount_inline">resetUserAccount:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_resetuseraccount_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_resetuseraccount"><div class="api-col left">Reset User Account</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_resetuseraccount_inline">resetUserAccount:withCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_resetuseraccount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>resetUserAccount:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)resetUserAccount:(DJIAccessLockerUserAccountInfo *)userAccountInfo withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)resetUserAccount:(DJIAccessLockerUserAccountInfo *)userAccountInfo withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Resets the user account to disable the protection. The user account information (e.g.  user name, security code) will be deleted and the aircraft is accessible without  validating the user. This method is valid when the state is either <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_unlocked">DJIAccessLockerStateUnlocked</a></code>  or <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_locked">DJIAccessLockerStateLocked</a></code>. If the user account is reset, the state will change  to <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_notinitialized">DJIAccessLockerStateNotInitialized</a></code>.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html#djiaccesslocker_djiaccesslockeruseraccountinfo">DJIAccessLockerUserAccountInfo</a> * <font color="#000">userAccountInfo</font></font></td><td><font color="#666"><i>User account info to be set to the Access Locker system.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_format"><div class="api-col left">Format</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_format_inline">formatWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_format_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_format"><div class="api-col left">Format</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_format_inline">formatWithCompletion</a></div></div><div class="inline-doc" id="djiaccesslocker_format_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>formatWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)formatWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)formatWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Formats the protected data in the aircraft, including data in the internal storage and the user account information.  This method is only valid when the user account is set up. Use <code><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerFormattingState.html#djiaccesslocker_djiaccesslockerformattingstate">DJIAccessLockerFormattingState</a></code>  to check the progress of formatting.  When formatting is done, the state will change to <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate_notinitialized">DJIAccessLockerStateNotInitialized</a></code>.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiaccesslocker_djiaccesslockerdelegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerdelegate_inline">DJIAccessLockerDelegate</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerdelegate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockerdelegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerdelegate_inline">DJIAccessLockerDelegate</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerdelegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIAccessLockerDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIAccessLockerDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIAccessLockerDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Define the state of Access Locker.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djiaccesslocker_didupdatestate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_didupdatestate_inline">accessLocker:didUpdateState</a></div></div><div class="inline-doc" id="djiaccesslocker_didupdatestate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_didupdatestate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_didupdatestate_inline">accessLocker:didUpdateState</a></div></div><div class="inline-doc" id="djiaccesslocker_didupdatestate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>accessLocker:didUpdateState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)accessLocker:(DJIAccessLocker *)accessLocker didUpdateState:(DJIAccessLockerState)state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)accessLocker:(DJIAccessLocker *)accessLocker didUpdateState:(DJIAccessLockerState)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Delegate method to receive the latest state of the Access Locker.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker">DJIAccessLocker</a> * <font color="#000">accessLocker</font></font></td><td><font color="#666"><i>The Access Locker that updates the state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker_djiaccesslockerstate">DJIAccessLockerState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker">DJIAccessLocker</a></code> state.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_didupdateformattingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_didupdateformattingstate_inline">accessLocker:didUpdateFormattingState</a></div></div><div class="inline-doc" id="djiaccesslocker_didupdateformattingstate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_didupdateformattingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_didupdateformattingstate_inline">accessLocker:didUpdateFormattingState</a></div></div><div class="inline-doc" id="djiaccesslocker_didupdateformattingstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>accessLocker:didUpdateFormattingState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)accessLocker:(DJIAccessLocker *)accessLocker didUpdateFormattingState:(DJIAccessLockerFormattingState *)state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)accessLocker:(DJIAccessLocker *)accessLocker didUpdateFormattingState:(DJIAccessLockerFormattingState *)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLocker.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Delegate method to receive the latest formatting state.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker">DJIAccessLocker</a> * <font color="#000">accessLocker</font></font></td><td><font color="#666"><i>The Access Locker that updates the state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerFormattingState.html#djiaccesslocker_djiaccesslockerformattingstate">DJIAccessLockerFormattingState</a> * <font color="#000">state</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/Simulator/DJIAccessLocker.html#djiaccesslocker">DJIAccessLocker</a></code> formatting state.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djiaccesslocker_djiaccesslockerformattingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerFormattingState.html">DJIAccessLockerFormattingState</a></div></div><div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html">DJIAccessLockerUserAccountInfo</a></div></div><div class="api-row" id="djiaccesslocker_djiaccesslockerstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerstate_inline">DJIAccessLockerState</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerstate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockerformattingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerFormattingState.html">DJIAccessLockerFormattingState</a></div></div><div class="api-row" id="djiaccesslocker_djiaccesslockeruseraccountinfo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Simulator/DJIAccessLocker_DJIAccessLockerUserAccountInfo.html">DJIAccessLockerUserAccountInfo</a></div></div><div class="api-row" id="djiaccesslocker_djiaccesslockerstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerstate_inline">DJIAccessLockerState</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIAccessLockerState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIAccessLockerState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIAccessLockerState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">The aircraft's access locker state.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiaccesslocker_djiaccesslockerstate_notinitialized_inline"></a>DJIAccessLockerStateNotInitialized</font></td><td><font color="#666">The access locker is not initialized. Set up user account to initialize the system.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccesslocker_djiaccesslockerstate_locked_inline"></a>DJIAccessLockerStateLocked</font></td><td><font color="#666">The aircraft is locked and protected. In this state, the internal  storage cannot be accessed, the aircraft will stop streaming the  live view and the aircraft cannot take off. Use the Security Code  to unlock the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccesslocker_djiaccesslockerstate_unlocked_inline"></a>DJIAccessLockerStateUnlocked</font></td><td><font color="#666">The aircraft is unlocked.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiaccesslocker_djiaccesslockerstate_unknown_inline"></a>DJIAccessLockerStateUnknown</font></td><td><font color="#666">Either the aircraft is disconnected or the connected product does not  support the access locker.</font></td></tr></table></html></div>
-<div class="api-row" id="djiaccesslocker_djiaccesslockerformattingprogressstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerformattingprogressstate_inline">DJIAccessLockerFormattingProgressState</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerformattingprogressstate_inline" <blockquote="">
+<div class="api-row" id="djiaccesslocker_djiaccesslockerformattingprogressstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiaccesslocker_djiaccesslockerformattingprogressstate_inline">DJIAccessLockerFormattingProgressState</a></div></div><div class="inline-doc" id="djiaccesslocker_djiaccesslockerformattingprogressstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIAccessLockerFormattingProgressState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIAccessLockerFormattingProgressState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIAccessLockerFormattingProgressState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIAccessLockerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">The aircraft's access locker formatting progress state.</font></p>

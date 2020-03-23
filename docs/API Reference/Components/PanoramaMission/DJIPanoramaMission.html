@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,25 +591,25 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIPanoramaMission</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPanoramaMission</span> : <span class="title">DJIMission</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPanoramaMission</span> : <span class="title">DJIMission</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Mission/DJIMission.html#djimission">DJIMission</a></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">During a Panorama Mission, the user can rotate the camera 360 or 180 degrees to take several photos, and  then download the photos to render a panorama. In full circle mode, 8 photos are taken. In half circle  mode, 5 photos are taken. Commands cannot be sent to the camera until the mission is finished. The Panorama  Mission does not support the image stitching feature, so the images must be stitched manually. All the  images will be stored on the SD card. Panorama Mission is only supported by Osmo with X3 camera and Z3 camera.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djipanoramamission_panoramamode"><div class="api-col left">Panorama Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_panoramamode_inline">panoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_panoramamode_inline" <blockquote="">
+<div class="api-row" id="djipanoramamission_panoramamode"><div class="api-col left">Panorama Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_panoramamode_inline">panoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_panoramamode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>panoramaMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPanoramaMode panoramaMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPanoramaMode panoramaMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission_panoramaMode</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the current panorama mode of this mission.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/PanoramaMission/DJIPanoramaMission.html#djipanoramamission_djipanoramamode">DJIPanoramaMode</a></code></font></p>
 </div>
-<div class="api-row" id="djipanoramamission_initwithpanoramamode"><div class="api-col left">Init Mission with Panorama Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_initwithpanoramamode_inline">initWithPanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_initwithpanoramamode_inline" <blockquote="">
+<div class="api-row" id="djipanoramamission_initwithpanoramamode"><div class="api-col left">Init Mission with Panorama Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_initwithpanoramamode_inline">initWithPanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_initwithpanoramamode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>initWithPanoramaMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">id</span>)initWithPanoramaMode:(DJIPanoramaMode)mode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">id</span>)initWithPanoramaMode:(DJIPanoramaMode)mode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission_initWithPanoramaMode</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Initializer for the Panorama mission object with panorama mode.</font></p>
@@ -623,20 +617,20 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/PanoramaMission/DJIPanoramaMission.html#djipanoramamission_djipanoramamode">DJIPanoramaMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/PanoramaMission/DJIPanoramaMission.html#djipanoramamission_djipanoramamode">DJIPanoramaMode</a></code>.</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id</font></td><td><font color="#666"><i>A <code><a href="../../Components/PanoramaMission/DJIPanoramaMission.html#djipanoramamission">DJIPanoramaMission</a></code> object initialized with the <code><a href="../../Components/PanoramaMission/DJIPanoramaMission.html#djipanoramamission_djipanoramamode">DJIPanoramaMode</a></code> Enum value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipanoramamission_getpanoramamediafile"><div class="api-col left">Get Panorama Media File</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_getpanoramamediafile_inline">getPanoramaMediaFileWithCompletion</a></div></div><div class="inline-doc" id="djipanoramamission_getpanoramamediafile_inline" <blockquote="">
+<div class="api-row" id="djipanoramamission_getpanoramamediafile"><div class="api-col left">Get Panorama Media File</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_getpanoramamediafile_inline">getPanoramaMediaFileWithCompletion</a></div></div><div class="inline-doc" id="djipanoramamission_getpanoramamediafile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPanoramaMediaFileWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getPanoramaMediaFileWithCompletion:(<span class="keyword">void</span> (^)(DJIMediaFile *_Nullable panoMedia, <span class="built_in">NSError</span> *_Nullable error))block</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getPanoramaMediaFileWithCompletion:(<span class="keyword">void</span> (^)(DJIMediaFile *_Nullable panoMedia, <span class="built_in">NSError</span> *_Nullable error))block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission_getPanoramaMediaFile</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Retrieves the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a></code> object for the recently finished panorama mission. Use  the <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchsubmediafilelist">fetchSubMediaFileListWithCompletion</a></code> method on the retrieved <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a></code> to retrieve  the panorama photos.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a> *_Nullable <font color="#000">panoMedia</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a></code> object.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(<a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a> *_Nullable panoMedia, NSError *_Nullable error) <font color="#000">block</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djipanoramamission_djipanoramamissionstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/PanoramaMission/DJIPanoramaMission_DJIPanoramaMissionStatus.html">DJIPanoramaMissionStatus</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_djipanoramamode_inline">DJIPanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_djipanoramamode_inline" <blockquote="">
+<div class="api-row" id="djipanoramamission_djipanoramamissionstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/PanoramaMission/DJIPanoramaMission_DJIPanoramaMissionStatus.html">DJIPanoramaMissionStatus</a></div></div><div class="api-row" id="djipanoramamission_djipanoramamode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipanoramamission_djipanoramamode_inline">DJIPanoramaMode</a></div></div><div class="inline-doc" id="djipanoramamission_djipanoramamode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIPanoramaMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIPanoramaMode)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIPanoramaMode)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIPanoramaMission_DJIPanoramaMode</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Defines options for different types of modes for panorama mission.</font></p>

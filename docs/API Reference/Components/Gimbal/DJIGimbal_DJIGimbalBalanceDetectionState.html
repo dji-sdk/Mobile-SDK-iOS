@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,88 +591,112 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIGimbalBalanceDetectionState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalBalanceDetectionState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalBalanceDetectionState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides current balance detection information of the gimbal.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus"><div class="api-col left">Balance Detection Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus_inline">balanceDetectionStatus</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus"><div class="api-col left">Balance Detection Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus_inline">balanceDetectionStatus</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_balancedetectionstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>balanceDetectionStatus</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalBalanceDetectionProgressStatus balanceDetectionStatus</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalBalanceDetectionProgressStatus balanceDetectionStatus</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The balance detection status.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalbalancedetectionprogressstatus">DJIGimbalBalanceDetectionProgressStatus</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonpitch"><div class="api-col left">Result On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonpitch_inline">resultOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonpitch_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonpitch"><div class="api-col left">Result On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonpitch_inline">resultOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonpitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>resultOnPitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnPitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnPitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gimbal balance detection result on pitch.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldetectionresultonaxis">DJIGimbalDetectionResultOnAxis</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonroll"><div class="api-col left">Result On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonroll_inline">resultOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonroll_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonroll"><div class="api-col left">Result On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonroll_inline">resultOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonroll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>resultOnRoll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnRoll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnRoll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gimbal balance detection result on roll.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldetectionresultonaxis">DJIGimbalDetectionResultOnAxis</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonyaw"><div class="api-col left">Result On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonyaw_inline">resultOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonyaw_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_resultonyaw"><div class="api-col left">Result On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_resultonyaw_inline">resultOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_resultonyaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>resultOnYaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnYaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDetectionResultOnAxis resultOnYaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Gimbal balance detection result on yaw.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldetectionresultonaxis">DJIGimbalDetectionResultOnAxis</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch"><div class="api-col left">Direction Adjustment State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch_inline">directionAdjustmentStateOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch"><div class="api-col left">Direction Adjustment State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch_inline">directionAdjustmentStateOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonpitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>directionAdjustmentStateOnPitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnPitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnPitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Direction adjustment state on Pitch.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalDirectionState.html#djigimbal_djigimbaldirectionstate">DJIGimbalDirectionState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll_inline">directionAdjustmentStateOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll_inline">directionAdjustmentStateOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonroll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>directionAdjustmentStateOnRoll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnRoll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnRoll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Direction adjustment state on roll.</font></p>
 <h5 id="see-also-v6">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalDirectionState.html#djigimbal_djigimbaldirectionstate">DJIGimbalDirectionState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw_inline">directionAdjustmentStateOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw_inline">directionAdjustmentStateOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_directionadjustmentstateonyaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>directionAdjustmentStateOnYaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnYaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionState *directionAdjustmentStateOnYaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Direction adjustment state on yaw.</font></p>
 <h5 id="see-also-v7">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalDirectionState.html#djigimbal_djigimbaldirectionstate">DJIGimbalDirectionState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_progress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_progress_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_progress"><div class="api-col left">Progress</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_progress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>progress</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> progress</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> progress</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Gimbal's balance detection progress percentage.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_isaircraftstabilitysatisfied"><div class="api-col left">Check if Aircraft Stability Satisfied</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_isaircraftstabilitysatisfied_inline">isAircraftStabilitySatisfied</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_isaircraftstabilitysatisfied_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isAircraftStabilitySatisfied</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isAircraftStabilitySatisfied</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666"><code>NO</code> if aircraft stability does not meet requirements.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_isaircraftmotoron"><div class="api-col left">Check if Aircraft Motor On</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_isaircraftmotoron_inline">isAircraftMotorOn</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_isaircraftmotoron_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isAircraftMotorOn</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isAircraftMotorOn</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Turn off aircraft motor and run balance detection again if this is <code>YES</code>.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalbalancedetectionstate_isgimbalmotoroverloaded"><div class="api-col left">Check if Gimbal Motor Overloaded</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalbalancedetectionstate_isgimbalmotoroverloaded_inline">isGimbalMotorOverloaded</a></div></div><div class="inline-doc" id="djigimbal_djigimbalbalancedetectionstate_isgimbalmotoroverloaded_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isGimbalMotorOverloaded</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isGimbalMotorOverloaded</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBalanceDetectionState.h</font></td></tr></table></html>
+<h5 id="description-v12">Description:</h5>
+<p><font color="#666"><code>YES</code> if the gimbal motor is overloaded. Unable to test normally.</font></p>
 </div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djigimbal_djigimbaldirectionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalDirectionState.html">DJIGimbalDirectionState</a></div></div>

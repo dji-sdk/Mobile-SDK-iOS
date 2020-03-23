@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -104,11 +104,17 @@
                   </dd>
                   <dd><a href="../AppActivationManager/DJIAppActivationManager.html">DJIAppActivationManager</a>
                   </dd>
-                  <dd><a href="" class="active">DJIUserAccountManager</a>
+                  <dd><a href class="active">DJIUserAccountManager</a>
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
+                  </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,61 +591,61 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIUserAccountManager</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIUserAccountManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIUserAccountManager</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Class used to manage the DJI account.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiuseraccountmanager_loggedindjiuseraccountname"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_loggedindjiuseraccountname_inline">loggedInDJIUserAccountName</a></div></div><div class="inline-doc" id="djiuseraccountmanager_loggedindjiuseraccountname_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_loggedindjiuseraccountname"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_loggedindjiuseraccountname_inline">loggedInDJIUserAccountName</a></div></div><div class="inline-doc" id="djiuseraccountmanager_loggedindjiuseraccountname_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>loggedInDJIUserAccountName</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *loggedInDJIUserAccountName</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *loggedInDJIUserAccountName</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The name of the currently logged in user account.  It is <code>nil</code>  if <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_getuseraccountstate">userAccountState</a></code> is either:   <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate_notloggedin">DJIUserAccountStateNotLoggedIn</a></code>,  <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate_tokenoutofdate">DJIUserAccountStateTokenOutOfDate</a></code>  or <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate_unknown">DJIUserAccountStateUnknown</a></code>.</font></p>
 </div>
-<div class="api-row" id="djiuseraccountmanager_getuseraccountstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_getuseraccountstate_inline">userAccountState</a></div></div><div class="inline-doc" id="djiuseraccountmanager_getuseraccountstate_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_getuseraccountstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_getuseraccountstate_inline">userAccountState</a></div></div><div class="inline-doc" id="djiuseraccountmanager_getuseraccountstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>userAccountState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIUserAccountState userAccountState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIUserAccountState userAccountState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Current state of DJI user account.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate">DJIUserAccountState</a></code></font></p>
 </div>
-<div class="api-row" id="djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired_inline">logIntoDJIUserAccountWithAuthorizationRequired:withCompletion</a></div></div><div class="inline-doc" id="djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired_inline">logIntoDJIUserAccountWithAuthorizationRequired:withCompletion</a></div></div><div class="inline-doc" id="djiuseraccountmanager_logintodjiuseraccountwithauthorizationrequired_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>logIntoDJIUserAccountWithAuthorizationRequired:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)logIntoDJIUserAccountWithAuthorizationRequired:(<span class="built_in">BOOL</span>)authorizationRequired</div><div class="line">                                       withCompletion:(DJIAccountStateCompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)logIntoDJIUserAccountWithAuthorizationRequired:(<span class="built_in">BOOL</span>)authorizationRequired</span><br><span class="line">                                       withCompletion:(DJIAccountStateCompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">After invoking this method, a dialog redirecting users to log into their DJI account  will be shown. For users outside of China, authorization is required to unlock  authorization zones. After the login process, if <code>authorizationRequired</code> is <code>YES</code>,  and the user is currently out of China and the account has not been authorized to  unlock authorization zones, the dialog will then redirect users to authorize their account.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">authorizationRequired</font></font></td><td><font color="#666"><i><code>YES</code> if authorization is required.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiaccountstatecompletionblock">DJIAccountStateCompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The execution block with the returned execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiuseraccountmanager_logoutofdjiuseraccount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_logoutofdjiuseraccount_inline">logOutOfDJIUserAccountWithCompletion</a></div></div><div class="inline-doc" id="djiuseraccountmanager_logoutofdjiuseraccount_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_logoutofdjiuseraccount"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_logoutofdjiuseraccount_inline">logOutOfDJIUserAccountWithCompletion</a></div></div><div class="inline-doc" id="djiuseraccountmanager_logoutofdjiuseraccount_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>logOutOfDJIUserAccountWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">-(<span class="keyword">void</span>)logOutOfDJIUserAccountWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)logOutOfDJIUserAccountWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Logs out the DJI user that is logged in.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiuseraccountmanager_djiaccountstatecompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_djiaccountstatecompletionblock_inline">DJIAccountStateCompletionBlock</a></div></div><div class="inline-doc" id="djiuseraccountmanager_djiaccountstatecompletionblock_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_djiaccountstatecompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_djiaccountstatecompletionblock_inline">DJIAccountStateCompletionBlock</a></div></div><div class="inline-doc" id="djiuseraccountmanager_djiaccountstatecompletionblock_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIAccountStateCompletionBlock</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIAccountStateCompletionBlock)(DJIUserAccountState state, <span class="built_in">NSError</span> *_Nullable error)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIAccountStateCompletionBlock)(DJIUserAccountState state, <span class="built_in">NSError</span> *_Nullable error)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">DJI Account State Completion Block.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate">DJIUserAccountState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/UserAccountManager/DJIUserAccountManager.html#djiuseraccountmanager_djiuseraccountstate">DJIUserAccountState</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiuseraccountmanager_djiuseraccountstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_djiuseraccountstate_inline">DJIUserAccountState</a></div></div><div class="inline-doc" id="djiuseraccountmanager_djiuseraccountstate_inline" <blockquote="">
+<div class="api-row" id="djiuseraccountmanager_djiuseraccountstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiuseraccountmanager_djiuseraccountstate_inline">DJIUserAccountState</a></div></div><div class="inline-doc" id="djiuseraccountmanager_djiuseraccountstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIUserAccountState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUserAccountState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUserAccountState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUserAccountManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">User account status. Users need to be logged in.</font></p>

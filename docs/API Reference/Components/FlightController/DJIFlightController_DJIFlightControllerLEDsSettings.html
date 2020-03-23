@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -256,7 +250,7 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="" class="active">DJIFlightControllerLEDsSettings</a>
+                            <dd><a href class="active">DJIFlightControllerLEDsSettings</a>
                             </dd>
                             <dd><a href="DJIFlightController_DJIMutableFlightControllerLEDsSettings.html">DJIMutableFlightControllerLEDsSettings</a>
                             </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,31 +591,31 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIFlightControllerLEDsSettings</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIFlightControllerLEDsSettings</span> : <span class="title">NSObject</span>&lt;<span class="title">NSCopying</span>, <span class="title">NSMutableCopying</span>&gt;</span></div></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject<nscopying, nsmutablecopying=""></nscopying,></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamledsenabledsettings_key">DJIFlightControllerKey.DJIFlightControllerParamLEDsEnabledSettings</a></font></td></tr></table></html>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIFlightControllerLEDsSettings</span> : <span class="title">NSObject</span>&lt;<span class="title">NSCopying</span>, <span class="title">NSMutableCopying</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject<nscopying, nsmutablecopying></nscopying,></code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamledsenabledsettings_key">DJIFlightControllerKey.DJIFlightControllerParamLEDsEnabledSettings</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Settings for the aircraft's LEDs.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_frontledson"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_frontledson_inline">frontLEDsOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_frontledson_inline" <blockquote="">
+<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_frontledson"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_frontledson_inline">frontLEDsOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_frontledson_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>frontLEDsOn</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> frontLEDsOn</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> frontLEDsOn</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666"><code>YES</code> if the LEDs on the front arms are turned on.</font></p>
 </div>
-<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_rearledson"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_rearledson_inline">rearLEDsOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_rearledson_inline" <blockquote="">
+<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_rearledson"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_rearledson_inline">rearLEDsOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_rearledson_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rearLEDsOn</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> rearLEDsOn</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> rearLEDsOn</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666"><code>YES</code> if the LEDs on the rear arms are turned on. It is  supported by Inspire 2, Matrice 200 series and Mavic 2 series.  The other products will ignore this property.</font></p>
 </div>
-<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron_inline">statusIndicatorOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron_inline" <blockquote="">
+<div class="api-row" id="djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron_inline">statusIndicatorOn</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollerledssettings_statusindicatoron_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>statusIndicatorOn</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> statusIndicatorOn</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> statusIndicatorOn</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666"><code>YES</code> if the status indicator is on. It is supported by Inspire 2, Matrice 200  series and Mavic 2 series. The other products will ignore this property. For Mavic 2  series, there are two status indicators and they are on the rear arms.</font></p>

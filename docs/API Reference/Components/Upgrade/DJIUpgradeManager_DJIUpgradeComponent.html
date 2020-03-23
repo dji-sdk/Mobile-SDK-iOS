@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,163 +591,163 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIUpgradeComponent</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIUpgradeComponent</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIUpgradeComponent</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class is used to control components' upgrade. It also provides methods to receive  firmware consistency upgrade state and the latest firmware version information. It is  only supported by Mavic Air, Mavic 2 series.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_componenttype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_componenttype_inline">componentType</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_componenttype_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_componenttype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_componenttype_inline">componentType</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_componenttype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>componentType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIUpgradeComponentType componentType</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIUpgradeComponentType componentType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Component to upgrade.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype">DJIUpgradeComponentType</a></code></font></p>
 </div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_upgradestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_upgradestate_inline">upgradeState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_upgradestate_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_upgradestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_upgradestate_inline">upgradeState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_upgradestate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>upgradeState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (atomic, <span class="keyword">readonly</span>) DJIUpgradeFirmwareState upgradeState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (atomic, <span class="keyword">readonly</span>) DJIUpgradeFirmwareState upgradeState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Current firmware upgrade state.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate">DJIUpgradeFirmwareState</a></code></font></p>
 </div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_latestfirmwareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_latestfirmwareinformation_inline">latestFirmwareInformation</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_latestfirmwareinformation_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_latestfirmwareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_latestfirmwareinformation_inline">latestFirmwareInformation</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_latestfirmwareinformation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>latestFirmwareInformation</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIFirmwareInformation *latestFirmwareInformation</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIFirmwareInformation *latestFirmwareInformation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The latest firmware information.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html#djiupgrademanager_djiupgradecomponent_djifirmwareinformation">DJIFirmwareInformation</a></code></font></p>
 </div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue_inline">addUpgradeFirmwareListener:withQueue</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue_inline">addUpgradeFirmwareListener:withQueue</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>addUpgradeFirmwareListener:withQueue</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)addUpgradeFirmwareListener:(<span class="keyword">id</span>&lt;DJIUpgradeFirmwareDelegate&gt;)listener withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addUpgradeFirmwareListener:(<span class="keyword">id</span>&lt;DJIUpgradeFirmwareDelegate&gt;)listener withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Adds a listener to receive the <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_protocol">DJIUpgradeFirmwareDelegate</a></code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id&lt;<a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_protocol">DJIUpgradeFirmwareDelegate</a>&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to receive the <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_protocol">DJIUpgradeFirmwareDelegate</a></code>.  It is used to distinguish different listener and the listener will be retained.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue to process state. The main queue is used if it is nil.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener_inline">removeUpgradeFirmwareListener</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener_inline">removeUpgradeFirmwareListener</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_removeupgradefirmwarelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeUpgradeFirmwareListener</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeUpgradeFirmwareListener:(<span class="keyword">id</span>&lt;DJIUpgradeFirmwareDelegate&gt;)listener</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeUpgradeFirmwareListener:(<span class="keyword">id</span>&lt;DJIUpgradeFirmwareDelegate&gt;)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Removes a listener that is added by passing to <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue">addUpgradeFirmwareListener:withQueue</a></code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id&lt;<a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_protocol">DJIUpgradeFirmwareDelegate</a>&gt; <font color="#000">listener</font></font></td><td><font color="#666"><i>The listener to remove.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener_inline">removeAllUpgradeFirmwareListener</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener_inline">removeAllUpgradeFirmwareListener</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_removeallupgradefirmwarelistener_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>removeAllUpgradeFirmwareListener</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)removeAllUpgradeFirmwareListener</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeAllUpgradeFirmwareListener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Remove all the listeners are added by passing to <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_addupgradefirmwarelistenerwithqueue">addUpgradeFirmwareListener:withQueue</a></code>.</font></p>
 </div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade_inline">canCancelConsistencyUpgrade</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade_inline">canCancelConsistencyUpgrade</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_cancancelconsistencyupgrade_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>canCancelConsistencyUpgrade</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">BOOL</span>)canCancelConsistencyUpgrade</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)canCancelConsistencyUpgrade</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Check if the consistency upgrade can be canceled. If false, please check the consistency of the firmware to ensure flight safety.  It is only supported by Mavic Air, Mavic 2 series.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i>A boolean value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade_inline">startFirmwareConsistencyUpgradeWithCompletion</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade_inline">startFirmwareConsistencyUpgradeWithCompletion</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>startFirmwareConsistencyUpgradeWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)startFirmwareConsistencyUpgradeWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)startFirmwareConsistencyUpgradeWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Starts firmware consistency upgrade. Invoke <code>DJIUpgradeFirmwareDelegate_didUpdateFirmwareUpgradeProgress</code> to receive upgrade progress  information. Before invoking this method, please make sure that the motors are turned off and <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_wifilink">wifiLink</a></code> is not using. It  is only supported by Mavic Air, Mavic 2 series.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade_inline">stopFirmwareConsistencyUpgradeWithCompletion</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade_inline">stopFirmwareConsistencyUpgradeWithCompletion</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_stopfirmwareconsistencyupgrade_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopFirmwareConsistencyUpgradeWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopFirmwareConsistencyUpgradeWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopFirmwareConsistencyUpgradeWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Cancels firmware consistency upgrade. <code>DJIUpgradeFirmwareDelegate_didReceiveConsistencyUpgradeRequest</code> will stop to notify. Before  invoking this method, please make sure that the motors are turned off and <code><a href="../../Components/AirLink/DJIAirLink.html#djiairlink_wifilink">wifiLink</a></code> is not using. It is only supported  by Mavic Air, Mavic 2 series.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_protocol_inline">DJIUpgradeFirmwareDelegate</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_protocol_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_protocol_inline">DJIUpgradeFirmwareDelegate</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_protocol_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIUpgradeFirmwareDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIUpgradeFirmwareDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIUpgradeFirmwareDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to receive the upgrade information, the upgrade firmware state and the upgrade progress.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate_inline">upgradeComponent:didUpdateUpgradeFirmwareState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate_inline">upgradeComponent:didUpdateUpgradeFirmwareState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdateupgradefirmwarestate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>upgradeComponent:didUpdateUpgradeFirmwareState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateUpgradeFirmwareState:(DJIUpgradeFirmwareState)state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateUpgradeFirmwareState:(DJIUpgradeFirmwareState)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Called when the upgrade firmware state has been changed.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent">DJIUpgradeComponent</a> * <font color="#000">component</font></font></td><td><font color="#666"><i>The upgrade component.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate">DJIUpgradeFirmwareState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The upgrade firmware state.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress_inline">upgradeComponent:didUpdateFirmwareUpgradeProgress</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress_inline">upgradeComponent:didUpdateFirmwareUpgradeProgress</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdatefirmwareupgradeprogress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>upgradeComponent:didUpdateFirmwareUpgradeProgress</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateFirmwareUpgradeProgress:(DJIFirmwareUpgradeProgress *)progress</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateFirmwareUpgradeProgress:(DJIFirmwareUpgradeProgress *)progress</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Called when the upgrade is in progress.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent">DJIUpgradeComponent</a> * <font color="#000">component</font></font></td><td><font color="#666"><i>The upgrade component.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html#djiupgrademanager_djiupgradecomponent_djifirmwareupgradeprogress">DJIFirmwareUpgradeProgress</a> * <font color="#000">progress</font></font></td><td><font color="#666"><i>The upgrade progress information.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest_inline">didReceiveConsistencyUpgradeRequest</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest_inline">didReceiveConsistencyUpgradeRequest</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didreceiveconsistencyupgraderequest_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>didReceiveConsistencyUpgradeRequest</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line">- (<span class="keyword">void</span>)didReceiveConsistencyUpgradeRequest:(DJIUpgradeComponent *)component</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)didReceiveConsistencyUpgradeRequest:(DJIUpgradeComponent *)component</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Raised when the firmware version is inconsistent among modules in component. <br>  See <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent">DJIUpgradeComponent</a></code>. Invoke <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent_startfirmwareconsistencyupgrade">startFirmwareConsistencyUpgradeWithCompletion</a></code>  to start consistency upgrade. <br> The update frequency is 1Hz. <br> Stop to notify in  following situation: <br> - Firmware version among modules in component is  consistent. <br> - Firmware consistency upgrade stops. <br> - DJIUpgradeComponent_cancelConsistencyUpgrade  is invoked. Reboot the device to receive this notification again.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent">DJIUpgradeComponent</a> * <font color="#000">component</font></font></td><td><font color="#666"><i>The upgrade component.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation_inline">upgradeComponent:didUpdateLatestFirmareInformation</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation_inline">upgradeComponent:didUpdateLatestFirmareInformation</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_didupdatelatestfirmareinformation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>upgradeComponent:didUpdateLatestFirmareInformation</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">required</div><div class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateLatestFirmareInformation:(DJIFirmwareInformation *)firmwareInformation</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)upgradeComponent:(DJIUpgradeComponent *)component didUpdateLatestFirmareInformation:(DJIFirmwareInformation *)firmwareInformation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeComponent.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Updates the latest firmware version information when the user is logged in. Please use DJI GO to upgrade to the latest firmware.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html#djiupgrademanager_djiupgradecomponent">DJIUpgradeComponent</a> * <font color="#000">component</font></font></td><td><font color="#666"><i>The upgrade component.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html#djiupgrademanager_djiupgradecomponent_djifirmwareinformation">DJIFirmwareInformation</a> * <font color="#000">firmwareInformation</font></font></td><td><font color="#666"><i>The latest firmware information.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djifirmwareupgradeprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a></div></div><div class="api-row" id="djiupgrademanager_djiupgradecomponent_djifirmwareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a></div></div><div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_inline">DJIUpgradeComponentType</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djifirmwareupgradeprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a></div></div><div class="api-row" id="djiupgrademanager_djiupgradecomponent_djifirmwareinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a></div></div><div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_inline">DJIUpgradeComponentType</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIUpgradeComponentType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUpgradeComponentType)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUpgradeComponentType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Upgrade component.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_remotecontroller_inline"></a>DJIUpgradeComponentTypeRemoteController</font></td><td><font color="#666">The upgrade component is remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_aircraft_inline"></a>DJIUpgradeComponentTypeAircraft</font></td><td><font color="#666">The upgrade component is aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradecomponenttype_unknown_inline"></a>DJIUpgradeComponentTypeUnknown</font></td><td><font color="#666">The upgrade component is unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_inline">DJIUpgradeFirmwareState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_inline">DJIUpgradeFirmwareState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIUpgradeFirmwareState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIUpgradeFirmwareState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIUpgradeFirmwareState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Upgrade firmware state.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_initializating_inline"></a>DJIUpgradeFirmwareStateInitializating</font></td><td><font color="#666">Initializating.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_checking_inline"></a>DJIUpgradeFirmwareStateChecking</font></td><td><font color="#666">Checking firmware information.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_uptodate_inline"></a>DJIUpgradeFirmwareStateUpToDate</font></td><td><font color="#666">Firmware version is up to date.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_upgradestronglyrecommended_inline"></a>DJIUpgradeFirmwareStateUpgradeStronglyRecommended</font></td><td><font color="#666">To ensure flight safety, upgrade device is strongly recommended. Check DJI GO for  available firmware updates. Find more details in <code><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html#djiupgrademanager_djiupgradecomponent_djifirmwareinformation">DJIFirmwareInformation</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_optionalupgradeavailable_inline"></a>DJIUpgradeFirmwareStateOptionalUpgradeAvailable</font></td><td><font color="#666">Optional upgrade is available. Check DJI GO for any available firmware updates.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiupgrademanager_djiupgradecomponent_djiupgradefirmwarestate_unknown_inline"></a>DJIUpgradeFirmwareStateUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate_inline">DJIUpgradingProgressState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate_inline" <blockquote="">
+<div class="api-row" id="djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate_inline">DJIUpgradingProgressState</a></div></div><div class="inline-doc" id="djiupgrademanager_djiupgradecomponent_djiupgradingprogressstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIUpgradingProgressState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUpgradingProgressState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIUpgradingProgressState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIUpgradeBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Device's firmware upgrading progress state.</font></p>

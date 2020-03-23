@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -248,7 +242,7 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a href="" class="active">DJIOnboardSDKDevice</a>
+                            <dd><a href class="active">DJIOnboardSDKDevice</a>
                             </dd>
                             <dd><a data-href="../FlightController/DJIAirSenseSystemInformation.html" class="sub-toggle">DJIAirSenseSystemInformation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,78 +591,78 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIOnboardSDKDevice</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIOnboardSDKDevice</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIOnboardSDKDevice</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The <code><a href="../../Components/OnboardSDKDevice/DJIOnboardSDKDevice.html#djionboardsdkdevice">DJIOnboardSDKDevice</a></code> class abstracts the Onboard SDK device on the flight controller. It provides interfaces to interact with Onboard SDK and receive the updated state.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djionboardsdkdevice_delegate"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_delegate_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_delegate"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>, <span class="keyword">nullable</span>) <span class="keyword">id</span>&lt;DJIOnboardSDKDeviceDelegate&gt; delegate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>, <span class="keyword">nullable</span>) <span class="keyword">id</span>&lt;DJIOnboardSDKDeviceDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Onboard SDK device delegate.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/OnboardSDKDevice/DJIOnboardSDKDevice.html#djionboardsdkdevice_protocol">DJIOnboardSDKDeviceDelegate</a></code></font></p>
 </div>
-<div class="api-row" id="djionboardsdkdevice_senddatafrommobiletoonboard"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_senddatafrommobiletoonboard_inline">sendDataFromMobileToOnboard:withCompletion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_senddatafrommobiletoonboard_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_senddatafrommobiletoonboard"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_senddatafrommobiletoonboard_inline">sendDataFromMobileToOnboard:withCompletion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_senddatafrommobiletoonboard_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>sendDataFromMobileToOnboard:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)sendDataFromMobileToOnboard:(<span class="built_in">NSData</span> *)data withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)sendDataFromMobileToOnboard:(<span class="built_in">NSData</span> *)data withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sends binary data from the mobile device to the Onboard device. The size of the data cannot  be greater than 100 bytes, and will be sent in 40 byte increments every 14ms. This method is  only supported on products that support the Onboard SDK (Matrice 100, Matrice 200 Series,  Matrice 600, Matrice 600 Pro, A3, A3 Pro, and N3).</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>Data to be sent to the external device. The size of the data should not be larger than 100 bytes.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djionboardsdkdevice_isactive"><div class="api-col left">Check Device Active</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_isactive_inline">isActive</a></div></div><div class="inline-doc" id="djionboardsdkdevice_isactive_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_isactive"><div class="api-col left">Check Device Active</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_isactive_inline">isActive</a></div></div><div class="inline-doc" id="djionboardsdkdevice_isactive_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isActive</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isActive</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isActive</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Whether an Onboard SDK device is currently active on the platform.</font></p>
 </div>
-<div class="api-row" id="djionboardsdkdevice_onboardsdkversion"><div class="api-col left">Onboard SDK Version</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_onboardsdkversion_inline">onboardSDKVersion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_onboardsdkversion_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_onboardsdkversion"><div class="api-col left">Onboard SDK Version</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_onboardsdkversion_inline">onboardSDKVersion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_onboardsdkversion_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>onboardSDKVersion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *onboardSDKVersion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *onboardSDKVersion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The version of the Onboard SDK used by the currently active device on the platform. If Onboard  SDK version is not ready, an empty string (with zero length) will be returned.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djionboardsdkdevice_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_protocol_inline">DJIOnboardSDKDeviceDelegate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_protocol_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_protocol_inline">DJIOnboardSDKDeviceDelegate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_protocol_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIOnboardSDKDeviceDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIOnboardSDKDeviceDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIOnboardSDKDeviceDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to interative with Onboard SDK Devices.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djionboardsdkdevice_didsenddatatomobile"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_didsenddatatomobile_inline">onboardSDKDevice:didSendDataToMobile</a></div></div><div class="inline-doc" id="djionboardsdkdevice_didsenddatatomobile_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_didsenddatatomobile"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_didsenddatatomobile_inline">onboardSDKDevice:didSendDataToMobile</a></div></div><div class="inline-doc" id="djionboardsdkdevice_didsenddatatomobile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onboardSDKDevice:didSendDataToMobile</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)onboardSDKDevice:(DJIOnboardSDKDevice *)osdkDevice</div><div class="line">     didSendDataToMobile:(<span class="built_in">NSData</span> *)data</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)onboardSDKDevice:(DJIOnboardSDKDevice *)osdkDevice</span><br><span class="line">     didSendDataToMobile:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Called when the Onboard SDK device sent a message to the mobile device through transparent transmission.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OnboardSDKDevice/DJIOnboardSDKDevice.html#djionboardsdkdevice">DJIOnboardSDKDevice</a> * <font color="#000">osdkDevice</font></font></td><td><font color="#666"><i>The Onboard SDK device that update message data.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The binary message sent from the Onboard SDK device.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djionboardsdkdevice_didactivatewithonboardsdkversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_didactivatewithonboardsdkversion_inline">onboardSDKDevice:didActivateWithOnboardSDKVersion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_didactivatewithonboardsdkversion_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_didactivatewithonboardsdkversion"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_didactivatewithonboardsdkversion_inline">onboardSDKDevice:didActivateWithOnboardSDKVersion</a></div></div><div class="inline-doc" id="djionboardsdkdevice_didactivatewithonboardsdkversion_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onboardSDKDevice:didActivateWithOnboardSDKVersion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)onboardSDKDevice:(DJIOnboardSDKDevice *)osdkDevice didActivateWithOnboardSDKVersion:(<span class="built_in">NSString</span> *)osdkVersion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)onboardSDKDevice:(DJIOnboardSDKDevice *)osdkDevice didActivateWithOnboardSDKVersion:(<span class="built_in">NSString</span> *)osdkVersion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Called when the onboard device successfully connects and performs handshake.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/OnboardSDKDevice/DJIOnboardSDKDevice.html#djionboardsdkdevice">DJIOnboardSDKDevice</a> * <font color="#000">osdkDevice</font></font></td><td><font color="#666"><i>The Onboard SDK device updates the state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">osdkVersion</font></font></td><td><font color="#666"><i>A string with the Onboard SDK version.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djionboardsdkdevice_onboardsdkdevicediddeactivate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_onboardsdkdevicediddeactivate_inline">onboardSDKDeviceDidDeactivate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_onboardsdkdevicediddeactivate_inline" <blockquote="">
+<div class="api-row" id="djionboardsdkdevice_onboardsdkdevicediddeactivate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djionboardsdkdevice_onboardsdkdevicediddeactivate_inline">onboardSDKDeviceDidDeactivate</a></div></div><div class="inline-doc" id="djionboardsdkdevice_onboardsdkdevicediddeactivate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>onboardSDKDeviceDidDeactivate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)onboardSDKDeviceDidDeactivate:(DJIOnboardSDKDevice *)osdkDevice</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)onboardSDKDeviceDidDeactivate:(DJIOnboardSDKDevice *)osdkDevice</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIOnboardSDKDevice.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Called when the onboard device disconnects.</font></p>

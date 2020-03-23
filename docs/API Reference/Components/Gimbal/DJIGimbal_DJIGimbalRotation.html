@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -332,7 +326,7 @@
                             </dd>
                             <dd><a href="DJIGimbal_movementSettingsState.html">DJIGimbalMovementSettings</a>
                             </dd>
-                            <dd><a href="" class="active">DJIGimbalRotation</a>
+                            <dd><a href class="active">DJIGimbalRotation</a>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,57 +591,57 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIGimbalRotation</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalRotation</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalRotation</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Represents a gimbal speed or angular rotation operation.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djigimbal_djigimbalrotation_mode"><div class="api-col left">Rotation Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_mode_inline">mode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_mode_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_mode"><div class="api-col left">Rotation Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_mode_inline">mode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_mode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>mode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">readonly</span>) DJIGimbalRotationMode mode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">readonly</span>) DJIGimbalRotationMode mode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Type of gimbal rotation operation mode.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalRotation.html#djigimbal_djigimbalrotation_djigimbalrotationmode">DJIGimbalRotationMode</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalrotation_pitch"><div class="api-col left">Pitch Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_pitch_inline">pitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_pitch_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_pitch"><div class="api-col left">Pitch Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_pitch_inline">pitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_pitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>pitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *pitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *pitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The pitch property of a gimbal rotation operation, how much the gimbal rotates on the pitch axis. When it is <code>nil</code>, no operation will be applied to the pitch axis.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalrotation_roll"><div class="api-col left">Roll Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_roll_inline">roll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_roll_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_roll"><div class="api-col left">Roll Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_roll_inline">roll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_roll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>roll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *roll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *roll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The roll property of a gimbal rotation operation, how much the gimbal rotates on the roll axis. When it is <code>nil</code>, no operation will be applied to the roll axis.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalrotation_yaw"><div class="api-col left">Yaw Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_yaw_inline">yaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_yaw_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_yaw"><div class="api-col left">Yaw Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_yaw_inline">yaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_yaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>yaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *yaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSNumber</span> *yaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The yaw property of a gimbal rotation operation, how much the gimbal rotates on the yaw axis. When the rotation mode is <code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalRotation.html#djigimbal_djigimbalrotation_djigimbalrotationmode_absoluteangle">DJIGimbalRotationModeAbsoluteAngle</a></code>, the yaw value is relative to the aircraft's heading. When it is <code>nil</code>, no operation will be applied to the yaw axis.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalrotation_time"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_time_inline">time</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_time_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_time"><div class="api-col left">Time</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_time_inline">time</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_time_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>time</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">readonly</span>) <span class="built_in">NSTimeInterval</span> time</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>, <span class="keyword">readonly</span>) <span class="built_in">NSTimeInterval</span> time</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The time of the gimbal speed rotation operation.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalrotation_constructor"><div class="api-col left">Constructor</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_constructor_inline">gimbalRotationWithPitchValue:rollValue:yawValue:time:mode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_constructor_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_constructor"><div class="api-col left">Constructor</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_constructor_inline">gimbalRotationWithPitchValue:rollValue:yawValue:time:mode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_constructor_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font>gimbalRotationWithPitchValue:rollValue:yawValue:time:mode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nonnull</span> <span class="keyword">instancetype</span>)gimbalRotationWithPitchValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)pitchValue</div><div class="line">                                           rollValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)rollValue</div><div class="line">                                            yawValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)yawValue</div><div class="line">                                                time:(<span class="built_in">NSTimeInterval</span>)time</div><div class="line">                                                mode:(DJIGimbalRotationMode)mode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">nonnull</span> <span class="keyword">instancetype</span>)gimbalRotationWithPitchValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)pitchValue</span><br><span class="line">                                           rollValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)rollValue</span><br><span class="line">                                            yawValue:(<span class="keyword">nullable</span> <span class="built_in">NSNumber</span> *)yawValue</span><br><span class="line">                                                time:(<span class="built_in">NSTimeInterval</span>)time</span><br><span class="line">                                                mode:(DJIGimbalRotationMode)mode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Constructor for <code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalRotation.html#djigimbal_djigimbalrotation">DJIGimbalRotation</a></code>.</font></p>
@@ -656,10 +650,10 @@
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull instancetype</font></td><td><font color="#666"><i>Instance of <code><a href="../../Components/Gimbal/DJIGimbal_DJIGimbalRotation.html#djigimbal_djigimbalrotation">DJIGimbalRotation</a></code>.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djigimbal_djigimbalrotation_djigimbalrotationmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_djigimbalrotationmode_inline">DJIGimbalRotationMode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_djigimbalrotationmode_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalrotation_djigimbalrotationmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalrotation_djigimbalrotationmode_inline">DJIGimbalRotationMode</a></div></div><div class="inline-doc" id="djigimbal_djigimbalrotation_djigimbalrotationmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIGimbalRotationMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIGimbalRotationMode)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIGimbalRotationMode)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The mode of the gimbal rotation operation.</font></p>

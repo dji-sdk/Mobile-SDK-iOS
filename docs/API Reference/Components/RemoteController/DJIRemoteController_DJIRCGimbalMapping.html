@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href class="active">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="" class="active">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,73 +591,73 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIRCGimbalMapping</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIRCGimbalMapping</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIRCGimbalMapping</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIRemoteControllerKey.html#djiremotecontrollerkey_djiremotecontrollerparamcustomgimbalmapping_key">DJIRemoteControllerKey.DJIRemoteControllerParamCustomGimbalMapping</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The mapping styles to control the Gimbal.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_leftvertical"><div class="api-col left">Left Vertical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_leftvertical_inline">leftVertical</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_leftvertical_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_leftvertical"><div class="api-col left">Left Vertical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_leftvertical_inline">leftVertical</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_leftvertical_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>leftVertical</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping leftVertical</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping leftVertical</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The mapping configuration for the left stick on the vertical axis.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_lefthorizontal"><div class="api-col left">Left Horizontal</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_lefthorizontal_inline">leftHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_lefthorizontal_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_lefthorizontal"><div class="api-col left">Left Horizontal</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_lefthorizontal_inline">leftHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_lefthorizontal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>leftHorizontal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping leftHorizontal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping leftHorizontal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The mapping configuration for the left stick on the horizontal axis.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_rightvertical"><div class="api-col left">Right Vertical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_rightvertical_inline">rightVertical</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_rightvertical_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_rightvertical"><div class="api-col left">Right Vertical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_rightvertical_inline">rightVertical</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_rightvertical_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rightVertical</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping rightVertical</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping rightVertical</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The mapping configuration for the right stick on the vertical axis.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_righthorizontal"><div class="api-col left">Right Horizontal</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_righthorizontal_inline">rightHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_righthorizontal_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_righthorizontal"><div class="api-col left">Right Horizontal</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_righthorizontal_inline">rightHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_righthorizontal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rightHorizontal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping rightHorizontal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRCGimbalStickMapping rightHorizontal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The mapping configuration for the right stick on the horizontal axis.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code></font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle"><div class="api-col left">Mapping with Default Style</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle_inline"> mappingWithDefaultStyle</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle"><div class="api-col left">Mapping with Default Style</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle_inline"> mappingWithDefaultStyle</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_mappingwithdefaultstyle_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font> mappingWithDefaultStyle</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+(<span class="keyword">instancetype</span>) mappingWithDefaultStyle</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+(<span class="keyword">instancetype</span>) mappingWithDefaultStyle</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Creates an instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html#djiremotecontroller_djircgimbalmapping">DJIRCGimbalMapping</a></code> with the default mapping style.</font></p>
 </div>
-<div class="api-row" id="djiremotecontroller_djircgimbalmapping_mappingwithcustommapping"><div class="api-col left">Mapping with Custom Mapping</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_mappingwithcustommapping_inline"> mappingWithCustomMappingLeftVertical:leftHorizontal:rightVertical:rightHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_mappingwithcustommapping_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalmapping_mappingwithcustommapping"><div class="api-col left">Mapping with Custom Mapping</div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalmapping_mappingwithcustommapping_inline"> mappingWithCustomMappingLeftVertical:leftHorizontal:rightVertical:rightHorizontal</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalmapping_mappingwithcustommapping_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font> mappingWithCustomMappingLeftVertical:leftHorizontal:rightVertical:rightHorizontal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+(<span class="keyword">instancetype</span>) mappingWithCustomMappingLeftVertical:(DJIRCGimbalStickMapping)leftVertical</div><div class="line">                                     leftHorizontal:(DJIRCGimbalStickMapping)leftHorizontal</div><div class="line">                                      rightVertical:(DJIRCGimbalStickMapping)rightVertical</div><div class="line">                                    rightHorizontal:(DJIRCGimbalStickMapping)rightHorizontal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+(<span class="keyword">instancetype</span>) mappingWithCustomMappingLeftVertical:(DJIRCGimbalStickMapping)leftVertical</span><br><span class="line">                                     leftHorizontal:(DJIRCGimbalStickMapping)leftHorizontal</span><br><span class="line">                                      rightVertical:(DJIRCGimbalStickMapping)rightVertical</span><br><span class="line">                                    rightHorizontal:(DJIRCGimbalStickMapping)rightHorizontal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Creates an instance of <code><a href="../../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html#djiremotecontroller_djircgimbalmapping">DJIRCGimbalMapping</a></code> with a custom mapping style which will be defined using the passed mapping configurations.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a> <font color="#000">leftVertical</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code> object.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a> <font color="#000">leftHorizontal</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code> object.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a> <font color="#000">rightVertical</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code> object.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a> <font color="#000">rightHorizontal</font></font></td><td><font color="#666"><i>The <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_djircgimbalstickmapping">DJIRCGimbalStickMapping</a></code> object.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiremotecontroller_djircgimbalstickmappingtarget"><div class="api-col left">State Updates - Master/Slave</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalstickmappingtarget_inline">DJIRCGimbalStickMappingTarget</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalstickmappingtarget_inline" <blockquote="">
+<div class="api-row" id="djiremotecontroller_djircgimbalstickmappingtarget"><div class="api-col left">State Updates - Master/Slave</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiremotecontroller_djircgimbalstickmappingtarget_inline">DJIRCGimbalStickMappingTarget</a></div></div><div class="inline-doc" id="djiremotecontroller_djircgimbalstickmappingtarget_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIRCGimbalStickMappingTarget</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIRCGimbalStickMappingTarget)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIRCGimbalStickMappingTarget)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRemoteControllerBaseTypes.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The list of available control to be used when creating custom mapping configurations</font></p>

@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../../Components/LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../../Components/UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../../Components/UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../../Components/FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../../Components/FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -136,18 +142,6 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href="../../Components/Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../../Components/Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
-                            </dd>
-                    </ul>
-                  </dd>
           </dl>
           <dl>
             <dt>Base Classes
@@ -170,7 +164,7 @@
             </dt>
                   <dd><a href="../Aircraft/DJIAircraft.html">DJIAircraft</a>
                   </dd>
-                  <dd><a href="" class="active">DJIHandheld</a>
+                  <dd><a href class="active">DJIHandheld</a>
                   </dd>
           </dl>
           <dl>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../../Components/RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../../Components/RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../../Components/RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../../Components/RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../../Components/RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../../Components/RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,15 +591,15 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIHandheld</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHandheld</span> : <span class="title">DJIBaseProduct</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHandheld</span> : <span class="title">DJIBaseProduct</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Handheld product class, which includes basic product information and access to all components (such as camera, battery etc.). This object is accessed from <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_product">product</a></code> in <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager">DJISDKManager</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djihandheld_handheldcontroller"><div class="api-col left">Components</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheld_handheldcontroller_inline">handheldController</a></div></div><div class="inline-doc" id="djihandheld_handheldcontroller_inline" <blockquote="">
+<div class="api-row" id="djihandheld_handheldcontroller"><div class="api-col left">Components</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihandheld_handheldcontroller_inline">handheldController</a></div></div><div class="inline-doc" id="djihandheld_handheldcontroller_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>handheldController</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIHandheldController *_Nullable handheldController</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIHandheldController *_Nullable handheldController</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns an instance of the handheld device's handheld controller.</font></p>
@@ -613,58 +607,58 @@
 <p><font color="#666"><code><a href="../../Components/HandheldController/DJIHandheldController.html#djihandheldcontroller">DJIHandheldController</a></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djihandheld_djihandheldmodelnameunknownhandheld"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameunknownhandheld_inline">DJIHandheldModelNameUnknownHandheld</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameunknownhandheld_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameunknownhandheld"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameunknownhandheld_inline">DJIHandheldModelNameUnknownHandheld</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameunknownhandheld_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameUnknownHandheld</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameUnknownHandheld</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameUnknownHandheld</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Handheld device model name unknown.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmo_inline">DJIHandheldModelNameOsmo</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmo_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmo"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmo_inline">DJIHandheldModelNameOsmo</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmo_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmo</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmo</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmopro"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmopro_inline">DJIHandheldModelNameOsmoPro</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmopro_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmopro"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmopro_inline">DJIHandheldModelNameOsmoPro</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmopro_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmoPro</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoPro</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoPro</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo Pro.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmoraw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmoraw_inline">DJIHandheldModelNameOsmoRAW</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmoraw_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmoraw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmoraw_inline">DJIHandheldModelNameOsmoRAW</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmoraw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmoRAW</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoRAW</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoRAW</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo RAW.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmomobile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmomobile_inline">DJIHandheldModelNameOsmoMobile</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmomobile_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmomobile"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmomobile_inline">DJIHandheldModelNameOsmoMobile</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmomobile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmoMobile</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoMobile</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoMobile</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo Mobile.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmoplus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmoplus_inline">DJIHandheldModelNameOsmoPlus</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmoplus_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmoplus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmoplus_inline">DJIHandheldModelNameOsmoPlus</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmoplus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmoPlus</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoPlus</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoPlus</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo+.</font></p>
 </div>
-<div class="api-row" id="djihandheld_djihandheldmodelnameosmomobile2"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmomobile2_inline">DJIHandheldModelNameOsmoMobile2</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmomobile2_inline" <blockquote="">
+<div class="api-row" id="djihandheld_djihandheldmodelnameosmomobile2"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihandheld_djihandheldmodelnameosmomobile2_inline">DJIHandheldModelNameOsmoMobile2</a></div></div><div class="inline-doc" id="djihandheld_djihandheldmodelnameosmomobile2_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHandheldModelNameOsmoMobile2</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoMobile2</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIHandheldModelNameOsmoMobile2</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHandheld.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Handheld device model name Osmo Mobile 2.</font></p>

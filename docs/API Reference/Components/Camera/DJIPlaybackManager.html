@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -306,7 +300,7 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="" class="sub-toggle">DJIPlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href class="sub-toggle">DJIPlaybackManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIPlaybackManager_DJICameraPlaybackState.html">DJICameraPlaybackState</a>
                                       </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,16 +591,16 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIPlaybackManager</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPlaybackManager</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPlaybackManager</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The playback manager is used to interact with the playback system of the camera. By using the playback manager, the user can control the playback system.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="state-updates">State Updates</h4>
-<div class="api-row" id="djiplaybackmanager_delegate"><div class="api-col left">Playback</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djiplaybackmanager_delegate_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_delegate"><div class="api-col left">Playback</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djiplaybackmanager_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIPlaybackDelegate&gt; delegate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIPlaybackDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the delegate of DJIPlaybackManager</font></p>
@@ -615,178 +609,178 @@
 </div>
 <html><p><br></p></html>
 <h4 id="single-preview-mode">Single Preview Mode</h4>
-<div class="api-row" id="djiplaybackmanager_entersinglepreviewmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entersinglepreviewmode_inline">enterSinglePreviewModeWithIndex</a></div></div><div class="inline-doc" id="djiplaybackmanager_entersinglepreviewmode_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_entersinglepreviewmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entersinglepreviewmode_inline">enterSinglePreviewModeWithIndex</a></div></div><div class="inline-doc" id="djiplaybackmanager_entersinglepreviewmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>enterSinglePreviewModeWithIndex</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)enterSinglePreviewModeWithIndex:(uint8_t)index</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)enterSinglePreviewModeWithIndex:(uint8_t)index</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Enters single file preview mode for a file at the specified index. In order for this method to be called,  the camera work mode must be <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameramode_djicameramodeplayback">DJICameraModePlayback</a></code>.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">uint8_t <font color="#000">index</font></font></td><td><font color="#666"><i>File to be previewed at the specified index. The value falls in [1,8].</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_gotonextsinglepreviewpage"><div class="api-col left">Page Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotonextsinglepreviewpage_inline">goToNextSinglePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotonextsinglepreviewpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_gotonextsinglepreviewpage"><div class="api-col left">Page Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotonextsinglepreviewpage_inline">goToNextSinglePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotonextsinglepreviewpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>goToNextSinglePreviewPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)goToNextSinglePreviewPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)goToNextSinglePreviewPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Goes to the next page. <br> <br> Precondition:<br> The camera must enter Single File Preview Mode.<br> <br>  Special case:<br> If it is the last image, it will go to the first image.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_gotoprevioussinglepreviewpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotoprevioussinglepreviewpage_inline">goToPreviousSinglePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotoprevioussinglepreviewpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_gotoprevioussinglepreviewpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotoprevioussinglepreviewpage_inline">goToPreviousSinglePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotoprevioussinglepreviewpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>goToPreviousSinglePreviewPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)goToPreviousSinglePreviewPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)goToPreviousSinglePreviewPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Goes back to the previous page. <br> <br> Precondition:<br> The camera must enter Single File Preview Mode. <br> <br> Special case:<br> If it is the first image, it will go to the last image.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_startvideoplayback"><div class="api-col left">Video Playback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_startvideoplayback_inline">playVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_startvideoplayback_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_startvideoplayback"><div class="api-col left">Video Playback</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_startvideoplayback_inline">playVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_startvideoplayback_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>playVideo</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)playVideo</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)playVideo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Starts video playback. The selected file must be a video file.<br> <br> Precondition:<br> The camera must enter  Single Preview Mode.<br> <br> Post condition:<br> If the video finishes playing, it will stop and go back to the  beginning of the file.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_pausevideoplayback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_pausevideoplayback_inline">pauseVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_pausevideoplayback_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_pausevideoplayback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_pausevideoplayback_inline">pauseVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_pausevideoplayback_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>pauseVideo</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)pauseVideo</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)pauseVideo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Pauses a video during playback. <br> <br> Precondition:<br> The video is being played.<br></font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_stopvideoplayback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_stopvideoplayback_inline">stopVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_stopvideoplayback_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_stopvideoplayback"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_stopvideoplayback_inline">stopVideo</a></div></div><div class="inline-doc" id="djiplaybackmanager_stopvideoplayback_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopVideo</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopVideo</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopVideo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Stops a video during playback. <br> <br> Precondition:<br> The video is being played.<br> <br> Post condition:<br>  The file will stop and go back to the beginning of the file.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_setvideoplaybackfromlocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_setvideoplaybackfromlocation_inline">playVideoFromPositionInPercent</a></div></div><div class="inline-doc" id="djiplaybackmanager_setvideoplaybackfromlocation_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_setvideoplaybackfromlocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_setvideoplaybackfromlocation_inline">playVideoFromPositionInPercent</a></div></div><div class="inline-doc" id="djiplaybackmanager_setvideoplaybackfromlocation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>playVideoFromPositionInPercent</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)playVideoFromPositionInPercent:(uint8_t)position</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)playVideoFromPositionInPercent:(uint8_t)position</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Plays a video from the specified location. The selected file must be a video file.<br> <br> Precondition:<br>  The camera must enter Single File Preview Mode.<br> <br> Post condition:<br> The file will play from a specific location immediately. This command can only be called if the video is currently playing or is paused. If paused, the playback position will be updated and playing will resume.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">uint8_t <font color="#000">position</font></font></td><td><font color="#666"><i>Location from which to play the video must be in the range of [0, 100]. This value  represents at what percent of the entire video it should start playing.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_deletecurrentpreviewfile"><div class="api-col left">Delete File</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_deletecurrentpreviewfile_inline">deleteCurrentPreviewFile</a></div></div><div class="inline-doc" id="djiplaybackmanager_deletecurrentpreviewfile_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_deletecurrentpreviewfile"><div class="api-col left">Delete File</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_deletecurrentpreviewfile_inline">deleteCurrentPreviewFile</a></div></div><div class="inline-doc" id="djiplaybackmanager_deletecurrentpreviewfile_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>deleteCurrentPreviewFile</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)deleteCurrentPreviewFile</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)deleteCurrentPreviewFile</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Deletes the current file being previewed. <br> <br> Precondition:<br> The camera must enter single file preview  mode.<br> <br> Post condition:<br> The image will be deleted from the SD card.</font></p>
 </div>
 <html><p><br></p></html>
 <h4 id="multi-preview-mode">Multi Preview Mode</h4>
-<div class="api-row" id="djiplaybackmanager_entermultiplepreviewmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entermultiplepreviewmode_inline">enterMultiplePreviewMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_entermultiplepreviewmode_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_entermultiplepreviewmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entermultiplepreviewmode_inline">enterMultiplePreviewMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_entermultiplepreviewmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>enterMultiplePreviewMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)enterMultiplePreviewMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)enterMultiplePreviewMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Enables the user to preview multiple files when the camera is in Playback mode. <br> <br> Precondition:<br> The  camera work mode should be set to Playback mode.<br> <br> Post condition:<br> There will be 8 images on one page.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_gotonextmultiplepreviewpage"><div class="api-col left">Page Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotonextmultiplepreviewpage_inline">goToNextMultiplePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotonextmultiplepreviewpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_gotonextmultiplepreviewpage"><div class="api-col left">Page Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotonextmultiplepreviewpage_inline">goToNextMultiplePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotonextmultiplepreviewpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>goToNextMultiplePreviewPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)goToNextMultiplePreviewPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)goToNextMultiplePreviewPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Goes to the next page when there are multiple pages. <br> <br> Precondition:<br> The camera must enter Multiple  Preview Mode.<br> <br> Special case:<br> If it is the last page, it will stay at the last page.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_gotopreviousmultiplepreviewpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotopreviousmultiplepreviewpage_inline">goToPreviousMultiplePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotopreviousmultiplepreviewpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_gotopreviousmultiplepreviewpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_gotopreviousmultiplepreviewpage_inline">goToPreviousMultiplePreviewPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_gotopreviousmultiplepreviewpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>goToPreviousMultiplePreviewPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)goToPreviousMultiplePreviewPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)goToPreviousMultiplePreviewPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Goes back to the previous page when there are multiple pages. <br> <br> Precondition:<br>  The camera must enter Multiple Preview Mode.<br> <br> Special case:<br> If it is the first page, it will  stay at the first page.</font></p>
 </div>
 <html><p><br></p></html>
 <h4 id="multi-edit-mode">Multi Edit Mode</h4>
-<div class="api-row" id="djiplaybackmanager_entermultipleeditmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entermultipleeditmode_inline">enterMultipleEditMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_entermultipleeditmode_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_entermultipleeditmode"><div class="api-col left">Mode Control</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_entermultipleeditmode_inline">enterMultipleEditMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_entermultipleeditmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>enterMultipleEditMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)enterMultipleEditMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)enterMultipleEditMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">This enables the user to select, download, or delete multiple media files when the camera is in Playback mode. <br> Precondition:<br> The camera work mode must be set to Camera Play back mode and then Multiple Preview Mode.<br>  <br> Post condition:<br> Multiple photos can be selected to be downloaded or deleted. @return DJICameraError Shows the  possible error during the execution. If there is no error, it returns <code>null</code>.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_exitmultipleeditmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_exitmultipleeditmode_inline">exitMultipleEditMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_exitmultipleeditmode_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_exitmultipleeditmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_exitmultipleeditmode_inline">exitMultipleEditMode</a></div></div><div class="inline-doc" id="djiplaybackmanager_exitmultipleeditmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>exitMultipleEditMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)exitMultipleEditMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)exitMultipleEditMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Exits multiple edit mode.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_togglefileselectionatindex"><div class="api-col left">Selection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_togglefileselectionatindex_inline">toggleFileSelectionAtIndex</a></div></div><div class="inline-doc" id="djiplaybackmanager_togglefileselectionatindex_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_togglefileselectionatindex"><div class="api-col left">Selection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_togglefileselectionatindex_inline">toggleFileSelectionAtIndex</a></div></div><div class="inline-doc" id="djiplaybackmanager_togglefileselectionatindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>toggleFileSelectionAtIndex</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)toggleFileSelectionAtIndex:(<span class="keyword">int</span>)index</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)toggleFileSelectionAtIndex:(<span class="keyword">int</span>)index</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Selects or unselects a file at the specified index of the current page. This index is unrelated to the filename,  and is used in multiple edit mode. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode. <br></font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">int <font color="#000">index</font></font></td><td><font color="#666"><i>Index at which to select a file.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_selectallfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_selectallfiles_inline">selectAllFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_selectallfiles_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_selectallfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_selectallfiles_inline">selectAllFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_selectallfiles_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>selectAllFiles</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)selectAllFiles</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)selectAllFiles</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">Selects all the files on the SD card. <br> <br> Precondition:<br> The camera must enter Multi Edit Mode.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_unselectallfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_unselectallfiles_inline">unselectAllFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_unselectallfiles_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_unselectallfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_unselectallfiles_inline">unselectAllFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_unselectallfiles_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>unselectAllFiles</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)unselectAllFiles</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)unselectAllFiles</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v18">Description:</h5>
 <p><font color="#666">Unselects all the files on the SD card. <br> Precondition:<br> The camera must enter Multiple Edit Mode.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_selectallfilesinpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_selectallfilesinpage_inline">selectAllFilesInPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_selectallfilesinpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_selectallfilesinpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_selectallfilesinpage_inline">selectAllFilesInPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_selectallfilesinpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>selectAllFilesInPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)selectAllFilesInPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)selectAllFilesInPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Selects all the file(s) on the current page. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_unselectallfilesinpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_unselectallfilesinpage_inline">unselectAllFilesInPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_unselectallfilesinpage_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_unselectallfilesinpage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_unselectallfilesinpage_inline">unselectAllFilesInPage</a></div></div><div class="inline-doc" id="djiplaybackmanager_unselectallfilesinpage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>unselectAllFilesInPage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)unselectAllFilesInPage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)unselectAllFilesInPage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Unselects all the file(s) on the current page. <br> <br> Precondition:<br> The camera must enter Multiple Edit  Mode.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_deleteallselectedfiles"><div class="api-col left">Delete Files</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_deleteallselectedfiles_inline">deleteAllSelectedFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_deleteallselectedfiles_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_deleteallselectedfiles"><div class="api-col left">Delete Files</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_deleteallselectedfiles_inline">deleteAllSelectedFiles</a></div></div><div class="inline-doc" id="djiplaybackmanager_deleteallselectedfiles_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>deleteAllSelectedFiles</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)deleteAllSelectedFiles</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)deleteAllSelectedFiles</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Deletes all selected files from the SD card. <br> <br> Precondition:<br> The camera must enter Multiple Edit Mode. <br> <br> Post condition:<br> The images will be deleted from the SD card.</font></p>
 </div>
-<div class="api-row" id="djiplaybackmanager_downloadselectedfiles"><div class="api-col left">Download Files</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_downloadselectedfiles_inline">downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion</a></div></div><div class="inline-doc" id="djiplaybackmanager_downloadselectedfiles_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_downloadselectedfiles"><div class="api-col left">Download Files</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_downloadselectedfiles_inline">downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion</a></div></div><div class="inline-doc" id="djiplaybackmanager_downloadselectedfiles_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>downloadSelectedFilesWithPreparation:process:fileCompletion:overallCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)downloadSelectedFilesWithPreparation:(<span class="keyword">nullable</span> DJIFileDownloadPreparingBlock)prepareBlock</div><div class="line">                                     process:(<span class="keyword">nullable</span> DJIFileDownloadingBlock)dataBlock</div><div class="line">                              fileCompletion:(<span class="keyword">nullable</span> DJIFileDownloadCompletionBlock)fileCompletionBlock</div><div class="line">                           overallCompletion:(<span class="keyword">nullable</span> DJICompletionBlock)finishBlock</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)downloadSelectedFilesWithPreparation:(<span class="keyword">nullable</span> DJIFileDownloadPreparingBlock)prepareBlock</span><br><span class="line">                                     process:(<span class="keyword">nullable</span> DJIFileDownloadingBlock)dataBlock</span><br><span class="line">                              fileCompletion:(<span class="keyword">nullable</span> DJIFileDownloadCompletionBlock)fileCompletionBlock</span><br><span class="line">                           overallCompletion:(<span class="keyword">nullable</span> DJICompletionBlock)finishBlock</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Downloads the currently selected media files. <br> <br> Precondition:<br> The camera must enter multiple preview mode.<br> <br></font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/Camera/DJIPlaybackManager.html#djiplaybackmanager_djifiledownloadpreparingblock">DJIFileDownloadPreparingBlock</a> <font color="#000">prepareBlock</font></font></td><td><font color="#666"><i>Callback to prepare each file for download.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/Camera/DJIPlaybackManager.html#djiplaybackmanager_djifiledownloadingblock">DJIFileDownloadingBlock</a> <font color="#000">dataBlock</font></font></td><td><font color="#666"><i>Callback while a file is downloading. The dataBlock can be called multiple times for a file. The error  argument in &lt;code&gt;DJIFileDownloadingBlock&lt;/code&gt; is not used and should be ignored.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable <a href="../../Components/Camera/DJIPlaybackManager.html#djiplaybackmanager_djifiledownloadcompletionblock">DJIFileDownloadCompletionBlock</a> <font color="#000">fileCompletionBlock</font></font></td><td><font color="#666"><i>Callback after each file have been downloaded.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable <a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">finishBlock</font></font></td><td><font color="#666"><i>Callback after the downloading is finished.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_stopdownloadingfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_stopdownloadingfiles_inline">stopDownloadingFilesWithCompletion</a></div></div><div class="inline-doc" id="djiplaybackmanager_stopdownloadingfiles_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_stopdownloadingfiles"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_stopdownloadingfiles_inline">stopDownloadingFilesWithCompletion</a></div></div><div class="inline-doc" id="djiplaybackmanager_stopdownloadingfiles_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopDownloadingFilesWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopDownloadingFilesWithCompletion:(<span class="keyword">nullable</span> DJICompletionBlock)block</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopDownloadingFilesWithCompletion:(<span class="keyword">nullable</span> DJICompletionBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v23">Description:</h5>
 <p><font color="#666">Cancel current file download.</font></p>
@@ -794,47 +788,47 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable <a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Callback after the operation finished.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiplaybackmanager_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_protocol_inline">DJIPlaybackDelegate</a></div></div><div class="inline-doc" id="djiplaybackmanager_protocol_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_protocol_inline">DJIPlaybackDelegate</a></div></div><div class="inline-doc" id="djiplaybackmanager_protocol_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIPlaybackDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIPlaybackDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIPlaybackDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">The protocol provides a delegate method to receive the updated state of the playback manager.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djiplaybackmanager_updateplaybackstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_updateplaybackstate_inline">playbackManager:didUpdatePlaybackState</a></div></div><div class="inline-doc" id="djiplaybackmanager_updateplaybackstate_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_updateplaybackstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_updateplaybackstate_inline">playbackManager:didUpdatePlaybackState</a></div></div><div class="inline-doc" id="djiplaybackmanager_updateplaybackstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>playbackManager:didUpdatePlaybackState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@required</span></div><div class="line">- (<span class="keyword">void</span>)playbackManager:(DJIPlaybackManager *_Nonnull)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *_Nonnull)playbackState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@required</span></span><br><span class="line">- (<span class="keyword">void</span>)playbackManager:(DJIPlaybackManager *_Nonnull)playbackManager didUpdatePlaybackState:(DJICameraPlaybackState *_Nonnull)playbackState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Updates the playback state of the camera. This update method will only be called when the camera's work mode is  set to <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameramode_djicameramodeplayback">DJICameraModePlayback</a></code>.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIPlaybackManager.html#djiplaybackmanager">DJIPlaybackManager</a> *_Nonnull <font color="#000">playbackManager</font></font></td><td><font color="#666"><i>DJIPlaybackManager object.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJIPlaybackManager_DJICameraPlaybackState.html#djiplaybackmanager_djicameraplaybackstate">DJICameraPlaybackState</a> *_Nonnull <font color="#000">playbackState</font></font></td><td><font color="#666"><i>The camera's playback state.</i></font></td></tr></table></html></div>
 </div>
-<div class="api-row" id="djiplaybackmanager_djicameraplaybackstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Camera/DJIPlaybackManager_DJICameraPlaybackState.html">DJICameraPlaybackState</a></div></div><div class="api-row" id="djiplaybackmanager_djifiledownloadpreparingblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadpreparingblock_inline">DJIFileDownloadPreparingBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadpreparingblock_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_djicameraplaybackstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Camera/DJIPlaybackManager_DJICameraPlaybackState.html">DJICameraPlaybackState</a></div></div><div class="api-row" id="djiplaybackmanager_djifiledownloadpreparingblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadpreparingblock_inline">DJIFileDownloadPreparingBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadpreparingblock_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIFileDownloadPreparingBlock</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadPreparingBlock)(<span class="built_in">NSString</span> *_Nullable fileName, DJIDownloadFileType fileType, <span class="built_in">NSUInteger</span> fileSize, <span class="built_in">BOOL</span> *skip)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadPreparingBlock)(<span class="built_in">NSString</span> *_Nullable fileName, DJIDownloadFileType fileType, <span class="built_in">NSUInteger</span> fileSize, <span class="built_in">BOOL</span> *skip)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v26">Description:</h5>
 <p><font color="#666">Block invoked when preparing a file for download.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString *_Nullable <font color="#000">fileName</font></font></td><td><font color="#666"><i>File name.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djidownloadfiletype">DJIDownloadFileType</a> <font color="#000">fileType</font></font></td><td><font color="#666"><i>Type of file.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">fileSize</font></font></td><td><font color="#666"><i>Size of file.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">BOOL * <font color="#000">skip</font></font></td><td><font color="#666"><i>Can be set to decide whether or not to skip the file.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_djifiledownloadingblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadingblock_inline">DJIFileDownloadingBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadingblock_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_djifiledownloadingblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadingblock_inline">DJIFileDownloadingBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadingblock_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIFileDownloadingBlock</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadingBlock)(<span class="built_in">NSData</span> *_Nullable data, <span class="built_in">NSError</span> *_Nullable error)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadingBlock)(<span class="built_in">NSData</span> *_Nullable data, <span class="built_in">NSError</span> *_Nullable error)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">Block invoked when a file is downloading.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSData *_Nullable <font color="#000">data</font></font></td><td><font color="#666"><i>File data.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error experienced during transfer.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djiplaybackmanager_djifiledownloadcompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadcompletionblock_inline">DJIFileDownloadCompletionBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadcompletionblock_inline" <blockquote="">
+<div class="api-row" id="djiplaybackmanager_djifiledownloadcompletionblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiplaybackmanager_djifiledownloadcompletionblock_inline">DJIFileDownloadCompletionBlock</a></div></div><div class="inline-doc" id="djiplaybackmanager_djifiledownloadcompletionblock_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIFileDownloadCompletionBlock</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadCompletionBlock)()</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIFileDownloadCompletionBlock)()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPlaybackManager.h</font></td></tr></table></html>
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666">Block invoked after a file has been downloaded.</font></p>

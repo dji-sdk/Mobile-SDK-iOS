@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -382,8 +378,6 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
                             </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
-                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../HandheldController/DJIHandheldController.html" class="sub-toggle">DJIHandheldController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -400,7 +394,7 @@
                   </dd>
                   <dd><a href="../MobileRemoteController/DJIMobileRemoteController.html">DJIMobileRemoteController</a>
                   </dd>
-                  <dd><a data-href="" class="sub-toggle">DJIPayload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href class="sub-toggle">DJIPayload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="DJIPayload_PayloadWidget.html">DJIPayloadWidget</a>
                             </dd>
@@ -597,88 +591,88 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIPayload</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPayload</span> : <span class="title">DJIBaseComponent</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPayload</span> : <span class="title">DJIBaseComponent</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">DJIBaseComponent</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Class used to interact with the payload device mounted on DJI aircraft.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djipayload_delegate"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djipayload_delegate_inline" <blockquote="">
+<div class="api-row" id="djipayload_delegate"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djipayload_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIPayloadDelegate&gt; delegate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIPayloadDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Delegate to receive the update information.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddelegate">DJIPayloadDelegate</a></code></font></p>
 </div>
-<div class="api-row" id="djipayload_getupstreambandwidth"><div class="api-col left">Upstream Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getupstreambandwidth_inline">getUpstreamBandwidthWithCompletion</a></div></div><div class="inline-doc" id="djipayload_getupstreambandwidth_inline" <blockquote="">
+<div class="api-row" id="djipayload_getupstreambandwidth"><div class="api-col left">Upstream Bandwidth</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getupstreambandwidth_inline">getUpstreamBandwidthWithCompletion</a></div></div><div class="inline-doc" id="djipayload_getupstreambandwidth_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getUpstreamBandwidthWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)getUpstreamBandwidthWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSUInteger</span> upstreamBandwidth, <span class="built_in">NSError</span> * _Nullable error))completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getUpstreamBandwidthWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSUInteger</span> upstreamBandwidth, <span class="built_in">NSError</span> * _Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gets the bandwidth of the upstream (from Mobile SDK to Payload). The unit is bytes/s.  The bandwidth is determined by the firmware and currently it is not larger than 500 bytes/s.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">upstreamBandwidth</font></font></td><td><font color="#666"><i>The upstream bandwidth determined by the firmware.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError * _Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(NSUInteger upstreamBandwidth, NSError * _Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getpayloadproductname"><div class="api-col left">Product Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getpayloadproductname_inline">getPayloadProductName</a></div></div><div class="inline-doc" id="djipayload_getpayloadproductname_inline" <blockquote="">
+<div class="api-row" id="djipayload_getpayloadproductname"><div class="api-col left">Product Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getpayloadproductname_inline">getPayloadProductName</a></div></div><div class="inline-doc" id="djipayload_getpayloadproductname_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPayloadProductName</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">NSString</span> * _Nullable)getPayloadProductName</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSString</span> * _Nullable)getPayloadProductName</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gets the product name defined by the manufacturer of the payload device.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * _Nullable</font></td><td><font color="#666"><i>The product name of the payload device.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue:type:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote="">
+<div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue:type:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>configureWidgetValue:type:index:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)configureWidgetValue:(<span class="built_in">NSUInteger</span>)value type:(DJIPayloadWidgetType)type index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)configureWidgetValue:(<span class="built_in">NSUInteger</span>)value type:(DJIPayloadWidgetType)type index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Set the value for a widget of the payload device. Different widget types requires different  value: <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_input">DJIPayloadWidgetTypeInput</a></code>, the input should be an unsigned 32-bit  integer <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_switch">DJIPayloadWidgetTypeSwitch</a></code>, the input should be value  of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a></code> <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_range">DJIPayloadWidgetTypeRange</a></code>, the input should  be a integer from value 0 to 100 <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code>, the input should  be a integer not larger than list size minus one. <br> Widget with  type <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_button">DJIPayloadWidgetTypeButton</a></code> is not configurable.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">value</font></font></td><td><font color="#666"><i>The value to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>Type of the widget to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the widget to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setswitchstate"><div class="api-col left">Switch State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setswitchstate_inline">setSwitchState:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setswitchstate_inline" <blockquote="">
+<div class="api-row" id="djipayload_setswitchstate"><div class="api-col left">Switch State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setswitchstate_inline">setSwitchState:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setswitchstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setSwitchState:index:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setSwitchState:(DJIPayloadSwitchState)state index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setSwitchState:(DJIPayloadSwitchState)state index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the switch state for the switch widget with the specific index. It has the same effect  as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code> with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_switch">DJIPayloadWidgetTypeSwitch</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>Switch state to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setrangevalue"><div class="api-col left">Range Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setrangevalue_inline">setRangeValue:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setrangevalue_inline" <blockquote="">
+<div class="api-row" id="djipayload_setrangevalue"><div class="api-col left">Range Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setrangevalue_inline">setRangeValue:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setrangevalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setRangeValue:index:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setRangeValue:(<span class="built_in">NSUInteger</span>)rangeValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setRangeValue:(<span class="built_in">NSUInteger</span>)rangeValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Sets the range value for the range widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_range">DJIPayloadWidgetTypeRange</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">rangeValue</font></font></td><td><font color="#666"><i>Range value to set. The valid range is [0, 100].</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setselecteditem"><div class="api-col left">Selected Item</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setselecteditem_inline">setSelectedItem:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setselecteditem_inline" <blockquote="">
+<div class="api-row" id="djipayload_setselecteditem"><div class="api-col left">Selected Item</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setselecteditem_inline">setSelectedItem:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setselecteditem_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setSelectedItem:index:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setSelectedItem:(<span class="built_in">NSUInteger</span>)selectedItemIndex index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setSelectedItem:(<span class="built_in">NSUInteger</span>)selectedItemIndex index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the selected item index for the list widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">selectedItemIndex</font></font></td><td><font color="#666"><i>Index of the selected item. The valid range is from 0 to list size - 1.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_setinputvalue"><div class="api-col left">Input Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setinputvalue_inline">setInputValue:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setinputvalue_inline" <blockquote="">
+<div class="api-row" id="djipayload_setinputvalue"><div class="api-col left">Input Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_setinputvalue_inline">setInputValue:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_setinputvalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setInputValue:index:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)setInputValue:(<span class="built_in">NSUInteger</span>)inputValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setInputValue:(<span class="built_in">NSUInteger</span>)inputValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Sets the input value for the input widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">inputValue</font></font></td><td><font color="#666"><i>Input value to set. The valid value is an unsigned 32-bit integer.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getwidget"><div class="api-col left">Get Widget</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidget_inline">getWidget:index</a></div></div><div class="inline-doc" id="djipayload_getwidget_inline" <blockquote="">
+<div class="api-row" id="djipayload_getwidget"><div class="api-col left">Get Widget</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidget_inline">getWidget:index</a></div></div><div class="inline-doc" id="djipayload_getwidget_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getWidget:index</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (DJIPayloadWidget * _Nullable)getWidget:(DJIPayloadWidgetType)widgetType index:(<span class="built_in">NSInteger</span>)widgetIndex</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (DJIPayloadWidget * _Nullable)getWidget:(DJIPayloadWidgetType)widgetType index:(<span class="built_in">NSInteger</span>)widgetIndex</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Gets a widget by specifying the widget type and the index.</font></p>
@@ -686,65 +680,65 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a> <font color="#000">widgetType</font></font></td><td><font color="#666"><i>Widget type to get.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSInteger <font color="#000">widgetIndex</font></font></td><td><font color="#666"><i>Widget index to get.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a> * _Nullable</font></td><td><font color="#666"><i>The widget corresponding to the widget type and the index. <code>nil</code> if the widgets are not ready or there is no widget corresponding  to the widget type and the index.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_getwidgets"><div class="api-col left">Get Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidgets_inline">getWidgets</a></div></div><div class="inline-doc" id="djipayload_getwidgets_inline" <blockquote="">
+<div class="api-row" id="djipayload_getwidgets"><div class="api-col left">Get Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getwidgets_inline">getWidgets</a></div></div><div class="inline-doc" id="djipayload_getwidgets_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getWidgets</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; * _Nullable)getWidgets</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; * _Nullable)getWidgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Gets the full list of widgets on the payload device. A new instance of &quot;NSArray&quot; is returned when one of the widget is updated.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a>*&gt; * _Nullable</font></td><td><font color="#666"><i>The full list of widgets. <code>nil</code> if the widgets are not fetched yet.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_senddatatopayload"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_senddatatopayload_inline">sendDataToPayload:withCompletion</a></div></div><div class="inline-doc" id="djipayload_senddatatopayload_inline" <blockquote="">
+<div class="api-row" id="djipayload_senddatatopayload"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_senddatatopayload_inline">sendDataToPayload:withCompletion</a></div></div><div class="inline-doc" id="djipayload_senddatatopayload_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>sendDataToPayload:withCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)sendDataToPayload:(<span class="built_in">NSData</span> *)data withCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)sendDataToPayload:(<span class="built_in">NSData</span> *)data withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Sends data to payload. <br> - The length of the data to send cannot exceed 32 bytes for Matrice 200 series. <br> - The length of the  data to send cannot exceed 128 bytes for Matrice 200 V2 series. The throughput cannot exceed the bandwidth returned by <code><a href="../../Components/Payload/DJIPayload.html#djipayload_getupstreambandwidth">getUpstreamBandwidthWithCompletion</a></code>.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>Data that will be sent to the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djipayload_payloadwidget"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html">DJIPayloadWidget</a></div></div><div class="api-row" id="djipayload_djipayloaddelegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_inline">DJIPayloadDelegate</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html">DJIPayloadWidget</a></div></div><div class="api-row" id="djipayload_djipayloaddelegate"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_inline">DJIPayloadDelegate</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJIPayloadDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIPayloadDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIPayloadDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Delegate class to receive updated state related to Payload.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivecommanddata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivecommanddata_inline">payload:didReceiveCommandData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivecommanddata_inline" <blockquote="">
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivecommanddata"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivecommanddata_inline">payload:didReceiveCommandData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivecommanddata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>payload:didReceiveCommandData</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveCommandData:(<span class="built_in">NSData</span> *)data</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveCommandData:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Receives the command data sent from the payload device. The command data is sent  from the UART/CAN channel of the payload device and the bandwidth of this channel  is 3K bytes/s on M200 series.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the command data from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The data that received by the payload instance.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivestreamdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivestreamdata_inline">payload:didReceiveStreamData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivestreamdata_inline" <blockquote="">
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivestreamdata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivestreamdata_inline">payload:didReceiveStreamData</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivestreamdata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>payload:didReceiveStreamData</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveStreamData:(<span class="built_in">NSData</span> *)data</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveStreamData:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Receives the stream data sent from the payload device. The stream data is sent from  the UDP channel of the payload device. This channel has wider bandwidth than the channel  for command data but data might get lost without re-transmission.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the stream data from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The data that received by the payload instance.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_djipayloaddelegate_didreceivemessage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivemessage_inline">payload:didReceiveMessage</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivemessage_inline" <blockquote="">
+<div class="api-row" id="djipayload_djipayloaddelegate_didreceivemessage"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didreceivemessage_inline">payload:didReceiveMessage</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didreceivemessage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>payload:didReceiveMessage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveMessage:(<span class="built_in">NSString</span> *)message</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveMessage:(<span class="built_in">NSString</span> *)message</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
 <p><font color="#666">Receives a text message sent from the payload device.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the text message from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">message</font></font></td><td><font color="#666"><i>The message that received by the payload instance.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_djipayloaddelegate_didupdatewidgets"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didupdatewidgets_inline">payload:didUpdateWidgets</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didupdatewidgets_inline" <blockquote="">
+<div class="api-row" id="djipayload_djipayloaddelegate_didupdatewidgets"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloaddelegate_didupdatewidgets_inline">payload:didUpdateWidgets</a></div></div><div class="inline-doc" id="djipayload_djipayloaddelegate_didupdatewidgets_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>payload:didUpdateWidgets</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didUpdateWidgets:(<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; *)widgets</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didUpdateWidgets:(<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; *)widgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
 <p><font color="#666">The payload device updates the value for the widgets.</font></p>

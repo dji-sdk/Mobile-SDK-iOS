@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -528,7 +522,7 @@
                   </dd>
                   <dd><a data-href="DJIHotpointMissionOperator.html" class="sub-toggle">DJIHotpointMissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="" class="active">DJIHotpointMission</a>
+                            <dd><a href class="active">DJIHotpointMission</a>
                             </dd>
                             <dd><a href="DJIHotpointMissionEvent.html">DJIHotpointMissionEvent</a>
                             </dd>
@@ -597,118 +591,118 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIHotpointMission</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHotpointMission</span> : <span class="title">DJIMission</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIHotpointMission</span> : <span class="title">DJIMission</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/Mission/DJIMission.html#djimission">DJIMission</a></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class represents a Hotpoint mission. In a Hotpoint mission, the aircraft will repeatedly fly circles of a constant radius around a specified point called a Hot Point. The user can control the aircraft to fly around the Hotpoint with a specific radius and altitude. During execution, the user can also use the physical remote controller to modify its radius and speed. It is not supported by Mavic Pro when using WiFi connection. It is not supported by Spark.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djihotpointmission_checkparameters"><div class="api-col left">Check Parameters</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_checkparameters_inline">checkParameters</a></div></div><div class="inline-doc" id="djihotpointmission_checkparameters_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_checkparameters"><div class="api-col left">Check Parameters</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_checkparameters_inline">checkParameters</a></div></div><div class="inline-doc" id="djihotpointmission_checkparameters_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>checkParameters</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSError</span> *)checkParameters</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nullable</span> <span class="built_in">NSError</span> *)checkParameters</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Checks if the configuration for mission is valid before calling  <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator_startmission">startMission:withCompletion</a></code> of <code><a href="../../Components/Missions/DJIHotpointMissionOperator.html#djihotpointmissionoperator">DJIHotpointMissionOperator</a></code>.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable NSError *</font></td><td><font color="#666"><i>Error found when checking parameters of the hotpoint. <code>nil</code> if all the parameters are valid.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djihotpointmission_hotpoint"><div class="api-col left">Coordinate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_hotpoint_inline">hotpoint</a></div></div><div class="inline-doc" id="djihotpointmission_hotpoint_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_hotpoint"><div class="api-col left">Coordinate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_hotpoint_inline">hotpoint</a></div></div><div class="inline-doc" id="djihotpointmission_hotpoint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>hotpoint</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CLLocationCoordinate2D</span> hotpoint</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="built_in">CLLocationCoordinate2D</span> hotpoint</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Sets the coordinate of the hotpoint.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_startpoint"><div class="api-col left">Start Point</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_startpoint_inline">startPoint</a></div></div><div class="inline-doc" id="djihotpointmission_startpoint_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_startpoint"><div class="api-col left">Start Point</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_startpoint_inline">startPoint</a></div></div><div class="inline-doc" id="djihotpointmission_startpoint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>startPoint</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointStartPoint startPoint</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointStartPoint startPoint</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Set aircraft's initial point on the circular flight path when starting the hotpoint  mission.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointstartpoint">DJIHotpointStartPoint</a></code></font></p>
 </div>
-<div class="api-row" id="djihotpointmission_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_heading_inline">heading</a></div></div><div class="inline-doc" id="djihotpointmission_heading_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_heading_inline">heading</a></div></div><div class="inline-doc" id="djihotpointmission_heading_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>heading</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointHeading heading</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) DJIHotpointHeading heading</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Aircraft's heading while flying around the hotpoint. It can be pointed toward or  away from the hotpoint, forward or backward along its flight route, or can be  manually controlled by the remote controller.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointheading">DJIHotpointHeading</a></code></font></p>
 </div>
-<div class="api-row" id="djihotpointmission_altitude"><div class="api-col left">Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_altitude_inline">altitude</a></div></div><div class="inline-doc" id="djihotpointmission_altitude_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_altitude"><div class="api-col left">Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_altitude_inline">altitude</a></div></div><div class="inline-doc" id="djihotpointmission_altitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>altitude</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> altitude</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> altitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Sets the altitude of the hotpoint orbit with a range [5,500] meters.  The altitude is relative to the ground altitude from which the aircraft took off.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_radius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_radius_inline">radius</a></div></div><div class="inline-doc" id="djihotpointmission_radius_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_radius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_radius_inline">radius</a></div></div><div class="inline-doc" id="djihotpointmission_radius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>radius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> radius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> radius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Sets the circular flight path radius with which the aircraft will fly around the  hotpoint. The value of this property should be in the range  of [<code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointminradius">DJIHotpointMinRadius</a></code>, <code><a href="../../Components/Missions/DJIHotPointMission.html#djihotpointmission_djihotpointmaxradius">DJIHotpointMaxRadius</a></code>] meters.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_angularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_angularvelocity_inline">angularVelocity</a></div></div><div class="inline-doc" id="djihotpointmission_angularvelocity_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_angularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_angularvelocity_inline">angularVelocity</a></div></div><div class="inline-doc" id="djihotpointmission_angularvelocity_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>angularVelocity</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> angularVelocity</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">assign</span>) <span class="keyword">float</span> angularVelocity</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMission.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Sets the angular velocity in degrees/s of the aircraft as it orbits the hot  point. The default value is 20 degrees/s. The maximum angular velocity allowed  is relative to the orbit radius.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djihotpointmission_djihotpointmaxradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxradius_inline">DJIHotpointMaxRadius</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxradius_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointmaxradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxradius_inline">DJIHotpointMaxRadius</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMaxRadius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxRadius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxRadius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Maximum radius, in meters, of the circular path the aircraft will fly around the  point of interest. Currently 500m.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointminradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminradius_inline">DJIHotpointMinRadius</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminradius_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointminradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminradius_inline">DJIHotpointMinRadius</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMinRadius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinRadius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinRadius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Minimum radius, in meters, of the circular path the aircraft will fly around the  point of interest.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointmaxaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxaltitude_inline">DJIHotpointMaxAltitude</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxaltitude_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointmaxaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointmaxaltitude_inline">DJIHotpointMaxAltitude</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointmaxaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMaxAltitude</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxAltitude</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMaxAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Maximum altitude in meters for a Hotpoint mission.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointminaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminaltitude_inline">DJIHotpointMinAltitude</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminaltitude_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointminaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointminaltitude_inline">DJIHotpointMinAltitude</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointminaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIHotpointMinAltitude</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinAltitude</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">DJI_API_EXTERN <span class="keyword">const</span> <span class="keyword">float</span> DJIHotpointMinAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Minimum altitude in meters for a Hotpoint mission.</font></p>
 </div>
-<div class="api-row" id="djihotpointmission_djihotpointstartpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointstartpoint_inline">DJIHotpointStartPoint</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointstartpoint_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointstartpoint"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointstartpoint_inline">DJIHotpointStartPoint</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointstartpoint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIHotpointStartPoint</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointStartPoint)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointStartPoint)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Aircraft starting point relative to the hotpoint.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmission_djihotpointstartpoint_north_inline"></a>DJIHotpointStartPointNorth</font></td><td><font color="#666">Start from the North.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmission_djihotpointstartpoint_south_inline"></a>DJIHotpointStartPointSouth</font></td><td><font color="#666">Start from the South.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmission_djihotpointstartpoint_west_inline"></a>DJIHotpointStartPointWest</font></td><td><font color="#666">Start from the West.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmission_djihotpointstartpoint_east_inline"></a>DJIHotpointStartPointEast</font></td><td><font color="#666">Start from the East.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djihotpointmission_djihotpointstartpoint_nearest_inline"></a>DJIHotpointStartPointNearest</font></td><td><font color="#666">Start the circle surrounding the hotpoint at the nearest point on the  circle to the aircraft's current location.</font></td></tr></table></html></div>
-<div class="api-row" id="djihotpointmission_djihotpointheading"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointheading_inline">DJIHotpointHeading</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointheading_inline" <blockquote="">
+<div class="api-row" id="djihotpointmission_djihotpointheading"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djihotpointmission_djihotpointheading_inline">DJIHotpointHeading</a></div></div><div class="inline-doc" id="djihotpointmission_djihotpointheading_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIHotpointHeading</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointHeading)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIHotpointHeading)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIHotpointMissionTypes.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Heading of the aircraft while orbiting the hotpoint.</font></p>

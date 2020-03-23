@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -224,7 +218,7 @@
                                       </dd>
                                       <dd><a href="DJIVisionDetectionState_DJIVisionControlState.html">DJIVisionControlState</a>
                                       </dd>
-                                      <dd><a href="" class="active">DJISmartCaptureState</a>
+                                      <dd><a href class="active">DJISmartCaptureState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,80 +591,80 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISmartCaptureState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISmartCaptureState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISmartCaptureState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The object includes all information related to SmartCapture.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djismartcapturestate_systemstatus"><div class="api-col left">Capture State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_systemstatus_inline">systemStatus</a></div></div><div class="inline-doc" id="djismartcapturestate_systemstatus_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_systemstatus"><div class="api-col left">Capture State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_systemstatus_inline">systemStatus</a></div></div><div class="inline-doc" id="djismartcapturestate_systemstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>systemStatus</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureSystemStatus systemStatus</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureSystemStatus systemStatus</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The system status of SmartCapture.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_djismartcapturesystemstatus">DJISmartCaptureSystemStatus</a></code></font></p>
 </div>
-<div class="api-row" id="djismartcapturestate_action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_action_inline">action</a></div></div><div class="inline-doc" id="djismartcapturestate_action_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_action"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_action_inline">action</a></div></div><div class="inline-doc" id="djismartcapturestate_action_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>action</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureAction action</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureAction action</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The executing SmartCapture action.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_djismartcaptureaction">DJISmartCaptureAction</a></code></font></p>
 </div>
-<div class="api-row" id="djismartcapturestate_followingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_followingmode_inline">followingMode</a></div></div><div class="inline-doc" id="djismartcapturestate_followingmode_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_followingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_followingmode_inline">followingMode</a></div></div><div class="inline-doc" id="djismartcapturestate_followingmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>followingMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureFollowingMode followingMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJISmartCaptureFollowingMode followingMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The following mode of SmartCapture.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_djismartcapturefollowingmode">DJISmartCaptureFollowingMode</a></code></font></p>
 </div>
-<div class="api-row" id="djismartcapturestate_photocountdown"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_photocountdown_inline">photoCountdown</a></div></div><div class="inline-doc" id="djismartcapturestate_photocountdown_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_photocountdown"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_photocountdown_inline">photoCountdown</a></div></div><div class="inline-doc" id="djismartcapturestate_photocountdown_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>photoCountdown</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSTimeInterval</span> photoCountdown</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSTimeInterval</span> photoCountdown</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The countdown for shooting photo.</font></p>
 </div>
-<div class="api-row" id="djismartcapturestate_targetrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djismartcapturestate_targetrect_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_targetrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djismartcapturestate_targetrect_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetRect</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The dimension of the detected target. It is <code>CGRectNull</code> when the target is invalid.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djismartcapturestate_djismartcapturesystemstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcapturesystemstatus_inline">DJISmartCaptureSystemStatus</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcapturesystemstatus_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_djismartcapturesystemstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcapturesystemstatus_inline">DJISmartCaptureSystemStatus</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcapturesystemstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJISmartCaptureSystemStatus</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureSystemStatus)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureSystemStatus)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The system status of SmartCapture.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_initializing_inline"></a>DJISmartCaptureSystemStatusInitializing</font></td><td><font color="#666">SmartCapture is initializing.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_notflyingandfaceawareactivating_inline"></a>DJISmartCaptureSystemStatusNotFlyingAndFaceAwareActivating</font></td><td><font color="#666">The aircraft is not flying and detecting a human face in front of the camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_notflyingandfaceawareactivated_inline"></a>DJISmartCaptureSystemStatusNotFlyingAndFaceAwareActivated</font></td><td><font color="#666">The aircraft is not flying and FaceAware has been activated. The aircraft will  push the dimension of the target through <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_targetrect">targetRect</a></code>  of <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate">DJISmartCaptureState</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_gesturelaunch_inline"></a>DJISmartCaptureSystemStatusGestureLaunch</font></td><td><font color="#666">GestureLaunch is recognized and the aircraft is taking off.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_flyingandfaceawareactivating_inline"></a>DJISmartCaptureSystemStatusFlyingAndFaceAwareActivating</font></td><td><font color="#666">The aircraft is flying and detecting human faces in front of the camera.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_flyingandfaceawareactivated_inline"></a>DJISmartCaptureSystemStatusFlyingAndFaceAwareActivated</font></td><td><font color="#666">The aircraft is flying and detected one or more than one human faces in front of the camera.  One of the detected human can raise a hand to confirm the control. Then the SmartCapture  state will change to <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_djismartcapturesystemstatus_following">DJISmartCaptureSystemStatusFollowing</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_following_inline"></a>DJISmartCaptureSystemStatusFollowing</font></td><td><font color="#666">The aircraft is following the target but not SmartCapture action is recognized.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_palmcontrol_inline"></a>DJISmartCaptureSystemStatusPalmControl</font></td><td><font color="#666">The aircraft is executing PalmControl (controlling the position or the distance).  See <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_action">action</a></code> of <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate">DJISmartCaptureState</a></code> for more detail.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_cameracaptureaction_inline"></a>DJISmartCaptureSystemStatusCameraCaptureAction</font></td><td><font color="#666">The aircraft is executing camera related action (e.g. shoot photos).  See <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_action">action</a></code> of <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate">DJISmartCaptureState</a></code> for more detail.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_gestureland_inline"></a>DJISmartCaptureSystemStatusGestureLand</font></td><td><font color="#666">GestureLand is recognized and the aircraft is landing.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcapturesystemstatus_unknown_inline"></a>DJISmartCaptureSystemStatusUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djismartcapturestate_djismartcaptureaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcaptureaction_inline">DJISmartCaptureAction</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcaptureaction_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_djismartcaptureaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcaptureaction_inline">DJISmartCaptureAction</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcaptureaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJISmartCaptureAction</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureAction)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureAction)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Different actions supported by SmartCapture.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_none_inline"></a>DJISmartCaptureActionNone</font></td><td><font color="#666">No action is being executed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_adjustingposition_inline"></a>DJISmartCaptureActionAdjustingPosition</font></td><td><font color="#666">The user is adjusting the aircraft's position. Move the palm up  or down slowly to control the aircraft's altitude. Move the arm  left or right to control the aircraft's orientation.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_adjustingdistance_inline"></a>DJISmartCaptureActionAdjustingDistance</font></td><td><font color="#666">The user is adjusting distance between the aircraft and the user.  Move two hands apart and the aircraft will fly away from the user.  The maximum distance is 19.7ft (6m). Move two hands together and  the aircraft will fly towards the user. The minimum distance is 6.6ft (2m).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_switchingcontrol_inline"></a>DJISmartCaptureActionSwitchingControl</font></td><td><font color="#666">The control of the aircraft is being switched from one person to the other.  The current user drops hand towards the floor. The Front LEDs will turn solid green.  The person who would like to control the aircraft raise palm in front of the aircraft.  When the Front LEDs blinks green slowly, it indicates the control is switched successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_shootingphoto_inline"></a>DJISmartCaptureShootingPhoto</font></td><td><font color="#666">The camera is shooting photos. Make a V gesture with one hand to trigger the action. Once the  gesture is recognized, two-second countdown will begin (<code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate_photocountdown">photoCountdown</a></code>  of <code><a href="../../Components/IntelligentFlightAssistant/DJISmartCaptureState.html#djismartcapturestate">DJISmartCaptureState</a></code>).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_recordingvideo_inline"></a>DJISmartCaptureActionRecordingVideo</font></td><td><font color="#666">The camera is recording video. To start this, make a frame gesture with fingers from both hands.  Once the gesture is recognized, the aircraft's front LEDs will turn off and the camera will start  recording. After five seconds, use the same gesture to stop the recording.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djismartcapturestate_djismartcaptureaction_unknown_inline"></a>DJISmartCaptureActionUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djismartcapturestate_djismartcapturefollowingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcapturefollowingmode_inline">DJISmartCaptureFollowingMode</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcapturefollowingmode_inline" <blockquote="">
+<div class="api-row" id="djismartcapturestate_djismartcapturefollowingmode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djismartcapturestate_djismartcapturefollowingmode_inline">DJISmartCaptureFollowingMode</a></div></div><div class="inline-doc" id="djismartcapturestate_djismartcapturefollowingmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJISmartCaptureFollowingMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureFollowingMode)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJISmartCaptureFollowingMode)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Different following modes of SmartCapture.</font></p>

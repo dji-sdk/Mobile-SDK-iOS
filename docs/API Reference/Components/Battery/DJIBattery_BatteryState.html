@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -266,7 +260,7 @@
                   </dd>
                   <dd><a data-href="DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="" class="active">DJIBatteryState</a>
+                            <dd><a href class="active">DJIBatteryState</a>
                             </dd>
                             <dd><a data-href="DJIBattery_AggregationState.html" class="sub-toggle">DJIBatteryAggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,126 +591,126 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIBatteryState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIBatteryState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIBatteryState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Supported by both smart and non-smart batteries, this class keeps track of the real-time state of the battery. Non-smart batteries only support the following properties: <ul> <li>When the connected product is A3 and N3, only <code><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate_voltage">voltage</a></code> and <code><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate_cellvoltagelevel">cellVoltageLevel</a></code> are valid.</li> <li>When the connected product is A2, only <code><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate_voltage">voltage</a></code> is valid.</li> </ul></font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="battery-properties">Battery Properties</h4>
-<div class="api-row" id="djibattery_batterystate_fullchargecapacity"><div class="api-col left">Charge</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_fullchargecapacity_inline">fullChargeCapacity</a></div></div><div class="inline-doc" id="djibattery_batterystate_fullchargecapacity_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_fullchargecapacity"><div class="api-col left">Charge</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_fullchargecapacity_inline">fullChargeCapacity</a></div></div><div class="inline-doc" id="djibattery_batterystate_fullchargecapacity_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>fullChargeCapacity</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> fullChargeCapacity</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> fullChargeCapacity</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamfullchargecapacity_key">DJIBatteryKey.DJIBatteryParamFullChargeCapacity</a></font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Returns the total amount of energy, in mAh (milliamp hours), stored in the battery when the battery is fully charged. The energy of the battery at full charge changes over time as the battery continues to get used. Over time, as the battery continues to be recharged, the value of <code><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate_fullchargecapacity">fullChargeCapacity</a></code> will decrease.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_chargeremaining"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_chargeremaining_inline">chargeRemaining</a></div></div><div class="inline-doc" id="djibattery_batterystate_chargeremaining_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_chargeremaining"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_chargeremaining_inline">chargeRemaining</a></div></div><div class="inline-doc" id="djibattery_batterystate_chargeremaining_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>chargeRemaining</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> chargeRemaining</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> chargeRemaining</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamchargeremaining_key">DJIBatteryKey.DJIBatteryParamChargeRemaining</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Returns the remaining energy stored in the battery in mAh (milliamp hours).</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_chargeremaininginpercent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_chargeremaininginpercent_inline">chargeRemainingInPercent</a></div></div><div class="inline-doc" id="djibattery_batterystate_chargeremaininginpercent_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_chargeremaininginpercent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_chargeremaininginpercent_inline">chargeRemainingInPercent</a></div></div><div class="inline-doc" id="djibattery_batterystate_chargeremaininginpercent_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>chargeRemainingInPercent</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> chargeRemainingInPercent</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> chargeRemainingInPercent</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamchargeremaininginpercent_key">DJIBatteryKey.DJIBatteryParamChargeRemainingInPercent</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Returns the percentage of battery energy left with range [0, 100].</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_isbeingcharged"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_isbeingcharged_inline">isBeingCharged</a></div></div><div class="inline-doc" id="djibattery_batterystate_isbeingcharged_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_isbeingcharged"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_isbeingcharged_inline">isBeingCharged</a></div></div><div class="inline-doc" id="djibattery_batterystate_isbeingcharged_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isBeingCharged</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isBeingCharged</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isBeingCharged</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamisbeingcharged_key">DJIBatteryKey.DJIBatteryParamIsBeingCharged</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666"><code>YES</code> if the battery is being charged.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_isinsinglebatterymode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_isinsinglebatterymode_inline">isInSingleBatteryMode</a></div></div><div class="inline-doc" id="djibattery_batterystate_isinsinglebatterymode_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_isinsinglebatterymode"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_isinsinglebatterymode_inline">isInSingleBatteryMode</a></div></div><div class="inline-doc" id="djibattery_batterystate_isinsinglebatterymode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isInSingleBatteryMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isInSingleBatteryMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isInSingleBatteryMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamisinsinglebatterymode_key">DJIBatteryKey.DJIBatteryParamIsInSingleBatteryMode</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666"><code>YES</code> if only one battery is inserted on the the right or starboard side of the aircraft. The aircraft can still take off but the flight time will be shorter. It is only supported by Inspire 2: Inspire 2 must always have a battery in the right/starboard slot.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_selfheatingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_selfheatingstate_inline">selfHeatingState</a></div></div><div class="inline-doc" id="djibattery_batterystate_selfheatingstate_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_selfheatingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_selfheatingstate_inline">selfHeatingState</a></div></div><div class="inline-doc" id="djibattery_batterystate_selfheatingstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>selfHeatingState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIBatterySelfHeatingState selfHeatingState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readwrite</span>) DJIBatterySelfHeatingState selfHeatingState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The state of the battery's auto heating feature. It is <code><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatteryselfheatingstate_unknown">DJIBatterySelfHeatingStateUnknown</a></code>  if the battery does not support this feature.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatteryselfheatingstate">DJIBatterySelfHeatingState</a></code></font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_designcapacity"><div class="api-col left">Design Capacity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_designcapacity_inline">designCapacity</a></div></div><div class="inline-doc" id="djibattery_batterystate_designcapacity_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_designcapacity"><div class="api-col left">Design Capacity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_designcapacity_inline">designCapacity</a></div></div><div class="inline-doc" id="djibattery_batterystate_designcapacity_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>designCapacity</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> designCapacity</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> designCapacity</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Returns the design capacity of the battery in mAh (milliamp hours). It is the  ideal capacity when the battery is new. This value will not change over time.  It is only supported by smart battery.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_voltage"><div class="api-col left">Electrical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_voltage_inline">voltage</a></div></div><div class="inline-doc" id="djibattery_batterystate_voltage_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_voltage"><div class="api-col left">Electrical</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_voltage_inline">voltage</a></div></div><div class="inline-doc" id="djibattery_batterystate_voltage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>voltage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> voltage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> voltage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamvoltage_key">DJIBatteryKey.DJIBatteryParamVoltage</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Returns the current battery voltage (mV).</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_current"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_current_inline">current</a></div></div><div class="inline-doc" id="djibattery_batterystate_current_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_current"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_current_inline">current</a></div></div><div class="inline-doc" id="djibattery_batterystate_current_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>current</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> current</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> current</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamcurrent_key">DJIBatteryKey.DJIBatteryParamCurrent</a></font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Returns the real time current draw of the battery (mA). A negative value means the battery is being discharged, and a positive value means it is being charged.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_cellvoltagelevel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_cellvoltagelevel_inline">cellVoltageLevel</a></div></div><div class="inline-doc" id="djibattery_batterystate_cellvoltagelevel_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_cellvoltagelevel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_cellvoltagelevel_inline">cellVoltageLevel</a></div></div><div class="inline-doc" id="djibattery_batterystate_cellvoltagelevel_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>cellVoltageLevel</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIBatteryCellVoltageLevel cellVoltageLevel</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIBatteryCellVoltageLevel cellVoltageLevel</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamcellvoltagelevel_key">DJIBatteryKey.DJIBatteryParamCellVoltageLevel</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Current cell voltage level of the battery. It is only supported when the connected product is stand-alone A3 or N3.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_djibatterycellvoltagelevel">DJIBatteryCellVoltageLevel</a></code></font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_lifetimeremaining"><div class="api-col left">Lifetime</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_lifetimeremaining_inline">lifetimeRemaining</a></div></div><div class="inline-doc" id="djibattery_batterystate_lifetimeremaining_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_lifetimeremaining"><div class="api-col left">Lifetime</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_lifetimeremaining_inline">lifetimeRemaining</a></div></div><div class="inline-doc" id="djibattery_batterystate_lifetimeremaining_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>lifetimeRemaining</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> lifetimeRemaining</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> lifetimeRemaining</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlifetimeremaininginpercent_key">DJIBatteryKey.DJIBatteryParamLifetimeRemainingInPercent</a></font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Returns the battery's remaining lifetime as a percentage, with range [0, 100]. A new battery will be close to 100%. As a battery experiences charge/discharge cycles, the value will go down. In unsupported products, this value will always be 0.  These products are Phantom 4 Pro, Inspire 2, and Phantom 4 Advanced.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_temperature"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_temperature_inline">temperature</a></div></div><div class="inline-doc" id="djibattery_batterystate_temperature_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_temperature"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_temperature_inline">temperature</a></div></div><div class="inline-doc" id="djibattery_batterystate_temperature_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>temperature</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> temperature</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> temperature</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamtemperature_key">DJIBatteryKey.DJIBatteryParamTemperature</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Returns the battery's temperature, in Celsius, with range [-128, 127] degrees.</font></p>
 </div>
-<div class="api-row" id="djibattery_batterystate_numberofdischarges"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_numberofdischarges_inline">numberOfDischarges</a></div></div><div class="inline-doc" id="djibattery_batterystate_numberofdischarges_inline" <blockquote="">
+<div class="api-row" id="djibattery_batterystate_numberofdischarges"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_batterystate_numberofdischarges_inline">numberOfDischarges</a></div></div><div class="inline-doc" id="djibattery_batterystate_numberofdischarges_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>numberOfDischarges</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> numberOfDischarges</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> numberOfDischarges</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamnumberofdischarges_key">DJIBatteryKey.DJIBatteryParamNumberOfDischarges</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">Returns the total number of discharges the battery has gone through over its lifetime. The total number of discharges includes discharges that happen through normal use and discharges that are manually set.</font></p>
 </div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djibattery_djibatterycellvoltagelevel"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterycellvoltagelevel_inline">DJIBatteryCellVoltageLevel</a></div></div><div class="inline-doc" id="djibattery_djibatterycellvoltagelevel_inline" <blockquote="">
+<div class="api-row" id="djibattery_djibatterycellvoltagelevel"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterycellvoltagelevel_inline">DJIBatteryCellVoltageLevel</a></div></div><div class="inline-doc" id="djibattery_djibatterycellvoltagelevel_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIBatteryCellVoltageLevel</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryCellVoltageLevel)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryCellVoltageLevel)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamcellvoltagelevel_key">DJIBatteryKey.DJIBatteryParamCellVoltageLevel</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
 <p><font color="#666">Battery cell voltage level threshold. Different thresholds will initiate different aircraft behaviors or operations. Level 3 is the lowest level. It is only supported when the connected product is stand-alone A3 and N3.</font></p>

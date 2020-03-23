@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -538,7 +532,7 @@
                     <ul class="sub-menu">
                             <dd><a href="DJIIntelligentHotpointMission.html">DJIIntelligentHotpointMission</a>
                             </dd>
-                            <dd><a href="" class="active">DJIIntelligentHotpointMissionEvent</a>
+                            <dd><a href class="active">DJIIntelligentHotpointMissionEvent</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,109 +591,109 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIIntelligentHotpointMissionEvent</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIIntelligentHotpointMissionEvent</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIIntelligentHotpointMissionEvent</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class encapsulates all the state changes of the Intelligent Hotpoint mission operator.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate_inline">previousState</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate_inline">previousState</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_previousstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>previousState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionState previousState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionState previousState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The previous state of the operator.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate">DJIIntelligentHotpointMissionState</a></code></font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate_inline">currentState</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate_inline">currentState</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>currentState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionState currentState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionState currentState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The current state of the operator.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate">DJIIntelligentHotpointMissionState</a></code></font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode"><div class="api-col left">Mission Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode_inline">missionMode</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode"><div class="api-col left">Mission Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode_inline">missionMode</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_missionmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>missionMode</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionMode missionMode</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIIntelligentHotpointMissionMode missionMode</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The current mission mode.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIIntelligentHotpointMission.html#djiintelligenthotpointmission_djiintelligenthotpointmissionmode">DJIIntelligentHotpointMissionMode</a></code></font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect"><div class="api-col left">Target Rect</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect"><div class="api-col left">Target Rect</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetrect_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetRect</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">A bounding box for the target. The rectangle is normalized to [0,1] where (0,0) is the top left of  the video preview and (1,1) is the bottom right. When send target rect to Vision system, it will  recognize the target and push modified target bounding box. Value is available if  the <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentstate">currentState</a></code>  is <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate_recognizingtarget">DJIIntelligentHotpointMissionStateRecognizingTarget</a></code>,  <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate_waitingforconfirmation">DJIIntelligentHotpointMissionStateWaitingForConfirmation</a></code>,  <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionstate_measuringtarget">DJIIntelligentHotpointMissionStateMeasuringTarget</a></code>.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius_inline">currentRadius</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius_inline">currentRadius</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>currentRadius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> currentRadius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> currentRadius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The current intelligent hotpoint radius in meters of the mission. If there is no executing mission, it is 0.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius_inline">targetRadius</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius_inline">targetRadius</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetRadius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> targetRadius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> targetRadius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The target intelligent hotpoint radius in meters of the mission. Set by user, and the <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentradius">currentRadius</a></code>  will change to <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetradius">targetRadius</a></code>. If there is no executing mission, it is 0.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude"><div class="api-col left">Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude_inline">currentAltitude</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude"><div class="api-col left">Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude_inline">currentAltitude</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>currentAltitude</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> currentAltitude</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> currentAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The current intelligent hotpoint altitude in meters of the mission.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude_inline">targetAltitude</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude_inline">targetAltitude</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetAltitude</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> targetAltitude</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> targetAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The target intelligent hotpoint altitude in meters of the mission. Setted by user, and the <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_currentaltitude">currentAltitude</a></code>  will change to <code><a href="../../Components/Missions/DJIIntelligentHotpointMissionOperator_DJIIntelligentHotpointMissionEvent.html#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_targetaltitude">targetAltitude</a></code>.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity_inline">maxAngularVelocity</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity"><div class="api-col left">Angular Velocity</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity_inline">maxAngularVelocity</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_maxangularvelocity_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>maxAngularVelocity</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> maxAngularVelocity</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> maxAngularVelocity</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The intelligent hotpoint max angular velocity from current radius. This value depends on the current situation of the aircraft.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity_inline">angularVelocity</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity_inline">angularVelocity</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_angularvelocity_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>angularVelocity</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> angularVelocity</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> angularVelocity</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The current intelligent hotpoint angular velocity from current radius.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint"><div class="api-col left">Hotpoint</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint_inline">hotpoint</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint"><div class="api-col left">Hotpoint</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint_inline">hotpoint</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_hotpoint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>hotpoint</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> hotpoint</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> hotpoint</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">The intelligent hotpoint's coordinate of the mission.</font></p>
 </div>
-<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error_inline">error</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error_inline" <blockquote="">
+<div class="api-row" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error_inline">error</a></div></div><div class="inline-doc" id="djiintelligenthotpointmissionoperator_djiintelligenthotpointmissionevent_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>error</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSError</span> *error</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSError</span> *error</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIIntelligentHotpointMissionOperator.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">The intelligent hotpoint's encountered error if there is any. Otherwise, it is <code>nil</code>.</font></p>

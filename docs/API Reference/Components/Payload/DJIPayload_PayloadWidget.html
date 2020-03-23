@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -382,8 +378,6 @@
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
                             </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
-                            </dd>
                     </ul>
                   </dd>
                   <dd><a data-href="../HandheldController/DJIHandheldController.html" class="sub-toggle">DJIHandheldController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -402,7 +396,7 @@
                   </dd>
                   <dd><a data-href="DJIPayload.html" class="sub-toggle">DJIPayload<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="" class="active">DJIPayloadWidget</a>
+                            <dd><a href class="active">DJIPayloadWidget</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,120 +591,120 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIPayloadWidget</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPayloadWidget</span> : <span class="title">NSObject</span>&lt;<span class="title">NSCopying</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIPayloadWidget</span> : <span class="title">NSObject</span>&lt;<span class="title">NSCopying</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject<nscopying></nscopying></code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Class to represent the properties of a payload widget. Payload SDK defines  different types of widgets for the interaction between the payload device  and the mobile device.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djipayload_payloadwidget_type"><div class="api-col left">Type</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_type_inline">type</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_type_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_type"><div class="api-col left">Type</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_type_inline">type</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_type_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>type</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadWidgetType type</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadWidgetType type</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The type of the widget. Different types have different type of values.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code></font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_index"><div class="api-col left">Index</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_index_inline">index</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_index_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_index"><div class="api-col left">Index</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_index_inline">index</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_index_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>index</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> index</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> index</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The index of the widget. An index is used to differentiate widgets of the same type.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_name"><div class="api-col left">Name</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_name_inline">name</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_name_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_name"><div class="api-col left">Name</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_name_inline">name</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_name_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>name</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *name</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The name of the widget. This is determined by the payload device and not configurable  through the mobile device.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_buttonstate"><div class="api-col left">Button State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_buttonstate_inline">buttonState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_buttonstate_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_buttonstate"><div class="api-col left">Button State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_buttonstate_inline">buttonState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_buttonstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>buttonState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadButtonState buttonState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadButtonState buttonState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The button state. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_button">DJIPayloadWidgetTypeButton</a></code>.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_buttonstate">DJIPayloadButtonState</a></code></font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_switchstate"><div class="api-col left">Switch State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_switchstate_inline">switchState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_switchstate_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_switchstate"><div class="api-col left">Switch State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_switchstate_inline">switchState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_switchstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>switchState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadSwitchState switchState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIPayloadSwitchState switchState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The switch state. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_switch">DJIPayloadWidgetTypeSwitch</a></code>.  It is possible to configure the switch value through <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a></code></font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_percentage"><div class="api-col left">Percentage</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_percentage_inline">percentage</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_percentage_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_percentage"><div class="api-col left">Percentage</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_percentage_inline">percentage</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_percentage_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>percentage</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSProgress</span> *percentage</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSProgress</span> *percentage</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The progress value of a range bar. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_range">DJIPayloadWidgetTypeRange</a></code>. It is  possible to configure the range value through <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_list"><div class="api-col left">List</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_list_inline">list</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_list_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_list"><div class="api-col left">List</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_list_inline">list</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_list_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>list</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span> *list</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSArray</span> *list</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">All the items in the list. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code>.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_selectedlistitem"><div class="api-col left">Selected List Item</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_selectedlistitem_inline">selectedListItem</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_selectedlistitem_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_selectedlistitem"><div class="api-col left">Selected List Item</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_selectedlistitem_inline">selectedListItem</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_selectedlistitem_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>selectedListItem</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> selectedListItem</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">assign</span>) <span class="built_in">NSUInteger</span> selectedListItem</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The index of the selected item in the list. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code>.  It is possible to configure the selected item index through <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_inputhint"><div class="api-col left">Input Hint</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_inputhint_inline">inputHint</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_inputhint_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_inputhint"><div class="api-col left">Input Hint</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_inputhint_inline">inputHint</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_inputhint_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>inputHint</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *inputHint</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">copy</span>) <span class="built_in">NSString</span> *inputHint</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The hint for an input box determined by the payload device. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code>  is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_input">DJIPayloadWidgetTypeInput</a></code>.</font></p>
 </div>
-<div class="api-row" id="djipayload_payloadwidget_inputvalue"><div class="api-col left">Input Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_inputvalue_inline">inputValue</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_inputvalue_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_inputvalue"><div class="api-col left">Input Value</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_inputvalue_inline">inputValue</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_inputvalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>inputValue</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> inputValue</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">assign</span>) <span class="built_in">NSInteger</span> inputValue</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">The value of an input box. It is only valid when <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a></code> is <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_input">DJIPayloadWidgetTypeInput</a></code>.  It is possible to configure the value through <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djipayload_payloadwidget_widgettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_widgettype_inline">DJIPayloadWidgetType</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_widgettype_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_widgettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_widgettype_inline">DJIPayloadWidgetType</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_widgettype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIPayloadWidgetType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadWidgetType)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadWidgetType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Types of widgets on the payload device.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_none_inline"></a>DJIPayloadWidgetTypeNone</font></td><td><font color="#666">None.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_button_inline"></a>DJIPayloadWidgetTypeButton</font></td><td><font color="#666">The widget is a button. The value is a value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_buttonstate">DJIPayloadButtonState</a></code>.  A button widget is not configurable by the mobile side and the state is controlled by the hardware.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_switch_inline"></a>DJIPayloadWidgetTypeSwitch</font></td><td><font color="#666">The widget is a switch. The value is a value of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a></code>.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_range_inline"></a>DJIPayloadWidgetTypeRange</font></td><td><font color="#666">The widget is a range bar with percentage as the value. The valid value is from 0 to 100.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_list_inline"></a>DJIPayloadWidgetTypeList</font></td><td><font color="#666">The widget is a list. The value represents the single selected item in the list. The valid  value is from 0 to the list size - 1. The list size is returned by the hardware.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_widgettype_input_inline"></a>DJIPayloadWidgetTypeInput</font></td><td><font color="#666">The widget is an input box. The value should an unsigned 32-bit integer.</font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_payloadwidget_buttonstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_buttonstate_inline">DJIPayloadButtonState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_buttonstate_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_buttonstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_buttonstate_inline">DJIPayloadButtonState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_buttonstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIPayloadButtonState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadButtonState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadButtonState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">States of a button widget.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_buttonstate_pull_inline"></a>DJIPayloadButtonStatePull</font></td><td><font color="#666">The button is in pull state.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_payloadwidget_buttonstate_press_inline"></a>DJIPayloadButtonStatePress</font></td><td><font color="#666">The button is being pressed.</font></td></tr></table></html></div>
-<div class="api-row" id="djipayload_payloadwidget_switchstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_switchstate_inline">DJIPayloadSwitchState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_switchstate_inline" <blockquote="">
+<div class="api-row" id="djipayload_payloadwidget_switchstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djipayload_payloadwidget_switchstate_inline">DJIPayloadSwitchState</a></div></div><div class="inline-doc" id="djipayload_payloadwidget_switchstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIPayloadSwitchState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadSwitchState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIPayloadSwitchState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadWidget.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
 <p><font color="#666">States of a switch widget.</font></p>

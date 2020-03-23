@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -182,7 +176,7 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
-                            <dd><a data-href="" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJICompass_DJICompassState.html">DJICompassState</a>
                                       </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,69 +591,69 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJICompass</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJICompass</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJICompass</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides compass status information and compass calibration methods. Products with multiple compasses (like the Phantom 4) have their compass state fused into one compass class for simplicity.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <h4 id="state-updates">State Updates</h4>
-<div class="api-row" id="djicompass_delegate"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djicompass_delegate_inline" <blockquote="">
+<div class="api-row" id="djicompass_delegate"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djicompass_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJICompassDelegate&gt; delegate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJICompassDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Compass delegate.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_protocol">DJICompassDelegate</a></code></font></p>
 </div>
-<div class="api-row" id="djicompass_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_heading_inline">heading</a></div></div><div class="inline-doc" id="djicompass_heading_inline" <blockquote="">
+<div class="api-row" id="djicompass_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_heading_inline">heading</a></div></div><div class="inline-doc" id="djicompass_heading_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>heading</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> heading</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> heading</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompassheading_key">DJIFlightControllerKey.DJIFlightControllerParamCompassHeading</a></font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Represents the heading, in degrees. True North is 0 degrees, positive heading is East of North, and negative  heading is West of North. Heading bounds are [-180, 180].</font></p>
 </div>
-<div class="api-row" id="djicompass_haserror"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_haserror_inline">hasError</a></div></div><div class="inline-doc" id="djicompass_haserror_inline" <blockquote="">
+<div class="api-row" id="djicompass_haserror"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_haserror_inline">hasError</a></div></div><div class="inline-doc" id="djicompass_haserror_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>hasError</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> hasError</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> hasError</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompasshaserror_key">DJIFlightControllerKey.DJIFlightControllerParamCompassHasError</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666"><code>YES</code> if the compass has an error. If <code>YES</code>, the compass  needs calibration.</font></p>
 </div>
-<div class="api-row" id="djicompass_iscalibrating"><div class="api-col left">Check Calibrating</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_iscalibrating_inline">isCalibrating</a></div></div><div class="inline-doc" id="djicompass_iscalibrating_inline" <blockquote="">
+<div class="api-row" id="djicompass_iscalibrating"><div class="api-col left">Check Calibrating</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_iscalibrating_inline">isCalibrating</a></div></div><div class="inline-doc" id="djicompass_iscalibrating_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isCalibrating</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isCalibrating</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isCalibrating</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompassiscalibrating_key">DJIFlightControllerKey.DJIFlightControllerParamCompassIsCalibrating</a></font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666"><code>YES</code> if the compass is currently calibrating.</font></p>
 </div>
-<div class="api-row" id="djicompass_calibrationstatus"><div class="api-col left">Calibration Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_calibrationstatus_inline">calibrationState</a></div></div><div class="inline-doc" id="djicompass_calibrationstatus_inline" <blockquote="">
+<div class="api-row" id="djicompass_calibrationstatus"><div class="api-col left">Calibration Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicompass_calibrationstatus_inline">calibrationState</a></div></div><div class="inline-doc" id="djicompass_calibrationstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>calibrationState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICompassCalibrationState calibrationState</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICompassCalibrationState calibrationState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompasscalibrationstate_key">DJIFlightControllerKey.DJIFlightControllerParamCompassCalibrationState</a></font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Shows the calibration status.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Compass/DJICompass.html#djicompass_djicompasscalibrationstatus">DJICompassCalibrationState</a></code></font></p>
 </div>
-<div class="api-row" id="djicompass_startcalibration"><div class="api-col left">Calibration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_startcalibration_inline">startCalibrationWithCompletion</a></div></div><div class="inline-doc" id="djicompass_startcalibration_inline" <blockquote="">
+<div class="api-row" id="djicompass_startcalibration"><div class="api-col left">Calibration</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_startcalibration_inline">startCalibrationWithCompletion</a></div></div><div class="inline-doc" id="djicompass_startcalibration_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>startCalibrationWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)startCalibrationWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)startCalibrationWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompassstartcalibration_key">DJIFlightControllerKey.DJIFlightControllerParamCompassStartCalibration</a></font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Starts compass calibration. Make sure there are no magnets or metal objects near the compass.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djicompass_stopcalibration"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_stopcalibration_inline">stopCalibrationWithCompletion</a></div></div><div class="inline-doc" id="djicompass_stopcalibration_inline" <blockquote="">
+<div class="api-row" id="djicompass_stopcalibration"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_stopcalibration_inline">stopCalibrationWithCompletion</a></div></div><div class="inline-doc" id="djicompass_stopcalibration_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopCalibrationWithCompletion</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">- (<span class="keyword">void</span>)stopCalibrationWithCompletion:(DJICompletionBlock)completion</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopCalibrationWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompassstopcalibration_key">DJIFlightControllerKey.DJIFlightControllerParamCompassStopCalibration</a></font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Stops compass calibration.</font></p>
@@ -667,46 +661,46 @@
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djicompass_djicompassstate"><div class="api-col left">Compass State</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Compass/DJICompass_DJICompassState.html">DJICompassState</a></div></div><div class="api-row" id="djicompass_djicompasscalibrationstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicompass_djicompasscalibrationstatus_inline">DJICompassCalibrationState</a></div></div><div class="inline-doc" id="djicompass_djicompasscalibrationstatus_inline" <blockquote="">
+<div class="api-row" id="djicompass_djicompassstate"><div class="api-col left">Compass State</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Compass/DJICompass_DJICompassState.html">DJICompassState</a></div></div><div class="api-row" id="djicompass_djicompasscalibrationstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicompass_djicompasscalibrationstatus_inline">DJICompassCalibrationState</a></div></div><div class="inline-doc" id="djicompass_djicompasscalibrationstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJICompassCalibrationState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJICompassCalibrationState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJICompassCalibrationState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompassCalibrationState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamcompasscalibrationstate_key">DJIFlightControllerKey.DJIFlightControllerParamCompassCalibrationState</a></font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Compass Calibration Status.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_normal_inline"></a>DJICompassCalibrationStateNotCalibrating</font></td><td><font color="#666">Normal state. Compass not in calibration.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_horizontal_inline"></a>DJICompassCalibrationStateHorizontal</font></td><td><font color="#666">Compass horizontal calibration. The user should hold the aircraft horizontally and rotate it 360 degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_vertical_inline"></a>DJICompassCalibrationStateVertical</font></td><td><font color="#666">Compass vertical calibration. The user should hold the aircraft vertically, with the nose pointed towards the  ground, and rotate the aircraft 360 degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_succeeded_inline"></a>DJICompassCalibrationStateSuccessful</font></td><td><font color="#666">Compass calibration succeeded.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_failed_inline"></a>DJICompassCalibrationStateFailed</font></td><td><font color="#666">Compass calibration failed. Make sure there are no magnets or metal objects near the compass and retry.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasscalibrationstatus_unknown_inline"></a>DJICompassCalibrationStateUnknown</font></td><td><font color="#666">Compass calibration status unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djicompass_djicompasssensorstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicompass_djicompasssensorstate_inline">DJICompassSensorState</a></div></div><div class="inline-doc" id="djicompass_djicompasssensorstate_inline" <blockquote="">
+<div class="api-row" id="djicompass_djicompasssensorstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djicompass_djicompasssensorstate_inline">DJICompassSensorState</a></div></div><div class="inline-doc" id="djicompass_djicompasssensorstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJICompassSensorState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJICompassSensorState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJICompassSensorState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompassState.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Enum for Compass sensor Status.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_disconnected_inline"></a>DJICompassSensorStateDisconnected</font></td><td><font color="#666">The Compass sensor is disconnected from the flight controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_calibrating_inline"></a>DJICompassSensorStateCalibrating</font></td><td><font color="#666">The Compass sensor is calibrating.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_idle_inline"></a>DJICompassSensorStateIdle</font></td><td><font color="#666">The Compass sensor is not in calibrating.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_dataexception_inline"></a>DJICompassSensorStateDataException</font></td><td><font color="#666">The Compass sensor has a data exception. Calibrate the compass and restart the aircraft.  If afterwards the status still exists, you may need to contact DJI for further assistance.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_supermodulussamll_inline"></a>DJICompassSensorStateSuperModulusSamll</font></td><td><font color="#666">The compass sensor super modulus is too samll.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_supermodulusweak_inline"></a>DJICompassSensorStateSuperModulusWeak</font></td><td><font color="#666">The compass sensor super modulus is too weak.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_supermodulusdeviate_inline"></a>DJICompassSensorStateSuperModulusDeviate</font></td><td><font color="#666">The compass sensor super modulus is deviate.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_calibrationfailed_inline"></a>DJICompassSensorStateCalibrationFailed</font></td><td><font color="#666">The Compass sensor is calibrating failed.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_inconsistentdirection_inline"></a>DJICompassSensorStateInconsistentDirection</font></td><td><font color="#666">The Compass sensor is inconsistent direction.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djicompass_djicompasssensorstate_unknown_inline"></a>DJICompassSensorStateUnknown</font></td><td><font color="#666">The IMU sensor's status is unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djicompass_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djicompass_protocol_inline">DJICompassDelegate</a></div></div><div class="inline-doc" id="djicompass_protocol_inline" <blockquote="">
+<div class="api-row" id="djicompass_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djicompass_protocol_inline">DJICompassDelegate</a></div></div><div class="inline-doc" id="djicompass_protocol_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJICompassDelegate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJICompassDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJICompassDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to update the compass's current state.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djicompass_didupdatecalibrationstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_didupdatecalibrationstate_inline">compass:didUpdateCalibrationState</a></div></div><div class="inline-doc" id="djicompass_didupdatecalibrationstate_inline" <blockquote="">
+<div class="api-row" id="djicompass_didupdatecalibrationstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_didupdatecalibrationstate_inline">compass:didUpdateCalibrationState</a></div></div><div class="inline-doc" id="djicompass_didupdatecalibrationstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>compass:didUpdateCalibrationState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)compass:(DJICompass *_Nonnull)compass didUpdateCalibrationState:(DJICompassCalibrationState)state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)compass:(DJICompass *_Nonnull)compass didUpdateCalibrationState:(DJICompassCalibrationState)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Called when the compass pushes an compass calibration state update.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Compass/DJICompass.html#djicompass">DJICompass</a> *_Nonnull <font color="#000">compass</font></font></td><td><font color="#666"><i>Instance of the compass for which the calibration state will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Compass/DJICompass.html#djicompass_djicompasscalibrationstatus">DJICompassCalibrationState</a> <font color="#000">state</font></font></td><td><font color="#666"><i><code><a href="../../Components/Compass/DJICompass.html#djicompass_djicompasscalibrationstatus">DJICompassCalibrationState</a></code> state value.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djicompass_didupdatesensorstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_didupdatesensorstate_inline">compass:didUpdateSensorState</a></div></div><div class="inline-doc" id="djicompass_didupdatesensorstate_inline" <blockquote="">
+<div class="api-row" id="djicompass_didupdatesensorstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicompass_didupdatesensorstate_inline">compass:didUpdateSensorState</a></div></div><div class="inline-doc" id="djicompass_didupdatesensorstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>compass:didUpdateSensorState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@optional</span></div><div class="line">- (<span class="keyword">void</span>)compass:(DJICompass *_Nonnull)compass didUpdateSensorState:(DJICompassState *)state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)compass:(DJICompass *_Nonnull)compass didUpdateSensorState:(DJICompassState *)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICompass.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Called when the compass pushes an compass sensor state update.</font></p>

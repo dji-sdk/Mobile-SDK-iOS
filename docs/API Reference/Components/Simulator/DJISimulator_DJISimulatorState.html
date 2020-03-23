@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -238,7 +232,7 @@
                             </dd>
                             <dd><a data-href="DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="" class="active">DJISimulatorState</a>
+                                      <dd><a href class="active">DJISimulatorState</a>
                                       </dd>
                               </ul>
                             </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,79 +591,79 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJISimulatorState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISimulatorState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISimulatorState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamsimulatorstate_key">DJIFlightControllerKey.DJIFlightControllerParamSimulatorState</a></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Aircraft simulator state data.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djisimulator_djisimulatorstate_aremotorson"><div class="api-col left">Simulated Aircraft State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_aremotorson_inline">areMotorsOn</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_aremotorson_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_aremotorson"><div class="api-col left">Simulated Aircraft State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_aremotorson_inline">areMotorsOn</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_aremotorson_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>areMotorsOn</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> areMotorsOn</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> areMotorsOn</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">YES if motors are on in simulator.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_isflying"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_isflying_inline">isFlying</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_isflying_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_isflying"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_isflying_inline">isFlying</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_isflying_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isFlying</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isFlying</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isFlying</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">YES if aircraft is flying in simulator.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_location"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_location_inline">location</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_location_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_location"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_location_inline">location</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_location_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>location</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> location</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> location</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Simulated aircraft location.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_positionx"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positionx_inline">positionX</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positionx_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_positionx"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positionx_inline">positionX</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positionx_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>positionX</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionX</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionX</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Gets East-West distance from initial simulator location, where East is positive, and  North-East-Down coordinate system is used.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_positiony"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positiony_inline">positionY</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positiony_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_positiony"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positiony_inline">positionY</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positiony_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>positionY</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionY</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionY</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Gets North-South distance from initial simulator location, where North is positive, and  North-East-Down coordinate system is used.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_positionz"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positionz_inline">positionZ</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positionz_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_positionz"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_positionz_inline">positionZ</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_positionz_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>positionZ</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionZ</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> positionZ</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Gets vertical distance from initial simulator location. The value should be negative if the height of aircraft is higher  than initial home point's height.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_pitch"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_pitch_inline">pitch</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_pitch_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_pitch"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_pitch_inline">pitch</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_pitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>pitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> pitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> pitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Simulated aircraft pitch with range [-30, 30] degrees.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_roll"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_roll_inline">roll</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_roll_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_roll"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_roll_inline">roll</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_roll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>roll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> roll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> roll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Simulated aircraft roll with range [-30, 30] degrees.</font></p>
 </div>
-<div class="api-row" id="djisimulator_djisimulatorstate_yaw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_yaw_inline">yaw</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_yaw_inline" <blockquote="">
+<div class="api-row" id="djisimulator_djisimulatorstate_yaw"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djisimulator_djisimulatorstate_yaw_inline">yaw</a></div></div><div class="inline-doc" id="djisimulator_djisimulatorstate_yaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>yaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> yaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> yaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJISimulatorState.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Simulated aircraft yaw with range [-180, 180] degrees.</font></p>

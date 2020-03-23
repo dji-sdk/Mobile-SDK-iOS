@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,65 +591,65 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIGimbalDirectionState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalDirectionState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalDirectionState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides gimbal direction adjustment result and adjustment suggestion on axis.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultlr"><div class="api-col left">Adjustment Result LR</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultlr_inline">adjustmentResultLR</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultlr_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultlr"><div class="api-col left">Adjustment Result LR</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultlr_inline">adjustmentResultLR</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultlr_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentResultLR</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultLR</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultLR</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Gimbal direction adjustment result for direction left and right.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldirectionadjustmentresult">DJIGimbalDirectionAdjustmentResult</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr"><div class="api-col left">Adjustment Suggestion LR</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr_inline">adjustmentSuggestionLR</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr"><div class="api-col left">Adjustment Suggestion LR</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr_inline">adjustmentSuggestionLR</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionlr_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentSuggestionLR</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionLR</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionLR</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Suggestion for adjusting the gimbal to the left or to the right.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalsuggesteddirectionadjustment">DJIGimbalSuggestedDirectionAdjustment</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultud"><div class="api-col left">Adjustment Result UD</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultud_inline">adjustmentResultUD</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultud_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultud"><div class="api-col left">Adjustment Result UD</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultud_inline">adjustmentResultUD</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultud_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentResultUD</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultUD</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultUD</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Gimbal direction adjustment result for direction upwards or downwards.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldirectionadjustmentresult">DJIGimbalDirectionAdjustmentResult</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionud"><div class="api-col left">Adjustment Suggestion UD</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionud_inline">adjustmentSuggestionUD</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionud_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionud"><div class="api-col left">Adjustment Suggestion UD</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionud_inline">adjustmentSuggestionUD</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionud_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentSuggestionUD</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionUD</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionUD</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Suggestion for adjusting the gimbal upwards or downwards.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalsuggesteddirectionadjustment">DJIGimbalSuggestedDirectionAdjustment</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultfb"><div class="api-col left">Adjustment Result FB</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultfb_inline">adjustmentResultFB</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultfb_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentresultfb"><div class="api-col left">Adjustment Result FB</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentresultfb_inline">adjustmentResultFB</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentresultfb_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentResultFB</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultFB</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalDirectionAdjustmentResult adjustmentResultFB</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Gimbal direction adjustment result for direction forwards or backwards.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbaldirectionadjustmentresult">DJIGimbalDirectionAdjustmentResult</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb"><div class="api-col left">Adjustment Suggestion FB</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb_inline">adjustmentSuggestionFB</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb"><div class="api-col left">Adjustment Suggestion FB</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb_inline">adjustmentSuggestionFB</a></div></div><div class="inline-doc" id="djigimbal_djigimbaldirectionstate_adjustmentsuggestionfb_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>adjustmentSuggestionFB</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionFB</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalSuggestedDirectionAdjustment adjustmentSuggestionFB</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalDirectionState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Suggestion for adjusting the camera forwards or backwards.</font></p>

@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,66 +591,66 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIGEOSubFlyZoneInformation</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGEOSubFlyZoneInformation</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGEOSubFlyZoneInformation</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation</font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This data structure class contains the geospatial information for the sub fly zone.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_subareaid"><div class="api-col left">Sub Area ID</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_subareaid_inline">subAreaID</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_subareaid_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_subareaid"><div class="api-col left">Sub Area ID</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_subareaid_inline">subAreaID</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_subareaid_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>subAreaID</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> subAreaID</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> subAreaID</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_subAreaID</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The fly zone's identifier.</font></p>
 </div>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_graphic"><div class="api-col left">Graphic</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_graphic_inline">graphic</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_graphic_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_graphic"><div class="api-col left">Graphic</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_graphic_inline">graphic</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_graphic_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>graphic</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGEOSubFlyZoneGraphic graphic</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGEOSubFlyZoneGraphic graphic</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_graphic</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Fly zone shape type.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/FlyZoneManager/DJIFlyZoneManager_DJIGEOSubFlyZoneInformation.html#djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic">DJIGEOSubFlyZoneGraphic</a></code></font></p>
 </div>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints"><div class="api-col left">Polygon Points</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints_inline">polygonPoints</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints"><div class="api-col left">Polygon Points</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints_inline">polygonPoints</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_polygonpoints_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>polygonPoints</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSArray</span> *polygonPoints</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSArray</span> *polygonPoints</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_polygonPoints</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">If sub fly zones is an polygon, Will contain points.</font></p>
 </div>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight"><div class="api-col left">Maximum Flight Height</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight_inline">maximumFlightHeight</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight"><div class="api-col left">Maximum Flight Height</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight_inline">maximumFlightHeight</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_maximumflightheight_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>maximumFlightHeight</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> maximumFlightHeight</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> maximumFlightHeight</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_maximumFlightHeight</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Sub fly zones limit max flight height.</font></p>
 </div>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_coordinate"><div class="api-col left">Coordinate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_coordinate_inline">coordinate</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_coordinate_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_coordinate"><div class="api-col left">Coordinate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_coordinate_inline">coordinate</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_coordinate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>coordinate</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> coordinate</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> coordinate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_coordinate</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The coordinate of the fly zone's center.</font></p>
 </div>
-<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_radius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_radius_inline">radius</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_radius_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djigeosubflyzoneinformation_radius"><div class="api-col left">Radius</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djigeosubflyzoneinformation_radius_inline">radius</a></div></div><div class="inline-doc" id="djiflyzonemanager_djigeosubflyzoneinformation_radius_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>radius</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> radius</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> radius</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIGEOSubFlyZoneInformation_radius</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The radius of the fly zone in meters. If the fly zone is a truncated cone, then  this radius is the bottom of the cone.</font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic_inline">DJIGEOSubFlyZoneGraphic</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic_inline" <blockquote="">
+<div class="api-row" id="djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic_inline">DJIGEOSubFlyZoneGraphic</a></div></div><div class="inline-doc" id="djiflyzonemanager_djiflyzoneinformation_djigeosubflyzonegraphic_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIGEOSubFlyZoneGraphic</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIGEOSubFlyZoneGraphic)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJIGEOSubFlyZoneGraphic)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGEOFlyZoneInformation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Doc Key:</i></font></td><td width="85%"><font color="#999">DJIFlyZoneManager_DJIFlyZoneInformation_DJIGEOSubFlyZoneGraphic</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">This type of the geospatial information for the fly zone.</font></p>

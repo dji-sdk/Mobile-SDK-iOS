@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -560,7 +554,7 @@
                     <ul class="sub-menu">
                             <dd><a data-href="DJIActiveTrackMission.html" class="sub-toggle">DJIActiveTrackMission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
-                                      <dd><a href="" class="active">DJIActiveTrackTrackingState</a>
+                                      <dd><a href class="active">DJIActiveTrackTrackingState</a>
                                       </dd>
                                       <dd><a href="DJIActiveTrackMission_DJISubjectSensingState.html">DJISubjectSensingState</a>
                                       </dd>
@@ -597,61 +591,61 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIActiveTrackTrackingState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIActiveTrackTrackingState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIActiveTrackTrackingState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">The tracking state of the ActiveTrack mission that is executing.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djiactivetracktrackingstate_state"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_state_inline">state</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_state_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_state"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_state_inline">state</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_state_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>state</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackTargetState state</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackTargetState state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The state of the target being tracked.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate">DJIActiveTrackTargetState</a></code></font></p>
 </div>
-<div class="api-row" id="djiactivetracktrackingstate_targettype"><div class="api-col left">Target Type</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_targettype_inline">targetType</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_targettype_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_targettype"><div class="api-col left">Target Type</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_targettype_inline">targetType</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_targettype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackTargetType targetType</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackTargetType targetType</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">The type of the target being tracked.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargettype">DJIActiveTrackTargetType</a></code></font></p>
 </div>
-<div class="api-row" id="djiactivetracktrackingstate_targetrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_targetrect_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_targetrect"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_targetrect_inline">targetRect</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_targetrect_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>targetRect</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">A rectangle in the live video view image that represents the target being tracked.  The rectangle is normalized to [0,1] where (0,0) is the top left of the video  preview and (1,1) is the bottom right.</font></p>
 </div>
-<div class="api-row" id="djiactivetracktrackingstate_cannotconfirmreason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_cannotconfirmreason_inline">cannotConfirmReason</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_cannotconfirmreason_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_cannotconfirmreason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_cannotconfirmreason_inline">cannotConfirmReason</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_cannotconfirmreason_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>cannotConfirmReason</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackCannotConfirmReason cannotConfirmReason</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackCannotConfirmReason cannotConfirmReason</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Reason why the target cannot be confirmed by the user. It is useful when  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_state">state</a></code> is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate_cannotconfirm">DJIActiveTrackTargetStateCannotConfirm</a></code>.  Otherwise, it is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason_none">DJIActiveTrackCannotConfirmReasonNone</a></code>.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason">DJIActiveTrackCannotConfirmReason</a></code></font></p>
 </div>
-<div class="api-row" id="djiactivetracktrackingstate_progress"><div class="api-col left">Progress</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_progress_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_progress"><div class="api-col left">Progress</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_progress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>progress</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> progress</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> progress</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The progress of the executing QuickShot mission. Only applicable when  <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_mode">mode</a></code> is <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">DJIActiveTrackModeQuickShot</a></code>.  For other modes, it is always 0.</font></p>
 </div>
-<div class="api-row" id="djiactivetracktrackingstate_autosensedsubjects"><div class="api-col left">Auto-sensed Subjects</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_autosensedsubjects_inline">autoSensedSubjects</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_autosensedsubjects_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktrackingstate_autosensedsubjects"><div class="api-col left">Auto-sensed Subjects</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetracktrackingstate_autosensedsubjects_inline">autoSensedSubjects</a></div></div><div class="inline-doc" id="djiactivetracktrackingstate_autosensedsubjects_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>autoSensedSubjects</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSArray</span>&lt;DJISubjectSensingState *&gt; *autoSensedSubjects</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>, <span class="keyword">nullable</span>) <span class="built_in">NSArray</span>&lt;DJISubjectSensingState *&gt; *autoSensedSubjects</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The auto-sensed subjects after enabling auto sensing.</font></p>
@@ -659,28 +653,28 @@
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackMission_DJISubjectSensingState.html#djiactivetrackmission_djisubjectsensingstate">DJISubjectSensingState</a></code></font></p>
 </div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiactivetrackcannotconfirmreason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackcannotconfirmreason_inline">DJIActiveTrackCannotConfirmReason</a></div></div><div class="inline-doc" id="djiactivetrackcannotconfirmreason_inline" <blockquote="">
+<div class="api-row" id="djiactivetrackcannotconfirmreason"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetrackcannotconfirmreason_inline">DJIActiveTrackCannotConfirmReason</a></div></div><div class="inline-doc" id="djiactivetrackcannotconfirmreason_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIActiveTrackCannotConfirmReason</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIActiveTrackCannotConfirmReason)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIActiveTrackCannotConfirmReason)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">The reason why user is not allowed to confirm the current target.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_none_inline"></a>DJIActiveTrackCannotConfirmReasonNone</font></td><td><font color="#666">None.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_unstabletarget_inline"></a>DJIActiveTrackCannotConfirmReasonUnstableTarget</font></td><td><font color="#666">The target is unstable.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_targettoohigh_inline"></a>DJIActiveTrackCannotConfirmReasonTargetTooHigh</font></td><td><font color="#666">The target position is too high.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_blockedbyobstacle_inline"></a>DJIActiveTrackCannotConfirmReasonBlockedByObstacle</font></td><td><font color="#666">There is an obstacle between the aircraft and the target that is blocking the target.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_gimbalattitudeerror_inline"></a>DJIActiveTrackCannotConfirmReasonGimbalAttitudeError</font></td><td><font color="#666">The gimbal's attitude is pointing to the ground.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_targettoofar_inline"></a>DJIActiveTrackCannotConfirmReasonTargetTooFar</font></td><td><font color="#666">The target is too far away from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_targettooclose_inline"></a>DJIActiveTrackCannotConfirmReasonTargetTooClose</font></td><td><font color="#666">The target is too close to the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_aircrafttoohigh_inline"></a>DJIActiveTrackCannotConfirmReasonAircraftTooHigh</font></td><td><font color="#666">The altitude of the aircraft is too high.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_aircrafttoolow_inline"></a>DJIActiveTrackCannotConfirmReasonAircraftTooLow</font></td><td><font color="#666">The altitude of the aircraft is too low.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_obstaclesensorerror_inline"></a>DJIActiveTrackCannotConfirmReasonObstacleSensorError</font></td><td><font color="#666">The obstacle vision sensor has errors.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetrackcannotconfirmreason_unknown_inline"></a>DJIActiveTrackCannotConfirmReasonUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djiactivetracktargettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetracktargettype_inline">DJIActiveTrackTargetType</a></div></div><div class="inline-doc" id="djiactivetracktargettype_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktargettype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetracktargettype_inline">DJIActiveTrackTargetType</a></div></div><div class="inline-doc" id="djiactivetracktargettype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIActiveTrackTargetType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIActiveTrackTargetType)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIActiveTrackTargetType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">The type of ActiveTrack target.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_human_inline"></a>DJIActiveTrackTargetTypeHuman</font></td><td><font color="#666">The ActiveTrack target is a human being.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_car_inline"></a>DJIActiveTrackTargetTypeCar</font></td><td><font color="#666">The ActiveTrack target is a car.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_van_inline"></a>DJIActiveTrackTargetTypeVan</font></td><td><font color="#666">The ActiveTrack target is a van.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_bike_inline"></a>DJIActiveTrackTargetTypeBike</font></td><td><font color="#666">The ActiveTrack target is a bike.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_boat_inline"></a>DJIActiveTrackTargetTypeBoat</font></td><td><font color="#666">The ActiveTrack target is a boat.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiactivetracktargettype_unknown_inline"></a>DJIActiveTrackTargetTypeUnknown</font></td><td><font color="#666">The aircraft cannot recognize the target type.</font></td></tr></table></html></div>
-<div class="api-row" id="djiactivetracktargetstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetracktargetstate_inline">DJIActiveTrackTargetState</a></div></div><div class="inline-doc" id="djiactivetracktargetstate_inline" <blockquote="">
+<div class="api-row" id="djiactivetracktargetstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiactivetracktargetstate_inline">DJIActiveTrackTargetState</a></div></div><div class="inline-doc" id="djiactivetracktargetstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIActiveTrackTargetState</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIActiveTrackTargetState)</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, DJIActiveTrackTargetState)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">The state of the target being tracked by the aircraft.</font></p>

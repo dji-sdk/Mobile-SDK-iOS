@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,128 +591,160 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIGimbalControlParametersAutoTuningState</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalControlParametersAutoTuningState</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIGimbalControlParametersAutoTuningState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class provides gimbal's control parameters auto-tuning state.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus"><div class="api-col left">Control Parameters Auto Tuning Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus_inline">controlParametersAutoTuningStatus</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus"><div class="api-col left">Control Parameters Auto Tuning Status</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus_inline">controlParametersAutoTuningStatus</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_controlparametersautotuningstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>controlParametersAutoTuningStatus</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalControlParametersAutoTuningStatus controlParametersAutoTuningStatus</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalControlParametersAutoTuningStatus controlParametersAutoTuningStatus</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">The control parameters auto tuning status.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalcontrolparametersautotuningstatus">DJIGimbalControlParametersAutoTuningStatus</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_progress"><div class="api-col left">Progress</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_progress_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_progress"><div class="api-col left">Progress</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_progress_inline">progress</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_progress_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>progress</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> progress</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> progress</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Gimbal's control parameters auto-tuning progress in percentage.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled"><div class="api-col left">Check Load Installed</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled_inline">isLoadInstalled</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled"><div class="api-col left">Check Load Installed</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled_inline">isLoadInstalled</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isloadinstalled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isLoadInstalled</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isLoadInstalled</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isLoadInstalled</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">Checks if the load has been installed.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal"><div class="api-col left">Check Gimbal Attitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal_inline">isBaseAttitudeNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal"><div class="api-col left">Check Gimbal Attitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal_inline">isBaseAttitudeNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isbaseattitudenormal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isBaseAttitudeNormal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isBaseAttitudeNormal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isBaseAttitudeNormal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">Checks if the attitude of gimbal base is normal. Returns <code>NO</code> if the base is not placed horizontally.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal"><div class="api-col left">Check Gyro Drift</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal_inline">isGyroDriftNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal"><div class="api-col left">Check Gyro Drift</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal_inline">isGyroDriftNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgyrodriftnormal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isGyroDriftNormal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isGyroDriftNormal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isGyroDriftNormal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Checks if gyro drift is normal. Returns <code>NO</code> if the gyro drift is too large.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal"><div class="api-col left">Check Joint Angle Deviation</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal_inline">isJointAngleDeviationNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal"><div class="api-col left">Check Joint Angle Deviation</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal_inline">isJointAngleDeviationNormal</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isjointangledeviationnormal_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isJointAngleDeviationNormal</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isJointAngleDeviationNormal</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isJointAngleDeviationNormal</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Checks if joint angle deviation is normal. Returns <code>NO</code> if the joint angle deviation is high.</font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll"><div class="api-col left">Rotational Inertia On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll_inline">rotationalInertiaOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll"><div class="api-col left">Rotational Inertia On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll_inline">rotationalInertiaOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonroll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rotationalInertiaOnRoll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnRoll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnRoll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Rotational inertia on roll axis.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalrotationalinertiastate">DJIGimbalRotationalInertiaState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch"><div class="api-col left">Rotational Inertia On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch_inline">rotationalInertiaOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch"><div class="api-col left">Rotational Inertia On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch_inline">rotationalInertiaOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonpitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rotationalInertiaOnPitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnPitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnPitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Rotational inertia on pitch axis.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalrotationalinertiastate">DJIGimbalRotationalInertiaState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw"><div class="api-col left">Rotational Inertia On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw_inline">rotationalInertiaOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw"><div class="api-col left">Rotational Inertia On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw_inline">rotationalInertiaOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_rotationalinertiaonyaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>rotationalInertiaOnYaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnYaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalRotationalInertiaState rotationalInertiaOnYaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Rotational inertia on yaw axis.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalrotationalinertiastate">DJIGimbalRotationalInertiaState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll"><div class="api-col left">Stiffness On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll_inline">stiffnessOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll"><div class="api-col left">Stiffness On Roll</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll_inline">stiffnessOnRoll</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonroll_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>stiffnessOnRoll</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnRoll</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnRoll</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Stiffness on roll axis.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalaxialstiffnessstate">DJIGimbalAxialStiffnessState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch"><div class="api-col left">Stiffness On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch_inline">stiffnessOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch"><div class="api-col left">Stiffness On Pitch</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch_inline">stiffnessOnPitch</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonpitch_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>stiffnessOnPitch</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnPitch</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnPitch</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Stiffness on pitch axis.</font></p>
 <h5 id="see-also-v6">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalaxialstiffnessstate">DJIGimbalAxialStiffnessState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw"><div class="api-col left">Stiffness On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw_inline">stiffnessOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw_inline" <blockquote="">
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw"><div class="api-col left">Stiffness On Yaw</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw_inline">stiffnessOnYaw</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_stiffnessonyaw_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>stiffnessOnYaw</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnYaw</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIGimbalAxialStiffnessState stiffnessOnYaw</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Stiffness on yaw axis.</font></p>
 <h5 id="see-also-v7">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_djigimbalaxialstiffnessstate">DJIGimbalAxialStiffnessState</a></code></font></p>
 </div>
-<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgimballocked"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isgimballocked_inline">isGimbalLocked</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isgimballocked_inline" <blockquote="">
-<div class="article"><h6><font color="#AAA">property </font>isGimbalLocked</h6></div>
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isrolllocked"><div class="api-col left">Check if Roll Locked</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isrolllocked_inline">isRollLocked</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isrolllocked_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isRollLocked</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isGimbalLocked</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isRollLocked</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666"><code>YES</code> if the gimbal is locked.</font></p>
+<p><font color="#666"><code>YES</code> if gimbal's roll axis is locked.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_ispitchlocked"><div class="api-col left">Check if Pitch Locked</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_ispitchlocked_inline">isPitchLocked</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_ispitchlocked_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isPitchLocked</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isPitchLocked</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
+<h5 id="description-v15">Description:</h5>
+<p><font color="#666"><code>YES</code> if gimbal's pitch axis is locked.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isyawlocked"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isyawlocked_inline">isYawLocked</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isyawlocked_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isYawLocked</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isYawLocked</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
+<h5 id="description-v16">Description:</h5>
+<p><font color="#666"><code>YES</code> if gimbal's yaw axis is locked.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isprotectinggimbalmotorlockedrotor"><div class="api-col left">Protecting Gimbal Motor Locked Rotor</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isprotectinggimbalmotorlockedrotor_inline">isProtectingGimbalMotorLockedRotor</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isprotectinggimbalmotorlockedrotor_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isProtectingGimbalMotorLockedRotor</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isProtectingGimbalMotorLockedRotor</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
+<h5 id="description-v17">Description:</h5>
+<p><font color="#666"><code>YES</code> if gimbal motor is locked-rotor and is being protected.</font></p>
+</div>
+<div class="api-row" id="djigimbal_djigimbalcontrolparametersautotuningstate_isaircraftmotoron"><div class="api-col left">Check if Aircraft Motor On</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djigimbal_djigimbalcontrolparametersautotuningstate_isaircraftmotoron_inline">isAircraftMotorOn</a></div></div><div class="inline-doc" id="djigimbal_djigimbalcontrolparametersautotuningstate_isaircraftmotoron_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isAircraftMotorOn</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isAircraftMotorOn</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbalControlParametersAutoTuningState.h</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666"><code>YES</code> if the aircraft's motor is on.</font></p>
 </div>
 
         </div>

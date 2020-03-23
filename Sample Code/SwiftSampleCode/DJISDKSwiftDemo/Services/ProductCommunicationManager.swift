@@ -31,6 +31,10 @@ class ProductCommunicationManager: NSObject {
 }
 
 extension ProductCommunicationManager : DJISDKManagerDelegate {
+    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
+        NSLog("SDK downloading db file \(progress.completedUnitCount / progress.totalUnitCount)")
+    }
+    
     func appRegisteredWithError(_ error: Error?) {
         
         NSLog("SDK Registered with error \(error?.localizedDescription)")
@@ -50,11 +54,6 @@ extension ProductCommunicationManager : DJISDKManagerDelegate {
     func productDisconnected() {
         
     }
-    
-    func didUpdateDatabaseDownloadProgress(_ progress: Progress) {
-        NSLog("Download database : \n%lld/%lld" + progress.completedUnitCount, progress.totalUnitCount)
-    }
-    
     
     func componentConnected(withKey key: String?, andIndex index: Int) {
         

@@ -1,6 +1,6 @@
 <script>window.pathPrefix="../../";</script><!DOCTYPE html>
 <html lang="en" style="padding-bottom:0px" class="local"></html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <link href="../../images/favicon.png" rel="shortcut icon" type="image/png">
@@ -46,7 +46,7 @@
                   </dd>
                   <dd><a data-href="DJIKeyManager.html" class="sub-toggle">DJIKeyManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a data-href="" class="sub-toggle">DJIKey<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                            <dd><a data-href class="sub-toggle">DJIKey<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIBatteryKey.html">DJIBatteryKey</a>
                                       </dd>
@@ -110,6 +110,12 @@
                   </dd>
                   <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
                   </dd>
+                  <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../UTMISSManager/DJIUTMISSManager_DJIUTMISSParam.html">DJIUTMISSParam</a>
+                            </dd>
+                    </ul>
+                  </dd>
                   <dd><a data-href="../FlightHubManager/DJIFlightHubManager.html" class="sub-toggle">DJIFlightHubManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubOnlineDevice.html">DJIFlightHubOnlineDevice</a>
@@ -133,18 +139,6 @@
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubHistoricalFlight.html">DJIFlightHubHistoricalFlight</a>
                             </dd>
                             <dd><a href="../FlightHubManager/DJIFlightHubManager_DJIFlightHubRealTimeFlightData.html">DJIFlightHubRealTimeFlightData</a>
-                            </dd>
-                    </ul>
-                  </dd>
-                  <dd><a data-href="../Upgrade/DJIUpgradeManager.html" class="sub-toggle">DJIUpgradeManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                    <ul class="sub-menu">
-                            <dd><a data-href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent.html" class="sub-toggle">DJIUpgradeComponent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareUpgradeProgress.html">DJIFirmwareUpgradeProgress</a>
-                                      </dd>
-                                      <dd><a href="../Upgrade/DJIUpgradeManager_DJIUpgradeComponent_DJIFirmwareInformation.html">DJIFirmwareInformation</a>
-                                      </dd>
-                              </ul>
                             </dd>
                     </ul>
                   </dd>
@@ -362,6 +356,8 @@
                   </dd>
                   <dd><a data-href="../RemoteController/DJIRemoteController.html" class="sub-toggle">DJIRemoteController<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
+                            </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCAircraftMapping.html">DJIRCAircraftMapping</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_RCCustomButtonTagParam.html">DJIRCCustomButtonTags</a>
@@ -381,8 +377,6 @@
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCCalibrationProgress.html">DJIRCCalibrationProgress</a>
                             </dd>
                             <dd><a href="../RemoteController/DJIRemoteController_DJIRCMultiDeviceAggregationState.html">DJIRCMultiDeviceAggregationState</a>
-                            </dd>
-                            <dd><a href="../RemoteController/DJIRemoteController_DJIRCGimbalMapping.html">DJIRCGimbalMapping</a>
                             </dd>
                     </ul>
                   </dd>
@@ -597,63 +591,63 @@
       </div>
       <div class="site-main">
         <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIKey</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIKey</span> : <span class="title">NSObject</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIKey</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
 <p><font color="#666">Base class of all keys to be used with the keyed interface and the  <code><a href="../../Components/KeyManager/DJIKeyManager.html#djikeymanager">DJIKeyManager</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djikey_iscomponentkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_iscomponentkey_inline">isComponentKey</a></div></div><div class="inline-doc" id="djikey_iscomponentkey_inline" <blockquote="">
+<div class="api-row" id="djikey_iscomponentkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_iscomponentkey_inline">isComponentKey</a></div></div><div class="inline-doc" id="djikey_iscomponentkey_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isComponentKey</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isComponentKey</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isComponentKey</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">Defines whether or not the key is to be used with components of the  product</font></p>
 </div>
-<div class="api-row" id="djikey_ismissionkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_ismissionkey_inline">isMissionKey</a></div></div><div class="inline-doc" id="djikey_ismissionkey_inline" <blockquote="">
+<div class="api-row" id="djikey_ismissionkey"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_ismissionkey_inline">isMissionKey</a></div></div><div class="inline-doc" id="djikey_ismissionkey_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isMissionKey</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isMissionKey</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>) <span class="built_in">BOOL</span> isMissionKey</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
 <p><font color="#666">Defines whether or not the key is to be used with missions. (Mission Control only)</font></p>
 </div>
-<div class="api-row" id="djikey_param"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_param_inline">param</a></div></div><div class="inline-doc" id="djikey_param_inline" <blockquote="">
+<div class="api-row" id="djikey_param"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_param_inline">param</a></div></div><div class="inline-doc" id="djikey_param_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>param</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *param</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *param</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
 <p><font color="#666">The param part of the key.</font></p>
 </div>
-<div class="api-row" id="djikey_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_index_inline">index</a></div></div><div class="inline-doc" id="djikey_index_inline" <blockquote="">
+<div class="api-row" id="djikey_index"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_index_inline">index</a></div></div><div class="inline-doc" id="djikey_index_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>index</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> index</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> index</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
 <p><font color="#666">The component index of the key. Index is zero based. A component will have an index greater than  zero when there are multiple components of the same type on the DJI product, and one of the  components already has the index 0.</font></p>
 </div>
-<div class="api-row" id="djikey_subindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_subindex_inline">subComponentIndex</a></div></div><div class="inline-doc" id="djikey_subindex_inline" <blockquote="">
+<div class="api-row" id="djikey_subindex"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_subindex_inline">subComponentIndex</a></div></div><div class="inline-doc" id="djikey_subindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>subComponentIndex</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> subComponentIndex</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSInteger</span> subComponentIndex</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">The sub-component index of the key. Index is zero based. Currently, no product supports multiple  sub-components of the same type, so it is always 0.</font></p>
 </div>
-<div class="api-row" id="djikey_subcomponent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_subcomponent_inline">subComponent</a></div></div><div class="inline-doc" id="djikey_subcomponent_inline" <blockquote="">
+<div class="api-row" id="djikey_subcomponent"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djikey_subcomponent_inline">subComponent</a></div></div><div class="inline-doc" id="djikey_subcomponent_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>subComponent</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *subComponent</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) <span class="built_in">NSString</span> *subComponent</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">The subComponent of the key if it exists.</font></p>
 </div>
-<div class="api-row" id="djikey_keywithparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithparam_inline">keyWithParam</a></div></div><div class="inline-doc" id="djikey_keywithparam_inline" <blockquote="">
+<div class="api-row" id="djikey_keywithparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithparam_inline">keyWithParam</a></div></div><div class="inline-doc" id="djikey_keywithparam_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font>keyWithParam</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
 <p><font color="#666">Convenience creator of a key by only specifying the param to be used.
@@ -662,10 +656,10 @@ This is mostly useful in DJIKey subclasses.</font></p>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSString * <font color="#000">param</font></font></td><td><font color="#666"><i>A valid String-formatted key as defined in DJIKey's subclasses headers</i></font></td></tr></table></html>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable instancetype</font></td><td><font color="#666"><i>A valid key object or <code>nil</code> if an error occurred.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djikey_keywithindexandparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithindexandparam_inline">keyWithIndex:andParam</a></div></div><div class="inline-doc" id="djikey_keywithindexandparam_inline" <blockquote="">
+<div class="api-row" id="djikey_keywithindexandparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithindexandparam_inline">keyWithIndex:andParam</a></div></div><div class="inline-doc" id="djikey_keywithindexandparam_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font>keyWithIndex:andParam</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithIndex:(<span class="built_in">NSInteger</span>)index</div><div class="line">                             andParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithIndex:(<span class="built_in">NSInteger</span>)index</span><br><span class="line">                             andParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Convenience creator of a key by specifying the index of the element and the parameter of the key</font></p>
@@ -673,10 +667,10 @@ This is mostly useful in DJIKey subclasses.</font></p>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSInteger <font color="#000">index</font></font></td><td><font color="#666"><i>The index of the element. In the case of multiple components these would refer to their index.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nonnull NSString * <font color="#000">param</font></font></td><td><font color="#666"><i>A valid string-formatted key as defined in DJIKey's subclasses headers.</i></font></td></tr></table></html>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable instancetype</font></td><td><font color="#666"><i>A valid key object or nil if an error occurred.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djikey_keywithindexsubelementsubindexandparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithindexsubelementsubindexandparam_inline">keyWithIndex:subComponent:subComponentIndex:andParam</a></div></div><div class="inline-doc" id="djikey_keywithindexsubelementsubindexandparam_inline" <blockquote="">
+<div class="api-row" id="djikey_keywithindexsubelementsubindexandparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djikey_keywithindexsubelementsubindexandparam_inline">keyWithIndex:subComponent:subComponentIndex:andParam</a></div></div><div class="inline-doc" id="djikey_keywithindexsubelementsubindexandparam_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font>keyWithIndex:subComponent:subComponentIndex:andParam</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithIndex:(<span class="built_in">NSInteger</span>)index</div><div class="line">                         subComponent:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)subComponent</div><div class="line">                    subComponentIndex:(<span class="built_in">NSInteger</span>)subIndex</div><div class="line">                             andParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">nullable</span> <span class="keyword">instancetype</span>)keyWithIndex:(<span class="built_in">NSInteger</span>)index</span><br><span class="line">                         subComponent:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)subComponent</span><br><span class="line">                    subComponentIndex:(<span class="built_in">NSInteger</span>)subIndex</span><br><span class="line">                             andParam:(<span class="keyword">nonnull</span> <span class="built_in">NSString</span> *)param</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
 <p><font color="#666">Full creator of a key allowing to specify subelement, subindex and parameters.</font></p>
@@ -685,10 +679,10 @@ This is mostly useful in DJIKey subclasses.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nullable instancetype</font></td><td><font color="#666"><i>A valid key object or nil if an error occurred.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djikey_djiparamconnection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djikey_djiparamconnection_inline">DJIParamConnection</a></div></div><div class="inline-doc" id="djikey_djiparamconnection_inline" <blockquote="">
+<div class="api-row" id="djikey_djiparamconnection"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">const</div><div class="api-col right"><a class="trigger" href="#djikey_djiparamconnection_inline">DJIParamConnection</a></div></div><div class="inline-doc" id="djikey_djiparamconnection_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">const </font>DJIParamConnection</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><div class="line">EXTERN_KEY <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIParamConnection</div></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">EXTERN_KEY <span class="built_in">NSString</span> *<span class="keyword">const</span> DJIParamConnection</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIKey.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Param to check product's and components' connection state. It can be used with <code><a href="../../Components/KeyManager/DJIProductKey.html#djiproductkey">DJIProductKey</a></code> or other component key classes (e.g. <code><a href="../../Components/KeyManager/DJICameraKey.html#djicamerakey">DJICameraKey</a></code>).</font></p>
