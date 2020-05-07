@@ -79,9 +79,9 @@ class StartupViewController: UIViewController {
     
     func showAlert(_ msg: String?) {
         // create the alert
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }

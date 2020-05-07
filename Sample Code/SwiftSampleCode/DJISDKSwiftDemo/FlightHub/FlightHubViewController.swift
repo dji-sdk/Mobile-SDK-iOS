@@ -22,9 +22,9 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     
     func showAlert(_ msg: String?) {
         // create the alert
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
@@ -139,9 +139,9 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     }
     
     @IBAction func onBindAircraftButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Bind Aircraft?", message: "Would you like to bind the connected aircraft to the authorized FlightHub account?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Bind Aircraft?", message: "Would you like to bind the connected aircraft to the authorized FlightHub account?", preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             //Get the teamID by hitting the Team Info Button which will print to the console
             DJISDKManager.flightHubManager()?.bindAircraft(toTeam: alert.textFields![0].text!, withCompletion: { (error: Error?) in
                 guard error == nil else {
@@ -154,16 +154,16 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         alert.addTextField { textField in
             textField.placeholder = "TeamID:"
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onUnbindAircraftButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Unbind Aircraft?", message: "Would you like to unbind the connected aircraft?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Unbind Aircraft?", message: "Would you like to unbind the connected aircraft?", preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             DJISDKManager.flightHubManager()?.unbindAircraft(completion: { (error: Error?) in
                 guard error == nil else {
                     self.flightHubInformationTextView.text = "Unbind Aircraft failed with error: \(String(describing: error))"
@@ -172,7 +172,7 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
                 self.flightHubInformationTextView.text = "Unbind Aircraft Succeeded."
             });
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -202,9 +202,9 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     }
     
     @IBAction func onGetStatisticsPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Historical Data?", message: "Would you like to get the historical data for the following time period?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Historical Data?", message: "Would you like to get the historical data for the following time period?", preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             let startTime = alert.textFields![0].text!
             let endTime = alert.textFields![1].text!
             let account = alert.textFields![2].text!
@@ -246,7 +246,7 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         alert.addTextField { textField in
             textField.placeholder = "TeamID"
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -285,9 +285,9 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
     }
     
     @IBAction func onGetStreamSourcePressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Get Source?", message: "Would you like to get the stream address from the following product?", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Get Source?", message: "Would you like to get the stream address from the following product?", preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             DJISDKManager.flightHubManager()?.getLiveViewStreamSource(withSN: alert.textFields![0].text!, withCompletion: { (stream:DJIFlightHubLiveStream?, error:Error?) in
                 guard error != nil && stream != nil else {
                     print("Get liveStream failed with error:\(String(describing:error))")
@@ -301,7 +301,7 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
         alert.addTextField { textField in
             textField.placeholder = "Serial Number:"
         }
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
@@ -373,26 +373,26 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
             titleString = "Enable Uploading"
             descriptionString = "Would you like to enable data uploading?"
         }
-        let alert = UIAlertController(title: titleString, message: descriptionString, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: titleString, message: descriptionString, preferredStyle: UIAlertControllerStyle.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             self.dataUploadingEnabled = !self.dataUploadingEnabled
             DJISDKManager.flightHubManager()?.setUploadEnabled(self.dataUploadingEnabled)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onUploadTimePressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Upload Time Interval", message: "Change the interval at which the ", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Upload Time Interval", message: "Change the interval at which the ", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addTextField { textField in
             textField.placeholder = "Interval Time [1-10]:"
         }
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             guard alert.textFields![0].text != nil else {
                 print("Please enter a value between 1 and 10.")
                 return
@@ -411,20 +411,20 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onGetFlighPathPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Upload Time Interval", message: "Change the interval at which the ", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Upload Time Interval", message: "Change the interval at which the ", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addTextField { textField in
             textField.placeholder = "OrderID: (Get from DJIFlightHubFlightHistoricalDetail)"
         }
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { [unowned self] action in
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [unowned self] action in
             guard alert.textFields![0].text != nil else {
                 print("Please enter an OrderID.")
                 return
@@ -443,7 +443,7 @@ class FlightHubViewController: UIViewController, DJIFlightHubManagerDelegate {
                 self.flightHubInformationTextView.text = flightDataString
             })
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
