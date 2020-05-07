@@ -64,9 +64,9 @@ class BluetoothConnectorViewController: UIViewController, UITableViewDelegate, D
     
     func updateConnectButtonState() -> Void {
         if isBluetoothProductConnected() {
-            self.connectButton.setTitle("Disconnect", for: UIControlState())
+            self.connectButton.setTitle("Disconnect", for: UIControl.State())
         } else {
-            self.connectButton.setTitle("Connect", for: UIControlState())
+            self.connectButton.setTitle("Connect", for: UIControl.State())
         }
     }
     
@@ -99,7 +99,7 @@ class BluetoothConnectorViewController: UIViewController, UITableViewDelegate, D
             } else {
                 self.bluetoothProducts.removeAll();
                 self.bluetoothDevicesTableView.reloadData()
-                self.connectButton.setTitle("Disconnect", for: UIControlState())
+                self.connectButton.setTitle("Disconnect", for: UIControl.State())
             }
         }
     }
@@ -109,7 +109,7 @@ class BluetoothConnectorViewController: UIViewController, UITableViewDelegate, D
             if let _ = error {
                 self!.showAlert("Disconnect Bluetooth product failed:\(error!)")
             } else {
-                self!.connectButton.setTitle("Connect", for: UIControlState())
+                self!.connectButton.setTitle("Connect", for: UIControl.State())
                 self!.bluetoothDevicesTableView.reloadData()
             }
         }
@@ -174,9 +174,9 @@ class BluetoothConnectorViewController: UIViewController, UITableViewDelegate, D
 
     func showAlert(_ msg: String?) {
         // create the alert
-        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertController.Style.alert)
         // add the actions (buttons)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }

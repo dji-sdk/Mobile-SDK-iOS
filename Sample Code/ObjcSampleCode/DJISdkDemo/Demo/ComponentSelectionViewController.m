@@ -31,6 +31,7 @@
 #import "PayloadViewController.h"
 #import "AccessoryAggregationViewController.h"
 #import "UpgradeManagerViewController.h"
+#import "PipelinesViewController.h"
 
 #import "KeyedInterfaceViewController.h"
 #import "VideoLiveStreamingViewController.h"
@@ -107,6 +108,10 @@
     }
     if ([DJISDKManager upgradeManager]) {
         [components addObject:[DemoSettingItem itemWithName:[UpgradeManagerKey capitalizedString] andClass:[UpgradeManagerViewController class]]];
+    }
+    
+    if ([DemoComponentHelper fetchFlightController].onboardSDKDevice.pipelines) {
+        [components addObject:[DemoSettingItem itemWithName:[PipelinesKey capitalizedString] andClass:[PipelinesViewController class]]];
     }
     
     [self.items addObject:components];

@@ -57,7 +57,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     VideoPreviewerSDKAdapter *adapter = [VideoPreviewerSDKAdapter new];
     adapter.videoPreviewer = videoPreviewer;
     adapter.videoFeed = videoFeed;
-	adapter.videoPreviewer.calibrateDelegate = adapter.calibrateLogic;
+    adapter.videoPreviewer.calibrateDelegate = adapter.calibrateLogic;
     return adapter;
 }
 
@@ -69,7 +69,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             g_loadPrebuildIframeOverrideFunc = loadPrebuildIframePrivate;
         }
         _isForLightbridge2 = NO;
-		_calibrateLogic = [[DJIDecodeImageCalibrateControlLogic alloc] init];
+        _calibrateLogic = [[DJIDecodeImageCalibrateControlLogic alloc] init];
     }
     return self;
 }
@@ -92,7 +92,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         [self.videoFeed removeListener:self];
     }
     if (self.isForLightbridge2) {
-        [self stopLightbridgeListen]; 
+        [self stopLightbridgeListen];
     }
 }
 
@@ -159,7 +159,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
             }
         }];
         [self updateContentRect];
-		self.calibrateLogic.cameraName = camera.displayName;
+        self.calibrateLogic.cameraName = camera.displayName;
     }
 
     if ([camera.displayName isEqual:DJICameraDisplayNameMavicProCamera]) {
@@ -183,7 +183,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 }
 
 -(void)setupFrameControlHandler {
-	self.videoPreviewer.frameControlHandler = self;
+    self.videoPreviewer.frameControlHandler = self;
 }
 
 -(void)updateEncodeType {
@@ -325,7 +325,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
         DJICamera *camera = [VideoPreviewerSDKAdapter camera];
         /**
          *  Osmo's video encoding solution is changed since a firmware version.
-         *  X3 also began to support digital zoom since that version. Therefore, 
+         *  X3 also began to support digital zoom since that version. Therefore,
          *  `isDigitalZoomSupported` is used to determine the correct
          *  encode type.
          */
@@ -374,7 +374,7 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
              [cameraName isEqualToString:DJICameraDisplayNamePhantom4AdvancedCamera] ||
              [cameraName isEqualToString:DJICameraDisplayNameX5S] ||
              [cameraName isEqualToString:DJICameraDisplayNameX4S] ||
-			 [cameraName isEqualToString:DJICameraDisplayNameX7] ||
+             [cameraName isEqualToString:DJICameraDisplayNameX7] ||
              [cameraName isEqualToString:DJICameraDisplayNamePayload]) {
         return H264EncoderType_H1_Inspire2;
     }
@@ -407,29 +407,29 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
 }
 
 - (BOOL)parseDecodingAssistInfoWithBuffer:(uint8_t *)buffer length:(int)length assistInfo:(DJIDecodingAssistInfo *)assistInfo {
-	return [[DJISDKManager videoFeeder] parseDecodingAssistInfoWithBuffer:buffer length:length assistInfo:(void *)assistInfo];
+    return [self.videoFeed parseDecodingAssistInfoWithBuffer:buffer length:length assistInfo:(void *)assistInfo];
 }
 
 - (BOOL)isNeedFitFrameWidth {
-	NSString* displayName = [[self class] camera].displayName;
-	if ([displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
-		[displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera]) {
-		return YES;
-	}
-	
-	return NO;
+    NSString* displayName = [[self class] camera].displayName;
+    if ([displayName isEqualToString:DJICameraDisplayNameMavic2ZoomCamera] ||
+        [displayName isEqualToString:DJICameraDisplayNameMavic2ProCamera]) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 - (void)syncDecoderStatus:(BOOL)isNormal {
-	[[DJISDKManager videoFeeder] syncDecoderStatus:isNormal];
+    [self.videoFeed syncDecoderStatus:isNormal];
 }
 
 - (void)decodingDidSucceedWithTimestamp:(uint32_t)timestamp {
-	[[DJISDKManager videoFeeder] decodingDidSucceedWithTimestamp:(NSUInteger)timestamp];
+    [self.videoFeed decodingDidSucceedWithTimestamp:(NSUInteger)timestamp];
 }
 
 - (void)decodingDidFail {
-	[[DJISDKManager videoFeeder] decodingDidFail];
+    [self.videoFeed decodingDidFail];
 }
 
 @end

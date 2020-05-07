@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PipelineTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sff-aP-0hi">
+                        <rect key="frame" x="5" y="0.0" width="102" height="44"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4A-iR-Svw">
+                        <rect key="frame" x="195" y="0.0" width="70" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="jKd-kZ-NQf"/>
+                        </constraints>
+                        <state key="normal" title="Download"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imk-Nm-j0C">
+                        <rect key="frame" x="270" y="0.0" width="50" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="eaH-fe-Bpe"/>
+                        </constraints>
+                        <state key="normal" title="Upload"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-UH-x76">
+                        <rect key="frame" x="112" y="0.0" width="78" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="78" id="i6h-io-A5t"/>
+                        </constraints>
+                        <state key="normal" title="Disconnect"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Imk-Nm-j0C" secondAttribute="bottom" id="1ui-XO-5kG"/>
+                    <constraint firstItem="Imk-Nm-j0C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Be-QF-Nub"/>
+                    <constraint firstAttribute="bottom" secondItem="jf2-UH-x76" secondAttribute="bottom" id="6bt-fL-gbh"/>
+                    <constraint firstItem="D4A-iR-Svw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="CBT-gU-FNv"/>
+                    <constraint firstItem="sff-aP-0hi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FN3-PJ-b3m"/>
+                    <constraint firstItem="D4A-iR-Svw" firstAttribute="leading" secondItem="jf2-UH-x76" secondAttribute="trailing" constant="5" id="MLB-su-2CI"/>
+                    <constraint firstItem="jf2-UH-x76" firstAttribute="leading" secondItem="sff-aP-0hi" secondAttribute="trailing" constant="5" id="O5c-xE-2w3"/>
+                    <constraint firstAttribute="bottom" secondItem="D4A-iR-Svw" secondAttribute="bottom" id="VDU-Ud-f8O"/>
+                    <constraint firstAttribute="bottom" secondItem="sff-aP-0hi" secondAttribute="bottom" id="Wau-zA-FxS"/>
+                    <constraint firstAttribute="trailing" secondItem="Imk-Nm-j0C" secondAttribute="trailing" id="WwJ-Sl-1Qx"/>
+                    <constraint firstItem="Imk-Nm-j0C" firstAttribute="leading" secondItem="D4A-iR-Svw" secondAttribute="trailing" constant="5" id="b3d-2j-OKj"/>
+                    <constraint firstItem="jf2-UH-x76" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oig-Xe-VgI"/>
+                    <constraint firstItem="sff-aP-0hi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="psU-x3-XpC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="content" destination="sff-aP-0hi" id="w0N-67-T4R"/>
+                <outlet property="disconnect" destination="jf2-UH-x76" id="8Op-ZJ-waX"/>
+                <outlet property="download" destination="D4A-iR-Svw" id="Nh4-RL-ikR"/>
+                <outlet property="upload" destination="Imk-Nm-j0C" id="CRj-wu-s8X"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="153"/>
+        </tableViewCell>
+    </objects>
+</document>

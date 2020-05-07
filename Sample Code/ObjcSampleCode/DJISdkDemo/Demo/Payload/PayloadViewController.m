@@ -39,8 +39,6 @@
     [super viewWillAppear:animated];
     
     [[DemoComponentHelper fetchPayload] setDelegate:self];
-    
-    [self printAllWidgets:[[DemoComponentHelper fetchPayload] getWidgets]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -119,8 +117,8 @@
     self.floatHintMsg.text = message;
 }
 
-- (void)payload:(DJIPayload *)payload didUpdateWidgets:(NSArray<DJIPayloadWidget *> *)allWidgetStatus {
-    [self printAllWidgets:allWidgetStatus];
+- (void)payload:(DJIPayload *)payload didUpdateMainInterfaceWidgets:(nonnull NSArray<DJIPayloadWidget *> *)widgets {
+    [self printAllWidgets:widgets];
 }
 
 - (void)printAllWidgets:(NSArray<DJIPayloadWidget *> *)allWidgetStatus {
