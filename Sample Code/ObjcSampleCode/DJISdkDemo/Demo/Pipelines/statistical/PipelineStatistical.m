@@ -10,7 +10,6 @@
 @implementation PipelineStatistical
 
 - (void)clearRegularData {
-    self.numberOfPacketsFailure = 0;
     self.numberOfBytesSuccessfully = 0;
     self.numberOfPacketsSuccessfully = 0;
 }
