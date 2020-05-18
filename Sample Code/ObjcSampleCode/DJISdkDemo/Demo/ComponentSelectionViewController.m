@@ -32,6 +32,7 @@
 #import "AccessoryAggregationViewController.h"
 #import "UpgradeManagerViewController.h"
 #import "PipelinesViewController.h"
+#import "WaypointV2ViewController.h"
 
 #import "KeyedInterfaceViewController.h"
 #import "VideoLiveStreamingViewController.h"
@@ -61,7 +62,12 @@
     NSMutableArray *sdk40Interfaces = [NSMutableArray new];
     
     if ([product isKindOfClass:[DJIAircraft class]]) {
-        [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint Mission Operator" andClass:[WaypointMissionViewController class]]];
+        
+        if ([product.model isEqualToString:DJIAircraftModelNameMatrice300RTK]) {
+            [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint V2 Mission Operator" andClass:[WaypointV2ViewController class]]];
+        } else {
+            [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint Mission Operator" andClass:[WaypointMissionViewController class]]];
+        }
         [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Hotpoint Mission Operator" andClass:[HotpointMissionViewController class]]];
         [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"FollowMe Mission Operator" andClass:[FollowMeMissionViewController class]]];
         [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Timeline Mission Operator" andClass:[TimelineMissionViewController class]]];

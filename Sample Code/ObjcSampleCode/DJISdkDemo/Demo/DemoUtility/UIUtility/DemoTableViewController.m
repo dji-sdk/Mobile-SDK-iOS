@@ -7,6 +7,7 @@
 
 #import "DemoTableViewController.h"
 #import "DemoSettingItem.h"
+#import "WaypointV2ViewController.h"
 
 @interface DemoTableViewController ()
 
@@ -89,6 +90,14 @@
     else {
         item = [[self.items objectAtIndex:section] objectAtIndex:row];
     }
+    
+    if ([item.viewControllerClass isEqual:[WaypointV2ViewController class]]) {
+        UIStoryboard *waypointV2Board = [UIStoryboard storyboardWithName:@"WaypointV2" bundle:[NSBundle mainBundle]];
+        WaypointV2ViewController *wp2vc = [waypointV2Board instantiateViewControllerWithIdentifier:@"WaypointV2VC"];
+        [self.navigationController pushViewController:wp2vc animated:YES];
+        return;
+    }
+
     UIViewController * vc = [[item.viewControllerClass alloc] init];
     vc.title = item.itemName;
     [self.navigationController pushViewController:vc animated:YES];
