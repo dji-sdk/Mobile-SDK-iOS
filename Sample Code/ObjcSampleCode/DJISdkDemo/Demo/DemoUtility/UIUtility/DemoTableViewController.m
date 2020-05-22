@@ -8,6 +8,7 @@
 #import "DemoTableViewController.h"
 #import "DemoSettingItem.h"
 #import "WaypointV2ViewController.h"
+#import "CameraActionsTableViewController.h"
 
 @interface DemoTableViewController ()
 
@@ -95,6 +96,13 @@
         UIStoryboard *waypointV2Board = [UIStoryboard storyboardWithName:@"WaypointV2" bundle:[NSBundle mainBundle]];
         WaypointV2ViewController *wp2vc = [waypointV2Board instantiateViewControllerWithIdentifier:@"WaypointV2VC"];
         [self.navigationController pushViewController:wp2vc animated:YES];
+        return;
+    }
+    
+    if ([item.viewControllerClass isEqual:[CameraActionsTableViewController class]]) {
+        [[NSUserDefaults standardUserDefaults] setObject:item.itemName forKey:@"currentCameraName"];
+        CameraActionsTableViewController *vc = [[CameraActionsTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
 

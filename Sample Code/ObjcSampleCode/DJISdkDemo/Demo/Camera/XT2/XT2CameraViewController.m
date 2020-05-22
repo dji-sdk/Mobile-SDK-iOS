@@ -42,7 +42,7 @@
     [super viewDidAppear:animated];
 
     //Set up as a delegate to the thermal camera to get Temperature updates
-    __weak DJICamera *thermalCamera = [DemoXT2Helper connectedThermalCamera];
+    __weak DJICamera *thermalCamera = [DemoCameraHelper connectedThermalCamera];
     if (thermalCamera) {
         thermalCamera.delegate = self;
     }
@@ -54,7 +54,7 @@
     [self.videoPreviewer setView:self.fpvPreviewView];
     [self.videoPreviewer setType:DJIVideoPreviewerTypeAutoAdapt];
     DJIVideoFeed *videoFeed;
-    if (![DemoXT2Helper isXT2Camera] && [DemoXT2Helper connectedThermalCamera].index == 1) {
+    if (![DemoCameraHelper isXT2Camera] && [DemoCameraHelper connectedThermalCamera].index == 1) {
         videoFeed = [DJISDKManager videoFeeder].secondaryVideoFeed;
     } else {
         videoFeed = [DJISDKManager videoFeeder].primaryVideoFeed;
@@ -92,7 +92,7 @@
 //Get count of photo's remaining on the XT2
 //NOTE: use the Visual camera to get the correct count.
 - (IBAction)getRemainingPhotoPressed:(id)sender {
-    DJICamera *XT2VisualCamera = [DemoXT2Helper connectedXT2VisionCamera];
+    DJICamera *XT2VisualCamera = [DemoCameraHelper connectedXT2VisionCamera];
     DJICameraKey *remainingCountKey = [DJICameraKey keyWithIndex:XT2VisualCamera.index andParam:DJICameraParamSDCardAvailablePhotoCount];
     [[DJISDKManager keyManager] getValueForKey:remainingCountKey withCompletion:^(DJIKeyedValue * _Nullable value, NSError * _Nullable error) {
         ShowResult(@"There are %ld photos remaining", value.integerValue);
@@ -101,7 +101,7 @@
 
 //Send the new video mode to the XT2 camera.
 - (void) updateVideoMode:(DJICameraDisplayMode) mode {
-    DJICameraKey *displayModeKey = [DemoXT2Helper thermalCameraKeyWithParam:DJICameraParamDisplayMode];
+    DJICameraKey *displayModeKey = [DemoCameraHelper thermalCameraKeyWithParam:DJICameraParamDisplayMode];
     [[DJISDKManager keyManager] setValue:@(mode) forKey:displayModeKey withCompletion:^(NSError * _Nullable error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -117,7 +117,7 @@
  *  If the mode is already DJICameraModeShootPhoto, we check the exposure mode.
  */
 -(void) getCameraMode {
-    __weak DJICamera* camera = [DemoXT2Helper connectedThermalCamera];
+    __weak DJICamera* camera = [DemoCameraHelper connectedThermalCamera];
     if (camera) {
         WeakRef(target);
         [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
@@ -140,7 +140,7 @@
  *  If it succeeds, we can enable the take photo button.
  */
 -(void) setCameraMode {
-    __weak DJICamera* camera = [DemoXT2Helper connectedThermalCamera];
+    __weak DJICamera* camera = [DemoCameraHelper connectedThermalCamera];
     if (camera) {
         WeakRef(target);
         [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
@@ -188,7 +188,7 @@
 }
 
 - (IBAction)takePhotoButtonPressed:(id)sender {
-    __weak DJICamera* camera = [DemoXT2Helper connectedThermalCamera];
+    __weak DJICamera* camera = [DemoCameraHelper connectedThermalCamera];
     if (camera) {
         [self.shootPhotoButton setEnabled:NO];
         [camera startShootPhotoWithCompletion:^(NSError * _Nullable error) {
@@ -201,7 +201,7 @@
 
 //Enable temperature measurement on the thermal camera
 - (IBAction)onThermalTemperatureDataSwitchValueChanged:(id)sender {
-    DJICamera* camera = [DemoXT2Helper connectedThermalCamera];
+    DJICamera* camera = [DemoCameraHelper connectedThermalCamera];
     if (camera) {
         DJICameraThermalMeasurementMode mode = ((UISwitch*)sender).on ? DJICameraThermalMeasurementModeSpotMetering : DJICameraThermalMeasurementModeDisabled;
         [camera setThermalMeasurementMode:mode withCompletion:^(NSError * _Nullable error) {
@@ -213,7 +213,7 @@
 }
 
 - (void)updateThermalCameraUI {
-    DJICamera* camera = [DemoXT2Helper connectedThermalCamera];
+    DJICamera* camera = [DemoCameraHelper connectedThermalCamera];
     if (camera && [camera isThermalCamera]) {
         WeakRef(target);
         [camera getThermalMeasurementModeWithCompletion:^(DJICameraThermalMeasurementMode mode, NSError * _Nullable error) {

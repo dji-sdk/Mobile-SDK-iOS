@@ -55,6 +55,15 @@
     return nil;
 }
 
++ (nullable NSArray <DJICamera *> *)fetchCameras {
+    if (![DJISDKManager product] || ![[DJISDKManager product] isKindOfClass:[DJIAircraft class]]) {
+        return nil;
+    }
+    
+    return ((DJIAircraft*)[DJISDKManager product]).cameras;
+
+}
+
 +(DJIGimbal*) fetchGimbal {
     if (![DJISDKManager product]) {
         return nil;

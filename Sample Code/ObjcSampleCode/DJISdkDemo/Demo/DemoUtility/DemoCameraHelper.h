@@ -1,5 +1,5 @@
 //
-//  DemoXT2Helper.h
+//  DemoCameraHelper.h
 //  DJISdkDemo
 //
 //  Created by Jason Rinn on 7/5/18.
@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <DJISDK/DJISDK.h>
 
-@interface DemoXT2Helper : NSObject
+@interface DemoCameraHelper : NSObject
 
 + (BOOL)isXT2Camera;
 + (nullable DJICamera *)connectedThermalCamera;
 + (nullable DJICamera *)connectedXT2VisionCamera;
 + (nullable DJICameraKey *)thermalCameraKeyWithParam:(nonnull NSString *)param;
 + (nullable DJICamera *)cameraAtComponentIndex:(NSInteger)componentIndex;
++ (BOOL)isMultilensCamera:(nonnull NSString *)cameraName;
 
 @end

@@ -91,9 +91,18 @@
     if ([DemoComponentHelper fetchGimbal]) {
         [components addObject:[DemoSettingItem itemWithName:[DJIGimbalComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIGimbalComponent]]];
     }
-    if ([DemoComponentHelper fetchCamera]) {
-        [components addObject:[DemoSettingItem itemWithName:[DJICameraComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJICameraComponent]]];
+    DJIBaseProduct *product = [DemoComponentHelper fetchProduct];
+    if ([product.model isEqualToString:DJIAircraftModelNameMatrice300RTK] && [DemoComponentHelper fetchCameras]) {
+        for (DJICamera *camera in [DemoComponentHelper fetchCameras]) {
+            DemoSettingItem *item = [DemoSettingItem itemWithName:camera.displayName andClass:[[self componentVCDict] objectForKey:DJICameraComponent]];
+            [components addObject:item];
+        }
+    } else {
+        if ([DemoComponentHelper fetchCamera]) {
+            [components addObject:[DemoSettingItem itemWithName:[DJICameraComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJICameraComponent]]];
+        }
     }
+
     if ([DemoComponentHelper fetchAirLink]) {
         [components addObject:[DemoSettingItem itemWithName:[DJIAirLinkComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIAirLinkComponent]]];
     }

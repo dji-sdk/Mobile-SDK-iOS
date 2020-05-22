@@ -39,4 +39,61 @@ return nil; \
 
 #define DESCRIPTION_FOR_ENUM(enumType, shortName, ...) DESCRIPTION_FOR_ENUM_WITH_PREFIX(enumType, shortName, enumType, __VA_ARGS__)
 
+
+#define SET_CAMERA_SETTING(__setting__, __value__) \
+[_camera set##__setting__:__value__ withCompletion:^(NSError * _Nullable error) { \
+WeakReturn(target); \
+if (error == nil) { \
+ShowResult(@"Set"#__setting__ "Success"); \
+} \
+else{ \
+ShowResult(@"Set" #__setting__ "Failed: %@", error.description); \
+} \
+}];
+
+#define SET_LENS_SETTING(__setting__, __value__) \
+[_lens set##__setting__:__value__ withCompletion:^(NSError * _Nullable error) { \
+WeakReturn(target); \
+if (error == nil) { \
+ShowResult(@"Set"#__setting__ "Success"); \
+} \
+else{ \
+ShowResult(@"Set" #__setting__ "Failed: %@", error.description); \
+} \
+}];
+
+#define GET_CAMERA_SETTING(__setting__, __type__) \
+[_camera get##__setting__##WithCompletion:^(__type__ value, NSError * _Nullable error) { \
+WeakReturn(target); \
+if (error == nil) { \
+cell.tipLabel.text = [[target class] descriptionFor##__setting__:value]; \
+} \
+else { \
+ShowResult(@"get"#__setting__"failed: %@", error.description); \
+} \
+}];
+
+#define GET_LENS_SETTING(__setting__, __type__) \
+[_lens get##__setting__##WithCompletion:^(__type__ value, NSError * _Nullable error) { \
+WeakReturn(target); \
+if (error == nil) { \
+cell.tipLabel.text = [[target class] descriptionFor##__setting__:value]; \
+} \
+else { \
+ShowResult(@"get"#__setting__"failed: %@", error.description); \
+} \
+}];
+
+#define GET_LENS_SCALAR_SETTING(__setting__) \
+[_lens get##__setting__##WithCompletion:^(NSUInteger value, NSError * _Nullable error) { \
+WeakReturn(target); \
+if (error == nil) { \
+cell.tipLabel.text = [NSString stringWithFormat:@"%d", value]; \
+} \
+else { \
+ShowResult(@"get"#__setting__"failed: %@", error.description); \
+} \
+}];
+
+
 #endif /* DemoUtilityMacro_h */

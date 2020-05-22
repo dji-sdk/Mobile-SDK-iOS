@@ -20,8 +20,11 @@
 #import "CameraMediaPlaybackViewController.h"
 #import "In2P4PCameraPlayBackViewController.h"
 #import "XT2CameraViewController.h"
+#import "CameraSettingsViewController.h"
 
 @interface CameraActionsTableViewController ()
+
+@property (nonatomic, strong) NSString *cameraName;
 
 @end
 
@@ -29,16 +32,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.sectionNames = [NSMutableArray arrayWithArray:@[@"General", @"FPV", @"Shoot Photo", @"Record Video", @"Playback", @"Media Download"]];
-    
     // General
-    [self.items addObject:@[[DemoSettingItem itemWithName:@"Push Info" andClass:[CameraPushInfoViewController class]],
-                            [DemoSettingItem itemWithName:@"Set/Get ISO" andClass:[CameraISOViewController class]]]];
+    self.cameraName = [[NSUserDefaults standardUserDefaults] valueForKey:@"currentCameraName"];
+    if ([DemoCameraHelper isMultilensCamera:self.cameraName]) {
+        self.sectionNames = [NSMutableArray arrayWithArray:@[@"Settings", @"FPV", @"Shoot Photo", @"Record Video", @"Playback"]];
+        [self.items addObject:@[[DemoSettingItem itemWithName:@"Push Info" andClass:[CameraPushInfoViewController class]],
+                                [DemoSettingItem itemWithName:@"Camera Setting" andClass:[CameraSettingsViewController class]]]];
+    } else {
+        self.sectionNames = [NSMutableArray arrayWithArray:@[@"General", @"FPV", @"Shoot Photo", @"Record Video", @"Playback", @"Media Download"]];
+        [self.items addObject:@[[DemoSettingItem itemWithName:@"Push Info" andClass:[CameraPushInfoViewController class]],
+                                [DemoSettingItem itemWithName:@"Set/Get ISO" andClass:[CameraISOViewController class]]]];
+    }
     // FPV
     [self.items addObject:@[[DemoSettingItem itemWithName:@"First Person View (FPV)" andClass:[CameraFPVViewController class]]]];
 
-    if ([DemoXT2Helper isXT2Camera]) {
+    if ([DemoCameraHelper isXT2Camera]) {
         [self.sectionNames insertObject:@"XT2" atIndex:2];
         [self.items addObject:@[[DemoSettingItem itemWithName:@"XT2 Camera" andClass:[XT2CameraViewController class]]]];
     }
@@ -63,8 +71,10 @@
     else {
         [medias addObject:[DemoSettingItem itemWithName:@"Media playback" andClass:[CameraMediaPlaybackViewController class]]];
     }
-    [self.items addObject:medias];
     
+    if (![DemoCameraHelper isMultilensCamera:self.cameraName]) {
+        [self.items addObject:medias];
+    }
 }
 
 -(DJIBaseComponent *)getComponent {
@@ -86,6 +96,18 @@
 
     UIViewController * vc = [[item.viewControllerClass alloc] init];
     vc.title = item.itemName;
+    if ([DemoCameraHelper isMultilensCamera:self.cameraName]) {
+        UIStoryboard *board = [UIStoryboard storyboardWithName:@"CameraParamSetting" bundle:[NSBundle mainBundle]];
+        UITabBarController *vc = [board instantiateViewControllerWithIdentifier:@"tabbarVC"];
+        if ([self.cameraName isEqualToString:DJICameraDisplayNameZenmuseH20]) {
+            NSMutableArray *cons = [vc.viewControllers mutableCopy];
+            [cons removeLastObject];
+            vc.viewControllers = [cons copy];
+        }
+        vc.title = [self.cameraName copy];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
     if ([vc.title isEqual:@"Media playback"] && [vc isKindOfClass:[CameraMediaPlaybackViewController class]]) {
         // Media Playback view controller only supports landscape orientation.
         // Use presentViewController: instead of navigationController. 

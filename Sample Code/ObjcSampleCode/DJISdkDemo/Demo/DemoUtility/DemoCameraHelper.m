@@ -1,14 +1,14 @@
 //
-//  DemoXT2Helper.m
+//  DemoCameraHelper.m
 //  DJISdkDemo
 //
 //  Created by Jason Rinn on 7/5/18.
 //  Copyright © 2018 DJI. All rights reserved.
 //
 
-#import "DemoXT2Helper.h"
+#import "DemoCameraHelper.h"
 
-@implementation DemoXT2Helper
+@implementation DemoCameraHelper
 
 // Returns the XT2 vision camera instance. Returns nil if XT2 is not attached.
 + (nullable DJICamera *)connectedXT2VisionCamera {
@@ -41,6 +41,14 @@
         return NO;
     }
     return [self connectedThermalCamera].displayName == DJICameraDisplayNameXT2Thermal;
+}
+
++ (BOOL)isMultilensCamera:(nonnull NSString *)cameraName {
+    if ([cameraName isEqualToString:DJICameraDisplayNameZenmuseH20] ||
+        [cameraName isEqualToString:DJICameraDisplayNameZenmuseH20T]) {
+        return YES;
+    }
+    return NO;
 }
 
 // These keys will act on the thermal (IR) camera.

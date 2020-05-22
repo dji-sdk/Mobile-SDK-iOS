@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(nullable DJIAircraft*) fetchAircraft;
 +(nullable DJIHandheld*) fetchHandheld;
 +(nullable DJICamera*) fetchCamera;
++(nullable NSArray <DJICamera *> *)fetchCameras;
 +(nullable DJIGimbal*) fetchGimbal;
 +(nullable DJIFlightController*) fetchFlightController;
 +(nullable DJIRemoteController*) fetchRemoteController;
