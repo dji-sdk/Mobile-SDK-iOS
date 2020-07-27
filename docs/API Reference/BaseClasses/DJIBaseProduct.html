@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../Components/FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../Components/FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Components/Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Components/Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Components/Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Components/Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Components/Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Components/Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Components/Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Components/Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Components/Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Components/Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Components/Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Components/Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -778,7 +780,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICamera *_Nullable camera</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBaseProduct.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Retrieves an instance of the device's camera.</font></p>
+<p><font color="#666">Retrieves an instance of the device's camera. Only supported by the product with single gimbal, except Zenmuse XT2 and Mavic 2 Enterprise Camera.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../Components/Camera/DJICamera.html#djicamera">DJICamera</a></code></font></p>
 </div>

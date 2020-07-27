@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -803,7 +805,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setFrequencyBand:(DJIWiFiFrequencyBand)frequencyBand</span><br><span class="line">          withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamfrequencyband_key">DJIAirLinkKey.DJIWiFiLinkParamFrequencyBand</a></font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">It is not supported by Spark or Mavic Air. For these products, set different channel  numbers to select the frequency band.</font></p>
+<p><font color="#666">It is not supported by Spark or Mavic Air. For these products, set different channel  numbers to select the frequency band. It is not supported by Mavic Mini.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband">DJIWiFiFrequencyBand</a> <font color="#000">frequencyBand</font></font></td><td><font color="#666"><i>WiFi frequency band to change to.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Remote execution result error block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getwififrequencyband"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getwififrequencyband_inline">getFrequencyBandWithCompletion</a></div></div><div class="inline-doc" id="djiwifilink_getwififrequencyband_inline" <blockquote>
@@ -821,7 +823,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)setChannelNumber:(<span class="built_in">NSUInteger</span>)channelNumber withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamchannelnumber_key">DJIAirLinkKey.DJIWiFiLinkParamChannelNumber</a></font></td></tr></table></html>
 <h5 id="description-v13">Description:</h5>
-<p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_getavailablechannels">getAvailableChannelNumbersWithCompletion</a></code> must be used to determine which channels are possible  to set. When a new channel is set, the WiFi on the product will reboot. The channel can only be changed when the  product is not flying. Supported only by Mavic Pro.</font></p>
+<p><font color="#666">Sets the WiFi channel. <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_setwifichannel">setChannelNumber:withCompletion</a></code>  must be used to determine which channels are possible to set. When a new channel is set,  the WiFi on the product will reboot. The channel can only be changed when the product is not flying. Supported by Mavic Pro &amp; Mavic Mini.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">channelNumber</font></font></td><td><font color="#666"><i>Index of the channel to select.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_getwifichannel"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_getwifichannel_inline">getChannelNumberWithCompletion</a></div></div><div class="inline-doc" id="djiwifilink_getwifichannel_inline" <blockquote>
@@ -839,7 +841,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)getAvailableChannelNumbersWithCompletion:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *_Nullable channelNumbers,</span><br><span class="line">                                                          <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWiFiLink.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIAirLinkKey.html#djiairlinkkey_djiwifilinkparamavailablechannelnumbers_key">DJIAirLinkKey.DJIWiFiLinkParamAvailableChannelNumbers</a></font></td></tr></table></html>
 <h5 id="description-v15">Description:</h5>
-<p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">DJIWiFiFrequencyBandDual</a></code> is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro.</font></p>
+<p><font color="#666">Gets the channels available for the current frequency band. When <code><a href="../../Components/WiFiLink/DJIWiFiLink.html#djiwifilink_djiwififrequencyband_dualband">DJIWiFiFrequencyBandDual</a></code>  is  selected, channels for both 2.4GHz and 5GHz are available. Supported only by Mavic Pro &amp; Mavic Mini.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;NSNumber *&gt; *_Nullable <font color="#000">channelNumbers</font></font></td><td><font color="#666"><i>The array of the channel value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(NSArray&lt;NSNumber *&gt; *_Nullable channelNumbers,                                                           NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwifilink_setdatarate"><div class="api-col left">WiFi Data Rate</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwifilink_setdatarate_inline">setDataRate:withCompletion</a></div></div><div class="inline-doc" id="djiwifilink_setdatarate_inline" <blockquote>

@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -747,7 +749,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)enableLDMWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Enables LDM. Can only be enabled if <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_isldmsupported">isLDMSupported</a></code> is <code>YES</code>. Please call <code>DJILDMManager_getLDMSupported</code> methods firstly.  Call this method before calling the other methods of SDK (including <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerAppWithDelegate</a></code>) to restrict the internet access  of SDK (SDK registration is unrestricted).</font></p>
+<p><font color="#666">Enables LDM. Can only be enabled if <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_isldmsupported">isLDMSupported</a></code> is <code>YES</code>. Please call <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_getisldmsupported">getIsLDMSupportedWithCompletion</a></code> methods firstly.  Call this method before calling the other methods of SDK (including <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerapp">registerAppWithDelegate</a></code>) to restrict the internet access  of SDK (SDK registration is unrestricted).</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djildmmanager_disableldm"><div class="api-col left">Disable LDM</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_disableldm_inline">disableLDM</a></div></div><div class="inline-doc" id="djildmmanager_disableldm_inline" <blockquote>

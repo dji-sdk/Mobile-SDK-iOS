@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -745,7 +747,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setMode:(DJIGimbalMode)mode</span><br><span class="line"> withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbal.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#djigimbalkey_djigimbalparammode_key">DJIGimbalKey.DJIGimbalParamMode</a></font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Sets the gimbal's work mode. See enum <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a></code> for modes.</font></p>
+<p><font color="#666">Sets the gimbal's work mode. See enum <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a></code> for modes. Not supported by Mavic Mini.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_workmode">DJIGimbalMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>Gimbal work mode to be set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Remote execution result error block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbal_resetgimbal"><div class="api-col left">Reset Gimbal</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_resetgimbal_inline">resetWithCompletion</a></div></div><div class="inline-doc" id="djigimbal_resetgimbal_inline" <blockquote>
@@ -1195,7 +1197,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setAttitudeSynchronizationEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbal.h</font></td></tr></table></html>
 <h5 id="description-v52">Description:</h5>
-<p><font color="#666">Synchronizes the attitude of port (left) gimbal and starboard (right) gimbal. It is only valid when both gimbals are connected. If only 1 gimbal is connected, this setting will be reset to <code>NO</code>. Enables this setting will reset <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_getcontrollinggimbalindex">getControllingGimbalIndexWithCompletion</a></code> to index 0. It is only supported by M210 and M210 RTK.</font></p>
+<p><font color="#666">Synchronizes the attitude of port (left) gimbal and starboard (right) gimbal. It is only valid when both gimbals are connected. If only 1 gimbal is connected, this setting will be reset to <code>NO</code>. Enables this setting will reset <code><a href="../../Components/RemoteController/DJIRemoteController.html#djiremotecontroller_getcontrollinggimbalindex">getControllingGimbalIndexWithCompletion</a></code> to index 0. It is only supported by M210 and M210 RTK, not supported by DJI X-Port.</font></p>
 <h5 id="input-parameters-v49">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the synchronization.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbal_getattitudesynchronizationenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_getattitudesynchronizationenabled_inline">getAttitudeSynchronizationEnabledWithCompletion</a></div></div><div class="inline-doc" id="djigimbal_getattitudesynchronizationenabled_inline" <blockquote>

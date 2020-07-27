@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href class="active">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href class="active">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -799,7 +801,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addWaypoints:(<span class="built_in">NSArray</span> *)waypoints</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Mission.h</font></td></tr></table></html>
 <h5 id="description-v11">Description:</h5>
-<p><font color="#666">Adds an array of waypoints to the waypoint mission. The number of waypoints should be in the range [2, 99]. When the waypoints are added successfully, <code><a href="../../Components/Missions/DJIMutableWaypointV2Mission.html#djimutablewaypointv2mission_waypointcount">waypointCount</a></code> will  increment by the number of added waypoints.</font></p>
+<p><font color="#666">Adds an array of waypoints to the waypoint mission. The number of waypoints should be in the range [2, 65535]. When the waypoints are added successfully, <code><a href="../../Components/Missions/DJIMutableWaypointV2Mission.html#djimutablewaypointv2mission_waypointcount">waypointCount</a></code> will  increment by the number of added waypoints.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray * <font color="#000">waypoints</font></font></td><td><font color="#666"><i>Array of waypoints to be added to the waypoint mission.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimutablewaypointv2mission_removewaypoint"><div class="api-col left">Remove Waypoint</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimutablewaypointv2mission_removewaypoint_inline">removeWaypoint</a></div></div><div class="inline-doc" id="djimutablewaypointv2mission_removewaypoint_inline" <blockquote>

@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -772,12 +774,21 @@
 <p><font color="#666">Gets the product activation status.</font></p>
 <h5 id="return-v3">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if the product is activated.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djipayload_isdjivideostreamingchannelavailable"><div class="api-col left">Check Video Streaming Channel Available</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_isdjivideostreamingchannelavailable_inline">isDJIVideoStreamingChannelAvailable</a></div></div><div class="inline-doc" id="djipayload_isdjivideostreamingchannelavailable_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>isDJIVideoStreamingChannelAvailable</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isDJIVideoStreamingChannelAvailable</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">When it returns <code>YES</code>, video stream type on PSDK is set to DJI video streaming channel. Please use <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed">DJIVideoFeed</a></code> in <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a></code> to receive the video data. When it returns <code>NO</code>, video stream type on PSDK is set to custom video streaming channel.  Please use <code>DJIPayload_DJIPayloadDelegate_didReceiveVideoData</code> in <code><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a></code> to receive custom video data.</font></p>
+<h5 id="return-v4">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if DJI video streaming channel is available.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue:type:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>configureWidgetValue:type:index:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)configureWidgetValue:(<span class="built_in">NSUInteger</span>)value type:(DJIPayloadWidgetType)type index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Set the value for a widget of the payload device. Different widget types requires different  value: <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_input">DJIPayloadWidgetTypeInput</a></code>, the input should be an unsigned 32-bit  integer <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_switch">DJIPayloadWidgetTypeSwitch</a></code>, the input should be value  of <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a></code> <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_range">DJIPayloadWidgetTypeRange</a></code>, the input should  be a integer from value 0 to 100 <br> - for <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code>, the input should  be a integer not larger than list size minus one. <br> Widget with  type <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_button">DJIPayloadWidgetTypeButton</a></code> is not configurable.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">value</font></font></td><td><font color="#666"><i>The value to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>Type of the widget to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Index of the widget to configure.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -786,7 +797,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setSwitchState:(DJIPayloadSwitchState)state index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Sets the switch state for the switch widget with the specific index. It has the same effect  as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code> with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_switch">DJIPayloadWidgetTypeSwitch</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_switchstate">DJIPayloadSwitchState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>Switch state to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -795,7 +806,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setRangeValue:(<span class="built_in">NSUInteger</span>)rangeValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Sets the range value for the range widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_range">DJIPayloadWidgetTypeRange</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">rangeValue</font></font></td><td><font color="#666"><i>Range value to set. The valid range is [0, 100].</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -804,7 +815,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setSelectedItem:(<span class="built_in">NSUInteger</span>)selectedItemIndex index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Sets the selected item index for the list widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">selectedItemIndex</font></font></td><td><font color="#666"><i>Index of the selected item. The valid range is from 0 to list size - 1.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -813,7 +824,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setInputValue:(<span class="built_in">NSUInteger</span>)inputValue index:(<span class="built_in">NSUInteger</span>)index withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Sets the input value for the input widget with the specific index. It has the same effect as <code><a href="../../Components/Payload/DJIPayload.html#djipayload_configurewidgetvalue">configureWidgetValue:type:index:withCompletion</a></code>  with <code><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype_list">DJIPayloadWidgetTypeList</a></code> as the argument.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">inputValue</font></font></td><td><font color="#666"><i>Input value to set. The valid value is an unsigned 32-bit integer.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">index</font></font></td><td><font color="#666"><i>Widget index to set.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -822,36 +833,36 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (DJIPayloadWidget * _Nullable)getWidget:(DJIPayloadWidgetType)widgetType index:(<span class="built_in">NSInteger</span>)widgetIndex</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets a widget by specifying the widget type and the index.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget_widgettype">DJIPayloadWidgetType</a> <font color="#000">widgetType</font></font></td><td><font color="#666"><i>Widget type to get.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSInteger <font color="#000">widgetIndex</font></font></td><td><font color="#666"><i>Widget index to get.</i></font></td></tr></table></html>
-<h5 id="return-v4">Return:</h5>
+<h5 id="return-v5">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a> * _Nullable</font></td><td><font color="#666"><i>The widget corresponding to the widget type and the index. <code>nil</code> if the widgets are not ready or there is no widget corresponding  to the widget type and the index.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_getmaininterfacewidgets"><div class="api-col left">Get Main Interface Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getmaininterfacewidgets_inline">getMainInterfaceWidgets</a></div></div><div class="inline-doc" id="djipayload_getmaininterfacewidgets_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getMainInterfaceWidgets</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; * _Nullable)getMainInterfaceWidgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Gets the main interface widget list on the payload device. An empty array will be returned if the payload's data is regarded as invalid.</font></p>
-<h5 id="return-v5">Return:</h5>
+<h5 id="return-v6">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a>*&gt; * _Nullable</font></td><td><font color="#666"><i>A list of widgets. Returns nil if no widgets are fetched.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_getconfiginterfacewidgets"><div class="api-col left">Get Config Interface Widgets</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_getconfiginterfacewidgets_inline">getConfigInterfaceWidgets</a></div></div><div class="inline-doc" id="djipayload_getconfiginterfacewidgets_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getConfigInterfaceWidgets</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; * _Nullable)getConfigInterfaceWidgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Gets the configuration interface widget list on the payload device. An empty array will be returned if the payload's data is regarded as invalid.</font></p>
-<h5 id="return-v6">Return:</h5>
+<h5 id="return-v7">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a>*&gt; * _Nullable</font></td><td><font color="#666"><i>A list of widgets. Returns nil if no widgets are fetched.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_senddatatopayload"><div class="api-col left">Send Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_senddatatopayload_inline">sendDataToPayload:withCompletion</a></div></div><div class="inline-doc" id="djipayload_senddatatopayload_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>sendDataToPayload:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)sendDataToPayload:(<span class="built_in">NSData</span> *)data withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Sends data to payload. <br> - The length of the data to send cannot exceed 32 bytes for Matrice 200 series. <br> - The length of the  data to send cannot exceed 128 bytes for Matrice 200 V2 series. The throughput cannot exceed the bandwidth returned by <code><a href="../../Components/Payload/DJIPayload.html#djipayload_getupstreambandwidth">getUpstreamBandwidthWithCompletion</a></code>.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>Data that will be sent to the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -860,7 +871,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getDeviceTypeWithCompletion:(<span class="keyword">void</span> (^)(DJIPayloadDeviceType deviceType, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Gets the device type.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddevicetype">DJIPayloadDeviceType</a> <font color="#000">deviceType</font></font></td><td><font color="#666"><i>An enum value of the <code><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddevicetype">DJIPayloadDeviceType</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(<a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddevicetype">DJIPayloadDeviceType</a> deviceType, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -869,7 +880,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getProductPhaseWithCompletion:(<span class="keyword">void</span> (^)(DJIPayloadProductPhase mode, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Gets current payload product phase.</font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadproductphase">DJIPayloadProductPhase</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>An enum value of the <code><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadproductphase">DJIPayloadProductPhase</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(<a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadproductphase">DJIPayloadProductPhase</a> mode, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -879,7 +890,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIPayloadDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Delegate class to receive updated state related to Payload.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
@@ -888,7 +899,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveCommandData:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Receives the command data sent from the payload device. The command data is sent  from the UART/CAN channel of the payload device and the bandwidth of this channel  is 3K bytes/s on M200 series.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the command data from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The data that received by the payload instance.</i></font></td></tr></table></html></div>
@@ -897,7 +908,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveStreamData:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Receives the stream data sent from the payload device. The stream data is sent from  the UDP channel of the payload device. This channel has wider bandwidth than the channel  for command data but data might get lost without re-transmission.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the stream data from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The data that received by the payload instance.</i></font></td></tr></table></html></div>
@@ -906,7 +917,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveVideoData:(<span class="built_in">NSData</span> *)data</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Receives the video data sent from the payload device. The data may be live view or playback.  Only supported by Matrice 300 RTK.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the video data from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData * <font color="#000">data</font></font></td><td><font color="#666"><i>The video data that received by the payload instance.</i></font></td></tr></table></html></div>
@@ -915,7 +926,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didReceiveMessage:(<span class="built_in">NSString</span> *)message</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Receives a text message sent from the payload device.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the text message from the payload device.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">message</font></font></td><td><font color="#666"><i>The message that received by the payload instance.</i></font></td></tr></table></html></div>
@@ -924,7 +935,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didUpdateMainInterfaceWidgets:(<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; *)widgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Updates a set of payload shortcuts in main interface. if the pay load's data is invalid, an  empty array will be updated. It is only supported by DJI Skyport 2.0 and DJI X-Port.</font></p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the updated widget values.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a>*&gt; * <font color="#000">widgets</font></font></td><td><font color="#666"><i>The updated value for widgets.</i></font></td></tr></table></html></div>
@@ -933,7 +944,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)payload:(DJIPayload *)payload didUpdateConfigInterfaceWidgets:(<span class="built_in">NSArray</span>&lt;DJIPayloadWidget*&gt; *)widgets</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Updates setting for payload widgets. If the pay load's data is invalid, an empty array will be updated.</font></p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a> * <font color="#000">payload</font></font></td><td><font color="#666"><i>The payload instance received the updated widget values.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Payload/DJIPayload_PayloadWidget.html#djipayload_payloadwidget">DJIPayloadWidget</a>*&gt; * <font color="#000">widgets</font></font></td><td><font color="#666"><i>The updated value for widgets.</i></font></td></tr></table></html></div>
@@ -943,7 +954,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIPayloadFetchWidgetConfigurationProgressBlock)(<span class="built_in">NSProgress</span>  * _Nullable progress)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Called when fetching widget data is in progress.</font></p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSProgress  * _Nullable <font color="#000">progress</font></font></td><td><font color="#666"><i>An object of <code>NSProgress</code>.</i></font></td></tr></table></html></div>
@@ -952,7 +963,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIPayloadFetchWidgetConfigurationSuccessBlock)()</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Called when fetching widget data successful. An array of DJIPayloadWidget will be returned.</font></p>
 </div>
 <div class="api-row" id="djipayload_djipayloadfetchwidgetconfigurationfailureblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djipayload_djipayloadfetchwidgetconfigurationfailureblock_inline">DJIPayloadFetchWidgetConfigurationFailureBlock</a></div></div><div class="inline-doc" id="djipayload_djipayloadfetchwidgetconfigurationfailureblock_inline" <blockquote>
@@ -960,7 +971,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^_Nullable DJIPayloadFetchWidgetConfigurationFailureBlock)(<span class="built_in">NSError</span>  * _Nullable error)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Called when fetching widget data failed. Error indicating the reason will be returned.</font></p>
 <h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSError  * _Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
@@ -969,7 +980,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchWidgetConfigurationWithProgress:(DJIPayloadFetchWidgetConfigurationProgressBlock)progressBlock</span><br><span class="line">                                      success:(DJIPayloadFetchWidgetConfigurationSuccessBlock)successBlock</span><br><span class="line">                                     failure:(DJIPayloadFetchWidgetConfigurationFailureBlock)failureBlock</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Fetches widget configuration. Mobile SDK will fetch the configuration when it first launches.  Returns nil if initial fetching failed. It is only supported by DJI SKYPORT 2.0.</font></p>
 <h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadfetchwidgetconfigurationprogressblock">DJIPayloadFetchWidgetConfigurationProgressBlock</a> <font color="#000">progressBlock</font></font></td><td><font color="#666"><i>Updates the fetching progress.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadfetchwidgetconfigurationsuccessblock">DJIPayloadFetchWidgetConfigurationSuccessBlock</a> <font color="#000">successBlock</font></font></td><td><font color="#666"><i>Called when the task finishes successfully.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloadfetchwidgetconfigurationfailureblock">DJIPayloadFetchWidgetConfigurationFailureBlock</a> <font color="#000">failureBlock</font></font></td><td><font color="#666"><i>Called when the task is interrupted by an error.</i></font></td></tr></table></html></div>
@@ -978,7 +989,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setPayloadChannelPriority:(DJIVideoFeedPriority)priority</span><br><span class="line">                 onPhysicalSource:(DJIVideoFeedPhysicalSource)physicalSource</span><br><span class="line">                   withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Set the channel priority of the payload. Priority will affect the bandwidth allocation if it is not <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority_unknown">DJIVideoFeedPriorityUnknown</a></code>,  which is the default value. For example, if the data that comes from the payload device mounted on left gimbal is preferred, please set the priority  to <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority_high">DJIVideoFeedPriorityHigh</a></code>, and physicalSource is <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource_leftcamera">DJIVideoFeedPhysicalSourceLeftCamera</a></code>.  The others should be set to <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority_medium">DJIVideoFeedPriorityMedium</a></code> or <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority_low">DJIVideoFeedPriorityLow</a></code>.  Only supported by Matrice 300 RTK.</font></p>
 <h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority">DJIVideoFeedPriority</a> <font color="#000">priority</font></font></td><td><font color="#666"><i>The priority to be set, see <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority">DJIVideoFeedPriority</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">DJIVideoFeedPhysicalSource</a> <font color="#000">physicalSource</font></font></td><td><font color="#666"><i>See <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">DJIVideoFeedPhysicalSource</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -987,7 +998,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getPayloadChannelPriorityOnPhysicalSource:(DJIVideoFeedPhysicalSource)physicalSource withCompletion:(<span class="keyword">void</span> (^)(DJIVideoFeedPriority priority, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Get the channel priority of the payload. Only supported by Matrice 300 RTK.</font></p>
 <h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">DJIVideoFeedPhysicalSource</a> <font color="#000">physicalSource</font></font></td><td><font color="#666"><i>See <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedphysicalsource">DJIVideoFeedPhysicalSource</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority">DJIVideoFeedPriority</a> <font color="#000">priority</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority">DJIVideoFeedPriority</a></code>.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(<a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed_djivideofeedpriority">DJIVideoFeedPriority</a> priority, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the execution result.</i></font></td></tr></table></html></div>
@@ -996,7 +1007,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIPayloadProductPhase)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadBaseTypes.h</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Development phase has more settings than product phase, including control parameters auto-tuning,  coaxiality detection, balance detection, stiffness adjustment. Please note that this phase should be  used with DJI Assistant 2, which has bound with Payload SDK developer account. Product phase means  that the product is in the stage ready to sell. During this stage, development settings, i.e., control  parameters auto-tuning, coaxiality detection, balance detection, stiffness adjustment, should be hidden from user interface.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloadproductphase_development_inline"></a>DJIPayloadProductPhaseDevelopment</font></td><td><font color="#666">The product is in the development phase.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloadproductphase_release_inline"></a>DJIPayloadProductPhaseRelease</font></td><td><font color="#666">The product is in the release phase.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloadproductphase_unknown_inline"></a>DJIPayloadProductPhaseUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
@@ -1005,7 +1016,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIPayloadDeviceType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayloadBaseTypes.h</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">All the possible mode of <code><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddevicetype">DJIPayloadDeviceType</a></code>.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloaddevicetype_dji_skyport_1_inline"></a>DJIPayloadDeviceType_DJI_Skyport_1</font></td><td><font color="#666">DJI Skyport 1.0.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloaddevicetype_dji_skyport_2_inline"></a>DJIPayloadDeviceType_DJI_Skyport_2</font></td><td><font color="#666">DJI Skyport 2.0.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloaddevicetype_dji_x_port_inline"></a>DJIPayloadDeviceType_DJI_X_Port</font></td><td><font color="#666">DJI X-Port.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djipayload_djipayloaddevicetype_unknown_inline"></a>DJIPayloadDeviceTypeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>

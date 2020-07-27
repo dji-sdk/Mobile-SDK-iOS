@@ -188,6 +188,8 @@
                             </dd>
                             <dd><a href="../FlightController/DJIFlightController_DJIGravityCenterState.html">DJIGravityCenterState</a>
                             </dd>
+                            <dd><a href="../FlightController/DJIFlightController_DJIWarningStatusItem.html">DJIWarningStatusItem</a>
+                            </dd>
                             <dd><a data-href="../Compass/DJICompass.html" class="sub-toggle">DJICompass<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Compass/DJICompass_DJICompassState.html">DJICompassState</a>
@@ -532,14 +534,6 @@
                                       </dd>
                               </ul>
                             </dd>
-                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-                              <ul class="sub-menu">
-                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
-                                      </dd>
-                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
-                                      </dd>
-                              </ul>
-                            </dd>
                             <dd><a data-href="../Missions/DJIWaypointMissionUploadEvent.html" class="sub-toggle">DJIWaypointMissionUploadEvent<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Missions/DJIWaypointMission_DJIWaypointUploadProgress.html">DJIWaypointUploadProgress</a>
@@ -562,6 +556,14 @@
                   </dd>
                   <dd><a data-href="../Missions/DJIWaypointV2MissionOperator.html" class="sub-toggle">DJIWaypointV2MissionOperator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
+                            <dd><a data-href="../Missions/DJIWaypointV2Mission.html" class="sub-toggle">DJIWaypointV2Mission<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                              <ul class="sub-menu">
+                                      <dd><a href="../Missions/DJIMutableWaypointV2Mission.html">DJIMutableWaypointV2Mission</a>
+                                      </dd>
+                                      <dd><a href="../Missions/DJIWaypointV2.html">DJIWaypointV2</a>
+                                      </dd>
+                              </ul>
+                            </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionExecutionEvent.html">DJIWaypointV2MissionActionExecutionEvent</a>
                             </dd>
                             <dd><a href="../Missions/DJIWaypointV2MissionActionDownloadEvent.html">DJIWaypointV2MissionActionDownloadEvent</a>
@@ -785,12 +787,28 @@
 <h5 id="description-v9">Description:</h5>
 <p><font color="#666">Distance to home point. Only Supported by Phantom 4 RTK.</font></p>
 </div>
+<div class="api-row" id="djirtk_djirtkstate_ellipsoidheight"><div class="api-col left">Ellipsoid height</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_ellipsoidheight_inline">ellipsoidHeight</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_ellipsoidheight_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>ellipsoidHeight</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> ellipsoidHeight</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
+<h5 id="description-v10">Description:</h5>
+<p><font color="#666">Ellipsoid height. Only Supported by Matrice 300 RTK.</font></p>
+</div>
+<div class="api-row" id="djirtk_djirtkstate_aircraftaltitude"><div class="api-col left">Aircraft altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_aircraftaltitude_inline">aircraftAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_aircraftaltitude_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>aircraftAltitude</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> aircraftAltitude</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Aircraft altitude. Supported by Matrice 300 RTK, Phantom 4 RTK and P4 Multispectral.</font></p>
+</div>
 <div class="api-row" id="djirtk_djirtkstate_positioningsolution"><div class="api-col left">Positioning Solution</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_positioningsolution_inline">positioningSolution</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_positioningsolution_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>positioningSolution</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKPositioningSolution positioningSolution</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">The positioning solution describes the method used to determine positioning. The solutions vary in accuracy, from <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_none">DJIRTKPositioningSolutionNone</a></code> (no positioning) to <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_fixedpoint">DJIRTKPositioningSolutionFixedPoint</a></code>.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution">DJIRTKPositioningSolution</a></code></font></p>
@@ -800,7 +818,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSError</span> *_Nullable error</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamRTKError</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Gets RTK errors, if any. Returns <code>nil</code> when RTK is normal.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_heading"><div class="api-col left">Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_heading_inline">heading</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_heading_inline" <blockquote>
@@ -808,7 +826,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> heading</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamRTKHeadingAngle</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Heading relative to True North as defined by the vector formed from Antenna 2 to Antenna 1 on the mobile station. Unit is degrees.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_headingsolution"><div class="api-col left">Heading Solution</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_headingsolution_inline">headingSolution</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_headingsolution_inline" <blockquote>
@@ -816,7 +834,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKHeadingSolution headingSolution</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">The heading solution describes the method used to determine heading. The solutions vary in accuracy,  from <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution_none">DJIRTKHeadingSolutionNone</a></code> (no heading) to <code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution_fixedpoint">DJIRTKHeadingSolutionFixedPoint</a></code>. It's supported by Matrice  200 series V2 and Phantom 4 RTK.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK.html#djirtk_djirtkheadingsolution">DJIRTKHeadingSolution</a></code></font></p>
@@ -826,7 +844,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> mobileStationLocation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Always indicate RTK location data. Location information of the mobile station's receiver 1 antenna. This location  information is relative to the base station's location and is in degrees when <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkstate_positioningsolution">positioningSolution</a></code>  is <code><a href="../../Components/RTK/DJIRTK_DJIRTKState.html#djirtk_djirtkpositioningsolution_fixedpoint">DJIRTKPositioningSolutionFixedPoint</a></code>.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationantenna1altitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationantenna1altitude_inline">mobileStationAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationantenna1altitude_inline" <blockquote>
@@ -834,7 +852,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> mobileStationAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamRTKMobileStationAltitude</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Always indicate RTK altitude data. Altitude in meters of the mobile station's receiver 1 antenna relative to sea level.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationstandarddeviation"><div class="api-col left">Mobile Station Deviation</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationstandarddeviation_inline">mobileStationStandardDeviation</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationstandarddeviation_inline" <blockquote>
@@ -842,7 +860,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJILocationStandardDeviation *mobileStationStandardDeviation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">Standard deviation of location accuracy in meters. Returns <code>nil</code> when the aircraft receives no signal.  Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJILocationStandardDeviation.html#djirtk_djilocationstandarddeviation">DJILocationStandardDeviation</a></code></font></p>
@@ -852,7 +870,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> mobileStationFusionLocation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">The fusion location of the mobile station (in degrees). It is the combination of GPS and RTK. The flight controller uses this location for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationfusionaltitude"><div class="api-col left">Mobile Station Fusion Altitude</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationfusionaltitude_inline">mobileStationFusionAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationfusionaltitude_inline" <blockquote>
@@ -860,7 +878,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> mobileStationFusionAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">The fusion altitude of the mobile station. The flight controller fuses the data from GPS, RTK and the barometer.  The flight controller uses this altitude for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_mobilestationfusionheading"><div class="api-col left">Mobile Station Fusion Heading</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_mobilestationfusionheading_inline">mobileStationFusionHeading</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_mobilestationfusionheading_inline" <blockquote>
@@ -868,7 +886,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> mobileStationFusionHeading</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">The fusion heading of the mobile station. It is the combination of RTK and the compass. The flight controller uses this heading for navigation (e.g. waypoint mission) when RTK is available.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_groundsystemlocation"><div class="api-col left">Base Station Position</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_groundsystemlocation_inline">baseStationLocation</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_groundsystemlocation_inline" <blockquote>
@@ -876,7 +894,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CLLocationCoordinate2D</span> baseStationLocation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamRTKBaseStationLocation</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Base station's location coordinates, in degrees.</font></p>
 </div>
 <div class="api-row" id="djirtk_djirtkstate_groundsystemaltitude"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtk_djirtkstate_groundsystemaltitude_inline">baseStationAltitude</a></div></div><div class="inline-doc" id="djirtk_djirtkstate_groundsystemaltitude_inline" <blockquote>
@@ -884,7 +902,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">float</span> baseStationAltitude</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerParamRTKBaseStationAltitude</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Altitude of the base station above sea level, in meters.</font></p>
 </div>
 <html><p><br></p></html>
@@ -894,7 +912,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver1GPSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 GPS info.</font></p>
 <h5 id="see-also-v6">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -904,7 +922,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver1BeiDouInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 BeiDou info.</font></p>
 <h5 id="see-also-v7">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -914,7 +932,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver1GLONASSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 GLONASS info.</font></p>
 <h5 id="see-also-v8">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -924,7 +942,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver1GalileoInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 1 Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="see-also-v9">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -934,7 +952,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver2GPSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 GPS info.</font></p>
 <h5 id="see-also-v10">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -944,7 +962,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver2BeiDouInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 BeiDou info.</font></p>
 <h5 id="see-also-v11">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -954,7 +972,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver2GLONASSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 GLONASS info.</font></p>
 <h5 id="see-also-v12">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -964,7 +982,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull mobileStationReceiver2GalileoInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Mobile station (aircraft) receiver 2 Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="see-also-v13">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -974,7 +992,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull baseStationReceiverGPSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Base station receiver GPS info.</font></p>
 <h5 id="see-also-v14">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -984,7 +1002,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull baseStationReceiverBeiDouInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Base station receiver BeiDou info.</font></p>
 <h5 id="see-also-v15">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -994,7 +1012,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull baseStationReceiverGLONASSInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Base station receiver GLONASS info.</font></p>
 <h5 id="see-also-v16">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -1004,7 +1022,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIRTKReceiverInfo *_Nonnull baseStationReceiverGalileoInfo</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTK.h</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Base station receiver Galileo info. Only Supported by Phantom 4 RTK.</font></p>
 <h5 id="see-also-v17">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/RTK/DJIRTK_DJIRTKReceiverInfo.html#djirtk_djirtkreceiverinfo">DJIRTKReceiverInfo</a></code></font></p>
@@ -1016,7 +1034,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIRTKPositioningSolution)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKServcieBaseTypes.h</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">This enum defines the positioning solution currently being used.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_none_inline"></a>DJIRTKPositioningSolutionNone</font></td><td><font color="#666">No positioning solution. This can be caused by an insufficient number of  satellites in view, insufficient time to lock onto the satellites, or a  loss in communication link between the mobile station and base station.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_singlepoint_inline"></a>DJIRTKPositioningSolutionSinglePoint</font></td><td><font color="#666">RTK point positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_float_inline"></a>DJIRTKPositioningSolutionFloat</font></td><td><font color="#666">Float solution positioning.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_fixedpoint_inline"></a>DJIRTKPositioningSolutionFixedPoint</font></td><td><font color="#666">Fixed-point solution positioning (most accurate).</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtk_djirtkpositioningsolution_unknown_inline"></a>DJIRTKPositioningSolutionUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
