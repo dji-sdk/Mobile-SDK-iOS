@@ -62,7 +62,7 @@
                                                                             rollValue:nil
                                                                              yawValue:nil
                                                                                  time:0
-                                                                                 mode:DJIGimbalRotationModeSpeed];
+                                                                                 mode:DJIGimbalRotationModeSpeed ignore:YES];
 
         [gimbal rotateWithRotation:rotation completion:^(NSError * _Nullable error) {
             if (error) {

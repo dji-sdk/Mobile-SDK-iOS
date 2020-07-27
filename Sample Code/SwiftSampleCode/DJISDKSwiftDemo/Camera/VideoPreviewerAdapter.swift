@@ -349,11 +349,11 @@ extension VideoPreviewerAdapter: DJIVideoFeedListener {
 
 extension VideoPreviewerAdapter: DJIVideoPreviewerFrameControlDelegate {
     func parseDecodingAssistInfo(withBuffer buffer: UnsafeMutablePointer<UInt8>!, length: Int32, assistInfo: UnsafeMutablePointer<DJIDecodingAssistInfo>!) -> Bool {
-        return DJISDKManager.videoFeeder()?.parseDecodingAssistInfo(withBuffer: buffer, length: length, assistInfo: assistInfo) ?? false
+        return feed?.parseDecodingAssistInfo(withBuffer: buffer, length: length, assistInfo: assistInfo) ?? false
     }
     
     func decodingDidSucceed(withTimestamp timestamp: UInt32) {
-        DJISDKManager.videoFeeder()?.decodingDidSucceed(withTimestamp: UInt(timestamp))
+        feed?.decodingDidSucceed(withTimestamp: UInt(timestamp))
     }
     
     func isNeedFitFrameWidth() -> Bool {
@@ -366,11 +366,11 @@ extension VideoPreviewerAdapter: DJIVideoPreviewerFrameControlDelegate {
     }
     
     func syncDecoderStatus(_ isNormal: Bool) {
-        DJISDKManager.videoFeeder()?.syncDecoderStatus(isNormal)
+        feed?.syncDecoderStatus(isNormal)
     }
     
     func decodingDidFail() {
-        DJISDKManager.videoFeeder()?.decodingDidFail()
+        feed?.decodingDidFail()
     }
     
 }

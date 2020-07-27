@@ -141,7 +141,7 @@
     DJIGimbalRotation *rotation = [DJIGimbalRotation gimbalRotationWithPitchValue:self.pitchRotation
                                                                         rollValue:self.rollRotation
                                                                          yawValue:self.yawRotation time:2
-                                                                             mode:DJIGimbalRotationModeAbsoluteAngle];
+                                                                             mode:DJIGimbalRotationModeAbsoluteAngle ignore:YES];
     [gimbal rotateWithRotation:rotation completion:^(NSError * _Nullable error) {
         if (error) {
             ShowResult(@"rotateWithRotation failed: %@", error.description);
