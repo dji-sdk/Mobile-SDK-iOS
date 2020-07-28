@@ -309,9 +309,13 @@
 }
 
 -(void)camera:(DJICamera *)camera didUpdateStorageState:(DJICameraStorageState *)sdCardState {
-	self.isSDCardInserted = sdCardState.isInserted;
+    if (sdCardState.location == DJICameraStorageLocationSDCard) {
+        self.isSDCardInserted = sdCardState.isInserted;
+    }
 	if (self.activeStorageLocation == DJICameraStorageLocationSDCard) {
-		self.isSDCardInserted = sdCardState.isInserted;
+        if (sdCardState.location == DJICameraStorageLocationSDCard) {
+            self.isSDCardInserted = sdCardState.isInserted;
+        }
 	}
 	else {
 		self.isUsingInternalStorage = sdCardState.isInserted;
