@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,12 +20,14 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="6">
-            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DS0-tw-d4x">
+                    <rect key="frame" x="24.5" y="296.5" width="362" height="180"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezq-E9-c8K">
+                            <rect key="frame" x="20" y="20" width="143" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="5uS-3i-ard"/>
                                 <constraint firstAttribute="width" constant="143" id="c9Q-by-Nht"/>
@@ -38,6 +42,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3V-Qw-mHD">
+                            <rect key="frame" x="202" y="20" width="143" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="143" id="7p3-KS-rNq"/>
                                 <constraint firstAttribute="height" constant="40" id="eMI-9Y-ZR6"/>
@@ -52,6 +57,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wan-fg-5fM">
+                            <rect key="frame" x="201" y="68" width="143" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="143" id="4Y6-fF-LxC"/>
                                 <constraint firstAttribute="height" constant="40" id="eoh-rl-mdN"/>
@@ -66,6 +72,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL6-GU-M2D">
+                            <rect key="frame" x="20" y="68" width="143" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="143" id="Yoq-hg-20t"/>
                                 <constraint firstAttribute="height" constant="40" id="ZnS-dq-5zG"/>
@@ -80,6 +87,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-Ah-sxg">
+                            <rect key="frame" x="20" y="116" width="143" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="143" id="7tV-Gp-2DQ"/>
                                 <constraint firstAttribute="height" constant="40" id="qSN-lj-uMp"/>
@@ -93,6 +101,21 @@
                                 <action selector="onSimulatorButtonClicked:" destination="-1" eventType="touchUpInside" id="NE8-gN-NFA"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYF-Hk-9Ee">
+                            <rect key="frame" x="202" y="116" width="143" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="143" id="Bpu-ZP-FOj"/>
+                                <constraint firstAttribute="height" constant="40" id="KOj-2g-egK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Land" backgroundImage="btn">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="onLandButtonClicked:" destination="-1" eventType="touchUpInside" id="XeI-b8-0oc"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -100,9 +123,11 @@
                         <constraint firstItem="sL6-GU-M2D" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="-2" id="7Qe-6V-IHC"/>
                         <constraint firstItem="sL6-GU-M2D" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="-89.5" id="BIg-dj-LHn"/>
                         <constraint firstAttribute="height" constant="180" id="C3q-et-ICs"/>
+                        <constraint firstItem="FYF-Hk-9Ee" firstAttribute="leading" secondItem="YY4-Ah-sxg" secondAttribute="trailing" constant="39" id="C7y-fx-2oW"/>
                         <constraint firstItem="YY4-Ah-sxg" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="-89.5" id="C8Z-je-TCR"/>
                         <constraint firstItem="ezq-E9-c8K" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="-50" id="ENo-1U-7mm"/>
                         <constraint firstItem="YY4-Ah-sxg" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="46" id="PJA-OO-vw0"/>
+                        <constraint firstItem="FYF-Hk-9Ee" firstAttribute="top" secondItem="wan-fg-5fM" secondAttribute="bottom" constant="8" id="QQx-cT-JJs"/>
                         <constraint firstItem="wan-fg-5fM" firstAttribute="centerY" secondItem="DS0-tw-d4x" secondAttribute="centerY" constant="-2" id="WPh-pp-Rqr"/>
                         <constraint firstItem="y3V-Qw-mHD" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="92.5" id="Yaw-bN-Y4F"/>
                         <constraint firstItem="wan-fg-5fM" firstAttribute="centerX" secondItem="DS0-tw-d4x" secondAttribute="centerX" constant="91.5" id="fgZ-BS-ZXm"/>
@@ -111,14 +136,17 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8" userLabel="Joystick Left" customClass="DemoVirtualStickView">
+                    <rect key="frame" x="27.5" y="549.5" width="128" height="128"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="10">
+                            <rect key="frame" x="1" y="0.0" width="128" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="128" id="EjJ-v9-4WQ"/>
                                 <constraint firstAttribute="height" constant="128" id="klb-8l-AzZ"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="9">
+                            <rect key="frame" x="1" y="0.0" width="128" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="4QB-4B-pHm"/>
                                 <constraint firstAttribute="width" constant="128" id="kCj-kA-fbN"/>
@@ -197,14 +225,17 @@
                     </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYw-WO-bdf" userLabel="Joystick Right" customClass="DemoVirtualStickView">
+                    <rect key="frame" x="258.5" y="549.5" width="128" height="128"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_base.png" translatesAutoresizingMaskIntoConstraints="NO" id="ePh-Di-EJZ">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="128" id="i1d-B5-GaY"/>
                                 <constraint firstAttribute="height" constant="128" id="tgS-EW-G5O"/>
                             </constraints>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="stick_normal.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-tA-PLc">
+                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="7Mt-SA-fYA"/>
                                 <constraint firstAttribute="width" constant="128" id="EL1-N9-5fp"/>
@@ -257,6 +288,7 @@
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simulator State" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r5u-pF-1aF">
+                    <rect key="frame" x="66.5" y="168.5" width="284" height="84"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="291" id="2MZ-BH-E4R"/>
@@ -370,14 +402,14 @@
                 <mask key="constraints">
                     <exclude reference="SLJ-gd-leL"/>
                     <exclude reference="gHY-PE-ebC"/>
+                    <exclude reference="ItN-1l-T5h"/>
+                    <exclude reference="z15-7R-aZe"/>
                     <exclude reference="6Da-EB-Yl0"/>
                     <exclude reference="Dcz-XA-xLo"/>
                     <exclude reference="GAX-1R-GTr"/>
                     <exclude reference="Wvb-XB-vQf"/>
                     <exclude reference="kP8-ge-cN1"/>
                     <exclude reference="l2L-CY-qwY"/>
-                    <exclude reference="ItN-1l-T5h"/>
-                    <exclude reference="z15-7R-aZe"/>
                 </mask>
             </variation>
             <variation key="heightClass=compact">
@@ -386,14 +418,14 @@
                     <include reference="SLJ-gd-leL"/>
                     <include reference="gHY-PE-ebC"/>
                     <exclude reference="paD-x2-tSR"/>
-                    <exclude reference="21r-gB-Jg8"/>
-                    <include reference="6Da-EB-Yl0"/>
-                    <include reference="Dcz-XA-xLo"/>
-                    <exclude reference="Hmx-8B-soc"/>
                     <exclude reference="F1y-T3-1Up"/>
                     <exclude reference="Ika-Y8-H4T"/>
                     <include reference="ItN-1l-T5h"/>
                     <include reference="z15-7R-aZe"/>
+                    <exclude reference="21r-gB-Jg8"/>
+                    <include reference="6Da-EB-Yl0"/>
+                    <include reference="Dcz-XA-xLo"/>
+                    <exclude reference="Hmx-8B-soc"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -418,7 +450,7 @@
         </view>
     </objects>
     <resources>
-        <image name="btn" width="16" height="34"/>
+        <image name="btn" width="16.5" height="34"/>
         <image name="stick_base.png" width="128" height="128"/>
         <image name="stick_normal.png" width="128" height="128"/>
     </resources>

@@ -146,6 +146,26 @@
     }
 }
 
+- (IBAction)onLandButtonClicked:(id)sender {
+    DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
+
+    if (fc) {
+        WeakRef(target);
+        [fc startLandingWithCompletion:^(NSError * _Nullable error) {
+            WeakReturn(target);
+            if (error) {
+                ShowResult([NSString stringWithFormat:@"AutoLand : %@", error.description]);
+            } else {
+                ShowResult(@"AutoLand Started.");
+            }
+        }];
+    }
+    else
+    {
+        ShowResult(@"Component not exist.");
+    }
+}
+
 -(IBAction) onCoordinateSysButtonClicked:(id)sender
 {
     DJIFlightController* fc = [DemoComponentHelper fetchFlightController];
@@ -208,12 +228,7 @@
         }
         else
         {
-            // To consist with the physical remote controller, the negative Y axis (push up) of the virtual stick is mapped to
-            // the X direction of the coordinate (body or ground). The X axis (push right) is mapped to the Y direction of the
-            // coordinate (body or ground).
-            // If the developer wants to use the angle mode to control the horizontal movement, the mapping between the virtual
-            // stick and the aircraft coordinate will be different. 
-            [self setXVelocity:-dir.y andYVelocity:dir.x];
+            [self setXVelocity:dir.x andYVelocity:dir.y];
         }
     }
 }
