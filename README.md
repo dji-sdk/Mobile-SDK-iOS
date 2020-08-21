@@ -33,7 +33,7 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.13)
+Installing DJI-SDK-iOS (4.13.1)
 Installing DJIWidget (1.6.3)
 Installing DJIFlySafeDatabaseResource (01.00.01.17)
 Generating Pods project
