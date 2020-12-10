@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href class="active">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -2014,14 +2024,32 @@ of the camera video dimension, the x, and y values must all be between 0 and 1.0
 <p><font color="#666">Sets the window transmission coefficient, can be between 50 and 100-X where X is the window reflection. Not supported by Zenmuse H20T.</font></p>
 <h5 id="input-parameters-v125">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">coefficient</font></font></td><td><font color="#666"><i>The desired window transmission coefficient.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the setter execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djicamera_djilens_thermalcamera_setinfraredthermalcamerasensorburningprotectionenabled"><div class="api-col left">Infrared Sensor Protection</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_thermalcamera_setinfraredthermalcamerasensorburningprotectionenabled_inline">setInfraredThermalCameraSensorBurningProtectionEnabled:withCompletion</a></div></div><div class="inline-doc" id="djicamera_djilens_thermalcamera_setinfraredthermalcamerasensorburningprotectionenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setInfraredThermalCameraSensorBurningProtectionEnabled:withCompletion</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setInfraredThermalCameraSensorBurningProtectionEnabled:(<span class="built_in">BOOL</span>)isEnabled withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
+<h5 id="description-v143">Description:</h5>
+<p><font color="#666">Enables or disables the infrared sensor protection. If the sensor protection is enabled, the infrared thermal  camera shutter might be closed. Only supported by Zenmuse H20T.</font></p>
+<h5 id="input-parameters-v126">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isEnabled</font></font></td><td><font color="#666"><i>Enable or disable infrared sensor protection.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives the execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djicamera_djilens_thermalcamera_setinfraredthermalcamerashutterenabled"><div class="api-col left">Enable Infrared Thermal Camera</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_thermalcamera_setinfraredthermalcamerashutterenabled_inline">setInfraredThermalCameraShutterEnabled</a></div></div><div class="inline-doc" id="djicamera_djilens_thermalcamera_setinfraredthermalcamerashutterenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setInfraredThermalCameraShutterEnabled</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setInfraredThermalCameraShutterEnabled:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
+<h5 id="description-v144">Description:</h5>
+<p><font color="#666">Enables the infrared thermal camera. Infrared thermal camera shutter may be closed, if the sensor protection is enabled.  Only supported by Zenmuse H20T.</font></p>
+<h5 id="input-parameters-v127">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_thermalcamera_gettemperaturemeasurementrangewithgainmode"><div class="api-col left">Measurement Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_thermalcamera_gettemperaturemeasurementrangewithgainmode_inline">getTemperatureMeasurementRangeWithGainMode:completion</a></div></div><div class="inline-doc" id="djicamera_djilens_thermalcamera_gettemperaturemeasurementrangewithgainmode_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getTemperatureMeasurementRangeWithGainMode:completion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getTemperatureMeasurementRangeWithGainMode:(DJICameraThermalGainMode)mode completion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span> &lt;<span class="built_in">NSNumber</span> *&gt; *range, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v143">Description:</h5>
+<h5 id="description-v145">Description:</h5>
 <p><font color="#666">Gets temperature range of specific gain mode. Only supported by the thermal lens of Zenmuse H20T.</font></p>
-<h5 id="input-parameters-v126">Input Parameters:</h5>
+<h5 id="input-parameters-v128">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalgainmode">DJICameraThermalGainMode</a> <font color="#000">mode</font></font></td><td><font color="#666"><i>Given camera gain mode.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSArray &lt;NSNumber *&gt; * <font color="#000">range</font></font></td><td><font color="#666"><i>The temperature measurement range of given gain mode.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSArray &lt;NSNumber *&gt; *range, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h5 id="related">Related:</h5>
@@ -2030,7 +2058,7 @@ of the camera video dimension, the x, and y values must all be between 0 and 1.0
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJILensDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
-<h5 id="description-v144">Description:</h5>
+<h5 id="description-v146">Description:</h5>
 <p><font color="#666">This protocol provides delegate methods to receive the updated video data,  current state and information of lens.</font></p>
 <h5 id="protocol-methods">Protocol Methods:</h5>
 <h4 id="protocol-method">Protocol Method</h4>
@@ -2039,72 +2067,72 @@ of the camera video dimension, the x, and y values must all be between 0 and 1.0
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateFocusState:(DJICameraFocusState *_Nonnull)focusState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v145">Description:</h5>
+<h5 id="description-v147">Description:</h5>
 <p><font color="#666">Called when the focus state has been updated.</font></p>
-<h5 id="input-parameters-v127">Input Parameters:</h5>
+<h5 id="input-parameters-v129">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the lens for which focus state will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraLensState.html#djicamera_djicameralensstate">DJICameraFocusState</a> *_Nonnull <font color="#000">focusState</font></font></td><td><font color="#666"><i>The camera's lens and focus state.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdateareatemperatureaggregations"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdateareatemperatureaggregations_inline">lens:didUpdateAreaTemperatureAggregations</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdateareatemperatureaggregations_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateAreaTemperatureAggregations</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateAreaTemperatureAggregations:(DJICameraThermalAreaTemperatureAggregations)temperatureAggregations</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v146">Description:</h5>
+<h5 id="description-v148">Description:</h5>
 <p><font color="#666">Called when there are new min, max, and average temperature values available for the set  spot metering area. Supported by the thermal lens of Zenmuse H20T.</font></p>
-<h5 id="input-parameters-v128">Input Parameters:</h5>
+<h5 id="input-parameters-v130">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which area temperature aggregations will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalareatemperatureaggregations">DJICameraThermalAreaTemperatureAggregations</a> <font color="#000">temperatureAggregations</font></font></td><td><font color="#666"><i>The updated aggregate temperature values.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdateexternalscenesettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdateexternalscenesettings_inline">lens:didUpdateExternalSceneSettings</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdateexternalscenesettings_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateExternalSceneSettings</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateExternalSceneSettings:(DJICameraThermalExternalSceneSettings)settings</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v147">Description:</h5>
+<h5 id="description-v149">Description:</h5>
 <p><font color="#666">Called when updated external scene settings are available. Supported by the thermal lens of Zenmuse H20T.</font></p>
-<h5 id="input-parameters-v129">Input Parameters:</h5>
+<h5 id="input-parameters-v131">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which external scene settings will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalexternalscenesettings">DJICameraThermalExternalSceneSettings</a> <font color="#000">settings</font></font></td><td><font color="#666"><i>The updated external scene settings values.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdateexposuresettings"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdateexposuresettings_inline">lens:didUpdateExposureSettings</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdateexposuresettings_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateExposureSettings</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateExposureSettings:(DJICameraExposureSettings)settings</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v148">Description:</h5>
+<h5 id="description-v150">Description:</h5>
 <p><font color="#666">Called whenever the lens parameters change. In automatic exposure modes (Program, Shutter Priority and  Aperture Priority) the lens may be automatically changing aperture, shutter speed and ISO (depending on  the mode and camera) when lighting conditions change. In Manual mode, the exposure compensation is  automatically updated to let the user know how much compensation the exposure needs to get to an  exposure the camera calculates as correct.</font></p>
-<h5 id="input-parameters-v130">Input Parameters:</h5>
+<h5 id="input-parameters-v132">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which exposure settings will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposureparameters">DJICameraExposureSettings</a> <font color="#000">settings</font></font></td><td><font color="#666"><i>The updated real values for parameters.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdatetemperaturedata"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdatetemperaturedata_inline">lens:didUpdateTemperatureData</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdatetemperaturedata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateTemperatureData</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateTemperatureData:(<span class="keyword">float</span>)temperature</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v149">Description:</h5>
+<h5 id="description-v151">Description:</h5>
 <p><font color="#666">Received temperature in degrees Celsius of image. The thermal imaging camera will only update the temperature if  the temperature data is enabled. Supported by the thermal lens of Zenmuse H20T.</font></p>
-<h5 id="input-parameters-v131">Input Parameters:</h5>
+<h5 id="input-parameters-v133">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which temperature data will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">float <font color="#000">temperature</font></font></td><td><font color="#666"><i>The camera's temperature data in degrees Celsius.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdatetapzoomstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdatetapzoomstate_inline">lens:didUpdateTapZoomState</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdatetapzoomstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateTapZoomState</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateTapZoomState:(DJICameraTapZoomState)state</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v150">Description:</h5>
+<h5 id="description-v152">Description:</h5>
 <p><font color="#666">Called when the camera's zoom state is updated. Supported by the zoom lens and the wide lens of Zenmuse H20/H20T.</font></p>
-<h5 id="input-parameters-v132">Input Parameters:</h5>
+<h5 id="input-parameters-v134">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which tap zoom state will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera.html#djicamera_djicameratapzoomstate">DJICameraTapZoomState</a> <font color="#000">state</font></font></td><td><font color="#666"><i>The camera's current zoom state.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdatelasermeasureinformation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdatelasermeasureinformation_inline">lens:didUpdateLaserMeasureInformation</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdatelasermeasureinformation_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateLaserMeasureInformation</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateLaserMeasureInformation:(DJICameraLaserMeasureInformation *)information</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v151">Description:</h5>
+<h5 id="description-v153">Description:</h5>
 <p><font color="#666">Called when the laser measure information updated. The laser sensor must be at least 3 meters away from the target point.  Supported by the zoom lens and the wide lens of Zenmuse H20/H20T.</font></p>
-<h5 id="input-parameters-v133">Input Parameters:</h5>
+<h5 id="input-parameters-v135">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the Camera for which laser measure information will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJICameraLaserMeasureInformation.html#djicamera_djicameralasermeasureinformation">DJICameraLaserMeasureInformation</a> * <font color="#000">information</font></font></td><td><font color="#666"><i>The laser measure information.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djilens_didupdateglobaltemperaturerange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djilens_didupdateglobaltemperaturerange_inline">lens:didUpdateGlobalTemperatureRange</a></div></div><div class="inline-doc" id="djicamera_djilens_didupdateglobaltemperaturerange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>lens:didUpdateGlobalTemperatureRange</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)lens:(DJILens *_Nonnull)lens didUpdateGlobalTemperatureRange:(<span class="built_in">NSArray</span> *)range</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILens.h</font></td></tr></table></html>
-<h5 id="description-v152">Description:</h5>
+<h5 id="description-v154">Description:</h5>
 <p><font color="#666">Called when the temperature range changes. Only supported by the thermal lens of Zenmuse H20T.</font></p>
-<h5 id="input-parameters-v134">Input Parameters:</h5>
+<h5 id="input-parameters-v136">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Camera/DJICamera_DJILens.html#djicamera_djilens">DJILens</a> *_Nonnull <font color="#000">lens</font></font></td><td><font color="#666"><i>Instance of the lens for which temperature range will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSArray * <font color="#000">range</font></font></td><td><font color="#666"><i>The temperature range. The array contains min value, max value.</i></font></td></tr></table></html></div>
 </div>
 

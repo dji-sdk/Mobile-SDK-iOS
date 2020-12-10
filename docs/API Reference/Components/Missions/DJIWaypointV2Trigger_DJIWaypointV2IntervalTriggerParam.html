@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJILens.html">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -716,7 +726,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIWaypointV2IntervalTriggerParam</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Action.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">This class defines <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_trajectory">DJIWaypointV2ActionTriggerTypeTrajectory</a></code>.</font></p>
+<p><font color="#666">This class defines <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_trajectory">DJIWaypointV2ActionTriggerTypeTrajectory</a></code>. You can add multiple actions to the trigger,  but these actions must be concurrent, which means that the actions must be sent to two different modules. For example, you can use this trigger to rotate gimbal pitch and control the camera to take photo at the same time. But if you want to add actions for camera to take photo and record video, you should add action with <code><a href="../../Components/Missions/DJIWaypointV2Trigger_DJIWaypointV2AssociateTriggerParam.html#djiwaypointv2trigger_djiwaypointv2associatetriggerparam">DJIWaypointV2AssociateTriggerParam</a></code>, and set the associated action ID with another action, the <code><a href="../../Components/Missions/DJIWaypointV2Trigger_DJIWaypointV2AssociateTriggerParam.html#djiwaypointv2trigger_djiwaypointv2associatetriggerparam_actionassociatedtype">actionAssociatedType</a></code> should be  <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2triggerassociatedtimingtype_afterfinished">DJIWaypointV2TriggerAssociatedTimingTypeAfterFinished</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djiwaypointv2trigger_djiwaypointv2intervaltriggerparam_startindex"><div class="api-col left">Start Index</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2trigger_djiwaypointv2intervaltriggerparam_startindex_inline">startIndex</a></div></div><div class="inline-doc" id="djiwaypointv2trigger_djiwaypointv2intervaltriggerparam_startindex_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>startIndex</h6></div>

@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href="DJICamera_DJILens.html">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -863,14 +873,22 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *customInformation</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
 <h5 id="description-v17">Description:</h5>
-<p><font color="#666">Custom information can be stored in media file's XMP meta data using <code><a href="../../Components/Camera/DJICamera.html#djicamera_camerasettings_setmediafilecustominformation">setMediaFileCustomInformation:withCompletion</a></code> This property contains the information that was written to this media file. If this property returns <code>nil</code>, use <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchcustominformation">fetchCustomInformationWithCompletion</a></code> to populate it. Only supported by Phantom 4 Pro, Phantom 4 Advanced and Inspire 2 with firmware versions from after May 23 2017.</font></p>
+<p><font color="#666">Custom information can be stored in media file's XMP meta data using <code><a href="../../Components/Camera/DJICamera.html#djicamera_camerasettings_setmediafilecustominformation">setMediaFileCustomInformation:withCompletion</a></code> This property contains the information that was written to this media file. If this property returns <code>nil</code>, use <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchcustominformation">fetchCustomInformationWithCompletion</a></code> to populate it. Supported by Phantom 4 RTK, Phantom 4 Pro, Phantom 4 Advanced and Inspire 2 with firmware versions from after May 23 2017.</font></p>
+</div>
+<div class="api-row" id="djimediamanager_djimedia_xmpfiledata"><div class="api-col left">XMP Data</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_xmpfiledata_inline">XMPInformation</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_xmpfiledata_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>XMPInformation</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *XMPInformation</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
+<h5 id="description-v18">Description:</h5>
+<p><font color="#666">This property contains the XMP data which was written to this media file. If this property returns <code>nil</code>, use <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchxmpfiledata">fetchXMPFileDataWithCompletion</a></code> to populate it. Only supported Phantom 4 RTK.</font></p>
 </div>
 <div class="api-row" id="djimediamanager_djimedia_thumbnail"><div class="api-col left">Download Media</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_thumbnail_inline">thumbnail</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_thumbnail_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>thumbnail</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *thumbnail</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Returns the thumbnail for this media. If this property returns nil, call <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchthumbnail">fetchThumbnailWithCompletion</a></code>.</font></p>
 </div>
 <div class="api-row" id="djimediamanager_djimedia_fetchthumbnail"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchthumbnail_inline">fetchThumbnailWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchthumbnail_inline" <blockquote>
@@ -878,7 +896,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchThumbnailWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Fetches this media's thumbnail with a resolution (99 x 99) from the SD card. This method can be used to fetch either a photo or a video, where the first frame of the video is the thumbnail that is fetched. It is not available if the media type is Panorama. <br><br> Precondition:<br> The camera mode is MediaDownload mode. <br><br> Post Condition:<br> This method will start to download the media thumbnail in the SD card. The content can be videos or images.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
@@ -887,7 +905,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>, <span class="keyword">readonly</span>) <span class="built_in">UIImage</span> *preview</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Returns the preview image for this media. If this property returns <code>nil</code>, call <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchpreview">fetchPreviewWithCompletion</a></code>.</font></p>
 </div>
 <div class="api-row" id="djimediamanager_djimedia_resetthumbnail"><div class="api-col left">Reset thumbnail</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_resetthumbnail_inline">resetThumbnail</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_resetthumbnail_inline" <blockquote>
@@ -895,7 +913,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)resetThumbnail</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Free memory by setting cached thumbnail to <code>nil</code>. This does not need to be called before <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchthumbnail">fetchThumbnailWithCompletion</a></code> and is provided for convenience.</font></p>
 </div>
 <div class="api-row" id="djimediamanager_djimedia_fetchpreview"><div class="api-col left">Fetch Preview</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchpreview_inline">fetchPreviewWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchpreview_inline" <blockquote>
@@ -903,7 +921,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchPreviewWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Fetch media's preview image. The preview image is a lower resolution (960 x 540) version of a photo. The <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype">DJIMediaType</a></code> of this media object should be <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_jpeg">DJIMediaTypeJPEG</a></code> or <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_tiff">DJIMediaTypeTIFF</a></code>. The preview will be stored in <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_preview">preview</a></code>.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
@@ -912,7 +930,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)resetPreview</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Free memory by setting cached preview image to <code>nil</code>. This does not need to be called before <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchpreview">fetchPreviewWithCompletion</a></code> and is provided  for convenience.</font></p>
 </div>
 <div class="api-row" id="djimediamanager_djimedia_fetchcustominformation"><div class="api-col left">Download Custom Info</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchcustominformation_inline">fetchCustomInformationWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchcustominformation_inline" <blockquote>
@@ -920,36 +938,45 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchCustomInformationWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Custom information can be stored in media file's XMP meta data using <code><a href="../../Components/Camera/DJICamera.html#djicamera_camerasettings_setmediafilecustominformation">setMediaFileCustomInformation:withCompletion</a></code>. The information will be stored in <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_custominformation">customInformation</a></code>. Only supported by Phantom 4 Pro, Phantom 4 Advanced,  Phantom 4 Pro V2.0, Zenmuse X4S, Zenmuse X5S, Zenmuse X7 and Mavic 2 Enterprise camera.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djimediamanager_djimedia_fetchxmpfiledata"><div class="api-col left">Fetch XMP File</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchxmpfiledata_inline">fetchXMPFileDataWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchxmpfiledata_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>fetchXMPFileDataWithCompletion</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchXMPFileDataWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
+<h5 id="description-v26">Description:</h5>
+<p><font color="#666">Fetch the XMP data stored in the media file. The data will be stored in <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_xmpfiledata">XMPInformation</a></code>. Only supported by Phantom 4 RTK.</font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_fetchfiledata"><div class="api-col left">Fetch File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchfiledata_inline">fetchFileDataWithOffset:updateQueue:updateBlock</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchfiledata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>fetchFileDataWithOffset:updateQueue:updateBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchFileDataWithOffset:(<span class="built_in">NSUInteger</span>)offset</span><br><span class="line">                    updateQueue:(<span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                    updateBlock:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSData</span> *_Nullable data, <span class="built_in">BOOL</span> isComplete, <span class="built_in">NSError</span> *_Nullable error))updateBlock</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
-<p><font color="#666">Fetches this media file's full resolution data from the SD card. The difference between  fetching the media data and fetching the thumbnail is that fetching the thumbnail will  return a low-resolution image of the actual picture, while fetching the media data will  return all data for a video or image. If last download action is aborted, it will continue  to download the data from where the file download has been aborted. Not supported by Phantom 4 RTK.  Please use <code><a href="../../Components/Camera/DJICamera.html#djicamera_camerasettings_sethighqualitypreviewenabled">setHighQualityPreviewEnabled:withCompletion</a></code> to fetch high quality preview instead.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="description-v27">Description:</h5>
+<p><font color="#666">Fetches this media file's full resolution data from camera. The difference between  fetching the media data and fetching the thumbnail is that fetching the thumbnail will  return a low-resolution image of the actual picture, while fetching the media data will  return all data for a video or image. If last download action is aborted, it will continue  to download the data from where the file download has been aborted. Not supported by Phantom 4 RTK.  Please use <code><a href="../../Components/Camera/DJICamera.html#djicamera_camerasettings_sethighqualitypreviewenabled">setHighQualityPreviewEnabled:withCompletion</a></code> to fetch high quality preview instead.</font></p>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">offset</font></font></td><td><font color="#666"><i>Offset in bytes. Pass 0 to fetch all data from the beginning. Pass the already fetched bytes to continue the previous download.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>Queue to call the update block on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSData *_Nullable <font color="#000">data</font></font></td><td><font color="#666"><i>A chunk of binary data of the file.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isComplete</font></font></td><td><font color="#666"><i><code>YES</code> if the last byte of the file is returned and thus fetching is complete.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSData *_Nullable data, BOOL isComplete, NSError *_Nullable error) <font color="#000">updateBlock</font></font></td><td><font color="#666"><i>Block to receive file data. It will be called multiple times and each time will return the data received since the last call.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_stopfetchingfiledata"><div class="api-col left">Stop Fetching File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_stopfetchingfiledata_inline">stopFetchingFileDataWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_stopfetchingfiledata_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopFetchingFileDataWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopFetchingFileDataWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Stops a currently executing call of <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_fetchfiledata">fetchFileDataWithOffset:updateQueue:updateBlock</a></code>.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The <code>completion block</code> with the returned execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djimediamanager_djimedia_fetchsubfiledatalist"><div class="api-col left">Fetching File Data</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_fetchsubfiledatalist_inline">fetchSubFileDataListWithCompletion</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_fetchsubfiledatalist_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>fetchSubFileDataListWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fetchSubFileDataListWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSData</span> *&gt; *_Nullable dataList, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Fetches the file data of the sub media files. It is available only when <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_mediatype">mediaType</a></code> is <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_panorama">DJIMediaTypePanorama</a></code> or <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediatype_shallowfocus">DJIMediaTypeShallowFocus</a></code>.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;NSData *&gt; *_Nullable <font color="#000">dataList</font></font></td><td><font color="#666"><i>Sub media files' data. They are files are in JPEG format.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSArray&lt;NSData *&gt; *_Nullable dataList, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djimediamanager_djimedia_djimediatype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djimediamanager_djimedia_djimediatype_inline">DJIMediaType</a></div></div><div class="inline-doc" id="djimediamanager_djimedia_djimediatype_inline" <blockquote>
@@ -957,7 +984,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIMediaType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Media types.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_unknown_inline"></a>DJIMediaTypeUnknown</font></td><td><font color="#666">Unknown file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_jpeg_inline"></a>DJIMediaTypeJPEG</font></td><td><font color="#666">Image of JPEG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mp4_inline"></a>DJIMediaTypeMP4</font></td><td><font color="#666">Video of MP4 format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_mov_inline"></a>DJIMediaTypeMOV</font></td><td><font color="#666">Video of MOV format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_rawdng_inline"></a>DJIMediaTypeRAWDNG</font></td><td><font color="#666">Image of DNG format.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_panorama_inline"></a>DJIMediaTypePanorama</font></td><td><font color="#666">Panorama file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_tiff_inline"></a>DJIMediaTypeTIFF</font></td><td><font color="#666">TIFF file type.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_shallowfocus_inline"></a>DJIMediaTypeShallowFocus</font></td><td><font color="#666">ShallowFocus file type. ShallowFocus files have a shallow depth of field.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_tiffsequence_inline"></a>DJIMediaTypeTIFFSequence</font></td><td><font color="#666">TIFF Sequence file type. It is a video format for infrared cameras.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_seq_inline"></a>DJIMediaTypeSEQ</font></td><td><font color="#666">SEQ file type. It is a video format for infrared cameras.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediatype_audio_inline"></a>DJIMediaTypeAudio</font></td><td><font color="#666">Audio file type. It is an audio format for the speaker.</font></td></tr></table></html></div>
@@ -966,7 +993,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIMediaVideoFileType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Video file types. It is not supported by <code><a href="../../Components/Camera/DJICamera.html#djicamera_didgeneratenewmediafile">camera:didGenerateNewMediaFile</a></code> return <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia">DJIMediaFile</a></code> media file object.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_normal_inline"></a>DJIMediaVideoFileTypeNormal</font></td><td><font color="#666">The video file is recorded in normal mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_timelapse_inline"></a>DJIMediaVideoFileTypeTimeLapse</font></td><td><font color="#666">The video file is recorded in time-lapse mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_slowmotion_inline"></a>DJIMediaVideoFileTypeSlowMotion</font></td><td><font color="#666">The video file is recorded as slow motion video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_quickshot_inline"></a>DJIMediaVideoFileTypeQuickShot</font></td><td><font color="#666">The video file is recorded during a QuickShot mission.  Use <code><a href="../../Components/Missions/DJIActiveTrackMission.html#djiactivetrackmission_djiactivetrackmode_quickshot">DJIActiveTrackModeQuickShot</a></code>  to check the detail QuickShot mode of the video file.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_hyperlapse_inline"></a>DJIMediaVideoFileTypeHyperlapse</font></td><td><font color="#666">The video is recorded when the aircraft is in hyper-lapse mode.  It is only supported by Mavic 2 Zoom and Mavic 2 Pro. Hyper-lapse  is only supported by DJI GO 4.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediavideofiletype_unknown_inline"></a>DJIMediaVideoFileTypeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
@@ -975,7 +1002,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSUInteger</span>, DJIMediaQuickShotVideoType)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIMediaFile.h</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">The QuickShot modes of the video file when its type is <code><a href="../../Components/Camera/DJIMediaManager_DJIMedia.html#djimediamanager_djimedia_djimediavideofiletype_quickshot">DJIMediaVideoFileTypeQuickShot</a></code>.</font></p>
 <h5 id="enum-members-v3">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_none_inline"></a>DJIMediaQuickShotVideoTypeNone</font></td><td><font color="#666">The video file is not a QuickShot video.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_circle_inline"></a>DJIMediaQuickShotVideoTypeCircle</font></td><td><font color="#666">The QuickShot video file is recorded in Circle mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_dronie_inline"></a>DJIMediaQuickShotVideoTypeDronie</font></td><td><font color="#666">The QuickShot video file is recorded in Dronie mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_helix_inline"></a>DJIMediaQuickShotVideoTypeHelix</font></td><td><font color="#666">The QuickShot video file is recorded in Helix mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_rocket_inline"></a>DJIMediaQuickShotVideoTypeRocket</font></td><td><font color="#666">The QuickShot video file is recorded in Rocket mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_boomerang_inline"></a>DJIMediaQuickShotVideoTypeBoomerang</font></td><td><font color="#666">The QuickShot video file is recorded in Boomerang mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_asteroid_inline"></a>DJIMediaQuickShotVideoTypeAsteroid</font></td><td><font color="#666">The QuickShot video file is recorded in Asteroid mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_dollyzoom_inline"></a>DJIMediaQuickShotVideoTypeDollyZoom</font></td><td><font color="#666">The QuickShot video file is recorded in DollyZoom mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djimediamanager_djimedia_djimediaquickshotvideotype_unknown_inline"></a>DJIMediaQuickShotVideoTypeUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>

@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJILens.html">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -734,7 +744,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) DJIWaypointV2ReachPointTriggerParam* reachPointTriggerParam</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Action.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">The parameters of <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_actionassociated">DJIWaypointV2ActionTriggerTypeActionAssociated</a></code>. It's  valid only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Trigger.html#djiwaypointv2action_djiwaypointv2trigger_actiontriggertype">actionTriggerType</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_reachpoint">DJIWaypointV2ActionTriggerTypeReachPoint</a></code>.</font></p>
+<p><font color="#666">The parameters of <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_reachpoint">DJIWaypointV2ActionTriggerTypeReachPoint</a></code>. It's  valid only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Trigger.html#djiwaypointv2action_djiwaypointv2trigger_actiontriggertype">actionTriggerType</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_reachpoint">DJIWaypointV2ActionTriggerTypeReachPoint</a></code>.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Trigger_DJIWaypointV2ReachPointTriggerParam.html#djiwaypointv2trigger_djiwaypointv2reachpointtriggerparam">DJIWaypointV2ReachPointTriggerParam</a></code></font></p>
 </div>
@@ -744,7 +754,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) DJIWaypointV2AssociateTriggerParam* associateTriggerParam</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Action.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">The parameters of <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_reachpoint">DJIWaypointV2ActionTriggerTypeReachPoint</a></code>. It's valid  only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Trigger.html#djiwaypointv2action_djiwaypointv2trigger_actiontriggertype">actionTriggerType</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_actionassociated">DJIWaypointV2ActionTriggerTypeActionAssociated</a></code>.</font></p>
+<p><font color="#666">The parameters of <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_actionassociated">DJIWaypointV2ActionTriggerTypeActionAssociated</a></code>. It's valid  only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Trigger.html#djiwaypointv2action_djiwaypointv2trigger_actiontriggertype">actionTriggerType</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actiontriggertype_actionassociated">DJIWaypointV2ActionTriggerTypeActionAssociated</a></code>.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Trigger_DJIWaypointV2AssociateTriggerParam.html#djiwaypointv2trigger_djiwaypointv2associatetriggerparam">DJIWaypointV2AssociateTriggerParam</a></code></font></p>
 </div>

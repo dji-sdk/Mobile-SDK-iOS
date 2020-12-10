@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href="DJICamera_DJILens.html">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -759,9 +769,9 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)exposureModeRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's exposure mode (<code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposuremode">DJICameraExposureMode</a></code>). Returns  <code>nil</code> if current camera does not support any exposure mode or the camera is disconnected.  @return Array of NSNumber. Each element represent one current supported exposure mode.</font></p>
+<p><font color="#666">Returns the current valid range for camera's exposure mode (<code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposuremode">DJICameraExposureMode</a></code>). Returns  <code>nil</code> if current camera does not support any exposure mode or the camera is disconnected.  @return Array of NSNumber. Each element represents one current supported exposure mode.</font></p>
 <h5 id="return-v2">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of <code>NSNumber</code>. Each element represent one current supported exposure mode.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of <code>NSNumber</code>. Each element represents one current supported exposure mode.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraisorange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraisorange_inline">ISORange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraisorange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>ISORange</h6></div>
 
@@ -770,34 +780,34 @@
 <h5 id="description-v7">Description:</h5>
 <p><font color="#666">Returns the current valid range for camera's ISO (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraiso">DJICameraISO</a></code>). Returns <code>nil</code> if current camera does not support any ISO value or the camera is disconnected. @return An NSNumber array. Each element represent one current supported ISO value.</font></p>
 <h5 id="return-v3">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported ISO value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported ISO value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcamerashutterspeedrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcamerashutterspeedrange_inline">shutterSpeedRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcamerashutterspeedrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>shutterSpeedRange</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)shutterSpeedRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's shutter speed (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerashutterspeed">DJICameraShutterSpeed</a></code>). Returns  <code>nil</code> if current camera does not support any shutter speed value or the camera is  disconnected. @return Array of NSNumber. Each element represent one current  supported shutter speed value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's shutter speed (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerashutterspeed">DJICameraShutterSpeed</a></code>). Returns  <code>nil</code> if current camera does not support any shutter speed value or the camera is  disconnected. @return Array of NSNumber. Each element represents one current  supported shutter speed value.</font></p>
 <h5 id="return-v4">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported shutter speed value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported shutter speed value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraaperturerange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraaperturerange_inline">apertureRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraaperturerange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>apertureRange</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)apertureRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v9">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's aperture (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraaperture">DJICameraAperture</a></code>). Returns  <code>nil</code> if current camera does not support any aperture value or the camera is disconnected.  @return Array of NSNumber. Each element represent one current supported aperture  value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's aperture (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraaperture">DJICameraAperture</a></code>). Returns  <code>nil</code> if current camera does not support any aperture value or the camera is disconnected.  @return Array of NSNumber. Each element represents one current supported aperture  value.</font></p>
 <h5 id="return-v5">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported aperture value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported aperture value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraexposurecompensationrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraexposurecompensationrange_inline">exposureCompensationRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraexposurecompensationrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>exposureCompensationRange</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)exposureCompensationRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">Returns the current valid range for camera's exposure compensation (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposurecompensation">DJICameraExposureCompensation</a></code>).  Returns <code>nil</code> if current camera does not support any exposure compensation value or the camera  is disconnected. @return Array of NSNumber. Each element represent one  current supported exposure compensation value.</font></p>
+<p><font color="#666">Returns the current valid range for camera's exposure compensation (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposurecompensation">DJICameraExposureCompensation</a></code>).  Returns <code>nil</code> if current camera does not support any exposure compensation value or the camera  is disconnected. @return Array of NSNumber. Each element represents one  current supported exposure compensation value.</font></p>
 <h5 id="return-v6">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported exposure compensation value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported exposure compensation value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraaebcapturenumrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraaebcapturenumrange_inline">AEBCaptureNumRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraaebcapturenumrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>AEBCaptureNumRange</h6></div>
 
@@ -806,7 +816,7 @@
 <h5 id="description-v11">Description:</h5>
 <p><font color="#666">Returns the current valid range for camera's AEB (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotoaebcount">DJICameraPhotoAEBCount</a></code>). Returns <code>nil</code> if current camera does not support any AEB value or the camera is disconnected.</font></p>
 <h5 id="return-v7">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera AEB capture num range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera AEB capture num range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcamerawhitebalancepresetrange"><div class="api-col left">White Balance</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcamerawhitebalancepresetrange_inline">whiteBalancePresetRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcamerawhitebalancepresetrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>whiteBalancePresetRange</h6></div>
 
@@ -815,7 +825,7 @@
 <h5 id="description-v12">Description:</h5>
 <p><font color="#666">Returns the current valid presets for camera's white balance (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerawhitebalance">DJICameraWhiteBalancePreset</a></code>). Returns <code>nil</code> if current camera does not support any white balance value or the camera is disconnected.</font></p>
 <h5 id="return-v8">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera white balance preset range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera white balance preset range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcamerawhitebalancecustomcolortemperaturerange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcamerawhitebalancecustomcolortemperaturerange_inline">whiteBalanceCustomColorTemperatureRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcamerawhitebalancecustomcolortemperaturerange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>whiteBalanceCustomColorTemperatureRange</h6></div>
 
@@ -824,7 +834,7 @@
 <h5 id="description-v13">Description:</h5>
 <p><font color="#666">Returns the current valid range for camera's custom color temperature.</font></p>
 <h5 id="return-v9">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera white balance custom color temperature range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera white balance custom color temperature range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_videofilecompressionstandardrange"><div class="api-col left">Compression Standard Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_videofilecompressionstandardrange_inline">videoFileCompressionStandardRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_videofilecompressionstandardrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>videoFileCompressionStandardRange</h6></div>
 
@@ -878,7 +888,7 @@
 <h5 id="description-v19">Description:</h5>
 <p><font color="#666">Returns the current valid video file format. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v15">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera video file format range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera video file format range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraburstcapturecountrange"><div class="api-col left">Photo</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraburstcapturecountrange_inline">burstCaptureCountRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraburstcapturecountrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>burstCaptureCountRange</h6></div>
 
@@ -887,7 +897,7 @@
 <h5 id="description-v20">Description:</h5>
 <p><font color="#666">Returns the current valid camera burst count range. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v16">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera burst capture count range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera burst capture count range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraphotointervalrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraphotointervalrange_inline">photoIntervalRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraphotointervalrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>photoIntervalRange</h6></div>
 
@@ -896,7 +906,7 @@
 <h5 id="description-v21">Description:</h5>
 <p><font color="#666">Returns the current valid camera photo interval range. Returns <code>nil</code> if current camera does not support  any value or the camera is disconnected. Used for <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotointervalparam">DJICameraPhotoTimeIntervalSettings</a></code>.</font></p>
 <h5 id="return-v17">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera photo interval range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera photo interval range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraphotocountrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraphotocountrange_inline">photoCountRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraphotocountrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>photoCountRange</h6></div>
 
@@ -905,7 +915,7 @@
 <h5 id="description-v22">Description:</h5>
 <p><font color="#666">Returns the current valid camera photo count range. Used for <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotointervalparam">DJICameraPhotoTimeIntervalSettings</a></code>.</font></p>
 <h5 id="return-v18">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera photo count range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera photo count range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_panooriginalimagesformatrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_panooriginalimagesformatrange_inline">panoOriginalImagesFormatRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_panooriginalimagesformatrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>panoOriginalImagesFormatRange</h6></div>
 
@@ -923,7 +933,7 @@
 <h5 id="description-v24">Description:</h5>
 <p><font color="#666">Returns the current valid range for camera's photo aspect ratio (See <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotoaspectratio">DJICameraPhotoAspectRatio</a></code>).  Returns <code>nil</code> if current camera does not support any photo aspect ratio value or the camera is disconnected.</font></p>
 <h5 id="return-v20">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported photo aspect ratio value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported photo aspect ratio value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraphotofileformatrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraphotofileformatrange_inline">photoFileFormatRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraphotofileformatrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>photoFileFormatRange</h6></div>
 
@@ -932,7 +942,7 @@
 <h5 id="description-v25">Description:</h5>
 <p><font color="#666">Returns the current valid camera photo file format range. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v21">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera photo file format range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera photo file format range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameraphotoshootmoderange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameraphotoshootmoderange_inline">photoShootModeRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameraphotoshootmoderange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>photoShootModeRange</h6></div>
 
@@ -950,7 +960,7 @@
 <h5 id="description-v27">Description:</h5>
 <p><font color="#666">Returns the current valid camera picture style custom saturation range. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v23">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera picture style custom saturation range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera picture style custom saturation range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcamerapicturestylecustomsharpnessrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcamerapicturestylecustomsharpnessrange_inline">pictureStyleCustomSharpnessRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcamerapicturestylecustomsharpnessrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>pictureStyleCustomSharpnessRange</h6></div>
 
@@ -959,7 +969,7 @@
 <h5 id="description-v28">Description:</h5>
 <p><font color="#666">Returns the current valid camera picture style custom sharpness range. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v24">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera picture style custom sharpness range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera picture style custom sharpness range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcamerapicturestylecustomcontrastrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcamerapicturestylecustomcontrastrange_inline">pictureStyleCustomContrastRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcamerapicturestylecustomcontrastrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>pictureStyleCustomContrastRange</h6></div>
 
@@ -968,7 +978,7 @@
 <h5 id="description-v29">Description:</h5>
 <p><font color="#666">Returns the current valid camera picture style custom contrast range. Returns <code>nil</code> if current camera does not support any value or the camera is disconnected.</font></p>
 <h5 id="return-v25">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera picture style custom contrast range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera picture style custom contrast range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_supportedcameradigitalfilterrange"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_supportedcameradigitalfilterrange_inline">colorRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_supportedcameradigitalfilterrange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>colorRange</h6></div>
 
@@ -977,7 +987,7 @@
 <h5 id="description-v30">Description:</h5>
 <p><font color="#666">Returns the current valid camera color range. Returns <code>nil</code> if current camera does not support any value  or the camera is disconnected.</font></p>
 <h5 id="return-v26">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported camera color range.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported camera color range.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_photopanoramamoderange"><div class="api-col left">Panorama Mode</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_photopanoramamoderange_inline">photoPanoramaModeRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_photopanoramamoderange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>photoPanoramaModeRange</h6></div>
 
@@ -1020,7 +1030,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)thermalPaletteRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v35">Description:</h5>
-<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalpalette">DJICameraThermalPalette</a></code>).  Returns <code>nil</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
+<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalpalette">DJICameraThermalPalette</a></code>).  Returns <code>NULL</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
 <h5 id="return-v31">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element is a value of <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalpalette">DJICameraThermalPalette</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_multispectralshutterspeedrange"><div class="api-col left">Multispectral Shutter Speed Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_multispectralshutterspeedrange_inline">multispectralShutterSpeedRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_multispectralshutterspeedrange_inline" <blockquote>
@@ -1031,14 +1041,14 @@
 <h5 id="description-v36">Description:</h5>
 <p><font color="#666">Returns the current valid range for multispectral camera's single-band sensors's (sensors except the RGB one). shutter speed (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerashutterspeed">DJICameraShutterSpeed</a></code>).  Returns <code>nil</code> if current camera does not support any shutter speed value or the camera is disconnected. Only supported by multispectral camera of P4 Multispectral.</font></p>
 <h5 id="return-v32">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported shutter speed value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported shutter speed value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_thermalscenerange"><div class="api-col left">Thermal Scene Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_thermalscenerange_inline">thermalSceneRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_thermalscenerange_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>thermalSceneRange</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)thermalSceneRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v37">Description:</h5>
-<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalpalette">DJICameraThermalPalette</a></code>).  Returns <code>nil</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
+<p><font color="#666">Returns the current valid range for thermal camera's palette (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalpalette">DJICameraThermalPalette</a></code>).  Returns <code>NULL</code> if  current thermal camera has not supported palette or the thermal camera is disconnected.</font></p>
 <h5 id="return-v33">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element is a value of <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicamerathermalscene">DJICameraThermalScene</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_isothermunitrange"><div class="api-col left">ISO Thermal Unit Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_isothermunitrange_inline">isoThermUnitRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_isothermunitrange_inline" <blockquote>
@@ -1056,7 +1066,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">nonnull</span> <span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *)temperatureUnitsRange</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraCapabilities.h</font></td></tr></table></html>
 <h5 id="description-v39">Description:</h5>
-<p><font color="#666">Returns the current valid range for thermal camera's temperatureUnits (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameratemperatureunit">DJICameraTemperatureUnit</a></code>).  Returns <code>nil</code> if  current thermal camera has not supported temperatureUnits or the thermal camera is disconnected.</font></p>
+<p><font color="#666">Returns the current valid range for thermal camera's temperatureUnits (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameratemperatureunit">DJICameraTemperatureUnit</a></code>).  Returns <code>NULL</code> if  current thermal camera has not supported temperatureUnits or the thermal camera is disconnected.</font></p>
 <h5 id="return-v35">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element is a value of <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameratemperatureunit">DJICameraTemperatureUnit</a></code>.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraparameters_displaymoderange"><div class="api-col left">Display Mode Range</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_displaymoderange_inline">displayModeRange</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_displaymoderange_inline" <blockquote>
@@ -1103,7 +1113,7 @@
 <h5 id="description-v44">Description:</h5>
 <p><font color="#666">Returns the current valid range for multispectral camera's single-band sensors's (sensors except the RGB one). Exposure compensation (see <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraexposurecompensation">DJICameraExposureCompensation</a></code>).   Returns <code>NULL</code> if current camera does not support any exposure compensation value or the multispectral camera is disconnected. Only supported by multispectral camera of P4 Multispectral.</font></p>
 <h5 id="return-v40">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represent one current supported exposure compensation value.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">nonnull NSArray&lt;NSNumber *&gt; *</font></td><td><font color="#666"><i>Array of NSNumber. Each element represents one current supported exposure compensation value.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djicamera_djicameraparameters_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraparameters_protocol_inline">DJICameraCapabilitiesListener</a></div></div><div class="inline-doc" id="djicamera_djicameraparameters_protocol_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">protocol </font>DJICameraCapabilitiesListener</h6></div>

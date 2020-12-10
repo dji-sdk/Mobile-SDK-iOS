@@ -54,6 +54,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIFlightControllerKey.html">DJIFlightControllerKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJIRadarKey.html">DJIRadarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIPayloadKey.html">DJIPayloadKey</a>
                                       </dd>
                                       <dd><a href="../KeyManager/DJIGimbalKey.html">DJIGimbalKey</a>
@@ -250,6 +252,8 @@
                                       </dd>
                               </ul>
                             </dd>
+                            <dd><a href="../Radar/DJIRadar.html">DJIRadar</a>
+                            </dd>
                             <dd><a data-href="../Simulator/DJISimulator.html" class="sub-toggle">DJISimulator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Simulator/DJISimulator_DJISimulatorState.html">DJISimulatorState</a>
@@ -347,6 +351,8 @@
                             <dd><a href="../Camera/DJICamera_DJICameraLaserMeasureInformation.html">DJICameraLaserMeasureInformation</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJICameraVideoResolutionAndFrameRate.html">DJICameraVideoResolutionAndFrameRate</a>
+                            </dd>
+                            <dd><a href="../Camera/DJICamera_DJICameraStreamSettings.html">DJICameraStreamSettings</a>
                             </dd>
                             <dd><a href="../Camera/DJICamera_DJILens.html">DJILens</a>
                             </dd>
@@ -590,7 +596,11 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
-                                                <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a>
+                                                <dd><a data-href="../Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a href="../Missions/DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                         </ul>
                                       </dd>
@@ -830,7 +840,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSString</span> *_Nonnull flightModeString</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparamflightmodestring_key">DJIFlightControllerKey.DJIFlightControllerParamFlightModeString</a></font></td></tr></table></html>
 <h5 id="description-v14">Description:</h5>
-<p><font color="#666">Gets the flight mode as a string.</font></p>
+<p><font color="#666">Gets the flight mode as a string, refine the mode with different scenes, return a recommended string for UI display.</font></p>
 </div>
 <div class="api-row" id="djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen"><div class="api-col left">Multi Mode</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen_inline">isMultipleModeOpen</a></div></div><div class="inline-doc" id="djiflightcontroller_djiflightcontrollercurrentstate_ismultiplemodeopen_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isMultipleModeOpen</h6></div>
@@ -926,7 +936,7 @@ supported by flight controller firmware 3.2.0.0 or above.</font></p>
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIBatteryThresholdBehavior batteryThresholdBehavior</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightControllerState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightcontrollerparambatterythresholdbehavior_key">DJIFlightControllerKey.DJIFlightControllerParamBatteryThresholdBehavior</a></font></td></tr></table></html>
 <h5 id="description-v25">Description:</h5>
-<p><font color="#666">Recommended action based on remaining battery life.</font></p>
+<p><font color="#666">Recommended action based on remaining battery life. Not supported by Mavic Air 2.</font></p>
 <h5 id="see-also-v5">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/FlightController/DJIFlightController_DJIFlightControllerCurrentState.html#djiflightcontroller_djiflightcontrollercurrentstate_djiaircraftremainingbatterystate">DJIBatteryThresholdBehavior</a></code></font></p>
 </div>
