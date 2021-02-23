@@ -110,7 +110,11 @@
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
-                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
+                  <dd><a data-href="../LDMManager/DJILDMManager.html" class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../LDMManager/DJILDMManager_LDMModule.html">DJILDMModule</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -815,7 +819,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)fineTunePitchInDegrees:(<span class="keyword">float</span>)offset withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbal.h</font></td></tr></table></html>
 <h5 id="description-v10">Description:</h5>
-<p><font color="#666">The gimbal pitch can be fine tuned with a custom offset. The range for the custom offset is [-2.0, 2.0] degrees. If the offset is negative, the gimbal will be fine tuned the specified number of degrees in the counterclockwise direction. It is only supported by Spark and Mavic 2 Series.</font></p>
+<p><font color="#666">The gimbal pitch can be fine tuned with a custom offset. The range for the custom offset is [-2.0, 2.0] degrees. If the offset is negative, the gimbal will be fine tuned the specified number of degrees in the counterclockwise direction. It is only supported by Spark, Mavic 2 Series and Mavic Air 2.</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">float <font color="#000">offset</font></font></td><td><font color="#666"><i>Fine-tuned offset, in degrees, to be tuned.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbal_finetuneyawindegrees"><div class="api-col left">Fine Tune Yaw</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_finetuneyawindegrees_inline">fineTuneYawInDegrees:withCompletion</a></div></div><div class="inline-doc" id="djigimbal_finetuneyawindegrees_inline" <blockquote>
@@ -873,7 +877,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setPitchRangeExtensionEnabled:(<span class="built_in">BOOL</span>)isEnabled</span><br><span class="line">                       withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIGimbal.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIGimbalKey.html#djigimbalkey_djigimbalparampitchrangeextensionenabled_key">DJIGimbalKey.DJIGimbalParamPitchRangeExtensionEnabled</a></font></td></tr></table></html>
 <h5 id="description-v16">Description:</h5>
-<p><font color="#666">Extends the pitch range of gimbal. If extended, the gimbal's pitch control range can be [-90, 30], otherwise, it's [-90, 0]. Use <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_parampitchrangeextensionenabled">DJIGimbalParamPitchRangeExtensionEnabled</a></code> to check if it is supported by the gimbal.</font></p>
+<p><font color="#666">Extends the pitch range of gimbal. If extended, The range of the pitch angle should be gotten from the <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_paramadjustpitch">DJIGimbalParamAdjustPitch</a></code> or <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_paramadjustpitchupwards">DJIGimbalParamAdjustPitchUpwards</a></code>. Otherwise, the angle will be limited to avoid seeing the arm. Use <code><a href="../../Components/Gimbal/DJIGimbal.html#djigimbal_parampitchrangeextensionenabled">DJIGimbalParamPitchRangeExtensionEnabled</a></code> to check if it is supported by the gimbal.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isEnabled</font></font></td><td><font color="#666"><i>Whether the pitch range should be extended</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djigimbal_getpitchrangeextensionenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djigimbal_getpitchrangeextensionenabled_inline">getPitchRangeExtensionEnabledWithCompletion</a></div></div><div class="inline-doc" id="djigimbal_getpitchrangeextensionenabled_inline" <blockquote>

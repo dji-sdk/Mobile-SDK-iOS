@@ -110,9 +110,9 @@
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
-                  <dd><a data-href="../LDMManager/DJILDMManager.html" class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="DJILDMManager.html" class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../LDMManager/DJILDMManager_LDMModule.html">DJILDMModule</a>
+                            <dd><a href class="active">DJILDMModule</a>
                             </dd>
                     </ul>
                   </dd>
@@ -482,11 +482,11 @@
                             </dd>
                     </ul>
                   </dd>
-                  <dd><a data-href class="sub-toggle">DJIRTKBaseStation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                  <dd><a data-href="../RTKBaseStation/DJIRTKBaseStation.html" class="sub-toggle">DJIRTKBaseStation<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html">DJIRTKBaseStationBatteryState</a>
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html">DJIRTKBaseStationBatteryState</a>
                             </dd>
-                            <dd><a href="DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a>
+                            <dd><a href="../RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a>
                             </dd>
                     </ul>
                   </dd>
@@ -726,142 +726,47 @@
         </div>
       </div>
       <div class="site-main">
-        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJIRTKBaseStation</h1></div>
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJIRTKBaseStation</span> : <span class="title">DJIBaseComponent</span></span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code><a href="../../Components/BaseComponent/DJIBaseComponent.html#djibasecomponent">DJIBaseComponent</a></code></font></td></tr></table></html>
+        <div class="article"><div class="article"><h1><font color="#AAA">class </font>DJILDMModule</h1></div>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJILDMModule</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMModule.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">RTK Base Station.</font></p>
+<p><font color="#666">Module definition.</font></p>
 <h5 id="class-members">Class Members:</h5>
-<div class="api-row" id="djirtkbasestation_delegate"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djirtkbasestation_delegate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
+<div class="api-row" id="djildmmanager_ldmmodule_initwithmodule"><div class="api-col left">Initialize</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_ldmmodule_initwithmodule_inline">initWithModule:andEnable</a></div></div><div class="inline-doc" id="djildmmanager_ldmmodule_initwithmodule_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>initWithModule:andEnable</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIRTKBaseStationDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">instancetype</span>)initWithModule:(DJILDMModuleType)moduleType andEnable:(<span class="built_in">BOOL</span>)isEnabled</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMModule.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">DJI base station delegate.</font></p>
-<h5 id="see-also">See Also:</h5>
-<p><font color="#666"><code><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation_protocol">DJIRTKBaseStationDelegate</a></code></font></p>
-</div>
-<div class="api-row" id="djirtkbasestation_getbasestationreferencinglocation"><div class="api-col left">Referencing Location</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_getbasestationreferencinglocation_inline">getBaseStationReferencingLocationWithCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_getbasestationreferencinglocation_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getBaseStationReferencingLocationWithCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getBaseStationReferencingLocationWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">CLLocation</span> *_Nullable location, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
-<p><font color="#666">Gets the referencing location manually configured to the  base station. When a user can get a more accurate  location (coordinate with less absolute error) of the base  station by using external tools, the accurate location can  be set to the base station to improve the accuracy of the  aircraft location. If the offset between the referencing  location and the location detected by the ground system is  larger than 5 meters, the base station will ignore the referencing  location. It is only supported by Phantom 4 RTK and M200 series v2 and Matrice 300 RTK.</font></p>
+<p><font color="#666">Initialize instance with the Module.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">CLLocation *_Nullable <font color="#000">location</font></font></td><td><font color="#666"><i>The referencing location of the base station.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error if there is any.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(CLLocation *_Nullable location, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_setbasestationreferencinglocation"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_setbasestationreferencinglocation_inline">setBaseStationReferencingLocation:withCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_setbasestationreferencinglocation_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setBaseStationReferencingLocation:withCompletion</h6></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LDMManager/DJILDMManager_LDMModule.html#djildmmanager_ldmmoduletype">DJILDMModuleType</a> <font color="#000">moduleType</font></font></td><td><font color="#666"><i>the module that you want to enable the network service.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">isEnabled</font></font></td><td><font color="#666"><i><code>YES</code> to eanbled the network service.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djildmmanager_ldmmodule_enabled"><div class="api-col left">LDM Module</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djildmmanager_ldmmodule_enabled_inline">isEnabled</a></div></div><div class="inline-doc" id="djildmmanager_ldmmodule_enabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>isEnabled</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setBaseStationReferencingLocation:(<span class="built_in">CLLocation</span> *)location withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
-<p><font color="#666">Sets the referencing location of the base station to improve the accuracy.  When a user  can get a more accurate location (coordinate with less absolute error)  of the base station  by using external tools, the accurate location can be set to the  base station to improve  the accuracy of the aircraft location. If the offset between  the referencing location and  the location detected by the base station is larger than  5 meters, the base station will ignore the referencing location. It is only supported  by Phantom 4 RTK and M200 series v2 and Matrice 300 RTK. For Matrice 300 RTK, device  administrator authentication is required before invoking this method.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">CLLocation * <font color="#000">location</font></font></td><td><font color="#666"><i>The referencing location of the base station.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_resetrtkbasestationlocation"><div class="api-col left">Reset Location</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_resetrtkbasestationlocation_inline">resetRTKBaseStationLocationWithCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_resetrtkbasestationlocation_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>resetRTKBaseStationLocationWithCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)resetRTKBaseStationLocationWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
-<p><font color="#666">Reset RTK base station's location. This will make base station's location type  became <code><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation_djirtkbasestationlocationtype_auto">DJIRTKBaseStationLocationTypeAuto</a></code>. The previously set location  by <code><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation_setbasestationreferencinglocation">setBaseStationReferencingLocation:withCompletion</a></code> will be invalid. For Matrice 300 RTK,  device administrator authentication is required before invoking this method.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_hasdeviceadminloggedin"><div class="api-col left">Login In</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_hasdeviceadminloggedin_inline">hasDeviceAdminLoggedIn</a></div></div><div class="inline-doc" id="djirtkbasestation_hasdeviceadminloggedin_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>hasDeviceAdminLoggedIn</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)hasDeviceAdminLoggedIn</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
-<p><font color="#666"><code>YES</code> if device administrator has logged in. For Matrice 300 RTK, device administrator authentication is required before  changing any settings, including base station's name, base station's password, and base station's referencing location.  Device administrator login is required every time when the application is relaunched. Please login with default password  123456, if the base station's password is reset. Supported only by Matrice 300 RTK.</font></p>
-<h5 id="return">Return:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i>The result whether login or not.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_loginasdeviceadmin"><div class="api-col left">Login As Device Admin</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_loginasdeviceadmin_inline">logInAsDeviceAdmin:withCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_loginasdeviceadmin_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>logInAsDeviceAdmin:withCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)logInAsDeviceAdmin:(<span class="built_in">NSString</span> *)password withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
-<p><font color="#666">Log in as base station administrator account with password to change setting. User will need to login again in the following scenarios: <br> -  Enter the application for the first time. <br> - Re-enter after the application restarts. <br> - Reset password via the button on the base  station. <br> - Switch and connect other base stations. <br> The default password is <code>123456</code>. It is only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">password</font></font></td><td><font color="#666"><i>The password of base station.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>The completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_logout"><div class="api-col left">Login Out</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_logout_inline">logOutWithCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_logout_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>logOutWithCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)logOutWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
-<p><font color="#666">Log out of the base station. It is only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_changepassword"><div class="api-col left">Change Password</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_changepassword_inline">changePassword:newPassword:completion</a></div></div><div class="inline-doc" id="djirtkbasestation_changepassword_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>changePassword:newPassword:completion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)changePassword:(<span class="built_in">NSString</span> *)oldPassword newPassword:(<span class="built_in">NSString</span> *)newPassword completion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
-<p><font color="#666">Change the password for current base station. The password must be 6 digits. It is only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">oldPassword</font></font></td><td><font color="#666"><i>The old password.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">newPassword</font></font></td><td><font color="#666"><i>The new password that you want to change.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_setname"><div class="api-col left">Set Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_setname_inline">setName:withCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_setname_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setName:withCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setName:(<span class="built_in">NSString</span> *)name withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
-<p><font color="#666">Change the name of the base station. The name is composed of maximum 4 characters or numbers.  Please log in before invoking this method. It is only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString * <font color="#000">name</font></font></td><td><font color="#666"><i>The name of the base station set by the user.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_getname"><div class="api-col left">Get Name</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_getname_inline">getNameWithCompletion</a></div></div><div class="inline-doc" id="djirtkbasestation_getname_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>getNameWithCompletion</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getNameWithCompletion:(<span class="keyword">void</span>(^)(<span class="built_in">NSString</span> *_Nullable name, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
-<p><font color="#666">Gets the name of the base station. Please log in before invoking this method. It is only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSString *_Nullable <font color="#000">name</font></font></td><td><font color="#666"><i>The name set for base station.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error if there is any.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void(^)(NSString *_Nullable name, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
-<h5 id="related">Related:</h5>
-<div class="api-row" id="djirtkbasestation_protocol"><div class="api-col left">State Updates</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_protocol_inline">DJIRTKBaseStationDelegate</a></div></div><div class="inline-doc" id="djirtkbasestation_protocol_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">protocol </font>DJIRTKBaseStationDelegate</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIRTKBaseStationDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
-<p><font color="#666">This protocol provides a delegate method to update the base station state.</font></p>
-<h5 id="protocol-methods">Protocol Methods:</h5>
-<h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djirtkbasestation_didupdatebasestationbatterystate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_didupdatebasestationbatterystate_inline">baseStation:didUpdateBaseStationBatteryState</a></div></div><div class="inline-doc" id="djirtkbasestation_didupdatebasestationbatterystate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>baseStation:didUpdateBaseStationBatteryState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)baseStation:(DJIRTKBaseStation *_Nonnull)baseStation didUpdateBaseStationBatteryState:(DJIRTKBaseStationBatteryState *)state</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
-<p><font color="#666">Callback function that updates the RTK base station battery state. Only Supported by Phantom 4 RTK and M200 series v2.</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation">DJIRTKBaseStation</a> *_Nonnull <font color="#000">baseStation</font></font></td><td><font color="#666"><i>Instance of the Base Station for which battery state will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html#djirtkbasestation_djirtkbasestationbatterystate">DJIRTKBaseStationBatteryState</a> * <font color="#000">state</font></font></td><td><font color="#666"><i>Base station battery State.</i></font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_didupdatebasestationstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_didupdatebasestationstate_inline">baseStation:didUpdateBaseStationState</a></div></div><div class="inline-doc" id="djirtkbasestation_didupdatebasestationstate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>baseStation:didUpdateBaseStationState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">required</span><br><span class="line">- (<span class="keyword">void</span>)baseStation:(DJIRTKBaseStation *_Nonnull)baseStation didUpdateBaseStationState:(DJIRTKBaseStationState *)state</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStation.h</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
-<p><font color="#666">Callback function that updates the RTK base station state. Only Supported by Phantom 4 RTK and M200 series v2.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation">DJIRTKBaseStation</a> *_Nonnull <font color="#000">baseStation</font></font></td><td><font color="#666"><i>Instance of the Base Station for which state will be updated.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html#djirtkbasestation_djirtkbasestationstate">DJIRTKBaseStationState</a> * <font color="#000">state</font></font></td><td><font color="#666"><i>Base station State.</i></font></td></tr></table></html></div>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">BOOL</span> isEnabled</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMModule.h</font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666"><code>YES</code> if the network service is enabled.</font></p>
 </div>
-<div class="api-row" id="djirtkbasestation_djirtkbasestationlocationtype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djirtkbasestation_djirtkbasestationlocationtype_inline">DJIRTKBaseStationLocationType</a></div></div><div class="inline-doc" id="djirtkbasestation_djirtkbasestationlocationtype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>DJIRTKBaseStationLocationType</h6></div>
+<div class="api-row" id="djildmmanager_ldmmodule_moduletype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djildmmanager_ldmmodule_moduletype_inline">moduleType</a></div></div><div class="inline-doc" id="djildmmanager_ldmmodule_moduletype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>moduleType</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJIRTKBaseStationLocationType)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIRTKBaseStationBaseTypes.h</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
-<p><font color="#666">All the possible basestation location type of <code><a href="../../Components/RTKBaseStation/DJIRTKBaseStation.html#djirtkbasestation_djirtkbasestationlocationtype">DJIRTKBaseStationLocationType</a></code>.</font></p>
-<h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djirtkbasestation_djirtkbasestationlocationtype_auto_inline"></a>DJIRTKBaseStationLocationTypeAuto</font></td><td><font color="#666">BaseStation current location is auto calculateed by BaseStation itself.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtkbasestation_djirtkbasestationlocationtype_manual_inline"></a>DJIRTKBaseStationLocationTypeManual</font></td><td><font color="#666">BaseStation current location is manually set by user.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djirtkbasestation_djirtkbasestationlocationtype_unknown_inline"></a>DJIRTKBaseStationLocationTypeUnknown</font></td><td><font color="#666">Unknown BaseStation location type.</font></td></tr></table></html></div>
-<div class="api-row" id="djirtkbasestation_djirtkbasestationbatterystate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationBatteryState.html">DJIRTKBaseStationBatteryState</a></div></div><div class="api-row" id="djirtkbasestation_djirtkbasestationstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/RTKBaseStation/DJIRTKBaseStation_DJIRTKBaseStationState.html">DJIRTKBaseStationState</a></div></div>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJILDMModuleType moduleType</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMModule.h</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">The type of module. The module that you set to enable the network service.</font></p>
+<h5 id="see-also">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/LDMManager/DJILDMManager_LDMModule.html#djildmmanager_ldmmoduletype">DJILDMModuleType</a></code></font></p>
+</div>
+<div class="api-row" id="djildmmanager_ldmmoduletype"><div class="api-col left">LDM Module Type</div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djildmmanager_ldmmoduletype_inline">DJILDMModuleType</a></div></div><div class="inline-doc" id="djildmmanager_ldmmoduletype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJILDMModuleType</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, DJILDMModuleType)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMModule.h</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">The type of module. The modules that support network service in LDM mode.</font></p>
+</div>
 
         </div>
       </div>

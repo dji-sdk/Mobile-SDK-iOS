@@ -110,7 +110,11 @@
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
-                  <dd><a href class="active">DJILDMManager</a>
+                  <dd><a data-href class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="DJILDMManager_LDMModule.html">DJILDMModule</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -726,7 +730,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJILDMManager</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">Local Data Mode (LDM) manager. When Local Data Mode is enabled, the SDK's access to the internet is restricted. Only application registration (confirming the app key is valid) will be unrestricted. All other SDK services will be restricted. When the SDK's internet access is restricted, all SDK services that require an internet connection will not be available or able to update. For instance, the Fly Zone manager will not be able to update the fly zone data base, retrieve the latest TFRs (temporary flight restrictions) or unlock fly zones. LDM is therefore most appropriate for users that have very stringent data requirements, and are able to accommodate this restricted functionality. <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_djildmmanagersupportedchangednotification">*DJILDMManagerSupportedChangedNotification</a></code> and <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_djildmmanagerenabledchangednotification">*DJILDMManagerEnabledChangedNotification</a></code> can be used to monitor changes in state for availability of LDM support and whether LDM is enabled or not. When Local Data Mode is enabled,  the UTMISSManager will not report flight dynamic data to the UTMISS server.</font></p>
+<p><font color="#666">Local Data Mode (LDM) manager. When Local Data Mode is enabled, the SDK's access to the internet is restricted. You should use <code><a href="../../Components/SDKManager/DJISDKManager.html#djisdkmanager_registerappforldm">registerAppForLDMWithDelegate</a></code> to register the app. Only application registration (confirming the app key is valid) will be unrestricted. All other SDK services will be restricted. When the SDK's internet access is restricted, all SDK services that require an internet connection will not be available or able to update. For instance, the Fly Zone manager will not be able to update the fly zone data base, retrieve the latest TFRs (temporary flight restrictions) or unlock fly zones. LDM is therefore most appropriate for users that have very stringent data requirements, and are able to accommodate this restricted functionality. <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_djildmmanagersupportedchangednotification">*DJILDMManagerSupportedChangedNotification</a></code> and <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_djildmmanagerenabledchangednotification">*DJILDMManagerEnabledChangedNotification</a></code> can be used to monitor changes in state for availability of LDM support and whether LDM is enabled or not. When Local Data Mode is enabled,  the UTMISSManager will not report flight dynamic data to the UTMISS server.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djildmmanager_isldmsupported"><div class="api-col left">Check LDM Support</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djildmmanager_isldmsupported_inline">isLDMSupported</a></div></div><div class="inline-doc" id="djildmmanager_isldmsupported_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>isLDMSupported</h6></div>
@@ -770,22 +774,33 @@
 <h5 id="description-v6">Description:</h5>
 <p><font color="#666">Disables LDM.</font></p>
 </div>
-<div class="api-row" id="djildmmanager_setrtknetworkserviceenabled"><div class="api-col left">RTK Network Service</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_setrtknetworkserviceenabled_inline">setRTKNetworkServiceEnabled</a></div></div><div class="inline-doc" id="djildmmanager_setrtknetworkserviceenabled_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>setRTKNetworkServiceEnabled</h6></div>
+<div class="api-row" id="djildmmanager_setmodulenetworkserviceenabled"><div class="api-col left">Network Service</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_setmodulenetworkserviceenabled_inline">setModuleNetworkServiceEnabled</a></div></div><div class="inline-doc" id="djildmmanager_setmodulenetworkserviceenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>setModuleNetworkServiceEnabled</h6></div>
 
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSError</span> *_Nullable)setRTKNetworkServiceEnabled:(<span class="built_in">BOOL</span>)enabled</span><br></pre></td></tr></table></figure>
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">NSError</span> *_Nullable)setModuleNetworkServiceEnabled:(<span class="built_in">NSArray</span>&lt;DJILDMModule *&gt; *)modules</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
 <h5 id="description-v7">Description:</h5>
-<p><font color="#666">In LDM mode, You can use this interface to enable the RTK Network Service. WE will open the network service only for the RTK.</font></p>
+<p><font color="#666">In LDM mode, You can use this interface to enable network service of the selected module.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i>enable RTK Network service.</i></font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/LDMManager/DJILDMManager_LDMModule.html#djildmmanager_ldmmodule">DJILDMModule</a> *&gt; * <font color="#000">modules</font></font></td><td><font color="#666"><i>The array of the modules need to be enabled.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djildmmanager_ismodulenetworkserviceenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djildmmanager_ismodulenetworkserviceenabled_inline">isLDMModuleNetworkServiceEnabled</a></div></div><div class="inline-doc" id="djildmmanager_ismodulenetworkserviceenabled_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>isLDMModuleNetworkServiceEnabled</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isLDMModuleNetworkServiceEnabled:(DJILDMModuleType)moduleType</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666"><code>YES</code> if the network service of the module is enabled.</font></p>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/LDMManager/DJILDMManager_LDMModule.html#djildmmanager_ldmmoduletype">DJILDMModuleType</a> <font color="#000">moduleType</font></font></td><td><font color="#666"><i>The type of module that needs to be checked.</i></font></td></tr></table></html>
+<h5 id="return">Return:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if the network service of the module is enabled.</i></font></td></tr></table></html></div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djildmmanager_djildmmanagersupportedchangednotification"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">extern</div><div class="api-col right"><a class="trigger" href="#djildmmanager_djildmmanagersupportedchangednotification_inline">*DJILDMManagerSupportedChangedNotification</a></div></div><div class="inline-doc" id="djildmmanager_djildmmanagersupportedchangednotification_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">extern </font>*DJILDMManagerSupportedChangedNotification</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *DJILDMManagerSupportedChangedNotification</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Notification if LDM support has changed. If LDM support changes from <code>YES</code> to <code>NO</code>, and LDM is enabled, then LDM will be disabled after 2 minutes (120s) if <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_isldmsupported">isLDMSupported</a></code> remains <code>NO</code>.</font></p>
 </div>
 <div class="api-row" id="djildmmanager_djildmmanagerenabledchangednotification"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">extern</div><div class="api-col right"><a class="trigger" href="#djildmmanager_djildmmanagerenabledchangednotification_inline">*DJILDMManagerEnabledChangedNotification</a></div></div><div class="inline-doc" id="djildmmanager_djildmmanagerenabledchangednotification_inline" <blockquote>
@@ -793,9 +808,18 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *DJILDMManagerEnabledChangedNotification</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Notification for when LDM transitions between enabled and disabled (and vise versa).</font></p>
 </div>
+<div class="api-row" id="djildmmanager_djildmmanagermodulenetworkservicechangednotification"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">extern</div><div class="api-col right"><a class="trigger" href="#djildmmanager_djildmmanagermodulenetworkservicechangednotification_inline">*DJILDMManagerModuleNetworkServiceChangedNotification</a></div></div><div class="inline-doc" id="djildmmanager_djildmmanagermodulenetworkservicechangednotification_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">extern </font>*DJILDMManagerModuleNetworkServiceChangedNotification</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">extern</span> <span class="built_in">NSString</span> *DJILDMManagerModuleNetworkServiceChangedNotification</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJILDMManager.h</font></td></tr></table></html>
+<h5 id="description-v11">Description:</h5>
+<p><font color="#666">Notification for when LDM module network services changed. When the notification comes, you could get the network service status with <code><a href="../../Components/LDMManager/DJILDMManager.html#djildmmanager_ismodulenetworkserviceenabled">isLDMModuleNetworkServiceEnabled</a></code>.</font></p>
+</div>
+<div class="api-row" id="djildmmanager_ldmmodule"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/LDMManager/DJILDMManager_LDMModule.html">DJILDMModule</a></div></div>
 
         </div>
       </div>

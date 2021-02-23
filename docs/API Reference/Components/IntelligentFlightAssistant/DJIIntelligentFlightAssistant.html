@@ -110,7 +110,11 @@
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
-                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
+                  <dd><a data-href="../LDMManager/DJILDMManager.html" class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../LDMManager/DJILDMManager_LDMModule.html">DJILDMModule</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -1005,7 +1009,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setPrecisionLandingEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIFlightAssistant.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIFlightControllerKey.html#djiflightcontrollerkey_djiflightassistantparamprecisionlandingenabled_key">DJIFlightControllerKey.DJIFlightAssistantParamPrecisionLandingEnabled</a></font></td></tr></table></html>
 <h5 id="description-v32">Description:</h5>
-<p><font color="#666">Enables/disables precision landing. When enabled, the aircraft will record its take-off location visually (as well as with GPS). On a Return-To-Home action the aircraft will attempt to perform a precision landing using the additional visual information. This method only works on a Return-To-Home action when the home location is successfully recorded during take-off, and not changed during flight.</font></p>
+<p><font color="#666">Enables/disables precision landing. When enabled, the aircraft will record its take-off location visually (as well as with GPS). On a Return-To-Home action the aircraft will attempt to perform a precision landing using the additional visual information. This method only works on a Return-To-Home action when the home location is successfully recorded during take-off, and not changed during flight, It will take effect only after flying 10 meters high at the return point.</font></p>
 <h5 id="input-parameters-v29">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the precise landing.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the setter result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiintelligentflightassistant_getprecisionlandingenabled"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiintelligentflightassistant_getprecisionlandingenabled_inline">getPrecisionLandingEnabledWithCompletion</a></div></div><div class="inline-doc" id="djiintelligentflightassistant_getprecisionlandingenabled_inline" <blockquote>

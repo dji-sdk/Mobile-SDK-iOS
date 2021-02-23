@@ -110,7 +110,11 @@
                   </dd>
                   <dd><a href="../DataProtectionManager/DJIDataProtectionManager.html">DJIDataProtectionManager</a>
                   </dd>
-                  <dd><a href="../LDMManager/DJILDMManager.html">DJILDMManager</a>
+                  <dd><a data-href="../LDMManager/DJILDMManager.html" class="sub-toggle">DJILDMManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../LDMManager/DJILDMManager_LDMModule.html">DJILDMModule</a>
+                            </dd>
+                    </ul>
                   </dd>
                   <dd><a data-href="../UTMISSManager/DJIUTMISSManager.html" class="sub-toggle">DJIUTMISSManager<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
@@ -750,7 +754,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGPoint</span> targetPoint</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraSettingsDef.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Gets the relative target point base the lens origin point which measures by the laser sensor.</font></p>
+<p><font color="#666">Gets the relative target point base the lens origin point which measures by the laser sensor. The range for x and y is from 0 to 1000. The point [0, 0] represents the top-left angle of the screen.</font></p>
 </div>
 <div class="api-row" id="djicamera_djicameralasermeasureinformation_error"><div class="api-col left">Error</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameralasermeasureinformation_error_inline">error</a></div></div><div class="inline-doc" id="djicamera_djicameralasermeasureinformation_error_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>error</h6></div>
