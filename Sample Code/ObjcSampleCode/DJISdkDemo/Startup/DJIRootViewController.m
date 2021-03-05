@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *debugModeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *connectButton;
 @property (weak, nonatomic) IBOutlet UILabel *sdkVersionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *registerApp;
+@property (weak, nonatomic) IBOutlet UIButton *registerAppForLDM;
 
 @property (nonatomic) AppActivationViewController *appActivationVC;
 @end
@@ -32,7 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [DJISDKManager registerAppWithDelegate:self];
+    //
+    [DJISDKManager hasSDKRegistered];
     
     [self initUI];
 }
@@ -70,6 +73,8 @@
     if (product) {
         self.product = product;
         [self.connectButton setEnabled:YES];
+        [self.registerApp setEnabled:NO];
+        [self.registerAppForLDM setEnabled:NO];
     }
     
     [self updateStatusBasedOn:product];
@@ -157,6 +162,16 @@
         _productModel.text = NSLocalizedString(@"Model: Unknown", @"");
         [self updateFirmwareVersion:nil];
     }
+}
+
+//MARK: - Register Button Event
+
+- (IBAction)onRegisterAppEvent:(id)sender {
+    [DJISDKManager registerAppWithDelegate:self];
+}
+
+- (IBAction)onRegisterAppForLDMEvent:(id)sender {
+    [DJISDKManager registerAppForLDMWithDelegate:self];
 }
 
 @end

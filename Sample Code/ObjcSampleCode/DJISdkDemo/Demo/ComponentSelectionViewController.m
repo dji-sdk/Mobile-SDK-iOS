@@ -33,6 +33,7 @@
 #import "UpgradeManagerViewController.h"
 #import "PipelinesViewController.h"
 #import "WaypointV2ViewController.h"
+#import "LDMViewController.h"
 
 #import "KeyedInterfaceViewController.h"
 #import "VideoLiveStreamingViewController.h"
@@ -77,6 +78,7 @@
     
     [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Keyed Interface" andClass:[KeyedInterfaceViewController class]]];
 	[sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Live Streaming" andClass:[VideoLiveStreamingViewController class]]];
+    [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Local Data Mode" andClass:[LDMViewController class]]];
     
     [self.items addObject:sdk40Interfaces];
 }

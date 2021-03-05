@@ -107,6 +107,8 @@
 		9CC4CB86212D3B7F00B267A1 /* PayloadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4CB81212D3B7F00B267A1 /* PayloadViewController.xib */; };
 		9CC4CB91212D3BC600B267A1 /* PayloadTestChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4CB90212D3BC600B267A1 /* PayloadTestChannelViewController.m */; };
 		9CC4CB94212D3BD200B267A1 /* PayloadTestChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC4CB92212D3BD200B267A1 /* PayloadTestChannelViewController.xib */; };
+		9CE281D025EE7CE70059B6CC /* LDMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE281CE25EE7CE70059B6CC /* LDMViewController.m */; };
+		9CE281D125EE7CE70059B6CC /* LDMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE281CF25EE7CE70059B6CC /* LDMViewController.xib */; };
 		A4473E2121427623002895F8 /* DistortionResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A4473E2021427623002895F8 /* DistortionResource.bundle */; };
 		AC341484210BB28100BFBC34 /* RCGimbalControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC341482210BB28100BFBC34 /* RCGimbalControlViewController.m */; };
 		AC341485210BB28100BFBC34 /* RCGimbalControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC341483210BB28100BFBC34 /* RCGimbalControlViewController.xib */; };
@@ -359,6 +361,9 @@
 		9CC4CB90212D3BC600B267A1 /* PayloadTestChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PayloadTestChannelViewController.m; path = Payload/channel/PayloadTestChannelViewController.m; sourceTree = "<group>"; };
 		9CC4CB92212D3BD200B267A1 /* PayloadTestChannelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PayloadTestChannelViewController.xib; path = Payload/channel/PayloadTestChannelViewController.xib; sourceTree = "<group>"; };
 		9CC4CB93212D3BD200B267A1 /* PayloadTestChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PayloadTestChannelViewController.h; path = Payload/channel/PayloadTestChannelViewController.h; sourceTree = "<group>"; };
+		9CE281CD25EE7CE70059B6CC /* LDMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LDMViewController.h; path = LDM/LDMViewController.h; sourceTree = "<group>"; };
+		9CE281CE25EE7CE70059B6CC /* LDMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LDMViewController.m; path = LDM/LDMViewController.m; sourceTree = "<group>"; };
+		9CE281CF25EE7CE70059B6CC /* LDMViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LDMViewController.xib; path = LDM/LDMViewController.xib; sourceTree = "<group>"; };
 		A4473E2021427623002895F8 /* DistortionResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DistortionResource.bundle; sourceTree = "<group>"; };
 		A46AEA7B1DC3140F0041BB67 /* DJISdkDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DJISdkDemo.entitlements; sourceTree = "<group>"; };
 		AC341481210BB28100BFBC34 /* RCGimbalControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCGimbalControlViewController.h; sourceTree = "<group>"; };
@@ -674,6 +679,7 @@
 		3B16A91A19D1219B008C1818 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				9CE281CC25EE7CD40059B6CC /* LDM */,
 				9C6C3ABC2462BAD300A40126 /* Pipelines */,
 				045BB6282354559B00131208 /* Upgrade */,
 				14DC6339219A74C6004399FD /* LiveView */,
@@ -998,6 +1004,16 @@
 				9CC4CB92212D3BD200B267A1 /* PayloadTestChannelViewController.xib */,
 			);
 			name = channel;
+			sourceTree = "<group>";
+		};
+		9CE281CC25EE7CD40059B6CC /* LDM */ = {
+			isa = PBXGroup;
+			children = (
+				9CE281CD25EE7CE70059B6CC /* LDMViewController.h */,
+				9CE281CE25EE7CE70059B6CC /* LDMViewController.m */,
+				9CE281CF25EE7CE70059B6CC /* LDMViewController.xib */,
+			);
+			name = LDM;
 			sourceTree = "<group>";
 		};
 		AC341480210BB25F00BFBC34 /* RCGimbalControl */ = {
@@ -1449,6 +1465,7 @@
 				B821D4121C316A000014ADBD /* GimbalRotationInSpeedViewController.xib in Resources */,
 				B8AF305A1E8A82D40087AFAF /* CameraMediaPlaybackViewController.xib in Resources */,
 				2F7C13CE246436B0007BCE8A /* WaypointV2.storyboard in Resources */,
+				9CE281D125EE7CE70059B6CC /* LDMViewController.xib in Resources */,
 				77273ED921AFC0F200E578AD /* KeyedInterfaceViewController.xib in Resources */,
 				B821D3F51C31643D0014ADBD /* DemoGetSetViewController.xib in Resources */,
 				B821D41C1C316B530014ADBD /* DJIRootViewController.xib in Resources */,
@@ -1605,6 +1622,7 @@
 				B821D3F91C31643D0014ADBD /* DemoTableViewController.m in Sources */,
 				3B2CDDA91C3DA9F700DB096B /* RCHardwareStateViewController.m in Sources */,
 				2F7C13F4246447A4007BCE8A /* DJIPOIAnnotationView.m in Sources */,
+				9CE281D025EE7CE70059B6CC /* LDMViewController.m in Sources */,
 				3B2CDD881C3CC21D00DB096B /* FCFlightLimitationViewController.m in Sources */,
 				9CBE86732187377F00F1B71C /* SpeakerAudioPlaylistTableViewCell.m in Sources */,
 				2F7C1400246447A4007BCE8A /* DJILimitSpaceOverlay.m in Sources */,
