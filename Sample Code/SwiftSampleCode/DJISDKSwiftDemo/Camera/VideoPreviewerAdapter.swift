@@ -337,10 +337,11 @@ extension VideoPreviewerAdapter: DJIVideoFeedListener {
             NSLog("ERROR: Wrong video feed update is received!");
             return
         }
-        videoData.withUnsafeBytes { (ptr: UnsafePointer<UInt8>) in
-            let p = UnsafeMutablePointer<UInt8>.init(mutating: ptr)
-            previewer?.push(p, length: Int32(videoData.count))
-            
+        // In order to use withUnsafeMutableBytes, change to mutable variable
+        var videoData = videoData
+        videoData.withUnsafeMutableBytes { dataBytes in
+            let buffer: UnsafeMutablePointer = dataBytes.baseAddress!.assumingMemoryBound(to: UInt8.self)
+            previewer?.push(buffer, length: Int32(dataBytes.count))
         }
     }
     
