@@ -278,7 +278,7 @@
 
 -(void) showWaypointMission:(DJIWaypointMission*)wpMission {
     NSMutableString* missionInfo = [NSMutableString stringWithString:@"The waypoint mission is downloaded successfully: \n"];
-    [missionInfo appendString:[NSString stringWithFormat:@"RepeatTimes: %zd\n", wpMission.repeatTimes]];
+    [missionInfo appendString:[NSString stringWithFormat:@"RepeatTimes: %d\n", wpMission.repeatTimes]];
     [missionInfo appendString:[NSString stringWithFormat:@"HeadingMode: %u\n", (unsigned int)wpMission.headingMode]];
     [missionInfo appendString:[NSString stringWithFormat:@"FinishedAction: %u\n", (unsigned int)wpMission.finishedAction]];
     [missionInfo appendString:[NSString stringWithFormat:@"FlightPathMode: %u\n", (unsigned int)wpMission.flightPathMode]];
