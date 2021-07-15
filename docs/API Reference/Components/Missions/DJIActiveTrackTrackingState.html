@@ -72,6 +72,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIAccessoryKey.html">DJIAccessoryKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJILidarKey.html">DJILidarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIRTKBaseStationKey.html">DJIRTKBaseStationKey</a>
                                       </dd>
                               </ul>
@@ -490,6 +492,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../Lidar/DJILidar.html" class="sub-toggle">DJILidar<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Lidar/DJILidar_DJILidarCapabilities.html">DJILidarCapabilities</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">DJILidarPointCloudLiveViewData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -590,7 +600,19 @@
                               <ul class="sub-menu">
                                       <dd><a data-href="DJIWaypointV2Action_DJIWaypointV2Actuator.html" class="sub-toggle">DJIWaypointV2Actuator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
-                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html">DJIWaypointV2GimbalActuatorParam</a>
+                                                <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html" class="sub-toggle">DJIWaypointV2GimbalActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a data-href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathShootingParam.html" class="sub-toggle">DJIWaypointV2GimbalPathShootingParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathPointInfo.html">DJIWaypointV2GimbalPathPointInfo</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStartPathShootingParam.html">DJIWaypointV2GimbalStartPathShootingParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStopPathShootingParam.html">DJIWaypointV2GimbalStopPathShootingParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html" class="sub-toggle">DJIWaypointV2AircraftControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
@@ -600,8 +622,24 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_PointCloudRecordActuatorParam.html">DJIWaypointV2LidarPointCloudRecordParam</a>
+                                                </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html">DJIWaypointV2LidarActuatorParam</a>
+                                                </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
+                                                          <dd><a href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocalLengthParam.html">DJIWaypointV2CameraFocalLengthParam</a>
+                                                          </dd>
+                                                          <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraFocusModeParam.html">DJIWaypointV2CameraFocusModeParam</a>
+                                                          </dd>
+                                                          <dd><a data-href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocusParam.html" class="sub-toggle">DJIWaypointV2CameraFocusParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_RectangleTargetParam.html">DJIWaypointV2CameraFocusRectangleTargetParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_PointTargetParam.html">DJIWaypointV2CameraFocusPointTargetParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                           <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
                                                           </dd>
                                                   </ul>
@@ -766,7 +804,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJIActiveTrackCannotConfirmReason cannotConfirmReason</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">Reason why the target cannot be confirmed by the user. It is useful when  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_state">state</a></code> is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate_cannotconfirm">DJIActiveTrackTargetStateCannotConfirm</a></code>.  Otherwise, it is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason_none">DJIActiveTrackCannotConfirmReasonNone</a></code>.</font></p>
+<p><font color="#666">Reason why the target cannot be confirmed by the user. It is useful when  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktrackingstate_state">state</a></code> is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetracktargetstate_cannotconfirm">DJIActiveTrackTargetStateCannotConfirm</a></code>.  Otherwise, it is  <code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason_none">DJIActiveTrackCannotConfirmReasonNone</a></code>. Not supported by Mavic Air 2.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIActiveTrackTrackingState.html#djiactivetrackcannotconfirmreason">DJIActiveTrackCannotConfirmReason</a></code></font></p>
 </div>

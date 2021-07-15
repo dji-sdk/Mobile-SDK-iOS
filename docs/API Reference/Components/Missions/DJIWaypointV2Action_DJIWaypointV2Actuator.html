@@ -72,6 +72,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIAccessoryKey.html">DJIAccessoryKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJILidarKey.html">DJILidarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIRTKBaseStationKey.html">DJIRTKBaseStationKey</a>
                                       </dd>
                               </ul>
@@ -490,6 +492,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../Lidar/DJILidar.html" class="sub-toggle">DJILidar<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Lidar/DJILidar_DJILidarCapabilities.html">DJILidarCapabilities</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">DJILidarPointCloudLiveViewData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -590,7 +600,19 @@
                               <ul class="sub-menu">
                                       <dd><a data-href class="sub-toggle">DJIWaypointV2Actuator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
-                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html">DJIWaypointV2GimbalActuatorParam</a>
+                                                <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html" class="sub-toggle">DJIWaypointV2GimbalActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a data-href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathShootingParam.html" class="sub-toggle">DJIWaypointV2GimbalPathShootingParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathPointInfo.html">DJIWaypointV2GimbalPathPointInfo</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStartPathShootingParam.html">DJIWaypointV2GimbalStartPathShootingParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStopPathShootingParam.html">DJIWaypointV2GimbalStopPathShootingParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html" class="sub-toggle">DJIWaypointV2AircraftControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
@@ -600,8 +622,24 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_PointCloudRecordActuatorParam.html">DJIWaypointV2LidarPointCloudRecordParam</a>
+                                                </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html">DJIWaypointV2LidarActuatorParam</a>
+                                                </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
+                                                          <dd><a href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocalLengthParam.html">DJIWaypointV2CameraFocalLengthParam</a>
+                                                          </dd>
+                                                          <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraFocusModeParam.html">DJIWaypointV2CameraFocusModeParam</a>
+                                                          </dd>
+                                                          <dd><a data-href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocusParam.html" class="sub-toggle">DJIWaypointV2CameraFocusParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_RectangleTargetParam.html">DJIWaypointV2CameraFocusRectangleTargetParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_PointTargetParam.html">DJIWaypointV2CameraFocusPointTargetParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                           <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
                                                           </dd>
                                                   </ul>
@@ -776,12 +814,22 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) DJIWaypointV2AircraftControlParam *aircraftControlActuatorParam</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Action.h</font></td></tr></table></html>
 <h5 id="description-v6">Description:</h5>
-<p><font color="#666">Parameters for aircraft control actuator. It is valid only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Actuator.html#djiwaypointv2action_djiwaypointv2actuator_type">type</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actionactuatortype_aircraftcontrol">DJIWaypointV2ActionActuatorTypeAircraftControl</a></code>.</font></p>
+<p><font color="#666">Parameters for lidar actuator. It is valid only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Actuator.html#djiwaypointv2action_djiwaypointv2actuator_type">type</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actionactuatortype_aircraftcontrol">DJIWaypointV2ActionActuatorTypeAircraftControl</a></code>.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html#djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam">DJIWaypointV2AircraftControlParam</a></code></font></p>
 </div>
+<div class="api-row" id="djiwaypointv2action_djiwaypointv2actuator_lidaractuatorparam"><div class="api-col left">Lidar Actuator Param</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2action_djiwaypointv2actuator_lidaractuatorparam_inline">lidarActuatorParam</a></div></div><div class="inline-doc" id="djiwaypointv2action_djiwaypointv2actuator_lidaractuatorparam_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">property </font>lidarActuatorParam</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">strong</span>) DJIWaypointV2LidarActuatorParam *lidarActuatorParam</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2Action.h</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Parameters for aircraft control actuator. It is valid only when the <code><a href="../../Components/Missions/DJIWaypointV2Action_DJIWaypointV2Actuator.html#djiwaypointv2action_djiwaypointv2actuator_type">type</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action_djiwaypointv2actionactuatortype_lidar">DJIWaypointV2ActionActuatorTypeLidar</a></code>.</font></p>
+<h5 id="see-also-v5">See Also:</h5>
+<p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html#djiwaypointv2actuator_djiwaypointv2lidaractuatorparam">DJIWaypointV2LidarActuatorParam</a></code></font></p>
+</div>
 <h5 id="related">Related:</h5>
-<div class="api-row" id="djiwaypointv2actuator_djiwaypointv2gimbalactuatorparam"><div class="api-col left">Gimbal Actuator Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html">DJIWaypointV2GimbalActuatorParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam"><div class="api-col left">Aircraft Control Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html">DJIWaypointV2AircraftControlParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_djiwaypointv2cameraactuatorparam"><div class="api-col left">Camera Actuator Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a></div></div>
+<div class="api-row" id="djiwaypointv2actuator_djiwaypointv2gimbalactuatorparam"><div class="api-col left">Gimbal Actuator Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html">DJIWaypointV2GimbalActuatorParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_djiwaypointv2aircraftcontrolparam"><div class="api-col left">Aircraft Control Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html">DJIWaypointV2AircraftControlParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_pointcloudrecordactuatorparam"><div class="api-col left">Lidar Actuator Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_PointCloudRecordActuatorParam.html">DJIWaypointV2LidarPointCloudRecordParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_djiwaypointv2lidaractuatorparam"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html">DJIWaypointV2LidarActuatorParam</a></div></div><div class="api-row" id="djiwaypointv2actuator_djiwaypointv2cameraactuatorparam"><div class="api-col left">Camera Actuator Param</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html">DJIWaypointV2CameraActuatorParam</a></div></div>
 
         </div>
       </div>

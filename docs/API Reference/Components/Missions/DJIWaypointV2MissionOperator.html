@@ -72,6 +72,8 @@
                                       </dd>
                                       <dd><a href="../KeyManager/DJIAccessoryKey.html">DJIAccessoryKey</a>
                                       </dd>
+                                      <dd><a href="../KeyManager/DJILidarKey.html">DJILidarKey</a>
+                                      </dd>
                                       <dd><a href="../KeyManager/DJIRTKBaseStationKey.html">DJIRTKBaseStationKey</a>
                                       </dd>
                               </ul>
@@ -490,6 +492,14 @@
                             </dd>
                     </ul>
                   </dd>
+                  <dd><a data-href="../Lidar/DJILidar.html" class="sub-toggle">DJILidar<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                    <ul class="sub-menu">
+                            <dd><a href="../Lidar/DJILidar_DJILidarCapabilities.html">DJILidarCapabilities</a>
+                            </dd>
+                            <dd><a href="../Lidar/DJILidar_pointCloudLiveViewData.html">DJILidarPointCloudLiveViewData</a>
+                            </dd>
+                    </ul>
+                  </dd>
           </dl>
           <dl>
             <dt>Mission Classes
@@ -590,7 +600,19 @@
                               <ul class="sub-menu">
                                       <dd><a data-href="DJIWaypointV2Action_DJIWaypointV2Actuator.html" class="sub-toggle">DJIWaypointV2Actuator<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                         <ul class="sub-menu">
-                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html">DJIWaypointV2GimbalActuatorParam</a>
+                                                <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2GimbalActuatorParam.html" class="sub-toggle">DJIWaypointV2GimbalActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                  <ul class="sub-menu">
+                                                          <dd><a data-href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathShootingParam.html" class="sub-toggle">DJIWaypointV2GimbalPathShootingParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalPathPointInfo.html">DJIWaypointV2GimbalPathPointInfo</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStartPathShootingParam.html">DJIWaypointV2GimbalStartPathShootingParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2GimbalActuatorParam_DJIWaypointV2GimbalStopPathShootingParam.html">DJIWaypointV2GimbalStopPathShootingParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
+                                                  </ul>
                                                 </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2AircraftControlParam.html" class="sub-toggle">DJIWaypointV2AircraftControlParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
@@ -600,8 +622,24 @@
                                                           </dd>
                                                   </ul>
                                                 </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_PointCloudRecordActuatorParam.html">DJIWaypointV2LidarPointCloudRecordParam</a>
+                                                </dd>
+                                                <dd><a href="DJIWaypointV2Actuator_DJIWaypointV2LidarActuatorParam.html">DJIWaypointV2LidarActuatorParam</a>
+                                                </dd>
                                                 <dd><a data-href="DJIWaypointV2Actuator_DJIWaypointV2CameraActuatorParam.html" class="sub-toggle">DJIWaypointV2CameraActuatorParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                                                   <ul class="sub-menu">
+                                                          <dd><a href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocalLengthParam.html">DJIWaypointV2CameraFocalLengthParam</a>
+                                                          </dd>
+                                                          <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraFocusModeParam.html">DJIWaypointV2CameraFocusModeParam</a>
+                                                          </dd>
+                                                          <dd><a data-href="DJIWaypointV2CameraActuatorParam_DJIWaypointV2CameraFocusParam.html" class="sub-toggle">DJIWaypointV2CameraFocusParam<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+                                                            <ul class="sub-menu">
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_RectangleTargetParam.html">DJIWaypointV2CameraFocusRectangleTargetParam</a>
+                                                                    </dd>
+                                                                    <dd><a href="DJIWaypointV2ActionActuatorParam_DJIWaypointV2CameraFocus_PointTargetParam.html">DJIWaypointV2CameraFocusPointTargetParam</a>
+                                                                    </dd>
+                                                            </ul>
+                                                          </dd>
                                                           <dd><a href="DJIWaypointV2Actuator_DJIWaypointCameraCustomNameParam.html">DJIWaypointV2CameraCustomNameParam</a>
                                                           </dd>
                                                   </ul>
@@ -741,7 +779,7 @@
 <h5 id="description-v2">Description:</h5>
 <p><font color="#666">All the possible state of <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator">DJIWaypointV2MissionOperator</a></code>.</font></p>
 <h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_unknown_inline"></a>DJIWaypointV2MissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. It is the initial state when the operator is just created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_disconnected_inline"></a>DJIWaypointV2MissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_recovering_inline"></a>DJIWaypointV2MissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is built-up.  The operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_notsupported_inline"></a>DJIWaypointV2MissionStateNotSupported</font></td><td><font color="#666">The connected product does not support waypoint mission 2.0.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload_inline"></a>DJIWaypointV2MissionStateReadyToUpload</font></td><td><font color="#666">The aircraft is ready to upload a mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_uploading_inline"></a>DJIWaypointV2MissionStateUploading</font></td><td><font color="#666">The uploading is started successfully. Detail information for each waypoint is being uploaded one by one.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute_inline"></a>DJIWaypointV2MissionStateReadyToExecute</font></td><td><font color="#666">Waypoint mission is uploaded completely and the aircraft is ready to start the execution.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_executing_inline"></a>DJIWaypointV2MissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted_inline"></a>DJIWaypointV2MissionStateInterrupted</font></td><td><font color="#666">Waypoint mission is paused successfully. User can call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_interruptmission">interruptMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_unknown_inline"></a>DJIWaypointV2MissionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_disconnected_inline"></a>DJIWaypointV2MissionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_recovering_inline"></a>DJIWaypointV2MissionStateRecovering</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is built-up.  The operator is synchronizing the state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_notsupported_inline"></a>DJIWaypointV2MissionStateNotSupported</font></td><td><font color="#666">The connected product does not support waypoint mission 2.0.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload_inline"></a>DJIWaypointV2MissionStateReadyToUpload</font></td><td><font color="#666">The aircraft is ready to upload a mission.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_uploading_inline"></a>DJIWaypointV2MissionStateUploading</font></td><td><font color="#666">The uploading is started successfully. Detail information for each waypoint is being uploaded one by one.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute_inline"></a>DJIWaypointV2MissionStateReadyToExecute</font></td><td><font color="#666">Waypoint mission is uploaded completely and the aircraft is ready to start the execution.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_executing_inline"></a>DJIWaypointV2MissionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted_inline"></a>DJIWaypointV2MissionStateInterrupted</font></td><td><font color="#666">Waypoint mission is paused successfully. User can call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_interruptmission">interruptMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2missionactionstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_inline">DJIWaypointV2MissionActionState</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_djiwaypointv2missionactionstate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIWaypointV2MissionActionState</h6></div>
 
@@ -751,30 +789,39 @@
 <p><font color="#666">All the possible action state of <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator">DJIWaypointV2MissionOperator</a></code>.</font></p>
 <h5 id="enum-members-v2">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_unknown_inline"></a>DJIWaypointV2MissionActionStateUnknown</font></td><td><font color="#666">The state of the operator is unknown. It is the initial action state when the operator is just created.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_disconnected_inline"></a>DJIWaypointV2MissionActionStateDisconnected</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is broken.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_recovering_inline"></a>DJIWaypointV2MissionActionStateRecovering</font></td><td><font color="#666">The connection between the mobile device, remote controller and aircraft is built-up.  The operator is synchronizing the action state from the aircraft.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_notsupported_inline"></a>DJIWaypointV2MissionActionStateNotSupported</font></td><td><font color="#666">The connected product does not support waypoint mission 2.0.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_readytoupload_inline"></a>DJIWaypointV2MissionActionStateReadyToUpload</font></td><td><font color="#666">The aircraft is ready to upload actions.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_uploading_inline"></a>DJIWaypointV2MissionActionStateUploading</font></td><td><font color="#666">The uploading is started successfully. Detail information for each action is being uploaded one by one.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_readytoexecute_inline"></a>DJIWaypointV2MissionActionStateReadyToExecute</font></td><td><font color="#666">Waypoint mission is uploaded completely and the aircraft is ready to start the execution.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing_inline"></a>DJIWaypointV2MissionActionStateExecuting</font></td><td><font color="#666">The execution is started successfully.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_interrupted_inline"></a>DJIWaypointV2MissionActionStateInterrupted</font></td><td><font color="#666">Waypoint mission is interrupted successfully. User can call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_interruptmission">interruptMissionWithCompletion</a></code> to continue the execution.</font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction_inline">DJIWaypointV2InterruptRecoverAction</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJIWaypointV2InterruptRecoverAction</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIWaypointV2InterruptRecoverAction)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionTypes.h</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Determines the recover mission flying to which point. call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_recovermission">recoverMissionWithCompletion</a></code> to recover mission.  The waypoint mission is interrupted by invoking <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_interruptmission">interruptMissionWithCompletion</a></code>. The waypoint mission is  interrupted by moving remote controller's joystick. Other interruption such as obstacle avoidance.</font></p>
+<h5 id="enum-members-v3">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction_gobacktorecordedpoint_inline"></a>DJIWaypointV2InterruptRecoverActionGoBackToRecordedPoint</font></td><td><font color="#666">When the mission is recovered, the aircraft flying to the recorded point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction_gobacktonextwaypoint_inline"></a>DJIWaypointV2InterruptRecoverActionGoBackToNextWaypoint</font></td><td><font color="#666">When the mission is recovered, the aircraft flying to next waypoint.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction_gobacktonexttwowaypoint_inline"></a>DJIWaypointV2InterruptRecoverActionGoBackToNextTwoWaypoint</font></td><td><font color="#666">When the mission is recovered, the aircraft will fly to the waypoint next to the next waypoint.</font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2missionv2rclostaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_djiwaypointv2missionv2rclostaction_inline">DJIWaypointV2MissionRCLostAction</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_djiwaypointv2missionv2rclostaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIWaypointV2MissionRCLostAction</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (<span class="built_in">NSInteger</span>, DJIWaypointV2MissionRCLostAction)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionTypes.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v5">Description:</h5>
 <p><font color="#666">The action of waypoint mission that will be executed when the remote controller signal lost.</font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
+<h5 id="enum-members-v4">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionv2rclostaction_stopmission_inline"></a>DJIWaypointV2MissionRCLostActionStopMission</font></td><td><font color="#666">Stops current mission when the remote controller signal is lost.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2missionoperator_djiwaypointv2missionv2rclostaction_continue_inline"></a>DJIWaypointV2MissionRCLostActionContinue</font></td><td><font color="#666">Continues the mission when the remote controller signal is lost.</font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2mission_djiwaypointv2missionfinishedaction"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_inline">DJIWaypointV2MissionFinishedAction</a></div></div><div class="inline-doc" id="djiwaypointv2mission_djiwaypointv2missionfinishedaction_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">enum </font>DJIWaypointV2MissionFinishedAction</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIWaypointV2MissionFinishedAction)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionTypes.h</font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v6">Description:</h5>
 <p><font color="#666">Actions will be taken when the waypoint mission is finished.</font></p>
-<h5 id="enum-members-v4">Enum Members:</h5>
+<h5 id="enum-members-v5">Enum Members:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_noaction_inline"></a>DJIWaypointV2MissionFinishedActionNoAction</font></td><td><font color="#666">No further action will be taken. The aircraft can be controlled by the remote controller.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_gohome_inline"></a>DJIWaypointV2MissionFinishedActionGoHome</font></td><td><font color="#666">Goes home when the mission is finished. The aircraft will land directly if it is within 20  meters away from the home point.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_autolanding_inline"></a>DJIWaypointV2MissionFinishedActionAutoLanding</font></td><td><font color="#666">The aircraft will land automatically at the last waypoint.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_gotofirstwaypoint_inline"></a>DJIWaypointV2MissionFinishedActionGoToFirstWaypoint</font></td><td><font color="#666">The aircraft will go back to the first waypoint and hover.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_continueuntilstop_inline"></a>DJIWaypointV2MissionFinishedActionContinueUntilStop</font></td><td><font color="#666">When the aircraft reaches its final waypoint, it will hover without ending the mission. The joystick  can still be used to pull the aircraft back along its previous waypoints. The only way this mission  can end is if stopMission is called.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djiwaypointv2mission_djiwaypointv2missionfinishedaction_unknown_inline"></a>DJIWaypointV2MissionFinishedActionUnknown</font></td><td><font color="#666">Unknow finished action.</font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2uploadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2UploadProgress.html">DJIWaypointV2UploadProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2downloadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2DownloadProgress.html">DJIWaypointV2DownloadProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2executionprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2ExecutionProgress.html">DJIWaypointV2ExecutionProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2actionuploadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2ActionUploadProgress.html">DJIWaypointV2ActionUploadProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2actiondownloadprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2ActionDownloadProgress.html">DJIWaypointV2ActionDownloadProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2actionexecutionprogress"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Missions/DJIWaypointV2MissionOperator_DJIWaypointV2ActionExecutionProgress.html">DJIWaypointV2ActionExecutionProgress</a></div></div><div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2missionoperatoractionuploadeventblock"><div class="api-col left">Completion Blocks</div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_djiwaypointv2missionoperatoractionuploadeventblock_inline">DJIWaypointV2MissionOperatorActionUploadEventBlock</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_djiwaypointv2missionoperatoractionuploadeventblock_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">typedef block </font>DJIWaypointV2MissionOperatorActionUploadEventBlock</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorActionUploadEventBlock)(DJIWaypointV2MissionActionUploadEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v7">Description:</h5>
 <p><font color="#666">Block that receive the actions updated upload event.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionActionUploadEvent.html#djiwaypointv2missionactionuploadevent">DJIWaypointV2MissionActionUploadEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated upload event.</i></font></td></tr></table></html></div>
@@ -783,7 +830,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorActionDownloadEventBlock)(DJIWaypointV2MissionActionDownloadEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v8">Description:</h5>
 <p><font color="#666">Block to receive the updated download event.</font></p>
 <h5 id="input-parameters-v2">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionActionDownloadEvent.html#djiwaypointv2missionactiondownloadevent">DJIWaypointV2MissionActionDownloadEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated download event.</i></font></td></tr></table></html></div>
@@ -792,7 +839,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorActionExecutionEventBlock)(DJIWaypointV2MissionActionExecutionEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v9">Description:</h5>
 <p><font color="#666">Block to receive the updated execution event.</font></p>
 <h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent">DJIWaypointV2MissionActionExecutionEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated execution event.</i></font></td></tr></table></html></div>
@@ -801,7 +848,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorExecutionEventBlock)(DJIWaypointV2MissionExecutionEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Block to receive the updated execution event.</font></p>
 <h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionExecutionEvent.html#djiwaypointv2missionexecutionevent">DJIWaypointV2MissionExecutionEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated execution event.</i></font></td></tr></table></html></div>
@@ -810,7 +857,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorSimpleEventBlock)(<span class="keyword">void</span>)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Block to receive the notification that a waypoint mission is started successfully.</font></p>
 </div>
 <div class="api-row" id="djiwaypointv2missionoperator_djiwaypointv2missionoperatoruploadeventblock"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">typedef block</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_djiwaypointv2missionoperatoruploadeventblock_inline">DJIWaypointV2MissionOperatorUploadEventBlock</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_djiwaypointv2missionoperatoruploadeventblock_inline" <blockquote>
@@ -818,7 +865,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorUploadEventBlock)(DJIWaypointV2MissionUploadEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Block that receive the updated upload event.</font></p>
 <h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionUploadEvent.html#djiwaypointv2missionuploadevent">DJIWaypointV2MissionUploadEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated upload event.</i></font></td></tr></table></html></div>
@@ -827,7 +874,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^DJIWaypointV2MissionOperatorDownloadEventBlock)(DJIWaypointV2MissionDownloadEvent *event)</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Block to receive the updated download event.</font></p>
 <h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionDownloadEvent.html#djiwaypointv2missiondownloadevent">DJIWaypointV2MissionDownloadEvent</a> * <font color="#000">event</font></font></td><td><font color="#666"><i>The updated download event.</i></font></td></tr></table></html></div>
@@ -838,7 +885,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>, <span class="keyword">nullable</span>) DJIWaypointV2Mission *loadedMission</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Gets the currently loaded mission of the operator. There are two ways to load a mission. 1. A mission can be  loaded by user through <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadmission">loadMission:withCompletion</a></code>. 2. If the aircraft is already executing  a waypoint mission when SDK is re-connected, the operator will download part of the mission's information from  the aircraft and load it automatically. In that case, the loaded mission will only contain the summary of the  executing mission but information for each waypoint is absent. User can call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_downloadmission">downloadMissionWithCompletion</a></code>  to get all the information for the loaded mission. The <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> will be reset to <code>nil</code>  when the execution of the loadedMission is stopped, finished.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Mission.html#djiwaypointv2mission">DJIWaypointV2Mission</a></code></font></p>
@@ -848,7 +895,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">-(<span class="keyword">void</span>)loadMission:(DJIWaypointV2Mission *)mission withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">Loads a waypoint mission into the operator. A mission can be loaded only when the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate">DJIWaypointV2MissionState</a></code> is one of the  following : <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload">DJIWaypointV2MissionStateReadyToUpload</a></code> <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute">DJIWaypointV2MissionStateReadyToExecute</a></code> <br> Calling <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadmission">loadMission:withCompletion</a></code>  when the current state is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute">DJIWaypointV2MissionStateReadyToExecute</a></code> will change the state to <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload">DJIWaypointV2MissionStateReadyToUpload</a></code>.  After calling <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code>,</font></p>
 <h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2Mission.html#djiwaypointv2mission">DJIWaypointV2Mission</a> * <font color="#000">mission</font></font></td><td><font color="#666"><i>Waypoint mission to load.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
@@ -857,7 +904,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSUInteger</span> loadedActionCount</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666">Gets the currently loaded actions count of the operator. There are two ways to load a mission. 1. Actions can be loaded by user through <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadmission">loadMission:withCompletion</a></code>.  2. If the aircraft is already executing a waypoint mission and it has uploaded actions when SDK is re-connected, the operator will recover uploaded action count.</font></p>
 </div>
 <div class="api-row" id="djiwaypointv2missionoperator_loadedactions"><div class="api-col left">Loaded Actions</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_loadedactions_inline">loadedActions</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_loadedactions_inline" <blockquote>
@@ -865,7 +912,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) <span class="built_in">NSArray</span>&lt;DJIWaypointV2Action *&gt;* loadedActions</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">Gets the count of loaded actions in current operator. There are two ways to load a mission. 1. Actions can be loaded by user through <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadmission">loadMission:withCompletion</a></code>.  2. If the aircraft is already executing a waypoint mission and it has uploaded actions when SDK is re-connected, the operator will recover uploaded action count. load it automatically.  In that case, the loaded actions will be <code>nil</code>, if user want get summary of the executing actions user can call <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_downloadmission">downloadMissionWithCompletion</a></code> to get all the information  for the loaded actions. The <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedactions">loadedActions</a></code> will be reset to <code>nil</code> when the execution of the getLoadedMission is stopped, finished.</font></p>
 <h5 id="see-also-v2">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2Action.html#djiwaypointv2action">DJIWaypointV2Action</a></code></font></p>
@@ -875,7 +922,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) DJIWaypointV2MissionState currentState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">The current state of the operator.</font></p>
 <h5 id="see-also-v3">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate">DJIWaypointV2MissionState</a></code></font></p>
@@ -885,7 +932,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">readonly</span>, <span class="keyword">nonatomic</span>) DJIWaypointV2MissionActionState currentActionState</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">The current action state of the operator.</font></p>
 <h5 id="see-also-v4">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate">DJIWaypointV2MissionActionState</a></code></font></p>
@@ -895,7 +942,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)uploadMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Starts to upload the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> to the aircraft. It can only be called when  the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> is complete and the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code>  is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload">DJIWaypointV2MissionStateReadyToUpload</a></code>. If a timeout error occurs during the previous upload, the upload operation will  resume from the previous break-point. After a mission is uploaded successfully, the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate">DJIWaypointV2MissionState</a></code> will  become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute">DJIWaypointV2MissionStateReadyToExecute</a></code>.</font></p>
 <h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block will be invoked with the result if the upload command has been received successfully by the aircraft. If the upload command is successfully sent,  use <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_addlistenertouploadevent">addListenerToUploadEvent:withQueue:andBlock</a></code> to check the detailed progress.</i></font></td></tr></table></html></div>
@@ -904,7 +951,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)uploadWaypointActions:(<span class="built_in">NSArray</span>*)actions withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Starts to upload the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedactions">loadedActions</a></code> to the aircraft. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedactions">loadedActions</a></code>  is complete and the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute">DJIWaypointV2MissionStateReadyToExecute</a></code>. If a timeout error occurs during the  previous upload, the upload operation will resume from the previous break-point. After a mission is uploaded successfully, the <code>DJIWaypointV2MissionActionState</code>  will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_readytoexecute">DJIWaypointV2MissionActionStateReadyToExecute</a></code>.</font></p>
 <h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray* <font color="#000">actions</font></font></td><td><font color="#666"><i>An array of waypoint actions.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block will be invoked with the result if the upload action command has been received successfully by the aircraft. If the upload command is successfully sent,  use <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_addlistenertoactionuploadevent">addListenerToActionUploadEvent:withQueue:andBlock</a></code> to receive the detailed progress.</i></font></td></tr></table></html></div>
@@ -913,7 +960,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)downloadMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Downloads information of each waypoint from aircraft and save it to <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code>.  If a download operation starts, the operator will  download the information of waypoints missing in <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> ascending order. If <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> is  already complete (containing all the waypoints), this method will call <code>completion</code> immediately without error. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code>  is one of the following: - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code></font></p>
 <h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the download operation succeeds or fails to start. If it is started successfully, use <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_addlistenertodownloadevent">addListenerToDownloadEvent:withQueue:andBlock</a></code> to receive the detailed progress.</i></font></td></tr></table></html></div>
@@ -922,7 +969,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)downloadActionsWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Downloads information of each waypoint from aircraft and save it to <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code>. If a download operation starts, the operator will download the information of waypoints missing in <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code>  one-by-one in ascending order. If <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_loadedmission">loadedMission</a></code> is already complete (containing all the waypoints), this method will call <code>completion</code> immediately without error. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code>  is one of the following: <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code> <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code>.</font></p>
 <h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the download operation succeeds or fails to start. If it is started successfully, use <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_addlistenertodownloadevent">addListenerToDownloadEvent:withQueue:andBlock</a></code> to receive the detailed progress.</i></font></td></tr></table></html></div>
@@ -933,7 +980,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToUploadEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                       withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                        andBlock:(DJIWaypointV2MissionOperatorUploadEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to upload.</font></p>
 <h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on upload event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatoruploadeventblock">DJIWaypointV2MissionOperatorUploadEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is event updated related to upload.</i></font></td></tr></table></html></div>
@@ -942,7 +989,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToDownloadEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                         withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                          andBlock:(DJIWaypointV2MissionOperatorDownloadEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to download.</font></p>
 <h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on download event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatordownloadeventblock">DJIWaypointV2MissionOperatorDownloadEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is event updated related to download.</i></font></td></tr></table></html></div>
@@ -951,7 +998,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToStarted:(<span class="keyword">id</span>)listener</span><br><span class="line">                   withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                    andBlock:(DJIWaypointV2MissionOperatorSimpleEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Adds listener to receive the notification when a waypoint mission is started.</font></p>
 <h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on the start of waypoint mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatorsimpleeventblock">DJIWaypointV2MissionOperatorSimpleEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when a waypoint mission is started.</i></font></td></tr></table></html></div>
@@ -960,7 +1007,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToExecutionEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                          withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                           andBlock:(DJIWaypointV2MissionOperatorExecutionEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to execution.</font></p>
 <h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on execution event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatorexecutioneventblock">DJIWaypointV2MissionOperatorExecutionEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is event updated related to execution.</i></font></td></tr></table></html></div>
@@ -969,7 +1016,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToActionUploadEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                             withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                              andBlock:(DJIWaypointV2MissionOperatorActionUploadEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
+<h5 id="description-v28">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to action upload.</font></p>
 <h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on upload event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatoractionuploadeventblock">DJIWaypointV2MissionOperatorActionUploadEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is event updated related to upload.</i></font></td></tr></table></html></div>
@@ -978,7 +1025,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToActionDownloadEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                               withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                                andBlock:(DJIWaypointV2MissionOperatorActionDownloadEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
+<h5 id="description-v29">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to download.</font></p>
 <h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on download event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatoractiondownloadeventblock">DJIWaypointV2MissionOperatorActionDownloadEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is event updated related to download.</i></font></td></tr></table></html></div>
@@ -987,7 +1034,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToActionExecutionEvent:(<span class="keyword">id</span>)listener</span><br><span class="line">                                withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                                 andBlock:(DJIWaypointV2MissionOperatorActionExecutionEventBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Adds listener to receive the event related to execution.</font></p>
 <h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on execution event.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionoperatoractionexecutioneventblock">DJIWaypointV2MissionOperatorActionExecutionEventBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when there is an event updated related to execution.</i></font></td></tr></table></html></div>
@@ -996,7 +1043,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToFinished:(<span class="keyword">id</span>)listener</span><br><span class="line">                    withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                     andBlock:(DJICompletionBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Adds listener to receive the notification when a waypoint mission is finished.</font></p>
 <h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on the finish of waypoint mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when a waypoint mission is finished. If the mission is interrupted with an error, the error will be passed to the block.</i></font></td></tr></table></html></div>
@@ -1005,7 +1052,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)addListenerToStopped:(<span class="keyword">id</span>)listener</span><br><span class="line">                   withQueue:(<span class="keyword">nullable</span> <span class="built_in">dispatch_queue_t</span>)queue</span><br><span class="line">                    andBlock:(DJICompletionBlock)block</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Adds listener to receive the notification when a waypoint mission is stopped by the user.</font></p>
 <h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener that is interested on the stop of waypoint mission.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">nullable dispatch_queue_t <font color="#000">queue</font></font></td><td><font color="#666"><i>The dispatch queue that <code>block</code> will be called on.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">block</font></font></td><td><font color="#666"><i>Block will be called when a waypoint mission is stopped by the user.</i></font></td></tr></table></html></div>
@@ -1014,7 +1061,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListener:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
+<h5 id="description-v33">Description:</h5>
 <p><font color="#666">Removes listener. If the same listener is listening to multiple events and notifications (e.g. upload event and download event), it will not receive any update of them.</font></p>
 <h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1023,7 +1070,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeAllListeners</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
+<h5 id="description-v34">Description:</h5>
 <p><font color="#666">Remove all listeners.</font></p>
 </div>
 <div class="api-row" id="djiwaypointv2missionoperator_removelistenerofstarted"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_removelistenerofstarted_inline">removeListenerOfStarted</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_removelistenerofstarted_inline" <blockquote>
@@ -1031,7 +1078,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfStarted:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v34">Description:</h5>
+<h5 id="description-v35">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to the notification that a mission is started.</font></p>
 <h5 id="input-parameters-v22">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1040,7 +1087,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfFinished:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v35">Description:</h5>
+<h5 id="description-v36">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to the notification that a mission is finished.</font></p>
 <h5 id="input-parameters-v23">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1049,7 +1096,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfUploadEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v36">Description:</h5>
+<h5 id="description-v37">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to upload events.</font></p>
 <h5 id="input-parameters-v24">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1058,7 +1105,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfDownloadEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v37">Description:</h5>
+<h5 id="description-v38">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to download events.</font></p>
 <h5 id="input-parameters-v25">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1067,7 +1114,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfExecutionEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v38">Description:</h5>
+<h5 id="description-v39">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to execution events.</font></p>
 <h5 id="input-parameters-v26">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1076,7 +1123,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfActionUploadEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v39">Description:</h5>
+<h5 id="description-v40">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to action upload events.</font></p>
 <h5 id="input-parameters-v27">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1085,7 +1132,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfActionDownloadEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v40">Description:</h5>
+<h5 id="description-v41">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to action download events.</font></p>
 <h5 id="input-parameters-v28">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1094,7 +1141,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfActionExecutionEvents:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v41">Description:</h5>
+<h5 id="description-v42">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to action execution events.</font></p>
 <h5 id="input-parameters-v29">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be removed.</i></font></td></tr></table></html></div>
@@ -1103,7 +1150,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)removeListenerOfStopped:(<span class="keyword">id</span>)listener</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v42">Description:</h5>
+<h5 id="description-v43">Description:</h5>
 <p><font color="#666">Removes listener to stop listening to the notification that a mission is stopped by the user.</font></p>
 <h5 id="input-parameters-v30">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id <font color="#000">listener</font></font></td><td><font color="#666"><i>Listener to be stopped.</i></font></td></tr></table></html></div>
@@ -1114,7 +1161,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)startMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v43">Description:</h5>
+<h5 id="description-v44">Description:</h5>
 <p><font color="#666">Starts the execution of the uploaded mission. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoexecute">DJIWaypointV2MissionStateReadyToExecute</a></code>. After a mission is started successfully, the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code>  will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code>.</font></p>
 <h5 id="input-parameters-v31">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the operator succeeds or fails to start the execution. If it fails, an error will be returned.</i></font></td></tr></table></html></div>
@@ -1123,7 +1170,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)interruptMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v44">Description:</h5>
+<h5 id="description-v45">Description:</h5>
 <p><font color="#666">Pauses the executing mission. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate">DJIWaypointV2MissionState</a></code> is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code>. After a mission is  paused successfully, the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code>.</font></p>
 <h5 id="input-parameters-v32">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the operator succeeds or fails to pause the mission. If it fails, an error will be returned.</i></font></td></tr></table></html></div>
@@ -1132,18 +1179,27 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)recoverMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v45">Description:</h5>
+<h5 id="description-v46">Description:</h5>
 <p><font color="#666">Resumes the paused mission. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code>.  After a mission is resumed successfully, the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code>.</font></p>
 <h5 id="input-parameters-v33">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the operator succeeds or fails to resume the mission. If it fails, an error will be returned.</i></font></td></tr></table></html></div>
+<div class="api-row" id="djiwaypointv2missionoperator_recovermissionwithrecovertype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_recovermissionwithrecovertype_inline">recoverMission:withCompletion</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_recovermissionwithrecovertype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>recoverMission:withCompletion</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)recoverMission:(DJIWaypointV2InterruptRecoverAction)recoverType withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
+<h5 id="description-v47">Description:</h5>
+<p><font color="#666">Resumes the paused mission. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> is <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code>.  After a mission is resumed successfully, the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code>.</font></p>
+<h5 id="input-parameters-v34">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction">DJIWaypointV2InterruptRecoverAction</a> <font color="#000">recoverType</font></font></td><td><font color="#666"><i>An enum value of <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2interruptrecoveraction">DJIWaypointV2InterruptRecoverAction</a></code></i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the operator succeeds or fails to resume the mission. If it fails, an error will be returned.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djiwaypointv2missionoperator_stopmission"><div class="api-col left">Stop Mission</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djiwaypointv2missionoperator_stopmission_inline">stopMissionWithCompletion</a></div></div><div class="inline-doc" id="djiwaypointv2missionoperator_stopmission_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>stopMissionWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)stopMissionWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIWaypointV2MissionOperator.h</font></td></tr></table></html>
-<h5 id="description-v46">Description:</h5>
+<h5 id="description-v48">Description:</h5>
 <p><font color="#666">Stops the executing or paused mission. It can only be called when the <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> is one of the  following: <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionactionstate_executing">DJIWaypointV2MissionActionStateExecuting</a></code> <br> - <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_interrupted">DJIWaypointV2MissionStateInterrupted</a></code> After a mission finishes  successfully, <code><a href="../../Components/Missions/DJIWaypointV2MissionActionExecutionEvent.html#djiwaypointv2missionactionexecutionevent_currentstate">currentState</a></code> will become <code><a href="../../Components/Missions/DJIWaypointV2MissionOperator.html#djiwaypointv2missionoperator_djiwaypointv2missionstate_readytoupload">DJIWaypointV2MissionStateReadyToUpload</a></code>.</font></p>
-<h5 id="input-parameters-v34">Input Parameters:</h5>
+<h5 id="input-parameters-v35">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that will be called when the operator succeeds or fails to resume the mission. If it fails, an error will be returned.</i></font></td></tr></table></html></div>
 
         </div>
