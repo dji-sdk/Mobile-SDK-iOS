@@ -35,6 +35,18 @@
     if (camera) {
         camera.delegate = self;
     }
+    DJIBaseProduct *product = [DemoComponentHelper fetchProduct];
+    if ([product.model isEqualToString:DJIAircraftModelNameMatrice300RTK] && camera && camera.index == 0) {
+        [[self ocuSyncLink] assignSourceToPrimaryChannel:DJIVideoFeedPhysicalSourceLeftCamera
+                                        secondaryChannel:DJIVideoFeedPhysicalSourceFPVCamera
+                                          withCompletion:^(NSError *_Nullable error) {
+                                            if (error) {
+                                                ShowResult(@"allocation error: %@", error.description);
+                                            } else {
+                                                ShowResult(@"success");
+                                            }
+                                          }];
+    }
 
     self.needToSetMode = YES;
 
@@ -42,6 +54,10 @@
     self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
 	[self.previewerAdapter setupFrameControlHandler];
+}
+
+- (DJIOcuSyncLink *)ocuSyncLink {
+    return [DemoComponentHelper fetchAirLink].ocuSyncLink;
 }
 
 -(void) viewWillAppear:(BOOL)animated

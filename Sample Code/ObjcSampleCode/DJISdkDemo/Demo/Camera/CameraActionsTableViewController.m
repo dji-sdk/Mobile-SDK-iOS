@@ -96,7 +96,7 @@
 
     UIViewController * vc = [[item.viewControllerClass alloc] init];
     vc.title = item.itemName;
-    if ([DemoCameraHelper isMultilensCamera:self.cameraName]) {
+    if ([DemoCameraHelper isMultilensCamera:self.cameraName] && ![item.itemName isEqualToString:@"First Person View (FPV)"]) {
         UIStoryboard *board = [UIStoryboard storyboardWithName:@"CameraParamSetting" bundle:[NSBundle mainBundle]];
         UITabBarController *vc = [board instantiateViewControllerWithIdentifier:@"tabbarVC"];
         if ([self.cameraName isEqualToString:DJICameraDisplayNameZenmuseH20]) {
