@@ -93,15 +93,26 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
-            }
-            else {
-                [target startFetchMedia];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+            [camera enterPlaybackWithCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: enter playback failed because %@", error.description);
+                } else {
+                    WeakReturn(target);
+                    [target startFetchMedia];
+                }
+            }];
+        } else {
+            [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
+                }
+                else {
+                    [target startFetchMedia];
+                }
+            }];
+        }
     }
 }
 
