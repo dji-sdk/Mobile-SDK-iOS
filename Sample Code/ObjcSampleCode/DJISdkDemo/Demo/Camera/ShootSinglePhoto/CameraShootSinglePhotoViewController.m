@@ -141,18 +141,30 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
-            }
-            else if (mode == DJICameraModeShootPhoto) {
-                target.isInShootPhotoMode = YES;
-            }
-            else {
-                [target setCameraMode];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera getFlatModeWithCompletion:^(DJIFlatCameraMode mode, NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: getFlatModeWithCompletion:. %@", error.description);
+                } else if (mode == DJIFlatCameraModePhotoSingle){
+                    target.isInShootPhotoMode = YES;
+                } else {
+                    [target setCameraMode];
+                }
+            }];
+        } else {
+            [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
+                }
+                else if (mode == DJICameraModeShootPhoto) {
+                    target.isInShootPhotoMode = YES;
+                }
+                else {
+                    [target setCameraMode];
+                }
+            }];
+        }
     }
 }
 
@@ -164,28 +176,41 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
-            }
-            else {
-                // Normally, once an operation is finished, the camera still needs some time to finish up
-                // all the work. It is safe to delay the next operation after an operation is finished.
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    WeakReturn(target);
-                    [camera setShootPhotoMode:DJICameraShootPhotoModeSingle withCompletion:^(NSError * _Nullable error) {
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera setFlatMode:DJIFlatCameraModePhotoSingle withCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: setFlatMode:withCompletion:. %@", error.description);
+                } else {
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                         WeakReturn(target);
-                        if (error) {
-                            ShowResult(@"ERROR: setShootPhotoMode:withCompletion:. %@", error.description);
-                        }
-                        else {
-                            target.isInShootPhotoMode = YES;
-                        }
-                    }];
-                });
-            }
-        }];
+                        target.isInShootPhotoMode = YES;
+                    });
+                }
+            }];
+        } else {
+            [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
+                }
+                else {
+                    // Normally, once an operation is finished, the camera still needs some time to finish up
+                    // all the work. It is safe to delay the next operation after an operation is finished.
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        WeakReturn(target);
+                        [camera setShootPhotoMode:DJICameraShootPhotoModeSingle withCompletion:^(NSError * _Nullable error) {
+                            WeakReturn(target);
+                            if (error) {
+                                ShowResult(@"ERROR: setShootPhotoMode:withCompletion:. %@", error.description);
+                            }
+                            else {
+                                target.isInShootPhotoMode = YES;
+                            }
+                        }];
+                    });
+                }
+            }];
+        }
     }
 }
 

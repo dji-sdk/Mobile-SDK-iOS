@@ -134,18 +134,31 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
-            }
-            else if (mode == DJICameraModeRecordVideo) {
-                target.isInRecordVideoMode = YES;
-            }
-            else {
-                [target setCameraMode];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera getFlatModeWithCompletion:^(DJIFlatCameraMode mode, NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: getFlatModeWithCompletion:. %@", error.description);
+                } else if (mode == DJIFlatCameraModeVideoNormal){
+                    target.isInRecordVideoMode = YES;
+                } else {
+                    [target setCameraMode];
+                }
+            }];
+        } else {
+            [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
+                }
+                else if (mode == DJICameraModeRecordVideo) {
+                    target.isInRecordVideoMode = YES;
+                }
+                else {
+                    [target setCameraMode];
+                }
+            }];
+            
+        }
     }
 }
 
@@ -157,7 +170,8 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1] ||
+            [camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
             [camera setFlatMode:DJIFlatCameraModeVideoNormal withCompletion:^(NSError * _Nullable error) {
                 WeakReturn(target);
                 if (error) {

@@ -71,18 +71,28 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
-            }
-            else if (mode != DJICameraModeMediaDownload) {
-                [target setCameraMode];
-            }
-            else {
-                [target startFetchMedia];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera getFlatModeWithCompletion:^(DJIFlatCameraMode mode, NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: getFlatModeWithCompletion:. %@", error.description);
+                } else {
+                    [target setCameraMode];
+                }
+            }];
+        } else {
+            [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: getModeWithCompletion:. %@", error.description);
+                }
+                else if (mode != DJICameraModeMediaDownload) {
+                    [target setCameraMode];
+                }
+                else {
+                    [target startFetchMedia];
+                }
+            }];
+        }
     }
 }
 
@@ -93,7 +103,8 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1] ||
+            [camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
             [camera enterPlaybackWithCompletion:^(NSError * _Nullable error) {
                 if (error) {
                     ShowResult(@"ERROR: enter playback failed because %@", error.description);

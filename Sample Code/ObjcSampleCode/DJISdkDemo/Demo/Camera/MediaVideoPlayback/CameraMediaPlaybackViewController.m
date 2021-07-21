@@ -134,7 +134,8 @@ UITableViewDelegate>
     [self showActivityIndicator:YES];
     DJICamera *camera = [DemoComponentHelper fetchCamera];
     if (camera) {
-        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1] ||
+            [camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
             [camera enterPlaybackWithCompletion:^(NSError * _Nullable error) {
                 if (error) {
                     ShowResult(@"ERROR: enter playback failed because %@", error.description);
