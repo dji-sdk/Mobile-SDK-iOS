@@ -65,6 +65,7 @@
     NSMutableArray *medias = [NSMutableArray arrayWithObject:[DemoSettingItem itemWithName:@"Fetch media" andClass:[CameraFetchMediaViewController class]]];
     DJIBaseProduct *product = [DemoComponentHelper fetchProduct];
     if ([product.model isEqualToString:DJIAircraftModelNamePhantom4Pro] ||
+        [self.cameraName isEqualToString:DJICameraDisplayNameZenmuseL1] ||
         [product.model isEqualToString:DJIAircraftModelNameInspire2]) {
         [medias addObject:[DemoSettingItem itemWithName:@"Media playback" andClass:[In2P4PCameraPlayBackViewController class]]];
     }
