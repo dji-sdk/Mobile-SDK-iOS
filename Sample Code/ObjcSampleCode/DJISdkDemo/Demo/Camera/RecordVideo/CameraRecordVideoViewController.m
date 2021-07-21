@@ -157,20 +157,37 @@
     __weak DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setMode:DJICameraModeRecordVideo withCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
-            }
-            else {
-                // Normally, once an operation is finished, the camera still needs some time to finish up
-                // all the work. It is safe to delay the next operation after an operation is finished.
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    WeakReturn(target);
-                    target.isInRecordVideoMode = YES;
-                });
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+            [camera setFlatMode:DJIFlatCameraModeVideoNormal withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: setFlatMode:withCompletion:. %@", error.description);
+                }
+                else {
+                    // Normally, once an operation is finished, the camera still needs some time to finish up
+                    // all the work. It is safe to delay the next operation after an operation is finished.
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        WeakReturn(target);
+                        target.isInRecordVideoMode = YES;
+                    });
+                }
+            }];
+        } else {
+            [camera setMode:DJICameraModeRecordVideo withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    ShowResult(@"ERROR: setMode:withCompletion:. %@", error.description);
+                }
+                else {
+                    // Normally, once an operation is finished, the camera still needs some time to finish up
+                    // all the work. It is safe to delay the next operation after an operation is finished.
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        WeakReturn(target);
+                        target.isInRecordVideoMode = YES;
+                    });
+                }
+            }];
+        }
     }
 }
 

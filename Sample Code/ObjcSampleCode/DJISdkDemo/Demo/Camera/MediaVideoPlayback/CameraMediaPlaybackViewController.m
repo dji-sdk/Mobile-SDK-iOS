@@ -134,27 +134,50 @@ UITableViewDelegate>
     [self showActivityIndicator:YES];
     DJICamera *camera = [DemoComponentHelper fetchCamera];
     if (camera) {
-        [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
-            if (error) {
-                ShowResult(@"SetCameraMode Failed: %@", error.description);
-            }
-            else {
-                WeakReturn(target);
-                [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
-                     WeakReturn(target);
-                     
-                     [target showActivityIndicator:NO];
-                     
-                     if (error) {
-                         ShowResult(@"Fetch media failed: %@", error.localizedDescription);
-                     }
-                     else {
-                         target.mediaList = [target.mediaManager sdCardFileListSnapshot];
-                         [target.mediaListTable reloadData];
-                     }
-                 }];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+            [camera enterPlaybackWithCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ERROR: enter playback failed because %@", error.description);
+                } else {
+                    WeakReturn(target);
+                    [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
+                         WeakReturn(target);
+                         
+                         [target showActivityIndicator:NO];
+                         
+                         if (error) {
+                             ShowResult(@"Fetch media failed: %@", error.localizedDescription);
+                         }
+                         else {
+                             target.mediaList = [target.mediaManager sdCardFileListSnapshot];
+                             [target.mediaListTable reloadData];
+                         }
+                     }];
+                }
+            }];
+        } else {
+            [camera setMode:DJICameraModeMediaDownload withCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"SetCameraMode Failed: %@", error.description);
+                }
+                else {
+                    WeakReturn(target);
+                    [self.mediaManager refreshFileListOfStorageLocation:DJICameraStorageLocationSDCard withCompletion:^(NSError * _Nullable error) {
+                         WeakReturn(target);
+                         
+                         [target showActivityIndicator:NO];
+                         
+                         if (error) {
+                             ShowResult(@"Fetch media failed: %@", error.localizedDescription);
+                         }
+                         else {
+                             target.mediaList = [target.mediaManager sdCardFileListSnapshot];
+                             [target.mediaListTable reloadData];
+                         }
+                     }];
+                }
+            }];
+        }
     }
 }
 
