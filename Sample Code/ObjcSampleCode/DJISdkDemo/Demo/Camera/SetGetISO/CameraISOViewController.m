@@ -87,19 +87,32 @@ static NSString* STATE_WAIT_FOR_INPUT = @"The input should be an integer. ";
     
     if (camera) {
         WeakRef(target);
-        [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: getModeWithCompletion:. %@", error.description];
-            }
-            else if (mode == DJICameraModeShootPhoto || mode == DJICameraModeRecordVideo) {
-                // the first pre-condition is satisfied. Check the second one.
-                [target getExposureMode];
-            }
-            else {
-                [target setCameraMode];
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera getFlatModeWithCompletion:^(DJIFlatCameraMode mode, NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: getFlatModeWithCompletion:. %@", error.description];
+                } else if (mode == DJIFlatCameraModePhotoSingle || mode == DJIFlatCameraModeVideoNormal) {
+                    [target getExposureMode];
+                } else {
+                    [target setCameraMode];
+                }
+            }];
+        } else {
+            [camera getModeWithCompletion:^(DJICameraMode mode, NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: getModeWithCompletion:. %@", error.description];
+                }
+                else if (mode == DJICameraModeShootPhoto || mode == DJICameraModeRecordVideo) {
+                    // the first pre-condition is satisfied. Check the second one.
+                    [target getExposureMode];
+                }
+                else {
+                    [target setCameraMode];
+                }
+            }];
+        }
     }
 }
 
@@ -112,20 +125,34 @@ static NSString* STATE_WAIT_FOR_INPUT = @"The input should be an integer. ";
     DJICamera* camera = [DemoComponentHelper fetchCamera];
     if (camera) {
         WeakRef(target);
-        [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
-            WeakReturn(target);
-            if (error) {
-                target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: setMode:withCompletion:. %@", error.description];
-            }
-            else {
-                // Normally, once an operation is finished, the camera still needs some time to finish up
-                // all the work. It is safe to delay the next operation after an operation is finished.
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    WeakReturn(target);
-                    [target getExposureMode];
-                });
-            }
-        }];
+        if ([camera.displayName isEqualToString:DJICameraDisplayNameMavicAir2Camera]) {
+            [camera setFlatMode:DJIFlatCameraModePhotoSingle withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: setFlatMode:withCompletion:. %@", error.description];
+                } else {
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        WeakReturn(target);
+                        [target getExposureMode];
+                    });
+                }
+            }];
+        } else {
+            [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
+                WeakReturn(target);
+                if (error) {
+                    target.rangeLabel.text = [NSString stringWithFormat:@"ERROR: setMode:withCompletion:. %@", error.description];
+                }
+                else {
+                    // Normally, once an operation is finished, the camera still needs some time to finish up
+                    // all the work. It is safe to delay the next operation after an operation is finished.
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        WeakReturn(target);
+                        [target getExposureMode];
+                    });
+                }
+            }];
+        }
     }
 }
 
