@@ -19,6 +19,7 @@
 @class DJIAirLink;
 @class DJIHandheldController;
 @class DJIMobileRemoteController;
+@class DJILidar;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -41,6 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(nullable DJIKeyedValue *)startListeningAndGetValueForChangesOnKey:(DJIKey *)key
                                                        withListener:(id)listener
                                                      andUpdateBlock:(DJIKeyedListenerUpdateBlock)updateBlock;
++(nullable DJILidar*) fetchLidar;
 
 NS_ASSUME_NONNULL_END
 

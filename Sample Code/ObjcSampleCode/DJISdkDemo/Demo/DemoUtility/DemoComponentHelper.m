@@ -64,6 +64,17 @@
 
 }
 
++ (DJILidar *)fetchLidar {
+    if (![DJISDKManager product] || ![[DJISDKManager product] isKindOfClass:[DJIAircraft class]]) {
+        return nil;
+    }
+    NSArray<DJILidar *> *lidars = ((DJIAircraft *)[DJISDKManager product]).lidars;
+    if (lidars) {
+        return lidars[0];
+    }
+    return nil;
+}
+
 +(DJIGimbal*) fetchGimbal {
     if (![DJISDKManager product]) {
         return nil;

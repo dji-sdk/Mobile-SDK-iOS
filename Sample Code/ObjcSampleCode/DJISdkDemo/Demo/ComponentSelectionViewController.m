@@ -22,6 +22,7 @@
 #import "FCActionsTableViewController.h"
 #import "RCActionsTableViewController.h"
 #import "HandheldControllerActionsTableViewController.h"
+#import "LidarActionsTableViewController.h"
 
 #import "WaypointMissionViewController.h"
 #import "HotpointMissionViewController.h"
@@ -108,6 +109,9 @@
     if ([DemoComponentHelper fetchAirLink]) {
         [components addObject:[DemoSettingItem itemWithName:[DJIAirLinkComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIAirLinkComponent]]];
     }
+    if ([DemoComponentHelper fetchLidar]) {
+        [components addObject:[DemoSettingItem itemWithName:[DJILidarComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJILidarComponent]]];
+    }
     if ([DemoComponentHelper fetchFlightController]) {
         [components addObject:[DemoSettingItem itemWithName:[DJIFlightControllerComponent capitalizedString] andClass:[[self componentVCDict] objectForKey:DJIFlightControllerComponent]]];
     }
@@ -147,6 +151,7 @@
                            DJIFlightControllerComponent : [FCActionsTableViewController class],
                            DJIRemoteControllerComponent : [RCActionsTableViewController class],
                            DJIHandheldControllerComponent : [HandheldControllerActionsTableViewController class],
+                           DJILidarComponent : [LidarActionsTableViewController class],
                            };
         
     });

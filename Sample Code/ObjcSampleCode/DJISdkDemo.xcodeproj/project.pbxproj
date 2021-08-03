@@ -81,6 +81,9 @@
 		5D0C94B120EEEBBE00B78E65 /* DemoCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94B020EEEBBE00B78E65 /* DemoCameraHelper.m */; };
 		5D0C94BF20EFD26400B78E65 /* XT2CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */; };
 		5D0C94C220EFD29A00B78E65 /* XT2CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */; };
+		632D051B26B932E6000300B4 /* LidarActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D051926B932E6000300B4 /* LidarActionsTableViewController.m */; };
+		632D052126B93440000300B4 /* PointCloudRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */; };
+		632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052026B93440000300B4 /* PointCloudRecordViewController.m */; };
 		77273ED721AFC0F200E578AD /* KeyedInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273ED421AFC0F100E578AD /* KeyedInterfaceViewController.m */; };
 		77273ED821AFC0F200E578AD /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77273ED521AFC0F200E578AD /* keys.plist */; };
 		77273ED921AFC0F200E578AD /* KeyedInterfaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77273ED621AFC0F200E578AD /* KeyedInterfaceViewController.xib */; };
@@ -320,6 +323,11 @@
 		5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XT2CameraViewController.xib; sourceTree = "<group>"; };
 		5D0C94C020EFD29A00B78E65 /* XT2CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XT2CameraViewController.h; sourceTree = "<group>"; };
 		5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XT2CameraViewController.m; sourceTree = "<group>"; };
+		632D051926B932E6000300B4 /* LidarActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LidarActionsTableViewController.m; sourceTree = "<group>"; };
+		632D051A26B932E6000300B4 /* LidarActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LidarActionsTableViewController.h; sourceTree = "<group>"; };
+		632D051E26B93440000300B4 /* PointCloudRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudRecordViewController.h; sourceTree = "<group>"; };
+		632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointCloudRecordViewController.xib; sourceTree = "<group>"; };
+		632D052026B93440000300B4 /* PointCloudRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointCloudRecordViewController.m; sourceTree = "<group>"; };
 		77273ED321AFC0F100E578AD /* KeyedInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyedInterfaceViewController.h; sourceTree = "<group>"; };
 		77273ED421AFC0F100E578AD /* KeyedInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyedInterfaceViewController.m; sourceTree = "<group>"; };
 		77273ED521AFC0F200E578AD /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
@@ -679,6 +687,7 @@
 		3B16A91A19D1219B008C1818 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				632D051826B93289000300B4 /* Lidar */,
 				9CE281CC25EE7CD40059B6CC /* LDM */,
 				9C6C3ABC2462BAD300A40126 /* Pipelines */,
 				045BB6282354559B00131208 /* Upgrade */,
@@ -849,6 +858,26 @@
 				5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */,
 			);
 			path = XT2;
+			sourceTree = "<group>";
+		};
+		632D051826B93289000300B4 /* Lidar */ = {
+			isa = PBXGroup;
+			children = (
+				632D051D26B933C5000300B4 /* PointCloudRecord */,
+				632D051A26B932E6000300B4 /* LidarActionsTableViewController.h */,
+				632D051926B932E6000300B4 /* LidarActionsTableViewController.m */,
+			);
+			path = Lidar;
+			sourceTree = "<group>";
+		};
+		632D051D26B933C5000300B4 /* PointCloudRecord */ = {
+			isa = PBXGroup;
+			children = (
+				632D051E26B93440000300B4 /* PointCloudRecordViewController.h */,
+				632D052026B93440000300B4 /* PointCloudRecordViewController.m */,
+				632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */,
+			);
+			path = PointCloudRecord;
 			sourceTree = "<group>";
 		};
 		6ABAC78C9EBB40FA6C72509F /* Pods */ = {
@@ -1459,6 +1488,7 @@
 			files = (
 				B80CF57F1CC5C40C004358FC /* GimbalCapabilityViewController.xib in Resources */,
 				14DC633F219A74DE004399FD /* VideoLiveStreamingViewController.xib in Resources */,
+				632D052126B93440000300B4 /* PointCloudRecordViewController.xib in Resources */,
 				3B61CB601B44D9890091196F /* waypoint@2x.png in Resources */,
 				3B2CDD861C3CC21D00DB096B /* FCCompassViewController.xib in Resources */,
 				B83BDB601DBE0C180060A0DE /* DemoScrollView.xib in Resources */,
@@ -1633,6 +1663,7 @@
 				9CC4CB91212D3BC600B267A1 /* PayloadTestChannelViewController.m in Sources */,
 				B850B2801C229A1600DBEB48 /* BatteryActionsTableViewController.m in Sources */,
 				B84049461D780C26001DA2D7 /* BluetoothConnectorViewController.m in Sources */,
+				632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */,
 				3B16A8FC19D12167008C1818 /* AppDelegate.m in Sources */,
 				B8AF30551E8A82D40087AFAF /* CameraFPVViewController.m in Sources */,
 				B8AF305F1E8A82D40087AFAF /* CameraPlaybackPushInfoViewController.m in Sources */,
@@ -1690,6 +1721,7 @@
 				B821D3FA1C31643D0014ADBD /* MBProgressHUD.m in Sources */,
 				F47C29BE1BDA2304001E6A75 /* ComponentSelectionViewController.m in Sources */,
 				2F7C1401246447A4007BCE8A /* DJIMapView.m in Sources */,
+				632D051B26B932E6000300B4 /* LidarActionsTableViewController.m in Sources */,
 				B821D3F61C31643D0014ADBD /* DemoPushInfoViewController.m in Sources */,
 				3B2CDD851C3CC21D00DB096B /* FCCompassViewController.m in Sources */,
 				9CBE865521870D0C00F1B71C /* RecordingHandler.m in Sources */,
