@@ -84,6 +84,8 @@
 		632D051B26B932E6000300B4 /* LidarActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D051926B932E6000300B4 /* LidarActionsTableViewController.m */; };
 		632D052126B93440000300B4 /* PointCloudRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */; };
 		632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052026B93440000300B4 /* PointCloudRecordViewController.m */; };
+		632D052D26BA4A26000300B4 /* CameraCalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052B26BA4A26000300B4 /* CameraCalibrateViewController.m */; };
+		632D052E26BA4A26000300B4 /* CameraCalibrateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D052C26BA4A26000300B4 /* CameraCalibrateViewController.xib */; };
 		77273ED721AFC0F200E578AD /* KeyedInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273ED421AFC0F100E578AD /* KeyedInterfaceViewController.m */; };
 		77273ED821AFC0F200E578AD /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77273ED521AFC0F200E578AD /* keys.plist */; };
 		77273ED921AFC0F200E578AD /* KeyedInterfaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77273ED621AFC0F200E578AD /* KeyedInterfaceViewController.xib */; };
@@ -328,6 +330,9 @@
 		632D051E26B93440000300B4 /* PointCloudRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudRecordViewController.h; sourceTree = "<group>"; };
 		632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PointCloudRecordViewController.xib; sourceTree = "<group>"; };
 		632D052026B93440000300B4 /* PointCloudRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointCloudRecordViewController.m; sourceTree = "<group>"; };
+		632D052A26BA4A26000300B4 /* CameraCalibrateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraCalibrateViewController.h; sourceTree = "<group>"; };
+		632D052B26BA4A26000300B4 /* CameraCalibrateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraCalibrateViewController.m; sourceTree = "<group>"; };
+		632D052C26BA4A26000300B4 /* CameraCalibrateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCalibrateViewController.xib; sourceTree = "<group>"; };
 		77273ED321AFC0F100E578AD /* KeyedInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyedInterfaceViewController.h; sourceTree = "<group>"; };
 		77273ED421AFC0F100E578AD /* KeyedInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyedInterfaceViewController.m; sourceTree = "<group>"; };
 		77273ED521AFC0F200E578AD /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
@@ -880,6 +885,16 @@
 			path = PointCloudRecord;
 			sourceTree = "<group>";
 		};
+		632D052426BA4890000300B4 /* calibrate */ = {
+			isa = PBXGroup;
+			children = (
+				632D052A26BA4A26000300B4 /* CameraCalibrateViewController.h */,
+				632D052B26BA4A26000300B4 /* CameraCalibrateViewController.m */,
+				632D052C26BA4A26000300B4 /* CameraCalibrateViewController.xib */,
+			);
+			path = calibrate;
+			sourceTree = "<group>";
+		};
 		6ABAC78C9EBB40FA6C72509F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1230,6 +1245,7 @@
 		B8AF302C1E8A82D40087AFAF /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				632D052426BA4890000300B4 /* calibrate */,
 				B8AF302D1E8A82D40087AFAF /* CameraActionsTableViewController.h */,
 				B8AF302E1E8A82D40087AFAF /* CameraActionsTableViewController.m */,
 				B8AF302F1E8A82D40087AFAF /* fpv */,
@@ -1497,6 +1513,7 @@
 				2F7C13CE246436B0007BCE8A /* WaypointV2.storyboard in Resources */,
 				9CE281D125EE7CE70059B6CC /* LDMViewController.xib in Resources */,
 				77273ED921AFC0F200E578AD /* KeyedInterfaceViewController.xib in Resources */,
+				632D052E26BA4A26000300B4 /* CameraCalibrateViewController.xib in Resources */,
 				B821D3F51C31643D0014ADBD /* DemoGetSetViewController.xib in Resources */,
 				B821D41C1C316B530014ADBD /* DJIRootViewController.xib in Resources */,
 				3B2CDDAF1C3DAA1000DB096B /* RCParingViewController.xib in Resources */,
@@ -1719,6 +1736,7 @@
 				B8AF30571E8A82D40087AFAF /* CameraFetchMediaViewController.m in Sources */,
 				B821D40B1C3169920014ADBD /* GimbalPushInfoViewController.m in Sources */,
 				B821D3FA1C31643D0014ADBD /* MBProgressHUD.m in Sources */,
+				632D052D26BA4A26000300B4 /* CameraCalibrateViewController.m in Sources */,
 				F47C29BE1BDA2304001E6A75 /* ComponentSelectionViewController.m in Sources */,
 				2F7C1401246447A4007BCE8A /* DJIMapView.m in Sources */,
 				632D051B26B932E6000300B4 /* LidarActionsTableViewController.m in Sources */,

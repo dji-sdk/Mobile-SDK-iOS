@@ -21,6 +21,7 @@
 #import "In2P4PCameraPlayBackViewController.h"
 #import "XT2CameraViewController.h"
 #import "CameraSettingsViewController.h"
+#import "CameraCalibrateViewController.h"
 
 @interface CameraActionsTableViewController ()
 
@@ -75,6 +76,12 @@
     
     if (![DemoCameraHelper isMultilensCamera:self.cameraName]) {
         [self.items addObject:medias];
+    }
+    
+    // Calibrate
+    if ([self.cameraName isEqualToString:DJICameraDisplayNameZenmuseP1]) {
+        [self.sectionNames addObject:@"Calibrate"];
+        [self.items addObject:@[[DemoSettingItem itemWithName:@"Calibrate" andClass:[CameraCalibrateViewController class]]]];
     }
 }
 
