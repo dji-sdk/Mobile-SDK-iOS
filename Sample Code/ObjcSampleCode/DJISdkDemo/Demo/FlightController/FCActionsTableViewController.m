@@ -16,6 +16,7 @@
 #import "FCGeneralControlViewController.h"
 #import "FCIntelligentAssistantViewController.h"
 #import <DJISDK/DJISDK.h>
+#import "FCRTKViewController.h"
 
 @interface FCActionsTableViewController ()
 
@@ -35,12 +36,16 @@
     DemoSettingItem* item2 = [DemoSettingItem itemWithName:@"Flight Limitation" andClass:[FCFlightLimitationViewController class]];
     DemoSettingItem* item3 = [DemoSettingItem itemWithName:@"Landing Gear" andClass:[FCLandingGearViewController class]];
     DemoSettingItem* item4 = [DemoSettingItem itemWithName:@"Flight Assistant" andClass:[FCIntelligentAssistantViewController class]];
+    DemoSettingItem* item5 = [DemoSettingItem itemWithName:@"RTK" andClass:[FCRTKViewController class]];
     NSMutableArray* array = [[NSMutableArray alloc] initWithArray:@[item0, item1, item2]];
     if (fc && fc.isLandingGearMovable) {
         [array addObject:item3];
     }
     if (fc && fc.flightAssistant) {
         [array addObject:item4];
+    }
+    if (fc && fc.RTK) {
+        [array addObject:item5];
     }
     
     [self.items addObject:array];

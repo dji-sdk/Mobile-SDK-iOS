@@ -81,6 +81,8 @@
 		5D0C94B120EEEBBE00B78E65 /* DemoCameraHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94B020EEEBBE00B78E65 /* DemoCameraHelper.m */; };
 		5D0C94BF20EFD26400B78E65 /* XT2CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */; };
 		5D0C94C220EFD29A00B78E65 /* XT2CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */; };
+		63217FC626EEF69B006E219F /* FCRTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63217FC426EEF69B006E219F /* FCRTKViewController.m */; };
+		63217FC726EEF69B006E219F /* FCRTKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63217FC526EEF69B006E219F /* FCRTKViewController.xib */; };
 		632D051B26B932E6000300B4 /* LidarActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D051926B932E6000300B4 /* LidarActionsTableViewController.m */; };
 		632D052126B93440000300B4 /* PointCloudRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D051F26B93440000300B4 /* PointCloudRecordViewController.xib */; };
 		632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052026B93440000300B4 /* PointCloudRecordViewController.m */; };
@@ -325,6 +327,9 @@
 		5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XT2CameraViewController.xib; sourceTree = "<group>"; };
 		5D0C94C020EFD29A00B78E65 /* XT2CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XT2CameraViewController.h; sourceTree = "<group>"; };
 		5D0C94C120EFD29A00B78E65 /* XT2CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XT2CameraViewController.m; sourceTree = "<group>"; };
+		63217FC326EEF69B006E219F /* FCRTKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCRTKViewController.h; sourceTree = "<group>"; };
+		63217FC426EEF69B006E219F /* FCRTKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCRTKViewController.m; sourceTree = "<group>"; };
+		63217FC526EEF69B006E219F /* FCRTKViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FCRTKViewController.xib; sourceTree = "<group>"; };
 		632D051926B932E6000300B4 /* LidarActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LidarActionsTableViewController.m; sourceTree = "<group>"; };
 		632D051A26B932E6000300B4 /* LidarActionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LidarActionsTableViewController.h; sourceTree = "<group>"; };
 		632D051E26B93440000300B4 /* PointCloudRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointCloudRecordViewController.h; sourceTree = "<group>"; };
@@ -750,6 +755,7 @@
 		3B2CDD6B1C3CC21D00DB096B /* FlightController */ = {
 			isa = PBXGroup;
 			children = (
+				63217FC226EEF5D1006E219F /* RTK */,
 				3B2CDD701C3CC21D00DB096B /* FCActionsTableViewController.h */,
 				3B2CDD711C3CC21D00DB096B /* FCActionsTableViewController.m */,
 				B814FF8B1C98102C000D32AC /* IntelligentAssistant */,
@@ -863,6 +869,16 @@
 				5D0C94BE20EFD26400B78E65 /* XT2CameraViewController.xib */,
 			);
 			path = XT2;
+			sourceTree = "<group>";
+		};
+		63217FC226EEF5D1006E219F /* RTK */ = {
+			isa = PBXGroup;
+			children = (
+				63217FC326EEF69B006E219F /* FCRTKViewController.h */,
+				63217FC426EEF69B006E219F /* FCRTKViewController.m */,
+				63217FC526EEF69B006E219F /* FCRTKViewController.xib */,
+			);
+			path = RTK;
 			sourceTree = "<group>";
 		};
 		632D051826B93289000300B4 /* Lidar */ = {
@@ -1514,6 +1530,7 @@
 				9CE281D125EE7CE70059B6CC /* LDMViewController.xib in Resources */,
 				77273ED921AFC0F200E578AD /* KeyedInterfaceViewController.xib in Resources */,
 				632D052E26BA4A26000300B4 /* CameraCalibrateViewController.xib in Resources */,
+				63217FC726EEF69B006E219F /* FCRTKViewController.xib in Resources */,
 				B821D3F51C31643D0014ADBD /* DemoGetSetViewController.xib in Resources */,
 				B821D41C1C316B530014ADBD /* DJIRootViewController.xib in Resources */,
 				3B2CDDAF1C3DAA1000DB096B /* RCParingViewController.xib in Resources */,
@@ -1755,6 +1772,7 @@
 				2F7C14102464495D007BCE8A /* DJIWaypointAnnotation.m in Sources */,
 				2F7C13FF246447A4007BCE8A /* DJICircle.m in Sources */,
 				B83BDB5F1DBE0C180060A0DE /* DemoScrollView.m in Sources */,
+				63217FC626EEF69B006E219F /* FCRTKViewController.m in Sources */,
 				B850B2951C22DF8300DBEB48 /* GimbalActionsTableViewController.m in Sources */,
 				B83997641DBE4EBD004A3275 /* DemoVirtualStickView.m in Sources */,
 				2F7C140F2464495D007BCE8A /* DJIWaypointAnnotationView.m in Sources */,
