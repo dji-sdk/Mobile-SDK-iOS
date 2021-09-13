@@ -42,6 +42,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     DJIPayload *payload = [DemoComponentHelper fetchPayload];
     self.payloadName.text = [payload getPayloadProductName];
 }
