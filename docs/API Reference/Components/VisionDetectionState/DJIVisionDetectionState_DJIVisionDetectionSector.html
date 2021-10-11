@@ -320,6 +320,8 @@
                                                 </dd>
                                         </ul>
                                       </dd>
+                                      <dd><a href="../Camera/DJIMediaManager_DJIMediaInfo.html">DJIMediaFileInfo</a>
+                                      </dd>
                                       <dd><a href="../Camera/DJIMediaManager_VideoPlayback_DJIMediaVideoPlaybackState.html">DJIMediaVideoPlaybackState</a>
                                       </dd>
                                       <dd><a data-href="../Camera/DJIMediaManager_FetchMediaTaskScheduler.html" class="sub-toggle">DJIFetchMediaTaskScheduler<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
@@ -786,7 +788,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="keyword">double</span> obstacleDistanceInMeters</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIVisionTypes.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">The detected obstacle distance to the aircraft in meters.</font></p>
+<p><font color="#666">The detected obstacle distance to the aircraft in meters. The left and right obstacle avoidance system is a monocular vision system,  so it can only detect whether there are obstacles. 0 represents no obstacles and 1 represents obstacles.  For mavic 2 series, it only supports returning this value in T mode.</font></p>
 </div>
 <h5 id="related">Related:</h5>
 <div class="api-row" id="djivisiondetectionstate_visionsectorwarning"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djivisiondetectionstate_visionsectorwarning_inline">DJIObstacleDetectionSectorWarning</a></div></div><div class="inline-doc" id="djivisiondetectionstate_visionsectorwarning_inline" <blockquote>
