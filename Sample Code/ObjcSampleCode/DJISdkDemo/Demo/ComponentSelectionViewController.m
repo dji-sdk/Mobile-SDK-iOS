@@ -30,6 +30,7 @@
 #import "TimelineMissionViewController.h"
 #import "PanoramaMissionViewController.h"
 #import "PayloadViewController.h"
+#import "VideoFeederViewController.h"
 #import "AccessoryAggregationViewController.h"
 #import "UpgradeManagerViewController.h"
 #import "PipelinesViewController.h"
@@ -67,6 +68,7 @@
         
         if ([product.model isEqualToString:DJIAircraftModelNameMatrice300RTK]) {
             [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint V2 Mission Operator" andClass:[WaypointV2ViewController class]]];
+            [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Video Feeder" andClass:[VideoFeederViewController class]]];
         } else {
             [sdk40Interfaces addObject:[DemoSettingItem itemWithName:@"Waypoint Mission Operator" andClass:[WaypointMissionViewController class]]];
         }
