@@ -88,6 +88,8 @@
 		632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052026B93440000300B4 /* PointCloudRecordViewController.m */; };
 		632D052D26BA4A26000300B4 /* CameraCalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632D052B26BA4A26000300B4 /* CameraCalibrateViewController.m */; };
 		632D052E26BA4A26000300B4 /* CameraCalibrateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 632D052C26BA4A26000300B4 /* CameraCalibrateViewController.xib */; };
+		633ADA02274F69A60068CECD /* PayloadWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 633ADA00274F69A60068CECD /* PayloadWidgetViewController.m */; };
+		633ADA03274F69A60068CECD /* PayloadWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633ADA01274F69A60068CECD /* PayloadWidgetViewController.xib */; };
 		6361041E273A98AF007BD3D3 /* VideoFeederViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6361041C273A98AF007BD3D3 /* VideoFeederViewController.m */; };
 		6361041F273A98AF007BD3D3 /* VideoFeederViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6361041D273A98AF007BD3D3 /* VideoFeederViewController.xib */; };
 		77273ED721AFC0F200E578AD /* KeyedInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77273ED421AFC0F100E578AD /* KeyedInterfaceViewController.m */; };
@@ -340,6 +342,9 @@
 		632D052A26BA4A26000300B4 /* CameraCalibrateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraCalibrateViewController.h; sourceTree = "<group>"; };
 		632D052B26BA4A26000300B4 /* CameraCalibrateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraCalibrateViewController.m; sourceTree = "<group>"; };
 		632D052C26BA4A26000300B4 /* CameraCalibrateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCalibrateViewController.xib; sourceTree = "<group>"; };
+		633AD9FF274F69A60068CECD /* PayloadWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayloadWidgetViewController.h; sourceTree = "<group>"; };
+		633ADA00274F69A60068CECD /* PayloadWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayloadWidgetViewController.m; sourceTree = "<group>"; };
+		633ADA01274F69A60068CECD /* PayloadWidgetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayloadWidgetViewController.xib; sourceTree = "<group>"; };
 		6361041B273A98AF007BD3D3 /* VideoFeederViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoFeederViewController.h; sourceTree = "<group>"; };
 		6361041C273A98AF007BD3D3 /* VideoFeederViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFeederViewController.m; sourceTree = "<group>"; };
 		6361041D273A98AF007BD3D3 /* VideoFeederViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoFeederViewController.xib; sourceTree = "<group>"; };
@@ -917,6 +922,16 @@
 			path = calibrate;
 			sourceTree = "<group>";
 		};
+		633AD9FE274F68610068CECD /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+				633AD9FF274F69A60068CECD /* PayloadWidgetViewController.h */,
+				633ADA00274F69A60068CECD /* PayloadWidgetViewController.m */,
+				633ADA01274F69A60068CECD /* PayloadWidgetViewController.xib */,
+			);
+			name = widgets;
+			sourceTree = "<group>";
+		};
 		6361041A273A798D007BD3D3 /* VideoFeeder */ = {
 			isa = PBXGroup;
 			children = (
@@ -1000,6 +1015,7 @@
 		9CA1F236212D3AF1002AB9D1 /* Payload */ = {
 			isa = PBXGroup;
 			children = (
+				633AD9FE274F68610068CECD /* widgets */,
 				9CC4CB8A212D3BA700B267A1 /* channel */,
 				9CC4CB82212D3B7F00B267A1 /* PayloadViewController.h */,
 				9CC4CB7F212D3B7F00B267A1 /* PayloadViewController.m */,
@@ -1576,6 +1592,7 @@
 				B8AF305C1E8A82D40087AFAF /* CameraPlaybackCommandViewController.xib in Resources */,
 				AC341485210BB28100BFBC34 /* RCGimbalControlViewController.xib in Resources */,
 				9C6C3AD12462C0AB00A40126 /* PipelinesViewController.xib in Resources */,
+				633ADA03274F69A60068CECD /* PayloadWidgetViewController.xib in Resources */,
 				045BB6312354559B00131208 /* UpgradeComponentViewController.xib in Resources */,
 				9C6C3AC62462C08700A40126 /* PipelineTableViewCell.xib in Resources */,
 				B8450C721C3798CC00921E19 /* MissionBaseViewController.xib in Resources */,
@@ -1714,6 +1731,7 @@
 				9CC4CB91212D3BC600B267A1 /* PayloadTestChannelViewController.m in Sources */,
 				B850B2801C229A1600DBEB48 /* BatteryActionsTableViewController.m in Sources */,
 				B84049461D780C26001DA2D7 /* BluetoothConnectorViewController.m in Sources */,
+				633ADA02274F69A60068CECD /* PayloadWidgetViewController.m in Sources */,
 				632D052226B93440000300B4 /* PointCloudRecordViewController.m in Sources */,
 				3B16A8FC19D12167008C1818 /* AppDelegate.m in Sources */,
 				B8AF30551E8A82D40087AFAF /* CameraFPVViewController.m in Sources */,

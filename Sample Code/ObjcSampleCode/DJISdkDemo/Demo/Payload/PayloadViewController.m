@@ -11,6 +11,7 @@
 #import "DemoComponentHelper.h"
 #import "DemoUtilityMacro.h"
 #import "DemoAlertView.h"
+#import "PayloadWidgetViewController.h"
 
 @interface PayloadViewController ()
 <
@@ -91,6 +92,16 @@
         PayloadTestChannelViewController* vc = [[PayloadTestChannelViewController alloc] init];
         vc.payload                           = payload;
         [self presentViewController:vc animated:YES completion:nil];
+    } else {
+        ShowResult(@"The payload is not connected. ");
+    }
+}
+
+- (IBAction)togglesWidgetsPage:(id)sender {
+    DJIPayload *payload = [DemoComponentHelper fetchPayload];
+    if (payload) {
+        PayloadWidgetViewController* vc = [[PayloadWidgetViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     } else {
         ShowResult(@"The payload is not connected. ");
     }
