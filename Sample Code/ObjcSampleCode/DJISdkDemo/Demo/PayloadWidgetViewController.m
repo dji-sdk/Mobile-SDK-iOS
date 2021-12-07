@@ -115,6 +115,21 @@ DJIPayloadDelegate
     }];
 }
 
+- (IBAction)onSetButtonStateButtonClicked:(id)sender {
+    [DemoAlertView showAlertViewWithMessage:@"ButtonState" titles:@[@"Cancel", @"OK"] textFields:@[@"input 0(pill) 1(press)", @"input index"] action:^(NSArray<UITextField *> * _Nullable textFields, NSUInteger buttonIndex) {
+        if (buttonIndex == 1 && textFields.count > 1) {
+            NSUInteger index = [textFields[1].text integerValue];
+            [[DemoComponentHelper fetchPayload] configureWidgetValue:[textFields[0].text integerValue] type:DJIPayloadWidgetTypeButton index:index withCompletion:^(NSError * _Nullable error) {
+                if (error) {
+                    ShowResult(@"ButtonState :%@", error.description);
+                } else {
+                    ShowResult(@"Success");
+                }
+            }];
+        }
+    }];
+}
+
 - (IBAction)onSetRangeValueButtonClicked:(id)sender {
     [DemoAlertView showAlertViewWithMessage:@"SetRangeValue" titles:@[@"Cancel", @"OK"] textFields:@[@"input range [0, 100]", @"input index"] action:^(NSArray<UITextField *> * _Nullable textFields, NSUInteger buttonIndex) {
         if (buttonIndex == 1 && textFields.count > 1) {
