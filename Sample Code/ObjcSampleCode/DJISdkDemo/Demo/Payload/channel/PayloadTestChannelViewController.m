@@ -38,7 +38,6 @@
     [[DJIVideoPreviewer instance] start];
     self.previewerAdapter = [VideoPreviewerSDKAdapter adapterWithDefaultSettings];
     [self.previewerAdapter start];
-	[self.previewerAdapter setupFrameControlHandler];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -101,6 +100,10 @@
     }
     
     self.cmdData.text = content;
+}
+
+-(void)payload:(DJIPayload *)payload didReceiveVideoData:(NSData *)data {
+    [self.previewerAdapter.videoPreviewer push:(uint8_t *)[data bytes] length:(int)data.length];
 }
 
 @end
