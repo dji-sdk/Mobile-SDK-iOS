@@ -290,13 +290,13 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">DJIBatteryAggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">DJIBatteryOverview</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
                             </dd>
                             <dd><a href="../Battery/DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a>
                             </dd>
@@ -770,7 +770,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">DJISubjectSensingState</span> : <span class="title">NSObject</span></span></span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
 <h5 id="description">Description:</h5>
-<p><font color="#666">The state of one of the auto-sensed subject after enabling auto sensing.  Only supported by DJI Mavic Air.</font></p>
+<p><font color="#666">The state of one of the auto-sensed subject after enabling auto sensing. Only supported by DJI Mavic Air.</font></p>
 <h5 id="class-members">Class Members:</h5>
 <div class="api-row" id="djiactivetrackmission_djisubjectsensingstate_index"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djisubjectsensingstate_index_inline">index</a></div></div><div class="inline-doc" id="djiactivetrackmission_djisubjectsensingstate_index_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>index</h6></div>
@@ -778,7 +778,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSInteger</span> index</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v2">Description:</h5>
-<p><font color="#666">Index of the auto-sensed subjects. After enabling auto sensing, the aircraft  may find multiple subjects and an index will be assigned to each subject.  Use this index to select the subject to track.</font></p>
+<p><font color="#666">Index of the auto-sensed subjects. After enabling auto sensing, the aircraft may find multiple subjects and an index will be assigned to each subject. Use this index to select the subject to track.</font></p>
 </div>
 <div class="api-row" id="djiactivetrackmission_djisubjectsensingstate_state"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djiactivetrackmission_djisubjectsensingstate_state_inline">state</a></div></div><div class="inline-doc" id="djiactivetrackmission_djisubjectsensingstate_state_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>state</h6></div>
@@ -806,7 +806,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">CGRect</span> targetRect</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIActiveTrackMission.h</font></td></tr></table></html>
 <h5 id="description-v5">Description:</h5>
-<p><font color="#666">A rectangle in the live video view image that represents the auto-sensed subject.  The rectangle is normalized to [0,1] where (0,0) is the top left of the video  preview and (1,1) is the bottom right.</font></p>
+<p><font color="#666">A rectangle in the live video view image that represents the auto-sensed subject. The rectangle is normalized to [0,1] where (0,0) is the top left of the video preview and (1,1) is the bottom right.</font></p>
 </div>
 
         </div>

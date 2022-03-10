@@ -290,13 +290,13 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">DJIBatteryAggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">DJIBatteryOverview</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
                             </dd>
                             <dd><a href="../Battery/DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a>
                             </dd>
@@ -834,7 +834,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isDJIVideoStreamingChannelAvailable</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIPayload.h</font></td></tr></table></html>
 <h5 id="description-v8">Description:</h5>
-<p><font color="#666">When it returns <code>YES</code>, video stream type on PSDK is set to DJI video streaming channel. Please use <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed">DJIVideoFeed</a></code> in <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a></code> to receive the video data. When it returns <code>NO</code>, video stream type on PSDK is set to custom video streaming channel.  Please use <code>DJIPayload_DJIPayloadDelegate_didReceiveVideoData</code> in <code><a href="../../Components/Payload/DJIPayload.html#djipayload">DJIPayload</a></code> to receive custom video data.</font></p>
+<p><font color="#666">When it returns <code>YES</code>, video stream type on PSDK is set to DJI video streaming channel. Please use <code><a href="../../BaseClasses/DJIVideoFeeder_DJIVideoFeed.html#djivideofeeder_djivideofeed">DJIVideoFeed</a></code> in <code><a href="../../BaseClasses/DJIVideoFeeder.html#djivideofeeder">DJIVideoFeeder</a></code> to receive the video data. When it returns <code>NO</code>, video stream type on PSDK is set to custom video streaming channel.  Please use <code><a href="../../Components/Payload/DJIPayload.html#djipayload_djipayloaddelegate_didreceivevideodata">payload:didReceiveVideoData</a></code> to receive custom video data.</font></p>
 <h5 id="return-v4">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i><code>YES</code> if DJI video streaming channel is available.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djipayload_configurewidgetvalue"><div class="api-col left">Widget Value</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djipayload_configurewidgetvalue_inline">configureWidgetValue:type:index:withCompletion</a></div></div><div class="inline-doc" id="djipayload_configurewidgetvalue_inline" <blockquote>

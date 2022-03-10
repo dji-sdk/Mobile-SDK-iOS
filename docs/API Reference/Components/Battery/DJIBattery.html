@@ -290,13 +290,13 @@
                   </dd>
                   <dd><a data-href class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="DJIBattery_BatteryState.html">DJIBatteryState</a>
-                            </dd>
                             <dd><a data-href="DJIBattery_AggregationState.html" class="sub-toggle">DJIBatteryAggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="DJIBattery_BatteryOverview.html">DJIBatteryOverview</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="DJIBattery_BatteryState.html">DJIBatteryState</a>
                             </dd>
                             <dd><a href="DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a>
                             </dd>
@@ -772,13 +772,89 @@
 <h5 id="description">Description:</h5>
 <p><font color="#666">This class manages information and real-time status of the connected product's batteries. This object is available from the <code><a href="../../Products/Aircraft/DJIAircraft.html#djiaircraft">DJIAircraft</a></code> or <code><a href="../../Products/Handheld/DJIHandheld.html#djihandheld">DJIHandheld</a></code> object which is a subclass of <code><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct">DJIBaseProduct</a></code>.</font></p>
 <h5 id="class-members">Class Members:</h5>
+<h4 id="related-not-in-class">Related (Not in Class)</h4>
+<div class="api-row" id="djibattery_aggregationstate"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_AggregationState.html">DJIBatteryAggregationState</a></div></div><div class="api-row" id="djibattery_batterystate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_BatteryState.html">DJIBatteryState</a></div></div><div class="api-row" id="djibattery_warningrecord"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a></div></div><div class="api-row" id="djibattery_djibatterycellvoltagethresholdbehavior"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterycellvoltagethresholdbehavior_inline">DJIBatteryLowVoltageBehavior</a></div></div><div class="inline-doc" id="djibattery_djibatterycellvoltagethresholdbehavior_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJIBatteryLowVoltageBehavior</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryLowVoltageBehavior)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageBehavior</a>, <a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageBehavior</a></font></td></tr></table></html>
+<h5 id="description-v2">Description:</h5>
+<p><font color="#666">Defines aircraft's behavior when the cell voltage is low.</font></p>
+<h5 id="enum-members">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_flashledwarning_inline"></a>DJIBatteryLowVoltageBehaviorFlashLED</font></td><td><font color="#666">LED lights go into warning mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_gohome_inline"></a>DJIBatteryLowVoltageBehaviorGoHome</font></td><td><font color="#666">Return-to-Home.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_land_inline"></a>DJIBatteryLowVoltageBehaviorLand</font></td><td><font color="#666">Land aircraft immediately.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_unknown_inline"></a>DJIBatteryLowVoltageBehaviorUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
+<div class="api-row" id="djibattery_djibatterypairstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterypairstatus_inline">DJIBatteryPairingState</a></div></div><div class="inline-doc" id="djibattery_djibatterypairstatus_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJIBatteryPairingState</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryPairingState)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparampairstate_key">DJIBatteryKey.DJIBatteryParamPairState</a></font></td></tr></table></html>
+<h5 id="description-v3">Description:</h5>
+<p><font color="#666">Battery pairing state for batteries that can be paired.</font></p>
+<h5 id="enum-members-v2">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_unpaired_inline"></a>DJIBatteryPairingStateUnpaired</font></td><td><font color="#666">The batteries didn't match; they're not paired.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_paired_inline"></a>DJIBatteryPairingStatePaired</font></td><td><font color="#666">Batteries are paired.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_unknown_inline"></a>DJIBatteryPairingStateUnknown</font></td><td><font color="#666">Can't get the pair state or the batteries.</font></td></tr></table></html></div>
+<div class="api-row" id="djibattery_djibatteryselfheatingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatteryselfheatingstate_inline">DJIBatterySelfHeatingState</a></div></div><div class="inline-doc" id="djibattery_djibatteryselfheatingstate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJIBatterySelfHeatingState</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatterySelfHeatingState)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
+<h5 id="description-v4">Description:</h5>
+<p><font color="#666">Provides the self-heating state for the battery. When the temperature of the battery is below a threshold, it will warm up automatically. For Mavic 2 Enterprise, the self-heating is triggered when the temperature is lower than 6 Celsius degrees. When the temperature reaches 8 Celsius degrees, the battery will start to preserve the temperature and maintain it between 6 Celsius degrees and 8 Celsius degrees.</font></p>
+<h5 id="enum-members-v3">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_idle_inline"></a>DJIBatterySelfHeatingStateIdle</font></td><td><font color="#666">The auto heating feature is idle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_warmingup_inline"></a>DJIBatterySelfHeatingStateWarmingUp</font></td><td><font color="#666">The battery is warming itself up automatically.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_preserving_inline"></a>DJIBatterySelfHeatingStatePreserving</font></td><td><font color="#666">The battery is preserving its temperature. For Mavic 2 Enterprise, the temperature will be maintained between 6 Celsius degrees and 8 Celsius degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_unknown_inline"></a>DJIBatterySelfHeatingStateUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
+<div class="api-row" id="djibattery_djismartbatterytype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djismartbatterytype_inline">DJISmartBatteryType</a></div></div><div class="inline-doc" id="djibattery_djismartbatterytype_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">enum </font>DJISmartBatteryType</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJISmartBatteryType)</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
+<h5 id="description-v5">Description:</h5>
+<p><font color="#666">Defines smart battery type.</font></p>
+<h5 id="enum-members-v4">Enum Members:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_other_inline"></a>DJISmartBatteryTypeOther</font></td><td><font color="#666">The smart battery type is other.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_mavicminijapan_inline"></a>DJISmartBatteryTypeMavicMiniJapan</font></td><td><font color="#666">The smart battery type is Mavic Mini Japan, which is legal to use in Japan.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_unknown_inline"></a>DJISmartBatteryTypeUnknown</font></td><td><font color="#666">The smart battery type is unknown.</font></td></tr></table></html></div>
+<div class="api-row" id="djibattery_protocol"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djibattery_protocol_inline">DJIBatteryDelegate</a></div></div><div class="inline-doc" id="djibattery_protocol_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">protocol </font>DJIBatteryDelegate</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIBatteryDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<h5 id="description-v6">Description:</h5>
+<p><font color="#666">This protocol provides a delegate method to update the battery's current state.</font></p>
+<h5 id="protocol-methods">Protocol Methods:</h5>
+<h4 id="protocol-method">Protocol Method</h4>
+<div class="api-row" id="djibattery_updatebatterystate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_updatebatterystate_inline">battery:didUpdateState</a></div></div><div class="inline-doc" id="djibattery_updatebatterystate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>battery:didUpdateState</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)battery:(DJIBattery *_Nonnull)battery didUpdateState:(DJIBatteryState *_Nonnull)state</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
+<h5 id="description-v7">Description:</h5>
+<p><font color="#666">Delegate to update battery state.</font></p>
+<h5 id="input-parameters">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery">DJIBattery</a> *_Nonnull <font color="#000">battery</font></font></td><td><font color="#666"><i>Battery having an updated state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate">DJIBatteryState</a> *_Nonnull <font color="#000">state</font></font></td><td><font color="#666"><i>The battery's state.</i></font></td></tr></table></html></div>
+</div>
+<div class="api-row" id="djibattery_aggregation_protocol"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djibattery_aggregation_protocol_inline">DJIBatteryAggregationDelegate</a></div></div><div class="inline-doc" id="djibattery_aggregation_protocol_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">protocol </font>DJIBatteryAggregationDelegate</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIBatteryAggregationDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
+<h5 id="description-v8">Description:</h5>
+<p><font color="#666">This protocol provides a delegate method to update the current aggregated battery state.</font></p>
+<h5 id="protocol-methods-v2">Protocol Methods:</h5>
+<h4 id="protocol-method-v2">Protocol Method</h4>
+<div class="api-row" id="djibattery_updateaggregationstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_updateaggregationstate_inline">batteriesDidUpdateState</a></div></div><div class="inline-doc" id="djibattery_updateaggregationstate_inline" <blockquote>
+<div class="article"><h6><font color="#AAA">method </font>batteriesDidUpdateState</h6></div>
+
+<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)batteriesDidUpdateState:(DJIBatteryAggregationState *_Nonnull)state</span><br></pre></td></tr></table></figure>
+<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
+<h5 id="description-v9">Description:</h5>
+<p><font color="#666">Callback to update aggregated battery state.</font></p>
+<h5 id="input-parameters-v2">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate">DJIBatteryAggregationState</a> *_Nonnull <font color="#000">state</font></font></td><td><font color="#666"><i>The aggregated battery state.</i></font></td></tr></table></html></div>
+</div>
+<html><p><br></p></html>
 <h4 id="state-updates">State Updates</h4>
 <div class="api-row" id="djibattery_delegate"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_delegate_inline">delegate</a></div></div><div class="inline-doc" id="djibattery_delegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>delegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">weak</span>) <span class="keyword">id</span>&lt;DJIBatteryDelegate&gt; delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v2">Description:</h5>
+<h5 id="description-v10">Description:</h5>
 <p><font color="#666">Delegate that receives the updated state pushed by the battery.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Battery/DJIBattery.html#djibattery_protocol">DJIBatteryDelegate</a></code></font></p>
@@ -788,16 +864,16 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">void</span>)setAggregationDelegate:(<span class="keyword">id</span>&lt;DJIBatteryAggregationDelegate&gt;_Nullable)delegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v3">Description:</h5>
+<h5 id="description-v11">Description:</h5>
 <p><font color="#666">Delegate that receives the updated state pushed by the battery.</font></p>
-<h5 id="input-parameters">Input Parameters:</h5>
+<h5 id="input-parameters-v3">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id&lt;<a href="../../Components/Battery/DJIBattery.html#djibattery_aggregation_protocol">DJIBatteryAggregationDelegate</a>&gt;_Nullable <font color="#000">delegate</font></font></td><td><font color="#666"><i>The delegate that will receive the aggregation information.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_aggregation_getdelegate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class method</div><div class="api-col right"><a class="trigger" href="#djibattery_aggregation_getdelegate_inline">aggregationDelegate</a></div></div><div class="inline-doc" id="djibattery_aggregation_getdelegate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">class method </font>aggregationDelegate</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">+ (<span class="keyword">id</span>&lt;DJIBatteryAggregationDelegate&gt;_Nullable)aggregationDelegate</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v4">Description:</h5>
+<h5 id="description-v12">Description:</h5>
 <p><font color="#666">Gets the delegate that receives the battery aggregation state. It is only useful when the aircraft has multiple batteries.</font></p>
 <h5 id="return">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">id&lt;<a href="../../Components/Battery/DJIBattery.html#djibattery_aggregation_protocol">DJIBatteryAggregationDelegate</a>&gt;_Nullable</font></td><td><font color="#666"><i>The delegate setup to receive battery aggregation information.</i></font></td></tr></table></html></div>
@@ -808,16 +884,16 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getCellVoltagesWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span>&lt;<span class="built_in">NSNumber</span> *&gt; *_Nullable cellVoltages,</span><br><span class="line">                                                        <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamcellvoltages_key">DJIBatteryKey.DJIBatteryParamCellVoltages</a></font></td></tr></table></html>
-<h5 id="description-v5">Description:</h5>
+<h5 id="description-v13">Description:</h5>
 <p><font color="#666">Gets the battery's cell voltages. There will be a voltage for each cell in the battery.</font></p>
-<h5 id="input-parameters-v2">Input Parameters:</h5>
+<h5 id="input-parameters-v4">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;NSNumber *&gt; *_Nullable <font color="#000">cellVoltages</font></font></td><td><font color="#666"><i>Array of battery cell voltages. For example, the Inspire 1 has a 6 cell battery and therefore will have a 6 element array.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSArray&lt;NSNumber *&gt; *_Nullable cellVoltages,                                                         NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_numberofcells"><div class="api-col left">Number</div><div class="api-col middle" style="color:#AAA">property</div><div class="api-col right"><a class="trigger" href="#djibattery_numberofcells_inline">numberOfCells</a></div></div><div class="inline-doc" id="djibattery_numberofcells_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">property </font>numberOfCells</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) <span class="built_in">NSUInteger</span> numberOfCells</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamnumberofcells_key">DJIBatteryKey.DJIBatteryParamNumberOfCells</a></font></td></tr></table></html>
-<h5 id="description-v6">Description:</h5>
+<h5 id="description-v14">Description:</h5>
 <p><font color="#666">Returns the number of battery cells.</font></p>
 </div>
 <div class="api-row" id="djibattery_setnumberofcells"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_setnumberofcells_inline">setNumberOfCells:withCompletion</a></div></div><div class="inline-doc" id="djibattery_setnumberofcells_inline" <blockquote>
@@ -825,9 +901,9 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setNumberOfCells:(<span class="built_in">NSUInteger</span>)numberOfCells withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamnumberofcells_key">DJIBatteryKey.DJIBatteryParamNumberOfCells</a></font></td></tr></table></html>
-<h5 id="description-v7">Description:</h5>
+<h5 id="description-v15">Description:</h5>
 <p><font color="#666">When the connected battery is not a smart battery, the number of cells needs to be set manually. The flight controller uses the number of cells and the cell voltage threshold to determine if the aircraft should go home or land. The valid range is [3, 12] cells.</font></p>
-<h5 id="input-parameters-v3">Input Parameters:</h5>
+<h5 id="input-parameters-v5">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">numberOfCells</font></font></td><td><font color="#666"><i>Number of cells inside the battery.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="information">Information</h4>
@@ -836,7 +912,7 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="built_in">BOOL</span>)isSmartBattery</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamissmartbattery_key">DJIBatteryKey.DJIBatteryParamIsSmartBattery</a></font></td></tr></table></html>
-<h5 id="description-v8">Description:</h5>
+<h5 id="description-v16">Description:</h5>
 <p><font color="#666"><code>YES</code> if the battery is a smart battery. When the connected battery is a DJI smart battery, more information can be obtained by communicating with the battery.</font></p>
 <h5 id="return-v2">Return:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL</font></td><td><font color="#666"><i>&lt;code&gt;Yes&lt;/code&gt;&gt; if battery is smart battery.</i></font></td></tr></table></html></div>
@@ -845,27 +921,27 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)pairBatteriesWithCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparampairbatteries_key">DJIBatteryKey.DJIBatteryParamPairBatteries</a></font></td></tr></table></html>
-<h5 id="description-v9">Description:</h5>
+<h5 id="description-v17">Description:</h5>
 <p><font color="#666">A battery's full charge capacity reduces a little every time it goes through a discharge and recharge cycle. Therefore, older batteries that have gone through many cycles will have lower full charge capacity than newer batteries. When multiple batteries are used simultaneously in a product, the aggregate full charge capacity will be limited by the battery with the lowest full charge capacity. <br><br> To optimize the amount of energy delivered by a battery over its lifetime to a product, batteries should be matched or paired with other batteries of similar full charge capacity. The operational challenges of always using paired batteries can be alleviated using the battery pairing interfaces. <br><br>This method will pair two batteries by recording the aggregate of their serial numbers in each of their firmwares. <code><a href="../../Components/Battery/DJIBattery.html#djibattery_getbatterypairstatus">getPairingStateWithCompletion</a></code> can then be used to determine if the installed battery combination is a previously assigned pair or not. Batteries can be repaired.</font></p>
-<h5 id="input-parameters-v4">Input Parameters:</h5>
+<h5 id="input-parameters-v6">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getbatterypairstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getbatterypairstatus_inline">getPairingStateWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getbatterypairstatus_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getPairingStateWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getPairingStateWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(DJIBatteryPairingState pairingState, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparampairstate_key">DJIBatteryKey.DJIBatteryParamPairState</a></font></td></tr></table></html>
-<h5 id="description-v10">Description:</h5>
+<h5 id="description-v18">Description:</h5>
 <p><font color="#666">A battery's full charge capacity reduces a little every time it goes through a discharge and recharge cycle. Therefore, older batteries that have gone through many cycles will have lower full charge capacity than newer batteries. When multiple batteries are used simultaneously in a product, the aggregate full charge capacity will be limited by the battery with lowest full charge capacity. <br><br> To optimize the amount of energy delivered by a battery over its lifetime to a product, batteries should be matched or paired with other batteries of similar full charge capacity. The operational challenges of always using paired batteries can be alleviated using the battery pairing interfaces. This method can then be used to determine if the installed battery combination is a previously assigned pair or not.</font></p>
-<h5 id="input-parameters-v5">Input Parameters:</h5>
+<h5 id="input-parameters-v7">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(<a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterypairstatus">DJIBatteryPairingState</a> pairingState, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Block that receives the pairing state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterypairstatus">DJIBatteryPairingState</a> <font color="#000">pairingState</font></font></td><td><font color="#666"><i>Pairing state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getmanufacturedate"><div class="api-col left">Manufacture Date</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getmanufacturedate_inline">getManufactureDateWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getmanufacturedate_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getManufactureDateWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getManufactureDateWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSDate</span> *manufactureDate, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v11">Description:</h5>
+<h5 id="description-v19">Description:</h5>
 <p><font color="#666">Gets the manufacture date of current battery. It it only supported by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v6">Input Parameters:</h5>
+<h5 id="input-parameters-v8">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSDate *manufactureDate, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>The execution callback with the returned value(s).</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSDate * <font color="#000">manufactureDate</font></font></td><td><font color="#666"><i>The manufacture date.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="behavior-at-thresholds">Behavior at Thresholds</h4>
@@ -874,72 +950,72 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setLevel1CellVoltageThreshold:(<span class="built_in">NSUInteger</span>)voltage withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagethreshold_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageThreshold</a></font></td></tr></table></html>
-<h5 id="description-v12">Description:</h5>
+<h5 id="description-v20">Description:</h5>
 <p><font color="#666">Sets the Level 1 cell voltage threshold in mV. When the cell voltage of the battery crosses below the threshold, Level 1 behavior will be executed. The valid range is [3600, 4000] mV. When the new value is not 100 mV higher than the Level 2 cell voltage threshold, the Level 2 threshold will be set to (new value - 100) mV.</font></p>
-<h5 id="input-parameters-v7">Input Parameters:</h5>
+<h5 id="input-parameters-v9">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">voltage</font></font></td><td><font color="#666"><i>Level 1 cell voltage threshold to set in mV.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the setter execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getlevel1cellvoltagethreshold"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getlevel1cellvoltagethreshold_inline">getLevel1CellVoltageThresholdWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getlevel1cellvoltagethreshold_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLevel1CellVoltageThresholdWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLevel1CellVoltageThresholdWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSUInteger</span> voltage, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagethreshold_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageThreshold</a></font></td></tr></table></html>
-<h5 id="description-v13">Description:</h5>
+<h5 id="description-v21">Description:</h5>
 <p><font color="#666">Gets the Level 1 cell voltage threshold in mV. When the cell voltage of the battery crosses below the threshold, Level 1 behavior will be executed. The valid range is [3600, 4000] mV.</font></p>
-<h5 id="input-parameters-v8">Input Parameters:</h5>
+<h5 id="input-parameters-v10">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSUInteger voltage, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the voltage threshold.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">voltage</font></font></td><td><font color="#666"><i>Voltage in mV</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_setlevel2cellvoltagethreshold"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_setlevel2cellvoltagethreshold_inline">setLevel2CellVoltageThreshold:withCompletion</a></div></div><div class="inline-doc" id="djibattery_setlevel2cellvoltagethreshold_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setLevel2CellVoltageThreshold:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setLevel2CellVoltageThreshold:(<span class="built_in">NSUInteger</span>)voltage withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagethreshold_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageThreshold</a></font></td></tr></table></html>
-<h5 id="description-v14">Description:</h5>
+<h5 id="description-v22">Description:</h5>
 <p><font color="#666">Sets the Level 2 cell voltage threshold in mV. When the cell voltage of the battery crosses below the threshold, Level 2 behavior will be executed. The valid range is [3500, 3800] mV and must be at least 100 mV lower than the Level 1 voltage threshold.</font></p>
-<h5 id="input-parameters-v9">Input Parameters:</h5>
+<h5 id="input-parameters-v11">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">voltage</font></font></td><td><font color="#666"><i>Level 2 cell voltage threshold to set in mV.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getlevel2cellvoltagethreshold"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getlevel2cellvoltagethreshold_inline">getLevel2CellVoltageThresholdWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getlevel2cellvoltagethreshold_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLevel2CellVoltageThresholdWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLevel2CellVoltageThresholdWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSUInteger</span> voltage, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagethreshold_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageThreshold</a></font></td></tr></table></html>
-<h5 id="description-v15">Description:</h5>
+<h5 id="description-v23">Description:</h5>
 <p><font color="#666">Gets the Level 2 cell voltage threshold in mV. When the cell voltage of the battery crosses below the threshold, Level 2 behavior will be executed.</font></p>
-<h5 id="input-parameters-v10">Input Parameters:</h5>
+<h5 id="input-parameters-v12">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSUInteger voltage, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the voltage threshold.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSUInteger <font color="#000">voltage</font></font></td><td><font color="#666"><i>Voltage in mV</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_setlevel1cellvoltagebehavior"><div class="api-col left">Threshold Behavior</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_setlevel1cellvoltagebehavior_inline">setLevel1CellVoltageBehavior:withCompletion</a></div></div><div class="inline-doc" id="djibattery_setlevel1cellvoltagebehavior_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setLevel1CellVoltageBehavior:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setLevel1CellVoltageBehavior:(DJIBatteryLowVoltageBehavior)behavior</span><br><span class="line">                      withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageBehavior</a></font></td></tr></table></html>
-<h5 id="description-v16">Description:</h5>
+<h5 id="description-v24">Description:</h5>
 <p><font color="#666">Sets the behavior that will be executed when the cell voltage crosses under the Level 1 threshold. It can only be set when the motors are off.</font></p>
-<h5 id="input-parameters-v11">Input Parameters:</h5>
+<h5 id="input-parameters-v13">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> <font color="#000">behavior</font></font></td><td><font color="#666"><i>Level 1 behavior.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the setter execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getlevel1cellvoltagebehavior"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getlevel1cellvoltagebehavior_inline">getLevel1CellVoltageBehaviorWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getlevel1cellvoltagebehavior_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLevel1CellVoltageBehaviorWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLevel1CellVoltageBehaviorWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(DJIBatteryLowVoltageBehavior behavior, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageBehavior</a></font></td></tr></table></html>
-<h5 id="description-v17">Description:</h5>
+<h5 id="description-v25">Description:</h5>
 <p><font color="#666">Gets the behavior that will be executed when the cell voltage crosses under the Level 1 threshold.</font></p>
-<h5 id="input-parameters-v12">Input Parameters:</h5>
+<h5 id="input-parameters-v14">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(<a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> behavior, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the voltage threshold behavior.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> <font color="#000">behavior</font></font></td><td><font color="#666"><i>Aircraft behavior when voltage threshold is crossed.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_setlevel2cellvoltagebehavior"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_setlevel2cellvoltagebehavior_inline">setLevel2CellVoltageBehavior:withCompletion</a></div></div><div class="inline-doc" id="djibattery_setlevel2cellvoltagebehavior_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>setLevel2CellVoltageBehavior:withCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setLevel2CellVoltageBehavior:(DJIBatteryLowVoltageBehavior)behavior</span><br><span class="line">                      withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageBehavior</a></font></td></tr></table></html>
-<h5 id="description-v18">Description:</h5>
+<h5 id="description-v26">Description:</h5>
 <p><font color="#666">Sets the operation that will be executed when the cell voltage crosses under Level 2 threshold. It can only be set when motors are off.</font></p>
-<h5 id="input-parameters-v13">Input Parameters:</h5>
+<h5 id="input-parameters-v15">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> <font color="#000">behavior</font></font></td><td><font color="#666"><i>Level 2 behavior.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getlevel2cellvoltagebehavior"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getlevel2cellvoltagebehavior_inline">getLevel2CellVoltageBehaviorWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getlevel2cellvoltagebehavior_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLevel2CellVoltageBehaviorWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLevel2CellVoltageBehaviorWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(DJIBatteryLowVoltageBehavior behavior, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageBehavior</a></font></td></tr></table></html>
-<h5 id="description-v19">Description:</h5>
+<h5 id="description-v27">Description:</h5>
 <p><font color="#666">Sets the behavior that will be executed when the cell voltage crosses under the Level 2 threshold. It is not supported by Mavic Air.</font></p>
-<h5 id="input-parameters-v14">Input Parameters:</h5>
+<h5 id="input-parameters-v16">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(<a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> behavior, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the voltage threshold behavior.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djibatterycellvoltagethresholdbehavior">DJIBatteryLowVoltageBehavior</a> <font color="#000">behavior</font></font></td><td><font color="#666"><i>Aircraft behavior when voltage threshold is crossed.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="led">LED</h4>
@@ -948,27 +1024,27 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setLEDsEnabled:(<span class="built_in">BOOL</span>)enabled withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v20">Description:</h5>
-<p><font color="#666">Enables/disables the LED lights on the batteries. If all batteries' LEDs on the aircraft are turned off, the aircraft's  power button LED indicator should be off. It's supported only by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v15">Input Parameters:</h5>
+<h5 id="description-v28">Description:</h5>
+<p><font color="#666">Enables/disables the LED lights on the batteries. If all batteries' LEDs on the aircraft are turned off, the aircraft's power button LED indicator should be off. It's supported only by Matrice 300 RTK.</font></p>
+<h5 id="input-parameters-v17">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i><code>YES</code> to enable the LED lights on the batteries.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block that receives the setter execution result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getledsenabled"><div class="api-col left">Get LED Enabled</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getledsenabled_inline">getLEDsEnabled</a></div></div><div class="inline-doc" id="djibattery_getledsenabled_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getLEDsEnabled</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLEDsEnabled:(<span class="keyword">void</span> (^)(<span class="built_in">BOOL</span> enabled, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v21">Description:</h5>
-<p><font color="#666">Determines if the LEDs on the battery is on. If all batteries' LEDs on the aircraft  are turned off, the aircraft's power button LED indicator should be off. It's supported only by Matrice 300 RTK.</font></p>
-<h5 id="input-parameters-v16">Input Parameters:</h5>
+<h5 id="description-v29">Description:</h5>
+<p><font color="#666">Determines if the LEDs on the battery is on. If all batteries' LEDs on the aircraft are turned off, the aircraft's power button LED indicator should be off. It's supported only by Matrice 300 RTK.</font></p>
+<h5 id="input-parameters-v18">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">enabled</font></font></td><td><font color="#666"><i>The enabled value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(BOOL enabled, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getbatterytype"><div class="api-col left">Get battery type</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getbatterytype_inline">getBatteryType</a></div></div><div class="inline-doc" id="djibattery_getbatterytype_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getBatteryType</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getBatteryType:(<span class="keyword">void</span> (^)(DJISmartBatteryType type, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v22">Description:</h5>
+<h5 id="description-v30">Description:</h5>
 <p><font color="#666">Determines if the battery is the correct type in current area.</font></p>
-<h5 id="input-parameters-v17">Input Parameters:</h5>
+<h5 id="input-parameters-v19">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery_djismartbatterytype">DJISmartBatteryType</a> <font color="#000">type</font></font></td><td><font color="#666"><i>The type of the battery.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^)(<a href="../../Components/Battery/DJIBattery.html#djibattery_djismartbatterytype">DJISmartBatteryType</a> type, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Completion block to receive the result.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="warning-records">Warning Records</h4>
@@ -977,18 +1053,18 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getLatestWarningRecordWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(DJIBatteryWarningRecord *_Nullable record, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlatestwarningrecord_key">DJIBatteryKey.DJIBatteryParamLatestWarningRecord</a></font></td></tr></table></html>
-<h5 id="description-v23">Description:</h5>
+<h5 id="description-v31">Description:</h5>
 <p><font color="#666">Gets the battery's most recent warning record. Anytime the battery experiences a significant exception, it will get recorded as a warning record.</font></p>
-<h5 id="input-parameters-v18">Input Parameters:</h5>
+<h5 id="input-parameters-v20">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(<a href="../../Components/Battery/DJIBattery_WarningRecord.html#djibattery_warningrecord">DJIBatteryWarningRecord</a> *_Nullable record, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the latest warning record.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery_WarningRecord.html#djibattery_warningrecord">DJIBatteryWarningRecord</a> *_Nullable <font color="#000">record</font></font></td><td><font color="#666"><i>Warning record.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_gethistoricalwarningrecords"><div class="api-col left">Historical</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_gethistoricalwarningrecords_inline">getWarningRecordsWithCompletion</a></div></div><div class="inline-doc" id="djibattery_gethistoricalwarningrecords_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getWarningRecordsWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getWarningRecordsWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(<span class="built_in">NSArray</span>&lt;DJIBatteryWarningRecord *&gt; *_Nullable records, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamwarninginformationrecords_key">DJIBatteryKey.DJIBatteryParamWarningInformationRecords</a></font></td></tr></table></html>
-<h5 id="description-v24">Description:</h5>
+<h5 id="description-v32">Description:</h5>
 <p><font color="#666">Gets the battery's history, which is kept for 30 days. The 'records' variable in the block stores objects of type <code><a href="../../Components/Battery/DJIBattery_WarningRecord.html#djibattery_warningrecord">DJIBatteryWarningRecord</a></code>.</font></p>
-<h5 id="input-parameters-v19">Input Parameters:</h5>
+<h5 id="input-parameters-v21">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">NSArray&lt;<a href="../../Components/Battery/DJIBattery_WarningRecord.html#djibattery_warningrecord">DJIBatteryWarningRecord</a> *&gt; *_Nullable <font color="#000">records</font></font></td><td><font color="#666"><i>Warning records.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(NSArray&lt;<a href="../../Components/Battery/DJIBattery_WarningRecord.html#djibattery_warningrecord">DJIBatteryWarningRecord</a> *&gt; *_Nullable records, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Remote execution result callback block.</i></font></td></tr></table></html></div>
 <html><p><br></p></html>
 <h4 id="discharge">Discharge</h4>
@@ -997,95 +1073,19 @@
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)setSelfDischargeInDays:(uint8_t)days withCompletion:(DJICompletionBlock)completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamselfdischargeindays_key">DJIBatteryKey.DJIBatteryParamSelfDischargeInDays</a></font></td></tr></table></html>
-<h5 id="description-v25">Description:</h5>
-<p><font color="#666">Smart batteries can be setup to automatically discharge over a custom period of time. This method sets the battery's self discharge period in days with range [1, 10]. For Inspire 2 and M200 series products, the max range value can be 20. Not supported by Mavic Air 2, non-smart batteries, Spark and the Osmo series.</font></p>
-<h5 id="input-parameters-v20">Input Parameters:</h5>
+<h5 id="description-v33">Description:</h5>
+<p><font color="#666">Smart batteries can be setup to automatically discharge over a custom period of time. This method sets the battery's self discharge period in days with range [1, 10]. For Inspire 2 and M200 series products, the max range value can be 20. Not supported by Mavic Air 2, DJI Air 2S, non-smart batteries, Spark and the Osmo series.</font></p>
+<h5 id="input-parameters-v22">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">uint8_t <font color="#000">days</font></font></td><td><font color="#666"><i>Day for self-discharge</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../BaseClasses/DJIBaseProduct.html#djibaseproduct_completionblock">DJICompletionBlock</a> <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djibattery_getselfdischargeindays"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_getselfdischargeindays_inline">getSelfDischargeInDaysWithCompletion</a></div></div><div class="inline-doc" id="djibattery_getselfdischargeindays_inline" <blockquote>
 <div class="article"><h6><font color="#AAA">method </font>getSelfDischargeInDaysWithCompletion</h6></div>
 
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)getSelfDischargeInDaysWithCompletion:(<span class="keyword">void</span> (^_Nonnull)(uint8_t days, <span class="built_in">NSError</span> *_Nullable error))completion</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamselfdischargeindays_key">DJIBatteryKey.DJIBatteryParamSelfDischargeInDays</a></font></td></tr></table></html>
-<h5 id="description-v26">Description:</h5>
-<p><font color="#666">Smart batteries can be setup to automatically discharge over a custom period of time. This method gets the battery's self discharge period in days with range [1, 10]. For Inspire 2 and M200 series products, the max range value  can be 20. Not supported by non-smart batteries and the Osmo series.</font></p>
-<h5 id="input-parameters-v21">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(uint8_t days, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the number of days to discharge over.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">uint8_t <font color="#000">days</font></font></td><td><font color="#666"><i>Number of days to discharge over.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
-<html><p><br></p></html>
-<h4 id="related-not-in-class">Related (Not in Class)</h4>
-<div class="api-row" id="djibattery_protocol"><div class="api-col left">Delegate</div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djibattery_protocol_inline">DJIBatteryDelegate</a></div></div><div class="inline-doc" id="djibattery_protocol_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">protocol </font>DJIBatteryDelegate</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIBatteryDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
-<h5 id="description-v27">Description:</h5>
-<p><font color="#666">This protocol provides a delegate method to update the battery's current state.</font></p>
-<h5 id="protocol-methods">Protocol Methods:</h5>
-<h4 id="protocol-method">Protocol Method</h4>
-<div class="api-row" id="djibattery_updatebatterystate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_updatebatterystate_inline">battery:didUpdateState</a></div></div><div class="inline-doc" id="djibattery_updatebatterystate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>battery:didUpdateState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)battery:(DJIBattery *_Nonnull)battery didUpdateState:(DJIBatteryState *_Nonnull)state</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v28">Description:</h5>
-<p><font color="#666">Delegate to update battery state.</font></p>
-<h5 id="input-parameters-v22">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery.html#djibattery">DJIBattery</a> *_Nonnull <font color="#000">battery</font></font></td><td><font color="#666"><i>Battery having an updated state.</i></font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery_BatteryState.html#djibattery_batterystate">DJIBatteryState</a> *_Nonnull <font color="#000">state</font></font></td><td><font color="#666"><i>The battery's state.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djibattery_aggregation_protocol"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">protocol</div><div class="api-col right"><a class="trigger" href="#djibattery_aggregation_protocol_inline">DJIBatteryAggregationDelegate</a></div></div><div class="inline-doc" id="djibattery_aggregation_protocol_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">protocol </font>DJIBatteryAggregationDelegate</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">DJIBatteryAggregationDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>Inherits From:</i></font></td><td width="85%"><font color="#999"><code>NSObject</code></font></td></tr></table></html>
-<h5 id="description-v29">Description:</h5>
-<p><font color="#666">This protocol provides a delegate method to update the current aggregated battery state.</font></p>
-<h5 id="protocol-methods-v2">Protocol Methods:</h5>
-<h4 id="protocol-method-v2">Protocol Method</h4>
-<div class="api-row" id="djibattery_updateaggregationstate"><div class="api-col left">State</div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djibattery_updateaggregationstate_inline">batteriesDidUpdateState</a></div></div><div class="inline-doc" id="djibattery_updateaggregationstate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">method </font>batteriesDidUpdateState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@optional</span></span><br><span class="line">- (<span class="keyword">void</span>)batteriesDidUpdateState:(DJIBatteryAggregationState *_Nonnull)state</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBattery.h</font></td></tr></table></html>
-<h5 id="description-v30">Description:</h5>
-<p><font color="#666">Callback to update aggregated battery state.</font></p>
-<h5 id="input-parameters-v23">Input Parameters:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="../../Components/Battery/DJIBattery_AggregationState.html#djibattery_aggregationstate">DJIBatteryAggregationState</a> *_Nonnull <font color="#000">state</font></font></td><td><font color="#666"><i>The aggregated battery state.</i></font></td></tr></table></html></div>
-</div>
-<div class="api-row" id="djibattery_batterystate"><div class="api-col left">General</div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_BatteryState.html">DJIBatteryState</a></div></div><div class="api-row" id="djibattery_aggregationstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_AggregationState.html">DJIBatteryAggregationState</a></div></div><div class="api-row" id="djibattery_warningrecord"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">class</div><div class="api-col right"><a href="../../Components/Battery/DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a></div></div><div class="api-row" id="djibattery_djibatterycellvoltagethresholdbehavior"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterycellvoltagethresholdbehavior_inline">DJIBatteryLowVoltageBehavior</a></div></div><div class="inline-doc" id="djibattery_djibatterycellvoltagethresholdbehavior_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>DJIBatteryLowVoltageBehavior</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryLowVoltageBehavior)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel1cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel1CellVoltageBehavior</a>, <a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparamlevel2cellvoltagebehavior_key">DJIBatteryKey.DJIBatteryParamLevel2CellVoltageBehavior</a></font></td></tr></table></html>
-<h5 id="description-v31">Description:</h5>
-<p><font color="#666">Defines aircraft's behavior when the cell voltage is low.</font></p>
-<h5 id="enum-members">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_flashledwarning_inline"></a>DJIBatteryLowVoltageBehaviorFlashLED</font></td><td><font color="#666">LED lights go into warning mode.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_gohome_inline"></a>DJIBatteryLowVoltageBehaviorGoHome</font></td><td><font color="#666">Return-to-Home.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_land_inline"></a>DJIBatteryLowVoltageBehaviorLand</font></td><td><font color="#666">Land aircraft immediately.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterycellvoltagethresholdbehavior_unknown_inline"></a>DJIBatteryLowVoltageBehaviorUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djibattery_djibatterypairstatus"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatterypairstatus_inline">DJIBatteryPairingState</a></div></div><div class="inline-doc" id="djibattery_djibatterypairstatus_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>DJIBatteryPairingState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatteryPairingState)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr><tr valign="top"><td width="15%"><font color="#999"><i>SDK Key:</i></font></td><td width="85%"><font color="#999"><a href="../../Components/KeyManager/DJIBatteryKey.html#djibatterykey_djibatteryparampairstate_key">DJIBatteryKey.DJIBatteryParamPairState</a></font></td></tr></table></html>
-<h5 id="description-v32">Description:</h5>
-<p><font color="#666">Battery pairing state for batteries that can be paired.</font></p>
-<h5 id="enum-members-v2">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_unpaired_inline"></a>DJIBatteryPairingStateUnpaired</font></td><td><font color="#666">The batteries didn't match; they're not paired.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_paired_inline"></a>DJIBatteryPairingStatePaired</font></td><td><font color="#666">Batteries are paired.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatterypairstatus_unknown_inline"></a>DJIBatteryPairingStateUnknown</font></td><td><font color="#666">Can't get the pair state or the batteries.</font></td></tr></table></html></div>
-<div class="api-row" id="djibattery_djibatteryselfheatingstate"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djibatteryselfheatingstate_inline">DJIBatterySelfHeatingState</a></div></div><div class="inline-doc" id="djibattery_djibatteryselfheatingstate_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>DJIBatterySelfHeatingState</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span> (uint8_t, DJIBatterySelfHeatingState)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
-<h5 id="description-v33">Description:</h5>
-<p><font color="#666">Provides the self-heating state for the battery. When the temperature of the  battery is below a threshold, it will warm up automatically. For Mavic 2 Enterprise,  the self-heating is triggered when the temperature is lower than 6 Celsius degrees. When the  temperature reaches 8 Celsius degrees, the battery will start to preserve the temperature and  maintain it between 6 Celsius degrees and 8 Celsius degrees.</font></p>
-<h5 id="enum-members-v3">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_idle_inline"></a>DJIBatterySelfHeatingStateIdle</font></td><td><font color="#666">The auto heating feature is idle.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_warmingup_inline"></a>DJIBatterySelfHeatingStateWarmingUp</font></td><td><font color="#666">The battery is warming itself up automatically.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_preserving_inline"></a>DJIBatterySelfHeatingStatePreserving</font></td><td><font color="#666">The battery is preserving its temperature. For Mavic 2 Enterprise,  the temperature will be maintained between 6 Celsius degrees and 8 Celsius degrees.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djibatteryselfheatingstate_unknown_inline"></a>DJIBatterySelfHeatingStateUnknown</font></td><td><font color="#666">Unknown.</font></td></tr></table></html></div>
-<div class="api-row" id="djibattery_djismartbatterytype"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">enum</div><div class="api-col right"><a class="trigger" href="#djibattery_djismartbatterytype_inline">DJISmartBatteryType</a></div></div><div class="inline-doc" id="djibattery_djismartbatterytype_inline" <blockquote>
-<div class="article"><h6><font color="#AAA">enum </font>DJISmartBatteryType</h6></div>
-
-<figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(uint8_t, DJISmartBatteryType)</span><br></pre></td></tr></table></figure>
-<html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJIBatteryState.h</font></td></tr></table></html>
 <h5 id="description-v34">Description:</h5>
-<p><font color="#666">Defines smart battery type.</font></p>
-<h5 id="enum-members-v4">Enum Members:</h5>
-<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_other_inline"></a>DJISmartBatteryTypeOther</font></td><td><font color="#666">The smart battery type is other.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_mavicminijapan_inline"></a>DJISmartBatteryTypeMavicMiniJapan</font></td><td><font color="#666">The smart battery type is Mavic Mini Japan, which is legal to use in Japan.</font></td></tr><tr valign="top"><td><font color="#70BF41"><a href="#djibattery_djismartbatterytype_unknown_inline"></a>DJISmartBatteryTypeUnknown</font></td><td><font color="#666">The smart battery type is unknown.</font></td></tr></table></html></div>
+<p><font color="#666">Smart batteries can be setup to automatically discharge over a custom period of time. This method gets the battery's self discharge period in days with range [1, 10]. For Inspire 2 and M200 series products, the max range value can be 20. Not supported by non-smart batteries and the Osmo series.</font></p>
+<h5 id="input-parameters-v23">Input Parameters:</h5>
+<html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">void (^_Nonnull)(uint8_t days, NSError *_Nullable error) <font color="#000">completion</font></font></td><td><font color="#666"><i>Asynchronous execution result block that contains the number of days to discharge over.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">uint8_t <font color="#000">days</font></font></td><td><font color="#666"><i>Number of days to discharge over.</i></font></td></tr><tr valign="top"><td><font color="#70BF41">NSError *_Nullable <font color="#000">error</font></font></td><td><font color="#666"><i>Error retrieving the value.</i></font></td></tr></table></html></div>
 
         </div>
       </div>

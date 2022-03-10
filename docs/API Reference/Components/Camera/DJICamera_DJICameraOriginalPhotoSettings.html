@@ -290,13 +290,13 @@
                   </dd>
                   <dd><a data-href="../Battery/DJIBattery.html" class="sub-toggle">DJIBattery<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                     <ul class="sub-menu">
-                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
-                            </dd>
                             <dd><a data-href="../Battery/DJIBattery_AggregationState.html" class="sub-toggle">DJIBatteryAggregationState<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
                               <ul class="sub-menu">
                                       <dd><a href="../Battery/DJIBattery_BatteryOverview.html">DJIBatteryOverview</a>
                                       </dd>
                               </ul>
+                            </dd>
+                            <dd><a href="../Battery/DJIBattery_BatteryState.html">DJIBatteryState</a>
                             </dd>
                             <dd><a href="../Battery/DJIBattery_WarningRecord.html">DJIBatteryWarningRecord</a>
                             </dd>
@@ -786,7 +786,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>, <span class="keyword">readonly</span>) DJICameraPhotoFileFormat format</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraSettingsDef.h</font></td></tr></table></html>
 <h5 id="description-v3">Description:</h5>
-<p><font color="#666">The format for the original photos if the user decides to save them. Mavic Air cannot change this  setting and it will ignore this property.</font></p>
+<p><font color="#666">The format for the original photos if the user decides to save them. Mavic Air cannot change this setting and it will ignore this property.</font></p>
 <h5 id="see-also">See Also:</h5>
 <p><font color="#666"><code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotofileformat">DJICameraPhotoFileFormat</a></code></font></p>
 </div>
@@ -796,7 +796,7 @@
 <figure class="highlight objc"><table><tr><td class="code"><pre><span class="line">- (<span class="keyword">instancetype</span>)initWithSavingOriginalImagesEnabled:(<span class="built_in">BOOL</span>)shouldSaveOriginalPhotos</span><br></pre></td></tr></table></figure>
 <html><table class="table-supportedby"><tr valign="top"><td width="15%"><font color="#999"><i>Header:</i></font></td><td width="85%"><font color="#999">DJICameraSettingsDef.h</font></td></tr></table></html>
 <h5 id="description-v4">Description:</h5>
-<p><font color="#666">Creates an instance of the configuration to decide saving the original photos or  not. <code><a href="../../Components/Camera/DJICamera_DJICameraOriginalPhotoSettings.html#djicamera_djicameraoriginalphotosettings_format">format</a></code> will  be <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotofileformat_jpeg">DJICameraPhotoFileFormatJPEG</a></code>. Use this constructor for Mavic Air.</font></p>
+<p><font color="#666">Creates an instance of the configuration to decide saving the original photos or not. <code><a href="../../Components/Camera/DJICamera_DJICameraOriginalPhotoSettings.html#djicamera_djicameraoriginalphotosettings_format">format</a></code> will be <code><a href="../../Components/Camera/DJICamera.html#djicamera_djicameraphotofileformat_jpeg">DJICameraPhotoFileFormatJPEG</a></code>. Use this constructor for Mavic Air.</font></p>
 <h5 id="input-parameters">Input Parameters:</h5>
 <html><table class="table-inline-parameters"><tr valign="top"><td><font color="#70BF41">BOOL <font color="#000">shouldSaveOriginalPhotos</font></font></td><td><font color="#666"><i><code>YES</code> to save the original photos.</i></font></td></tr></table></html></div>
 <div class="api-row" id="djicamera_djicameraoriginalphotosettings_initwithsavingoriginalimagesenabledandformat"><div class="api-col left"></div><div class="api-col middle" style="color:#AAA">method</div><div class="api-col right"><a class="trigger" href="#djicamera_djicameraoriginalphotosettings_initwithsavingoriginalimagesenabledandformat_inline">initWithSavingOriginalImagesEnabled:andFormat</a></div></div><div class="inline-doc" id="djicamera_djicameraoriginalphotosettings_initwithsavingoriginalimagesenabledandformat_inline" <blockquote>
