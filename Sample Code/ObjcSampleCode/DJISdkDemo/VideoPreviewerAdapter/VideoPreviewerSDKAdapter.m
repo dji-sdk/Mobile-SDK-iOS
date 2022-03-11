@@ -384,6 +384,9 @@ const static NSTimeInterval REFRESH_INTERVAL = 1.0;
     else if([cameraName isEqualToString:DJICameraDisplayNameMavicMiniCamera]) {
         return H264EncoderType_MavicMini;
     }
+    else if ([cameraName isEqualToString:DJICameraDisplayNameDJIMini2Camera]) {
+        return H264EncoderType_DJIMini2;
+    }
 
     return H264EncoderType_unknown;
 }
