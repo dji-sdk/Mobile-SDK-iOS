@@ -35,6 +35,7 @@ class CameraFPVViewController: UIViewController {
         adapter?.start()
         
         if camera?.displayName == DJICameraDisplayNameMavic2ZoomCamera ||
+            camera?.displayName == DJICameraDisplayNameDJIMini2Camera ||
             camera?.displayName == DJICameraDisplayNameMavic2ProCamera {
             adapter?.setupFrameControlHandler()
         }
