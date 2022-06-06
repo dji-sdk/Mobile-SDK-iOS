@@ -1,0 +1,50 @@
+<html>
+<style>
+  table, th, td {
+     border: 1px solid rgb(200,200,200);
+     border-collapse: collapse;
+     }
+  table {
+     table-layout: fixed;
+     width: 1900px;
+     }
+  td {
+     overflow-x: auto;
+     }
+  th, td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    }
+  .comments {
+    color: #292;
+    }
+  .source-code {
+    color: #22F;
+    }
+  .interface-parent {
+    color: #AAA;
+    }
+  .interface-name {
+    color: #000;
+    }
+  .check-mark {
+    text-align: center;
+    }
+</style>
+<body>
+<br>
+
+<h1>DJI Mobile SDK 4.16 to 4.16.1 Differences</h1>
+
+<br>
+
+<h2>API changes</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">4.16 Parent and Name</font></td><td width=15%><font color="#000">4.16 Code</font></td><td width=15%><font color="#000">4.16.1 Parent and Name</font></td><td width=15%><font color="#000">4.16.1 Code</font></td><td width=3%><font color="#000">Parent</font></td><td width=3%><font color="#000">Name</font></td><td width=3%><font color="#000">Type</font></td><td width=3%><font color="#000">Param</font></td><td width=3%><font color="#000">Return</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJILidarSettingDef.h: DJILidarPointCloudScanMode.</span><span class="interface-name">DJILidarPointCloudScanModeNonRepeat</span></td><td width=15%><span class="source-code">    DJILidarPointCloudScanModeNonRepeat = 0</span></td><td width=15%><span class="interface-parent">DJILidarSettingDef.h: DJILidarPointCloudScanMode.</span><span class="interface-name">DJILidarPointCloudScanModeRepeat</span></td><td width=15%><span class="source-code">    DJILidarPointCloudScanModeRepeat = 1</span></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td><td width=3%></td><td width=3%></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJILidarSettingDef.h: DJILidarPointCloudScanMode.</span><span class="interface-name">DJILidarPointCloudScanModeRepeat</span></td><td width=15%><span class="source-code">    DJILidarPointCloudScanModeRepeat = 1</span></td><td width=15%><span class="interface-parent">DJILidarSettingDef.h: DJILidarPointCloudScanMode.</span><span class="interface-name">DJILidarPointCloudScanModeNonRepeat</span></td><td width=15%><span class="source-code">    DJILidarPointCloudScanModeNonRepeat = 0</span></td><td width=3%></td><td width=3%><div class="check-mark">X</div></td><td width=3%></td><td width=3%></td><td width=3%></td></tr></table><br>
+
+<h2>APIs added to 4.16.1</h2>
+
+<table class="diff-table"><tr valign="top"><td width=15%><font color="#000">Parent and Name</font></td><td width=15%><font color="#000">Code</font></td></tr><tr valign="top"><td width=15%><span class="interface-parent">NSError+DJISDK.h: DJISDKFlightControllerError.</span><span class="interface-name">DJISDKFlightControllerErrorNavigationSatelliteSystemCanNotSet</span></td><td width=15%><span class="source-code">    DJISDKFlightControllerErrorNavigationSatelliteSystemCanNotSet = -4045L</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightControllerBaseTypes.h: </span><span class="interface-name">DJINavigationSatelliteSystem</span></td><td width=15%><span class="source-code">typedef NS_ENUM (uint8_t, DJINavigationSatelliteSystem)</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightControllerBaseTypes.h: DJINavigationSatelliteSystem.</span><span class="interface-name">DJINavigationSatelliteSystemBeiDou</span></td><td width=15%><span class="source-code">    DJINavigationSatelliteSystemBeiDou</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightControllerBaseTypes.h: DJINavigationSatelliteSystem.</span><span class="interface-name">DJINavigationSatelliteSystemGPSAndGLONASS</span></td><td width=15%><span class="source-code">    DJINavigationSatelliteSystemGPSAndGLONASS</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightController.h: DJIFlightController.</span><span class="interface-name">getCoordinatedTurnEnabledWithCompletion</span></td><td width=15%><span class="source-code">- (void)getCoordinatedTurnEnabledWithCompletion:(void (^_Nonnull)(BOOL enabled, NSError * _Nullable error))completion</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightController.h: DJIFlightController.</span><span class="interface-name">getNavigationSatelliteSystemWithCompletion</span></td><td width=15%><span class="source-code">- (void)getNavigationSatelliteSystemWithCompletion:(void (^_Nonnull)(DJINavigationSatelliteSystem system, NSError * _Nullable error))completion</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightController.h: DJIFlightController.</span><span class="interface-name">setCoordinatedTurnEnabled:withCompletion</span></td><td width=15%><span class="source-code">- (void)setCoordinatedTurnEnabled:(BOOL)enabled withCompletion:(DJICompletionBlock)completion</span></td></tr><tr valign="top"><td width=15%><span class="interface-parent">DJIFlightController.h: DJIFlightController.</span><span class="interface-name">setNavigationSatelliteSystem:withCompletion</span></td><td width=15%><span class="source-code">- (void)setNavigationSatelliteSystem:(DJINavigationSatelliteSystem)system withCompletion:(DJICompletionBlock)completion</span></td></tr></table><p style="font-size:50%; color:white">47c10db 5e6a708 920b416 53298ae 47c10db 47337e4 c9699f3 47337e4 </p></body>
+</html>
+
