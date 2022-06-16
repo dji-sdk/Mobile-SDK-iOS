@@ -36,6 +36,8 @@ class CameraFPVViewController: UIViewController {
         
         if camera?.displayName == DJICameraDisplayNameMavic2ZoomCamera ||
             camera?.displayName == DJICameraDisplayNameDJIMini2Camera ||
+            camera?.displayName == DJICameraDisplayNameMavicAir2Camera ||
+            camera?.displayName == DJICameraDisplayNameDJIAir2SCamera ||
             camera?.displayName == DJICameraDisplayNameMavic2ProCamera {
             adapter?.setupFrameControlHandler()
         }
@@ -125,11 +127,7 @@ extension CameraFPVViewController: DJICameraDelegate {
             return
         }
         needToSetMode = false
-        camera.setMode(.shootPhoto) { [weak self] (error) in
-            if error != nil {
-                self?.needToSetMode = true
-            }
-        }
+        self.setCameraMode(cameraMode: .shootPhoto)
         
     }
     
@@ -150,4 +148,33 @@ extension CameraFPVViewController {
         }
         return nil
     }
+    
+    fileprivate func setCameraMode(cameraMode: DJICameraMode = .shootPhoto) {
+        var flatMode: DJIFlatCameraMode = .photoSingle
+        let camera = self.fetchCamera()
+        if camera?.isFlatCameraModeSupported() == true {
+            NSLog("Flat camera mode detected")
+            switch cameraMode {
+            case .shootPhoto:
+                flatMode = .photoSingle
+            case .recordVideo:
+                flatMode = .videoNormal
+            default:
+                flatMode = .photoSingle
+            }
+            camera?.setFlatMode(flatMode, withCompletion: { [weak self] (error: Error?) in
+                if error != nil {
+                    self?.needToSetMode = true
+                    NSLog("Error set camera flat mode photo/video");
+                }
+            })
+            } else {
+                camera?.setMode(cameraMode, withCompletion: {[weak self] (error: Error?) in
+                    if error != nil {
+                        self?.needToSetMode = true
+                        NSLog("Error set mode photo/video");
+                    }
+                })
+            }
+     }
 }
