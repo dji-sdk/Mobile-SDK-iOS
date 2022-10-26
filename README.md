@@ -1,4 +1,4 @@
-# DJI Mobile SDK for iOS Latest Version 4.16.1
+# DJI Mobile SDK for iOS Latest Version 4.16.2
 
 ## What Is This?
 
@@ -33,8 +33,8 @@ If you install it successfully, you should get the messages similar to the follo
 ~~~
 Analyzing dependencies
 Downloading dependencies
-Installing DJI-SDK-iOS (4.16.1)
-Installing DJIWidget (1.6.6)
+Installing DJI-SDK-iOS (4.16.2)
+Installing DJIWidget (1.6.8)
 Installing DJIFlySafeDatabaseResource (01.00.01.18)
 Generating Pods project
 Integrating client project
